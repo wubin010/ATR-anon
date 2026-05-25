@@ -1,0 +1,84 @@
+{
+  "instruction": "The back patio paella dinner thread is finally settled: 2026-09-18 from 19:00 to 21:30 at 114 Cedar Lane, with elena.park@example.com, sam.ortega@example.com, and mia.ramos@example.com involved. Make sure I don't lose track of it.",
+  "gold_value": null,
+  "session_id": "eduardo_rivera_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "eduardo_rivera_scheduling_03",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_scheduling_03",
+    "rule_text": "When creating a new calendar plan for a small gathering, he prefers making a shared event rather than leaving it as a private reminder.",
+    "canonical_answer": "If I'm planning a get-together with other people, I want it as a real shared event, not just a private reminder."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_paella_thread_01",
+        "type": "event",
+        "attributes": {
+          "title": "Back patio paella dinner thread",
+          "start_time": "2026-09-18T19:00:00",
+          "end_time": "2026-09-18T21:30:00",
+          "participants": [],
+          "location": "114 Cedar Lane",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_tapas_thread_02",
+        "type": "event",
+        "attributes": {
+          "title": "Rooftop tapas night thread",
+          "start_time": "2026-09-11T19:30:00",
+          "end_time": "2026-09-11T22:00:00",
+          "participants": [],
+          "location": "Granite Building roof deck",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_boardgame_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Board game night at Nina's",
+          "start_time": "2026-09-20T18:00:00",
+          "end_time": "2026-09-20T21:00:00",
+          "participants": [
+            "nina.wells@example.com",
+            "omar.silva@example.com"
+          ],
+          "location": "Nina's apartment",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "session_id": "rafael_ortiz_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "McAllen",
+    "cuisine": "Mexican",
+    "date_time": "2025-02-13T19:30:00-06:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "McAllen",
+        "cuisine": "Mexican",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_palenque_01",
+        "date_time": "2025-02-13T19:30:00-06:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_palenque_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Palenque Grill McAllen",
+          "cuisine": "Mexican",
+          "location": "McAllen",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_salt_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Salt New American Table",
+          "cuisine": "American",
+          "location": "McAllen",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "contemporary"
+        }
+      },
+      {
+        "id": "rst_yasuke_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Yasuke Japanese Sushi",
+          "cuisine": "Japanese",
+          "location": "McAllen",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "modern"
+        }
+      },
+      {
+        "id": "rst_casa_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa De Mariscos",
+          "cuisine": "Mexican seafood",
+          "location": "McAllen",
+          "rating": 4.3,
+          "price_range": "$$",
+          "seating_style": "family style"
+        }
+      }
+    ]
+  }
+}

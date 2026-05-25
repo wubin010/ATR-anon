@@ -1,0 +1,169 @@
+{
+  "session_id": "jennifer_philmon_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "origin": "Warrenton",
+    "destination": "Hermann",
+    "passenger_count": 1,
+    "duration_days": 2,
+    "transport_offer_id": "trans_amtrak_hermann_01",
+    "selected_stop_ids": [
+      "stop_stonehill_01",
+      "stop_downtown_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "search_ground_transport",
+    "search_trip_stops",
+    "plan_trip",
+    "book_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Hermann"
+        ]
+      }
+    },
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Warrenton",
+        "destination": "Hermann",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Hermann"
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Hermann",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_stonehill_01",
+          "stop_downtown_01"
+        ]
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "trans_amtrak_hermann_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_hermann_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Hermann",
+          "region": "Missouri",
+          "tags": [
+            "in-state",
+            "weekend",
+            "historic",
+            "train-access"
+          ]
+        }
+      },
+      {
+        "id": "dest_jeffersoncity_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Jefferson City",
+          "region": "Missouri",
+          "tags": [
+            "in-state",
+            "weekend",
+            "riverfront",
+            "train-access"
+          ]
+        }
+      },
+      {
+        "id": "trans_amtrak_hermann_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Warrenton",
+          "destination": "Hermann",
+          "mode": "train",
+          "departure_date": "2025-09-13",
+          "price": 28.0,
+          "available_seats": 14
+        }
+      },
+      {
+        "id": "trans_shuttle_hermann_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Warrenton",
+          "destination": "Hermann",
+          "mode": "car-transfer",
+          "departure_date": "2025-09-13",
+          "price": 79.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "stop_stonehill_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Stone Hill Winery",
+          "location": "Hermann",
+          "tags": [
+            "historic",
+            "tour",
+            "scenic"
+          ]
+        }
+      },
+      {
+        "id": "stop_downtown_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Downtown Hermann Riverfront",
+          "location": "Hermann",
+          "tags": [
+            "walkable",
+            "riverfront",
+            "historic"
+          ]
+        }
+      }
+    ]
+  }
+}

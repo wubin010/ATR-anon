@@ -1,0 +1,107 @@
+{
+  "instruction": "Please book my one-way trip from Boston, MA to Portland, ME for 2026-09-18. It's just me, and I only need that leg handled.",
+  "gold_value": null,
+  "session_id": "iris_parker_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "iris_parker_travel_01",
+  "rule_ref": {
+    "rule_id": "iris_parker_travel_01",
+    "rule_text": "For short regional getaways, she prefers ground transport over booking a flight.",
+    "canonical_answer": "For New England trips, I prefer trains or other ground transport instead of flying."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_bos_pwm_20260918_capeair_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Portland, ME",
+          "departure_date": "2026-09-18",
+          "airline": "Cape Air",
+          "price": 69,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_bos_pwm_20260918_delta_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Portland, ME",
+          "departure_date": "2026-09-18",
+          "airline": "Delta Connection",
+          "price": 74,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_bos_pwm_20260918_american_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Portland, ME",
+          "departure_date": "2026-09-18",
+          "airline": "American Airlines",
+          "price": 81,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "trp_bos_pwm_20260918_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Portland, ME",
+          "mode": "train",
+          "departure_date": "2026-09-18",
+          "price": 112,
+          "available_seats": 18
+        }
+      },
+      {
+        "id": "trp_bos_pwm_20260918_bus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Portland, ME",
+          "mode": "bus",
+          "departure_date": "2026-09-18",
+          "price": 95,
+          "available_seats": 9
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Lena Ortiz at South Harbor Community Alliance about the multilingual tenant-rights workshop. Tell her I can join the planning call on 2026-09-15 at 18:30, ask her to share the latest flyer text and interpreter headcount, and let her know I can bring the sign-in sheets and feedback forms.",
+  "gold_value": null,
+  "session_id": "samantha_bello_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "samantha_bello_communication_01",
+  "rule_ref": {
+    "rule_id": "samantha_bello_communication_01",
+    "rule_text": "When she is preparing an outgoing message that represents her professionally or in community work, Samantha prefers it to be drafted for review rather than sent immediately.",
+    "canonical_answer": "I like important work or community messages drafted first so I can review the tone before they go out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_workshop_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Ortiz <lena.ortiz@southharboralliance.org>",
+          "subject": "Planning call for multilingual tenant-rights workshop",
+          "body": "Hi Samantha, we're finalizing the South Harbor Community Alliance tenant-rights workshop for the neighborhood centers. Could you join the planning call and let me know how many interpreters we should budget for? If you have sign-in sheets or feedback forms you can bring, that would help. We also need the latest flyer text before we print anything.",
+          "thread_id": "thr_lena_workshop_17",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-09-03T10:14:00"
+        }
+      },
+      {
+        "id": "msg_billing_cowork_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Billing Desk <billing@harborcowork.com>",
+          "subject": "September workspace invoice available",
+          "body": "Your monthly workspace invoice is now available in the member portal.",
+          "thread_id": "thr_billing_cowork_08",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-09-03T08:02:00"
+        }
+      },
+      {
+        "id": "msg_erin_dinner_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Erin Wallace <erin.wallace@gmail.com>",
+          "subject": "Dinner this weekend?",
+          "body": "Hey Samantha, are you free to grab dinner this weekend? No worries if you're booked up.",
+          "thread_id": "thr_erin_dinner_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-09-02T19:41:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

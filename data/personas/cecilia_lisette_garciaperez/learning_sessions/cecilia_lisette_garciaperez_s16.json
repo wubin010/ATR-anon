@@ -1,0 +1,118 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "San Antonio",
+    "event_tags": [
+      "museum",
+      "history"
+    ],
+    "ticket_type": "senior",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "San Antonio",
+        "event_tags": [
+          "museum",
+          "history"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_witte_01",
+        "ticket_type": "senior",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_witte_01",
+        "type": "event",
+        "attributes": {
+          "name": "Witte Museum Texas History Evening",
+          "location": "San Antonio",
+          "date_time": "2025-05-10T14:00:00-05:00",
+          "price": 18.0,
+          "event_tags": [
+            "museum",
+            "history",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "evt_briscoe_02",
+        "type": "event",
+        "attributes": {
+          "name": "Briscoe Western Art Guided Visit",
+          "location": "San Antonio",
+          "date_time": "2025-05-10T15:30:00-05:00",
+          "price": 22.0,
+          "event_tags": [
+            "museum",
+            "art",
+            "history"
+          ]
+        }
+      },
+      {
+        "id": "evt_mcnay_03",
+        "type": "event",
+        "attributes": {
+          "name": "McNay Collection Highlights Tour",
+          "location": "San Antonio",
+          "date_time": "2025-05-10T13:00:00-05:00",
+          "price": 20.0,
+          "event_tags": [
+            "museum",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "evt_institute_04",
+        "type": "event",
+        "attributes": {
+          "name": "Institute of Texan Cultures Heritage Stories",
+          "location": "San Antonio",
+          "date_time": "2025-05-10T16:00:00-05:00",
+          "price": 16.0,
+          "event_tags": [
+            "history",
+            "culture",
+            "lecture"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "instruction": "I'm planning a first-time 2-day solo trip around Essen in the Ruhr region of Germany. From the candidate stops below, pick one place to anchor the itinerary and build the plan around it.",
+  "gold_value": [
+    "stop_essen_zollverein_heritage_trail_01"
+  ],
+  "session_id": "joseph_eldridge_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "joseph_eldridge_travel_03",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_travel_03",
+    "rule_text": "When planning a trip, Joseph prefers stops tied to rail history, industrial heritage, renewable energy, or natural trails over generic tourist attractions.",
+    "canonical_answer": "When I travel, I want stops with engineering, rail, industrial, or trail value rather than generic tourist spots."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_essen_zollverein_heritage_trail_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Zollverein Heritage Trail",
+          "stop_type": "industrial_site",
+          "location": "Essen, Ruhr, Germany",
+          "tags": [
+            "industrial_heritage",
+            "rail_history",
+            "engineering",
+            "former_coking_plant",
+            "open_air_route"
+          ],
+          "rating": 4.4,
+          "review_count": 612,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_essen_museum_folkwang_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Museum Folkwang",
+          "stop_type": "art_museum",
+          "location": "Essen, Ruhr, Germany",
+          "tags": [
+            "art_museum",
+            "modern_art",
+            "indoor",
+            "landmark",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 7420,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_essen_villa_hugel_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Villa Hügel Estate",
+          "stop_type": "historic_estate",
+          "location": "Essen, Ruhr, Germany",
+          "tags": [
+            "historic_mansion",
+            "estate",
+            "landmark",
+            "photography",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 5136,
+          "visit_duration_hours": 2.5
+        }
+      },
+      {
+        "id": "stop_essen_baldeneysee_cruise_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Baldeneysee Panorama Cruise",
+          "stop_type": "sightseeing_cruise",
+          "location": "Essen, Ruhr, Germany",
+          "tags": [
+            "lake_cruise",
+            "sightseeing",
+            "waterfront",
+            "photography",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 9180,
+          "visit_duration_hours": 1.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_essen_zollverein_heritage_trail_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "session_id": "joseph_eldridge_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "scheduling",
+  "reason_for_call": "Set a reminder",
+  "task_params": {
+    "calendar": "work",
+    "title": "Keynote: Reliable Power Electronics for Community Microgrids",
+    "start_time": "2025-04-18T14:00:00-04:00",
+    "end_time": "2025-04-18T15:30:00-04:00",
+    "remind_at": "2025-04-17T19:00:00-04:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_keynote_01",
+        "remind_at": "2025-04-17T19:00:00-04:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_keynote_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Keynote: Reliable Power Electronics for Community Microgrids",
+          "start_time": "2025-04-18T14:00:00-04:00",
+          "end_time": "2025-04-18T15:30:00-04:00",
+          "participants": [
+            "events@triangleieee.org",
+            "joseph.eldridge.consulting@example.com"
+          ],
+          "location": "NC State Centennial Campus Conference Center",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_panel_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Panel Rehearsal with AV Team",
+          "start_time": "2025-04-17T10:00:00-04:00",
+          "end_time": "2025-04-17T11:00:00-04:00",
+          "participants": [
+            "av@centennialconf.org",
+            "joseph.eldridge.consulting@example.com"
+          ],
+          "location": "Virtual",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_walk_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Walking Club",
+          "start_time": "2025-04-18T08:00:00-04:00",
+          "end_time": "2025-04-18T09:00:00-04:00",
+          "participants": [
+            "club@durhamwalkers.org"
+          ],
+          "location": "Duke East Campus",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_consult_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Client Design Review",
+          "start_time": "2025-04-16T13:00:00-04:00",
+          "end_time": "2025-04-16T14:30:00-04:00",
+          "participants": [
+            "pm@carolinapowerlabs.com",
+            "joseph.eldridge.consulting@example.com"
+          ],
+          "location": "Carolina Power Labs",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

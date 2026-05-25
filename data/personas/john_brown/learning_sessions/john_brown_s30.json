@@ -1,0 +1,172 @@
+{
+  "session_id": "john_brown_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Montreal",
+      "jazz",
+      "walkable",
+      "budget"
+    ],
+    "destination": "Montreal",
+    "duration_days": 4,
+    "traveler_count": 1,
+    "stop_tags": [
+      "jazz",
+      "walkable"
+    ],
+    "destination_ids": [
+      "dst_montreal_01"
+    ],
+    "selected_stop_ids": [
+      "stp_quartier_01",
+      "stp_saintdenis_02",
+      "stp_upstairs_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Montreal",
+          "jazz",
+          "walkable",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_montreal_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Montreal",
+        "stop_tags": [
+          "jazz",
+          "walkable"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Montreal",
+        "duration_days": 4,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_quartier_01",
+          "stp_saintdenis_02",
+          "stp_upstairs_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_montreal_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Montreal",
+          "region": "Quebec, Canada",
+          "tags": [
+            "jazz",
+            "walkable",
+            "budget",
+            "student",
+            "arts"
+          ]
+        }
+      },
+      {
+        "id": "dst_quebeccity_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Quebec City",
+          "region": "Quebec, Canada",
+          "tags": [
+            "historic",
+            "walkable",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "stp_quartier_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Quartier des Spectacles",
+          "location": "Montreal",
+          "tags": [
+            "jazz",
+            "walkable",
+            "festival",
+            "downtown"
+          ]
+        }
+      },
+      {
+        "id": "stp_saintdenis_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Rue Saint-Denis",
+          "location": "Montreal",
+          "tags": [
+            "walkable",
+            "budget",
+            "cafes",
+            "student"
+          ]
+        }
+      },
+      {
+        "id": "stp_upstairs_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Upstairs Jazz Bar & Grill",
+          "location": "Montreal",
+          "tags": [
+            "jazz",
+            "music",
+            "nightlife"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "session_id": "charlie_james_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files",
+  "task_params": {
+    "location": "bench_dump",
+    "file_ids": [
+      "fil_note_01",
+      "fil_note_02",
+      "fil_sketch_01"
+    ],
+    "scheme": "by_project",
+    "folder_id": "fld_projects_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "bench_dump"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_note_01",
+          "fil_note_02",
+          "fil_sketch_01"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_note_01",
+          "fil_note_02",
+          "fil_sketch_01"
+        ],
+        "folder_id": "fld_projects_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_note_01",
+        "type": "file",
+        "attributes": {
+          "name": "front_clip_measurements.txt",
+          "file_type": "txt",
+          "location": "Desktop/bench_dump",
+          "owner": "Charlie James",
+          "labels": [
+            "repair",
+            "measurements"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_note_02",
+        "type": "file",
+        "attributes": {
+          "name": "wiring_fix_notes.txt",
+          "file_type": "txt",
+          "location": "Desktop/bench_dump",
+          "owner": "Charlie James",
+          "labels": [
+            "repair",
+            "electrical"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_sketch_01",
+        "type": "file",
+        "attributes": {
+          "name": "quarter_panel_concept.jpg",
+          "file_type": "image",
+          "location": "Desktop/bench_dump",
+          "owner": "Charlie James",
+          "labels": [
+            "sketch",
+            "bodywork"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_projects_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Restoration Projects",
+          "purpose": "Active build files and working references"
+        }
+      },
+      {
+        "id": "fld_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Old Shop Archive",
+          "purpose": "Finished or inactive material"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "instruction": "Please put together something the team can use for the community health fair art-therapy station. Save it in /Program Development/Art Therapy Integration, title it \"Community Health Fair Art-Therapy Station Setup,\" and include the supply list, volunteer roles, table layout, and participant check-in steps.",
+  "gold_value": "template",
+  "session_id": "gabriel_campbell_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "gabriel_campbell_workspace_03",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_workspace_03",
+    "rule_text": "When he needs a reusable structure for recurring health-fair or art-therapy planning, he prefers creating a template rather than a one-off note.",
+    "canonical_answer": "Repeatable program work should start from a template, not a scratch note."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_health_fair_booth_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Health Fair Booth Setup Notes",
+          "doc_type": "note",
+          "location": "/Program Development/Art Therapy Integration",
+          "content_brief": "One-off jot sheet from a recent fair covering easels, markers, folding table placement, and volunteer arrival details."
+        }
+      },
+      {
+        "id": "doc_art_therapy_supply_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Art-Therapy Supply Table Reminder",
+          "doc_type": "memo",
+          "location": "/Program Development/Art Therapy Integration",
+          "content_brief": "Single-event reminder about paint trays, wipes, name tags, and sign-in sheets for a weekend program."
+        }
+      },
+      {
+        "id": "doc_wellness_checkin_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Wellness Outreach Check-In Notes",
+          "doc_type": "note",
+          "location": "/Program Development/Art Therapy Integration",
+          "content_brief": "Scratch notes on greeting participants and where completed forms were stacked at the last health fair."
+        }
+      },
+      {
+        "id": "doc_program_activity_grid_01",
+        "type": "document",
+        "attributes": {
+          "title": "Program Activity Planning Grid",
+          "doc_type": "template",
+          "location": "/Program Development/Art Therapy Integration",
+          "content_brief": "Reusable structure for tracking supplies, staff roles, setup layout, and participant flow for program activities."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

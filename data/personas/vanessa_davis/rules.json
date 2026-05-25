@@ -1,0 +1,561 @@
+[
+  {
+    "rule_text": "When planning a leisure trip, she prefers itineraries built around scenic desert and stargazing stops rather than generic city attractions.",
+    "canonical_answer": "When I plan a fun trip, I want the stops to lean toward desert scenery and stargazing instead of standard tourist-city picks.",
+    "counterfactual_default": "Pick the most broadly popular or urban sightseeing stops.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Vanessa prefers road‑trip adventures that blend scenic desert driving with stargazing excursions"
+      },
+      {
+        "type": "direct",
+        "content": "She frequently hikes the dunes and rocky trails around Mojave, often stopping to photograph sunrise and sunset vistas"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "vanessa_davis_travel_01",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a booked trip stop falls through, she prefers replacement stops that preserve the original nature-or-astronomy theme instead of swapping in any high-rated alternative.",
+    "canonical_answer": "If part of my trip breaks, I want the replacement stop to keep the same desert, hiking, or stargazing vibe.",
+    "counterfactual_default": "Replace the disrupted stop with any convenient or highly rated substitute.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Vanessa prefers road‑trip adventures that blend scenic desert driving with stargazing excursions"
+      },
+      {
+        "type": "direct",
+        "content": "She loves stargazing on clear desert nights"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "vanessa_davis_travel_02",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For personal travel, she consistently prefers ground transportation over flights.",
+    "canonical_answer": "For my trips, I usually want to go by road or rail instead of flying.",
+    "counterfactual_default": "Book a flight for the trip.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Vanessa prefers road‑trip adventures"
+      },
+      {
+        "type": "direct",
+        "content": "driver‑sales pro"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "vanessa_davis_travel_03",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging for her own trips, she prefers modest budget-friendly hotel options over upscale ones.",
+    "canonical_answer": "I want practical, budget-conscious lodging rather than luxury hotel splurges.",
+    "counterfactual_default": "Choose a more premium or comfort-maximizing hotel offer.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "when planning these journeys, they balance retirement budgeting with family commitments"
+      },
+      {
+        "type": "direct",
+        "content": "Financially, she aims to build a retirement nest‑egg"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "vanessa_davis_travel_04",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing a restaurant for a treat or gathering, she favors Southern comfort food or seafood-boil places over trendier generic options.",
+    "canonical_answer": "If I’m eating out for fun, I’d rather pick Southern comfort food or a seafood boil spot than a trendy random place.",
+    "counterfactual_default": "Book a popular restaurant without regard to Southern or seafood-boil style.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Vanessa crafts Southern‑style comfort meals"
+      },
+      {
+        "type": "direct",
+        "content": "whenever inspiration strikes, they treat themselves to a local seafood boil featuring shrimp, crab, and fresh corn on the cob"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "vanessa_davis_reservation_01",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For wellness appointments, she prefers booking practical back-relief services like yoga-oriented care over purely pampering appointments.",
+    "canonical_answer": "When I book a service for myself, I prefer something that helps my back and mobility, like yoga-related care, over pampering.",
+    "counterfactual_default": "Choose a generic self-care or beauty-oriented provider.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "to ease back stiffness, they supplement their outdoor routine with occasional yoga sessions"
+      },
+      {
+        "type": "direct",
+        "content": "regular hikes along Mojave dunes and rocky trails"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "vanessa_davis_reservation_03",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For client or community outreach, she prefers messages to be drafted first instead of being sent immediately.",
+    "canonical_answer": "For outreach messages, I want a draft first so I can look it over before anything goes out.",
+    "counterfactual_default": "Send the message directly once the content is prepared.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "leveraging a competitive, skeptical sales approach"
+      },
+      {
+        "type": "direct",
+        "content": "build client trust"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "vanessa_davis_communication_01",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Once a message has been drafted for clients, church contacts, or mentoring groups, she prefers sending the reviewed draft rather than composing a fresh direct send.",
+    "canonical_answer": "If there’s already a draft, I’d rather send that reviewed version than rewrite and send something new on the fly.",
+    "counterfactual_default": "Compose and send a new message directly instead of using the saved draft.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "contributing to mentorship programs"
+      },
+      {
+        "type": "direct",
+        "content": "volunteers at her church’s youth outreach program"
+      },
+      {
+        "type": "direct",
+        "content": "leveraging a competitive, skeptical sales approach"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "send_draft",
+      "param": null
+    },
+    "rule_id": "vanessa_davis_communication_02",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "She prefers labeling church, mentorship, and community-network messages instead of leaving those threads mixed into a general inbox.",
+    "canonical_answer": "I like my church, mentorship, and community threads labeled so they don’t get lost in the general inbox.",
+    "counterfactual_default": "Leave those messages unlabeled in the main inbox.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "volunteers at her church’s youth outreach program"
+      },
+      {
+        "type": "direct",
+        "content": "connected to a network of Black professionals in the transportation sector, contributing to mentorship programs"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "vanessa_davis_communication_03",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "She marks safety, route, and compliance-related messages as high priority rather than treating them like routine correspondence.",
+    "canonical_answer": "If a message affects safety, routing, or compliance, I want it marked high priority.",
+    "counterfactual_default": "Leave those messages at normal priority.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "meticulous route‑planning, safety‑regulation expertise, and practical checklists"
+      },
+      {
+        "type": "direct",
+        "content": "She has a solid grasp of DOT safety regulations"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "vanessa_davis_communication_04",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation overlaps with uncertain work routing or family obligations, she prefers responding tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If my route or family schedule is still up in the air, I answer invitations as tentative.",
+    "counterfactual_default": "Accept or decline the invite immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balance retirement budgeting with family commitments"
+      },
+      {
+        "type": "direct",
+        "content": "Adaptability to Changing Road Conditions"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "vanessa_davis_scheduling_01",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For appointments or activities that need preparation, she prefers reminders tied to the event timing rather than generic standalone reminders.",
+    "canonical_answer": "For anything I need to prep for, I want the reminder set relative to the event itself.",
+    "counterfactual_default": "Set a one-off reminder at an arbitrary time.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "meticulous safety checklists"
+      },
+      {
+        "type": "direct",
+        "content": "conducting thorough pre‑trip and post‑trip vehicle inspections"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "vanessa_davis_scheduling_02",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For church outreach sessions, mentoring meetups, or family gatherings, she prefers creating a proper shared calendar event rather than relying on an informal reminder.",
+    "canonical_answer": "For group plans, I want a real calendar event that everyone can work from.",
+    "counterfactual_default": "Set only a private reminder or keep the plan informal in messages.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekend family gatherings"
+      },
+      {
+        "type": "direct",
+        "content": "volunteers at her church’s youth outreach program"
+      },
+      {
+        "type": "direct",
+        "content": "contributing to mentorship programs"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "vanessa_davis_scheduling_04",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "She prefers work files to be classified by project rather than by date or file type.",
+    "canonical_answer": "I organize work files by project because that matches how I track routes, clients, and jobs.",
+    "counterfactual_default": "Classify files by date or type.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "uses Excel and a simple CRM to keep sales records organized"
+      },
+      {
+        "type": "direct",
+        "content": "compensating for her occasional disorganization with clear, practical checklists"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "vanessa_davis_workspace_01",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "She prefers moving desert-photography files into dedicated folders instead of leaving them mixed with general files.",
+    "canonical_answer": "I like my desert photos moved into their own folders so they’re separate from everything else.",
+    "counterfactual_default": "Leave the photo files in a general folder or mixed workspace.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "sunrise‑and‑sunset desert photography shared with a niche online community"
+      },
+      {
+        "type": "direct",
+        "content": "She frequently hikes the dunes and rocky trails around Mojave, often stopping to photograph sunrise and sunset vistas"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "vanessa_davis_workspace_02",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For blurry or duplicate desert photos, she prefers deleting them outright rather than keeping extra clutter.",
+    "canonical_answer": "If a desert photo is blurry or duplicated, I’d rather delete it than keep clutter around.",
+    "counterfactual_default": "Keep the files or merely move them aside.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "sunrise‑and‑sunset desert photography shared with a niche online community"
+      },
+      {
+        "type": "inferred",
+        "content": "Because she actively shares photography with a niche community, low-quality or duplicate shots are less useful than a clean set of keepers."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "delete_files",
+      "param": null
+    },
+    "rule_id": "vanessa_davis_workspace_03",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When setting up repeatable workflow materials, she prefers creating a template rather than a one-off document.",
+    "canonical_answer": "If it’s something I’ll reuse, I want it built as a template.",
+    "counterfactual_default": "Create a regular one-off document.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "meticulous safety checklists"
+      },
+      {
+        "type": "direct",
+        "content": "clear, practical checklists"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "vanessa_davis_workspace_05",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering food ingredients, she favors Southern comfort staples and seafood-boil items over generic convenience foods.",
+    "canonical_answer": "If I’m ordering ingredients, I want Southern comfort staples or seafood-boil items, not just generic convenience stuff.",
+    "counterfactual_default": "Choose generic or convenience-oriented food products.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "fried chicken, collard greens, and buttery cornbread seasoned with smoked paprika and hot sauce"
+      },
+      {
+        "type": "direct",
+        "content": "a local seafood boil featuring shrimp, crab, and fresh corn on the cob"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "vanessa_davis_commerce_02",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a purchased tool or piece of equipment arrives wrong or defective, she prefers exchanging it for a working replacement rather than taking a refund.",
+    "canonical_answer": "For tools or equipment, I’d rather exchange a bad item than just get a refund.",
+    "counterfactual_default": "Request a refund instead of a replacement.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "maintains a modest DIY garage where she works on small vehicle repair projects"
+      },
+      {
+        "type": "direct",
+        "content": "occasionally builds handcrafted wooden storage crates for her tools"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "vanessa_davis_commerce_03",
+    "persona_id": "vanessa_davis",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

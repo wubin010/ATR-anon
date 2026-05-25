@@ -1,0 +1,105 @@
+{
+  "session_id": "theodora_tong_s49",
+  "session_type": "learning",
+  "day_offset": 49,
+  "domain": "scheduling",
+  "reason_for_call": "Add a reminder to my calendar",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Volunteer Art Workshop",
+    "start_time": "2025-03-21T14:00:00-04:00",
+    "end_time": "2025-03-21T16:00:00-04:00",
+    "remind_at": "2025-03-21T12:30:00-04:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_volunteer_01",
+        "remind_at": "2025-03-21T12:30:00-04:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_volunteer_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Volunteer Art Workshop",
+          "start_time": "2025-03-21T14:00:00-04:00",
+          "end_time": "2025-03-21T16:00:00-04:00",
+          "participants": [
+            "communitycenter@schenectady.org"
+          ],
+          "location": "Schenectady Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_yoga_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Gentle Yoga Class",
+          "start_time": "2025-03-20T18:00:00-04:00",
+          "end_time": "2025-03-20T19:00:00-04:00",
+          "participants": [],
+          "location": "Community Center Studio B",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_study_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Library Study Block",
+          "start_time": "2025-03-22T10:00:00-04:00",
+          "end_time": "2025-03-22T12:00:00-04:00",
+          "participants": [],
+          "location": "Schenectady Public Library",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_prints_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Online Print Shop Check-in",
+          "start_time": "2025-03-19T20:00:00-04:00",
+          "end_time": "2025-03-19T20:30:00-04:00",
+          "participants": [],
+          "location": "",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

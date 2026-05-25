@@ -1,0 +1,162 @@
+{
+  "session_id": "anna_strahan_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a work meeting",
+  "task_params": {
+    "calendar": "work",
+    "participants": [
+      "Maya Chen",
+      "Robert Gaines",
+      "Elena Ruiz"
+    ],
+    "start_time": "2025-03-13T15:30:00-05:00",
+    "end_time": "2025-03-13T15:50:00-05:00",
+    "title": "Budget check-in with department leads",
+    "location": "Conference Room B"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work",
+        "participants": [
+          "Maya Chen",
+          "Robert Gaines",
+          "Elena Ruiz"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-13T15:30:00-05:00",
+        "end_time": "2025-03-13T15:50:00-05:00",
+        "participants": [
+          "Maya Chen",
+          "Robert Gaines",
+          "Elena Ruiz"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Budget check-in with department leads",
+        "start_time": "2025-03-13T15:30:00-05:00",
+        "end_time": "2025-03-13T15:50:00-05:00",
+        "participants": [
+          "Maya Chen",
+          "Robert Gaines",
+          "Elena Ruiz"
+        ],
+        "location": "Conference Room B"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Flow Huddle",
+          "start_time": "2025-03-13T09:00:00-05:00",
+          "end_time": "2025-03-13T09:30:00-05:00",
+          "participants": [
+            "Anna Strahan",
+            "Maya Chen",
+            "Elena Ruiz"
+          ],
+          "location": "Operations Pod",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Flow Review",
+          "start_time": "2025-03-14T11:00:00-05:00",
+          "end_time": "2025-03-14T12:00:00-05:00",
+          "participants": [
+            "Anna Strahan",
+            "Robert Gaines",
+            "Elena Ruiz"
+          ],
+          "location": "Admin Conference Room",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Revenue Cycle Vendor Call",
+          "start_time": "2025-03-13T14:00:00-05:00",
+          "end_time": "2025-03-13T15:00:00-05:00",
+          "participants": [
+            "Anna Strahan",
+            "Robert Gaines"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Clinical Staffing Debrief",
+          "start_time": "2025-03-14T15:00:00-05:00",
+          "end_time": "2025-03-14T15:45:00-05:00",
+          "participants": [
+            "Anna Strahan",
+            "Maya Chen"
+          ],
+          "location": "Conference Room A",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_05",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget check-in with department leads",
+          "start_time": "2025-03-13T15:30:00-05:00",
+          "end_time": "2025-03-13T15:50:00-05:00",
+          "participants": [
+            "Maya Chen",
+            "Robert Gaines",
+            "Elena Ruiz"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "tentative"
+        }
+      }
+    ]
+  }
+}

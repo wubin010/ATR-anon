@@ -1,0 +1,185 @@
+{
+  "session_id": "rafael_ortiz_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Hill Country",
+      "scenic",
+      "outdoors"
+    ],
+    "destination_ids": [
+      "dest_hillcountry_01"
+    ],
+    "destination": "Hill Country",
+    "stop_tags": [
+      "scenic",
+      "outdoors"
+    ],
+    "selected_stop_ids": [
+      "stop_enchantedrock_01",
+      "stop_pedernales_02",
+      "stop_lbj_03"
+    ],
+    "duration_days": 4,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Hill Country",
+          "scenic",
+          "outdoors"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_hillcountry_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Hill Country",
+        "stop_tags": [
+          "scenic",
+          "outdoors"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Hill Country",
+        "duration_days": 4,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_enchantedrock_01",
+          "stop_pedernales_02",
+          "stop_lbj_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_hillcountry_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Texas Hill Country",
+          "region": "Central Texas",
+          "tags": [
+            "scenic",
+            "outdoors",
+            "small towns",
+            "road trip"
+          ]
+        }
+      },
+      {
+        "id": "dest_bigbend_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Big Bend",
+          "region": "West Texas",
+          "tags": [
+            "desert",
+            "outdoors",
+            "scenic",
+            "remote"
+          ]
+        }
+      },
+      {
+        "id": "dest_gulfcoast_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Texas Gulf Coast",
+          "region": "South Texas",
+          "tags": [
+            "beach",
+            "coastal",
+            "scenic",
+            "road trip"
+          ]
+        }
+      },
+      {
+        "id": "stop_enchantedrock_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Enchanted Rock State Natural Area",
+          "location": "Hill Country",
+          "tags": [
+            "scenic",
+            "outdoors",
+            "hiking",
+            "granite dome"
+          ]
+        }
+      },
+      {
+        "id": "stop_pedernales_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Pedernales Falls State Park",
+          "location": "Hill Country",
+          "tags": [
+            "scenic",
+            "outdoors",
+            "waterfall",
+            "state park"
+          ]
+        }
+      },
+      {
+        "id": "stop_lbj_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "LBJ State Park and Historic Site",
+          "location": "Hill Country",
+          "tags": [
+            "scenic",
+            "outdoors",
+            "history",
+            "cultural"
+          ]
+        }
+      }
+    ]
+  }
+}

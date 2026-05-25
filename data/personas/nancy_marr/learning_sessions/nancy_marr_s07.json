@@ -1,0 +1,105 @@
+{
+  "session_id": "nancy_marr_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a reminder.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Community Garden Volunteer Shift",
+    "start_time": "2025-03-15T09:00:00",
+    "end_time": "2025-03-15T11:30:00",
+    "remind_at": "2025-03-15T07:30:00",
+    "cadence": "before_event"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_garden_01",
+        "remind_at": "2025-03-15T07:30:00",
+        "cadence": "before_event"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_garden_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Garden Volunteer Shift",
+          "start_time": "2025-03-15T09:00:00",
+          "end_time": "2025-03-15T11:30:00",
+          "participants": [],
+          "location": "Bryant Neighborhood Community Garden",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_taichi_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning Tai Chi",
+          "start_time": "2025-03-15T07:00:00",
+          "end_time": "2025-03-15T08:00:00",
+          "participants": [],
+          "location": "Twin Cities Yoga Collective",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_lab_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "QC Sample Review",
+          "start_time": "2025-03-14T13:00:00",
+          "end_time": "2025-03-14T14:00:00",
+          "participants": [
+            "lab.team@example.com"
+          ],
+          "location": "Food Science Lab 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_pottery_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pottery Workshop",
+          "start_time": "2025-03-16T14:00:00",
+          "end_time": "2025-03-16T16:00:00",
+          "participants": [],
+          "location": "North Loop Clay Studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

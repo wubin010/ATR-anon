@@ -1,0 +1,115 @@
+{
+  "instruction": "Please change my ScreenScene subscription to a lower-cost plan while keeping the account active.",
+  "gold_value": "basic",
+  "session_id": "joseph_eldridge_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "joseph_eldridge_commerce_03",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_commerce_03",
+    "rule_text": "When cutting back on a recurring service for balance, Joseph prefers a basic plan rather than staying on a higher tier.",
+    "canonical_answer": "If I scale a subscription back, I prefer to drop to the basic plan."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_screenscene_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "ScreenScene",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 19.99,
+          "available_plans": [
+            "basic",
+            "pro",
+            "premium",
+            "enterprise"
+          ],
+          "simultaneous_streams": 4,
+          "video_quality": "4K"
+        }
+      },
+      {
+        "id": "sub_budgetledger_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "BudgetLedger",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 11.99,
+          "available_plans": [
+            "basic",
+            "pro",
+            "premium"
+          ],
+          "linked_accounts": 10,
+          "report_exports_per_month": 50
+        }
+      },
+      {
+        "id": "sub_headlinenow_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "HeadlineNow",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 5.99,
+          "available_plans": [
+            "basic",
+            "pro"
+          ],
+          "delivery": "daily digest"
+        }
+      },
+      {
+        "id": "sub_soundnest_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "SoundNest",
+          "plan": "enterprise",
+          "status": "active",
+          "price_per_period": 24.99,
+          "available_plans": [
+            "basic",
+            "pro",
+            "premium",
+            "enterprise"
+          ],
+          "offline_devices": 12,
+          "audio_quality": "lossless"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "basic"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

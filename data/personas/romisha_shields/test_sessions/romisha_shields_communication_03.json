@@ -1,0 +1,103 @@
+{
+  "instruction": "Please update the priority for the message from Calhoun County Historical Society about courthouse audio archive volunteer planning in my inbox to low.",
+  "gold_value": "high",
+  "session_id": "romisha_shields_communication_03_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "romisha_shields_communication_03",
+  "rule_ref": {
+    "rule_id": "romisha_shields_communication_03",
+    "rule_text": "Messages connected to youth programs, church outreach, or local history work should be marked high priority for her.",
+    "canonical_answer": "If a message is about church outreach, youth programs, or history work, I want it marked high priority."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_calhoun_history_archive_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Calhoun County Historical Society",
+          "subject": "Courthouse audio archive volunteer planning",
+          "body": "I'm putting together a recorder checkout list and a sign-up sheet for neighbors helping with the courthouse oral-history archive. I also attached a draft set of interview prompts for the local history volunteers.",
+          "thread_id": "thr_calhoun_history_archive_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-14T10:18:00"
+        }
+      },
+      {
+        "id": "msg_rina_contract_redlines_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Rina Patel",
+          "subject": "Client contract redlines before 4 PM",
+          "body": "Please review the remaining indemnity edits before the 4 PM client call so we can send the clean version today.",
+          "thread_id": "thr_rina_contract_redlines_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2026-04-14T09:02:00"
+        }
+      },
+      {
+        "id": "msg_riverfront_run_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Riverfront Running Group",
+          "subject": "Saturday route update and coffee stop",
+          "body": "The group voted to shift the turn-around point to the lake trail and meet afterward at Harbor Bean.",
+          "thread_id": "thr_riverfront_run_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-13T18:41:00"
+        }
+      },
+      {
+        "id": "msg_civic_theater_ushers_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Civic Theater Volunteers",
+          "subject": "Usher sign-up sheet for Friday performance",
+          "body": "Here is the latest seating map and the volunteer sign-up sheet for the lobby table.",
+          "thread_id": "thr_civic_theater_ushers_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-14T11:07:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_message_priority",
+          "arguments": {
+            "priority": "high"
+          },
+          "compare_args": [
+            "priority"
+          ]
+        }
+      ]
+    }
+  }
+}

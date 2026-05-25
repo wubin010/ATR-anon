@@ -1,0 +1,117 @@
+{
+  "instruction": "Please order one jar of mild salsa for a snack spread, keep it under $8, and just pick one for me.",
+  "gold_value": "prod_molcajete_mild_verde_01",
+  "session_id": "esther_hoitsma_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "esther_hoitsma_commerce_01",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_commerce_01",
+    "rule_text": "When ordering ingredients or kitchen supplies, Esther prefers products that reflect locally sourced Pacific Northwest or traditional Mexican cooking over generic substitutes.",
+    "canonical_answer": "For cooking purchases, I go for ingredients that feel either traditionally Mexican or distinctly local to the Northwest."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_molcajete_mild_verde_01",
+        "type": "product",
+        "attributes": {
+          "name": "Molcajete Mild Salsa Verde",
+          "price": 7.49,
+          "category": "salsa",
+          "rating": 4.2,
+          "cuisine_style": "traditional Mexican",
+          "heat_level": "mild",
+          "review_count": 91
+        }
+      },
+      {
+        "id": "prod_abuela_roja_fire_01",
+        "type": "product",
+        "attributes": {
+          "name": "Abuela Roja Fire Salsa",
+          "price": 6.99,
+          "category": "salsa",
+          "rating": 4.6,
+          "cuisine_style": "traditional Mexican",
+          "heat_level": "hot",
+          "review_count": 438,
+          "units_sold_last_30_days": 220
+        }
+      },
+      {
+        "id": "prod_raincoast_huckleberry_verde_01",
+        "type": "product",
+        "attributes": {
+          "name": "Rain Coast Huckleberry Salsa Verde",
+          "price": 7.79,
+          "category": "salsa",
+          "rating": 4.7,
+          "origin_region": "Pacific Northwest",
+          "locally_sourced": true,
+          "heat_level": "medium",
+          "review_count": 205,
+          "units_sold_last_30_days": 164
+        }
+      },
+      {
+        "id": "prod_freshfield_mild_chunky_01",
+        "type": "product",
+        "attributes": {
+          "name": "FreshField Mild Chunky Salsa",
+          "price": 4.29,
+          "category": "salsa",
+          "rating": 4.9,
+          "cuisine_style": "generic",
+          "heat_level": "mild",
+          "review_count": 3240,
+          "units_sold_last_30_days": 1910
+        }
+      },
+      {
+        "id": "prod_sunbasket_restaurant_style_01",
+        "type": "product",
+        "attributes": {
+          "name": "SunBasket Restaurant Style Salsa",
+          "price": 3.99,
+          "category": "salsa",
+          "rating": 4.8,
+          "cuisine_style": "generic",
+          "heat_level": "mild",
+          "review_count": 2784,
+          "units_sold_last_30_days": 1685
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_molcajete_mild_verde_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

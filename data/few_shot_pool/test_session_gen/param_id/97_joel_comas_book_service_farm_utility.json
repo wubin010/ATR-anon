@@ -1,0 +1,100 @@
+{
+  "instruction": "Please book me a grounds services appointment in Yakima for 2026-06-10 at 09:00 and just pick the provider.",
+  "gold_value": "svc_yakima_field_01",
+  "session_id": "joel_comas_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "joel_comas",
+  "rule_id": "joel_comas_reservation_01",
+  "rule_ref": {
+    "rule_id": "joel_comas_reservation_01",
+    "rule_text": "When booking local services, Joel prefers practical providers who help with farm operations or maintenance over lifestyle-oriented services.",
+    "canonical_answer": "Whenever I book a local service, I pick the provider who solves a practical farm problem first."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_yakima_field_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Cedar Ridge Field & Equipment Service",
+          "service_type": "grounds services",
+          "location": "Yakima",
+          "rating": 4.4,
+          "distance_km": 8.3,
+          "review_count": 34,
+          "focus": "fence line repairs, irrigation and pump checks, gate hardware, small equipment troubleshooting"
+        }
+      },
+      {
+        "id": "svc_yakima_green_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Yakima Green Crew",
+          "service_type": "grounds services",
+          "location": "Yakima",
+          "rating": 4.9,
+          "distance_km": 1.1,
+          "review_count": 421,
+          "focus": "lawn appearance packages, hedge shaping, flower-bed refreshes"
+        }
+      },
+      {
+        "id": "svc_yakima_blossom_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Blue Blossom Landscape Studio",
+          "service_type": "grounds services",
+          "location": "Yakima",
+          "rating": 4.8,
+          "distance_km": 1.8,
+          "review_count": 287,
+          "focus": "ornamental planting, patio borders, curb-appeal redesign"
+        }
+      },
+      {
+        "id": "svc_yakima_porchlight_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Porchlight Outdoor Living",
+          "service_type": "grounds services",
+          "location": "Yakima",
+          "rating": 4.7,
+          "distance_km": 1.5,
+          "review_count": 204,
+          "focus": "decorative garden layouts, seating areas, accent lighting"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_yakima_field_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

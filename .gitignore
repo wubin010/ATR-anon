@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+data/outputs*
+*.log
+
+# Benchmark data under data/personas/ is curated (rules.json, structured.json,
+# test_sessions/, learning_sessions/, episodes/ only). Intermediate
+# construction artifacts and QC logs are intentionally excluded.
+data/personas/*/raw.json
+data/personas/*/rules_gen.json
+data/personas/*/rules_qc_dropped.json
+data/personas/*/skeleton.json
+data/personas/*/test_session_dropped.json
+data/personas/*/test_session_qc_log.json
+data/personas/*/token_usage.json
+data/personas/*/fill_failures.json

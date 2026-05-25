@@ -1,0 +1,183 @@
+{
+  "session_id": "anna_strahan_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "North Georgia",
+      "mountain",
+      "art"
+    ],
+    "destination_ids": [
+      "dest_blue_ridge_01"
+    ],
+    "destination": "Blue Ridge",
+    "stop_tags": [
+      "hiking",
+      "art"
+    ],
+    "selected_stop_ids": [
+      "stop_fall_branch_01",
+      "stop_blue_ridge_arts_01"
+    ],
+    "duration_days": 2,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "North Georgia",
+          "mountain",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_blue_ridge_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Blue Ridge",
+        "stop_tags": [
+          "hiking",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Blue Ridge",
+        "duration_days": 2,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_fall_branch_01",
+          "stop_blue_ridge_arts_01"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_blue_ridge_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Blue Ridge",
+          "region": "North Georgia",
+          "tags": [
+            "mountain",
+            "hiking",
+            "art",
+            "small-town",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_helen_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Helen",
+          "region": "North Georgia",
+          "tags": [
+            "mountain",
+            "shopping",
+            "river",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_dahlonega_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Dahlonega",
+          "region": "North Georgia",
+          "tags": [
+            "mountain",
+            "wine",
+            "art",
+            "historic"
+          ]
+        }
+      },
+      {
+        "id": "stop_fall_branch_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Fall Branch Falls Trail",
+          "location": "Blue Ridge",
+          "tags": [
+            "hiking",
+            "waterfall",
+            "nature"
+          ]
+        }
+      },
+      {
+        "id": "stop_blue_ridge_arts_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Blue Ridge Mountains Arts Association",
+          "location": "Blue Ridge",
+          "tags": [
+            "art",
+            "gallery",
+            "small-town"
+          ]
+        }
+      },
+      {
+        "id": "stop_mercer_orchard_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mercier Orchards",
+          "location": "Blue Ridge",
+          "tags": [
+            "farm",
+            "food",
+            "scenic"
+          ]
+        }
+      }
+    ]
+  }
+}

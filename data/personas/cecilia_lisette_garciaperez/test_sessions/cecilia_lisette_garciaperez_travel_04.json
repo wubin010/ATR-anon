@@ -1,0 +1,136 @@
+{
+  "instruction": "Book a hotel in Kyoto for two adults, one room, and keep it under $230 per night. I’ll only be there a few days, so just pick one of the available options and take care of it.",
+  "gold_value": "htl_kyoto_higashiyama_courtyard_01",
+  "session_id": "cecilia_lisette_garciaperez_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "cecilia_lisette_garciaperez_travel_04",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_travel_04",
+    "rule_text": "When choosing a hotel, she prefers quieter, smaller-scale lodging options that support a relaxed itinerary over large generic stays.",
+    "canonical_answer": "I pick lodging that feels calm and unhurried rather than big generic hotel options."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_kyoto_higashiyama_courtyard_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Higashiyama Courtyard Inn",
+          "location": "Higashiyama, Kyoto",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 214,
+          "rating": 4.4,
+          "review_count": 186,
+          "property_style": "inn",
+          "room_total": 14,
+          "street_profile": "residential lane",
+          "noise_level": "low"
+        }
+      },
+      {
+        "id": "htl_kyoto_station_central_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Kyoto Station Central Hotel",
+          "location": "Shimogyo, Kyoto",
+          "available_rooms": 18,
+          "max_guests_per_room": 2,
+          "price_per_night": 189,
+          "rating": 4.9,
+          "review_count": 4210,
+          "property_style": "chain hotel",
+          "room_total": 248,
+          "street_profile": "station boulevard",
+          "noise_level": "high"
+        }
+      },
+      {
+        "id": "htl_kyoto_gion_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Gion Grand Plaza Hotel",
+          "location": "Gion, Kyoto",
+          "available_rooms": 11,
+          "max_guests_per_room": 2,
+          "price_per_night": 226,
+          "rating": 4.8,
+          "review_count": 3075,
+          "property_style": "full-service hotel",
+          "room_total": 182,
+          "street_profile": "main tourist street",
+          "noise_level": "medium"
+        }
+      },
+      {
+        "id": "htl_kyoto_shijo_market_tower_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Shijo Market Tower Hotel",
+          "location": "Nakagyo, Kyoto",
+          "available_rooms": 24,
+          "max_guests_per_room": 2,
+          "price_per_night": 205,
+          "rating": 4.7,
+          "review_count": 2654,
+          "property_style": "business hotel",
+          "room_total": 312,
+          "street_profile": "shopping avenue",
+          "noise_level": "medium-high"
+        }
+      },
+      {
+        "id": "htl_kyoto_kamo_townhouse_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Kamo Riverside Townhouse Hotel",
+          "location": "Sanjo, Kyoto",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 221,
+          "rating": 4.6,
+          "review_count": 744,
+          "property_style": "townhouse hotel",
+          "room_total": 32,
+          "street_profile": "late-night dining strip",
+          "noise_level": "medium-high"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_kyoto_higashiyama_courtyard_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

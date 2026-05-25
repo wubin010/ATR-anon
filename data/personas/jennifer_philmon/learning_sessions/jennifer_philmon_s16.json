@@ -1,0 +1,106 @@
+{
+  "session_id": "jennifer_philmon_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a calendar reminder",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Midas car service",
+    "start_time": "2025-03-19T16:30:00-05:00",
+    "end_time": "2025-03-19T17:30:00-05:00",
+    "remind_at": "2025-03-19T15:45:00-05:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_midas_01",
+        "remind_at": "2025-03-19T15:45:00-05:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_midas_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Midas car service",
+          "start_time": "2025-03-19T16:30:00-05:00",
+          "end_time": "2025-03-19T17:30:00-05:00",
+          "participants": [],
+          "location": "Midas Auto Service",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_shift_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Plant shift",
+          "start_time": "2025-03-19T07:00:00-05:00",
+          "end_time": "2025-03-19T15:00:00-05:00",
+          "participants": [],
+          "location": "Regional Power Plant",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_grocery_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Grocery pickup",
+          "start_time": "2025-03-19T18:15:00-05:00",
+          "end_time": "2025-03-19T18:45:00-05:00",
+          "participants": [],
+          "location": "Schnucks",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_team_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Boiler maintenance review",
+          "start_time": "2025-03-20T09:00:00-05:00",
+          "end_time": "2025-03-20T10:00:00-05:00",
+          "participants": [
+            "ops_lead@plant.example",
+            "jennifer.philmon@plant.example"
+          ],
+          "location": "Control Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "session_id": "cassandra_tovar_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "cable tester",
+    "budget": 60,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "cable tester",
+        "budget": 60,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_trekcheck_01",
+          "prod_linklight_02",
+          "prod_fieldtone_03",
+          "prod_signalkey_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_linklight_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_trekcheck_01",
+        "type": "product",
+        "attributes": {
+          "name": "TrekCheck Pocket Cable Tester",
+          "price": 34.99,
+          "category": "cable tester",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_linklight_02",
+        "type": "product",
+        "attributes": {
+          "name": "LinkLight Mini Cable Tester",
+          "price": 49.5,
+          "category": "cable tester",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_fieldtone_03",
+        "type": "product",
+        "attributes": {
+          "name": "FieldTone Compact Cable Tester",
+          "price": 58.0,
+          "category": "cable tester",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_signalkey_04",
+        "type": "product",
+        "attributes": {
+          "name": "SignalKey Basic Cable Tester",
+          "price": 22.75,
+          "category": "cable tester",
+          "rating": 4.0
+        }
+      }
+    ]
+  }
+}

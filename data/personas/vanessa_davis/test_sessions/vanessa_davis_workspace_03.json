@@ -1,0 +1,206 @@
+{
+  "instruction": "Please sort out the Red Mesa sunrise selects in /photos/desert/selects/red_mesa. A few soft or repeated frames are mixed in with the keepers, and I want that folder easier to review before I share from it.",
+  "gold_value": null,
+  "session_id": "vanessa_davis_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "vanessa_davis_workspace_03",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_workspace_03",
+    "rule_text": "For blurry or duplicate desert photos, she prefers deleting them outright rather than keeping extra clutter.",
+    "canonical_answer": "If a desert photo is blurry or duplicated, I’d rather delete it than keep clutter around."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_redmesa_sunrise_duneglow_011",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_duneglow_011.jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T05:48:12",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_duneglow_011",
+          "focus_status": "sharp"
+        }
+      },
+      {
+        "id": "fil_redmesa_sunrise_duneglow_011_dup",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_duneglow_011 copy.jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T05:48:13",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_duneglow_011",
+          "focus_status": "sharp"
+        }
+      },
+      {
+        "id": "fil_redmesa_sunrise_ridgecurve_018",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_ridgecurve_018.jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T05:57:44",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_ridgecurve_018",
+          "focus_status": "sharp"
+        }
+      },
+      {
+        "id": "fil_redmesa_sunrise_ridgecurve_018_soft",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_ridgecurve_018_soft.jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T05:57:45",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_ridgecurve_018_soft",
+          "focus_status": "soft"
+        }
+      },
+      {
+        "id": "fil_redmesa_sunrise_longshadow_023",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_longshadow_023.jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T06:06:31",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_longshadow_023",
+          "focus_status": "sharp"
+        }
+      },
+      {
+        "id": "fil_redmesa_sunrise_longshadow_023_dup",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_longshadow_023 (1).jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T06:06:32",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_longshadow_023",
+          "focus_status": "sharp"
+        }
+      },
+      {
+        "id": "fil_redmesa_sunrise_cactusline_027",
+        "type": "file",
+        "attributes": {
+          "name": "redmesa_sunrise_cactusline_027.jpg",
+          "file_type": "image",
+          "location": "/photos/desert/selects/red_mesa",
+          "owner": "Vanessa Davis",
+          "labels": [
+            "desert",
+            "sunrise",
+            "red_mesa",
+            "selects"
+          ],
+          "archived": false,
+          "captured_at": "2026-06-14T06:14:09",
+          "shoot": "red_mesa_sunrise_2026_06_14",
+          "capture_signature": "rm_cactusline_027",
+          "focus_status": "sharp"
+        }
+      },
+      {
+        "id": "fld_desert_outtakes_holding_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Desert Outtakes Holding",
+          "purpose": "Storage for additional desert frames kept outside the active selects folder.",
+          "location": "/photos/desert/outtakes"
+        }
+      },
+      {
+        "id": "fld_landscape_season_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Landscape Season Archive",
+          "purpose": "Archive for finished landscape photo batches that are no longer in active review.",
+          "location": "/photos/archive/landscapes"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "delete_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

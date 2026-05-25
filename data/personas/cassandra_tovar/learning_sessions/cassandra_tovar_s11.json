@@ -1,0 +1,80 @@
+{
+  "session_id": "cassandra_tovar_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "workspace",
+  "reason_for_call": "Update a work tracker",
+  "task_params": {
+    "title": "Briarwood Elementary AV Refresh Tracker",
+    "completed_points": [
+      "Mounted and leveled the cafeteria display",
+      "Pulled and terminated two Cat6 runs to the rack",
+      "Verified HDMI signal from wall plate to switcher"
+    ],
+    "slipped_points": [
+      "Classroom 204 ceiling speaker install not finished",
+      "Touchpanel network registration still pending"
+    ],
+    "next_action_points": [
+      "Finish speaker install in Classroom 204",
+      "Register touchpanel on control VLAN",
+      "Run end-to-end audio test before sign-off"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_briarwood_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from completed_points, slipped_points, next_action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_briarwood_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Briarwood Elementary AV Refresh Tracker"
+        }
+      },
+      {
+        "id": "trk_midtown_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Midtown Church Sanctuary Upgrade Log"
+        }
+      },
+      {
+        "id": "trk_lakeside_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Lakeside Library Digital Signage Punchlist"
+        }
+      }
+    ]
+  }
+}

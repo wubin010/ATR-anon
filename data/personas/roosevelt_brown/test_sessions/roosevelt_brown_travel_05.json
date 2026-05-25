@@ -1,0 +1,199 @@
+{
+  "instruction": "One planned stop in Portland, Maine is no longer available. Please swap in one replacement for a daytime visit that should take about 60–90 minutes and keep the route easy without a big detour.",
+  "gold_value": [
+    "stop_maine_craft_exchange_01"
+  ],
+  "session_id": "roosevelt_brown_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "roosevelt_brown_travel_05",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_travel_05",
+    "rule_text": "When a trip stop falls through, he prefers replacement stops that preserve the same art, design, or cultural theme instead of swapping in whatever is most convenient.",
+    "canonical_answer": "If a stop on my trip breaks, I want the replacement to keep the same creative or cultural vibe."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_press_lane_warehouse_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Press Lane Warehouse",
+          "stop_type": "studio_collective",
+          "location": "Portland, Maine",
+          "tags": [
+            "gallery",
+            "makers",
+            "indoor",
+            "daytime"
+          ],
+          "trip_id": "T-7742",
+          "status": "canceled",
+          "visit_duration_hours": 1.0,
+          "detour_minutes_from_current_route": 0
+        }
+      },
+      {
+        "id": "stop_maine_craft_exchange_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Maine Craft Exchange",
+          "stop_type": "craft_market",
+          "location": "Portland, Maine",
+          "tags": [
+            "craft",
+            "makers",
+            "indoor",
+            "daytime"
+          ],
+          "trip_id": "T-7742",
+          "status": "available",
+          "rating": 4.4,
+          "review_count": 118,
+          "visit_duration_hours": 1.0,
+          "detour_minutes_from_current_route": 9
+        }
+      },
+      {
+        "id": "stop_harbor_contemporary_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Harbor Contemporary Museum",
+          "stop_type": "museum",
+          "location": "East Bayside, Portland, Maine",
+          "tags": [
+            "museum",
+            "indoor",
+            "daytime",
+            "popular"
+          ],
+          "trip_id": "T-7742",
+          "status": "available",
+          "rating": 4.8,
+          "review_count": 1642,
+          "visit_duration_hours": 2.0,
+          "detour_minutes_from_current_route": 26
+        }
+      },
+      {
+        "id": "stop_union_station_food_hall_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Union Station Food Hall",
+          "stop_type": "food_hall",
+          "location": "Downtown Portland, Maine",
+          "tags": [
+            "food",
+            "indoor",
+            "daytime",
+            "popular"
+          ],
+          "trip_id": "T-7742",
+          "status": "available",
+          "rating": 4.8,
+          "review_count": 2410,
+          "visit_duration_hours": 1.0,
+          "detour_minutes_from_current_route": 4
+        }
+      },
+      {
+        "id": "stop_old_port_harbor_walk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Old Port Harbor Walk",
+          "stop_type": "waterfront_walk",
+          "location": "Old Port, Portland, Maine",
+          "tags": [
+            "waterfront",
+            "scenic",
+            "daytime",
+            "popular"
+          ],
+          "trip_id": "T-7742",
+          "status": "available",
+          "rating": 4.9,
+          "review_count": 3204,
+          "visit_duration_hours": 0.75,
+          "detour_minutes_from_current_route": 3
+        }
+      },
+      {
+        "id": "stop_casco_bay_viewpoint_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Casco Bay Viewpoint",
+          "stop_type": "viewpoint",
+          "location": "Portland, Maine",
+          "tags": [
+            "scenic",
+            "waterfront",
+            "daytime"
+          ],
+          "trip_id": "T-7742",
+          "status": "available",
+          "rating": 4.7,
+          "review_count": 1875,
+          "visit_duration_hours": 1.0,
+          "detour_minutes_from_current_route": 2
+        }
+      },
+      {
+        "id": "stop_east_end_brew_hall_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "East End Brew Hall",
+          "stop_type": "brewery_taproom",
+          "location": "Portland, Maine",
+          "tags": [
+            "drinks",
+            "indoor",
+            "daytime",
+            "popular"
+          ],
+          "trip_id": "T-7742",
+          "status": "available",
+          "rating": 4.9,
+          "review_count": 2108,
+          "visit_duration_hours": 1.25,
+          "detour_minutes_from_current_route": 1
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_maine_craft_exchange_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

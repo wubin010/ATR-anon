@@ -1,0 +1,89 @@
+{
+  "session_id": "maximo_esteban_irizarry_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working note",
+  "task_params": {
+    "template_doc_type": "template",
+    "doc_type": "note",
+    "location": "Archive Lab",
+    "title": "Folk Story Archive Idea - Dawn Notes",
+    "content_brief_points": [
+      "purpose: collect Puerto Rican folk stories in digital form",
+      "audience: younger generations, local families, diaspora",
+      "features: audio clips, transcripts, photos, simple browsing",
+      "values: low-bandwidth access and accessibility",
+      "next steps: outline contributors, metadata, pilot sample"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Archive Lab",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Folk Story Archive Idea - Dawn Notes",
+        "location": "Archive Lab",
+        "content_brief": "<authored from content_brief_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Archive Project Note Template",
+          "doc_type": "template",
+          "location": "Archive Lab",
+          "content_brief": "Template for capturing idea, audience, core features, risks, and next steps."
+        }
+      },
+      {
+        "id": "doc_note_02",
+        "type": "document",
+        "attributes": {
+          "title": "Oral History Interview Questions",
+          "doc_type": "note",
+          "location": "Archive Lab",
+          "content_brief": "Question list for elders, memory prompts, and recording reminders."
+        }
+      },
+      {
+        "id": "doc_report_03",
+        "type": "document",
+        "attributes": {
+          "title": "Rural Connectivity Constraints",
+          "doc_type": "report",
+          "location": "Archive Lab",
+          "content_brief": "Notes on bandwidth limits, device access, and offline-friendly design."
+        }
+      }
+    ]
+  }
+}

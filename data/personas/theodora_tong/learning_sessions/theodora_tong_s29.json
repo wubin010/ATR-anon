@@ -1,0 +1,99 @@
+{
+  "session_id": "theodora_tong_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "communication",
+  "reason_for_call": "Send a family update",
+  "task_params": {
+    "recipient": "Aunt Marjorie",
+    "subject": "A little update from me",
+    "language": "en",
+    "body_points": [
+      "say I finally planned a short restorative trip",
+      "mention it is for a quiet reset",
+      "say I am relieved to have it sorted out",
+      "keep the tone warm and friendly",
+      "wish she is doing well"
+    ]
+  },
+  "expected_tools": [
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "recipient": "Aunt Marjorie",
+        "subject": "A little update from me",
+        "language": "en",
+        "body": "<authored from body_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_cousin_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena",
+          "subject": "Photos from the garden",
+          "body": "Thought you'd like these blooms.",
+          "thread_id": "thr_family_07",
+          "folder": "inbox",
+          "labels": [
+            "family"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-12T18:04:00"
+        }
+      },
+      {
+        "id": "msg_shop_02",
+        "type": "message",
+        "attributes": {
+          "sender": "ArtSupply Hub",
+          "subject": "Your order has shipped",
+          "body": "Your package is on the way.",
+          "thread_id": "thr_orders_12",
+          "folder": "inbox",
+          "labels": [
+            "shopping"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-12T09:15:00"
+        }
+      },
+      {
+        "id": "msg_volunteer_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Community Center",
+          "subject": "Saturday craft table sign-up",
+          "body": "Let us know if you can help this weekend.",
+          "thread_id": "thr_vol_03",
+          "folder": "archive",
+          "labels": [
+            "volunteer"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-02-10T14:20:00"
+        }
+      }
+    ]
+  }
+}

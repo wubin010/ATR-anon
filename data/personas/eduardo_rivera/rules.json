@@ -1,0 +1,614 @@
+[
+  {
+    "rule_text": "When he needs to communicate technical or patient-facing details, he prefers a draft to review first rather than having the message sent immediately.",
+    "canonical_answer": "I like technical or patient-facing messages drafted first so I can review the wording before anything goes out.",
+    "counterfactual_default": "Send the completed message directly once the content is prepared.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "communicates technical details clearly with dentists, ophthalmologists, and patients"
+      },
+      {
+        "type": "direct",
+        "content": "documents quality assurance protocols"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "eduardo_rivera_communication_01",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing a place for a meal out, he favors relaxed restaurants over formal fine-dining spots.",
+    "canonical_answer": "For meals out, I prefer relaxed places over formal fine-dining rooms.",
+    "counterfactual_default": "Pick the most upscale or conventionally impressive restaurant option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they love sharing these meals at relaxed dinner gatherings"
+      },
+      {
+        "type": "direct",
+        "content": "a desire for meaningful experiences over luxury"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "eduardo_rivera_reservation_01",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a restaurant, he gravitates toward Mexican or modern Mexican-inspired places over generic options.",
+    "canonical_answer": "If we're eating out, I usually want Mexican or Mexican-inspired food over something generic.",
+    "counterfactual_default": "Choose a broadly popular restaurant without any cuisine preference tied to his background.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "grew up in a Mexican-American household"
+      },
+      {
+        "type": "direct",
+        "content": "Cooking traditional Mexican dishes and fusion recipes"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "eduardo_rivera_reservation_02",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When selecting arts events, he prefers intimate gallery openings or cultural-identity-centered shows over large mainstream entertainment events.",
+    "canonical_answer": "For arts outings, I go for intimate gallery openings and cultural shows rather than big mainstream events.",
+    "counterfactual_default": "Choose the most popular or largest event available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "regularly attends intimate gallery openings featuring artists who explore cultural identity"
+      },
+      {
+        "type": "direct",
+        "content": "Occasionally, he attends intimate gallery openings or cultural events that celebrate Mexican art"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "eduardo_rivera_reservation_03",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a social invitation feels larger or more socially intense than his usual style, he prefers replying tentatively rather than accepting outright.",
+    "canonical_answer": "If an invite feels more social than my usual pace, I prefer to answer maybe first instead of committing right away.",
+    "counterfactual_default": "Accept the invitation immediately if there is no hard scheduling conflict.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "love for solitary creativity"
+      },
+      {
+        "type": "direct",
+        "content": "favoring the strategic challenge over large social settings"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "eduardo_rivera_scheduling_01",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring personal routines like hikes, rides, or study practice, he prefers weekly reminders instead of one-off nudges.",
+    "canonical_answer": "For routines I want to keep up with, a weekly reminder works better for me than a one-time alert.",
+    "counterfactual_default": "Set a single reminder for the next occurrence only.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "regular hikes through the East Bay Trail Hikers club"
+      },
+      {
+        "type": "direct",
+        "content": "squeezes in weekend cycling rides along the Bay"
+      },
+      {
+        "type": "direct",
+        "content": "In the next two years Eduardo plans to earn the Certified Dental Technician (CDT) credential"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "eduardo_rivera_scheduling_02",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a trip, he prioritizes historic, artistic, and culturally immersive stops over generic luxury attractions.",
+    "canonical_answer": "When I travel, I want stops with cultural and artistic depth more than luxury attractions.",
+    "counterfactual_default": "Pick the most luxurious or tourist-standard stops on the itinerary.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "cultural immersion in Seville's historic barrios"
+      },
+      {
+        "type": "direct",
+        "content": "a design-focused tour of Tokyo's art districts"
+      },
+      {
+        "type": "direct",
+        "content": "a desire for meaningful experiences over luxury"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "eduardo_rivera_travel_01",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For getaway itineraries, he leans toward sunrise hikes, cliffs, and scenic nature viewpoints rather than nightlife-centered stops.",
+    "canonical_answer": "On trips, I prefer scenic hikes and viewpoints over nightlife stops.",
+    "counterfactual_default": "Favor evening entertainment or nightlife-heavy stops in the plan.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "sunrise hikes along the cliffs of Big Sur"
+      },
+      {
+        "type": "direct",
+        "content": "Hiking the foothills around Mount Diablo offers him solitary reflection and a connection to nature"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "eduardo_rivera_travel_02",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging, he prefers modest hotel options over luxury stays.",
+    "canonical_answer": "I usually choose modest hotels because I care more about the trip than luxury lodging.",
+    "counterfactual_default": "Choose the most comfortable or upscale hotel offer available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "all balanced against a modest travel budget and a desire for meaningful experiences over luxury"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "eduardo_rivera_travel_03",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a trip stop falls through, he prefers replacement stops that preserve the original nature-or-culture theme rather than swapping in whatever is simply most convenient.",
+    "canonical_answer": "When a stop changes, I like the replacement to keep the same nature or culture vibe instead of just taking any convenient substitute.",
+    "counterfactual_default": "Replace the disrupted stop with the easiest or highest-rated alternative regardless of theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "plans trips with a blend of meticulous itineraries and spontaneous detours"
+      },
+      {
+        "type": "direct",
+        "content": "sunrise hikes along the cliffs of Big Sur, and cultural immersion in Seville's historic barrios"
+      },
+      {
+        "type": "inferred",
+        "content": "Because his travel is organized around specific experience types—nature reflection and cultural immersion—he would want replanning to preserve the trip's original character."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "eduardo_rivera_travel_05",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he does fly, he prefers a window seat for the views.",
+    "canonical_answer": "If I have to fly, I prefer a window seat for the scenery.",
+    "counterfactual_default": "Choose an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "captures urban texture with a vintage Leica"
+      },
+      {
+        "type": "direct",
+        "content": "watercolor paintings of folk motifs and Bay Area vistas"
+      },
+      {
+        "type": "direct",
+        "content": "sunrise hikes along the cliffs of Big Sur"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "eduardo_rivera_travel_06",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering cooking ingredients, he favors fresh heirloom chilies, local citrus, and similarly characterful produce over generic substitutes.",
+    "canonical_answer": "For cooking, I prefer heirloom chilies, local citrus, and other flavorful ingredients over generic produce.",
+    "counterfactual_default": "Choose the most standard or cheapest ingredient option regardless of origin or variety.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often sourcing fresh heirloom chilies and local oranges to layer flavor"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "eduardo_rivera_commerce_01",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a purchased tool or material is wrong, he prefers exchanging it for the correct one rather than taking a refund.",
+    "canonical_answer": "If the wrong tool or material arrives, I'd rather exchange it than just get my money back.",
+    "counterfactual_default": "Request a refund and stop there.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "3D-printing personal projects"
+      },
+      {
+        "type": "direct",
+        "content": "selecting biocompatible metals, ceramics, and polymers"
+      },
+      {
+        "type": "inferred",
+        "content": "His technical work and hobby projects depend on having the right materials on hand, so replacement is more useful to him than abandoning the purchase."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "eduardo_rivera_commerce_03",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For core professional design or workflow software, he prefers the pro tier over a basic plan.",
+    "canonical_answer": "For software I rely on for design and workflow, I prefer the pro plan over basic.",
+    "counterfactual_default": "Stay on the basic plan unless forced to upgrade.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "leverages CAD/CAM expertise"
+      },
+      {
+        "type": "direct",
+        "content": "plans to earn the Certified Dental Technician (CDT) credential and deepen his expertise in 3D scanning and digital workflow integration"
+      },
+      {
+        "type": "inferred",
+        "content": "Someone actively deepening digital workflow expertise is likely to value stronger software capabilities rather than the most stripped-down tier."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "eduardo_rivera_commerce_04",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing files, he prefers classifying them by project rather than by generic type or date buckets.",
+    "canonical_answer": "I organize files by project first, not just by file type or date.",
+    "counterfactual_default": "Sort files into broad type-based or date-based categories.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "leads small project teams"
+      },
+      {
+        "type": "direct",
+        "content": "Project planning and workflow optimization"
+      },
+      {
+        "type": "direct",
+        "content": "methodical workflow management"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "eduardo_rivera_workspace_01",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When setting up reusable documentation for repeated procedures or mentoring, he prefers creating a template rather than a one-off note.",
+    "canonical_answer": "For repeatable procedures or teaching materials, I prefer a template over a one-off note.",
+    "counterfactual_default": "Write a fresh note each time the procedure or guidance comes up.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "documents quality assurance protocols"
+      },
+      {
+        "type": "direct",
+        "content": "mentors junior technicians"
+      },
+      {
+        "type": "inferred",
+        "content": "Because he both documents protocols and mentors others, reusable templates fit his work better than repeatedly creating ad hoc notes."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "eduardo_rivera_workspace_03",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When moving files, he prefers project-specific destination folders over broad catch-all folders.",
+    "canonical_answer": "If files are being moved, I want them in project-specific folders rather than broad catch-all folders.",
+    "counterfactual_default": "Move the files into a generic shared folder based on convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "leads small project teams"
+      },
+      {
+        "type": "direct",
+        "content": "Project planning and workflow optimization"
+      },
+      {
+        "type": "inferred",
+        "content": "A project-centered workflow implies that destination folders should preserve project boundaries instead of flattening everything into generic storage."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "eduardo_rivera_workspace_05",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When labeling messages, he prefers dedicated labels for community health outreach and cultural events instead of leaving those threads mixed with general correspondence.",
+    "canonical_answer": "I like community outreach and cultural-event emails labeled distinctly instead of mixed into general messages.",
+    "counterfactual_default": "Leave those threads unlabeled or grouped only under a generic inbox category.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "volunteers at community health fairs, providing dental education to underserved populations"
+      },
+      {
+        "type": "direct",
+        "content": "participates in local Latino festivals"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "eduardo_rivera_communication_02",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a local service appointment, he favors independent or community-rooted providers over impersonal chain options.",
+    "canonical_answer": "For local appointments, I prefer independent or community-rooted providers over chain businesses.",
+    "counterfactual_default": "Choose the largest chain or most standardized provider available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "supports community programs that promote health education"
+      },
+      {
+        "type": "direct",
+        "content": "participates in local Latino festivals"
+      },
+      {
+        "type": "direct",
+        "content": "plays chess in small coffee shops"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "eduardo_rivera_reservation_05",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When creating a new calendar plan for a small gathering, he prefers making a shared event rather than leaving it as a private reminder.",
+    "canonical_answer": "If I'm planning a get-together with other people, I want it as a real shared event, not just a private reminder.",
+    "counterfactual_default": "Set a personal reminder for himself instead of creating a calendar event others can join.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they love sharing these meals at relaxed dinner gatherings"
+      },
+      {
+        "type": "direct",
+        "content": "sharing meals with his spouse and close friends"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "eduardo_rivera_scheduling_03",
+    "persona_id": "eduardo_rivera",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

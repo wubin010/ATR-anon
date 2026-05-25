@@ -1,0 +1,128 @@
+{
+  "session_id": "michael_argo_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "communication",
+  "reason_for_call": "Draft and send a follow-up message",
+  "task_params": {
+    "sender": "Lena Ortiz",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank her for taking time to talk after the gallery event",
+      "say the conversation about community murals stuck with me",
+      "mention I liked hearing about youth workshops",
+      "say I'd love to stay in touch",
+      "offer to share a few images from my sketchbook if helpful"
+    ],
+    "label_ids": [
+      "lbl_arts_01"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "list_labels",
+    "label_messages",
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Lena Ortiz",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_lena_01"
+        ],
+        "label_ids": [
+          "lbl_arts_01"
+        ]
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "thread_id": "thr_lena_01",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Ortiz",
+          "subject": "Great meeting you at Crescent Arts",
+          "body": "Hey Michael — it was nice talking with you after the pop-up at Crescent Arts on Saturday. I liked hearing about your mixed-media sketches. If you want to keep in touch, feel free to reply here. I’m also helping with some youth workshop planning and mural ideas this month.",
+          "thread_id": "thr_lena_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-06T10:14:00"
+        }
+      },
+      {
+        "id": "msg_news_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Riverfront Arts Center",
+          "subject": "February class schedule",
+          "body": "Here’s the latest class schedule and open studio calendar for February.",
+          "thread_id": "thr_rac_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-05T08:05:00"
+        }
+      },
+      {
+        "id": "msg_friend_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Evan Brooks",
+          "subject": "Photos from the train ride",
+          "body": "Uploading the shots later tonight — the station sketches came out great.",
+          "thread_id": "thr_evan_01",
+          "folder": "sent",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-04T21:33:00"
+        }
+      },
+      {
+        "id": "lbl_arts_01",
+        "type": "label",
+        "attributes": {
+          "name": "Arts Contacts",
+          "topic": "local creative networking"
+        }
+      }
+    ]
+  }
+}

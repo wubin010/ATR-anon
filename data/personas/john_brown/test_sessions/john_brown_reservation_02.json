@@ -1,0 +1,115 @@
+{
+  "instruction": "I'm in New Orleans and want tickets for a night out for two people; keep it under $50 each, pick something and book it.",
+  "gold_value": "evt_crescent_jazz_01",
+  "session_id": "john_brown_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "john_brown_reservation_02",
+  "rule_ref": {
+    "rule_id": "john_brown_reservation_02",
+    "rule_text": "When choosing live events, he prefers jazz, hip-hop, or brass-band performances over generic entertainment options.",
+    "canonical_answer": "For nights out, I usually want jazz, hip-hop, or brass-band events first."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_crescent_jazz_01",
+        "type": "event",
+        "attributes": {
+          "name": "Crescent City Jazz Quartet at Frenchmen Hall",
+          "location": "New Orleans",
+          "date_time": "2026-06-12T20:30:00",
+          "price": 46,
+          "rating": 4.4,
+          "reviews_count": 61,
+          "event_tags": [
+            "jazz",
+            "live_music",
+            "quartet"
+          ]
+        }
+      },
+      {
+        "id": "evt_riverfront_pop_01",
+        "type": "event",
+        "attributes": {
+          "name": "Riverfront Summer Pop Showcase",
+          "location": "New Orleans",
+          "date_time": "2026-06-12T19:00:00",
+          "price": 39,
+          "rating": 4.9,
+          "reviews_count": 1284,
+          "event_tags": [
+            "pop",
+            "concert",
+            "live_music"
+          ]
+        }
+      },
+      {
+        "id": "evt_warehouse_comedy_01",
+        "type": "event",
+        "attributes": {
+          "name": "Warehouse District Comedy Night",
+          "location": "New Orleans",
+          "date_time": "2026-06-12T18:30:00",
+          "price": 28,
+          "rating": 4.8,
+          "reviews_count": 940,
+          "event_tags": [
+            "comedy",
+            "stand_up",
+            "nightlife"
+          ]
+        }
+      },
+      {
+        "id": "evt_bourbon_rock_01",
+        "type": "event",
+        "attributes": {
+          "name": "Bourbon Street Rock Tribute",
+          "location": "New Orleans",
+          "date_time": "2026-06-12T20:00:00",
+          "price": 34,
+          "rating": 4.7,
+          "reviews_count": 702,
+          "event_tags": [
+            "rock",
+            "tribute_band",
+            "live_music"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_crescent_jazz_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

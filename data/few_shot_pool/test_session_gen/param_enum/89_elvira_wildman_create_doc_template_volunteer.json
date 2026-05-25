@@ -1,0 +1,86 @@
+{
+  "instruction": "Please write something up for the River North front desk volunteers and save it in /Operations/Guides. It should explain how they start the mail log each morning, where paper donation receipts get placed, and who to contact when printer paper or envelopes run low.",
+  "gold_value": "template",
+  "session_id": "elvira_wildman_workspace_02_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "elvira_wildman",
+  "rule_id": "elvira_wildman_workspace_02",
+  "rule_ref": {
+    "rule_id": "elvira_wildman_workspace_02",
+    "rule_text": "When creating office guidance for others, she prefers a reusable template instead of a one-off document.",
+    "canonical_answer": "My rule is to make reusable templates when I’m documenting a process others will follow."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_frontdesk_closing_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "River North Front Desk Closing Instructions",
+          "doc_type": "memo",
+          "location": "/Operations/Guides",
+          "content_brief": "End-of-day steps for volunteers, including lobby cabinet lockup, visitor sheet sign-off, and petty cash envelope drop."
+        }
+      },
+      {
+        "id": "doc_supply_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Office Supply Reorder Notes",
+          "doc_type": "note",
+          "location": "/Operations/Guides",
+          "content_brief": "Where backup paper and envelopes are stored and the admin contact for restocking."
+        }
+      },
+      {
+        "id": "doc_donation_routing_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Donation Receipt Routing",
+          "doc_type": "memo",
+          "location": "/Operations/Guides",
+          "content_brief": "Paper receipt handling steps before finance pickup."
+        }
+      },
+      {
+        "id": "doc_vehicle_checkout_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Vehicle Checkout Sheet",
+          "doc_type": "template",
+          "location": "/Operations/Templates",
+          "content_brief": "Reusable form for recording sign-out time, return time, driver name, and fuel level."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm heading to Washington, DC for a quick weekend and need the one-way trip from Boston, MA on 2026-09-12 booked for just me. I don't need lodging or anything else—just handle getting me there.",
+  "gold_value": null,
+  "session_id": "gabriel_campbell_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "gabriel_campbell_travel_03",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_travel_03",
+    "rule_text": "For regional or weekend travel, he prefers ground transportation over flying.",
+    "canonical_answer": "For shorter getaways, I always take ground transport instead of a flight when that option exists."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_bos_washdc_20260912_jetblue_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-12",
+          "airline": "JetBlue",
+          "price": 92,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_bos_washdc_20260912_delta_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-12",
+          "airline": "Delta Air Lines",
+          "price": 104,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_bos_washdc_20260912_american_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-12",
+          "airline": "American Airlines",
+          "price": 111,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "trp_bos_washdc_20260912_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "mode": "train",
+          "departure_date": "2026-09-12",
+          "price": 146,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "trp_bos_washdc_20260912_bus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "mode": "bus",
+          "departure_date": "2026-09-12",
+          "price": 129,
+          "available_seats": 11
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "session_id": "samantha_bello_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "reservation",
+  "reason_for_call": "Book a grooming appointment.",
+  "task_params": {
+    "service_type": "salon",
+    "location": "Rincon",
+    "sort_by": "rating",
+    "date_time": "2025-02-20T16:30:00-04:00"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "salon",
+        "location": "Rincon",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "svc_brisa_01",
+        "date_time": "2025-02-20T16:30:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_brisa_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Brisa Salon Studio",
+          "service_type": "salon",
+          "location": "Rincon",
+          "rating": 4.9,
+          "distance_km": 1.8
+        }
+      },
+      {
+        "id": "svc_ola_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Ola Beauty Room",
+          "service_type": "salon",
+          "location": "Rincon",
+          "rating": 4.7,
+          "distance_km": 1.2
+        }
+      },
+      {
+        "id": "svc_maria_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Maria's Hair Loft",
+          "service_type": "salon",
+          "location": "Aguada",
+          "rating": 4.8,
+          "distance_km": 9.6
+        }
+      },
+      {
+        "id": "svc_coral_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Coral Glow Spa",
+          "service_type": "spa",
+          "location": "Rincon",
+          "rating": 4.8,
+          "distance_km": 2.4
+        }
+      }
+    ]
+  }
+}

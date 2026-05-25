@@ -1,0 +1,150 @@
+{
+  "instruction": "One stop on trip T-7418 in Cartagena fell through. Please swap in a single replacement that can fit in about 1–2 hours and won't require more than a short detour from the current route.",
+  "gold_value": [
+    "stop_cartagena_walled_courtyards_01"
+  ],
+  "session_id": "maximo_esteban_irizarry_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "maximo_esteban_irizarry_travel_03",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_travel_03",
+    "rule_text": "When a booked trip is disrupted, he prefers replacing failed stops with alternatives in the same cultural or nature theme rather than swapping the whole trip.",
+    "canonical_answer": "If part of a trip falls through, I prefer a like-for-like replacement that keeps the trip's original character."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_cartagena_santa_clara_cloister_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Santa Clara Cloister Museum",
+          "location": "Cartagena, Colombia",
+          "tags": [
+            "history",
+            "museum",
+            "colonial_architecture",
+            "cultural",
+            "daytime"
+          ],
+          "trip_id": "T-7418",
+          "availability": "unavailable",
+          "stop_status": "disrupted",
+          "rating": 4.6,
+          "detour_minutes_from_current_route": 0,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_cartagena_walled_courtyards_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Walled City Courtyards Walk",
+          "location": "Cartagena, Colombia",
+          "tags": [
+            "history",
+            "architecture",
+            "street_life",
+            "cultural",
+            "daytime"
+          ],
+          "availability": "available",
+          "rating": 4.4,
+          "detour_minutes_from_current_route": 12,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_cartagena_san_felipe_fortress_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "San Felipe Fortress",
+          "location": "Cartagena, Colombia",
+          "tags": [
+            "history",
+            "fortress",
+            "landmark",
+            "cultural",
+            "daytime"
+          ],
+          "availability": "available",
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 26,
+          "visit_duration_hours": 3.0
+        }
+      },
+      {
+        "id": "stop_cartagena_bocagrande_boardwalk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Bocagrande Beachfront Boardwalk",
+          "location": "Cartagena, Colombia",
+          "tags": [
+            "waterfront",
+            "beach",
+            "daytime",
+            "popular"
+          ],
+          "availability": "available",
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 5,
+          "visit_duration_hours": 1.0
+        }
+      },
+      {
+        "id": "stop_cartagena_marina_promenade_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Marina Harbor Promenade",
+          "location": "Cartagena, Colombia",
+          "tags": [
+            "waterfront",
+            "scenic",
+            "daytime",
+            "popular"
+          ],
+          "availability": "available",
+          "rating": 4.8,
+          "detour_minutes_from_current_route": 4,
+          "visit_duration_hours": 1.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_cartagena_walled_courtyards_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

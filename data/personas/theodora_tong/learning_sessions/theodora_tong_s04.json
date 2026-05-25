@@ -1,0 +1,97 @@
+{
+  "session_id": "theodora_tong_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "reservation",
+  "reason_for_call": "Book an appointment.",
+  "task_params": {
+    "service_type": "gentle yoga",
+    "location": "Schenectady",
+    "date_time": "2025-02-14T18:30:00",
+    "sort_by": "distance"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "gentle yoga",
+        "location": "Schenectady",
+        "sort_by": "distance"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "svc_riverstone_01",
+        "date_time": "2025-02-14T18:30:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_riverstone_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Riverstone Community Center Wellness Studio",
+          "service_type": "gentle yoga",
+          "location": "Schenectady",
+          "rating": 4.8,
+          "distance_km": 2.1
+        }
+      },
+      {
+        "id": "svc_mohawk_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Mohawk Community Center Movement Room",
+          "service_type": "gentle yoga",
+          "location": "Schenectady",
+          "rating": 4.6,
+          "distance_km": 3.4
+        }
+      },
+      {
+        "id": "svc_stockade_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Stockade Wellness Collective",
+          "service_type": "restorative yoga",
+          "location": "Schenectady",
+          "rating": 4.9,
+          "distance_km": 4.2
+        }
+      },
+      {
+        "id": "svc_niskayuna_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Niskayuna Community Fitness Annex",
+          "service_type": "gentle yoga",
+          "location": "Niskayuna",
+          "rating": 4.5,
+          "distance_km": 6.8
+        }
+      }
+    ]
+  }
+}

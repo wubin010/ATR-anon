@@ -1,0 +1,403 @@
+[
+  {
+    "rule_text": "When he wants to contact someone about work, community projects, or plans, he prefers the message to be drafted for review instead of being sent immediately.",
+    "canonical_answer": "I like messages drafted first so I can review the tone before anything gets sent.",
+    "counterfactual_default": "Send the message directly once the requested content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "maintains a reflective journal to manage his emotional reactivity"
+      },
+      {
+        "type": "direct",
+        "content": "a quiet demeanor"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "maximo_esteban_irizarry_communication_01",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When triaging incoming messages tied to mentorship, client work, or community organizing, he prefers to mark them high priority so they do not get lost.",
+    "canonical_answer": "I mark mentorship, client, and community-project messages as high priority so I stay on top of them.",
+    "counterfactual_default": "Leave the messages at normal priority and rely on the inbox order.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "mentoring junior coders"
+      },
+      {
+        "type": "direct",
+        "content": "guiding a part-time consultancy"
+      },
+      {
+        "type": "direct",
+        "content": "organizing small art-tech meet-ups"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "maximo_esteban_irizarry_communication_03",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he is keeping up an existing checklist or workshop log, he prefers recording the next action rather than just changing the status.",
+    "canonical_answer": "On an existing tracker, I like to record the next action so the follow-up stays concrete.",
+    "counterfactual_default": "Simply update the status field and leave the next step unspecified.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "emphasising clear documentation and collaborative problem solving"
+      },
+      {
+        "type": "direct",
+        "content": "mentors junior developers"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "update_tracker",
+      "param": "update_action"
+    },
+    "rule_id": "maximo_esteban_irizarry_workspace_04",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation overlaps with something unresolved or potentially tiring, he prefers to respond tentatively rather than accepting or declining right away.",
+    "canonical_answer": "If an invite conflicts with my energy or plans, I usually answer tentatively first.",
+    "counterfactual_default": "Accept or decline the invitation outright based on the current best guess.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "keeping his social circles manageable"
+      },
+      {
+        "type": "direct",
+        "content": "a flexible, community-first mindset"
+      },
+      {
+        "type": "direct",
+        "content": "bouts of anxiety that sometimes derail their disciplined routines"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "maximo_esteban_irizarry_scheduling_03",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When dining out or meeting socially, he prefers reservations at culturally rooted local places over generic mainstream options.",
+    "canonical_answer": "For meals out, I prefer local places with cultural character over generic spots.",
+    "counterfactual_default": "Choose a convenient or widely rated restaurant without prioritizing local cultural character.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers tranquil, culturally-rich destinations"
+      },
+      {
+        "type": "direct",
+        "content": "culturally resonant"
+      },
+      {
+        "type": "direct",
+        "content": "Cultural pride"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "maximo_esteban_irizarry_reservation_01",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking local service appointments, he prefers familiar, community-oriented providers over anonymous chain-style options.",
+    "canonical_answer": "For local appointments, I prefer someone rooted in the community over a generic chain provider.",
+    "counterfactual_default": "Choose the most available or most broadly rated provider regardless of community connection.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "small local businesses in Orocovis"
+      },
+      {
+        "type": "direct",
+        "content": "community-first mindset"
+      },
+      {
+        "type": "direct",
+        "content": "The close-knit community of Villalba Municipio and the broader Puerto Rican diaspora inform his values of humility, cooperation, and cultural pride."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "maximo_esteban_irizarry_reservation_03",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When selecting stops for a trip, he prefers culturally rich, artisanal, or historic places over generic tourist highlights.",
+    "canonical_answer": "I choose stops with history, craft, and local culture rather than generic attractions.",
+    "counterfactual_default": "Choose the most popular or highest-rated tourist stops regardless of cultural depth.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers tranquil, culturally-rich destinations"
+      },
+      {
+        "type": "direct",
+        "content": "historic streets of Cartagena"
+      },
+      {
+        "type": "direct",
+        "content": "artisanal markets of Oaxaca"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "maximo_esteban_irizarry_travel_02",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a booked trip is disrupted, he prefers replacing failed stops with alternatives in the same cultural or nature theme rather than swapping the whole trip.",
+    "canonical_answer": "If part of a trip falls through, I prefer a like-for-like replacement that keeps the trip's original character.",
+    "counterfactual_default": "Replace the full itinerary or choose any convenient substitute regardless of theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers tranquil, culturally-rich destinations"
+      },
+      {
+        "type": "direct",
+        "content": "volcanic scenery of the Azores"
+      },
+      {
+        "type": "direct",
+        "content": "historic streets of Cartagena"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "maximo_esteban_irizarry_travel_03",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For long-distance travel, he prefers ground transport over flights when that option fits the trip.",
+    "canonical_answer": "When I can, I prefer going by ground rather than flying.",
+    "counterfactual_default": "Look for and book flights first for long-distance travel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers tranquil, culturally-rich destinations"
+      },
+      {
+        "type": "inferred",
+        "content": "A deliberate traveler focused on modest savings and calmer travel would often favor the slower, less hectic option over flying."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "maximo_esteban_irizarry_travel_05",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a flight must be booked, he prefers a window seat for the calmer view and quieter experience.",
+    "canonical_answer": "If I have to fly, I prefer a window seat.",
+    "counterfactual_default": "Choose an aisle seat for convenience getting up and down.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "quiet demeanor"
+      },
+      {
+        "type": "direct",
+        "content": "often capturing sunrise vistas with his DSLR camera"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "maximo_esteban_irizarry_travel_06",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging, he prefers offers that match modest, budget-conscious stays over upscale accommodations.",
+    "canonical_answer": "I book modest places that fit the budget instead of paying for upscale lodging.",
+    "counterfactual_default": "Choose the most comfortable or premium hotel offer within reach.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "plan each trip around modest savings"
+      },
+      {
+        "type": "direct",
+        "content": "staying with family in nearby coastal villages when budgets tighten"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "maximo_esteban_irizarry_travel_07",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When shopping for food or cooking supplies, he prefers products suited to traditional Puerto Rican cooking over generic alternatives.",
+    "canonical_answer": "For cooking, I choose ingredients that fit Puerto Rican dishes and flavors.",
+    "counterfactual_default": "Pick generic or broadly popular products without regard to Puerto Rican cooking traditions.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "preparing traditional dishes like arroz con gandules, pasteles, and lechón de cerdo"
+      },
+      {
+        "type": "direct",
+        "content": "relish seasoning with sofrito, cilantro, and adobo"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "maximo_esteban_irizarry_commerce_01",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When returning a purchased item that did not work out, he prefers an exchange over a refund so he can still get the right version.",
+    "canonical_answer": "If something misses the mark, I usually want an exchange rather than just a refund.",
+    "counterfactual_default": "Request a refund and end the purchase altogether.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "preparing traditional dishes like arroz con gandules, pasteles, and lechón de cerdo, often adding modern twists"
+      },
+      {
+        "type": "inferred",
+        "content": "His maker mentality and iterative habits suggest replacing an imperfect item with a better-fit version rather than abandoning the purchase."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "maximo_esteban_irizarry_commerce_03",
+    "persona_id": "maximo_esteban_irizarry",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

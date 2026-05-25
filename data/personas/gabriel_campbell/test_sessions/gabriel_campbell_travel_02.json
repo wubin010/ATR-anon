@@ -1,0 +1,155 @@
+{
+  "instruction": "One stop on trip T-4408 on the Monterey Peninsula fell through. Please swap in a single replacement for a daytime visit on the peninsula that can fit in about 60–90 minutes and stays within roughly 15 minutes of the current route.",
+  "gold_value": [
+    "stop_asilomar_dunes_boardwalk_01"
+  ],
+  "session_id": "gabriel_campbell_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "gabriel_campbell_travel_02",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_travel_02",
+    "rule_text": "When an existing trip has to be replanned, he prefers replacement stops that preserve the original art-or-nature theme rather than swapping in any convenient high-rated alternative.",
+    "canonical_answer": "Whenever a stop falls through, I always replace it with something in the same artistic or landscape spirit."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_asilomar_dunes_boardwalk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Asilomar Dunes Boardwalk",
+          "location": "Pacific Grove, Monterey Peninsula, California",
+          "tags": [
+            "nature",
+            "coastal",
+            "boardwalk",
+            "dunes",
+            "daytime"
+          ],
+          "trip_id": "T-4408",
+          "stop_type": "nature_boardwalk",
+          "rating": 4.4,
+          "detour_minutes_from_current_route": 12,
+          "visit_duration_hours": 1.25
+        }
+      },
+      {
+        "id": "stop_lovers_point_coastal_trail_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lovers Point Coastal Trail",
+          "location": "Pacific Grove, Monterey Peninsula, California",
+          "tags": [
+            "nature",
+            "coastal",
+            "scenic",
+            "daytime",
+            "popular"
+          ],
+          "trip_id": "T-4408",
+          "stop_type": "coastal_trail",
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 26,
+          "visit_duration_hours": 1.0
+        }
+      },
+      {
+        "id": "stop_cannery_row_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Cannery Row",
+          "location": "Monterey, Monterey Peninsula, California",
+          "tags": [
+            "historic_district",
+            "shopping",
+            "popular",
+            "daytime",
+            "waterfront"
+          ],
+          "trip_id": "T-4408",
+          "stop_type": "historic_district",
+          "rating": 4.8,
+          "detour_minutes_from_current_route": 4,
+          "visit_duration_hours": 1.25
+        }
+      },
+      {
+        "id": "stop_monterey_bay_aquarium_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Monterey Bay Aquarium",
+          "location": "Monterey, Monterey Peninsula, California",
+          "tags": [
+            "aquarium",
+            "popular",
+            "family",
+            "waterfront",
+            "daytime"
+          ],
+          "trip_id": "T-4408",
+          "stop_type": "aquarium",
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 5,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_old_fishermans_wharf_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Old Fisherman's Wharf",
+          "location": "Monterey, Monterey Peninsula, California",
+          "tags": [
+            "harbor",
+            "shops",
+            "restaurants",
+            "popular",
+            "daytime"
+          ],
+          "trip_id": "T-4408",
+          "stop_type": "waterfront_pier",
+          "rating": 4.7,
+          "detour_minutes_from_current_route": 6,
+          "visit_duration_hours": 1.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_asilomar_dunes_boardwalk_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

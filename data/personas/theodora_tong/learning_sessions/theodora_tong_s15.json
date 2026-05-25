@@ -1,0 +1,163 @@
+{
+  "session_id": "theodora_tong_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination": "Lake Placid",
+    "duration_days": 3,
+    "traveler_count": 1,
+    "stop_tags": [
+      "nature",
+      "scenic",
+      "easy_walk"
+    ],
+    "selected_stop_ids": [
+      "stop_mirror_01",
+      "stop_heaven_02",
+      "stop_peninsula_03"
+    ],
+    "destination_constraints": [
+      "Lake Placid",
+      "Adirondacks",
+      "budget"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Lake Placid",
+          "Adirondacks",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Lake Placid",
+        "stop_tags": [
+          "nature",
+          "scenic",
+          "easy_walk"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Lake Placid",
+        "duration_days": 3,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_mirror_01",
+          "stop_heaven_02",
+          "stop_peninsula_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_lakeplacid_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Lake Placid",
+          "region": "Adirondacks",
+          "tags": [
+            "nature",
+            "mountains",
+            "budget",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "dest_saranaclake_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Saranac Lake",
+          "region": "Adirondacks",
+          "tags": [
+            "nature",
+            "lakes",
+            "arts",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "stop_mirror_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mirror Lake Loop",
+          "location": "Lake Placid",
+          "tags": [
+            "nature",
+            "scenic",
+            "easy_walk",
+            "lake"
+          ]
+        }
+      },
+      {
+        "id": "stop_heaven_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Heaven Hill Trails",
+          "location": "Lake Placid",
+          "tags": [
+            "nature",
+            "scenic",
+            "easy_walk",
+            "woods"
+          ]
+        }
+      },
+      {
+        "id": "stop_peninsula_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Brewster Peninsula Nature Trails",
+          "location": "Lake Placid",
+          "tags": [
+            "nature",
+            "scenic",
+            "easy_walk",
+            "waterfront"
+          ]
+        }
+      }
+    ]
+  }
+}

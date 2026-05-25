@@ -1,0 +1,197 @@
+[
+  {
+    "rule_id_origin": "elizabeth_pesacreta_travel_01",
+    "rule_text": "For new trip ideas, she prefers building an itinerary draft before committing to any single booking.",
+    "counterfactual_default": "Someone without this rule would often jump straight to booking the first appealing flight or hotel.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": null
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 在『有 trip idea 想出门』的情境下也会先 plan_trip 出 itinerary 再 book —— 先规划再预订是任何 helpful agent 的标准流程,gold action 就是 passive 默认动作。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_reservation_04",
+    "rule_text": "For gallery or theater outings, she prefers buying standard tickets rather than paying for VIP upgrades.",
+    "counterfactual_default": "Someone without this rule would often upgrade to VIP for better access or perks.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "ticket_type"
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 给 27 岁 persona 买票时从 ticket_type enum [general_admission|senior|vip|child] 也会选 general_admission —— senior/child 不匹配年龄,VIP 不是默认。gold action 跟 passive 默认重合。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_workspace_03",
+    "rule_text": "When creating a new structured work artifact, she prefers a spreadsheet rather than a note or memo.",
+    "counterfactual_default": "Someone without this rule would often start with a note or memo because it is quicker and less formal.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 在『建一个新的结构化工作 artifact』的情境下从 doc_type enum [note|memo|spreadsheet|report|template] 也大概率选 spreadsheet —— 结构化记录对应 spreadsheet 是 commonsense。gold action 跟 passive 默认重合。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_workspace_04",
+    "rule_text": "When she needs to maintain ongoing safety or process records, she prefers updating an existing tracker rather than creating a new standalone document.",
+    "counterfactual_default": "Someone without this rule would often create a new note or spreadsheet for each new batch of information.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "update_tracker",
+      "param": null
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 在『已有 ongoing tracker, 要继续记录』的情境下也会调 update_tracker —— tracker 已经存在的上下文里走 update_tracker 是 commonsense。gold action 跟 passive 默认重合。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_workspace_05",
+    "rule_text": "When adding an item to an existing tracker, she prefers creating a new entry rather than overwriting an older one.",
+    "counterfactual_default": "Someone without this rule would often update an existing line item or status in place.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "update_tracker",
+      "param": "update_action"
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 在『往 tracker 加新条目』的情境下从 update_action enum [create_entry|update_status|...] 也大概率选 create_entry —— 加新条目语义上对应 create_entry 是 commonsense。gold action 跟 passive 默认重合。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_communication_02",
+    "rule_text": "When drafting messages, she prefers writing them in English.",
+    "counterfactual_default": "Someone without this rule would sometimes choose another available language depending on context.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "draft_message",
+      "param": "language"
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 给 USA + English 母语 persona 起草消息时从 language enum [en|zh] 也会选 en —— demographics 蕴含的默认。gold action 跟 passive 默认重合。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_scheduling_01",
+    "rule_text": "When she is replying to invitations she is unsure she can make, she prefers to answer tentatively rather than accept or decline outright.",
+    "counterfactual_default": "Someone without this rule would usually accept if interested or decline if the timing looked inconvenient.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "verdict": "yes",
+    "label": "enum_third_option_wedge",
+    "explanation": "passive 默认在 accept / decline 之间二选一，不会主动选 tentative——这是合法 enum wedge。不要因为 'relaxed / flexible' 这类形容词出现在 rule 上下文就判成 generic。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_travel_04",
+    "rule_text": "For long-distance travel with a tight budget, she prefers ground transport options over flights when the experience is still worthwhile.",
+    "counterfactual_default": "Someone without this rule would usually check and book flights first for longer trips.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "verdict": "yes",
+    "label": "cross_tool_binary_wedge",
+    "explanation": "passive 默认走 book_flight，rule 让 agent 切到 book_ground_transport——经典 cross-tool 二选一 wedge。不要因为 rule_text 谈了两个工具就判成 generic。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_commerce_01",
+    "rule_text": "For recurring services that she may return to later, she prefers pausing them instead of canceling outright.",
+    "counterfactual_default": "Someone without this rule would typically cancel the subscription entirely when trying to cut back.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "pause_subscription",
+      "param": null
+    },
+    "verdict": "yes",
+    "label": "binary_tool_wedge",
+    "explanation": "pause_subscription vs cancel_subscription 是合法 binary tool wedge，passive 默认 cancel。不要因为 evidence 链间接就误判 generic。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_communication_01",
+    "rule_text": "When handling messages related to safety, logistics, or coordination, she prefers drafting them first rather than sending them immediately.",
+    "counterfactual_default": "Someone without this rule would often send the message directly once the main points were written.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "verdict": "yes",
+    "label": "binary_tool_wedge",
+    "explanation": "draft_message vs send_message 是合法 binary tool wedge，passive 默认直接 send。不要把它判成 careful-agent best practice。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_workspace_02",
+    "rule_text": "When cleaning up workspace files she no longer needs active access to, she prefers archiving them rather than deleting them.",
+    "counterfactual_default": "Someone without this rule would often delete old files to clear space or reduce clutter.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "archive_files",
+      "param": null
+    },
+    "verdict": "yes",
+    "label": "binary_tool_wedge",
+    "explanation": "archive_files vs delete_files 是合法 binary tool wedge，prompt §1 钦定 ✓ 例。"
+  },
+  {
+    "rule_id_origin": "jutta_ashton_workspace_07",
+    "rule_text": "When she organizes or updates notes for an arts or community initiative, she prefers a memo rather than an informal note.",
+    "counterfactual_default": "Someone without this rule would jot the plan down in a casual note.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "memo 和 note 是 doc_type enum 里 formality 相邻的两档,本质同类动作的程度差。没这个 rule, passive 在『记录艺术/社区计划』的情境下选 note 还是 memo 都属于合理动作,跟 gold action 选 memo 没结构性差异 —— 这不是反常识 wedge,只是 degree-level 偏好。"
+  },
+  {
+    "rule_id_origin": "marlene_graham_scheduling_04",
+    "rule_text": "When a group event changes because different people need to be included, she prefers updating the participant list rather than recreating the event.",
+    "counterfactual_default": "Someone without this rule would often cancel the old event and make a new one with the new people.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "modify_event",
+      "param": "field"
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "没这个 rule, passive 在『已有 group event 需要改参与人』的情境下也会 modify_event 把 participants 字段改了 —— 改一个字段比 cancel 重建是 commonsense。gold action 跟 passive 默认重合。"
+  },
+  {
+    "rule_id_origin": "elvira_wildman_workspace_04",
+    "rule_text": "Before deleting files outright, she wants to be asked first.",
+    "counterfactual_default": "Someone without this rule would go ahead and delete the requested files directly.",
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "delete_files"
+    },
+    "verdict": "yes",
+    "label": "confirm_rule_wedge",
+    "explanation": "confirm rule 是『让 agent 在 mutate 前先调 get_user_confirmation』的合法 wedge——passive 默认直接 delete_files,rule 让 agent 先 confirm。这跟『pause vs cancel』那种 binary tool wedge 不同型,但同样是真 wedge。不要因为『再确认一下是 careful agent 的 best practice』就误判 generic。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_communication_04",
+    "rule_text": "For messages about local arts, community events, or artist outreach, she prefers labeling them for later rather than archiving them out of sight.",
+    "counterfactual_default": "Someone without this rule would often archive those messages once the inbox felt crowded.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "label_messages",
+      "param": null
+    },
+    "verdict": "no",
+    "label": "passive_would_default_same",
+    "explanation": "label_messages 和 archive_messages 不互斥——passive 在『organize community emails』中性 instruction 下会自然顺手 label + archive 两个都做。gold action = label_messages 在 passive trajectory 里也被命中——passive 跟 rule-following agent 在 evaluator 视角下没区别,rule 没创造 wedge。do-X-don't-Y 要求 X、Y 互斥才算 wedge。"
+  }
+]

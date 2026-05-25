@@ -1,0 +1,165 @@
+{
+  "instruction": "Please tidy the files sitting in /Shared/Dropzone — it's a mix of PDFs, spreadsheets, docs, and scans that have piled up over the last few months, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "romisha_shields_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "romisha_shields_workspace_01",
+  "rule_ref": {
+    "rule_id": "romisha_shields_workspace_01",
+    "rule_text": "When organizing files for her projects, she prefers grouping them by project rather than by type, date, owner, or priority.",
+    "canonical_answer": "I keep things sorted by project, like the cookbook or a church event, more than by file type."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_drop_intro_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "intro_notes.docx",
+          "file_type": "docx",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Family Recipe Cookbook",
+          "modified_date": "2026-05-02",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_drop_cover_scan_01",
+        "type": "file",
+        "attributes": {
+          "name": "cover_scan.image",
+          "file_type": "image",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Family Recipe Cookbook",
+          "modified_date": "2026-03-29",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_drop_inventory_sheet_01",
+        "type": "file",
+        "attributes": {
+          "name": "inventory_sheet.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Calhoun County Audio Archive",
+          "modified_date": "2026-04-11",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_drop_release_packet_01",
+        "type": "file",
+        "attributes": {
+          "name": "release_packet.pdf",
+          "file_type": "pdf",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Calhoun County Audio Archive",
+          "modified_date": "2026-06-03",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_drop_table_assignments_01",
+        "type": "file",
+        "attributes": {
+          "name": "table_assignments.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Spring Church Social",
+          "modified_date": "2026-04-25",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_drop_handout_flyer_01",
+        "type": "file",
+        "attributes": {
+          "name": "handout_flyer.pdf",
+          "file_type": "pdf",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Spring Church Social",
+          "modified_date": "2026-06-14",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_drop_weekend_outline_01",
+        "type": "file",
+        "attributes": {
+          "name": "weekend_outline.docx",
+          "file_type": "docx",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Family Reunion",
+          "modified_date": "2026-05-18",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_drop_badge_mockup_01",
+        "type": "file",
+        "attributes": {
+          "name": "badge_mockup.image",
+          "file_type": "image",
+          "location": "/Shared/Dropzone",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false,
+          "project": "Family Reunion",
+          "modified_date": "2026-03-30",
+          "priority": "low"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

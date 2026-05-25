@@ -1,0 +1,139 @@
+{
+  "session_id": "samantha_bello_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule something on my calendar.",
+  "task_params": {
+    "calendar": "work",
+    "participants": [
+      "marco.diaz@coastalholdings.com",
+      "nina.patel@coastalholdings.com",
+      "devon.choi@coastalholdings.com",
+      "elena.ruiz@coastalholdings.com"
+    ],
+    "new_start_time": "2025-03-18T10:00:00-04:00",
+    "new_end_time": "2025-03-18T11:00:00-04:00"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "reschedule_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work",
+        "participants": [
+          "marco.diaz@coastalholdings.com",
+          "nina.patel@coastalholdings.com",
+          "devon.choi@coastalholdings.com",
+          "elena.ruiz@coastalholdings.com"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-18T10:00:00-04:00",
+        "end_time": "2025-03-18T11:00:00-04:00",
+        "participants": [
+          "marco.diaz@coastalholdings.com",
+          "nina.patel@coastalholdings.com",
+          "devon.choi@coastalholdings.com",
+          "elena.ruiz@coastalholdings.com"
+        ]
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_budgetsync_01",
+        "new_start_time": "2025-03-18T10:00:00-04:00",
+        "new_end_time": "2025-03-18T11:00:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_budgetsync_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Q2 Budget Alignment",
+          "start_time": "2025-03-18T14:30:00-04:00",
+          "end_time": "2025-03-18T15:30:00-04:00",
+          "participants": [
+            "marco.diaz@coastalholdings.com",
+            "nina.patel@coastalholdings.com",
+            "devon.choi@coastalholdings.com",
+            "elena.ruiz@coastalholdings.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_cashflow_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Cash Flow Review",
+          "start_time": "2025-03-18T08:30:00-04:00",
+          "end_time": "2025-03-18T09:15:00-04:00",
+          "participants": [
+            "samantha.bello@coastalholdings.com",
+            "marco.diaz@coastalholdings.com"
+          ],
+          "location": "Finance War Room",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_vendor_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Vendor Renewal Call",
+          "start_time": "2025-03-18T11:30:00-04:00",
+          "end_time": "2025-03-18T12:00:00-04:00",
+          "participants": [
+            "samantha.bello@coastalholdings.com",
+            "elena.ruiz@coastalholdings.com"
+          ],
+          "location": "Teams",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_yoga_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Yoga Class",
+          "start_time": "2025-03-18T18:00:00-04:00",
+          "end_time": "2025-03-18T19:00:00-04:00",
+          "participants": [
+            "samantha.bello@personalmail.com"
+          ],
+          "location": "Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

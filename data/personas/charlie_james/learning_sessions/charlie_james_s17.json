@@ -1,0 +1,105 @@
+{
+  "session_id": "charlie_james_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "guitar strings",
+    "budget": 15,
+    "sort_by": "rating",
+    "product_id": "prod_ernie_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "guitar strings",
+        "budget": 15,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_ernie_01",
+          "prod_daddario_02",
+          "prod_martin_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_ernie_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_ernie_01",
+        "type": "product",
+        "attributes": {
+          "name": "Ernie Ball Regular Slinky Electric Guitar Strings 10-46",
+          "price": 6.99,
+          "category": "guitar strings",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_daddario_02",
+        "type": "product",
+        "attributes": {
+          "name": "D'Addario EXL110 Nickel Wound Electric Guitar Strings 10-46",
+          "price": 7.49,
+          "category": "guitar strings",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_fender_03",
+        "type": "product",
+        "attributes": {
+          "name": "Fender Super 250L Nickel Plated Steel Guitar Strings 9-42",
+          "price": 5.99,
+          "category": "guitar strings",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_martin_04",
+        "type": "product",
+        "attributes": {
+          "name": "Martin Authentic Acoustic Guitar Strings Light 12-54",
+          "price": 9.99,
+          "category": "guitar strings",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

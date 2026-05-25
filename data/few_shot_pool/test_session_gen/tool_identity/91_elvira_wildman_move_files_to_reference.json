@@ -1,0 +1,117 @@
+{
+  "instruction": "Please sort out the three Brightwell files that have been sitting in /workspace/inbox: the site survey notes, the budget snapshot, and the handoff summary. I need to keep them for reference, but that work is finished and I just want them organized.",
+  "gold_value": null,
+  "session_id": "elvira_wildman_workspace_06_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "elvira_wildman",
+  "rule_id": "elvira_wildman_workspace_06",
+  "rule_ref": {
+    "rule_id": "elvira_wildman_workspace_06",
+    "rule_text": "When organizing workspace files she wants to retain but clear from active use, she prefers moving them into a destination folder rather than classifying them in place.",
+    "canonical_answer": "Whenever I’m clearing active workspace clutter, I always move files into the right folder instead of just tagging them."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_brightwell_site_survey_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "Brightwell site survey notes.docx",
+          "file_type": "docx",
+          "location": "/workspace/inbox",
+          "owner": "Elvira Wildman",
+          "labels": [
+            "inbox"
+          ],
+          "archived": false,
+          "project": "brightwell_site_survey",
+          "modified_date": "2026-05-07",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_brightwell_budget_snapshot_01",
+        "type": "file",
+        "attributes": {
+          "name": "Brightwell budget snapshot.xlsx",
+          "file_type": "xlsx",
+          "location": "/workspace/inbox",
+          "owner": "Elvira Wildman",
+          "labels": [
+            "inbox"
+          ],
+          "archived": false,
+          "project": "brightwell_q2_budget",
+          "modified_date": "2026-05-12",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_brightwell_handoff_summary_01",
+        "type": "file",
+        "attributes": {
+          "name": "Brightwell handoff summary.pdf",
+          "file_type": "pdf",
+          "location": "/workspace/inbox",
+          "owner": "Elvira Wildman",
+          "labels": [
+            "inbox"
+          ],
+          "archived": false,
+          "project": "brightwell_handoff",
+          "modified_date": "2026-05-18",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fld_reference_library_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Reference Library",
+          "location": "/workspace/reference"
+        }
+      },
+      {
+        "id": "fld_shared_materials_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Shared Materials",
+          "location": "/workspace/shared"
+        }
+      },
+      {
+        "id": "fld_templates_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Templates",
+          "location": "/workspace/templates"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "move_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "session_id": "michael_argo_s44",
+  "session_type": "learning",
+  "day_offset": 44,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Chicago",
+      "Nashville",
+      "galleries",
+      "cheap transit"
+    ],
+    "destination_ids": [
+      "dst_chicago_01",
+      "dst_nashville_02"
+    ],
+    "destination": "Chicago",
+    "stop_tags": [
+      "gallery",
+      "cheap transit",
+      "wander"
+    ],
+    "selected_stop_ids": [
+      "stp_pilsen_01",
+      "stp_riverwalk_02",
+      "stp_mca_03"
+    ],
+    "duration_days": 3,
+    "traveler_count": 1
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Chicago",
+          "Nashville",
+          "galleries",
+          "cheap transit"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_chicago_01",
+          "dst_nashville_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Chicago",
+        "stop_tags": [
+          "gallery",
+          "cheap transit",
+          "wander"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Chicago",
+        "duration_days": 3,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_pilsen_01",
+          "stp_riverwalk_02",
+          "stp_mca_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_chicago_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Chicago",
+          "region": "Illinois",
+          "tags": [
+            "galleries",
+            "cheap transit",
+            "walkable",
+            "sketchbook"
+          ]
+        }
+      },
+      {
+        "id": "dst_nashville_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Nashville",
+          "region": "Tennessee",
+          "tags": [
+            "galleries",
+            "cheap transit",
+            "art neighborhoods",
+            "sketchbook"
+          ]
+        }
+      },
+      {
+        "id": "stp_pilsen_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Pilsen Murals and Galleries Walk",
+          "location": "Chicago",
+          "tags": [
+            "gallery",
+            "wander",
+            "street art",
+            "cheap transit"
+          ]
+        }
+      },
+      {
+        "id": "stp_riverwalk_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Chicago Riverwalk Sketch Stop",
+          "location": "Chicago",
+          "tags": [
+            "wander",
+            "sketchbook",
+            "cheap transit",
+            "waterfront"
+          ]
+        }
+      },
+      {
+        "id": "stp_mca_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Museum of Contemporary Art Chicago",
+          "location": "Chicago",
+          "tags": [
+            "gallery",
+            "modern art",
+            "cheap transit",
+            "indoor"
+          ]
+        }
+      }
+    ]
+  }
+}

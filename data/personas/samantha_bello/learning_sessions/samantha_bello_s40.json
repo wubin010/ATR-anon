@@ -1,0 +1,98 @@
+{
+  "session_id": "samantha_bello_s40",
+  "session_type": "learning",
+  "day_offset": 40,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Personal Trips",
+    "doc_type": "note",
+    "title": "Spontaneous Trip Packing Checklist",
+    "checklist_points": [
+      "art supplies: watercolor set, brushes, small paper pad, pencil",
+      "chargers: phone cable, watch charger, power bank, wall plug",
+      "surf basics: swimsuit, rash guard, leash, wax, towel",
+      "leave space for toiletries and one change of clothes",
+      "keep it rough and easy to scan"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Personal Trips",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Spontaneous Trip Packing Checklist",
+        "location": "Personal Trips",
+        "content_brief": "<authored from checklist_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_tripnotes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Vieques Weekend Notes",
+          "doc_type": "note",
+          "location": "Personal Trips",
+          "content_brief": "Loose notes on ferry times, beach stops, and what to bring."
+        }
+      },
+      {
+        "id": "doc_gallery_02",
+        "type": "document",
+        "attributes": {
+          "title": "Art Workshop Supply Jotting",
+          "doc_type": "note",
+          "location": "Personal Trips",
+          "content_brief": "Short handwritten-style list of paint supplies and travel pouch items."
+        }
+      },
+      {
+        "id": "doc_budget_03",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Budget Sketch",
+          "doc_type": "spreadsheet",
+          "location": "Personal Trips",
+          "content_brief": "Basic estimate for gas, snacks, and lodging."
+        }
+      },
+      {
+        "id": "doc_finance_04",
+        "type": "document",
+        "attributes": {
+          "title": "Q3 Variance Notes",
+          "doc_type": "memo",
+          "location": "Finance",
+          "content_brief": "Department variance follow-up memo."
+        }
+      }
+    ]
+  }
+}

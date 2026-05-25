@@ -1,0 +1,138 @@
+{
+  "session_id": "joseph_eldridge_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "workspace",
+  "reason_for_call": "Organize some work files",
+  "task_params": {
+    "location": "Community Theater/Lighting",
+    "file_type": "pdf",
+    "file_ids": [
+      "file_plot_01",
+      "file_hang_02",
+      "file_patch_03"
+    ],
+    "scheme": "by_project",
+    "folder_id": "fld_prod_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Community Theater/Lighting",
+        "file_type": "pdf"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_plot_01",
+          "file_hang_02",
+          "file_patch_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_plot_01",
+          "file_hang_02",
+          "file_patch_03"
+        ],
+        "folder_id": "fld_prod_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_plot_01",
+        "type": "file",
+        "attributes": {
+          "name": "Spring Play lighting plot v4.pdf",
+          "file_type": "pdf",
+          "location": "Community Theater/Lighting/Misc",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "lighting",
+            "plot"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_hang_02",
+        "type": "file",
+        "attributes": {
+          "name": "Spring Play front wash hang positions.pdf",
+          "file_type": "pdf",
+          "location": "Community Theater/Lighting/Incoming",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "lighting",
+            "hang"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_patch_03",
+        "type": "file",
+        "attributes": {
+          "name": "Spring Play dimmer patch sheet.pdf",
+          "file_type": "pdf",
+          "location": "Community Theater/Lighting/Desktop",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "lighting",
+            "patch"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_budget_04",
+        "type": "file",
+        "attributes": {
+          "name": "Lobby concession budget.xlsx",
+          "file_type": "xlsx",
+          "location": "Community Theater/Admin",
+          "owner": "Treasurer",
+          "labels": [
+            "budget"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_prod_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Current Production Lighting",
+          "purpose": "Organized folder for active production lighting documents"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "session_id": "gabriel_campbell_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "workspace",
+  "reason_for_call": "Update a work report",
+  "task_params": {
+    "location": "Leadership Reports",
+    "doc_type": "report",
+    "report_title": "Q2 Access and Throughput Update",
+    "summary_points": [
+      "Stress that biggest wait-time gains are in urgent care intake",
+      "Call out imaging as modest improvement, not systemwide transformation",
+      "Note specialty referrals remain the main bottleneck",
+      "Tie gains to front-desk staffing changes and revised triage workflow"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Leadership Reports",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_report_01",
+        "content_delta": "<authored from summary_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Access and Throughput Update",
+          "doc_type": "report",
+          "location": "Leadership Reports",
+          "content_brief": "Draft leadership report on patient access, wait-time trends, urgent care intake, imaging turnaround, and specialty referral delays."
+        }
+      },
+      {
+        "id": "doc_report_02",
+        "type": "document",
+        "attributes": {
+          "title": "Monthly Operations Snapshot - June",
+          "doc_type": "report",
+          "location": "Leadership Reports",
+          "content_brief": "Brief monthly operations summary covering staffing, volumes, and service-line throughput."
+        }
+      },
+      {
+        "id": "doc_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Triage Workflow Notes",
+          "doc_type": "memo",
+          "location": "Operations Memos",
+          "content_brief": "Internal memo on revised triage workflow and front-desk coverage adjustments."
+        }
+      },
+      {
+        "id": "doc_sheet_01",
+        "type": "document",
+        "attributes": {
+          "title": "Wait Time Trend Table Q2",
+          "doc_type": "spreadsheet",
+          "location": "Analytics",
+          "content_brief": "Spreadsheet with Q2 wait-time trends across urgent care, imaging, and specialty referrals."
+        }
+      }
+    ]
+  }
+}

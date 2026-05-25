@@ -1,0 +1,184 @@
+{
+  "session_id": "iris_parker_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "travel",
+  "reason_for_call": "Plan a trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Kyoto",
+      "literature",
+      "tea",
+      "art"
+    ],
+    "destination_ids": [
+      "dest_kyoto_01"
+    ],
+    "destination": "Kyoto",
+    "duration_days": 7,
+    "traveler_count": 2,
+    "selected_stop_ids": [
+      "stop_book_01",
+      "stop_tea_01",
+      "stop_art_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Kyoto",
+          "literature",
+          "tea",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_kyoto_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Kyoto",
+        "stop_tags": [
+          "literature",
+          "tea",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Kyoto",
+        "duration_days": 7,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_book_01",
+          "stop_tea_01",
+          "stop_art_01"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_kyoto_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Kyoto",
+          "region": "Kansai, Japan",
+          "tags": [
+            "literature",
+            "tea",
+            "art",
+            "culture",
+            "moderate-budget"
+          ]
+        }
+      },
+      {
+        "id": "dest_kanazawa_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Kanazawa",
+          "region": "Ishikawa, Japan",
+          "tags": [
+            "art",
+            "tea",
+            "gardens",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "dest_nara_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Nara",
+          "region": "Nara, Japan",
+          "tags": [
+            "literature",
+            "history",
+            "temples",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "stop_book_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Museum of Haiku Literature",
+          "location": "Kyoto",
+          "tags": [
+            "literature",
+            "museum",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "stop_tea_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Camellia Tea House",
+          "location": "Kyoto",
+          "tags": [
+            "tea",
+            "tea house",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "stop_art_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Kyoto City KYOCERA Museum of Art",
+          "location": "Kyoto",
+          "tags": [
+            "art",
+            "museum",
+            "culture"
+          ]
+        }
+      }
+    ]
+  }
+}

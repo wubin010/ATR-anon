@@ -1,0 +1,85 @@
+{
+  "instruction": "Please write something up for the Harbor Lab mentor check-ins and save it in /Programs/Mentoring. Title it \"Harbor Lab Mentor Check-In Outline\" and include the student's current build, any blockers, feedback from the mentor, and the next step to follow up on before the next meeting.",
+  "gold_value": "template",
+  "session_id": "joseph_eldridge_workspace_05_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "joseph_eldridge_workspace_05",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_workspace_05",
+    "rule_text": "When he starts a reusable planning artifact for recurring workshops, mentorship sessions, or checklists, Joseph prefers a template rather than an ordinary one-off note.",
+    "canonical_answer": "For something I expect to reuse, I prefer a template instead of a one-off document."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_harbor_lab_kickoff_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Harbor Lab Kickoff Notes",
+          "doc_type": "note",
+          "location": "/Programs/Mentoring",
+          "content_brief": "Notes from the first Harbor Lab mentor meeting covering student introductions, project ideas, and early questions."
+        }
+      },
+      {
+        "id": "doc_mentor_followup_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Mentor Follow-Up Memo",
+          "doc_type": "memo",
+          "location": "/Programs/Mentoring",
+          "content_brief": "Short reminder for mentors about sending recap emails after a student session and logging any promised introductions."
+        }
+      },
+      {
+        "id": "doc_open_bench_workshop_recap_01",
+        "type": "document",
+        "attributes": {
+          "title": "Open Bench Workshop Recap",
+          "doc_type": "report",
+          "location": "/Programs/Mentoring",
+          "content_brief": "Summary of attendance, soldering issues, and materials used during the last hands-on electronics workshop."
+        }
+      },
+      {
+        "id": "doc_equipment_checkout_sheet_01",
+        "type": "document",
+        "attributes": {
+          "title": "Equipment Checkout Sheet",
+          "doc_type": "template",
+          "location": "/Programs/Templates",
+          "content_brief": "Blank format for recording borrowed tools, borrower name, checkout date, and return condition."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

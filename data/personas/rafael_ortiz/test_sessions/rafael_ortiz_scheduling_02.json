@@ -1,0 +1,107 @@
+{
+  "instruction": "I still haven't answered the Mercado Hall dinner invite for 2026-08-22 from 6:30 to 8:30pm. Check what else I've got on my calendars around then and send the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "rafael_ortiz_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "rafael_ortiz_scheduling_02",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_scheduling_02",
+    "rule_text": "When an invite overlaps with an unresolved work schedule, he prefers responding tentatively rather than accepting or declining immediately.",
+    "canonical_answer": "If my shift situation is still unclear, I usually respond tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_neighborhood_health_benefit_dinner_20260822",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood Health Benefit Dinner",
+          "start_time": "2026-08-22T18:30:00",
+          "end_time": "2026-08-22T20:30:00",
+          "participants": [
+            "events@neighborhoodhealth.org",
+            "rafael.ortiz@example.com"
+          ],
+          "location": "Mercado Hall",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_weekend_bedside_coverage_shift_20260822",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Weekend bedside coverage shift",
+          "start_time": "2026-08-22T18:00:00",
+          "end_time": "2026-08-22T22:00:00",
+          "participants": [
+            "staffing@stgabrielmedical.org",
+            "rafael.ortiz@example.com"
+          ],
+          "location": "St. Gabriel Medical Center",
+          "calendar": "work",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_saturday_soccer_match_20260822",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Saturday soccer match",
+          "start_time": "2026-08-22T15:00:00",
+          "end_time": "2026-08-22T16:30:00",
+          "participants": [
+            "rafael.ortiz@example.com",
+            "marco.rios@example.com"
+          ],
+          "location": "Jefferson Park Field 2",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_guitar_practice_20260823",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Guitar practice",
+          "start_time": "2026-08-23T11:00:00",
+          "end_time": "2026-08-23T12:00:00",
+          "participants": [
+            "rafael.ortiz@example.com"
+          ],
+          "location": "Cedar Room Studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

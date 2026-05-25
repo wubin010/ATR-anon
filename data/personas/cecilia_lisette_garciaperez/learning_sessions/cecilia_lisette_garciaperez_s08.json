@@ -1,0 +1,112 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "stationery",
+    "budget": 35,
+    "sort_by": "rating",
+    "notebook_id": "prod_cahier_01",
+    "pens_id": "prod_sakura_02",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "stationery",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_cahier_01",
+          "prod_sakura_02"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_cahier_01",
+        "quantity": 1
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_sakura_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_cahier_01",
+        "type": "product",
+        "attributes": {
+          "name": "Moleskine Cahier Journal Large Ruled 3-Pack",
+          "price": 14.99,
+          "category": "stationery",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_sakura_02",
+        "type": "product",
+        "attributes": {
+          "name": "Sakura Pigma Micron Fineliner Set of 6",
+          "price": 16.49,
+          "category": "stationery",
+          "rating": 4.9
+        }
+      },
+      {
+        "id": "prod_leuchtturm_03",
+        "type": "product",
+        "attributes": {
+          "name": "Leuchtturm1917 Medium A5 Dotted Notebook",
+          "price": 24.95,
+          "category": "stationery",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_pilot_04",
+        "type": "product",
+        "attributes": {
+          "name": "Pilot G2 Premium Gel Ink Pens 5-Pack",
+          "price": 9.99,
+          "category": "stationery",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

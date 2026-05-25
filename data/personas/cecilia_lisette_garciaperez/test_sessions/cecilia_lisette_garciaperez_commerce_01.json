@@ -1,0 +1,117 @@
+{
+  "instruction": "Please order one small shelf accessory for the apartment, under $25. Just pick something useful that won't take up much space.",
+  "gold_value": "prod_compact_bookend_pair_01",
+  "session_id": "cecilia_lisette_garciaperez_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "cecilia_lisette_garciaperez_commerce_01",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_commerce_01",
+    "rule_text": "For product purchases, she prefers items that support cooking, books, gardening, or cultural preservation over generic household buys.",
+    "canonical_answer": "When I order something, I usually want it to connect to cooking, books, gardening, or preserving culture."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_compact_bookend_pair_01",
+        "type": "product",
+        "attributes": {
+          "name": "Compact Metal Bookend Pair",
+          "price": 22.5,
+          "category": "shelf_accessories",
+          "rating": 4.3,
+          "review_count": 72,
+          "units_sold_last_30_days": 18,
+          "width_in": 7.5,
+          "material": "powder-coated steel"
+        }
+      },
+      {
+        "id": "prod_oak_magazine_rack_01",
+        "type": "product",
+        "attributes": {
+          "name": "Oak Magazine Rack",
+          "price": 29.0,
+          "category": "shelf_accessories",
+          "rating": 4.6,
+          "review_count": 210,
+          "units_sold_last_30_days": 35,
+          "width_in": 14.0,
+          "material": "oak"
+        }
+      },
+      {
+        "id": "prod_woven_catchall_basket_01",
+        "type": "product",
+        "attributes": {
+          "name": "Woven Catchall Basket",
+          "price": 13.99,
+          "category": "shelf_accessories",
+          "rating": 4.9,
+          "review_count": 1840,
+          "units_sold_last_30_days": 640,
+          "width_in": 9.0,
+          "material": "rattan"
+        }
+      },
+      {
+        "id": "prod_remote_caddy_01",
+        "type": "product",
+        "attributes": {
+          "name": "Slim Remote Control Caddy",
+          "price": 11.99,
+          "category": "shelf_accessories",
+          "rating": 4.8,
+          "review_count": 1210,
+          "units_sold_last_30_days": 590,
+          "width_in": 6.0,
+          "material": "linen"
+        }
+      },
+      {
+        "id": "prod_folding_storage_bin_01",
+        "type": "product",
+        "attributes": {
+          "name": "Folding Fabric Storage Bin",
+          "price": 15.49,
+          "category": "shelf_accessories",
+          "rating": 4.8,
+          "review_count": 970,
+          "units_sold_last_30_days": 480,
+          "width_in": 10.0,
+          "material": "felt"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_compact_bookend_pair_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

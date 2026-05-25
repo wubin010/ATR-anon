@@ -1,0 +1,59 @@
+{
+  "session_id": "fs_workspace_pc_update_tracker_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "few_shot",
+  "rule_id": "fs_workspace_pc_update_tracker",
+  "instruction": "Project Beta finished milestone 1 today — the user research phase is done. Update the Project Beta progress tracker (tracker_id: trk_beta_progress_01, milestone entry_id: ENT_milestone_1). Handle the related logging the usual way.",
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_beta_progress_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Project Beta progress tracker",
+          "entries": [
+            {
+              "entry_id": "ENT_milestone_1",
+              "status": "in_progress",
+              "payload": "Milestone 1: user research phase"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "update_tracker",
+          "arguments": {
+            "update_action": "update_status"
+          },
+          "compare_args": [
+            "update_action"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_workspace_pc_update_tracker",
+    "rule_text": "When updating the project-progress tracker, must use update_action=update_status and the record_fields must include the 'phase_completed' tag — the user tracks progress by phase, not by ad-hoc entries.",
+    "canonical_answer": "When you update the tracker, use update_status mode and make sure record_fields has a 'phase_completed' tag — that's the convention I follow."
+  }
+}

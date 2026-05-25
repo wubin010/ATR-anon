@@ -1,0 +1,170 @@
+{
+  "session_id": "vanessa_davis_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "travel",
+  "reason_for_call": "Plan a trip",
+  "task_params": {
+    "destination_constraints": [
+      "Denali"
+    ],
+    "destination_ids": [
+      "dst_denali_01"
+    ],
+    "destination": "Denali",
+    "stop_tags": [
+      "aurora",
+      "scenic drive",
+      "budget"
+    ],
+    "selected_stop_ids": [
+      "stp_denali_highway_01",
+      "stp_healy_lodge_02",
+      "stp_wonder_lake_03"
+    ],
+    "duration_days": 5,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Denali"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_denali_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Denali",
+        "stop_tags": [
+          "aurora",
+          "scenic drive",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Denali",
+        "duration_days": 5,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_denali_highway_01",
+          "stp_healy_lodge_02",
+          "stp_wonder_lake_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_denali_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Denali National Park and Preserve",
+          "region": "Alaska",
+          "tags": [
+            "aurora",
+            "scenic drive",
+            "wildlife",
+            "budget lodges",
+            "fall"
+          ]
+        }
+      },
+      {
+        "id": "dst_fairbanks_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Fairbanks",
+          "region": "Alaska",
+          "tags": [
+            "aurora",
+            "city stay",
+            "museums",
+            "winter"
+          ]
+        }
+      },
+      {
+        "id": "stp_denali_highway_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Denali Highway Viewpoints",
+          "location": "Denali, Alaska",
+          "tags": [
+            "scenic drive",
+            "photo stop",
+            "budget",
+            "mountain views"
+          ]
+        }
+      },
+      {
+        "id": "stp_healy_lodge_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Healy Budget Lodge Area",
+          "location": "Healy near Denali, Alaska",
+          "tags": [
+            "budget",
+            "lodging",
+            "aurora",
+            "small town"
+          ]
+        }
+      },
+      {
+        "id": "stp_wonder_lake_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Wonder Lake",
+          "location": "Denali National Park, Alaska",
+          "tags": [
+            "aurora",
+            "scenic drive",
+            "lake",
+            "wildlife"
+          ]
+        }
+      }
+    ]
+  }
+}

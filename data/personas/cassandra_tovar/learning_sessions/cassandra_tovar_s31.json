@@ -1,0 +1,105 @@
+{
+  "session_id": "cassandra_tovar_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "monitor arm",
+    "budget": 45,
+    "sort_by": "price_asc",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "monitor arm",
+        "budget": 45,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_vivo_01",
+          "prod_huanuo_02",
+          "prod_mountup_03",
+          "prod_wali_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_vivo_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_vivo_01",
+        "type": "product",
+        "attributes": {
+          "name": "VIVO Single Monitor Arm Desk Mount",
+          "price": 39.99,
+          "category": "monitor arm",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_huanuo_02",
+        "type": "product",
+        "attributes": {
+          "name": "HUANUO Single Monitor Arm",
+          "price": 42.49,
+          "category": "monitor arm",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_mountup_03",
+        "type": "product",
+        "attributes": {
+          "name": "MOUNTUP Gas Spring Monitor Arm",
+          "price": 44.99,
+          "category": "monitor arm",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_wali_04",
+        "type": "product",
+        "attributes": {
+          "name": "WALI Premium Single LCD Monitor Desk Mount",
+          "price": 29.99,
+          "category": "monitor arm",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

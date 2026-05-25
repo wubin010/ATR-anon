@@ -1,0 +1,102 @@
+{
+  "session_id": "theodora_tong_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "Schenectady",
+    "cuisine": "Italian",
+    "date_time": "2025-02-15T18:30:00",
+    "party_size": 4
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Schenectady",
+        "cuisine": "Italian",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_lanterna_01",
+        "date_time": "2025-02-15T18:30:00",
+        "party_size": 4
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_lanterna_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "La Lanterna",
+          "cuisine": "Italian",
+          "location": "Schenectady",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "quiet dining room"
+        }
+      },
+      {
+        "id": "rst_mohawk_table_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Mohawk Table",
+          "cuisine": "American",
+          "location": "Schenectady",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "spacious dining room"
+        }
+      },
+      {
+        "id": "rst_casa_serena_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa Serena",
+          "cuisine": "Italian",
+          "location": "Schenectady",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "intimate booth seating"
+        }
+      },
+      {
+        "id": "rst_spice_wharf_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Spice Wharf",
+          "cuisine": "Indian",
+          "location": "Schenectady",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "lively dining room"
+        }
+      }
+    ]
+  }
+}

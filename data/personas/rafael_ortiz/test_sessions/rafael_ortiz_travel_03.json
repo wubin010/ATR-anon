@@ -1,0 +1,143 @@
+{
+  "instruction": "Book a hotel in Santa Fe for 2 adults, 1 room, and keep it under $320 per night. It's just a short getaway, so please choose one and book it.",
+  "gold_value": "htl_santafe_lamplight_inn_01",
+  "session_id": "rafael_ortiz_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "rafael_ortiz_travel_03",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_travel_03",
+    "rule_text": "For lodging, he generally chooses modest accommodations rather than luxury stays.",
+    "canonical_answer": "I usually go with modest accommodations instead of luxury hotels."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_santafe_lamplight_inn_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Lamplight Courtyard Inn",
+          "location": "Santa Fe, New Mexico",
+          "check_in_date": "2026-10-16",
+          "check_out_date": "2026-10-18",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 214,
+          "category": "modest",
+          "star_rating": 3,
+          "rating": 4.4,
+          "review_count": 386,
+          "walk_time_to_plaza_min": 11,
+          "amenities": [
+            "courtyard",
+            "parking",
+            "breakfast"
+          ]
+        }
+      },
+      {
+        "id": "htl_santafe_palacio_plaza_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Palacio de la Plaza Hotel",
+          "location": "Santa Fe, New Mexico",
+          "check_in_date": "2026-10-16",
+          "check_out_date": "2026-10-18",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 318,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 2874,
+          "walk_time_to_plaza_min": 3,
+          "amenities": [
+            "spa",
+            "valet",
+            "fine_dining"
+          ]
+        }
+      },
+      {
+        "id": "htl_santafe_terra_cotta_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Terra Cotta Spa Suites",
+          "location": "Santa Fe, New Mexico",
+          "check_in_date": "2026-10-16",
+          "check_out_date": "2026-10-18",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 205,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 1542,
+          "walk_time_to_plaza_min": 6,
+          "amenities": [
+            "spa",
+            "pool",
+            "rooftop_lounge"
+          ]
+        }
+      },
+      {
+        "id": "htl_santafe_governors_house_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Governor's House Grand",
+          "location": "Santa Fe, New Mexico",
+          "check_in_date": "2026-10-16",
+          "check_out_date": "2026-10-18",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 239,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.7,
+          "review_count": 2098,
+          "walk_time_to_plaza_min": 4,
+          "amenities": [
+            "concierge",
+            "courtyard",
+            "breakfast"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_santafe_lamplight_inn_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

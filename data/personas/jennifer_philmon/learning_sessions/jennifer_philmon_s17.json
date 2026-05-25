@@ -1,0 +1,75 @@
+{
+  "session_id": "jennifer_philmon_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "workspace",
+  "reason_for_call": "Update my study tracker",
+  "task_params": {
+    "tracker_title": "Boiler Operator Certification Study Tracker",
+    "update_action": "create_entry",
+    "session_date": "2025-02-17",
+    "entry_payload_points": [
+      "Reviewed steam tables and saturation relationships",
+      "Worked 35 practice questions",
+      "Missed valve trim and feedwater calculations",
+      "Need to revisit blowdown rate formulas",
+      "Confidence level: moderate"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_cert_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from session_date, entry_payload_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_cert_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Boiler Operator Certification Study Tracker"
+        }
+      },
+      {
+        "id": "trk_maint_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Preventive Maintenance Improvement Log"
+        }
+      },
+      {
+        "id": "trk_training_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Operator Cross-Training Checklist"
+        }
+      }
+    ]
+  }
+}

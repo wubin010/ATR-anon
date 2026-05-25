@@ -1,0 +1,132 @@
+{
+  "instruction": "One stop on trip T-4821 in the Apostle Islands area fell through. Please swap in a single replacement for a daytime visit near Bayfield that can fit in about 1–2 hours and doesn't require a big detour from the current route.",
+  "gold_value": [
+    "stop_frog_bay_coastal_01"
+  ],
+  "session_id": "elvira_wildman_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "elvira_wildman",
+  "rule_id": "elvira_wildman_travel_02",
+  "rule_ref": {
+    "rule_id": "elvira_wildman_travel_02",
+    "rule_text": "When a trip stop falls through, she prefers replacement stops that preserve the same nature or bird-watching theme instead of swapping the whole trip into a different style.",
+    "canonical_answer": "Whenever a stop gets disrupted, I always replace it with another stop in the same nature-focused theme."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_frog_bay_coastal_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Frog Bay Coastal Trail",
+          "stop_type": "nature_reserve",
+          "location": "Bayfield, Apostle Islands, Wisconsin",
+          "tags": [
+            "nature",
+            "birdwatching",
+            "shoreline",
+            "forest",
+            "daytime"
+          ],
+          "rating": 4.6,
+          "detour_minutes_from_bayfield_route": 12,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_red_cliff_eagle_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Red Cliff Eagle Overlook",
+          "stop_type": "wildlife_overlook",
+          "location": "Red Cliff, Apostle Islands, Wisconsin",
+          "tags": [
+            "nature",
+            "birdwatching",
+            "migration",
+            "scenic",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "detour_minutes_from_bayfield_route": 42,
+          "visit_duration_hours": 1.0
+        }
+      },
+      {
+        "id": "stop_meyers_beach_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Meyers Beach Sea Cave Trail",
+          "stop_type": "hiking_trail",
+          "location": "Bayfield Peninsula, Apostle Islands, Wisconsin",
+          "tags": [
+            "nature",
+            "shoreline",
+            "hike",
+            "scenic",
+            "popular"
+          ],
+          "rating": 4.9,
+          "detour_minutes_from_bayfield_route": 18,
+          "visit_duration_hours": 4.0
+        }
+      },
+      {
+        "id": "stop_bayfield_maritime_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Bayfield Maritime Museum",
+          "stop_type": "museum",
+          "location": "Bayfield, Apostle Islands, Wisconsin",
+          "tags": [
+            "history",
+            "indoor",
+            "harbor",
+            "popular",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "detour_minutes_from_bayfield_route": 5,
+          "visit_duration_hours": 1.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_frog_bay_coastal_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

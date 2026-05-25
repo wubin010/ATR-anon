@@ -1,0 +1,128 @@
+{
+  "session_id": "romisha_shields_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Kitchen Cleanup",
+    "doc_type": "note",
+    "title": "Recipe Notes Master List",
+    "content_points": [
+      "sweet potato pie with cayenne",
+      "collard greens with smoked turkey",
+      "cornbread with heirloom tomatoes and rosemary",
+      "candied yams with brown sugar and nutmeg"
+    ],
+    "file_ids": [
+      "file_recipe_01",
+      "file_recipe_02",
+      "file_recipe_03"
+    ],
+    "folder_id": "fld_recipe_01"
+  },
+  "expected_tools": [
+    "create_document",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Recipe Notes Master List",
+        "location": "Kitchen Cleanup",
+        "content_brief": "<authored from content_points>"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_recipe_01",
+          "file_recipe_02",
+          "file_recipe_03"
+        ],
+        "folder_id": "fld_recipe_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_recipe_01",
+        "type": "file",
+        "attributes": {
+          "name": "sweet-potato-pie-card.jpg",
+          "file_type": "image",
+          "location": "Kitchen Cleanup",
+          "owner": "Romisha",
+          "labels": [
+            "recipe",
+            "loose note"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_recipe_02",
+        "type": "file",
+        "attributes": {
+          "name": "greens-stovetop-notes.txt",
+          "file_type": "txt",
+          "location": "Kitchen Cleanup",
+          "owner": "Romisha",
+          "labels": [
+            "recipe",
+            "loose note"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_recipe_03",
+        "type": "file",
+        "attributes": {
+          "name": "cornbread-variation-scratchpad.jpg",
+          "file_type": "image",
+          "location": "Kitchen Cleanup",
+          "owner": "Romisha",
+          "labels": [
+            "recipe",
+            "loose note"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_recipe_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Saved Recipes",
+          "purpose": "Keeps collected recipe materials together"
+        }
+      },
+      {
+        "id": "fld_home_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Household Paperwork",
+          "purpose": "Bills, forms, and home records"
+        }
+      }
+    ]
+  }
+}

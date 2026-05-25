@@ -1,0 +1,187 @@
+{
+  "session_id": "michael_argo_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Chicago",
+      "train",
+      "budget",
+      "art"
+    ],
+    "destination": "Chicago",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "stop_tags": [
+      "sketch",
+      "cheap eats"
+    ],
+    "selected_stop_ids": [
+      "stop_chi_riverwalk_01",
+      "stop_chi_pilsen_02",
+      "stop_chi_lou_03"
+    ],
+    "destination_ids": [
+      "dst_chicago_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Chicago",
+          "train",
+          "budget",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_chicago_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Chicago",
+        "stop_tags": [
+          "sketch",
+          "cheap eats"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Chicago",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_chi_riverwalk_01",
+          "stop_chi_pilsen_02",
+          "stop_chi_lou_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": false,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_chicago_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Chicago",
+          "region": "Illinois",
+          "tags": [
+            "train",
+            "budget",
+            "art",
+            "city"
+          ]
+        }
+      },
+      {
+        "id": "dst_milwaukee_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Milwaukee",
+          "region": "Wisconsin",
+          "tags": [
+            "train",
+            "budget",
+            "lakefront",
+            "beer"
+          ]
+        }
+      },
+      {
+        "id": "dst_stlouis_03",
+        "type": "destination",
+        "attributes": {
+          "name": "St. Louis",
+          "region": "Missouri",
+          "tags": [
+            "train",
+            "budget",
+            "architecture",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "stop_chi_riverwalk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Chicago Riverwalk",
+          "location": "Chicago",
+          "tags": [
+            "sketch",
+            "walking",
+            "waterfront"
+          ]
+        }
+      },
+      {
+        "id": "stop_chi_pilsen_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Pilsen Murals",
+          "location": "Chicago",
+          "tags": [
+            "sketch",
+            "art",
+            "neighborhood"
+          ]
+        }
+      },
+      {
+        "id": "stop_chi_lou_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lou Mitchell's",
+          "location": "Chicago",
+          "tags": [
+            "cheap eats",
+            "diner",
+            "breakfast"
+          ]
+        }
+      }
+    ]
+  }
+}

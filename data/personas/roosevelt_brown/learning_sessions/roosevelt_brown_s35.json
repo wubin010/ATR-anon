@@ -1,0 +1,110 @@
+{
+  "session_id": "roosevelt_brown_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "commerce",
+  "reason_for_call": "Order an audio item.",
+  "task_params": {
+    "category": "portable podcast microphone",
+    "budget": 230,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_rode_01",
+      "prod_shure_02",
+      "prod_senn_03"
+    ],
+    "product_id": "prod_rode_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "portable podcast microphone",
+        "budget": 230,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_rode_01",
+          "prod_shure_02",
+          "prod_senn_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_rode_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_rode_01",
+        "type": "product",
+        "attributes": {
+          "name": "Rode Wireless GO II Portable Podcast Microphone Kit",
+          "price": 219.0,
+          "category": "portable podcast microphone",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_shure_02",
+        "type": "product",
+        "attributes": {
+          "name": "Shure MV88+ Video Kit Portable Podcast Microphone",
+          "price": 199.0,
+          "category": "portable podcast microphone",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_senn_03",
+        "type": "product",
+        "attributes": {
+          "name": "Sennheiser XS Lav USB-C Portable Podcast Microphone",
+          "price": 129.0,
+          "category": "portable podcast microphone",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_zoom_04",
+        "type": "product",
+        "attributes": {
+          "name": "Zoom ZDM-1PMP Portable Podcast Microphone Pack",
+          "price": 149.0,
+          "category": "portable podcast microphone",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

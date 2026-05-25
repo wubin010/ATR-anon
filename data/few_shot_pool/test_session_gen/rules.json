@@ -1,0 +1,698 @@
+[
+  {
+    "rule_id": "fs_scheduling_pc_weekly_recurring_reminder",
+    "persona_id": "few_shot",
+    "rule_text": "When setting reminders for gardening or seasonal household tasks, must use cadence=weekly (recurring weekly), not once or before_event — the user believes such tasks need ongoing attention and a single reminder is useless.",
+    "canonical_answer": "Garden stuff and other things that need ongoing attention — set those reminders on a weekly cadence, don't give me a one-shot, I'll forget by the next week.",
+    "counterfactual_default": "Generic agents set a once or before_event reminder for the specific scheduled date.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    }
+  },
+  {
+    "rule_id": "fs_workspace_chain_create_then_update_meta",
+    "persona_id": "few_shot",
+    "rule_text": "After creating any document, must immediately call update_document to fill in structured metadata header fields (owner, project, status). Empty placeholder documents are not allowed.",
+    "canonical_answer": "Once you create a doc, immediately fill in the owner, project, and status metadata header — I don't want bare empty docs, they become unfindable later.",
+    "counterfactual_default": "Generic agents stop after creating the document, leaving the metadata header empty for later editing.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "update_document",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "fs_commerce_pc_price_review",
+    "persona_id": "few_shot",
+    "rule_text": "When reviewing recurring charges, must use focus=price_change (only care about price movement) and never focus=all (don't surface unrelated billing details).",
+    "canonical_answer": "When you go through my recurring charges, just look at price changes — I only care which ones got more expensive, skip the rest.",
+    "counterfactual_default": "Generic agents default to a comprehensive review (focus=all) covering every category of recurring-charge change.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "review_recurring_charges",
+      "param": "focus"
+    }
+  },
+  {
+    "rule_id": "fs_workspace_pc_update_tracker",
+    "persona_id": "few_shot",
+    "rule_text": "When updating the project-progress tracker, must use update_action=update_status and the record_fields must include the 'phase_completed' tag — the user tracks progress by phase, not by ad-hoc entries.",
+    "canonical_answer": "When you update the tracker, use update_status mode and make sure record_fields has a 'phase_completed' tag — that's the convention I follow.",
+    "counterfactual_default": "Generic agents update trackers with create_entry or record_next_action and free-form note fields, without enforcing a 'phase_completed' tag.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "update_tracker",
+      "param": "update_action"
+    }
+  },
+  {
+    "rule_id": "fs_workspace_pv_classify_by_date",
+    "persona_id": "few_shot",
+    "rule_text": "Default to classifying archived files by date (by_date), not by project or file type.",
+    "canonical_answer": "Just sort files by date — don't get clever with project or file-type buckets.",
+    "counterfactual_default": "Generic agents default to classifying files by project or by file type rather than by date.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    }
+  },
+  {
+    "rule_id": "fs_reservation_pv_cuisine_pnw",
+    "persona_id": "few_shot",
+    "rule_text": "When booking restaurants, the user defaults to Pacific Northwest cuisine featuring local ingredients.",
+    "canonical_answer": "When you're picking a restaurant, start with Pacific Northwest places that do well with local ingredients.",
+    "counterfactual_default": "Generic agents pick the highest-rated or most popular restaurant in the area without weighting toward Pacific Northwest cuisine.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    }
+  },
+  {
+    "rule_id": "fs_reservation_tc_event_symphony",
+    "persona_id": "few_shot",
+    "rule_text": "For friend gatherings, must book classical / symphony / orchestral concert tickets — the user finds bar-and-restaurant style social outings tacky and dislikes them.",
+    "canonical_answer": "For friend gatherings, get me symphony or classical concert tickets — I really can't stand the bar-and-restaurant style of hanging out.",
+    "counterfactual_default": "Generic agents recommend popular bar / restaurant style social outings for friend gatherings.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    }
+  },
+  {
+    "rule_id": "fs_scheduling_tc_cancel_over_reschedule",
+    "persona_id": "few_shot",
+    "rule_text": "When meetings conflict, cancel the older meeting outright (do not reschedule) — the user dislikes the back-and-forth of moving meetings around and notifying everyone.",
+    "canonical_answer": "When meetings clash, just cancel the old one — don't reshuffle and force everyone to coordinate again, my calendar shouldn't be that sticky.",
+    "counterfactual_default": "Generic agents reschedule the conflicting older meeting and notify all attendees.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "cancel_event",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "fs_workspace_pv_update_client_doc",
+    "persona_id": "few_shot",
+    "rule_text": "When prepping briefly before a meeting, only update internal collaboration documents (meeting notes, retrospectives, etc.); do not touch client-facing status reports — those external deliverables are frozen at sprint close, and last-minute edits would create version inconsistencies.",
+    "canonical_answer": "When you tidy up before a meeting, only touch the internal meeting-notes type docs — leave the client status reports alone, those are already shipped.",
+    "counterfactual_default": "Generic agents update whichever document is most directly tied to the upcoming meeting, including client-facing status reports if they relate.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "update_document",
+      "param": "document_id"
+    }
+  },
+  {
+    "rule_id": "fs_reservation_pv_track_critical",
+    "persona_id": "few_shot",
+    "rule_text": "When enabling update tracking on a booked event, default to update_scope=critical (only key changes like cancellations, big reschedules, ticket-type changes) — never update_scope=all (avoids being spammed by program notes, seat maps, and side-promotions).",
+    "canonical_answer": "When you turn on tracking for the booking, only the big stuff — don't push every little update at me.",
+    "counterfactual_default": "Generic agents default to update_scope=all when enabling event tracking, surfacing every notification.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "track_reservation_updates",
+      "param": "update_scope"
+    }
+  },
+  {
+    "rule_id": "fs_scheduling_pv_reminder_weekly_seasonal",
+    "persona_id": "few_shot",
+    "rule_text": "For seasonal household tasks (spring tilling, fall leaf cleanup, HVAC servicing, tire swaps), reminder cadence must be weekly — not once and not before_event — the user knows they procrastinate and need a weekly nag until the task is actually done.",
+    "canonical_answer": "Seasonal chores — don't give me a one-time reminder, set them weekly so they keep nagging until I actually do them.",
+    "counterfactual_default": "Generic agents set a one-shot or before_event reminder for the specific date the user mentions.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_communication_01",
+    "persona_id": "jutta_ashton",
+    "rule_text": "For external communications about insurance, claims, policy, or risk explanations, default to a draft for review rather than sending directly.",
+    "canonical_answer": "Anything to do with insurance, claims, or policy explanations — let me look at a draft first, don't fire it off.",
+    "counterfactual_default": "Generic agents send the insurance / claims / policy reply directly without a draft-for-review step.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_reservation_04",
+    "persona_id": "jutta_ashton",
+    "rule_text": "For restaurant choices, default to local, unpretentious, regionally distinctive Pacific Northwest cuisine rather than chasing novelty or buzzy concepts.",
+    "canonical_answer": "When you pick a restaurant, lean toward local, down-to-earth Pacific Northwest places — don't go after the novelty hot-spots.",
+    "counterfactual_default": "Generic agents recommend the trendiest or highest-rated novelty restaurant in the area regardless of regional cuisine fit.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_reservation_05",
+    "persona_id": "jutta_ashton",
+    "rule_text": "For community gatherings or small group dinners, prioritize venues suited to conversation and group interaction rather than high-noise, individually-focused popular spots.",
+    "canonical_answer": "If it's a book club or community-friend dinner, pick somewhere we can actually talk — not the loud trendy places.",
+    "counterfactual_default": "Generic agents pick the most popular or highest-rated restaurant in the area, including loud high-energy venues.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_scheduling_02",
+    "persona_id": "jutta_ashton",
+    "rule_text": "When responding to a new group-event invitation that conflicts with existing commitments, default to a tentative response rather than accepting or declining outright.",
+    "canonical_answer": "If a new event clashes with what I've already got, mark it tentative — don't accept or decline on my behalf.",
+    "counterfactual_default": "Generic agents accept or decline the new invitation outright based on calendar availability, without holding it tentatively.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_scheduling_03",
+    "persona_id": "jutta_ashton",
+    "rule_text": "For events the user attends every week, default to a recurring reminder rather than a one-shot reminder for the single occurrence.",
+    "canonical_answer": "Stuff I do every week — set the reminder on a recurring cadence, don't just set a single one each time.",
+    "counterfactual_default": "Generic agents set a one-shot reminder for the next occurrence of the event without a recurring cadence.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_travel_01",
+    "persona_id": "jutta_ashton",
+    "rule_text": "For long-distance travel, default to driving or ground transport options rather than checking flights first.",
+    "canonical_answer": "If a trip can be done by driving or other ground transport, plan it that way first — don't lead with flights.",
+    "counterfactual_default": "Generic agents check flights first for long-distance travel as the fastest option.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_travel_03",
+    "persona_id": "jutta_ashton",
+    "rule_text": "On budget-constrained travel shortlisting, prioritize keeping nearby or domestic destinations reachable by ground transport rather than pushing ahead with high-cost transoceanic itineraries.",
+    "canonical_answer": "When the budget is tight, keep the closer trips that work by ground transport — push the transoceanic stuff to the back.",
+    "counterfactual_default": "Generic agents shortlist transoceanic destinations because they are popular itineraries despite the higher cost.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "shortlist_destinations",
+      "param": "destination_ids"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_workspace_03",
+    "persona_id": "jutta_ashton",
+    "rule_text": "When tidying work or professional materials, default to keeping the structured records and moving or archiving them rather than deleting outright.",
+    "canonical_answer": "Keep the work and professional records — file them away, don't just delete them.",
+    "counterfactual_default": "Generic agents delete old work / professional files outright once the user signals they're no longer needed.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "archive_files",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "janice_savarese_reservation_02",
+    "persona_id": "janice_savarese",
+    "rule_text": "When choosing a service appointment, prioritize providers with higher ratings rather than the closest one.",
+    "canonical_answer": "When you book a service for me, go with the better-reviewed provider — don't just pick the closest.",
+    "counterfactual_default": "Generic agents pick the closest service provider for convenience.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    }
+  },
+  {
+    "rule_id": "marlene_graham_scheduling_04",
+    "persona_id": "marlene_graham",
+    "rule_text": "Before scheduling new community meetings, workshops, or any multi-person coordination event, check for conflicts before placing it on the calendar rather than creating the event directly.",
+    "canonical_answer": "For community meetings, workshops, or anything with multiple people, please check for conflicts first, then put it on the calendar.",
+    "counterfactual_default": "Generic agents create the event directly without first running a separate conflict check step.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "check_conflicts",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_travel_01",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "For travel bookings without an explicit transport preference, the user defaults to checking ground transport options for medium-to-long-distance trips before considering flights.",
+    "canonical_answer": "If I haven't said otherwise, for medium-to-long trips I'd rather take a train or coach — don't jump straight to flights.",
+    "counterfactual_default": "Generic agents check flights first for medium-to-long-distance trips as the fastest mode.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "janice_savarese_scheduling_04",
+    "persona_id": "janice_savarese",
+    "rule_text": "Volunteer commitments at the community arts center default to keep / accept; do not treat them as ordinary cancellable events.",
+    "canonical_answer": "The community arts center volunteering — keep those slots for me, don't drop them like they're ordinary plans.",
+    "counterfactual_default": "Generic agents decline the volunteer commitment in favor of the conflicting newer plan.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    }
+  },
+  {
+    "rule_id": "marlene_graham_commerce_03",
+    "persona_id": "marlene_graham",
+    "rule_text": "When a gardening item is out of stock, keep it on the wishlist for follow-up rather than auto-substituting a similar replacement.",
+    "canonical_answer": "If a gardening item is out of stock, leave it on the list — don't sub in a similar one without asking.",
+    "counterfactual_default": "Generic agents auto-substitute a similar in-stock item to fulfill the order.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "janice_savarese_workspace_04",
+    "persona_id": "janice_savarese",
+    "rule_text": "When starting new materials for creative work or personal branding, default to creating a standalone document rather than mixing the content into a work tracker.",
+    "canonical_answer": "For story drafts, ideas, or shoot notes — make a fresh document, don't shove them into one of those work trackers.",
+    "counterfactual_default": "Generic agents append the new ideas into an existing tracker or notes document rather than creating a new standalone one.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_document",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "fs_reservation_confirm_before_appointment",
+    "persona_id": "few_shot",
+    "rule_text": "Before booking any service appointment, always run the choice by me to confirm first. I like a beat to mentally commit to a time before it gets locked in on my calendar.",
+    "canonical_answer": "Always check in with me before locking in a service appointment — I want a moment to commit before the slot is booked.",
+    "counterfactual_default": "Generic agents proceed straight to booking once they identify a matching provider and a workable slot.",
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "book_service_appointment"
+    }
+  },
+  {
+    "rule_id": "fs_reservation_confirm_pin_stylist",
+    "persona_id": "few_shot",
+    "rule_text": "When booking a haircut, always confirm with me first — and specifically book with my preferred stylist Maria rather than whoever happens to be available.",
+    "canonical_answer": "Always check in with me before booking a haircut, and book it with Maria specifically — not whoever is open.",
+    "counterfactual_default": "Generic agents pick any available stylist that fits the requested time and book without prior confirmation.",
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "book_service_appointment"
+    }
+  },
+  {
+    "rule_id": "elvira_wildman_commerce_01",
+    "persona_id": "elvira_wildman",
+    "rule_text": "For gardening-related purchases, she prefers heirloom or preserving-oriented items over generic produce supplies.",
+    "canonical_answer": "Whenever I’m ordering for the garden or kitchen, I always choose heirloom and preserving-friendly options first.",
+    "counterfactual_default": "Someone without this rule would choose generic produce or standard garden products.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_commerce_02",
+    "persona_id": "jutta_ashton",
+    "rule_text": "When shopping for plants for her garden displays, she prefers native plants over generic decorative options.",
+    "canonical_answer": "I always choose native plants for my garden arrangements.",
+    "counterfactual_default": "Someone without this rule would often choose the most colorful or popular decorative plant available.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    }
+  },
+  {
+    "rule_id": "elvira_wildman_commerce_04",
+    "persona_id": "elvira_wildman",
+    "rule_text": "When returning an item that supports an ongoing hobby or household routine, she prefers an exchange over a refund.",
+    "canonical_answer": "I always exchange routine-use items instead of refunding them when I still need the item.",
+    "counterfactual_default": "Someone without this rule would default to a refund.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    }
+  },
+  {
+    "rule_id": "marlene_graham_travel_02",
+    "persona_id": "marlene_graham",
+    "rule_text": "When traveling by air, she prefers an aisle seat rather than a window or middle seat.",
+    "canonical_answer": "I always pick an aisle seat on flights.",
+    "counterfactual_default": "Pick a window seat or leave the seat preference unspecified.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_travel_05",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When flying, she prefers a window seat.",
+    "canonical_answer": "I always pick the window seat when I fly.",
+    "counterfactual_default": "Someone without this rule would often choose aisle for convenience or leave seat choice unspecified.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_commerce_04",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When trimming recurring costs, she prefers downgrading subscriptions to the basic tier instead of keeping higher plans.",
+    "canonical_answer": "My rule is that when I need to save money, I always move subscriptions down to the basic tier.",
+    "counterfactual_default": "Someone without this rule would keep the current plan or only make ad hoc cancellations later.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    }
+  },
+  {
+    "rule_id": "kieren_ramseur_commerce_04",
+    "persona_id": "kieren_ramseur",
+    "rule_text": "For software or service subscriptions that support her work, she prefers the professional middle tier over bare-bones or top-tier plans by default.",
+    "canonical_answer": "I always choose the pro-level plan before jumping to either the cheapest or the most expensive tier.",
+    "counterfactual_default": "Either stay on the basic plan or over-upgrade to the premium tier.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    }
+  },
+  {
+    "rule_id": "janice_savarese_travel_05",
+    "persona_id": "janice_savarese",
+    "rule_text": "When selecting lodging, she prefers budget-friendly hotel offers over luxury-heavy ones.",
+    "canonical_answer": "My rule is I book budget-friendly hotel options instead of splurging on the fanciest room.",
+    "counterfactual_default": "Someone without this rule would more readily choose a higher-end hotel if it seemed nicer.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    }
+  },
+  {
+    "rule_id": "gabriel_campbell_travel_04",
+    "persona_id": "gabriel_campbell",
+    "rule_text": "When booking lodging, he prefers hotel options in walkable arts districts or close to cultural sites rather than generic accommodations.",
+    "canonical_answer": "Whenever I book a hotel, I always favor places that put me within walking distance of museums, galleries, or good street photography.",
+    "counterfactual_default": "A person without this rule would choose a hotel based mainly on generic convenience or broad popularity.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    }
+  },
+  {
+    "rule_id": "janice_savarese_travel_01",
+    "persona_id": "janice_savarese",
+    "rule_text": "For trips she is planning from scratch, she favors stops with strong architecture, street life, or cultural atmosphere over generic sightseeing picks.",
+    "canonical_answer": "Whenever I plan a trip, I choose stops with architecture, street scenes, or cultural texture over generic checklist attractions.",
+    "counterfactual_default": "Someone without this rule would usually pick the most standard or broadly popular tourist stops.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    }
+  },
+  {
+    "rule_id": "marlene_graham_travel_03",
+    "persona_id": "marlene_graham",
+    "rule_text": "For fresh trip planning, she prefers choosing agritourism or farm-to-table themed stops over generic tourist highlights.",
+    "canonical_answer": "Whenever I plan a trip, I always choose stops tied to farming, food production, or hands-on learning.",
+    "counterfactual_default": "Pick the most broadly popular sightseeing stops regardless of agricultural theme.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    }
+  },
+  {
+    "rule_id": "elvira_wildman_travel_02",
+    "persona_id": "elvira_wildman",
+    "rule_text": "When a trip stop falls through, she prefers replacement stops that preserve the same nature or bird-watching theme instead of swapping the whole trip into a different style.",
+    "canonical_answer": "Whenever a stop gets disrupted, I always replace it with another stop in the same nature-focused theme.",
+    "counterfactual_default": "Someone without this rule would substitute whichever alternative is most convenient or highly rated, even if it changes the trip’s character.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_communication_02",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When triaging messages, she prefers marking sports and leisure updates as low priority rather than treating them like normal work traffic.",
+    "canonical_answer": "Whenever a message is just sports or leisure chatter, I always mark it low priority.",
+    "counterfactual_default": "Someone without this rule would leave those messages at normal priority.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_communication_03",
+    "persona_id": "jutta_ashton",
+    "rule_text": "For community, arts, and book-club messages, she prefers low priority rather than escalating them as urgent.",
+    "canonical_answer": "Whenever I send community or arts notes, I always keep them low priority.",
+    "counterfactual_default": "Someone without this rule would often leave such messages at normal priority.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_workspace_04",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When she needs reusable materials for training or process work, she prefers creating a template rather than a one-off document.",
+    "canonical_answer": "Whenever I'm building something I'll reuse, I always make it as a template.",
+    "counterfactual_default": "Someone without this rule would create a regular one-off note or memo each time.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    }
+  },
+  {
+    "rule_id": "elvira_wildman_workspace_02",
+    "persona_id": "elvira_wildman",
+    "rule_text": "When creating office guidance for others, she prefers a reusable template instead of a one-off document.",
+    "canonical_answer": "My rule is to make reusable templates when I’m documenting a process others will follow.",
+    "counterfactual_default": "Someone without this rule would create a normal memo or note for the process.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_scheduling_04",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "For shared activities like volunteer sessions or workshops, she prefers creating a calendar event instead of keeping the plan only in message threads.",
+    "canonical_answer": "Whenever I'm coordinating a real activity with others, I always create a calendar event for it.",
+    "counterfactual_default": "Someone without this rule would often leave the plan in chat or email without making a formal event.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "elvira_wildman_workspace_06",
+    "persona_id": "elvira_wildman",
+    "rule_text": "When organizing workspace files she wants to retain but clear from active use, she prefers moving them into a destination folder rather than classifying them in place.",
+    "canonical_answer": "Whenever I’m clearing active workspace clutter, I always move files into the right folder instead of just tagging them.",
+    "counterfactual_default": "Someone without this rule would leave the files where they are and only classify them.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "move_files",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_commerce_06",
+    "persona_id": "jutta_ashton",
+    "rule_text": "When modifying an existing order, she is more likely to change the quantity than the shipping address.",
+    "canonical_answer": "Whenever I adjust an order, I always change the quantity first rather than rerouting it.",
+    "counterfactual_default": "Someone without this rule would be just as likely to edit the shipping address as the quantity.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "modify_order",
+      "param": "field"
+    }
+  },
+  {
+    "rule_id": "joel_comas_workspace_04",
+    "persona_id": "joel_comas",
+    "rule_text": "When editing down batches of drone footage or field media, Joel prefers deleting obvious throwaway duplicates rather than keeping or archiving them.",
+    "canonical_answer": "I never keep useless duplicate drone shots; I delete them.",
+    "counterfactual_default": "A typical assistant would archive extra files or simply leave them alone.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "delete_files",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "kieren_ramseur_travel_04",
+    "persona_id": "kieren_ramseur",
+    "rule_text": "For regional or weekend travel, she prefers ground transportation options over defaulting to flights when practical.",
+    "canonical_answer": "Whenever a shorter getaway is practical by land, I always choose ground transport before flying.",
+    "counterfactual_default": "Look for flight options first.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": "transport_offer_id"
+    }
+  },
+  {
+    "rule_id": "nancy_marr_commerce_03",
+    "persona_id": "nancy_marr",
+    "rule_text": "If an online purchase looks like an impulse buy, Nancy prefers canceling the order rather than letting it go through.",
+    "canonical_answer": "My rule is that I never keep an impulse purchase just because it was already placed; I cancel it if I catch it in time.",
+    "counterfactual_default": "Someone without this rule would keep the order and rationalize the purchase.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "cancel_order",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_communication_01",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "For cross-functional or outward-facing communication, she prefers drafting messages first rather than sending them immediately.",
+    "canonical_answer": "I have a rule: for messages that represent me to others, I always draft them first.",
+    "counterfactual_default": "Someone without this rule would send the message directly once the content is ready.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "joel_comas_reservation_01",
+    "persona_id": "joel_comas",
+    "rule_text": "When booking local services, Joel prefers practical providers who help with farm operations or maintenance over lifestyle-oriented services.",
+    "canonical_answer": "Whenever I book a local service, I pick the provider who solves a practical farm problem first.",
+    "counterfactual_default": "Someone without this rule would choose the most popular or most generic local provider.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_reservation_04",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When booking wellness-related services, she prefers active, practice-based options like yoga-oriented providers over purely indulgent pampering choices.",
+    "canonical_answer": "Whenever I book a wellness service, I always choose an active practice-based provider over a purely indulgent one.",
+    "counterfactual_default": "Someone without this rule would choose any highly rated spa-like provider.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_reservation_02",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When booking arts-related outings, she prefers experimental productions and contemporary-art events over mainstream entertainment choices.",
+    "canonical_answer": "I have a rule: for nights out, I always pick experimental or contemporary arts events over mainstream entertainment.",
+    "counterfactual_default": "Someone without this rule would usually favor the most popular or conventional event option.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    }
+  },
+  {
+    "rule_id": "elvira_wildman_workspace_04",
+    "persona_id": "elvira_wildman",
+    "rule_text": "For office file organization, she prefers classifying materials by project rather than by generic type.",
+    "canonical_answer": "I always organize work files by project when I’m sorting them.",
+    "counterfactual_default": "Someone without this rule would sort files by file type or leave them broadly grouped.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    }
+  },
+  {
+    "rule_id": "elizabeth_pesacreta_workspace_06",
+    "persona_id": "elizabeth_pesacreta",
+    "rule_text": "When organizing professional documents after active use, she prefers archiving them into a dedicated folder rather than leaving them in working space.",
+    "canonical_answer": "Whenever a work document is no longer active, I always archive it into the proper folder.",
+    "counterfactual_default": "Someone without this rule would leave completed files in the main workspace or simply move on without formal archiving.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "archive_files",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "jutta_ashton_commerce_05",
+    "persona_id": "jutta_ashton",
+    "rule_text": "When ordering ingredients or supplies tied to her cooking and potluck habits, she prefers building a shopping list first rather than jumping straight to a purchase.",
+    "canonical_answer": "I always make a shopping list before ordering food or cooking supplies.",
+    "counterfactual_default": "A person without this rule would often place an order immediately once items were mentioned.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    }
+  },
+  {
+    "rule_id": "fs_commerce_return_store_credit",
+    "persona_id": "few_shot",
+    "rule_text": "If she returns an order, she prefers store credit so she can put it back into farm or garden supplies.",
+    "canonical_answer": "I always choose store credit on returns when I know I will keep buying supplies.",
+    "counterfactual_default": "Request a refund back to the original payment method.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    }
+  },
+  {
+    "rule_id": "fs_reservation_confirm_fad_cryotherapy",
+    "persona_id": "few_shot",
+    "rule_text": "When a scheduled health-related appointment reflects a new or trendy wellness idea, the agent should ask her before booking it.",
+    "canonical_answer": "I have a rule: if it's a new health trend, ask me before booking anything.",
+    "counterfactual_default": "Someone without this rule would allow the booking to go through once a suitable provider was found.",
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "book_service_appointment"
+    }
+  }
+]

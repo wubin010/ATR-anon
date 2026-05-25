@@ -1,0 +1,89 @@
+{
+  "session_id": "iris_parker_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "source_doc_type": "report",
+    "location": "Hiring",
+    "doc_type": "memo",
+    "title": "Q2 Hiring Cycle Lessons Memo",
+    "content_points": [
+      "strongest candidates moved fastest through interview scheduling",
+      "panel feedback was uneven across hiring teams",
+      "scorecard completion lagged after final rounds",
+      "candidate drop-off increased when take-home reviews took over a week",
+      "recruiter and hiring manager kickoff alignment improved close rates"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Hiring",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "Q2 Hiring Cycle Lessons Memo",
+        "location": "Hiring",
+        "content_brief": "<authored from content_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_hiring_01",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Hiring Funnel Review",
+          "doc_type": "report",
+          "location": "Hiring",
+          "content_brief": "Quarterly review of applicant volume, stage conversion, time-to-fill, and offer outcomes across teams."
+        }
+      },
+      {
+        "id": "doc_hiring_02",
+        "type": "document",
+        "attributes": {
+          "title": "Interview Process Audit",
+          "doc_type": "report",
+          "location": "Hiring",
+          "content_brief": "Notes on scorecard usage, interviewer calibration, and scheduling bottlenecks from the recent cycle."
+        }
+      },
+      {
+        "id": "doc_people_03",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Engagement Snapshot",
+          "doc_type": "report",
+          "location": "People Ops",
+          "content_brief": "Employee survey highlights and retention indicators for the quarter."
+        }
+      }
+    ]
+  }
+}

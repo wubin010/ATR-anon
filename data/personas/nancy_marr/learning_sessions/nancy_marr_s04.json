@@ -1,0 +1,123 @@
+{
+  "session_id": "nancy_marr_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "workspace",
+  "reason_for_call": "Tidy some files",
+  "task_params": {
+    "location": "Garden Blog Inbox",
+    "file_type": "image",
+    "scheme": "by_type",
+    "purpose": "current working edits"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Garden Blog Inbox",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_tomato_01",
+          "fil_kimchi_02"
+        ],
+        "scheme": "by_type"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_tomato_01",
+          "fil_kimchi_02"
+        ],
+        "folder_id": "fld_working_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_tomato_01",
+        "type": "file",
+        "attributes": {
+          "name": "heirloom_tomato_plating_2024-07-18.jpg",
+          "file_type": "image",
+          "location": "Garden Blog Inbox",
+          "owner": "Nancy Marr",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_kimchi_02",
+        "type": "file",
+        "attributes": {
+          "name": "kimchi_jar_windowlight_2024-07-19.png",
+          "file_type": "image",
+          "location": "Garden Blog Inbox",
+          "owner": "Nancy Marr",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_notes_03",
+        "type": "file",
+        "attributes": {
+          "name": "caption_fragments_ferments.docx",
+          "file_type": "docx",
+          "location": "Garden Blog Inbox",
+          "owner": "Nancy Marr",
+          "labels": [
+            "draft"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_working_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Blog Working Set",
+          "purpose": "current working edits"
+        }
+      },
+      {
+        "id": "fld_archive_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Seasonal Archive",
+          "purpose": "older finished posts"
+        }
+      }
+    ]
+  }
+}

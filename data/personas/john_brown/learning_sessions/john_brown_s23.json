@@ -1,0 +1,116 @@
+{
+  "session_id": "john_brown_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "communication",
+  "reason_for_call": "Draft a thank-you message",
+  "task_params": {
+    "sender": "Maya Carter",
+    "folder": "inbox",
+    "language": "en",
+    "thank_you_points": [
+      "thank them for pulling the music plan together",
+      "thank them for handling the food plan",
+      "say the trip felt easy and fun because of their effort",
+      "mention the playlist kept the energy up",
+      "mention the food choices worked out really well",
+      "say I appreciate them taking initiative"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Carter",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thd_tripcrew_01",
+        "language": "en",
+        "body": "<authored from thank_you_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_tripcrew_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Carter",
+          "subject": "Re: Trip wrap-up and photos",
+          "body": "Had such a good time. Also, glad the playlist and food run came together. Send over any photos when you get a chance!",
+          "thread_id": "thd_tripcrew_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-22T18:14:00"
+        }
+      },
+      {
+        "id": "msg_team_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Andre Wilson",
+          "subject": "Volleyball schedule update",
+          "body": "Next week's match got pushed back by an hour. Let me know if that changes anything for you.",
+          "thread_id": "thd_volley_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-22T11:05:00"
+        }
+      },
+      {
+        "id": "msg_class_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Professor Nguyen",
+          "subject": "Lab submission reminder",
+          "body": "Reminder that the ergonomics lab summary is due by midnight tomorrow.",
+          "thread_id": "thd_class_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-03-21T09:20:00"
+        }
+      },
+      {
+        "id": "msg_tripold_04",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Carter",
+          "subject": "Gas money from last month",
+          "body": "No rush, but here's the split from the last drive if you still need it.",
+          "thread_id": "thd_drive_04",
+          "folder": "archive",
+          "labels": [],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-02-11T16:42:00"
+        }
+      }
+    ]
+  }
+}

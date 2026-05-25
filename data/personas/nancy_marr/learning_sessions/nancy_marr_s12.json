@@ -1,0 +1,144 @@
+{
+  "session_id": "nancy_marr_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule something on my calendar.",
+  "task_params": {
+    "title": "Clay Studio Open Practice",
+    "start_time": "2025-03-27T13:00:00-05:00",
+    "end_time": "2025-03-27T15:00:00-05:00",
+    "new_start_time": "2025-03-27T17:30:00-05:00",
+    "new_end_time": "2025-03-27T19:30:00-05:00",
+    "museum_title": "Museum afternoon",
+    "museum_start_time": "2025-03-27T13:30:00-05:00",
+    "museum_end_time": "2025-03-27T16:30:00-05:00",
+    "museum_location": "Walker Art Center"
+  },
+  "expected_tools": [
+    "list_events",
+    "reschedule_event",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_clay_01",
+        "new_start_time": "2025-03-27T17:30:00-05:00",
+        "new_end_time": "2025-03-27T19:30:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Museum afternoon",
+        "start_time": "2025-03-27T13:30:00-05:00",
+        "end_time": "2025-03-27T16:30:00-05:00",
+        "location": "Walker Art Center"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_clay_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Clay Studio Open Practice",
+          "start_time": "2025-03-27T13:00:00-05:00",
+          "end_time": "2025-03-27T15:00:00-05:00",
+          "participants": [],
+          "location": "Northern Clay Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_lab_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "QA data review deadline block",
+          "start_time": "2025-03-27T09:00:00-05:00",
+          "end_time": "2025-03-27T11:30:00-05:00",
+          "participants": [
+            "lab-team@riverbendfoods.com"
+          ],
+          "location": "Lab 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_haccp_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "HACCP report submission window",
+          "start_time": "2025-03-27T16:45:00-05:00",
+          "end_time": "2025-03-27T17:15:00-05:00",
+          "participants": [
+            "quality@riverbendfoods.com"
+          ],
+          "location": "Workroom B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_checkin_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "R&D check-in",
+          "start_time": "2025-03-27T11:45:00-05:00",
+          "end_time": "2025-03-27T12:30:00-05:00",
+          "participants": [
+            "rd-team@riverbendfoods.com"
+          ],
+          "location": "Conference Room Cedar",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_05",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Laura and Ben",
+          "start_time": "2025-03-27T20:00:00-05:00",
+          "end_time": "2025-03-27T21:30:00-05:00",
+          "participants": [
+            "laura@example.com",
+            "ben@example.com"
+          ],
+          "location": "Spoon and Stable",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "session_id": "john_brown_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "commerce",
+  "reason_for_call": "Shop for a small item.",
+  "task_params": {
+    "category": "sketchbook",
+    "budget": 18,
+    "sort_by": "rating",
+    "list_name": "Mural sketchbook options"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "sketchbook",
+        "budget": 18,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_sketch_03",
+          "prod_sketch_01",
+          "prod_sketch_02"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Softcover Urban Sketchbook A6",
+          "Pocket Hardcover Sketchbook 5x7",
+          "Spiral Travel Sketchbook 4x6"
+        ],
+        "list_name": "Mural sketchbook options"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sketch_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pocket Hardcover Sketchbook 5x7",
+          "price": 12.99,
+          "category": "sketchbook",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_sketch_02",
+        "type": "product",
+        "attributes": {
+          "name": "Spiral Travel Sketchbook 4x6",
+          "price": 8.49,
+          "category": "sketchbook",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_sketch_03",
+        "type": "product",
+        "attributes": {
+          "name": "Softcover Urban Sketchbook A6",
+          "price": 15.5,
+          "category": "sketchbook",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_sketch_04",
+        "type": "product",
+        "attributes": {
+          "name": "Watercolor Sketchbook 5x8",
+          "price": 19.99,
+          "category": "sketchbook",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "session_id": "romisha_shields_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "reservation",
+  "reason_for_call": "Book a wellness appointment.",
+  "task_params": {
+    "service_type": "chair massage",
+    "location": "Anniston",
+    "date_time": "2025-02-18T11:00:00",
+    "sort_by": "distance"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "chair massage",
+        "location": "Anniston",
+        "sort_by": "distance"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "svc_gentlehands_01",
+        "date_time": "2025-02-18T11:00:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_gentlehands_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Gentle Hands Wellness",
+          "service_type": "chair massage",
+          "location": "Anniston",
+          "rating": 4.7,
+          "distance_km": 2.1
+        }
+      },
+      {
+        "id": "svc_reliefpoint_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Relief Point Studio",
+          "service_type": "chair massage",
+          "location": "Anniston",
+          "rating": 4.5,
+          "distance_km": 3.4
+        }
+      },
+      {
+        "id": "svc_calmcorner_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Calm Corner Bodywork",
+          "service_type": "massage therapy",
+          "location": "Oxford",
+          "rating": 4.8,
+          "distance_km": 9.6
+        }
+      },
+      {
+        "id": "svc_serenityseat_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Serenity Seat Spa",
+          "service_type": "chair massage",
+          "location": "Anniston",
+          "rating": 4.3,
+          "distance_km": 4.8
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "instruction": "Please change the plan on my CloudDesk Workspace subscription to a different tier and keep the service active. I still use it every week for shared folders, occasional guest collaboration, and file reviews.",
+  "gold_value": "basic",
+  "session_id": "cecilia_lisette_garciaperez_commerce_04_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "cecilia_lisette_garciaperez_commerce_04",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_commerce_04",
+    "rule_text": "When she does change a subscription tier, she prefers the basic plan to keep recurring costs modest.",
+    "canonical_answer": "If I need to switch plans, I prefer the basic tier unless there is a compelling reason not to."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_clouddesk_workspace_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "CloudDesk Workspace",
+          "plan": "enterprise",
+          "status": "active",
+          "price_per_period": 79.99,
+          "shared_folders": 6,
+          "guest_collaborators_last_30_days": 9,
+          "storage_gb_used": 420,
+          "video_review_projects_last_30_days": 5
+        }
+      },
+      {
+        "id": "sub_familystream_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "FamilyStream",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 18.99,
+          "simultaneous_streams": 4,
+          "video_quality": "4K"
+        }
+      },
+      {
+        "id": "sub_gardenjournal_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "Garden Journal",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 9.99,
+          "notebooks_included": 50,
+          "export_formats": "pdf,csv"
+        }
+      },
+      {
+        "id": "sub_fitnestudio_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "FitneStudio",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 7.99,
+          "live_classes_per_month": 4,
+          "device_limit": 1
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "basic"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

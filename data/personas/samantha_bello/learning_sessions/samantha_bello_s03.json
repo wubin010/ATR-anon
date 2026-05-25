@@ -1,0 +1,105 @@
+{
+  "session_id": "samantha_bello_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "key finder",
+    "budget": 30,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "key finder",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_tidelock_01",
+          "prod_sandtrail_02",
+          "prod_breakwater_03",
+          "prod_palmhook_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_breakwater_03",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_tidelock_01",
+        "type": "product",
+        "attributes": {
+          "name": "TideLock Rugged Key Finder Clip",
+          "price": 24.99,
+          "category": "key finder",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_sandtrail_02",
+        "type": "product",
+        "attributes": {
+          "name": "SandTrail Waterproof Key Finder Tag",
+          "price": 19.5,
+          "category": "key finder",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_breakwater_03",
+        "type": "product",
+        "attributes": {
+          "name": "Breakwater Heavy-Duty Key Finder Beacon",
+          "price": 29.0,
+          "category": "key finder",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_palmhook_04",
+        "type": "product",
+        "attributes": {
+          "name": "PalmHook Compact Key Finder",
+          "price": 14.99,
+          "category": "key finder",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

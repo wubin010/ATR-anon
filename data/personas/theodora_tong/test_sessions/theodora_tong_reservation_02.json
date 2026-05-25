@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm in Seattle and want two tickets for a night out; keep it under $40 each, pick something and book it.",
+  "gold_value": "evt_museum_nocturne_01",
+  "session_id": "theodora_tong_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "theodora_tong_reservation_02",
+  "rule_ref": {
+    "rule_id": "theodora_tong_reservation_02",
+    "rule_text": "For outings that need tickets, she prefers museum, gallery, or arts-oriented events over louder entertainment options.",
+    "canonical_answer": "When I go out, I’d rather get tickets for an art or museum event than for something loud or flashy."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_museum_nocturne_01",
+        "type": "event",
+        "attributes": {
+          "name": "Harbor Museum After Hours: Modern Printmaking",
+          "location": "Seattle",
+          "date_time": "2026-09-18T19:00:00",
+          "price": 37,
+          "event_tags": [
+            "museum",
+            "art_exhibit",
+            "gallery_talk"
+          ]
+        }
+      },
+      {
+        "id": "evt_poptour_01",
+        "type": "event",
+        "attributes": {
+          "name": "Emerald Arena Pop Tour",
+          "location": "Seattle",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 34,
+          "event_tags": [
+            "pop_concert",
+            "arena_show",
+            "live_music"
+          ]
+        }
+      },
+      {
+        "id": "evt_comedy_01",
+        "type": "event",
+        "attributes": {
+          "name": "Late Laughs Stand-Up Showcase",
+          "location": "Seattle",
+          "date_time": "2026-09-18T20:30:00",
+          "price": 26,
+          "event_tags": [
+            "comedy",
+            "stand_up",
+            "nightlife"
+          ]
+        }
+      },
+      {
+        "id": "evt_dance_01",
+        "type": "event",
+        "attributes": {
+          "name": "Neon Pulse DJ Night",
+          "location": "Seattle",
+          "date_time": "2026-09-18T21:00:00",
+          "price": 29,
+          "event_tags": [
+            "dance_party",
+            "dj_set",
+            "nightlife"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_museum_nocturne_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

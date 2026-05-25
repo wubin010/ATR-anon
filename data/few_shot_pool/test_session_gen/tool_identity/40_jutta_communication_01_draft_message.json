@@ -1,0 +1,84 @@
+{
+  "domain": "communication",
+  "instruction": "Nora Patel emailed this morning asking whether the recent water damage at her shop qualifies under her commercial policy and how the deductible works. Reply to her: ask her to send over the repair photos and invoices first; the deductible on the existing policy is $1,000; final coverage depends on the loss-adjustment review.",
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_nora_claim_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Nora Patel <nora@patelcornerstore.com>",
+          "subject": "Question about water damage claim and deductible",
+          "body": "Hi Jutta, the storage room at my shop had water damage after last weekend's storm. Before I file anything, can you tell me whether this may be covered under my business policy and how the deductible would apply? I can send photos and repair receipts if needed. Thanks, Nora",
+          "thread_id": "thr_nora_claim_22",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-05-14T09:18"
+        }
+      },
+      {
+        "id": "msg_mike_lunch_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Mike Alvarez <mike@harboradvisors.com>",
+          "subject": "Lunch next Thursday?",
+          "body": "Checking whether you're free for lunch next Thursday after the chamber event.",
+          "thread_id": "thr_mike_lunch_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-05-14T08:02"
+        }
+      },
+      {
+        "id": "msg_vendor_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "billing@policysuite.com",
+          "subject": "Your monthly invoice is ready",
+          "body": "Your May invoice is now available in the billing portal.",
+          "thread_id": "thr_vendor_invoice_09",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-05-14T07:30"
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_communication_01_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_communication_01",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_communication_01",
+    "rule_text": "For external communications about insurance, claims, policy, or risk explanations, default to a draft for review rather than sending directly.",
+    "canonical_answer": "Anything to do with insurance, claims, or policy explanations — let me look at a draft first, don't fire it off."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

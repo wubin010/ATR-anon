@@ -1,0 +1,131 @@
+{
+  "session_id": "maximo_esteban_irizarry_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Lina Morales",
+    "priority": "high",
+    "label_ids": [
+      "lbl_client_01"
+    ],
+    "archive_message_ids": [
+      "msg_news_01",
+      "msg_build_01"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "label_messages",
+    "archive_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Lina Morales"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_lina_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_lina_01"
+        ],
+        "label_ids": [
+          "lbl_client_01"
+        ]
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_news_01",
+          "msg_build_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lina_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lina Morales",
+          "subject": "Need final approval on bakery site copy",
+          "body": "Morning, Maximo — I need your final approval on the homepage and contact page text so I can send everything to the owner today.",
+          "thread_id": "thr_lina_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T07:12:00-04:00"
+        }
+      },
+      {
+        "id": "msg_news_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Framework Weekly",
+          "subject": "Top frontend links for this week",
+          "body": "A roundup of frontend articles, library releases, and tutorials.",
+          "thread_id": "thr_news_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T06:41:00-04:00"
+        }
+      },
+      {
+        "id": "msg_build_01",
+        "type": "message",
+        "attributes": {
+          "sender": "CI Bot",
+          "subject": "Nightly build passed",
+          "body": "All nightly checks completed successfully. No action needed.",
+          "thread_id": "thr_ci_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T05:58:00-04:00"
+        }
+      },
+      {
+        "id": "lbl_client_01",
+        "type": "label",
+        "attributes": {
+          "name": "Client",
+          "topic": "client work"
+        }
+      }
+    ]
+  }
+}

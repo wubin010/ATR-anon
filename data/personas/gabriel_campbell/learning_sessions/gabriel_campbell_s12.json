@@ -1,0 +1,105 @@
+{
+  "session_id": "gabriel_campbell_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "phone tripod",
+    "budget": 40,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "phone tripod",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_tripod_01",
+          "prod_tripod_02",
+          "prod_tripod_03",
+          "prod_tripod_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_tripod_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_tripod_01",
+        "type": "product",
+        "attributes": {
+          "name": "LumaFlex Pocket Phone Tripod",
+          "price": 24.99,
+          "category": "phone tripod",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_tripod_02",
+        "type": "product",
+        "attributes": {
+          "name": "HarborLite Compact Phone Tripod",
+          "price": 34.5,
+          "category": "phone tripod",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_tripod_03",
+        "type": "product",
+        "attributes": {
+          "name": "North Street Travel Phone Tripod",
+          "price": 39.0,
+          "category": "phone tripod",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_tripod_04",
+        "type": "product",
+        "attributes": {
+          "name": "Beacon Mini Phone Tripod",
+          "price": 18.75,
+          "category": "phone tripod",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

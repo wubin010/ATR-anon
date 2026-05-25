@@ -1,0 +1,134 @@
+{
+  "instruction": "Book a hotel in Porto for two adults with one room for a quick city break. Just pick whichever option seems best and take care of it.",
+  "gold_value": "hotel_porto_sao_lazaro_guesthouse_01",
+  "session_id": "maximo_esteban_irizarry_travel_07_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "maximo_esteban_irizarry_travel_07",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_travel_07",
+    "rule_text": "When booking lodging, he prefers offers that match modest, budget-conscious stays over upscale accommodations.",
+    "canonical_answer": "I book modest places that fit the budget instead of paying for upscale lodging."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hotel_porto_sao_lazaro_guesthouse_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "São Lázaro Guesthouse",
+          "location": "Bonfim, Porto, Portugal",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 109,
+          "category": "budget",
+          "star_rating": 2,
+          "rating": 4.3,
+          "review_count": 386,
+          "amenities": [
+            "wifi",
+            "private_bathroom"
+          ],
+          "neighborhood_profile": "traditional residential quarter"
+        }
+      },
+      {
+        "id": "hotel_porto_ribeira_palace_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Ribeira Palace Hotel",
+          "location": "Ribeira, Porto, Portugal",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 239,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 2841,
+          "amenities": [
+            "river_view",
+            "spa",
+            "concierge"
+          ],
+          "neighborhood_profile": "historic riverfront"
+        }
+      },
+      {
+        "id": "hotel_porto_clerigos_boutique_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Clérigos Boutique Suites",
+          "location": "Clérigos, Porto, Portugal",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 211,
+          "category": "upscale",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 1417,
+          "amenities": [
+            "rooftop_bar",
+            "breakfast",
+            "city_view"
+          ],
+          "neighborhood_profile": "nightlife and monuments district"
+        }
+      },
+      {
+        "id": "hotel_porto_foz_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Foz Grand Seaside Hotel",
+          "location": "Foz do Douro, Porto, Portugal",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 228,
+          "category": "upscale",
+          "star_rating": 5,
+          "rating": 4.7,
+          "review_count": 1902,
+          "amenities": [
+            "ocean_view",
+            "pool",
+            "fitness_center"
+          ],
+          "neighborhood_profile": "waterfront district"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "hotel_porto_sao_lazaro_guesthouse_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

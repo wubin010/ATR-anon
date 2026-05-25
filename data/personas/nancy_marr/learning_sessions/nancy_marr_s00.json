@@ -1,0 +1,126 @@
+{
+  "session_id": "nancy_marr_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and draft one reply",
+  "task_params": {
+    "target_sender": "Priya Shah",
+    "folder": "inbox",
+    "priority": "high",
+    "language": "en",
+    "reply_points": [
+      "thank her for checking in",
+      "say the extraction run finished yesterday",
+      "say the summary is being finalized now",
+      "promise a concise data update by 3 PM today",
+      "offer the full spreadsheet tomorrow morning"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Priya Shah",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_priya_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_priya_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_priya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Priya Shah",
+          "subject": "Status check on oat culture shelf-life data",
+          "body": "Hi Nancy, can you send me a quick status update on the oat culture shelf-life data today? I just need to know where things stand before the 2 PM team huddle.",
+          "thread_id": "thr_priya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T07:18:00"
+        }
+      },
+      {
+        "id": "msg_alert_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Lab Equipment Alerts",
+          "subject": "Reminder: HPLC calibration window next week",
+          "body": "The quarterly HPLC calibration window opens next Monday. Please confirm instrument availability by end of week.",
+          "thread_id": "thr_alert_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T06:42:00"
+        }
+      },
+      {
+        "id": "msg_hr_03",
+        "type": "message",
+        "attributes": {
+          "sender": "HR Benefits",
+          "subject": "Wellness reimbursement form deadline",
+          "body": "This is a reminder that wellness reimbursement forms are due at the end of the month.",
+          "thread_id": "thr_hr_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-13T16:05:00"
+        }
+      },
+      {
+        "id": "msg_marta_04",
+        "type": "message",
+        "attributes": {
+          "sender": "Marta Lopez",
+          "subject": "Photos from the sensory booth layout",
+          "body": "Sending over the booth layout photos from yesterday. No rush, just wanted you to have them before next week's setup meeting.",
+          "thread_id": "thr_marta_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-13T18:27:00"
+        }
+      }
+    ]
+  }
+}

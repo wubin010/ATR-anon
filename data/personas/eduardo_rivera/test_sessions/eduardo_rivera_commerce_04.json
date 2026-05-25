@@ -1,0 +1,104 @@
+{
+  "instruction": "Please move my OrthoForge subscription to the cheapest plan that still keeps the service active for the next billing cycle.",
+  "gold_value": "pro",
+  "session_id": "eduardo_rivera_commerce_04_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "eduardo_rivera_commerce_04",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_commerce_04",
+    "rule_text": "For core professional design or workflow software, he prefers the pro tier over a basic plan.",
+    "canonical_answer": "For software I rely on for design and workflow, I prefer the pro plan over basic."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_orthoforge_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "OrthoForge",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 249.0,
+          "software_category": "dental CAD/CAM",
+          "primary_tasks": "restoration design, 3D scan imports, lab workflow",
+          "basic_price_per_period": 79.0,
+          "pro_price_per_period": 169.0,
+          "premium_price_per_period": 249.0,
+          "enterprise_price_per_period": 399.0
+        }
+      },
+      {
+        "id": "sub_smiledocs_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "SmileDocs",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 19.0,
+          "software_category": "patient forms and intake",
+          "basic_price_per_period": 19.0,
+          "pro_price_per_period": 39.0
+        }
+      },
+      {
+        "id": "sub_labledger_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "LabLedger",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 34.0,
+          "software_category": "bookkeeping",
+          "basic_price_per_period": 14.0,
+          "pro_price_per_period": 34.0,
+          "premium_price_per_period": 59.0
+        }
+      },
+      {
+        "id": "sub_scanvault_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "ScanVault",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 12.0,
+          "software_category": "cloud backup",
+          "basic_price_per_period": 12.0,
+          "pro_price_per_period": 24.0,
+          "premium_price_per_period": 44.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "pro"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "session_id": "romisha_shields_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Cookbook Fundraiser Ideas for Senior Center Board",
+    "location": "Senior Center",
+    "document_points": [
+      "purpose: raise money with a community cookbook",
+      "recipe sources from seniors, families, and church members",
+      "possible sections: breads, sides, mains, desserts, stories",
+      "include short memories or cooking tips with recipes",
+      "ideas for sales at center events and local churches",
+      "need volunteers for recipe collection and proofreading"
+    ]
+  },
+  "expected_tools": [
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Cookbook Fundraiser Ideas for Senior Center Board",
+        "location": "Senior Center",
+        "content_brief": "<authored from document_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_board_01",
+        "type": "document",
+        "attributes": {
+          "title": "Board Meeting Notes - Outreach Ideas",
+          "doc_type": "note",
+          "location": "Senior Center",
+          "content_brief": "Rough notes about outreach, volunteers, and fundraising ideas."
+        }
+      },
+      {
+        "id": "doc_event_02",
+        "type": "document",
+        "attributes": {
+          "title": "Holiday Bazaar Vendor List",
+          "doc_type": "spreadsheet",
+          "location": "Senior Center",
+          "content_brief": "Vendor contacts and booth assignments for the center bazaar."
+        }
+      },
+      {
+        "id": "file_flyer_01",
+        "type": "file",
+        "attributes": {
+          "name": "spring_social_flyer.pdf",
+          "file_type": "pdf",
+          "location": "Senior Center",
+          "owner": "Romisha Shields",
+          "labels": [
+            "events"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

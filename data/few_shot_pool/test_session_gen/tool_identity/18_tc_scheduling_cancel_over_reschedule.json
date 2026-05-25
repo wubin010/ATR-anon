@@ -1,0 +1,84 @@
+{
+  "session_id": "fs_scheduling_tc_cancel_over_reschedule_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "persona_id": "few_shot",
+  "rule_id": "fs_scheduling_tc_cancel_over_reschedule",
+  "instruction": "Wednesday at 3pm I had a weekly project review, and now a new client meeting got booked for the same slot. Sort it out.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_weekly_review_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Weekly Project Review",
+          "start_time": "2026-04-22T15:00",
+          "end_time": "2026-04-22T16:00",
+          "participants": [
+            "team-alpha@company.com"
+          ],
+          "status": "confirmed",
+          "calendar": "primary"
+        }
+      },
+      {
+        "id": "evt_daily_standup_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Daily Standup",
+          "start_time": "2026-04-22T09:00",
+          "end_time": "2026-04-22T09:15",
+          "participants": [
+            "team-alpha@company.com"
+          ],
+          "status": "confirmed",
+          "calendar": "primary"
+        }
+      },
+      {
+        "id": "evt_coffee_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Coffee with mentor",
+          "start_time": "2026-04-22T11:00",
+          "end_time": "2026-04-22T11:30",
+          "participants": [
+            "alex@company.com"
+          ],
+          "status": "confirmed",
+          "calendar": "primary"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "cancel_event",
+          "arguments": {
+            "event_id": "evt_weekly_review_01"
+          },
+          "compare_args": null
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_scheduling_tc_cancel_over_reschedule",
+    "rule_text": "When meetings conflict, cancel the older meeting outright (do not reschedule) — the user dislikes the back-and-forth of moving meetings around and notifying everyone.",
+    "canonical_answer": "When meetings clash, just cancel the old one — don't reshuffle and force everyone to coordinate again, my calendar shouldn't be that sticky."
+  }
+}

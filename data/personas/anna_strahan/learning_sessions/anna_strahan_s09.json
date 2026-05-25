@@ -1,0 +1,109 @@
+{
+  "session_id": "anna_strahan_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "commerce",
+  "reason_for_call": "Order an art supply.",
+  "task_params": {
+    "category": "oil paint set",
+    "budget": 60,
+    "sort_by": "rating",
+    "quantity": 1,
+    "product_ids": [
+      "prod_oilset_01",
+      "prod_oilset_02",
+      "prod_oilset_03"
+    ]
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "oil paint set",
+        "budget": 60,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_oilset_01",
+          "prod_oilset_02",
+          "prod_oilset_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_oilset_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_oilset_01",
+        "type": "product",
+        "attributes": {
+          "name": "Linden Atelier Oil Paint Set, 12 Tubes",
+          "price": 54.99,
+          "category": "oil paint set",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_oilset_02",
+        "type": "product",
+        "attributes": {
+          "name": "Marais Studio Oil Paint Set, 10 Tubes",
+          "price": 41.5,
+          "category": "oil paint set",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_oilset_03",
+        "type": "product",
+        "attributes": {
+          "name": "Northlight Artist Oil Paint Set, 16 Tubes",
+          "price": 59.0,
+          "category": "oil paint set",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_canvas_01",
+        "type": "product",
+        "attributes": {
+          "name": "Riverbend Stretched Canvas Pack",
+          "price": 24.99,
+          "category": "canvas",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

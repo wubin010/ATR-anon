@@ -1,0 +1,128 @@
+{
+  "session_id": "maximo_esteban_irizarry_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "scheduling",
+  "reason_for_call": "Find time on my calendar.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Visit Cousin Rafael",
+    "start_time": "2025-04-24T15:30:00-04:00",
+    "end_time": "2025-04-24T17:00:00-04:00",
+    "participants": [
+      "Rafael Irizarry"
+    ],
+    "location": "Villalba"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-24T15:30:00-04:00",
+        "end_time": "2025-04-24T17:00:00-04:00",
+        "participants": [
+          "Rafael Irizarry"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Visit Cousin Rafael",
+        "start_time": "2025-04-24T15:30:00-04:00",
+        "end_time": "2025-04-24T17:00:00-04:00",
+        "participants": [
+          "Rafael Irizarry"
+        ],
+        "location": "Villalba"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_getaway_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Coastal Getaway",
+          "start_time": "2025-04-21T09:00:00-04:00",
+          "end_time": "2025-04-23T18:00:00-04:00",
+          "participants": [
+            "Elena Irizarry"
+          ],
+          "location": "La Parguera",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_garden_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Garden Volunteer Shift",
+          "start_time": "2025-04-24T09:00:00-04:00",
+          "end_time": "2025-04-24T11:00:00-04:00",
+          "participants": [
+            "Orocovis Garden Group"
+          ],
+          "location": "Orocovis Plaza",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_rest_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Visit Cousin Rafael",
+          "start_time": "2025-04-24T15:30:00-04:00",
+          "end_time": "2025-04-24T17:00:00-04:00",
+          "participants": [
+            "Rafael Irizarry"
+          ],
+          "location": "Villalba",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_workshop_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Youth Coding Workshop",
+          "start_time": "2025-04-24T18:30:00-04:00",
+          "end_time": "2025-04-24T20:00:00-04:00",
+          "participants": [
+            "Community Center"
+          ],
+          "location": "Orocovis Community Centre",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

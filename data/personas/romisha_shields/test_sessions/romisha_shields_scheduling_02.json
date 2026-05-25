@@ -1,0 +1,96 @@
+{
+  "instruction": "I still haven't replied to the Harvest Supper invite at New Hope Fellowship Hall on 2026-09-18 from 6:30 to 8:30pm. Check whether it overlaps with what I already have and send back the response so they're not waiting on me.",
+  "gold_value": "tentative",
+  "session_id": "romisha_shields_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "romisha_shields_scheduling_02",
+  "rule_ref": {
+    "rule_id": "romisha_shields_scheduling_02",
+    "rule_text": "When an invitation conflicts with something unresolved or she is not ready to commit, she prefers responding tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If I’m not sure I can make it, I’d rather answer maybe than yes or no."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_harvest_supper_newhope_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Harvest Supper and Fellowship Night",
+          "start_time": "2026-09-18T18:30:00-04:00",
+          "end_time": "2026-09-18T20:30:00-04:00",
+          "participants": [
+            "events@newhopefellowship.org",
+            "romisha.shields@example.com"
+          ],
+          "location": "New Hope Fellowship Hall",
+          "calendar": "invites",
+          "status": "needs_response",
+          "organizer": "New Hope Fellowship Events Committee",
+          "attendee_count": 85,
+          "rsvp_deadline": "2026-09-16T17:00:00-04:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_hvac_visit_window_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "HVAC repair visit window — final time not confirmed",
+          "start_time": "2026-09-18T18:00:00-04:00",
+          "end_time": "2026-09-18T20:00:00-04:00",
+          "participants": [
+            "romisha.shields@example.com",
+            "dispatch@northstarhvac.com"
+          ],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_bookclub_call_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Book club check-in call",
+          "start_time": "2026-09-18T21:00:00-04:00",
+          "end_time": "2026-09-18T21:30:00-04:00",
+          "participants": [
+            "romisha.shields@example.com",
+            "naomi.reed@example.com"
+          ],
+          "location": "Phone",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

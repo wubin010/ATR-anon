@@ -1,0 +1,169 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Mexico",
+      "markets",
+      "history",
+      "walking",
+      "budget"
+    ],
+    "destination": "Oaxaca",
+    "duration_days": 4,
+    "traveler_count": 1,
+    "stop_tags": [
+      "market",
+      "history",
+      "walking"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Mexico",
+          "markets",
+          "history",
+          "walking",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_oaxaca_01",
+          "dest_puebla_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Oaxaca",
+        "stop_tags": [
+          "market",
+          "history",
+          "walking"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Oaxaca",
+        "duration_days": 4,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_benitojuarez_01",
+          "stop_santodomingo_02",
+          "stop_andador_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_oaxaca_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Oaxaca",
+          "region": "Oaxaca, Mexico",
+          "tags": [
+            "markets",
+            "history",
+            "walking",
+            "budget",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "dest_puebla_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Puebla",
+          "region": "Puebla, Mexico",
+          "tags": [
+            "markets",
+            "history",
+            "walking",
+            "budget",
+            "architecture"
+          ]
+        }
+      },
+      {
+        "id": "stop_benitojuarez_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mercado Benito Juárez",
+          "location": "Oaxaca",
+          "tags": [
+            "market",
+            "walking",
+            "food"
+          ]
+        }
+      },
+      {
+        "id": "stop_santodomingo_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Templo de Santo Domingo",
+          "location": "Oaxaca",
+          "tags": [
+            "history",
+            "walking",
+            "architecture"
+          ]
+        }
+      },
+      {
+        "id": "stop_andador_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Andador Macedonio Alcalá",
+          "location": "Oaxaca",
+          "tags": [
+            "walking",
+            "history",
+            "street life"
+          ]
+        }
+      }
+    ]
+  }
+}

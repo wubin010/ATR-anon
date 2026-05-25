@@ -1,0 +1,102 @@
+{
+  "session_id": "maximo_esteban_irizarry_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "archival sleeves",
+    "budget": 25,
+    "quantity": 2
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "archival sleeves",
+        "budget": 25,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_clearfile_01",
+          "prod_photosafe_02"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_photosafe_02",
+        "quantity": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_clearfile_01",
+        "type": "product",
+        "attributes": {
+          "name": "ClearFile Archival Sleeves 50-Pack",
+          "price": 12.99,
+          "category": "archival sleeves",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_photosafe_02",
+        "type": "product",
+        "attributes": {
+          "name": "PhotoSafe Archival Sleeves 100-Pack",
+          "price": 21.5,
+          "category": "archival sleeves",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_memorguard_03",
+        "type": "product",
+        "attributes": {
+          "name": "MemorGuard Print Protector Sleeves 25-Pack",
+          "price": 8.49,
+          "category": "print protector sleeves",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_albumcare_04",
+        "type": "product",
+        "attributes": {
+          "name": "AlbumCare Archival Sleeves 200-Pack",
+          "price": 29.99,
+          "category": "archival sleeves",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "session_id": "joseph_eldridge_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a calendar event.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Garden Work Session",
+    "start_time": "2025-05-24T09:00:00-04:00",
+    "end_time": "2025-05-24T11:30:00-04:00",
+    "location": "Back garden",
+    "participants": []
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-05-24T09:00:00-04:00",
+        "end_time": "2025-05-24T11:30:00-04:00",
+        "participants": []
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Garden Work Session",
+        "start_time": "2025-05-24T09:00:00-04:00",
+        "end_time": "2025-05-24T11:30:00-04:00",
+        "participants": [],
+        "location": "Back garden"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_consult_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Inverter Reliability Review",
+          "start_time": "2025-05-24T13:00:00-04:00",
+          "end_time": "2025-05-24T15:00:00-04:00",
+          "participants": [
+            "client-team@triadpower.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_gardenclub_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Native Plant Society Call",
+          "start_time": "2025-05-24T16:00:00-04:00",
+          "end_time": "2025-05-24T17:00:00-04:00",
+          "participants": [
+            "chapter@nativeplants.org"
+          ],
+          "location": "Phone",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_theater_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Theater Lighting Check",
+          "start_time": "2025-05-23T19:00:00-04:00",
+          "end_time": "2025-05-23T21:00:00-04:00",
+          "participants": [
+            "stage.manager@durhamplayers.org"
+          ],
+          "location": "Main Street Playhouse",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_walk_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Walking Club",
+          "start_time": "2025-05-25T08:30:00-04:00",
+          "end_time": "2025-05-25T09:30:00-04:00",
+          "participants": [
+            "club@durhamwalkers.org"
+          ],
+          "location": "Eno River Trailhead",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_garden_05",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Garden Work Session",
+          "start_time": "2025-05-24T09:00:00-04:00",
+          "end_time": "2025-05-24T11:30:00-04:00",
+          "participants": [],
+          "location": "Back garden",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      }
+    ]
+  }
+}

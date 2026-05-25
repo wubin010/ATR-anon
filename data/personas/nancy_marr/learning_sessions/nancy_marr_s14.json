@@ -1,0 +1,110 @@
+{
+  "session_id": "nancy_marr_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Book a place to stay.",
+  "task_params": {
+    "location": "Duluth",
+    "guest_count": 2,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "hotel_offer_id": "htl_harbor_suites_01"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Duluth",
+        "guest_count": 2,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "htl_harbor_suites_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_harbor_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Harbor Suites Inn",
+          "location": "Duluth",
+          "check_in_date": "2025-08-22",
+          "check_out_date": "2025-08-24",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 139.0
+        }
+      },
+      {
+        "id": "htl_canal_house_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Canal House Hotel",
+          "location": "Duluth",
+          "check_in_date": "2025-08-22",
+          "check_out_date": "2025-08-24",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 172.0
+        }
+      },
+      {
+        "id": "htl_lakeside_lodge_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Lakeside Lodge Duluth",
+          "location": "Duluth",
+          "check_in_date": "2025-08-22",
+          "check_out_date": "2025-08-24",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 188.0
+        }
+      },
+      {
+        "id": "htl_hillside_stay_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Hillside Stay",
+          "location": "Duluth",
+          "check_in_date": "2025-08-22",
+          "check_out_date": "2025-08-24",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 151.0
+        }
+      }
+    ]
+  }
+}

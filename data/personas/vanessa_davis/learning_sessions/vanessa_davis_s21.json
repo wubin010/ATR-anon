@@ -1,0 +1,92 @@
+{
+  "session_id": "vanessa_davis_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working note",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Youth Session: Basic Vehicle Safety and Road Awareness",
+    "location": "Church Youth Outreach",
+    "content_brief": "One-page note for a youth session covering simple vehicle safety tips and road awareness.",
+    "safety_points": [
+      "check seat belts before the car moves",
+      "walk around the vehicle and watch for kids or objects",
+      "keep eyes on the road and limit phone distractions",
+      "follow speed limits and leave safe stopping distance",
+      "use turn signals and check mirrors before changing lanes",
+      "watch road signs, crosswalks, and school zones",
+      "never ride with an unsafe or impaired driver",
+      "speak up if something in the car feels unsafe"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Church Youth Outreach",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Youth Session: Basic Vehicle Safety and Road Awareness",
+        "location": "Church Youth Outreach",
+        "content_brief": "<authored from safety_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Youth Outreach Session Note Template",
+          "doc_type": "template",
+          "location": "Church Youth Outreach",
+          "content_brief": "Simple one-page teaching template with heading, key points, and closing reminder."
+        }
+      },
+      {
+        "id": "doc_note_02",
+        "type": "document",
+        "attributes": {
+          "title": "Volunteer Check-In Talking Points",
+          "doc_type": "note",
+          "location": "Church Youth Outreach",
+          "content_brief": "Brief welcome note and attendance reminders for youth volunteers."
+        }
+      },
+      {
+        "id": "doc_tpl_03",
+        "type": "document",
+        "attributes": {
+          "title": "Community Workshop Handout Template",
+          "doc_type": "template",
+          "location": "Community Programs",
+          "content_brief": "Generic handout template for short educational sessions."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "instruction": "I'm pulling together a short cut from the North Field drone run. In /media/drone/raw, the irrigation pivot and south fence line shots include a few obvious repeated captures mixed in with the rest; clean up that batch so the raw set is easier to work through.",
+  "gold_value": null,
+  "session_id": "joel_comas_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "joel_comas",
+  "rule_id": "joel_comas_workspace_04",
+  "rule_ref": {
+    "rule_id": "joel_comas_workspace_04",
+    "rule_text": "When editing down batches of drone footage or field media, Joel prefers deleting obvious throwaway duplicates rather than keeping or archiving them.",
+    "canonical_answer": "I never keep useless duplicate drone shots; I delete them."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_nfield_pivot_pass_001",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_pivot_pass_001.jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "irrigation_pivot"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:14:22",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fil_nfield_pivot_pass_001_dup_a",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_pivot_pass_001 (1).jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "irrigation_pivot"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:14:23",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fil_nfield_pivot_pass_001_dup_b",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_pivot_pass_001 copy.jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "irrigation_pivot"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:14:24",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fil_nfield_southfence_pass_014",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_southfence_pass_014.jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "south_fence_line"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:31:02",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fil_nfield_southfence_pass_014_dup",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_southfence_pass_014 copy.jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "south_fence_line"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:31:03",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fil_nfield_windbreak_orbit_022",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_windbreak_orbit_022.jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "windbreak"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:42:11",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fil_nfield_rows_overhead_031",
+        "type": "file",
+        "attributes": {
+          "name": "northfield_rows_overhead_031.jpg",
+          "file_type": "image",
+          "location": "/media/drone/raw/2026-07-18",
+          "owner": "Joel Comas",
+          "labels": [
+            "drone",
+            "raw",
+            "north_field",
+            "crop_rows"
+          ],
+          "archived": false,
+          "captured_at": "2026-07-18T06:48:55",
+          "flight_run": "northfield_morning_01",
+          "resolution": "5472x3648"
+        }
+      },
+      {
+        "id": "fld_archived_drone_raw_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived Drone Raw",
+          "purpose": "long-term storage for raw aerial captures removed from active edit batches"
+        }
+      },
+      {
+        "id": "fld_field_media_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Field Media Archive",
+          "purpose": "seasonal archive for older photo and drone source material"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "delete_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

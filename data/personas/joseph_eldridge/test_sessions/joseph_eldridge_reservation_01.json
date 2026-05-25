@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner for two in downtown Durham on 2026-09-18 at 7:00pm — just pick a restaurant and make the reservation.",
+  "gold_value": "rst_magnolia_supper_01",
+  "session_id": "joseph_eldridge_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "joseph_eldridge_reservation_01",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_reservation_01",
+    "rule_text": "When dining out, Joseph prefers restaurants that align with Southern comfort food rather than trend-driven or highly experimental menus.",
+    "canonical_answer": "When I go out to eat, I prefer Southern comfort food over trendy experimental places."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_magnolia_supper_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Magnolia Supper House",
+          "cuisine": "Southern",
+          "location": "Downtown Durham",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "family dining"
+        }
+      },
+      {
+        "id": "rst_counterculture_table_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Counter Culture Table",
+          "cuisine": "New American",
+          "location": "Downtown Durham",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "chef's counter"
+        }
+      },
+      {
+        "id": "rst_tessera_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Tessera",
+          "cuisine": "Eclectic",
+          "location": "Downtown Durham",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "small plates"
+        }
+      },
+      {
+        "id": "rst_juniper_room_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Juniper Room",
+          "cuisine": "Mediterranean",
+          "location": "Downtown Durham",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "open kitchen"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_magnolia_supper_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

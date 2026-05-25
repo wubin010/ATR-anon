@@ -1,0 +1,89 @@
+{
+  "session_id": "jennifer_philmon_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "workspace",
+  "reason_for_call": "Update a spreadsheet",
+  "task_params": {
+    "location": "Home",
+    "doc_type": "spreadsheet",
+    "title": "Meal Planning Grid",
+    "stew_keywords": [
+      "lentil stew",
+      "cabbage sausage stew",
+      "bean and potato stew"
+    ],
+    "budget_keywords": [
+      "low-cost",
+      "pantry staples",
+      "freezer-friendly"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Home",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_meal_01",
+        "content_delta": "<authored from stew_keywords, budget_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_meal_01",
+        "type": "document",
+        "attributes": {
+          "title": "Meal Planning Grid",
+          "doc_type": "spreadsheet",
+          "location": "Home",
+          "content_brief": "Weekly meal-planning spreadsheet with columns for dish ideas, ingredients, estimated cost, and notes."
+        }
+      },
+      {
+        "id": "doc_meal_02",
+        "type": "document",
+        "attributes": {
+          "title": "Pantry Inventory",
+          "doc_type": "spreadsheet",
+          "location": "Home",
+          "content_brief": "Household pantry tracker with dried beans, lentils, potatoes, cabbage, broth, and spices."
+        }
+      },
+      {
+        "id": "doc_note_03",
+        "type": "document",
+        "attributes": {
+          "title": "One-Pot Dinner Notes",
+          "doc_type": "note",
+          "location": "Home",
+          "content_brief": "Scratch notes about easy soups, stews, and batch-cooking ideas."
+        }
+      }
+    ]
+  }
+}

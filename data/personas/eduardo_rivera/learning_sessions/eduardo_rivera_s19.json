@@ -1,0 +1,189 @@
+{
+  "session_id": "eduardo_rivera_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Monterey"
+    ],
+    "destination_ids": [
+      "dst_monterey_01"
+    ],
+    "origin": "Pittsburg",
+    "destination": "Monterey",
+    "passenger_count": 2,
+    "duration_days": 3,
+    "stop_tags": [
+      "coastal",
+      "relaxed"
+    ],
+    "selected_stop_ids": [
+      "stp_pacificgrove_01",
+      "stp_canneryrow_02"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_ground_transport",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Monterey"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_monterey_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Pittsburg",
+        "destination": "Monterey",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Monterey",
+        "stop_tags": [
+          "coastal",
+          "relaxed"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Monterey",
+        "duration_days": 3,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_pacificgrove_01",
+          "stp_canneryrow_02"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": false,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_monterey_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Monterey",
+          "region": "Central Coast California",
+          "tags": [
+            "coastal",
+            "weekend",
+            "scenic",
+            "relaxed"
+          ]
+        }
+      },
+      {
+        "id": "trn_montereybus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Pittsburg",
+          "destination": "Monterey",
+          "mode": "bus",
+          "departure_date": "2025-06-14",
+          "price": 68.0,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "trn_montereycar_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Pittsburg",
+          "destination": "Monterey",
+          "mode": "car-transfer",
+          "departure_date": "2025-06-14",
+          "price": 184.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "stp_pacificgrove_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lovers Point Walk",
+          "location": "Pacific Grove Monterey",
+          "tags": [
+            "coastal",
+            "relaxed",
+            "scenic",
+            "walk"
+          ]
+        }
+      },
+      {
+        "id": "stp_canneryrow_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Cannery Row Waterfront",
+          "location": "Monterey",
+          "tags": [
+            "coastal",
+            "relaxed",
+            "food",
+            "stroll"
+          ]
+        }
+      },
+      {
+        "id": "stp_pointlobos_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Point Lobos Trail Lookouts",
+          "location": "Monterey County",
+          "tags": [
+            "coastal",
+            "hike",
+            "scenic",
+            "nature"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "session_id": "romisha_shields_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "reservation",
+  "reason_for_call": "Help me with a dinner reservation.",
+  "task_params": {
+    "location": "Anniston",
+    "cuisine": "Southern",
+    "date_time": "2025-03-14T18:30:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Anniston",
+        "cuisine": "Southern",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_magnolia_01",
+        "date_time": "2025-03-14T18:30:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_magnolia_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Magnolia Supper House",
+          "cuisine": "Southern",
+          "location": "Anniston",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_peppervine_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Pepper Vine Kitchen",
+          "cuisine": "Southern",
+          "location": "Anniston",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "booth seating"
+        }
+      },
+      {
+        "id": "rst_bella_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bella Roma",
+          "cuisine": "Italian",
+          "location": "Anniston",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "formal dining"
+        }
+      },
+      {
+        "id": "rst_lakegrill_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Lakeview Grill",
+          "cuisine": "American",
+          "location": "Oxford",
+          "rating": 4.3,
+          "price_range": "$$",
+          "seating_style": "patio seating"
+        }
+      }
+    ]
+  }
+}

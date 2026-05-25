@@ -1,0 +1,89 @@
+{
+  "instruction": "The details in our Lakeview family brunch thread are settled: 2026-08-16 from 11:00 to 14:00 at Aunt Denise's house in Lakeview, with denise.walker@familymail.com, eric.walker@familymail.com, and nia.walker@familymail.com joining. Keep this on my radar.",
+  "gold_value": null,
+  "session_id": "vanessa_davis_scheduling_04_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "vanessa_davis_scheduling_04",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_scheduling_04",
+    "rule_text": "For church outreach sessions, mentoring meetups, or family gatherings, she prefers creating a proper shared calendar event rather than relying on an informal reminder.",
+    "canonical_answer": "For group plans, I want a real calendar event that everyone can work from."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_lakeview_family_brunch_thread_01",
+        "type": "event",
+        "attributes": {
+          "title": "Lakeview family brunch thread",
+          "start_time": "2026-08-16T11:00:00",
+          "end_time": "2026-08-16T14:00:00",
+          "participants": [
+            "denise.walker@familymail.com",
+            "eric.walker@familymail.com",
+            "nia.walker@familymail.com"
+          ],
+          "location": "Aunt Denise's House, Lakeview",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "family_group_chat"
+        }
+      },
+      {
+        "id": "evt_riverbend_outreach_thread_02",
+        "type": "event",
+        "attributes": {
+          "title": "Riverbend outreach dinner thread",
+          "start_time": "2026-08-23T17:30:00",
+          "end_time": "2026-08-23T19:00:00",
+          "participants": [
+            "sara.cole@riverbendchurch.org",
+            "micah.turner@riverbendchurch.org",
+            "lena.ford@riverbendchurch.org"
+          ],
+          "location": "Riverbend Church Hall",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_eye_exam_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Eye exam",
+          "start_time": "2026-08-14T09:00:00",
+          "end_time": "2026-08-14T09:45:00",
+          "participants": [],
+          "location": "North Clinic",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "session_id": "esther_hoitsma_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Oregon",
+      "hiking",
+      "art"
+    ],
+    "destination_ids": [
+      "dst_bend_01"
+    ],
+    "destination": "Bend",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "stop_tags": [
+      "hiking",
+      "art"
+    ],
+    "selected_stop_ids": [
+      "stp_smithrock_01",
+      "stp_tumalo_01",
+      "stp_highdesert_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Oregon",
+          "hiking",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_bend_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Bend",
+        "stop_tags": [
+          "hiking",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Bend",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_smithrock_01",
+          "stp_tumalo_01",
+          "stp_highdesert_01"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_bend_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Bend",
+          "region": "Oregon",
+          "tags": [
+            "hiking",
+            "art",
+            "budget",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_hoodriver_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Hood River",
+          "region": "Oregon",
+          "tags": [
+            "hiking",
+            "gallery",
+            "scenic",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "stp_smithrock_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Smith Rock State Park",
+          "location": "Bend, Oregon",
+          "tags": [
+            "hiking",
+            "nature",
+            "viewpoint"
+          ]
+        }
+      },
+      {
+        "id": "stp_tumalo_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Tumalo Falls",
+          "location": "Bend, Oregon",
+          "tags": [
+            "hiking",
+            "waterfall",
+            "nature"
+          ]
+        }
+      },
+      {
+        "id": "stp_highdesert_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "High Desert Museum",
+          "location": "Bend, Oregon",
+          "tags": [
+            "art",
+            "museum",
+            "culture"
+          ]
+        }
+      }
+    ]
+  }
+}

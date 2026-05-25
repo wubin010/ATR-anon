@@ -1,0 +1,111 @@
+{
+  "instruction": "Please book me a haircut appointment in Seattle for 2026-07-09 at 5:30pm — just pick one for me.",
+  "gold_value": "svc_hair_storygarden_01",
+  "session_id": "cecilia_lisette_garciaperez_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "cecilia_lisette_garciaperez_reservation_03",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_reservation_03",
+    "rule_text": "When she needs a local service appointment, she prefers providers connected to books, arts, gardening, or community-oriented work over purely trend-driven options.",
+    "canonical_answer": "If I book a local service, I gravitate toward providers tied to books, arts, gardening, or community life."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_hair_storygarden_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Story Garden Community Cuts",
+          "service_type": "haircut",
+          "location": "Seattle",
+          "rating": 4.4,
+          "distance_km": 3.6,
+          "tags": [
+            "community",
+            "literary",
+            "gardening"
+          ]
+        }
+      },
+      {
+        "id": "svc_hair_glossgrid_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "GlossGrid Style Bar",
+          "service_type": "haircut",
+          "location": "Seattle",
+          "rating": 4.9,
+          "distance_km": 0.3,
+          "tags": [
+            "trend_color",
+            "influencer",
+            "blowout"
+          ]
+        }
+      },
+      {
+        "id": "svc_hair_lumeloop_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "LumeLoop Hair Studio",
+          "service_type": "haircut",
+          "location": "Seattle",
+          "rating": 4.8,
+          "distance_km": 0.6,
+          "tags": [
+            "viral_styles",
+            "airtouch",
+            "beauty_content"
+          ]
+        }
+      },
+      {
+        "id": "svc_hair_modwave_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "ModWave Cut House",
+          "service_type": "haircut",
+          "location": "Seattle",
+          "rating": 4.7,
+          "distance_km": 0.4,
+          "tags": [
+            "trend_cut",
+            "fashion_drop",
+            "gloss_finish"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_hair_storygarden_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

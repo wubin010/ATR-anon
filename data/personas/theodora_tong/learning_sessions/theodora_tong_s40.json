@@ -1,0 +1,192 @@
+{
+  "session_id": "theodora_tong_s40",
+  "session_type": "learning",
+  "day_offset": 40,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Washington",
+      "museum",
+      "quiet",
+      "budget"
+    ],
+    "destination_ids": [
+      "dest_dc_01",
+      "dest_alexandria_02"
+    ],
+    "destination": "Washington",
+    "duration_days": 3,
+    "traveler_count": 1,
+    "stop_tags": [
+      "museum",
+      "quiet",
+      "budget"
+    ],
+    "selected_stop_ids": [
+      "stop_portrait_01",
+      "stop_freer_02",
+      "stop_eastern_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Washington",
+          "museum",
+          "quiet",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_dc_01",
+          "dest_alexandria_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Washington",
+        "stop_tags": [
+          "museum",
+          "quiet",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Washington",
+        "duration_days": 3,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_portrait_01",
+          "stop_freer_02",
+          "stop_eastern_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_dc_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Washington, D.C.",
+          "region": "Mid-Atlantic",
+          "tags": [
+            "museum",
+            "quiet",
+            "budget",
+            "student",
+            "walkable"
+          ]
+        }
+      },
+      {
+        "id": "dest_alexandria_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Alexandria near Washington",
+          "region": "Virginia",
+          "tags": [
+            "historic",
+            "quiet",
+            "budget",
+            "waterfront"
+          ]
+        }
+      },
+      {
+        "id": "dest_baltimore_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Baltimore",
+          "region": "Maryland",
+          "tags": [
+            "museum",
+            "budget",
+            "harbor",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "stop_portrait_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "National Portrait Gallery",
+          "location": "Washington, D.C.",
+          "tags": [
+            "museum",
+            "quiet",
+            "budget",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "stop_freer_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Freer Gallery of Art",
+          "location": "Washington, D.C.",
+          "tags": [
+            "museum",
+            "quiet",
+            "budget",
+            "asian-art"
+          ]
+        }
+      },
+      {
+        "id": "stop_eastern_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Eastern Market morning stroll",
+          "location": "Washington, D.C.",
+          "tags": [
+            "quiet",
+            "budget",
+            "morning",
+            "walk"
+          ]
+        }
+      }
+    ]
+  }
+}

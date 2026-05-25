@@ -1,0 +1,85 @@
+{
+  "session_id": "charlie_james_s41",
+  "session_type": "learning",
+  "day_offset": 41,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "title": "Portland Studio Planning Draft",
+    "location": "Studio Planning",
+    "doc_type": "report",
+    "idea_points": [
+      "set up a visible sketch wall for paint and trim concepts",
+      "reserve one bay for apprentice training and demo tear-downs",
+      "offer story-driven customization packages tied to each vehicle build",
+      "use a small front display area for finished parts and model concepts"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Studio Planning",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_studio_01",
+        "content_delta": "<authored from idea_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_studio_01",
+        "type": "document",
+        "attributes": {
+          "title": "Portland Studio Planning Draft",
+          "doc_type": "report",
+          "location": "Studio Planning",
+          "content_brief": "Working plan for the restoration studio layout, services, and community programming."
+        }
+      },
+      {
+        "id": "doc_budget_02",
+        "type": "document",
+        "attributes": {
+          "title": "Shop Equipment Budget Notes",
+          "doc_type": "spreadsheet",
+          "location": "Studio Planning",
+          "content_brief": "Estimated costs for lifts, welders, paint booth equipment, and hand tools."
+        }
+      },
+      {
+        "id": "doc_trip_03",
+        "type": "document",
+        "attributes": {
+          "title": "Road Notes and Event Sketches",
+          "doc_type": "note",
+          "location": "Travel Notes",
+          "content_brief": "Quick notes, sketches, and impressions gathered during the recent trip."
+        }
+      }
+    ]
+  }
+}

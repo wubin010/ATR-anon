@@ -1,0 +1,127 @@
+{
+  "instruction": "I'm making cedar-plank salmon for a community potluck and I'm out of cedar planks, fresh dill, and lemons. Go ahead and get what I need for it.",
+  "gold_value": null,
+  "session_id": "jutta_ashton_commerce_05_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_commerce_05",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_commerce_05",
+    "rule_text": "When ordering ingredients or supplies tied to her cooking and potluck habits, she prefers building a shopping list first rather than jumping straight to a purchase.",
+    "canonical_answer": "I always make a shopping list before ordering food or cooking supplies."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_bundle_salmonprep_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cedar-Plank Salmon Prep Bundle",
+          "price": 18.49,
+          "category": "potluck_cooking",
+          "rating": 4.9,
+          "stock_status": "in_stock",
+          "review_count": 3120,
+          "contents": "2 cedar planks, dill sauce sachet, lemon-pepper seasoning"
+        }
+      },
+      {
+        "id": "prod_cedar_planks_01",
+        "type": "product",
+        "attributes": {
+          "name": "Northwest Cedar Grilling Planks, 2-Pack",
+          "price": 10.99,
+          "category": "potluck_cooking",
+          "rating": 4.7,
+          "stock_status": "in_stock",
+          "review_count": 880,
+          "material": "untreated cedar",
+          "size": "7 x 15 in"
+        }
+      },
+      {
+        "id": "prod_dill_01",
+        "type": "product",
+        "attributes": {
+          "name": "Organic Fresh Dill Bunch",
+          "price": 2.39,
+          "category": "potluck_cooking",
+          "rating": 4.8,
+          "stock_status": "in_stock",
+          "review_count": 640,
+          "form": "fresh herb",
+          "origin": "Washington"
+        }
+      },
+      {
+        "id": "prod_lemons_01",
+        "type": "product",
+        "attributes": {
+          "name": "Meyer Lemons, 6-Count Bag",
+          "price": 4.99,
+          "category": "potluck_cooking",
+          "rating": 4.8,
+          "stock_status": "in_stock",
+          "review_count": 910,
+          "form": "fresh citrus",
+          "size": "6 count"
+        }
+      },
+      {
+        "id": "prod_dill_dried_01",
+        "type": "product",
+        "attributes": {
+          "name": "Freeze-Dried Dill Jar",
+          "price": 5.49,
+          "category": "potluck_cooking",
+          "rating": 4.9,
+          "stock_status": "in_stock",
+          "review_count": 2140,
+          "form": "dried herb",
+          "size": "1.8 oz"
+        }
+      },
+      {
+        "id": "prod_lemon_juice_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sicilian Lemon Juice Bottle",
+          "price": 3.99,
+          "category": "potluck_cooking",
+          "rating": 4.7,
+          "stock_status": "in_stock",
+          "review_count": 1760,
+          "form": "bottled juice",
+          "size": "16 fl oz"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "build_shopping_list",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

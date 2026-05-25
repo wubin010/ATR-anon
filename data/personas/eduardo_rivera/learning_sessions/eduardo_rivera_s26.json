@@ -1,0 +1,120 @@
+{
+  "session_id": "eduardo_rivera_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "communication",
+  "reason_for_call": "Reply to a message thread",
+  "task_params": {
+    "target_sender": "Marisol Rivera",
+    "folder": "inbox",
+    "timestamp": "2025-03-26T09:14:00",
+    "language": "en",
+    "reply_points": [
+      "Thank everyone for organizing",
+      "Say this week is packed on my end",
+      "I can do Sunday afternoon",
+      "If Sunday does not work, keep me posted on the next one",
+      "Keep it warm and appreciative"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Marisol Rivera",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_family_07",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_rivera_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marisol Rivera",
+          "subject": "Family lunch next week?",
+          "body": "Hey everyone, trying to see who is free for a family lunch next week. Sunday afternoon could work on our side, but open to hearing what everyone else can do.",
+          "thread_id": "thr_family_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-26T09:14:00"
+        }
+      },
+      {
+        "id": "msg_rivera_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Marisol Rivera",
+          "subject": "Photos from abuela's birthday",
+          "body": "Uploading the pictures later tonight. I finally found the group shot by the cake.",
+          "thread_id": "thr_family_05",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-24T20:31:00"
+        }
+      },
+      {
+        "id": "msg_lab_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Darren Cole",
+          "subject": "Shade verification on case 418",
+          "body": "Can you confirm the final shade notes before we mill the crown this afternoon?",
+          "thread_id": "thr_work_19",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-03-26T08:02:00"
+        }
+      },
+      {
+        "id": "msg_hikers_01",
+        "type": "message",
+        "attributes": {
+          "sender": "East Bay Trail Hikers",
+          "subject": "Saturday trail conditions update",
+          "body": "Mount Diablo trails are clear, but expect muddy patches after the rain near the lower switchbacks.",
+          "thread_id": "thr_hobby_03",
+          "folder": "inbox",
+          "labels": [
+            "outdoors"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-25T18:47:00"
+        }
+      }
+    ]
+  }
+}

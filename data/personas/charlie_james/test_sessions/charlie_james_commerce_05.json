@@ -1,0 +1,96 @@
+{
+  "instruction": "I'm trimming a few monthly expenses. My VectorPlan CAD subscription is still useful for home layout sketches, but I want to bring the cost down a notch and keep the software active—please handle it.",
+  "gold_value": "basic",
+  "session_id": "charlie_james_commerce_05_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "charlie_james_commerce_05",
+  "rule_ref": {
+    "rule_id": "charlie_james_commerce_05",
+    "rule_text": "When a subscription starts feeling too expensive, he prefers dropping to the basic tier instead of keeping a higher plan.",
+    "canonical_answer": "If a subscription gets too costly, I’d rather step it down to basic than keep paying for extras."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_vectorplan_cad_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "VectorPlan CAD",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 39.99,
+          "basic_price_per_period": 12.99,
+          "pro_price_per_period": 24.99,
+          "enterprise_price_per_period": 79.99,
+          "project_slots": 100,
+          "export_formats": [
+            "PDF",
+            "DWG",
+            "DXF"
+          ]
+        }
+      },
+      {
+        "id": "sub_roomdraft_cad_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "RoomDraft CAD",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 24.99,
+          "basic_price_per_period": 9.99,
+          "premium_price_per_period": 34.99,
+          "project_slots": 25,
+          "export_formats": [
+            "PDF",
+            "DWG"
+          ]
+        }
+      },
+      {
+        "id": "sub_streamharbor_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "StreamHarbor",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 17.99,
+          "basic_price_per_period": 8.99,
+          "pro_price_per_period": 13.99,
+          "screens": 4
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "basic"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

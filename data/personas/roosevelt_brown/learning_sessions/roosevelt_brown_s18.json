@@ -1,0 +1,125 @@
+{
+  "session_id": "roosevelt_brown_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "workspace",
+  "reason_for_call": "Archive some work files",
+  "task_params": {
+    "location": "Operations/Current/Q1 Budget",
+    "file_type": "xlsx",
+    "labels": [
+      "budget",
+      "final"
+    ],
+    "name": "Archive - Budget Files"
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "archive_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Operations/Current/Q1 Budget",
+        "file_type": "xlsx"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "archive_files",
+      "arguments": {
+        "file_ids": [
+          "fil_q1ops_01",
+          "fil_q1rev_02"
+        ],
+        "folder_id": "fld_budget_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_q1ops_01",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 Budget Final.xlsx",
+          "file_type": "xlsx",
+          "location": "Operations/Current/Q1 Budget",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "budget",
+            "final",
+            "q1"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_q1rev_02",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 Budget Revised Final.xlsx",
+          "file_type": "xlsx",
+          "location": "Operations/Current/Q1 Budget",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "budget",
+            "final",
+            "revision"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_q1draft_03",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 Budget Draft Notes.xlsx",
+          "file_type": "xlsx",
+          "location": "Operations/Current/Q1 Budget",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "budget",
+            "draft",
+            "working"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_budget_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archive - Budget Files",
+          "purpose": "Archived budget spreadsheets from completed quarters"
+        }
+      },
+      {
+        "id": "fld_ops_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Archive - Operations General",
+          "purpose": "General archive for completed operations materials"
+        }
+      }
+    ]
+  }
+}

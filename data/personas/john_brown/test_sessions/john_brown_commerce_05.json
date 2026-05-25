@@ -1,0 +1,83 @@
+{
+  "instruction": "I'm using my WorldCinema Plus subscription mostly for regular movie nights now, and the premium tier feels like overkill. Please switch it to a lighter plan and keep the service active.",
+  "gold_value": "basic",
+  "session_id": "john_brown_commerce_05_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "john_brown_commerce_05",
+  "rule_ref": {
+    "rule_id": "john_brown_commerce_05",
+    "rule_text": "When changing a subscription tier, he prefers the basic plan unless there is a clear need for more.",
+    "canonical_answer": "I usually keep subscriptions on the basic plan unless I really need extra features."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_worldcinema_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "WorldCinema Plus",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 22.99,
+          "simultaneous_streams": 4,
+          "video_quality": "4K"
+        }
+      },
+      {
+        "id": "sub_lingualoop_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "LinguaLoop",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 11.99,
+          "service_type": "language learning",
+          "course_access": "full library"
+        }
+      },
+      {
+        "id": "sub_museumroute_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "MuseumRoute Audio",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 8.99,
+          "service_type": "audio guides",
+          "offline_downloads": true
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "basic"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

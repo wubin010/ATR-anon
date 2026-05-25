@@ -1,0 +1,100 @@
+{
+  "session_id": "joseph_eldridge_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "note",
+    "location": "Writing",
+    "doc_type": "note",
+    "title": "Practical Electronics Handbook Chapter Ideas",
+    "chapter_points": [
+      "Start with measurement habits before circuit theory",
+      "Explain failure modes and troubleshooting mindset",
+      "Power supplies, grounding, and noise deserve early chapters",
+      "Include lab safety and mains-voltage cautions",
+      "Bridge hobby prototypes to reliable field-ready designs",
+      "Add test equipment chapter for scopes, meters, and signal sources"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Writing",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Practical Electronics Handbook Chapter Ideas",
+        "location": "Writing",
+        "content_brief": "<authored from chapter_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_outline_01",
+        "type": "document",
+        "attributes": {
+          "title": "Mentorship Workshop Outline",
+          "doc_type": "note",
+          "location": "Writing",
+          "content_brief": "Working note with section headers and bullet-point ideas for a teaching session."
+        }
+      },
+      {
+        "id": "doc_talk_02",
+        "type": "document",
+        "attributes": {
+          "title": "Keynote Themes for Reliable Power Electronics",
+          "doc_type": "note",
+          "location": "Writing",
+          "content_brief": "Brain-dump note collecting themes, examples, and cautionary anecdotes."
+        }
+      },
+      {
+        "id": "doc_journal_03",
+        "type": "document",
+        "attributes": {
+          "title": "Workshop Journal Fragments",
+          "doc_type": "note",
+          "location": "Writing",
+          "content_brief": "Loose reflections and partial ideas captured after bench sessions."
+        }
+      },
+      {
+        "id": "doc_report_04",
+        "type": "document",
+        "attributes": {
+          "title": "Field Reliability Review",
+          "doc_type": "report",
+          "location": "Projects",
+          "content_brief": "Formal report summarizing recurring electronics failures in deployed systems."
+        }
+      }
+    ]
+  }
+}

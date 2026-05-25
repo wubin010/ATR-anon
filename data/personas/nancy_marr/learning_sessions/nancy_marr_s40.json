@@ -1,0 +1,106 @@
+{
+  "session_id": "nancy_marr_s40",
+  "session_type": "learning",
+  "day_offset": 40,
+  "domain": "communication",
+  "reason_for_call": "Send a thank-you message",
+  "task_params": {
+    "sender": "Anna Smith",
+    "folder": "inbox",
+    "recipient": "Anna Smith",
+    "subject": "Thank you for the workshop",
+    "language": "en",
+    "reply_points": [
+      "thank her for the workshop",
+      "say her feedback encouraged me to keep experimenting",
+      "mention I appreciated the hands-on guidance",
+      "keep the tone warm and concise"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Anna Smith",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "recipient": "Anna Smith",
+        "subject": "Thank you for the workshop",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_anna_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Anna Smith",
+          "subject": "Saturday pottery workshop follow-up",
+          "body": "Hi Nancy, thanks again for joining the pottery workshop. I really liked the surface textures you were testing. Keep experimenting with looser forms and layered glaze applications — I think that playful direction suits your eye. Best, Anna",
+          "thread_id": "thr_pottery_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-09T18:12:00"
+        }
+      },
+      {
+        "id": "msg_lab_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Marta Jensen",
+          "subject": "Revised chromatography run sheet",
+          "body": "Please use the attached run sheet for tomorrow's samples.",
+          "thread_id": "thr_lab_22",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-02-09T14:05:00"
+        }
+      },
+      {
+        "id": "msg_news_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Walker Art Center",
+          "subject": "Member preview this week",
+          "body": "See upcoming installations and member events.",
+          "thread_id": "thr_walker_07",
+          "folder": "inbox",
+          "labels": [
+            "arts"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-08T09:30:00"
+        }
+      }
+    ]
+  }
+}

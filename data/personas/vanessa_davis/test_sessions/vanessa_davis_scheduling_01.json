@@ -1,0 +1,108 @@
+{
+  "instruction": "I haven't answered the Oak Hall neighborhood potluck at the community center on 2026-08-21 from 5:30 to 7pm yet. Check what else I have around then and send back a reply for me so they're not waiting.",
+  "gold_value": "tentative",
+  "session_id": "vanessa_davis_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "vanessa_davis_scheduling_01",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_scheduling_01",
+    "rule_text": "When an invitation overlaps with uncertain work routing or family obligations, she prefers responding tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If my route or family schedule is still up in the air, I answer invitations as tentative."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_oak_hall_potluck_20260821",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Oak Hall Neighborhood Potluck",
+          "start_time": "2026-08-21T17:30:00",
+          "end_time": "2026-08-21T19:00:00",
+          "participants": [
+            "events@oakhallneighbors.org",
+            "vanessa.davis@example.com"
+          ],
+          "location": "Oak Hall Community Center",
+          "calendar": "invites",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_south_county_route_window_20260821",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "South County route coverage window",
+          "start_time": "2026-08-21T16:45:00",
+          "end_time": "2026-08-21T18:45:00",
+          "participants": [
+            "dispatch@greenlinecouriers.com",
+            "vanessa.davis@example.com"
+          ],
+          "location": "South County service area",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_mom_discharge_pickup_20260821",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Mom discharge pickup window",
+          "start_time": "2026-08-21T17:00:00",
+          "end_time": "2026-08-21T18:30:00",
+          "participants": [
+            "vanessa.davis@example.com",
+            "lena.davis@example.com"
+          ],
+          "location": "Cedar Valley Medical Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_call_20260821",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Retirement budget review call",
+          "start_time": "2026-08-21T20:00:00",
+          "end_time": "2026-08-21T20:45:00",
+          "participants": [
+            "vanessa.davis@example.com",
+            "advisor@harborfinplan.com"
+          ],
+          "location": "Phone call",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

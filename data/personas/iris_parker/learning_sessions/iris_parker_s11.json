@@ -1,0 +1,136 @@
+{
+  "session_id": "iris_parker_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox threads",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Maya Chen",
+    "priority": "low",
+    "folder_id": "fld_archive_02",
+    "label_ids": [
+      "lbl_admin_01"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "label_messages",
+    "archive_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Maya Chen"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01"
+        ],
+        "priority": "low"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01"
+        ],
+        "label_ids": [
+          "lbl_admin_01"
+        ]
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01"
+        ],
+        "folder_id": "fld_archive_02"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Volunteer signup reminder",
+          "body": "Just bumping this to the top of your inbox. We still have a few open slots for next month's community table. No pressure if your schedule is packed.",
+          "thread_id": "thr_maya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-18T09:14:00"
+        }
+      },
+      {
+        "id": "msg_ops_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Office Operations",
+          "subject": "Printer supply restock complete",
+          "body": "The toner order came in and all shared-floor printers have been restocked.",
+          "thread_id": "thr_ops_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-19T11:02:00"
+        }
+      },
+      {
+        "id": "msg_news_03",
+        "type": "message",
+        "attributes": {
+          "sender": "City Arts Bulletin",
+          "subject": "Weekend gallery listings",
+          "body": "Here are this week's openings, artist talks, and late-night museum events.",
+          "thread_id": "thr_news_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-20T07:45:00"
+        }
+      },
+      {
+        "id": "fld_archive_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Admin Archive",
+          "purpose": "Storage for routine administrative threads and low-action reminders."
+        }
+      },
+      {
+        "id": "lbl_admin_01",
+        "type": "label",
+        "attributes": {
+          "name": "Admin",
+          "topic": "Routine logistics and non-urgent coordination."
+        }
+      }
+    ]
+  }
+}

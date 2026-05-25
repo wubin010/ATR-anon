@@ -1,0 +1,124 @@
+{
+  "session_id": "gabriel_campbell_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meeting.",
+  "task_params": {
+    "title": "1:1 with Clinic Analytics Lead",
+    "start_time": "2025-03-18T15:15:00-04:00",
+    "end_time": "2025-03-18T15:35:00-04:00",
+    "participants": [
+      "morgan.lee@quincyclinic.org"
+    ],
+    "location": "Teams"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-18T15:15:00-04:00",
+        "end_time": "2025-03-18T15:35:00-04:00",
+        "participants": [
+          "morgan.lee@quincyclinic.org"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "1:1 with Clinic Analytics Lead",
+        "start_time": "2025-03-18T15:15:00-04:00",
+        "end_time": "2025-03-18T15:35:00-04:00",
+        "participants": [
+          "morgan.lee@quincyclinic.org"
+        ],
+        "location": "Teams"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_huddle_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Operations Huddle",
+          "start_time": "2025-03-18T13:00:00-04:00",
+          "end_time": "2025-03-18T13:45:00-04:00",
+          "participants": [
+            "gabriel.campbell@quincyclinic.org",
+            "ops-team@quincyclinic.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget Review with Finance",
+          "start_time": "2025-03-18T14:00:00-04:00",
+          "end_time": "2025-03-18T15:00:00-04:00",
+          "participants": [
+            "gabriel.campbell@quincyclinic.org",
+            "finance@quincyclinic.org"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_boardprep_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "1:1 with Clinic Analytics Lead",
+          "start_time": "2025-03-18T15:15:00-04:00",
+          "end_time": "2025-03-18T15:35:00-04:00",
+          "participants": [
+            "gabriel.campbell@quincyclinic.org",
+            "chief.of.staff@quincyclinic.org"
+          ],
+          "location": "Executive Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_vendor_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "EHR Vendor Check-in",
+          "start_time": "2025-03-18T16:45:00-04:00",
+          "end_time": "2025-03-18T17:15:00-04:00",
+          "participants": [
+            "gabriel.campbell@quincyclinic.org",
+            "support@ehrvendor.com"
+          ],
+          "location": "Phone",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

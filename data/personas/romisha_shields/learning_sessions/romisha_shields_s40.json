@@ -1,0 +1,191 @@
+{
+  "session_id": "romisha_shields_s40",
+  "session_type": "learning",
+  "day_offset": 40,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Gulf Coast",
+      "relaxing",
+      "waterfront"
+    ],
+    "destination_ids": [
+      "dest_fairhope_01",
+      "dest_ocean_springs_02"
+    ],
+    "destination": "Fairhope",
+    "duration_days": 4,
+    "traveler_count": 2,
+    "stop_tags": [
+      "scenic",
+      "historic",
+      "waterfront"
+    ],
+    "selected_stop_ids": [
+      "stop_municipal_pier_01",
+      "stop_tolstoy_park_02",
+      "stop_downtown_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Gulf Coast",
+          "relaxing",
+          "waterfront"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_fairhope_01",
+          "dest_ocean_springs_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Fairhope",
+        "stop_tags": [
+          "scenic",
+          "historic",
+          "waterfront"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Fairhope",
+        "duration_days": 4,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_municipal_pier_01",
+          "stop_tolstoy_park_02",
+          "stop_downtown_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": false,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_fairhope_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Fairhope",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "relaxing",
+            "waterfront",
+            "small town",
+            "scenic"
+          ]
+        }
+      },
+      {
+        "id": "dest_ocean_springs_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Ocean Springs",
+          "region": "Mississippi Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "relaxing",
+            "waterfront",
+            "arts",
+            "walkable"
+          ]
+        }
+      },
+      {
+        "id": "dest_gulf_shores_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Gulf Shores",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "beach",
+            "family",
+            "waterfront"
+          ]
+        }
+      },
+      {
+        "id": "stop_municipal_pier_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Fairhope Municipal Pier",
+          "location": "Fairhope",
+          "tags": [
+            "scenic",
+            "waterfront",
+            "relaxing"
+          ]
+        }
+      },
+      {
+        "id": "stop_tolstoy_park_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Tolstoy Park",
+          "location": "Fairhope",
+          "tags": [
+            "historic",
+            "quiet",
+            "scenic"
+          ]
+        }
+      },
+      {
+        "id": "stop_downtown_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Downtown Fairhope",
+          "location": "Fairhope",
+          "tags": [
+            "historic",
+            "waterfront",
+            "walkable"
+          ]
+        }
+      }
+    ]
+  }
+}

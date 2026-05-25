@@ -1,0 +1,105 @@
+{
+  "session_id": "jennifer_philmon_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "commerce",
+  "reason_for_call": "Order a kitchen item.",
+  "task_params": {
+    "category": "insulated lunch container",
+    "budget": 40,
+    "quantity": 1,
+    "sort_by": "rating",
+    "product_id": "prod_thermos_01"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "insulated lunch container",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_thermos_01",
+          "prod_hydroflask_02",
+          "prod_stanley_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_thermos_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_thermos_01",
+        "type": "product",
+        "attributes": {
+          "name": "Thermos Stainless King Food Jar 24 oz",
+          "price": 32.99,
+          "category": "insulated lunch container",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_hydroflask_02",
+        "type": "product",
+        "attributes": {
+          "name": "Hydro Flask Insulated Food Jar 20 oz",
+          "price": 39.95,
+          "category": "insulated lunch container",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_stanley_03",
+        "type": "product",
+        "attributes": {
+          "name": "Stanley Adventure Vacuum Food Jar 18 oz",
+          "price": 29.5,
+          "category": "insulated lunch container",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_zojirushi_04",
+        "type": "product",
+        "attributes": {
+          "name": "Zojirushi Stainless Food Jar 25 oz",
+          "price": 44.0,
+          "category": "insulated lunch container",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

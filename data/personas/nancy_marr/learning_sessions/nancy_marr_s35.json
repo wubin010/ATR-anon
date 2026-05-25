@@ -1,0 +1,104 @@
+{
+  "session_id": "nancy_marr_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "communication",
+  "reason_for_call": "Reply to a message",
+  "task_params": {
+    "sender": "Leah Chen",
+    "folder": "inbox",
+    "language": "en",
+    "body_points": [
+      "say it was nice hearing from her",
+      "mention her museum outings always sound inspiring",
+      "ask if she'd like to compare travel ideas",
+      "suggest doing it over tea sometime",
+      "keep the tone warm and friendly"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Leah Chen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_leah_01",
+        "language": "en",
+        "body": "<authored from body_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_leah_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Leah Chen",
+          "subject": "A few exhibits you might love",
+          "body": "Hi Nancy — I thought of you at the museum this weekend and wanted to send over a few exhibit ideas. Also, if you're still daydreaming about future trips, I'd love to hear what places are on your list lately.",
+          "thread_id": "thr_leah_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-05T14:22:00"
+        }
+      },
+      {
+        "id": "msg_karen_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Karen Ortiz",
+          "subject": "Garden volunteer shift swap?",
+          "body": "Hey Nancy, any chance you could switch your community garden shift with me next Thursday?",
+          "thread_id": "thr_karen_01",
+          "folder": "inbox",
+          "labels": [
+            "volunteer"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-04T09:10:00"
+        }
+      },
+      {
+        "id": "msg_dan_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dan Marr",
+          "subject": "Need anything from the co-op?",
+          "body": "I'm stopping by the co-op after work. Want me to pick up anything for dinner or the garden?",
+          "thread_id": "thr_dan_01",
+          "folder": "inbox",
+          "labels": [
+            "family"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-05T16:40:00"
+        }
+      }
+    ]
+  }
+}

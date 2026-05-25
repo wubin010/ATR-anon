@@ -1,0 +1,117 @@
+{
+  "session_id": "iris_parker_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a calendar block",
+  "task_params": {
+    "calendar": "work",
+    "title": "Employee Engagement Workshop Outline",
+    "start_time": "2025-02-11T13:00:00-05:00",
+    "end_time": "2025-02-11T15:00:00-05:00",
+    "location": "Focus Room B"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-11T13:00:00-05:00",
+        "end_time": "2025-02-11T15:00:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Employee Engagement Workshop Outline",
+        "start_time": "2025-02-11T13:00:00-05:00",
+        "end_time": "2025-02-11T15:00:00-05:00",
+        "location": "Focus Room B"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "HR Leadership Sync",
+          "start_time": "2025-02-11T09:00:00-05:00",
+          "end_time": "2025-02-11T10:00:00-05:00",
+          "participants": [
+            "vp_people@company.com",
+            "iris.parker@company.com"
+          ],
+          "location": "Conference Room 4A",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Benefits Vendor Check-in",
+          "start_time": "2025-02-11T10:30:00-05:00",
+          "end_time": "2025-02-11T11:15:00-05:00",
+          "participants": [
+            "vendor.rep@benefitsco.com",
+            "iris.parker@company.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Employee Engagement Workshop Outline",
+          "start_time": "2025-02-11T13:00:00-05:00",
+          "end_time": "2025-02-11T15:00:00-05:00",
+          "participants": [],
+          "location": "Focus Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_personal_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pottery Studio Session",
+          "start_time": "2025-02-11T18:30:00-05:00",
+          "end_time": "2025-02-11T20:00:00-05:00",
+          "participants": [],
+          "location": "Clayworks Lowell",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

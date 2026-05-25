@@ -1,0 +1,111 @@
+{
+  "session_id": "nancy_marr_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "travel",
+  "reason_for_call": "Book a hotel.",
+  "task_params": {
+    "location": "Sendai",
+    "guest_count": 1,
+    "room_count": 1,
+    "check_in_date": "2025-04-14",
+    "check_out_date": "2025-04-18",
+    "sort_by": "price_asc"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Sendai",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hot_sendai_03"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hot_sendai_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Aoba Garden Hotel",
+          "location": "Sendai",
+          "check_in_date": "2025-04-14",
+          "check_out_date": "2025-04-18",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 138.0
+        }
+      },
+      {
+        "id": "hot_sendai_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Sendai Station Central Inn",
+          "location": "Sendai",
+          "check_in_date": "2025-04-14",
+          "check_out_date": "2025-04-18",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 112.0
+        }
+      },
+      {
+        "id": "hot_sendai_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Hirose River Residence",
+          "location": "Sendai",
+          "check_in_date": "2025-04-14",
+          "check_out_date": "2025-04-18",
+          "available_rooms": 4,
+          "max_guests_per_room": 1,
+          "price_per_night": 126.0
+        }
+      },
+      {
+        "id": "hot_sendai_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Miyagi Business Lodge",
+          "location": "Sendai",
+          "check_in_date": "2025-04-15",
+          "check_out_date": "2025-04-18",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 105.0
+        }
+      }
+    ]
+  }
+}

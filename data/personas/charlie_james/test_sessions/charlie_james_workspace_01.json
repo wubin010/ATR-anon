@@ -1,0 +1,157 @@
+{
+  "instruction": "Please tidy the files sitting in /Studio/FrontDesk — it's a mix of PDFs, spreadsheets, images, and writeups from around the shop, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "charlie_james_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "charlie_james_workspace_01",
+  "rule_ref": {
+    "rule_id": "charlie_james_workspace_01",
+    "rule_text": "When organizing files, he prefers grouping them by project rather than by file type or date.",
+    "canonical_answer": "I organize files around the project they belong to, not just by date or file type."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_studio_frontdesk_01",
+        "type": "file",
+        "attributes": {
+          "name": "parts_list.xlsx",
+          "file_type": "xlsx",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Heritage Coupe",
+          "modified_date": "2026-06-11"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_02",
+        "type": "file",
+        "attributes": {
+          "name": "dash_layout_notes.docx",
+          "file_type": "docx",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Roadster EV",
+          "modified_date": "2026-06-13"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_03",
+        "type": "file",
+        "attributes": {
+          "name": "paint_reference.jpg",
+          "file_type": "image",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Van",
+          "modified_date": "2026-06-18"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_04",
+        "type": "file",
+        "attributes": {
+          "name": "vendor_quote.pdf",
+          "file_type": "pdf",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Heritage Coupe",
+          "modified_date": "2026-07-02"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_05",
+        "type": "file",
+        "attributes": {
+          "name": "wiring_checklist.docx",
+          "file_type": "docx",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Cafe Racer",
+          "modified_date": "2026-07-06"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_06",
+        "type": "file",
+        "attributes": {
+          "name": "delivery_schedule.xlsx",
+          "file_type": "xlsx",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Van",
+          "modified_date": "2026-07-08"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_07",
+        "type": "file",
+        "attributes": {
+          "name": "trim_mockup.jpg",
+          "file_type": "image",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Roadster EV",
+          "modified_date": "2026-07-12"
+        }
+      },
+      {
+        "id": "fil_studio_frontdesk_08",
+        "type": "file",
+        "attributes": {
+          "name": "inspection_scan.pdf",
+          "file_type": "pdf",
+          "location": "/Studio/FrontDesk",
+          "owner": "Charlie James",
+          "labels": [],
+          "archived": false,
+          "project": "Cafe Racer",
+          "modified_date": "2026-07-15"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "session_id": "samantha_bello_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "Rincon",
+    "cuisine": "Puerto Rican",
+    "date_time": "2025-02-05T19:30:00-04:00",
+    "party_size": 5
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Rincon",
+        "cuisine": "Puerto Rican",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_casa_01",
+        "date_time": "2025-02-05T19:30:00-04:00",
+        "party_size": 5
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_casa_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa Isla Bistro",
+          "cuisine": "Puerto Rican",
+          "location": "Rincon",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual indoor-outdoor"
+        }
+      },
+      {
+        "id": "rst_faro_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "El Faro Grill",
+          "cuisine": "Seafood",
+          "location": "Rincon",
+          "rating": 4.5,
+          "price_range": "$$$",
+          "seating_style": "open-air patio"
+        }
+      },
+      {
+        "id": "rst_plaza_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Plaza Verde Kitchen",
+          "cuisine": "Puerto Rican",
+          "location": "Rincon",
+          "rating": 4.3,
+          "price_range": "$$",
+          "seating_style": "casual dining room"
+        }
+      },
+      {
+        "id": "rst_ola_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Ola Brava Tapas",
+          "cuisine": "Spanish",
+          "location": "Rincon",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "small plates lounge"
+        }
+      }
+    ]
+  }
+}

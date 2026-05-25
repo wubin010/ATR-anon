@@ -1,0 +1,80 @@
+{
+  "domain": "scheduling",
+  "instruction": "Set a reminder for the senior yoga class at the community center on the morning of May 13 — I don't want to miss it.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_senior_yoga_cc_20260513",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Yoga Session",
+          "start_time": "2026-05-13T09:00:00",
+          "end_time": "2026-05-13T10:00:00",
+          "location": "Maple Grove Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_book_club_library_20260515",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Book Club — The Orchard House",
+          "start_time": "2026-05-15T19:00:00",
+          "end_time": "2026-05-15T20:30:00",
+          "location": "West Branch Library",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_folk_song_circle_20260517",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Folk-Song Circle",
+          "start_time": "2026-05-17T18:30:00",
+          "end_time": "2026-05-17T20:00:00",
+          "location": "Old Mill Arts Hall",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_scheduling_03_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_scheduling_03",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_scheduling_03",
+    "rule_text": "For events the user attends every week, default to a recurring reminder rather than a one-shot reminder for the single occurrence.",
+    "canonical_answer": "Stuff I do every week — set the reminder on a recurring cadence, don't just set a single one each time."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

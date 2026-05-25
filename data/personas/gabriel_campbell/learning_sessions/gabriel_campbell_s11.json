@@ -1,0 +1,78 @@
+{
+  "session_id": "gabriel_campbell_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "workspace",
+  "reason_for_call": "Add something to my tracker",
+  "task_params": {
+    "tracker_title": "Community Outreach Project Tracker",
+    "update_action": "create_entry",
+    "entry_points": [
+      "Title: Art-therapy outreach follow-up",
+      "Project: art-therapy outreach",
+      "Status: not started",
+      "Priority: high",
+      "Due date: 2025-03-18",
+      "Owner: Gabriel",
+      "Next step: draft partner contact list",
+      "Next step: outline pilot workshop proposal",
+      "Source: action items from today's meeting"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_comm_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_comm_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Community Outreach Project Tracker"
+        }
+      },
+      {
+        "id": "trk_ops_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Clinic Operations Improvement Log"
+        }
+      },
+      {
+        "id": "trk_grants_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Grants and Partnerships Pipeline"
+        }
+      }
+    ]
+  }
+}

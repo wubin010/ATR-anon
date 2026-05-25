@@ -1,0 +1,136 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox",
+  "task_params": {
+    "archive_sender": "Rosa Martinez",
+    "label_sender": "Evan Cho",
+    "name": "Follow Up",
+    "folder": "inbox"
+  },
+  "expected_tools": [
+    "search_messages",
+    "archive_messages",
+    "list_labels",
+    "label_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Rosa Martinez"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_rosa_01"
+        ]
+      }
+    },
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Evan Cho"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_evan_01"
+        ],
+        "label_ids": [
+          "lbl_followup_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_rosa_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Rosa Martinez",
+          "subject": "Re: Gallery wall text edits",
+          "body": "Thanks, this all looks settled on my end. No more changes needed.",
+          "thread_id": "thr_gallery_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-22T18:14:00"
+        }
+      },
+      {
+        "id": "msg_evan_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Evan Cho",
+          "subject": "Budget notes for spring anthology",
+          "body": "Circling back on the cost breakdown whenever you have a chance.",
+          "thread_id": "thr_budget_12",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-22T16:42:00"
+        }
+      },
+      {
+        "id": "msg_news_01",
+        "type": "message",
+        "attributes": {
+          "sender": "River City Books",
+          "subject": "Weekend author event lineup",
+          "body": "Here are this week's readings and signings.",
+          "thread_id": "thr_books_03",
+          "folder": "inbox",
+          "labels": [
+            "newsletter"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-22T11:05:00"
+        }
+      },
+      {
+        "id": "lbl_followup_01",
+        "type": "label",
+        "attributes": {
+          "name": "Follow Up",
+          "topic": "needs attention"
+        }
+      },
+      {
+        "id": "lbl_waiting_01",
+        "type": "label",
+        "attributes": {
+          "name": "Waiting",
+          "topic": "pending response"
+        }
+      }
+    ]
+  }
+}

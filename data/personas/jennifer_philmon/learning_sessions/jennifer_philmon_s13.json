@@ -1,0 +1,129 @@
+{
+  "session_id": "jennifer_philmon_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "workspace",
+  "reason_for_call": "Organize some photos",
+  "task_params": {
+    "location": "Imports/Camera Roll",
+    "file_type": "image",
+    "file_ids": [
+      "file_bridge_01",
+      "file_bridge_02",
+      "file_bridge_03"
+    ],
+    "scheme": "by_date",
+    "folder_id": "fld_refs_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Imports/Camera Roll",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_bridge_01",
+          "file_bridge_02",
+          "file_bridge_03"
+        ],
+        "scheme": "by_date"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_bridge_01",
+          "file_bridge_02",
+          "file_bridge_03"
+        ],
+        "folder_id": "fld_refs_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_bridge_01",
+        "type": "file",
+        "attributes": {
+          "name": "IMG_4821.jpg",
+          "file_type": "image",
+          "location": "Imports/Camera Roll",
+          "owner": "Jennifer Philmon",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_bridge_02",
+        "type": "file",
+        "attributes": {
+          "name": "IMG_4827.jpg",
+          "file_type": "image",
+          "location": "Imports/Camera Roll",
+          "owner": "Jennifer Philmon",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_bridge_03",
+        "type": "file",
+        "attributes": {
+          "name": "IMG_4834.jpg",
+          "file_type": "image",
+          "location": "Imports/Camera Roll",
+          "owner": "Jennifer Philmon",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_misc_04",
+        "type": "file",
+        "attributes": {
+          "name": "receipt_groceries.png",
+          "file_type": "image",
+          "location": "Imports/Camera Roll",
+          "owner": "Jennifer Philmon",
+          "labels": [
+            "receipt"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_refs_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Photo References",
+          "purpose": "Saved reference images for art and photography study"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "session_id": "john_brown_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "reservation",
+  "reason_for_call": "Book some tickets.",
+  "task_params": {
+    "location": "Downtown Baton Rouge",
+    "event_tags": [
+      "jazz"
+    ],
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Downtown Baton Rouge",
+        "event_tags": [
+          "jazz"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_riverroom_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_riverroom_01",
+        "type": "event",
+        "attributes": {
+          "name": "River Room Jazz Night",
+          "location": "Downtown Baton Rouge",
+          "date_time": "2025-02-14T20:00:00-06:00",
+          "price": 22.0,
+          "event_tags": [
+            "jazz",
+            "live music",
+            "downtown"
+          ]
+        }
+      },
+      {
+        "id": "evt_landinggroove_02",
+        "type": "event",
+        "attributes": {
+          "name": "Landing Groove Session",
+          "location": "Downtown Baton Rouge",
+          "date_time": "2025-02-15T21:00:00-06:00",
+          "price": 18.0,
+          "event_tags": [
+            "funk",
+            "live music",
+            "downtown"
+          ]
+        }
+      },
+      {
+        "id": "evt_midcitybrass_03",
+        "type": "event",
+        "attributes": {
+          "name": "Mid City Brass Collective",
+          "location": "Mid City Baton Rouge",
+          "date_time": "2025-02-14T19:30:00-06:00",
+          "price": 16.0,
+          "event_tags": [
+            "jazz",
+            "brass",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_campuskeys_04",
+        "type": "event",
+        "attributes": {
+          "name": "Campus Keys Trio",
+          "location": "LSU Area Baton Rouge",
+          "date_time": "2025-02-13T19:00:00-06:00",
+          "price": 12.0,
+          "event_tags": [
+            "jazz",
+            "piano",
+            "live music"
+          ]
+        }
+      }
+    ]
+  }
+}

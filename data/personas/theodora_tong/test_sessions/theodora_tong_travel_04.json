@@ -1,0 +1,150 @@
+{
+  "instruction": "I'm starting from scratch on a first-time Kyoto trip for myself: 3 days, solo. From the candidate stops below, pick one place to anchor the itinerary and build the plan around it.",
+  "gold_value": [
+    "stop_kyoto_murinan_garden_01"
+  ],
+  "session_id": "theodora_tong_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "theodora_tong_travel_04",
+  "rule_ref": {
+    "rule_id": "theodora_tong_travel_04",
+    "rule_text": "When planning a trip, she prefers stops centered on museums, gardens, and quiet nature rather than nightlife or high-energy attractions.",
+    "canonical_answer": "I plan trips around museums, gardens, and quiet scenic places, not nightlife."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_kyoto_murinan_garden_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Murin-an Garden",
+          "location": "Kyoto, Japan",
+          "stop_type": "garden",
+          "tags": [
+            "garden",
+            "quiet",
+            "pond",
+            "walking_paths",
+            "scenic",
+            "historic_villa"
+          ],
+          "rating": 4.5,
+          "review_count": 863
+        }
+      },
+      {
+        "id": "stop_kyoto_arashiyama_bamboo_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Arashiyama Bamboo Grove",
+          "location": "Kyoto, Japan",
+          "stop_type": "nature_walk",
+          "tags": [
+            "nature",
+            "scenic",
+            "landmark",
+            "tour_groups",
+            "crowded",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 11840
+        }
+      },
+      {
+        "id": "stop_kyoto_maruyama_lantern_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Maruyama Park Lantern Fair",
+          "location": "Kyoto, Japan",
+          "stop_type": "park",
+          "tags": [
+            "garden",
+            "evening",
+            "food_stalls",
+            "live_music",
+            "crowded",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 7420
+        }
+      },
+      {
+        "id": "stop_kyoto_gion_district_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Gion District",
+          "location": "Kyoto, Japan",
+          "stop_type": "historic_district",
+          "tags": [
+            "nightlife",
+            "bars",
+            "street_life",
+            "lanterns",
+            "popular",
+            "evening"
+          ],
+          "rating": 4.8,
+          "review_count": 10550
+        }
+      },
+      {
+        "id": "stop_kyoto_fushimi_inari_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Fushimi Inari Shrine",
+          "location": "Kyoto, Japan",
+          "stop_type": "shrine_complex",
+          "tags": [
+            "landmark",
+            "hike",
+            "torii",
+            "popular",
+            "crowded",
+            "photo_spot"
+          ],
+          "rating": 4.9,
+          "review_count": 19320
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_kyoto_murinan_garden_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "session_id": "nancy_marr_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and reply.",
+  "task_params": {
+    "sender": "Eli Benton",
+    "folder": "inbox",
+    "subject": "Updated timeline for shelf-life validation",
+    "priority": "high",
+    "language": "en",
+    "reply_points": [
+      "thank him for the updated timeline",
+      "say the revised sequence looks workable",
+      "confirm I can review the sample prep notes today",
+      "say I will send comments on the validation steps by tomorrow morning",
+      "keep the tone calm and straightforward"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Eli Benton",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_eli_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_eli_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_eli_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Eli Benton",
+          "subject": "Updated timeline for shelf-life validation",
+          "body": "Hi Nancy — I reshuffled the shelf-life validation timeline after the packaging delay. Can you take a look this afternoon and let me know if the sample prep notes and validation steps still work on your side? If needed, I can move tomorrow's check-in.",
+          "thread_id": "thr_eli_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-18T15:42:00"
+        }
+      },
+      {
+        "id": "msg_eli_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Eli Benton",
+          "subject": "Slides for Friday review",
+          "body": "When you have a minute, could you send over the latest chromatogram slide? No rush if you're tied up today.",
+          "thread_id": "thr_eli_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-18T11:08:00"
+        }
+      },
+      {
+        "id": "msg_mara_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Mara Singh",
+          "subject": "Pottery workshop reminder",
+          "body": "Just confirming you're still good for Saturday's glazing session.",
+          "thread_id": "thr_mara_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-18T14:15:00"
+        }
+      },
+      {
+        "id": "msg_vendor_01",
+        "type": "message",
+        "attributes": {
+          "sender": "North Star Lab Supply",
+          "subject": "Invoice available for March consumables",
+          "body": "Your monthly invoice is ready to download in the portal.",
+          "thread_id": "thr_vendor_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-18T09:02:00"
+        }
+      }
+    ]
+  }
+}

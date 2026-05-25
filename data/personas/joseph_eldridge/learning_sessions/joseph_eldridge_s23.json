@@ -1,0 +1,74 @@
+{
+  "session_id": "joseph_eldridge_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "workspace",
+  "reason_for_call": "Add something to my tracker",
+  "task_params": {
+    "tracker_title": "Consulting Action Tracker",
+    "update_action": "create_entry",
+    "entry_title": "Compliance questions from inverter controller review",
+    "entry_points": [
+      "Clarify UL 1741 documentation gaps",
+      "Confirm IEC 61010 insulation spacing assumptions",
+      "Check FCC Part 15 test scope for control board",
+      "Capture owner and due date at next client call"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_consult_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_title, entry_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_consult_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Consulting Action Tracker"
+        }
+      },
+      {
+        "id": "trk_shop_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Workshop Maintenance Log"
+        }
+      },
+      {
+        "id": "trk_talk_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "IEEE Mentorship Follow-up"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "session_id": "vanessa_davis_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a calendar meet-up",
+  "task_params": {
+    "title": "Mentor check-in with Jamal",
+    "start_time": "2025-03-19T18:15:00-07:00",
+    "end_time": "2025-03-19T18:35:00-07:00",
+    "participants": [
+      "jamal.harris@example.com"
+    ],
+    "location": "Route 58 Diner"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-19T18:15:00-07:00",
+        "end_time": "2025-03-19T18:35:00-07:00",
+        "participants": [
+          "jamal.harris@example.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Mentor check-in with Jamal",
+        "start_time": "2025-03-19T18:15:00-07:00",
+        "end_time": "2025-03-19T18:35:00-07:00",
+        "participants": [
+          "jamal.harris@example.com"
+        ],
+        "location": "Route 58 Diner"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Bakersfield supply drop",
+          "start_time": "2025-03-19T13:00:00-07:00",
+          "end_time": "2025-03-19T16:45:00-07:00",
+          "participants": [
+            "dispatch@highdesertlogistics.com"
+          ],
+          "location": "Bakersfield yard",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Post-trip inspection and paperwork",
+          "start_time": "2025-03-19T17:00:00-07:00",
+          "end_time": "2025-03-19T17:40:00-07:00",
+          "participants": [],
+          "location": "Mojave depot",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_pers_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Call with Denise",
+          "start_time": "2025-03-19T19:15:00-07:00",
+          "end_time": "2025-03-19T19:45:00-07:00",
+          "participants": [
+            "denise.davis@example.com"
+          ],
+          "location": "",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_pers_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Mentor check-in with Jamal",
+          "start_time": "2025-03-19T18:15:00-07:00",
+          "end_time": "2025-03-19T18:35:00-07:00",
+          "participants": [
+            "jamal.harris@example.com"
+          ],
+          "location": "Route 58 Diner",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

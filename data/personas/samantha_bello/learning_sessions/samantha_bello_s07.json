@@ -1,0 +1,119 @@
+{
+  "session_id": "samantha_bello_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "reservation",
+  "reason_for_call": "Book an activity.",
+  "task_params": {
+    "location": "Rincon",
+    "event_tags": [
+      "watercolor",
+      "workshop"
+    ],
+    "ticket_count": 1,
+    "ticket_type": "general_admission"
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Rincon",
+        "event_tags": [
+          "watercolor",
+          "workshop"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_palette_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_palette_01",
+        "type": "event",
+        "attributes": {
+          "name": "Sea Glass Watercolor Workshop",
+          "location": "Rincon",
+          "date_time": "2025-03-15T14:00:00-04:00",
+          "price": 38.0,
+          "event_tags": [
+            "watercolor",
+            "workshop",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "evt_ceramic_02",
+        "type": "event",
+        "attributes": {
+          "name": "Sunset Clay Handbuilding Session",
+          "location": "Rincon",
+          "date_time": "2025-03-15T16:30:00-04:00",
+          "price": 42.0,
+          "event_tags": [
+            "ceramics",
+            "workshop",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "evt_market_03",
+        "type": "event",
+        "attributes": {
+          "name": "Plaza Makers Market",
+          "location": "Rincon",
+          "date_time": "2025-03-16T11:00:00-04:00",
+          "price": 0.0,
+          "event_tags": [
+            "market",
+            "crafts",
+            "community"
+          ]
+        }
+      },
+      {
+        "id": "evt_paint_04",
+        "type": "event",
+        "attributes": {
+          "name": "Coastal Sketch and Wash Class",
+          "location": "Aguada",
+          "date_time": "2025-03-15T13:00:00-04:00",
+          "price": 35.0,
+          "event_tags": [
+            "watercolor",
+            "class",
+            "art"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "instruction": "Please go ahead and get me a reasonably priced flight from Boise to Phoenix for just me, and use the usual traveler details and card on file.",
+  "gold_value": "aisle",
+  "session_id": "marlene_graham_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "marlene_graham",
+  "rule_id": "marlene_graham_travel_02",
+  "rule_ref": {
+    "rule_id": "marlene_graham_travel_02",
+    "rule_text": "When traveling by air, she prefers an aisle seat rather than a window or middle seat.",
+    "canonical_answer": "I always pick an aisle seat on flights."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_boise_phx_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Phoenix",
+          "departure_date": "2026-04-12",
+          "airline": "SkyMesa",
+          "price": 159
+        }
+      },
+      {
+        "id": "flt_boise_phx_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Phoenix",
+          "departure_date": "2026-04-12",
+          "airline": "Redwood Air",
+          "price": 212
+        }
+      },
+      {
+        "id": "flt_boise_phx_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Phoenix",
+          "departure_date": "2026-04-13",
+          "airline": "DesertJet",
+          "price": 189
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "aisle"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

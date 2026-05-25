@@ -1,0 +1,109 @@
+{
+  "session_id": "theodora_tong_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox and reply.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Northside Community Center",
+    "priority": "high",
+    "thread_id": "thr_ncc_01",
+    "reply_points": [
+      "thank them for the update",
+      "confirm I can help at Friday's art-craft session",
+      "say I can arrive by 3:30 pm",
+      "ask whether they still need extra watercolor paper"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Northside Community Center"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_ncc_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_ncc_01",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_ncc_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Northside Community Center",
+          "subject": "Friday art-craft session help",
+          "body": "Hi Theodora, we're confirming volunteers for Friday's art-craft session with the seniors. Could you let us know if you can still come, and whether you might be able to arrive a little early to help set up? We may also need extra watercolor paper.",
+          "thread_id": "thr_ncc_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-16T14:18:00"
+        }
+      },
+      {
+        "id": "msg_school_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Schenectady Community College Advising",
+          "subject": "Reminder: placement survey",
+          "body": "This is a reminder to complete your placement survey before orientation registration opens next week.",
+          "thread_id": "thr_scc_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-16T13:42:00"
+        }
+      },
+      {
+        "id": "msg_school_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Financial Aid Office",
+          "subject": "FAFSA correction received",
+          "body": "We received your correction and will update your file within 3-5 business days.",
+          "thread_id": "thr_fao_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-16T12:05:00"
+        }
+      }
+    ]
+  }
+}

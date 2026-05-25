@@ -1,0 +1,119 @@
+{
+  "session_id": "theodora_tong_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Trips",
+    "doc_type": "note",
+    "title": "Montreal trip packing and sketching checklist",
+    "source_document_id": "doc_triptpl_01",
+    "packing_points": [
+      "passport and wallet",
+      "phone charger and power bank",
+      "2 days of clothes and sleepwear",
+      "toiletries in travel pouch",
+      "light rain layer",
+      "comfortable walking shoes"
+    ],
+    "sketching_points": [
+      "sketchbook",
+      "water brush",
+      "travel watercolor set",
+      "pencil and eraser",
+      "fineliner",
+      "small pouch for supplies"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Trips",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Montreal trip packing and sketching checklist",
+        "location": "Trips",
+        "content_brief": "<authored from packing_points, sketching_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_triptpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Trip Checklist Template",
+          "doc_type": "template",
+          "location": "Trips",
+          "content_brief": "Basic trip planning template with sections for packing list, documents, activities, and notes."
+        }
+      },
+      {
+        "id": "doc_artnotes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Museum Sketch Day Notes",
+          "doc_type": "note",
+          "location": "Art",
+          "content_brief": "Loose notes about supplies to bring for gallery sketching sessions."
+        }
+      },
+      {
+        "id": "file_itin_01",
+        "type": "file",
+        "attributes": {
+          "name": "montreal_train_times.pdf",
+          "file_type": "pdf",
+          "location": "Trips",
+          "owner": "Theodora Tong",
+          "labels": [
+            "travel",
+            "transport"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_map_02",
+        "type": "file",
+        "attributes": {
+          "name": "old_port_walk.png",
+          "file_type": "image",
+          "location": "Trips",
+          "owner": "Theodora Tong",
+          "labels": [
+            "travel",
+            "map"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

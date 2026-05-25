@@ -1,0 +1,150 @@
+{
+  "session_id": "john_brown_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Gulf Coast",
+      "music",
+      "beach"
+    ],
+    "destination_ids": [
+      "dest_pensacola_01",
+      "dest_mobile_01"
+    ],
+    "origin": "Baton Rouge",
+    "destination": "Pensacola",
+    "passenger_count": 1,
+    "sort_by": "price_asc",
+    "departure_date": "2025-05-16",
+    "return_date": "2025-05-19"
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_flights"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Gulf Coast",
+          "music",
+          "beach"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_pensacola_01",
+          "dest_mobile_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "Baton Rouge",
+        "destination": "Pensacola",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_pensacola_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Pensacola",
+          "region": "Florida Gulf Coast",
+          "tags": [
+            "beach",
+            "music",
+            "historic",
+            "Gulf Coast"
+          ]
+        }
+      },
+      {
+        "id": "dest_mobile_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Mobile",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "music",
+            "food",
+            "waterfront",
+            "Gulf Coast"
+          ]
+        }
+      },
+      {
+        "id": "dest_gulfport_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Gulfport",
+          "region": "Mississippi Gulf Coast",
+          "tags": [
+            "beach",
+            "casino",
+            "waterfront",
+            "Gulf Coast"
+          ]
+        }
+      },
+      {
+        "id": "flt_pns_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Baton Rouge",
+          "destination": "Pensacola",
+          "departure_date": "2025-05-16",
+          "return_date": "2025-05-19",
+          "airline": "Delta",
+          "price": 248.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_pns_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Baton Rouge",
+          "destination": "Pensacola",
+          "departure_date": "2025-05-17",
+          "return_date": "2025-05-20",
+          "airline": "American",
+          "price": 289.0,
+          "available_seats": 6
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Dr. Elaine Mercer at Northbridge Academy about Lena's accommodation plan. Thank her for summarizing the classroom supports, say I agree with the quiet-testing room and weekly reading check-ins, ask whether the school counselor can also be included on future updates, and let her know I'll send the pediatrician's note separately.",
+  "gold_value": null,
+  "session_id": "jennifer_philmon_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "jennifer_philmon_communication_01",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_communication_01",
+    "rule_text": "When writing messages that matter, she prefers to draft them for review instead of sending immediately.",
+    "canonical_answer": "For important messages, I want a draft first instead of sending it right away."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_elaine_lena_plan_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dr. Elaine Mercer <elaine.mercer@northbridgeacademy.org>",
+          "subject": "Lena accommodation plan and classroom supports",
+          "body": "Hello Jennifer, following our earlier conversation, I've outlined a few support options for Lena at school. The team can add access to a quiet-testing room, weekly reading check-ins with the literacy specialist, and a written update process so everyone stays aligned. Let me know which of these you agree with and whether you'd like the school counselor included on future updates. If you have a recent pediatrician note, feel free to send it along for the file.",
+          "thread_id": "thr_elaine_lena_12",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-03-18T10:14"
+        }
+      },
+      {
+        "id": "msg_northbridge_fieldday_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Northbridge Academy Office <office@northbridgeacademy.org>",
+          "subject": "Field day volunteer sign-up",
+          "body": "We're opening volunteer slots for this year's field day. If you'd like to help with snacks, setup, or cleanup, please reply by Friday.",
+          "thread_id": "thr_fieldday_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-03-18T08:22"
+        }
+      },
+      {
+        "id": "msg_marcus_dinner_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marcus Reed <marcus.reed@example.com>",
+          "subject": "Dinner next week?",
+          "body": "Hey Jennifer, checking whether you want to get dinner sometime next week if your schedule opens up.",
+          "thread_id": "thr_marcus_27",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-03-17T19:41"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

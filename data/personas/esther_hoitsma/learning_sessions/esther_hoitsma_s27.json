@@ -1,0 +1,131 @@
+{
+  "session_id": "esther_hoitsma_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Rockies",
+      "solo",
+      "hiking"
+    ],
+    "region": "Canadian Rockies",
+    "traveler_count": 1,
+    "duration_days": 4,
+    "destination_ids": [
+      "dest_banff_01",
+      "dest_jasper_02",
+      "dest_canmore_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Rockies",
+          "solo",
+          "hiking",
+          "Canadian Rockies"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_banff_01",
+          "dest_jasper_02",
+          "dest_canmore_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_banff_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Banff",
+          "region": "Canadian Rockies",
+          "tags": [
+            "Rockies",
+            "solo",
+            "hiking",
+            "lakes",
+            "mountain town"
+          ]
+        }
+      },
+      {
+        "id": "dest_jasper_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Jasper",
+          "region": "Canadian Rockies",
+          "tags": [
+            "Rockies",
+            "solo",
+            "hiking",
+            "wildlife",
+            "scenic drives"
+          ]
+        }
+      },
+      {
+        "id": "dest_canmore_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Canmore",
+          "region": "Canadian Rockies",
+          "tags": [
+            "Rockies",
+            "solo",
+            "hiking",
+            "trail access",
+            "small town"
+          ]
+        }
+      },
+      {
+        "id": "dest_revelstoke_04",
+        "type": "destination",
+        "attributes": {
+          "name": "Revelstoke",
+          "region": "British Columbia Rockies",
+          "tags": [
+            "Rockies",
+            "hiking",
+            "mountain town",
+            "forests"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "session_id": "michael_argo_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "travel",
+  "reason_for_call": "Book a trip ride.",
+  "task_params": {
+    "origin": "Louisville",
+    "destination": "Chicago",
+    "passenger_count": 1,
+    "departure_date": "2025-08-16",
+    "transport_offer_id": "trn_chi_01"
+  },
+  "expected_tools": [
+    "search_ground_transport",
+    "book_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Louisville",
+        "destination": "Chicago",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "trn_chi_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "trn_chi_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Chicago",
+          "mode": "train",
+          "departure_date": "2025-08-16",
+          "price": 58.0,
+          "available_seats": 14
+        }
+      },
+      {
+        "id": "bus_chi_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Chicago",
+          "mode": "bus",
+          "departure_date": "2025-08-16",
+          "price": 61.0,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "bus_chi_03",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Chicago",
+          "mode": "bus",
+          "departure_date": "2025-08-17",
+          "price": 49.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "trn_chi_04",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Chicago",
+          "mode": "train",
+          "departure_date": "2025-08-17",
+          "price": 72.0,
+          "available_seats": 11
+        }
+      }
+    ]
+  }
+}

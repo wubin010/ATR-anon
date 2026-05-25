@@ -1,0 +1,91 @@
+{
+  "domain": "travel",
+  "instruction": "Book the one-way trip on August 14, 2026: me alone, Seattle, WA to San Francisco, CA. I've got accommodation sorted on my end, just handle this leg.",
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_sea_sfo_20260814_ak_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "departure_date": "2026-08-14",
+          "airline": "Alaska Airlines",
+          "price": 149
+        }
+      },
+      {
+        "id": "flt_sea_sfo_20260814_dl_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "departure_date": "2026-08-14",
+          "airline": "Delta Air Lines",
+          "price": 163
+        }
+      },
+      {
+        "id": "flt_sea_sfo_20260814_ua_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "departure_date": "2026-08-14",
+          "airline": "United Airlines",
+          "price": 171
+        }
+      },
+      {
+        "id": "trp_sea_sfo_20260814_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "mode": "train",
+          "departure_date": "2026-08-14",
+          "price": 238
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_travel_01_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_travel_01",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_travel_01",
+    "rule_text": "For long-distance travel, default to driving or ground transport options rather than checking flights first.",
+    "canonical_answer": "If a trip can be done by driving or other ground transport, plan it that way first — don't lead with flights."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

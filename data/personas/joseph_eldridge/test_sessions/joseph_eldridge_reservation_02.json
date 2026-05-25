@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm in Durham and want two tickets for a fun live event; keep it under $60 per person, just pick something and book it.",
+  "gold_value": "evt_durham_symphony_01",
+  "session_id": "joseph_eldridge_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "joseph_eldridge_reservation_02",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_reservation_02",
+    "rule_text": "When booking performance tickets, Joseph prefers symphony, blues, or theater events over generic spectacle or sports entertainment.",
+    "canonical_answer": "For live events, I usually want symphony, blues, or theater rather than generic big-spectacle entertainment."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_durham_symphony_01",
+        "type": "event",
+        "attributes": {
+          "name": "Durham Symphony Orchestra: American Masters Night",
+          "location": "Durham",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 56,
+          "event_tags": [
+            "symphony",
+            "orchestral",
+            "concert"
+          ]
+        }
+      },
+      {
+        "id": "evt_bullcity_stunts_01",
+        "type": "event",
+        "attributes": {
+          "name": "Bull City Stunt Jam Live",
+          "location": "Durham",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 39,
+          "event_tags": [
+            "arena_show",
+            "stunt_show",
+            "family_entertainment"
+          ]
+        }
+      },
+      {
+        "id": "evt_durham_bulls_01",
+        "type": "event",
+        "attributes": {
+          "name": "Durham Bulls Friday Night Showdown",
+          "location": "Durham",
+          "date_time": "2026-09-18T19:00:00",
+          "price": 32,
+          "event_tags": [
+            "baseball",
+            "sports",
+            "stadium"
+          ]
+        }
+      },
+      {
+        "id": "evt_neon_drone_01",
+        "type": "event",
+        "attributes": {
+          "name": "Neon Sky Drone and Fireworks Spectacular",
+          "location": "Durham",
+          "date_time": "2026-09-18T20:30:00",
+          "price": 44,
+          "event_tags": [
+            "fireworks",
+            "light_show",
+            "live_spectacle"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_durham_symphony_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

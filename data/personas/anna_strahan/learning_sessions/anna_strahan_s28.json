@@ -1,0 +1,100 @@
+{
+  "session_id": "anna_strahan_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "reference_doc_type": "report",
+    "location": "Compliance",
+    "doc_type": "memo",
+    "title": "Next Compliance Cycle Training Priorities",
+    "content_brief": "Concise memo outlining top staff training priorities for the next compliance cycle.",
+    "training_points": [
+      "Refresh HIPAA privacy and security procedures",
+      "Reinforce incident reporting and escalation steps",
+      "Review documentation standards for CMS quality reporting",
+      "Address patient safety protocols and handoff consistency",
+      "Highlight role-specific competency checks for clinical staff"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Compliance",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "Next Compliance Cycle Training Priorities",
+        "location": "Compliance",
+        "content_brief": "<authored from content_brief, training_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_comp_01",
+        "type": "document",
+        "attributes": {
+          "title": "Compliance Gap Review Q2",
+          "doc_type": "report",
+          "location": "Compliance",
+          "content_brief": "Quarterly review of audit findings, training gaps, and corrective actions."
+        }
+      },
+      {
+        "id": "doc_comp_02",
+        "type": "document",
+        "attributes": {
+          "title": "Annual Compliance Education Summary",
+          "doc_type": "report",
+          "location": "Compliance",
+          "content_brief": "Summary of completed staff education topics, participation rates, and pending refreshers."
+        }
+      },
+      {
+        "id": "doc_ops_03",
+        "type": "document",
+        "attributes": {
+          "title": "Clinic Throughput Dashboard Notes",
+          "doc_type": "note",
+          "location": "Operations",
+          "content_brief": "Working notes on patient flow metrics and scheduling bottlenecks."
+        }
+      },
+      {
+        "id": "doc_hr_04",
+        "type": "document",
+        "attributes": {
+          "title": "Onboarding Checklist Template",
+          "doc_type": "template",
+          "location": "HR",
+          "content_brief": "Template for new hire onboarding tasks and acknowledgments."
+        }
+      }
+    ]
+  }
+}

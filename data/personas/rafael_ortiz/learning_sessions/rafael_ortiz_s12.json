@@ -1,0 +1,108 @@
+{
+  "session_id": "rafael_ortiz_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "commerce",
+  "reason_for_call": "Order a household item.",
+  "task_params": {
+    "category": "meal-prep containers",
+    "budget": 40,
+    "product_ids": [
+      "prod_locknstore_01",
+      "prod_freshseal_02",
+      "prod_shiftbox_03"
+    ],
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "meal-prep containers",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_locknstore_01",
+          "prod_freshseal_02",
+          "prod_shiftbox_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_locknstore_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_locknstore_01",
+        "type": "product",
+        "attributes": {
+          "name": "LocknStore Glass Meal-Prep Containers 10-Pack",
+          "price": 34.99,
+          "category": "meal-prep containers",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_freshseal_02",
+        "type": "product",
+        "attributes": {
+          "name": "FreshSeal Stainless Meal-Prep Set 6-Pack",
+          "price": 39.5,
+          "category": "meal-prep containers",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_shiftbox_03",
+        "type": "product",
+        "attributes": {
+          "name": "ShiftBox Heavy-Duty Plastic Meal-Prep Containers 12-Pack",
+          "price": 22.99,
+          "category": "meal-prep containers",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_snapdaily_04",
+        "type": "product",
+        "attributes": {
+          "name": "SnapDaily Bento Lunch Kit 4-Pack",
+          "price": 18.99,
+          "category": "lunch containers",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "session_id": "roosevelt_brown_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "scheduling",
+  "reason_for_call": "Figure out my calendar.",
+  "task_params": {
+    "title": "Dinner Party",
+    "start_time": "2025-03-29T19:00:00-04:00",
+    "end_time": "2025-03-29T22:00:00-04:00",
+    "participants": [
+      "nina@example.com",
+      "marcus@example.com",
+      "devon@example.com",
+      "sheila@example.com"
+    ],
+    "location": "Roosevelt's apartment"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {}
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-29T19:00:00-04:00",
+        "end_time": "2025-03-29T22:00:00-04:00",
+        "participants": [
+          "nina@example.com",
+          "marcus@example.com",
+          "devon@example.com",
+          "sheila@example.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Dinner Party",
+        "start_time": "2025-03-29T19:00:00-04:00",
+        "end_time": "2025-03-29T22:00:00-04:00",
+        "participants": [
+          "nina@example.com",
+          "marcus@example.com",
+          "devon@example.com",
+          "sheila@example.com"
+        ],
+        "location": "Roosevelt's apartment"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_yoga_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning Yoga Class",
+          "start_time": "2025-03-29T09:00:00-04:00",
+          "end_time": "2025-03-29T10:15:00-04:00",
+          "participants": [],
+          "location": "Brockton Wellness Studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_gallery_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner Party",
+          "start_time": "2025-03-29T19:00:00-04:00",
+          "end_time": "2025-03-29T22:00:00-04:00",
+          "participants": [
+            "maya@example.com"
+          ],
+          "location": "SoWA Art + Design District",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_choir_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church Choir Rehearsal",
+          "start_time": "2025-03-30T10:00:00-04:00",
+          "end_time": "2025-03-30T12:00:00-04:00",
+          "participants": [],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_podcast_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Health Podcast Recording",
+          "start_time": "2025-03-30T16:00:00-04:00",
+          "end_time": "2025-03-30T18:00:00-04:00",
+          "participants": [
+            "alicia@example.com",
+            "trent@example.com"
+          ],
+          "location": "Brockton Media Lab",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

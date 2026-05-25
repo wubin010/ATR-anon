@@ -1,0 +1,122 @@
+{
+  "session_id": "john_brown_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "commerce",
+  "reason_for_call": "Compare a few products.",
+  "task_params": {
+    "category": "VR accessories",
+    "budget": 120,
+    "sort_by": "rating",
+    "items": [
+      "PocketVR Controller Grip Pair",
+      "MotionTrack Sensor Clip Set"
+    ],
+    "list_name": "Safety training prototype gear"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "VR accessories",
+        "budget": 120,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_motiontrack_02",
+          "prod_pocketvr_01",
+          "prod_comfortface_03",
+          "prod_standdock_04"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "PocketVR Controller Grip Pair",
+          "MotionTrack Sensor Clip Set"
+        ],
+        "list_name": "Safety training prototype gear"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_pocketvr_01",
+        "type": "product",
+        "attributes": {
+          "name": "PocketVR Controller Grip Pair",
+          "price": 24.99,
+          "category": "VR accessories",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_motiontrack_02",
+        "type": "product",
+        "attributes": {
+          "name": "MotionTrack Sensor Clip Set",
+          "price": 39.5,
+          "category": "VR accessories",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_comfortface_03",
+        "type": "product",
+        "attributes": {
+          "name": "ComfortFace Foam Interface Kit",
+          "price": 18.99,
+          "category": "VR accessories",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_standdock_04",
+        "type": "product",
+        "attributes": {
+          "name": "StandDock Headset Display Base",
+          "price": 64.0,
+          "category": "VR accessories",
+          "rating": 4.1
+        }
+      },
+      {
+        "id": "prod_hapticsleeve_05",
+        "type": "product",
+        "attributes": {
+          "name": "Haptic Sleeve Starter Band",
+          "price": 149.99,
+          "category": "VR accessories",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

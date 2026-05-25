@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book the lowest-priced flight from Chicago to Portland for just me from the available options, and use the usual traveler details and card on file.",
+  "gold_value": "window",
+  "session_id": "michael_argo_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "michael_argo_travel_02",
+  "rule_ref": {
+    "rule_id": "michael_argo_travel_02",
+    "rule_text": "If a flight does need to be booked, he prefers a window seat for the view and photography inspiration.",
+    "canonical_answer": "When I have to fly, I want a window seat."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_chicago_portland_bluepeak_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Portland",
+          "departure_date": "2026-10-09",
+          "airline": "BluePeak Air",
+          "price": 184,
+          "available_seats": 7
+        }
+      },
+      {
+        "id": "flt_chicago_portland_lakeshore_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Portland",
+          "departure_date": "2026-10-09",
+          "airline": "Lakeshore Air",
+          "price": 221,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_chicago_portland_cascadia_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Portland",
+          "departure_date": "2026-10-10",
+          "airline": "Cascadia",
+          "price": 259,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "flt_chicago_seattle_bluepeak_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Seattle",
+          "departure_date": "2026-10-09",
+          "airline": "BluePeak Air",
+          "price": 169,
+          "available_seats": 5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

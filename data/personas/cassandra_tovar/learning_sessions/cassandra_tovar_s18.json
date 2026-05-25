@@ -1,0 +1,126 @@
+{
+  "session_id": "cassandra_tovar_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule something on my calendar.",
+  "task_params": {
+    "calendar": "personal",
+    "participants": [
+      "Maya Brooks"
+    ],
+    "title": "Coffee with Maya",
+    "start_time": "2025-03-21T15:30:00-04:00",
+    "end_time": "2025-03-21T16:30:00-04:00",
+    "new_start_time": "2025-03-23T11:00:00-04:00",
+    "new_end_time": "2025-03-23T12:00:00-04:00"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "reschedule_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal",
+        "participants": [
+          "Maya Brooks"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-23T11:00:00-04:00",
+        "end_time": "2025-03-23T12:00:00-04:00",
+        "participants": [
+          "Maya Brooks"
+        ]
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_coffee_01",
+        "new_start_time": "2025-03-23T11:00:00-04:00",
+        "new_end_time": "2025-03-23T12:00:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_coffee_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Coffee with Maya",
+          "start_time": "2025-03-21T15:30:00-04:00",
+          "end_time": "2025-03-21T16:30:00-04:00",
+          "participants": [
+            "Maya Brooks"
+          ],
+          "location": "Dancing Goats Coffee Bar",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_church_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church Media Check-in",
+          "start_time": "2025-03-23T08:30:00-04:00",
+          "end_time": "2025-03-23T10:00:00-04:00",
+          "participants": [
+            "Worship Team"
+          ],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_jog_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Park Jog",
+          "start_time": "2025-03-23T18:00:00-04:00",
+          "end_time": "2025-03-23T18:45:00-04:00",
+          "participants": [],
+          "location": "Legacy Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_install_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "School Auditorium Install",
+          "start_time": "2025-03-21T13:00:00-04:00",
+          "end_time": "2025-03-21T18:00:00-04:00",
+          "participants": [
+            "AV Crew"
+          ],
+          "location": "Decatur High School",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

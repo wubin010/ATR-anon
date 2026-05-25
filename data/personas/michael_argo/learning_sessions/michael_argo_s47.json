@@ -1,0 +1,101 @@
+{
+  "session_id": "michael_argo_s47",
+  "session_type": "learning",
+  "day_offset": 47,
+  "domain": "communication",
+  "reason_for_call": "Draft a group message.",
+  "task_params": {
+    "recipient": "Trail Runners",
+    "subject": "Gear recommendations for a longer Hoosier hike",
+    "hike_location": "Hoosier National Forest",
+    "timing_phrase": "later this month",
+    "gear_points": [
+      "ask what gear people recommend",
+      "mention a longer hike in Hoosier National Forest",
+      "ask about must-have items for distance and terrain",
+      "ask what to pack for water and snacks",
+      "ask whether trekking poles are worth bringing",
+      "keep it casual and friendly"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Trail Runners"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "recipient": "Trail Runners",
+        "subject": "Gear recommendations for a longer Hoosier hike",
+        "body": "<authored from gear_points, hike_location, timing_phrase>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_trail_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Trail Runners",
+          "subject": "Saturday meetup route options",
+          "body": "We are deciding between two trail loops for Saturday. Drop your vote in the thread.",
+          "thread_id": "thr_trail_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T18:12:00"
+        }
+      },
+      {
+        "id": "msg_arts_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Riverfront Arts Center",
+          "subject": "Open studio reminder",
+          "body": "Just a reminder that open studio starts at 6 PM tomorrow.",
+          "thread_id": "thr_arts_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-13T10:05:00"
+        }
+      },
+      {
+        "id": "msg_friend_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Eli Parker",
+          "subject": "Catan next week?",
+          "body": "Want to do a game night sometime next week?",
+          "thread_id": "thr_friend_03",
+          "folder": "sent",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-12T21:44:00"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "instruction": "Please book me a pottery wheel lesson in Seattle for 2026-07-18 at 2:00pm — just pick a place for me.",
+  "gold_value": "svc_pottery_beacon_01",
+  "session_id": "iris_parker_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "iris_parker_reservation_03",
+  "rule_ref": {
+    "rule_id": "iris_parker_reservation_03",
+    "rule_text": "When booking a local appointment tied to her creative hobbies, she prefers community studio providers over generic service providers.",
+    "canonical_answer": "For creative appointments, I prefer community studio-style providers."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_pottery_beacon_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Beacon Community Clay Studio",
+          "service_type": "pottery wheel lesson",
+          "location": "Beacon Hill, Seattle",
+          "rating": 4.4,
+          "distance_km": 5.1
+        }
+      },
+      {
+        "id": "svc_pottery_metro_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Metro Pottery Services",
+          "service_type": "pottery wheel lesson",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "distance_km": 0.4
+        }
+      },
+      {
+        "id": "svc_pottery_easywheel_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "EasyWheel Ceramics Lessons",
+          "service_type": "pottery wheel lesson",
+          "location": "South Lake Union, Seattle",
+          "rating": 4.8,
+          "distance_km": 0.9
+        }
+      },
+      {
+        "id": "svc_pottery_cityline_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Cityline Clay Appointments",
+          "service_type": "pottery wheel lesson",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.7,
+          "distance_km": 1.2
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_pottery_beacon_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

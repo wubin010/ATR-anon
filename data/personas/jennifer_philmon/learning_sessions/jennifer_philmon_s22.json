@@ -1,0 +1,89 @@
+{
+  "session_id": "jennifer_philmon_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "memo",
+    "title": "VFD Cooling Tower Fan Energy-Saving Idea",
+    "location": "Operations Notes",
+    "content_brief": "Short memo capturing an energy-saving idea from shift observations",
+    "memo_points": [
+      "Observed fan running at full speed during lower load periods",
+      "Idea: add VFD control to cooling tower fan motor",
+      "Expected benefit: reduce unnecessary power draw",
+      "Could tie fan speed to condenser temperature or load",
+      "Would need controls review and rough cost check"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Operations Notes",
+        "doc_type": "memo"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "VFD Cooling Tower Fan Energy-Saving Idea",
+        "location": "Operations Notes",
+        "content_brief": "<authored from content_brief, memo_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_shift_01",
+        "type": "document",
+        "attributes": {
+          "title": "Shift Log Boiler Room Notes",
+          "doc_type": "note",
+          "location": "Operations Notes",
+          "content_brief": "Routine operating observations and readings from recent shifts"
+        }
+      },
+      {
+        "id": "doc_memo_02",
+        "type": "document",
+        "attributes": {
+          "title": "Pump Seal Leak Follow-Up Memo",
+          "doc_type": "memo",
+          "location": "Operations Notes",
+          "content_brief": "Brief internal memo documenting an observed maintenance issue and next steps"
+        }
+      },
+      {
+        "id": "doc_report_03",
+        "type": "document",
+        "attributes": {
+          "title": "Auxiliary Load Review Q2",
+          "doc_type": "report",
+          "location": "Engineering Shared",
+          "content_brief": "Quarterly summary of auxiliary equipment electrical usage"
+        }
+      }
+    ]
+  }
+}

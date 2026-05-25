@@ -1,0 +1,74 @@
+{
+  "session_id": "charlie_james_s50",
+  "session_type": "learning",
+  "day_offset": 50,
+  "domain": "workspace",
+  "reason_for_call": "Update a work tracker.",
+  "task_params": {
+    "tracker_title": "Apprentice Development Tracker",
+    "update_action": "create_entry",
+    "entry_payload_bullets": [
+      "Darnell Brooks is ready for more diagnostics work",
+      "Let Darnell start with check-engine light driveability cases",
+      "Mia Torres still needs close supervision",
+      "Keep Mia paired on electrical testing and scan-tool steps",
+      "Note both updates under this week's shop floor observations"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_apprentice_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_payload_bullets>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_apprentice_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Apprentice Development Tracker"
+        }
+      },
+      {
+        "id": "trk_safety_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Shop Safety Walkthrough Log"
+        }
+      },
+      {
+        "id": "trk_inventory_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Parts Restock Tracker"
+        }
+      }
+    ]
+  }
+}

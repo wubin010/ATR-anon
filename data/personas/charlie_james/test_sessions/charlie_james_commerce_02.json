@@ -1,0 +1,126 @@
+{
+  "instruction": "Please order one small item for the garage shelf, under $25. Just pick one.",
+  "gold_value": "prod_pin_vise_micro_01",
+  "session_id": "charlie_james_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "charlie_james_commerce_02",
+  "rule_ref": {
+    "rule_id": "charlie_james_commerce_02",
+    "rule_text": "For purchases tied to his work or hobbies, he prefers parts, tools, or maker-oriented supplies over flashy novelty items.",
+    "canonical_answer": "When I buy something, I’d rather it help me build, fix, cook, or grow something than just look flashy."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_pin_vise_micro_01",
+        "type": "product",
+        "attributes": {
+          "name": "Micro Pin Vise Drill Set",
+          "price": 18.99,
+          "category": "garage accessories",
+          "rating": 4.3,
+          "item_type": "hand tool",
+          "use_case": "drilling pilot holes in plastic and soft metal parts",
+          "longest_side_in": 5.5,
+          "review_count": 74,
+          "color": "black and silver"
+        }
+      },
+      {
+        "id": "prod_led_turntable_01",
+        "type": "product",
+        "attributes": {
+          "name": "LED Rotating Display Stand",
+          "price": 22.99,
+          "category": "garage accessories",
+          "rating": 4.9,
+          "item_type": "display accessory",
+          "use_case": "lit rotating stand for showing off a small car or collectible",
+          "longest_side_in": 5.2,
+          "power_source": "USB",
+          "review_count": 1260,
+          "finish": "gloss black"
+        }
+      },
+      {
+        "id": "prod_piston_clock_01",
+        "type": "product",
+        "attributes": {
+          "name": "Chrome Piston Desk Clock",
+          "price": 19.49,
+          "category": "garage accessories",
+          "rating": 4.8,
+          "item_type": "desk decor",
+          "use_case": "display clock styled like an engine piston",
+          "longest_side_in": 5.0,
+          "material": "chrome-finish alloy",
+          "review_count": 904,
+          "finish": "mirror chrome"
+        }
+      },
+      {
+        "id": "prod_route66_plaque_01",
+        "type": "product",
+        "attributes": {
+          "name": "Retro Route 66 LED Plaque",
+          "price": 16.99,
+          "category": "garage accessories",
+          "rating": 4.9,
+          "item_type": "wall decor",
+          "use_case": "lighted sign for a shelf or wall",
+          "longest_side_in": 6.0,
+          "power_source": "battery",
+          "review_count": 1410,
+          "color": "red and blue"
+        }
+      },
+      {
+        "id": "prod_metal_emblem_paperweight_01",
+        "type": "product",
+        "attributes": {
+          "name": "Vintage Metal Emblem Paperweight",
+          "price": 14.99,
+          "category": "garage accessories",
+          "rating": 4.7,
+          "item_type": "display decor",
+          "use_case": "weighted tabletop accent for a shelf or bench",
+          "longest_side_in": 4.8,
+          "material": "cast metal",
+          "review_count": 688,
+          "finish": "polished enamel"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_pin_vise_micro_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

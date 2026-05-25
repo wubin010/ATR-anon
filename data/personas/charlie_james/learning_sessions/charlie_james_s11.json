@@ -1,0 +1,92 @@
+{
+  "session_id": "charlie_james_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "template_location": "Shop Office",
+    "template_doc_type": "template",
+    "doc_type": "spreadsheet",
+    "title": "Apprentice Mentoring Tracker",
+    "location": "Shop Office",
+    "content_brief": "Spreadsheet to track apprentice name, vehicle system focus, skill practiced, date, progress level, safety notes, and next lesson."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Shop Office",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Apprentice Mentoring Tracker",
+        "location": "Shop Office",
+        "content_brief": "Spreadsheet to track apprentice name, vehicle system focus, skill practiced, date, progress level, safety notes, and next lesson."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Training Log Template",
+          "doc_type": "template",
+          "location": "Shop Office",
+          "content_brief": "Basic training log with columns for trainee, topic, date, and notes."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly Task Sheet",
+          "doc_type": "template",
+          "location": "Front Desk",
+          "content_brief": "Simple weekly assignment checklist for shop staff."
+        }
+      },
+      {
+        "id": "doc_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Brake Bay Coaching Notes",
+          "doc_type": "note",
+          "location": "Shop Office",
+          "content_brief": "Loose notes from recent apprentice coaching sessions."
+        }
+      },
+      {
+        "id": "fold_shop_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Shop Office",
+          "purpose": "General admin and training documents."
+        }
+      }
+    ]
+  }
+}

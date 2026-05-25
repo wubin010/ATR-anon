@@ -1,0 +1,100 @@
+{
+  "session_id": "roosevelt_brown_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "commerce",
+  "reason_for_call": "Order a couple home items",
+  "task_params": {
+    "platter_product_id": "prod_platter_01",
+    "bowls_product_id": "prod_bowls_02",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_platter_01",
+          "prod_bowls_02"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_platter_01",
+        "quantity": 1
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_bowls_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_platter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Stoneware Oval Serving Platter",
+          "price": 34.0,
+          "category": "serveware",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_bowls_02",
+        "type": "product",
+        "attributes": {
+          "name": "Small Appetizer Bowl Set, 4-Piece",
+          "price": 22.0,
+          "category": "serveware",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_board_03",
+        "type": "product",
+        "attributes": {
+          "name": "Acacia Wood Cheese Board",
+          "price": 28.0,
+          "category": "serveware",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_ramekins_04",
+        "type": "product",
+        "attributes": {
+          "name": "Mini Ramekin Set, 6-Pack",
+          "price": 18.0,
+          "category": "serveware",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

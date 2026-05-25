@@ -1,0 +1,126 @@
+{
+  "session_id": "rafael_ortiz_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "commerce",
+  "reason_for_call": "Order some cooking supplies",
+  "task_params": {
+    "category": "pantry staples",
+    "budget": 40,
+    "product_ids": [
+      "prod_rice_01",
+      "prod_beans_02",
+      "prod_oil_03"
+    ],
+    "items": [
+      "Long Grain Rice 10 lb",
+      "Pinto Beans 4 lb",
+      "Canola Oil 48 oz"
+    ],
+    "list_name": "Family Meal Staples",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "pantry staples",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_rice_01",
+          "prod_beans_02",
+          "prod_oil_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Long Grain Rice 10 lb",
+          "Pinto Beans 4 lb",
+          "Canola Oil 48 oz"
+        ],
+        "list_name": "Family Meal Staples"
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_rice_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_rice_01",
+        "type": "product",
+        "attributes": {
+          "name": "Long Grain Rice 10 lb",
+          "price": 12.49,
+          "category": "pantry staples",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_beans_02",
+        "type": "product",
+        "attributes": {
+          "name": "Pinto Beans 4 lb",
+          "price": 6.99,
+          "category": "pantry staples",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_oil_03",
+        "type": "product",
+        "attributes": {
+          "name": "Canola Oil 48 oz",
+          "price": 5.79,
+          "category": "pantry staples",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_flour_04",
+        "type": "product",
+        "attributes": {
+          "name": "All-Purpose Flour 5 lb",
+          "price": 4.29,
+          "category": "pantry staples",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

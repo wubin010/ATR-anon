@@ -1,0 +1,186 @@
+{
+  "session_id": "michael_argo_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "train",
+      "budget",
+      "art"
+    ],
+    "destination_ids": [
+      "dst_cincinnati_01",
+      "dst_chicago_02"
+    ],
+    "destination": "Cincinnati",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "stop_tags": [
+      "sketch",
+      "art"
+    ],
+    "selected_stop_ids": [
+      "stp_eden_01",
+      "stp_museum_02"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "train",
+          "budget",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_cincinnati_01",
+          "dst_chicago_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Cincinnati",
+        "stop_tags": [
+          "sketch",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Cincinnati",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_eden_01",
+          "stp_museum_02"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_cincinnati_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Cincinnati",
+          "region": "Ohio",
+          "tags": [
+            "train",
+            "budget",
+            "art",
+            "walkable",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_chicago_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Chicago",
+          "region": "Illinois",
+          "tags": [
+            "train",
+            "art",
+            "architecture",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_indianapolis_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Indianapolis",
+          "region": "Indiana",
+          "tags": [
+            "train",
+            "budget",
+            "museum",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "stp_eden_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Eden Park Overlook",
+          "location": "Cincinnati",
+          "tags": [
+            "sketch",
+            "park",
+            "walkable",
+            "view"
+          ]
+        }
+      },
+      {
+        "id": "stp_museum_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Contemporary Arts Center",
+          "location": "Cincinnati",
+          "tags": [
+            "art",
+            "gallery",
+            "sketch",
+            "indoor"
+          ]
+        }
+      },
+      {
+        "id": "stp_market_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Findlay Market",
+          "location": "Cincinnati",
+          "tags": [
+            "food",
+            "market",
+            "walkable",
+            "street"
+          ]
+        }
+      }
+    ]
+  }
+}

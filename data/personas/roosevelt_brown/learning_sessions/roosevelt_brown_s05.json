@@ -1,0 +1,103 @@
+{
+  "session_id": "roosevelt_brown_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a reservation.",
+  "task_params": {
+    "location": "South End",
+    "cuisine": "Italian",
+    "sort_by": "rating",
+    "date_time": "2025-02-14T19:30:00-05:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "South End",
+        "cuisine": "Italian",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_barmezzana_02",
+        "date_time": "2025-02-14T19:30:00-05:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_coppa_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Coppa",
+          "cuisine": "Italian",
+          "location": "South End",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "cozy bistro"
+        }
+      },
+      {
+        "id": "rst_barmezzana_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bar Mezzana",
+          "cuisine": "Italian",
+          "location": "South End",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "intimate dining room"
+        }
+      },
+      {
+        "id": "rst_krasi_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Krasi",
+          "cuisine": "Greek",
+          "location": "South End",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "warm shared plates"
+        }
+      },
+      {
+        "id": "rst_mistral_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Mistral",
+          "cuisine": "French",
+          "location": "South End",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "romantic dining room"
+        }
+      }
+    ]
+  }
+}

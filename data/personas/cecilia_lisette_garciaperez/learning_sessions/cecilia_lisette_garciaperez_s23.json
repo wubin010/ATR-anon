@@ -1,0 +1,84 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "workspace",
+  "reason_for_call": "Update a project tracker",
+  "task_params": {
+    "tracker_title": "Puentes y Voces Contributor Tracker",
+    "update_action": "create_entry",
+    "contributor_status_points": [
+      "Marisol Vega — waiting on revised translator note",
+      "Tomás Leal — waiting on photo captions in English and Spanish",
+      "Elena Ruiz — waiting on final permissions confirmation"
+    ],
+    "next_action_points": [
+      "Flag all three items as contributor-dependent",
+      "Note that no internal edit can proceed until materials arrive",
+      "Add one concise tracker entry summarizing outstanding dependencies"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_puentes_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from contributor_status_points and next_action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_puentes_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Puentes y Voces Contributor Tracker"
+        }
+      },
+      {
+        "id": "trk_almanac_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "South Texas Folklife Almanac Production Log"
+        }
+      },
+      {
+        "id": "trk_bilingual_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Bilingual Essays Fact-Check Checklist"
+        }
+      },
+      {
+        "id": "trk_archive_04",
+        "type": "tracker",
+        "attributes": {
+          "title": "Oral History Archive Intake Tracker"
+        }
+      }
+    ]
+  }
+}

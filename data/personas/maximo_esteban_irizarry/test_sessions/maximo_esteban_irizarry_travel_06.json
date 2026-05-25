@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book the lowest-priced flight from Dallas to Houston for just me. I'm traveling light and heading straight to a meeting after I land, so go ahead and use the usual traveler details and card on file.",
+  "gold_value": "window",
+  "session_id": "maximo_esteban_irizarry_travel_06_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "maximo_esteban_irizarry_travel_06",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_travel_06",
+    "rule_text": "When a flight must be booked, he prefers a window seat for the calmer view and quieter experience.",
+    "canonical_answer": "If I have to fly, I prefer a window seat."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_dallas_houston_lonestar_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Dallas",
+          "destination": "Houston",
+          "departure_date": "2026-08-14",
+          "airline": "Lone Star Air",
+          "price": 121.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_dallas_houston_gulfjet_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Dallas",
+          "destination": "Houston",
+          "departure_date": "2026-08-14",
+          "airline": "GulfJet",
+          "price": 154.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_dallas_houston_redriver_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Dallas",
+          "destination": "Houston",
+          "departure_date": "2026-08-14",
+          "airline": "Red River Air",
+          "price": 137.0,
+          "available_seats": 7
+        }
+      },
+      {
+        "id": "flt_dallas_austin_lonestar_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Dallas",
+          "destination": "Austin",
+          "departure_date": "2026-08-14",
+          "airline": "Lone Star Air",
+          "price": 92.0,
+          "available_seats": 6
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

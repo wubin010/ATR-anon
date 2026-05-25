@@ -1,0 +1,103 @@
+{
+  "session_id": "michael_argo_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "reservation",
+  "reason_for_call": "Book a restaurant reservation.",
+  "task_params": {
+    "location": "Louisville",
+    "cuisine": "brunch",
+    "date_time": "2025-03-07T10:30:00",
+    "party_size": 2,
+    "sort_by": "rating"
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Louisville",
+        "cuisine": "brunch",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_wildeggs_01",
+        "date_time": "2025-03-07T10:30:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_wildeggs_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Wild Eggs",
+          "cuisine": "brunch",
+          "location": "Louisville",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_conhuevos_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Con Huevos!",
+          "cuisine": "brunch",
+          "location": "Louisville",
+          "rating": 4.6,
+          "price_range": "$$",
+          "seating_style": "counter service"
+        }
+      },
+      {
+        "id": "rst_mornings_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Morning Fork",
+          "cuisine": "brunch",
+          "location": "Louisville",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_volare_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Volare",
+          "cuisine": "Italian",
+          "location": "Louisville",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "formal dining"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "session_id": "gabriel_campbell_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "commerce",
+  "reason_for_call": "Put together a shopping list",
+  "task_params": {
+    "category": "grocery",
+    "budget": 45,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_crackers_01",
+      "prod_brie_02",
+      "prod_salami_03",
+      "prod_coffee_04",
+      "prod_bagels_05"
+    ],
+    "items": [
+      "Sea Salt Crackers",
+      "Triple Cream Brie",
+      "Soppressata Salami",
+      "Cold Brew Coffee Concentrate",
+      "Plain Bagels"
+    ],
+    "list_name": "Gallery Night Host List"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "grocery",
+        "budget": 45,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_crackers_01",
+          "prod_brie_02",
+          "prod_salami_03",
+          "prod_coffee_04",
+          "prod_bagels_05"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Sea Salt Crackers",
+          "Triple Cream Brie",
+          "Soppressata Salami",
+          "Cold Brew Coffee Concentrate",
+          "Plain Bagels"
+        ],
+        "list_name": "Gallery Night Host List"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_crackers_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sea Salt Crackers",
+          "price": 4.49,
+          "category": "grocery",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_brie_02",
+        "type": "product",
+        "attributes": {
+          "name": "Triple Cream Brie",
+          "price": 8.99,
+          "category": "grocery",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_salami_03",
+        "type": "product",
+        "attributes": {
+          "name": "Soppressata Salami",
+          "price": 7.49,
+          "category": "grocery",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_coffee_04",
+        "type": "product",
+        "attributes": {
+          "name": "Cold Brew Coffee Concentrate",
+          "price": 9.99,
+          "category": "grocery",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_bagels_05",
+        "type": "product",
+        "attributes": {
+          "name": "Plain Bagels",
+          "price": 5.29,
+          "category": "grocery",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

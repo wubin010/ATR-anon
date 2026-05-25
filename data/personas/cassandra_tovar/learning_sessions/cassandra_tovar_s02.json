@@ -1,0 +1,98 @@
+{
+  "session_id": "cassandra_tovar_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "template_location": "Install Templates",
+    "doc_type": "note",
+    "title": "West Gym AV Rack Install Field Notes",
+    "location": "West Gym/Field Notes",
+    "section_points": [
+      "header with site, crew, and start time",
+      "cable runs table with origin, destination, and length",
+      "issues section for punch-list items and blockers",
+      "code observations section for power and pathway notes",
+      "materials used and remaining items",
+      "end-of-day status and next steps"
+    ],
+    "observation_keywords": [
+      "Cat6",
+      "HDMI",
+      "rack elevation",
+      "J-hook spacing",
+      "power separation",
+      "labeling"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Install Templates",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "West Gym AV Rack Install Field Notes",
+        "location": "West Gym/Field Notes",
+        "content_brief": "<authored from section_points and observation_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Field Note Template - AV Install",
+          "doc_type": "template",
+          "location": "Install Templates",
+          "content_brief": "Basic install field note template with sections for cable runs, issues, code observations, and sign-off."
+        }
+      },
+      {
+        "id": "doc_tpl_02",
+        "type": "document",
+        "attributes": {
+          "title": "Cable Run Log Template",
+          "doc_type": "template",
+          "location": "Install Templates",
+          "content_brief": "Structured table for documenting cable type, source, destination, length, and label."
+        }
+      },
+      {
+        "id": "doc_wn_03",
+        "type": "document",
+        "attributes": {
+          "title": "North Hall Display Swap Field Notes",
+          "doc_type": "note",
+          "location": "North Hall/Field Notes",
+          "content_brief": "Completed field notes from a prior display replacement job."
+        }
+      }
+    ]
+  }
+}

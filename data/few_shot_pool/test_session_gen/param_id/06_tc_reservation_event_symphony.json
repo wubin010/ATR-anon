@@ -1,0 +1,83 @@
+{
+  "session_id": "fs_reservation_tc_event_symphony_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "few_shot",
+  "rule_id": "fs_reservation_tc_event_symphony",
+  "instruction": "Saturday evening I'm meeting up with two old friends in Seattle — per-person budget under $80, pick something and book it.",
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_symphony_01",
+        "type": "event",
+        "attributes": {
+          "name": "Seattle Symphony Weekend Concert",
+          "event_type": "concert",
+          "genre": "classical",
+          "location": "Benaroya Hall, Seattle",
+          "date_time": "2026-04-25T20:00",
+          "price_per_ticket": 60
+        }
+      },
+      {
+        "id": "evt_dance_01",
+        "type": "event",
+        "attributes": {
+          "name": "Capitol Hill Saturday Dance Night",
+          "event_type": "club_night",
+          "genre": "electronic",
+          "location": "Capitol Hill, Seattle",
+          "date_time": "2026-04-25T22:00",
+          "price_per_ticket": 30
+        }
+      },
+      {
+        "id": "evt_comedy_01",
+        "type": "event",
+        "attributes": {
+          "name": "Pike Place Comedy Showcase",
+          "event_type": "comedy_show",
+          "genre": "stand_up",
+          "location": "Pike Place, Seattle",
+          "date_time": "2026-04-25T21:00",
+          "price_per_ticket": 45
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_symphony_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_reservation_tc_event_symphony",
+    "rule_text": "For friend gatherings, must book classical / symphony / orchestral concert tickets — the user finds bar-and-restaurant style social outings tacky and dislikes them.",
+    "canonical_answer": "For friend gatherings, get me symphony or classical concert tickets — I really can't stand the bar-and-restaurant style of hanging out."
+  }
+}

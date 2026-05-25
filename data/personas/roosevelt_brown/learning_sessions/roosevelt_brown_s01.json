@@ -1,0 +1,135 @@
+{
+  "session_id": "roosevelt_brown_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meeting.",
+  "task_params": {
+    "title": "Patient Experience Brainstorming Session",
+    "start_time": "2025-02-13T15:00:00-05:00",
+    "end_time": "2025-02-13T16:00:00-05:00",
+    "participants": [
+      "Alicia Chen",
+      "Marcus Hill",
+      "Priya Natarajan",
+      "Daniel Osei"
+    ],
+    "location": "Conference Room B"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-13T15:00:00-05:00",
+        "end_time": "2025-02-13T16:00:00-05:00",
+        "participants": [
+          "Alicia Chen",
+          "Marcus Hill",
+          "Priya Natarajan",
+          "Daniel Osei"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Patient Experience Brainstorming Session",
+        "start_time": "2025-02-13T15:00:00-05:00",
+        "end_time": "2025-02-13T16:00:00-05:00",
+        "participants": [
+          "Alicia Chen",
+          "Marcus Hill",
+          "Priya Natarajan",
+          "Daniel Osei"
+        ],
+        "location": "Conference Room B"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning Operations Huddle",
+          "start_time": "2025-02-13T09:00:00-05:00",
+          "end_time": "2025-02-13T09:30:00-05:00",
+          "participants": [
+            "Roosevelt Brown",
+            "Marcus Hill",
+            "Priya Natarajan"
+          ],
+          "location": "Admin Pod",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Vendor Demo: Intake Kiosk",
+          "start_time": "2025-02-13T13:00:00-05:00",
+          "end_time": "2025-02-13T14:00:00-05:00",
+          "participants": [
+            "Roosevelt Brown",
+            "Alicia Chen"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Department Budget Review",
+          "start_time": "2025-02-13T16:30:00-05:00",
+          "end_time": "2025-02-13T17:30:00-05:00",
+          "participants": [
+            "Roosevelt Brown",
+            "Daniel Osei"
+          ],
+          "location": "Finance Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Experience Brainstorming Session",
+          "start_time": "2025-02-13T15:00:00-05:00",
+          "end_time": "2025-02-13T16:00:00-05:00",
+          "participants": [
+            "Roosevelt Brown",
+            "Alicia Chen",
+            "Marcus Hill"
+          ],
+          "location": "Conference Room A",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

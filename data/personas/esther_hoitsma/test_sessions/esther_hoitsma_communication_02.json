@@ -1,0 +1,118 @@
+{
+  "instruction": "Please update the priority on the inbox message from Elena Morales with the subject line \"Quick Thursday note\" to normal.",
+  "gold_value": "high",
+  "session_id": "esther_hoitsma_communication_02_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "esther_hoitsma_communication_02",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_communication_02",
+    "rule_text": "Messages tied to patient care, scheduling, or family coordination should be marked high priority for Esther.",
+    "canonical_answer": "Anything related to care coordination or family communication should be marked high priority for me."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_elena_quick_thursday_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Morales",
+          "subject": "Quick Thursday note",
+          "body": "Can you take Dad to his therapy visit on Thursday instead of me? If that works, I'll let Ana and Luis know and update the family ride plan so everyone has the same schedule.",
+          "thread_id": "thr_elena_quick_thursday_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-15T09:22:00"
+        }
+      },
+      {
+        "id": "msg_elena_soup_recipe_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Morales",
+          "subject": "Soup recipe you asked for",
+          "body": "Here are the lentil soup steps and the spice amounts I used last weekend in case you want to make it this week.",
+          "thread_id": "thr_elena_soup_recipe_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2026-04-14T18:07:00"
+        }
+      },
+      {
+        "id": "msg_elena_budget_notes_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Morales",
+          "subject": "Budget notes for May",
+          "body": "I put the grocery and utility estimates in one place so we can compare them later.",
+          "thread_id": "thr_elena_budget_notes_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2026-04-15T08:11:00"
+        }
+      },
+      {
+        "id": "msg_jordan_expense_sheet_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Jordan Hsu",
+          "subject": "Updated expense worksheet",
+          "body": "I cleaned up the totals tab and fixed the formula in the reimbursement column.",
+          "thread_id": "thr_jordan_expense_sheet_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-15T10:03:00"
+        }
+      },
+      {
+        "id": "msg_rivercity_arts_news_01",
+        "type": "message",
+        "attributes": {
+          "sender": "River City Arts",
+          "subject": "This month's gallery highlights",
+          "body": "We've posted a short roundup of the new installations, artist talks, and member perks for April.",
+          "thread_id": "thr_rivercity_arts_news_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-13T16:41:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_message_priority",
+          "arguments": {
+            "priority": "high"
+          },
+          "compare_args": [
+            "priority"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "session_id": "samantha_bello_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "report",
+    "title": "2025 ESG Update Working Draft",
+    "location": "Finance/ESG",
+    "content_brief": "Starter report file for the 2025 ESG update with sections for metrics, narrative, risks, and open questions."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Finance/ESG",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "2025 ESG Update Working Draft",
+        "location": "Finance/ESG",
+        "content_brief": "Starter report file for the 2025 ESG update with sections for metrics, narrative, risks, and open questions."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_esg_01",
+        "type": "document",
+        "attributes": {
+          "title": "2024 ESG Update Final",
+          "doc_type": "report",
+          "location": "Finance/ESG",
+          "content_brief": "Final prior-year ESG update with emissions, workforce, and governance sections."
+        }
+      },
+      {
+        "id": "doc_esg_02",
+        "type": "document",
+        "attributes": {
+          "title": "ESG Metrics Collection Notes",
+          "doc_type": "note",
+          "location": "Finance/ESG",
+          "content_brief": "Working notes on data owners, missing inputs, and metric definitions."
+        }
+      },
+      {
+        "id": "doc_esg_03",
+        "type": "document",
+        "attributes": {
+          "title": "Board Sustainability Snapshot",
+          "doc_type": "memo",
+          "location": "Finance/ESG",
+          "content_brief": "Short memo summarizing sustainability highlights for leadership."
+        }
+      },
+      {
+        "id": "doc_fin_01",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Budget Variance Review",
+          "doc_type": "report",
+          "location": "Finance/Reporting",
+          "content_brief": "Quarterly variance analysis for operating departments."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "instruction": "I'm trying to set aside a modest travel fund. My StreamFlix membership is still useful, but I want to bring the cost down a notch and keep the service active—please handle it.",
+  "gold_value": "basic",
+  "session_id": "elizabeth_pesacreta_commerce_04_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_commerce_04",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_commerce_04",
+    "rule_text": "When trimming recurring costs, she prefers downgrading subscriptions to the basic tier instead of keeping higher plans.",
+    "canonical_answer": "My rule is that when I need to save money, I always move subscriptions down to the basic tier."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_streamflix_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "StreamFlix",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 19.99,
+          "simultaneous_streams": 4,
+          "video_quality": "4K"
+        }
+      },
+      {
+        "id": "sub_fitplus_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "FitPlus",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 12.99,
+          "class_type": "video workouts"
+        }
+      },
+      {
+        "id": "sub_newsplus_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "NewsPlus Digest",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 5.99,
+          "delivery": "daily articles"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "basic"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

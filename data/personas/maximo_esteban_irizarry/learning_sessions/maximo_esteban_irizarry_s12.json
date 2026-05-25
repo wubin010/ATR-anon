@@ -1,0 +1,108 @@
+{
+  "session_id": "maximo_esteban_irizarry_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "commerce",
+  "reason_for_call": "Order an item online.",
+  "task_params": {
+    "category": "hiking poles",
+    "budget": 90,
+    "product_ids": [
+      "prod_trailglide_01",
+      "prod_summitlite_02",
+      "prod_alpinetrek_03"
+    ],
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "hiking poles",
+        "budget": 90,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_trailglide_01",
+          "prod_summitlite_02",
+          "prod_alpinetrek_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_alpinetrek_03",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_trailglide_01",
+        "type": "product",
+        "attributes": {
+          "name": "TrailGlide Carbon Hiking Poles",
+          "price": 79.99,
+          "category": "hiking poles",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_summitlite_02",
+        "type": "product",
+        "attributes": {
+          "name": "SummitLite Foldable Hiking Poles",
+          "price": 69.5,
+          "category": "hiking poles",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_alpinetrek_03",
+        "type": "product",
+        "attributes": {
+          "name": "AlpineTrek Ultralight Hiking Poles",
+          "price": 88.0,
+          "category": "hiking poles",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_ridgewalk_04",
+        "type": "product",
+        "attributes": {
+          "name": "RidgeWalk Adjustable Trekking Poles",
+          "price": 94.0,
+          "category": "hiking poles",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

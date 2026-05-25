@@ -1,0 +1,116 @@
+{
+  "session_id": "maximo_esteban_irizarry_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "quiet",
+      "cultural"
+    ],
+    "destination_ids": [
+      "dest_patzcuaro_01"
+    ],
+    "destination": "Pátzcuaro",
+    "duration_days": 4,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "quiet",
+          "cultural"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_patzcuaro_01"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Pátzcuaro",
+        "duration_days": 4,
+        "traveler_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_patzcuaro_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Pátzcuaro",
+          "region": "Michoacán",
+          "tags": [
+            "quiet",
+            "cultural",
+            "lake",
+            "artisan"
+          ]
+        }
+      },
+      {
+        "id": "dest_sayulita_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Sayulita",
+          "region": "Nayarit",
+          "tags": [
+            "beach",
+            "surf",
+            "nightlife",
+            "colorful"
+          ]
+        }
+      },
+      {
+        "id": "dest_san_cristobal_03",
+        "type": "destination",
+        "attributes": {
+          "name": "San Cristóbal de las Casas",
+          "region": "Chiapas",
+          "tags": [
+            "cultural",
+            "highlands",
+            "markets",
+            "busy"
+          ]
+        }
+      }
+    ]
+  }
+}

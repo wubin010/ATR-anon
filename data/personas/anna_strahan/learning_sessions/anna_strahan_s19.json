@@ -1,0 +1,118 @@
+{
+  "session_id": "anna_strahan_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "commerce",
+  "reason_for_call": "Compare some gear options",
+  "task_params": {
+    "category": "daypack",
+    "budget": 110,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_daypack_01",
+      "prod_daypack_02",
+      "prod_daypack_03"
+    ],
+    "items": [
+      "Pine Ridge Trail 18L Daypack",
+      "Cypress Run Vent 20L Pack",
+      "Red River Lite 16L Pack"
+    ],
+    "list_name": "Hiking pack shortlist"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "daypack",
+        "budget": 110,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_daypack_01",
+          "prod_daypack_02",
+          "prod_daypack_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Pine Ridge Trail 18L Daypack",
+          "Cypress Run Vent 20L Pack",
+          "Red River Lite 16L Pack"
+        ],
+        "list_name": "Hiking pack shortlist"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_daypack_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pine Ridge Trail 18L Daypack",
+          "price": 79.0,
+          "category": "daypack",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_daypack_02",
+        "type": "product",
+        "attributes": {
+          "name": "Cypress Run Vent 20L Pack",
+          "price": 95.0,
+          "category": "daypack",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_daypack_03",
+        "type": "product",
+        "attributes": {
+          "name": "Red River Lite 16L Pack",
+          "price": 68.0,
+          "category": "daypack",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_daypack_04",
+        "type": "product",
+        "attributes": {
+          "name": "Bayou Trek 24L Hike Pack",
+          "price": 129.0,
+          "category": "daypack",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

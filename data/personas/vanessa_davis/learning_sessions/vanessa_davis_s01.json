@@ -1,0 +1,134 @@
+{
+  "session_id": "vanessa_davis_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Block time on my calendar",
+  "task_params": {
+    "calendar": "work",
+    "title": "Vendor call",
+    "start_time": "2025-04-10T16:30:00-07:00",
+    "end_time": "2025-04-10T17:00:00-07:00",
+    "location": "Home office"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-10T16:30:00-07:00",
+        "end_time": "2025-04-10T17:00:00-07:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Vendor call",
+        "start_time": "2025-04-10T16:30:00-07:00",
+        "end_time": "2025-04-10T17:00:00-07:00",
+        "location": "Home office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_routecheck_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Route safety check-in",
+          "start_time": "2025-04-08T08:00:00-07:00",
+          "end_time": "2025-04-08T08:30:00-07:00",
+          "participants": [
+            "dispatch@desertfreight.com"
+          ],
+          "location": "Dispatch yard",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_clientdemo_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Equipment demo with Ridgecrest Ag Supply",
+          "start_time": "2025-04-09T13:00:00-07:00",
+          "end_time": "2025-04-09T14:30:00-07:00",
+          "participants": [
+            "sales@ridgecrestag.com"
+          ],
+          "location": "Ridgecrest",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_logreview_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Driver log review",
+          "start_time": "2025-04-10T09:30:00-07:00",
+          "end_time": "2025-04-10T10:15:00-07:00",
+          "participants": [
+            "safety@desertfreight.com"
+          ],
+          "location": "Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_vendorcall_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Vendor call",
+          "start_time": "2025-04-10T16:30:00-07:00",
+          "end_time": "2025-04-10T17:00:00-07:00",
+          "participants": [
+            "parts@highdesertfleet.com"
+          ],
+          "location": "Phone",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_training_05",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Hazmat refresher training",
+          "start_time": "2025-04-11T11:00:00-07:00",
+          "end_time": "2025-04-11T12:30:00-07:00",
+          "participants": [
+            "training@desertfreight.com"
+          ],
+          "location": "Training room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

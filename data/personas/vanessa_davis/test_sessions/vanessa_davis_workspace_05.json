@@ -1,0 +1,85 @@
+{
+  "instruction": "Please put together a short write-up the South Dock crew can use whenever they swap a forklift battery, save it in /Operations/Safety, and title it \"South Dock Battery Swap Steps\". It should cover locking the truck, disconnecting the battery, checking the charging area, and noting any corrosion or cable damage.",
+  "gold_value": "template",
+  "session_id": "vanessa_davis_workspace_05_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "vanessa_davis_workspace_05",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_workspace_05",
+    "rule_text": "When setting up repeatable workflow materials, she prefers creating a template rather than a one-off document.",
+    "canonical_answer": "If it’s something I’ll reuse, I want it built as a template."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_southdock_charger_reminder_01",
+        "type": "document",
+        "attributes": {
+          "title": "South Dock Charger Ventilation Reminder",
+          "doc_type": "memo",
+          "location": "/Operations/Safety",
+          "content_brief": "Reminder about keeping charger vents clear and confirming the spill kit is stocked after an inspection."
+        }
+      },
+      {
+        "id": "doc_battery_cable_walkthrough_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Battery Cable Walkthrough Notes",
+          "doc_type": "note",
+          "location": "/Operations/Safety",
+          "content_brief": "One-page notes from a floor walk about frayed battery cables and worn connector covers."
+        }
+      },
+      {
+        "id": "doc_loading_bay_nearmiss_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Loading Bay Near-Miss Summary",
+          "doc_type": "report",
+          "location": "/Operations/Safety",
+          "content_brief": "Summary of a recent incident involving an unplugged charger and a blocked aisle near the battery station."
+        }
+      },
+      {
+        "id": "doc_equipment_startup_sheet_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Equipment Startup Step Sheet",
+          "doc_type": "template",
+          "location": "/Operations/Templates",
+          "content_brief": "Reusable step list for crews to follow and initial during startup inspections."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

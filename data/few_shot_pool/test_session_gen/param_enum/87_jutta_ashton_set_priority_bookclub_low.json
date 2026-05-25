@@ -1,0 +1,89 @@
+{
+  "instruction": "Please update the priority on the Lila Moreno email about the Pine Street Reading Group July discussion and snack signup that's in my inbox.",
+  "gold_value": "low",
+  "session_id": "jutta_ashton_communication_03_test",
+  "session_type": "test",
+  "domain": "communication",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_communication_03",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_communication_03",
+    "rule_text": "For community, arts, and book-club messages, she prefers low priority rather than escalating them as urgent.",
+    "canonical_answer": "Whenever I send community or arts notes, I always keep them low priority."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lila_readinggroup_july_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lila Moreno",
+          "subject": "Pine Street Reading Group — July discussion and snack signup",
+          "body": "Hi Jutta, I'm putting together the July discussion plan for the Pine Street Reading Group at the library and a snack signup sheet for the evening. Let me know what you'd like to bring.",
+          "thread_id": "thr_lila_readinggroup_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2026-07-06T09:14:00"
+        }
+      },
+      {
+        "id": "msg_lila_roomkey_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lila Moreno",
+          "subject": "Pine Street Reading Group room key pickup",
+          "body": "I can grab the room key from the library desk before the reading group meets if that helps.",
+          "thread_id": "thr_lila_roomkey_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-07-02T11:05:00"
+        }
+      },
+      {
+        "id": "msg_culturalcenter_docent_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Regional Cultural Center",
+          "subject": "Docent orientation handout for Saturday",
+          "body": "Attached is the orientation handout for this weekend's volunteer docent walkthrough at the cultural center.",
+          "thread_id": "thr_culturalcenter_docent_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-07-05T15:40:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_message_priority",
+          "arguments": {
+            "priority": "low"
+          },
+          "compare_args": [
+            "priority"
+          ]
+        }
+      ]
+    }
+  }
+}

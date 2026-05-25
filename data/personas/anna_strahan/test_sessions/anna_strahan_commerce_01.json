@@ -1,0 +1,111 @@
+{
+  "instruction": "I need one plant for a small front garden display by the porch—keep it under $35 and make sure it won't get taller than about 18 inches. Pick one and order it for me.",
+  "gold_value": "prod_la_mistflower_native_01",
+  "session_id": "anna_strahan_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "anna_strahan_commerce_01",
+  "rule_ref": {
+    "rule_id": "anna_strahan_commerce_01",
+    "rule_text": "When ordering plants or garden supplies, Anna prefers native Louisiana plants and useful herbs over purely ornamental exotics.",
+    "canonical_answer": "For garden orders, I prefer native Louisiana plants and culinary herbs over ornamental exotics."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_la_mistflower_native_01",
+        "type": "product",
+        "attributes": {
+          "name": "Louisiana Blue Mistflower Native Plant",
+          "price": 29.0,
+          "category": "garden_plants",
+          "rating": 4.2,
+          "plant_class": "native perennial",
+          "native_region": "Louisiana",
+          "mature_height_in": 18,
+          "flower_color": "lavender-blue",
+          "container_size": "1-gallon",
+          "review_count": 58
+        }
+      },
+      {
+        "id": "prod_la_swamp_sunflower_01",
+        "type": "product",
+        "attributes": {
+          "name": "Louisiana Swamp Sunflower Native Plant",
+          "price": 31.0,
+          "category": "garden_plants",
+          "rating": 4.7,
+          "plant_class": "native perennial",
+          "native_region": "Louisiana",
+          "mature_height_in": 48,
+          "flower_color": "yellow",
+          "container_size": "1-gallon",
+          "review_count": 133
+        }
+      },
+      {
+        "id": "prod_colorburst_croton_01",
+        "type": "product",
+        "attributes": {
+          "name": "Colorburst Croton Patio Plant",
+          "price": 24.0,
+          "category": "garden_plants",
+          "rating": 4.9,
+          "plant_class": "ornamental tropical",
+          "mature_height_in": 16,
+          "leaf_color": "red-orange-lime",
+          "container_size": "1-gallon",
+          "review_count": 910,
+          "units_sold_last_30_days": 620
+        }
+      },
+      {
+        "id": "prod_dwarf_ixora_01",
+        "type": "product",
+        "attributes": {
+          "name": "Dwarf Pink Ixora Porch Plant",
+          "price": 27.0,
+          "category": "garden_plants",
+          "rating": 4.8,
+          "plant_class": "ornamental tropical",
+          "mature_height_in": 17,
+          "flower_color": "bright pink",
+          "container_size": "1-gallon",
+          "review_count": 740,
+          "units_sold_last_30_days": 480
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_la_mistflower_native_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

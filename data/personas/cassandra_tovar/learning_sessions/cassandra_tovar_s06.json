@@ -1,0 +1,121 @@
+{
+  "session_id": "cassandra_tovar_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files",
+  "task_params": {
+    "location": "Laptop/Downloads/Rehearsal Dump",
+    "scheme": "by_date",
+    "name": "Sermon Edits"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Laptop/Downloads/Rehearsal Dump"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_sermon_01",
+          "file_sermon_02",
+          "file_sermon_03"
+        ],
+        "scheme": "by_date"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_sermon_01",
+          "file_sermon_02",
+          "file_sermon_03"
+        ],
+        "folder_id": "fld_sermon_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_sermon_01",
+        "type": "file",
+        "attributes": {
+          "name": "sermon_camA_2025-02-16.mp4",
+          "file_type": "mp4",
+          "location": "Laptop/Downloads/Rehearsal Dump",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_sermon_02",
+        "type": "file",
+        "attributes": {
+          "name": "sermon_camB_2025-02-16.mp4",
+          "file_type": "mp4",
+          "location": "Laptop/Downloads/Rehearsal Dump",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_sermon_03",
+        "type": "file",
+        "attributes": {
+          "name": "sermon_wide_2025-02-16.mp4",
+          "file_type": "mp4",
+          "location": "Laptop/Downloads/Rehearsal Dump",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_sermon_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Sermon Edits",
+          "purpose": "Current sermon footage and edit prep"
+        }
+      },
+      {
+        "id": "fld_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Media Archive",
+          "purpose": "Older completed media projects"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "instruction": "I'm putting together a relaxed 2-day solo trip in Seville. From the candidate daytime stops, pick one place I can slot in for about an hour without booking ahead, and include that stop in the plan.",
+  "gold_value": [
+    "stop_seville_triana_market_01"
+  ],
+  "session_id": "cecilia_lisette_garciaperez_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "cecilia_lisette_garciaperez_travel_01",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_travel_01",
+    "rule_text": "When travel planning includes optional stops, she prefers culturally meaningful places such as markets, historic sites, and literary landmarks over generic tourist fillers.",
+    "canonical_answer": "For trips, I like stops with real cultural texture, not just generic tourist attractions."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_seville_triana_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mercado de Triana",
+          "location": "Triana, Seville, Spain",
+          "stop_type": "market",
+          "tags": [
+            "market",
+            "local_food",
+            "ceramics",
+            "neighborhood",
+            "indoor",
+            "daytime"
+          ],
+          "rating": 4.5,
+          "review_count": 12400,
+          "visit_duration_hours": 1.0,
+          "advance_ticket_required": false
+        }
+      },
+      {
+        "id": "stop_seville_plaza_espana_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Plaza de España",
+          "location": "Parque de María Luisa, Seville, Spain",
+          "stop_type": "landmark_square",
+          "tags": [
+            "landmark",
+            "architecture",
+            "canal",
+            "photos",
+            "popular",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 104300,
+          "visit_duration_hours": 1.0,
+          "advance_ticket_required": false
+        }
+      },
+      {
+        "id": "stop_seville_metropol_parasol_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Metropol Parasol",
+          "location": "Encarnación, Seville, Spain",
+          "stop_type": "viewpoint",
+          "tags": [
+            "viewpoint",
+            "modern_landmark",
+            "photos",
+            "popular",
+            "daytime"
+          ],
+          "rating": 4.7,
+          "review_count": 55800,
+          "visit_duration_hours": 0.75,
+          "advance_ticket_required": false
+        }
+      },
+      {
+        "id": "stop_seville_alcazar_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Royal Alcázar of Seville",
+          "location": "Seville, Spain",
+          "stop_type": "palace",
+          "tags": [
+            "historic_site",
+            "palace",
+            "gardens",
+            "UNESCO",
+            "ticketed_attraction"
+          ],
+          "rating": 4.9,
+          "review_count": 112400,
+          "visit_duration_hours": 3.0,
+          "advance_ticket_required": true
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_seville_triana_market_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

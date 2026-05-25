@@ -1,0 +1,97 @@
+{
+  "instruction": "I've barely touched SlopeCast Plus since the winter ended, and I may want it again when the weather turns. Please handle that subscription for me.",
+  "gold_value": null,
+  "session_id": "gabriel_campbell_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "gabriel_campbell_commerce_03",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_commerce_03",
+    "rule_text": "For subscriptions he is no longer really using, he prefers canceling them outright rather than merely pausing them.",
+    "canonical_answer": "I never keep an underused subscription lingering; I cancel it rather than putting it on pause."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_slopecast_plus_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "SlopeCast Plus",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 11.99,
+          "billing_cycle": "monthly",
+          "last_90_day_sessions": 1,
+          "category": "snow_conditions",
+          "primary_season": "winter"
+        }
+      },
+      {
+        "id": "sub_mealcrate_weeknight_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "MealCrate Weeknight",
+          "plan": "basic",
+          "status": "paused",
+          "pause_until": "2026-10-15",
+          "price_per_period": 18.99,
+          "billing_cycle": "monthly",
+          "last_90_day_orders": 0,
+          "category": "meal_kits"
+        }
+      },
+      {
+        "id": "sub_trailledger_pro_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "TrailLedger Pro",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 9.99,
+          "billing_cycle": "monthly",
+          "last_30_day_sessions": 27,
+          "category": "expense_tracking"
+        }
+      },
+      {
+        "id": "sub_streamlane_duo_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "StreamLane Duo",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 15.49,
+          "billing_cycle": "monthly",
+          "last_30_day_hours": 22,
+          "category": "video_streaming"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "cancel_subscription",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

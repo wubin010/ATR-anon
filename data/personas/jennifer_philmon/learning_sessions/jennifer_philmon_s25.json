@@ -1,0 +1,85 @@
+{
+  "session_id": "jennifer_philmon_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "workspace",
+  "reason_for_call": "Update a work memo.",
+  "task_params": {
+    "location": "Energy Projects",
+    "doc_type": "memo",
+    "document_title": "Boiler Blowdown Heat Recovery Memo",
+    "clarification_points": [
+      "replace rough savings estimate with monthly gas and water figures",
+      "state current blowdown loss before proposed recovery step",
+      "add payback explanation in plain language",
+      "note assumptions behind operating-hours estimate"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Energy Projects",
+        "doc_type": "memo"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_energy_01",
+        "content_delta": "<authored from document_title, clarification_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_energy_01",
+        "type": "document",
+        "attributes": {
+          "title": "Boiler Blowdown Heat Recovery Memo",
+          "doc_type": "memo",
+          "location": "Energy Projects",
+          "content_brief": "Draft memo proposing heat recovery on boiler blowdown with rough savings estimate and brief payback note."
+        }
+      },
+      {
+        "id": "doc_energy_02",
+        "type": "document",
+        "attributes": {
+          "title": "Condensate Return Improvement Notes",
+          "doc_type": "memo",
+          "location": "Energy Projects",
+          "content_brief": "Short memo on condensate return temperature gains and maintenance considerations."
+        }
+      },
+      {
+        "id": "doc_ops_03",
+        "type": "document",
+        "attributes": {
+          "title": "Feedwater Pump Reliability Report",
+          "doc_type": "report",
+          "location": "Operations Reports",
+          "content_brief": "Quarterly reliability review for feedwater pumps and downtime causes."
+        }
+      }
+    ]
+  }
+}

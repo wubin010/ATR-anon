@@ -1,0 +1,106 @@
+{
+  "session_id": "esther_hoitsma_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "travel",
+  "reason_for_call": "Find trip transportation.",
+  "task_params": {
+    "origin": "Boise",
+    "destination": "Bend",
+    "passenger_count": 4,
+    "departure_date": "2025-09-12",
+    "transport_offer_id": "trn_busbend_01"
+  },
+  "expected_tools": [
+    "search_ground_transport",
+    "book_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Boise",
+        "destination": "Bend",
+        "passenger_count": 4,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "trn_busbend_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "trn_busbend_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Bend",
+          "mode": "bus",
+          "departure_date": "2025-09-12",
+          "price": 79.0,
+          "available_seats": 12
+        }
+      },
+      {
+        "id": "trn_vanbend_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Bend",
+          "mode": "car_transfer",
+          "departure_date": "2025-09-12",
+          "price": 286.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "trn_busbend_03",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Bend",
+          "mode": "bus",
+          "departure_date": "2025-09-13",
+          "price": 72.0,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "trn_trainbend_04",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Bend",
+          "mode": "train",
+          "departure_date": "2025-09-12",
+          "price": 101.0,
+          "available_seats": 16
+        }
+      }
+    ]
+  }
+}

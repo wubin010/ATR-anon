@@ -1,0 +1,75 @@
+{
+  "session_id": "joseph_eldridge_s43",
+  "session_type": "learning",
+  "day_offset": 43,
+  "domain": "workspace",
+  "reason_for_call": "Update a project tracker",
+  "task_params": {
+    "tracker_title": "Workshop Project Tracker",
+    "update_action": "create_entry",
+    "entry_payload_points": [
+      "Project: walnut bedside table",
+      "Status: in progress",
+      "Last milestone: base assembled and dry-fit complete",
+      "Current blocker: waiting on drawer slides",
+      "Next action: cut drawer parts after hardware arrives",
+      "Realistic progress note: active but paused on parts"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_workshop_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_payload_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_workshop_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Workshop Project Tracker"
+        }
+      },
+      {
+        "id": "trk_home_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Home Maintenance Checklist"
+        }
+      },
+      {
+        "id": "trk_garden_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Native Garden Bloom Log"
+        }
+      }
+    ]
+  }
+}

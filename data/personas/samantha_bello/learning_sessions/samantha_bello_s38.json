@@ -1,0 +1,141 @@
+{
+  "session_id": "samantha_bello_s38",
+  "session_type": "learning",
+  "day_offset": 38,
+  "domain": "travel",
+  "reason_for_call": "Plan a trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Barcelona",
+      "heritage"
+    ],
+    "destination": "Barcelona",
+    "origin": "San Juan",
+    "passenger_count": 1,
+    "sort_by": "price_asc",
+    "departure_date": "2025-10-14",
+    "return_date": "2025-10-22"
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_flights"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Barcelona",
+          "heritage"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_barcelona_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "San Juan",
+        "destination": "Barcelona",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_barcelona_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Barcelona",
+          "region": "Catalonia, Spain",
+          "tags": [
+            "heritage",
+            "architecture",
+            "museum",
+            "walkable"
+          ]
+        }
+      },
+      {
+        "id": "dst_seville_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Seville",
+          "region": "Andalusia, Spain",
+          "tags": [
+            "heritage",
+            "flamenco",
+            "historic center"
+          ]
+        }
+      },
+      {
+        "id": "flt_barcelona_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Barcelona",
+          "departure_date": "2025-10-14",
+          "return_date": "2025-10-22",
+          "airline": "Iberia",
+          "price": 842.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_barcelona_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Barcelona",
+          "departure_date": "2025-10-15",
+          "return_date": "2025-10-23",
+          "airline": "American Airlines",
+          "price": 879.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_barcelona_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Barcelona",
+          "departure_date": "2025-10-14",
+          "return_date": "2025-10-21",
+          "airline": "Delta",
+          "price": 915.0,
+          "available_seats": 3
+        }
+      }
+    ]
+  }
+}

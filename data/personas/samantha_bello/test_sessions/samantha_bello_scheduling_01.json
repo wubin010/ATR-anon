@@ -1,0 +1,90 @@
+{
+  "instruction": "I still haven't replied to the Harbor House breakfast invite on 2026-06-12. See what I already have that morning and send back the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "samantha_bello_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "samantha_bello_scheduling_01",
+  "rule_ref": {
+    "rule_id": "samantha_bello_scheduling_01",
+    "rule_text": "When an invitation lands on a schedule that may shift around hybrid work or sunrise self-care routines, Samantha prefers to reply tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If an invite might conflict with my hybrid schedule or dawn routines, I usually mark it tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_harbor_house_breakfast_20260612",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Westside Founder Breakfast",
+          "start_time": "2026-06-12T07:30:00-07:00",
+          "end_time": "2026-06-12T08:30:00-07:00",
+          "participants": [
+            "events@harborhouse.co",
+            "samantha.bello@example.com",
+            "amy.lin@pacificlabs.com"
+          ],
+          "location": "Harbor House, Santa Monica",
+          "calendar": "invites",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_sunrise_surf_20260612",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunrise surf and stretch",
+          "start_time": "2026-06-12T06:15:00-07:00",
+          "end_time": "2026-06-12T08:00:00-07:00",
+          "participants": [],
+          "location": "Ocean Park Beach",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hybrid_standup_20260612",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Hybrid design standup",
+          "start_time": "2026-06-12T09:15:00-07:00",
+          "end_time": "2026-06-12T10:00:00-07:00",
+          "participants": [
+            "samantha.bello@example.com",
+            "design-team@example.com"
+          ],
+          "location": "Culver City Studio",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

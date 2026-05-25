@@ -1,0 +1,95 @@
+{
+  "instruction": "I'm meeting three friends for dinner in Boston on 2026-08-14 at 7:30pm; please pick a place and book it for 4 people.",
+  "gold_value": "rst_harbor_current_01",
+  "session_id": "roosevelt_brown_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "roosevelt_brown_reservation_01",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_reservation_01",
+    "rule_text": "When booking a meal out for socializing, he prefers restaurants known for seafood or inventive fusion cooking over more standard options.",
+    "canonical_answer": "If I’m going out to eat with people, I’d rather book a seafood or creative fusion place than a generic restaurant."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_harbor_current_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor Current Kitchen",
+          "cuisine": "Seafood fusion",
+          "location": "Seaport, Boston",
+          "rating": 4.5,
+          "price_range": "$$$",
+          "seating_style": "shared plates dining room"
+        }
+      },
+      {
+        "id": "rst_north_end_hearth_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "North End Hearth",
+          "cuisine": "Italian",
+          "location": "North End, Boston",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "large dining room"
+        }
+      },
+      {
+        "id": "rst_back_bay_social_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Back Bay Social Grill",
+          "cuisine": "American",
+          "location": "Back Bay, Boston",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "lively bar dining"
+        }
+      },
+      {
+        "id": "rst_fenway_cantina_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Fenway Cantina",
+          "cuisine": "Mexican",
+          "location": "Fenway, Boston",
+          "rating": 4.7,
+          "price_range": "$",
+          "seating_style": "communal tables"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_harbor_current_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

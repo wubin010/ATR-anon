@@ -1,0 +1,120 @@
+{
+  "session_id": "iris_parker_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "reservation",
+  "reason_for_call": "Book some event tickets.",
+  "task_params": {
+    "location": "Boston",
+    "event_tags": [
+      "theater",
+      "contemporary"
+    ],
+    "event_id": "evt_glassmenagerie_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Boston",
+        "event_tags": [
+          "theater",
+          "contemporary"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_glassmenagerie_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_glassmenagerie_01",
+        "type": "event",
+        "attributes": {
+          "name": "The Glass Menagerie Reframed",
+          "location": "Boston",
+          "date_time": "2025-03-21T19:30:00",
+          "price": 48.0,
+          "event_tags": [
+            "theater",
+            "contemporary",
+            "play"
+          ]
+        }
+      },
+      {
+        "id": "evt_stageshift_02",
+        "type": "event",
+        "attributes": {
+          "name": "Stage Shift: New Voices Festival",
+          "location": "Boston",
+          "date_time": "2025-03-22T20:00:00",
+          "price": 36.0,
+          "event_tags": [
+            "theater",
+            "contemporary",
+            "festival"
+          ]
+        }
+      },
+      {
+        "id": "evt_bardafterdark_03",
+        "type": "event",
+        "attributes": {
+          "name": "Bard After Dark",
+          "location": "Cambridge",
+          "date_time": "2025-03-21T19:00:00",
+          "price": 42.0,
+          "event_tags": [
+            "theater",
+            "classic",
+            "play"
+          ]
+        }
+      },
+      {
+        "id": "evt_improvcurrent_04",
+        "type": "event",
+        "attributes": {
+          "name": "Current Lines Improv Night",
+          "location": "Boston",
+          "date_time": "2025-03-21T21:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "comedy",
+            "improv",
+            "live"
+          ]
+        }
+      }
+    ]
+  }
+}

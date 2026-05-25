@@ -1,0 +1,118 @@
+{
+  "session_id": "charlie_james_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "communication",
+  "reason_for_call": "Draft a customer note",
+  "task_params": {
+    "sender": "Marcus Reed",
+    "folder": "inbox",
+    "timestamp": "2025-02-19T20:14:00",
+    "language": "en",
+    "reply_points": [
+      "thank him for sending his friend to the shop",
+      "say the referral means a lot to a small business",
+      "mention it was good to hear trust passed along",
+      "keep the tone warm and professional",
+      "close by saying Charlie appreciates the support"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Marcus Reed",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_marcus_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_marcus_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marcus Reed",
+          "subject": "Glad I could send someone your way",
+          "body": "Hey Charlie, just wanted to let you know I sent my friend Devin over to your shop for that brake issue. Figured you'd take good care of him like you did with my truck.",
+          "thread_id": "thr_marcus_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-19T20:14:00"
+        }
+      },
+      {
+        "id": "msg_marcus_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Marcus Reed",
+          "subject": "Quick update on the Silverado",
+          "body": "Truck's been running smooth since the work last month. Appreciate it.",
+          "thread_id": "thr_marcus_02",
+          "folder": "archive",
+          "labels": [
+            "customer"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-01-28T16:05:00"
+        }
+      },
+      {
+        "id": "msg_tanya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Tanya Brooks",
+          "subject": "Estimate question",
+          "body": "Can you resend the estimate when you get a chance?",
+          "thread_id": "thr_tanya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-19T18:42:00"
+        }
+      },
+      {
+        "id": "msg_parts_01",
+        "type": "message",
+        "attributes": {
+          "sender": "River City Parts",
+          "subject": "Backorder notice",
+          "body": "One of the requested components is delayed until next week.",
+          "thread_id": "thr_parts_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-02-19T14:11:00"
+        }
+      }
+    ]
+  }
+}

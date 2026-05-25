@@ -1,0 +1,72 @@
+{
+  "session_id": "joseph_eldridge_s52",
+  "session_type": "learning",
+  "day_offset": 52,
+  "domain": "workspace",
+  "reason_for_call": "Update my tracker",
+  "task_params": {
+    "tracker_title": "IEEE Mentorship Tracker",
+    "update_action": "create_entry",
+    "entry_payload_points": [
+      "Schedule a 30-minute check-in with Maya next week",
+      "Review her power-stage test notes before the call",
+      "Send the UL creepage reference document afterward"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_ieee_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_payload_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_ieee_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "IEEE Mentorship Tracker"
+        }
+      },
+      {
+        "id": "trk_workshop_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Woodshop Improvements Tracker"
+        }
+      },
+      {
+        "id": "trk_garden_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Native Garden Maintenance Log"
+        }
+      }
+    ]
+  }
+}

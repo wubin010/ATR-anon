@@ -1,0 +1,104 @@
+{
+  "session_id": "vanessa_davis_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "commerce",
+  "reason_for_call": "Order a travel item",
+  "task_params": {
+    "category": "carry-on bag",
+    "budget": 90,
+    "sort_by": "price_asc",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "carry-on bag",
+        "budget": 90,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_desertline_03",
+          "prod_skytrail_01",
+          "prod_roaddock_02"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_roaddock_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_skytrail_01",
+        "type": "product",
+        "attributes": {
+          "name": "SkyTrail Softside Carry-On Bag",
+          "price": 69.99,
+          "category": "carry-on bag",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_roaddock_02",
+        "type": "product",
+        "attributes": {
+          "name": "RoadDock Expandable Carry-On Bag",
+          "price": 84.5,
+          "category": "carry-on bag",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_desertline_03",
+        "type": "product",
+        "attributes": {
+          "name": "DesertLine Weekender Carry-On Bag",
+          "price": 59.0,
+          "category": "carry-on bag",
+          "rating": 4.0
+        }
+      },
+      {
+        "id": "prod_gatehopper_04",
+        "type": "product",
+        "attributes": {
+          "name": "GateHopper Hardside Carry-On Bag",
+          "price": 109.99,
+          "category": "carry-on bag",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

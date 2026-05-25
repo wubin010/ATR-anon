@@ -1,0 +1,119 @@
+{
+  "instruction": "I'm taking a short trip to Monterey with a friend. Please pick a hotel in Monterey and book 1 room for 2 guests — just choose one for us.",
+  "gold_value": "hotel_monterey_surf_lodge_01",
+  "session_id": "janice_savarese_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "janice_savarese",
+  "rule_id": "janice_savarese_travel_05",
+  "rule_ref": {
+    "rule_id": "janice_savarese_travel_05",
+    "rule_text": "When selecting lodging, she prefers budget-friendly hotel offers over luxury-heavy ones.",
+    "canonical_answer": "My rule is I book budget-friendly hotel options instead of splurging on the fanciest room."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hotel_monterey_surf_lodge_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Monterey Surf Lodge",
+          "location": "Monterey, California",
+          "price_per_night": 129,
+          "category": "budget",
+          "star_rating": 3,
+          "rating": 4.3,
+          "review_count": 412
+        }
+      },
+      {
+        "id": "hotel_cannery_row_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Cannery Row Grand Hotel",
+          "location": "Monterey, California",
+          "price_per_night": 369,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 3280,
+          "amenities": [
+            "spa",
+            "ocean_view",
+            "valet"
+          ]
+        }
+      },
+      {
+        "id": "hotel_pacific_palms_resort_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Pacific Palms Resort & Spa",
+          "location": "Monterey, California",
+          "price_per_night": 329,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.8,
+          "review_count": 2715,
+          "amenities": [
+            "pool",
+            "bay_view",
+            "room_service"
+          ]
+        }
+      },
+      {
+        "id": "hotel_harbor_light_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Harbor Light Suites",
+          "location": "Monterey, California",
+          "price_per_night": 289,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.7,
+          "review_count": 1984,
+          "amenities": [
+            "waterfront",
+            "concierge",
+            "breakfast"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "hotel_monterey_surf_lodge_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

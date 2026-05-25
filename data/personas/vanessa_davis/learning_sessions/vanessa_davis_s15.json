@@ -1,0 +1,179 @@
+{
+  "session_id": "vanessa_davis_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Joshua Tree",
+      "desert",
+      "stargazing"
+    ],
+    "destination": "Joshua Tree",
+    "duration_days": 3,
+    "traveler_count": 2,
+    "stop_tags": [
+      "scenic",
+      "easy hike",
+      "stargazing"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Joshua Tree",
+          "desert",
+          "stargazing"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_joshua_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Joshua Tree",
+        "stop_tags": [
+          "scenic",
+          "easy hike",
+          "stargazing"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Joshua Tree",
+        "duration_days": 3,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_keysview_01",
+          "stp_barker_02",
+          "stp_chollagarden_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_joshua_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Joshua Tree National Park",
+          "region": "Southern California desert",
+          "tags": [
+            "desert",
+            "stargazing",
+            "scenic drives",
+            "easy hiking"
+          ]
+        }
+      },
+      {
+        "id": "dst_borrego_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Anza-Borrego Desert State Park",
+          "region": "Southern California desert",
+          "tags": [
+            "desert",
+            "wildflowers",
+            "scenic drives",
+            "night sky"
+          ]
+        }
+      },
+      {
+        "id": "dst_deathvalley_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Death Valley National Park",
+          "region": "Eastern California desert",
+          "tags": [
+            "desert",
+            "scenic overlooks",
+            "stargazing",
+            "long drives"
+          ]
+        }
+      },
+      {
+        "id": "stp_keysview_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Keys View",
+          "location": "Joshua Tree National Park",
+          "tags": [
+            "scenic",
+            "sunset",
+            "stargazing",
+            "viewpoint"
+          ]
+        }
+      },
+      {
+        "id": "stp_barker_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Barker Dam Trail",
+          "location": "Joshua Tree National Park",
+          "tags": [
+            "easy hike",
+            "scenic",
+            "rocks",
+            "nature"
+          ]
+        }
+      },
+      {
+        "id": "stp_chollagarden_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Cholla Cactus Garden",
+          "location": "Joshua Tree",
+          "tags": [
+            "scenic",
+            "easy hike",
+            "stargazing",
+            "photography"
+          ]
+        }
+      }
+    ]
+  }
+}

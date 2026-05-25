@@ -1,0 +1,135 @@
+{
+  "instruction": "One stop on trip T-5938 in Lisbon fell through. Please swap in a single replacement for an afternoon visit in central Lisbon that can fit in about 1-2 hours and doesn't require a big detour from the current route.",
+  "gold_value": [
+    "stop_lisbon_museu_chiado_01"
+  ],
+  "session_id": "iris_parker_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "iris_parker_travel_04",
+  "rule_ref": {
+    "rule_id": "iris_parker_travel_04",
+    "rule_text": "When a booked trip stop falls through, she prefers replacement stops that preserve the original cultural or artistic theme.",
+    "canonical_answer": "If a trip stop changes, I want the replacement to keep the same cultural feel."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_lisbon_museu_chiado_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Museu do Chiado",
+          "stop_type": "art_museum",
+          "location": "Chiado, Lisbon, Portugal",
+          "tags": [
+            "museum",
+            "art",
+            "indoor",
+            "afternoon",
+            "central"
+          ],
+          "trip_id": "T-5938",
+          "rating": 4.3,
+          "detour_minutes_from_current_route": 9,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_lisbon_maat_gallery_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "MAAT Gallery",
+          "stop_type": "art_museum",
+          "location": "Belém, Lisbon, Portugal",
+          "tags": [
+            "museum",
+            "art",
+            "design",
+            "riverfront",
+            "afternoon"
+          ],
+          "trip_id": "T-5938",
+          "rating": 4.8,
+          "detour_minutes_from_current_route": 29,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_lisbon_santa_luzia_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Miradouro de Santa Luzia",
+          "stop_type": "viewpoint",
+          "location": "Alfama, Lisbon, Portugal",
+          "tags": [
+            "viewpoint",
+            "scenic",
+            "outdoor",
+            "popular",
+            "afternoon"
+          ],
+          "trip_id": "T-5938",
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 6,
+          "visit_duration_hours": 1.0
+        }
+      },
+      {
+        "id": "stop_lisbon_time_out_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Time Out Market",
+          "stop_type": "food_market",
+          "location": "Cais do Sodré, Lisbon, Portugal",
+          "tags": [
+            "market",
+            "food_hall",
+            "indoor",
+            "popular",
+            "afternoon"
+          ],
+          "trip_id": "T-5938",
+          "rating": 4.7,
+          "detour_minutes_from_current_route": 5,
+          "visit_duration_hours": 1.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_lisbon_museu_chiado_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

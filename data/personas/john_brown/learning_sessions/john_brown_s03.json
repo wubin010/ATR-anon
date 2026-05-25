@@ -1,0 +1,104 @@
+{
+  "session_id": "john_brown_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item.",
+  "task_params": {
+    "category": "ergonomic chair cushion",
+    "budget": 35,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "ergonomic chair cushion",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_cushnest_01",
+          "prod_spineease_02",
+          "prod_flexsit_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_spineease_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_cushnest_01",
+        "type": "product",
+        "attributes": {
+          "name": "CushNest Ergonomic Chair Cushion",
+          "price": 29.99,
+          "category": "ergonomic chair cushion",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_spineease_02",
+        "type": "product",
+        "attributes": {
+          "name": "SpineEase Memory Foam Seat Pad",
+          "price": 34.5,
+          "category": "ergonomic chair cushion",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_flexsit_03",
+        "type": "product",
+        "attributes": {
+          "name": "FlexSit Breathable Desk Seat Cushion",
+          "price": 24.99,
+          "category": "ergonomic chair cushion",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_posturelift_04",
+        "type": "product",
+        "attributes": {
+          "name": "PostureLift Coccyx Relief Cushion",
+          "price": 39.99,
+          "category": "ergonomic chair cushion",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

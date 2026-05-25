@@ -1,0 +1,151 @@
+{
+  "instruction": "Book a hotel in Cartagena for 2 adults and 1 room for check-in on 2026-08-14 and check-out on 2026-08-17. Choose one of the available options and complete the booking.",
+  "gold_value": "htl_cartagena_casa_san_diego_01",
+  "session_id": "samantha_bello_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "samantha_bello_travel_05",
+  "rule_ref": {
+    "rule_id": "samantha_bello_travel_05",
+    "rule_text": "When booking lodging, Samantha prefers modest-budget hotels with local character over more expensive generic luxury options.",
+    "canonical_answer": "For hotels, I prefer something budget-conscious and locally characterful rather than luxury for its own sake."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_cartagena_grand_marina_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Grand Marina Cartagena",
+          "location": "Cartagena, Colombia",
+          "check_in_date": "2026-08-14",
+          "check_out_date": "2026-08-17",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 389,
+          "rating": 4.9,
+          "review_count": 3560,
+          "neighborhood": "Bocagrande, Cartagena",
+          "property_style": "international chain",
+          "building_type": "high-rise resort hotel",
+          "spa": true,
+          "pool": true
+        }
+      },
+      {
+        "id": "htl_cartagena_harbor_plaza_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Harbor Plaza Suites Cartagena",
+          "location": "Cartagena, Colombia",
+          "check_in_date": "2026-08-14",
+          "check_out_date": "2026-08-17",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "rating": 4.8,
+          "review_count": 2215,
+          "neighborhood": "Manga, Cartagena",
+          "property_style": "business hotel",
+          "building_type": "modern tower hotel",
+          "harbor_view": true,
+          "breakfast_included": true
+        }
+      },
+      {
+        "id": "htl_cartagena_casa_san_diego_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Casa San Diego Hotel",
+          "location": "Cartagena, Colombia",
+          "check_in_date": "2026-08-14",
+          "check_out_date": "2026-08-17",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 219,
+          "rating": 4.4,
+          "review_count": 241,
+          "neighborhood": "San Diego, Cartagena Walled City",
+          "property_style": "independent hotel",
+          "building_type": "restored colonial townhouse",
+          "interior_courtyard": true,
+          "walk_time_to_plaza_min": 5
+        }
+      },
+      {
+        "id": "htl_cartagena_patio_del_reloj_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Patio del Reloj Boutique Hotel",
+          "location": "Cartagena, Colombia",
+          "check_in_date": "2026-08-14",
+          "check_out_date": "2026-08-17",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 339,
+          "rating": 4.8,
+          "review_count": 1184,
+          "neighborhood": "Centro, Cartagena Walled City",
+          "property_style": "boutique hotel",
+          "building_type": "colonial courtyard house",
+          "rooftop_pool": true,
+          "restaurant": true
+        }
+      },
+      {
+        "id": "htl_cartagena_bayline_express_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Bayline Express Cartagena",
+          "location": "Cartagena, Colombia",
+          "check_in_date": "2026-08-14",
+          "check_out_date": "2026-08-17",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 189,
+          "rating": 4.7,
+          "review_count": 1940,
+          "neighborhood": "Bocagrande, Cartagena",
+          "property_style": "chain hotel",
+          "building_type": "mid-rise business hotel",
+          "distance_to_beach_min": 4,
+          "free_cancellation": true
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_cartagena_casa_san_diego_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

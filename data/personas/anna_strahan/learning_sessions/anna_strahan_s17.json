@@ -1,0 +1,105 @@
+{
+  "session_id": "anna_strahan_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "communication",
+  "reason_for_call": "Draft a follow-up message.",
+  "task_params": {
+    "sender": "Bayou Blue Room",
+    "folder": "inbox",
+    "language": "en",
+    "subject": "Thank you for Friday's set",
+    "reply_points": [
+      "thank them for a lovely evening and intimate atmosphere",
+      "mention enjoying the small ensemble format",
+      "ask whether they have more small-set performances coming up",
+      "say she'd love to attend again if they do"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Bayou Blue Room",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_bayou_01",
+        "subject": "Thank you for Friday's set",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_bayou_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Bayou Blue Room",
+          "subject": "Thanks for joining us at Bayou Blue Room",
+          "body": "Hi Anna, thank you for spending Friday evening with us. We loved having you at the room and hope you enjoyed the quartet set. Warmly, Bayou Blue Room",
+          "thread_id": "thr_bayou_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-17T10:14:00"
+        }
+      },
+      {
+        "id": "msg_clinic_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Northshore Clinic Admin",
+          "subject": "Updated staffing grid",
+          "body": "Please review the attached staffing grid for next week.",
+          "thread_id": "thr_clinic_02",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-03-17T08:05:00"
+        }
+      },
+      {
+        "id": "msg_gallery_03",
+        "type": "message",
+        "attributes": {
+          "sender": "River Parish Gallery",
+          "subject": "Spring opening reception",
+          "body": "We're excited to invite you to our spring opening next month.",
+          "thread_id": "thr_gallery_03",
+          "folder": "archive",
+          "labels": [
+            "arts"
+          ],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-03-12T16:42:00"
+        }
+      }
+    ]
+  }
+}

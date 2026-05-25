@@ -1,0 +1,129 @@
+{
+  "session_id": "jennifer_philmon_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "workspace",
+  "reason_for_call": "Organize some school files.",
+  "task_params": {
+    "location": "ME Degree Planning",
+    "file_type": "pdf",
+    "file_ids": [
+      "file_mechplan_01",
+      "file_mechplan_02",
+      "file_mechplan_03"
+    ],
+    "scheme": "by_project",
+    "folder_id": "fld_degree_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "ME Degree Planning",
+        "file_type": "pdf"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_mechplan_01",
+          "file_mechplan_02",
+          "file_mechplan_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_mechplan_01",
+          "file_mechplan_02",
+          "file_mechplan_03"
+        ],
+        "folder_id": "fld_degree_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_mechplan_01",
+        "type": "file",
+        "attributes": {
+          "name": "Transfer Credit Evaluation - State Tech.pdf",
+          "file_type": "pdf",
+          "location": "ME Degree Planning",
+          "owner": "Jennifer Philmon",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_mechplan_02",
+        "type": "file",
+        "attributes": {
+          "name": "Mechanical Engineering Curriculum Sheet.pdf",
+          "file_type": "pdf",
+          "location": "ME Degree Planning",
+          "owner": "Jennifer Philmon",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_mechplan_03",
+        "type": "file",
+        "attributes": {
+          "name": "Thermodynamics Course Notes Scan.pdf",
+          "file_type": "pdf",
+          "location": "ME Degree Planning",
+          "owner": "Jennifer Philmon",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_mechplan_04",
+        "type": "file",
+        "attributes": {
+          "name": "Plant Shutdown Checklist.pdf",
+          "file_type": "pdf",
+          "location": "Work Ops",
+          "owner": "Jennifer Philmon",
+          "labels": [
+            "operations"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_degree_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Degree Planning PDFs",
+          "purpose": "Organized storage for mechanical-engineering planning reference PDFs"
+        }
+      }
+    ]
+  }
+}

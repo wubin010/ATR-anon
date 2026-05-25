@@ -1,0 +1,120 @@
+{
+  "session_id": "roosevelt_brown_s38",
+  "session_type": "learning",
+  "day_offset": 38,
+  "domain": "scheduling",
+  "reason_for_call": "Add something to my calendar",
+  "task_params": {
+    "title": "Choir Rehearsal",
+    "start_time": "2025-02-20T18:30:00-05:00",
+    "end_time": "2025-02-20T20:00:00-05:00",
+    "location": "New Hope Baptist Church",
+    "participants": [
+      "music@newhopebaptist.org"
+    ]
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-20T18:30:00-05:00",
+        "end_time": "2025-02-20T20:00:00-05:00",
+        "participants": [
+          "music@newhopebaptist.org"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Choir Rehearsal",
+        "start_time": "2025-02-20T18:30:00-05:00",
+        "end_time": "2025-02-20T20:00:00-05:00",
+        "participants": [
+          "music@newhopebaptist.org"
+        ],
+        "location": "New Hope Baptist Church"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_ops_review_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Clinic Operations Review",
+          "start_time": "2025-02-20T15:30:00-05:00",
+          "end_time": "2025-02-20T17:00:00-05:00",
+          "participants": [
+            "ops-team@brocktonclinic.org",
+            "roosevelt.brown@brocktonclinic.org"
+          ],
+          "location": "Brockton Clinic Conference Room A",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_health_initiative_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Brockton Youth Health Initiative Planning Call",
+          "start_time": "2025-02-20T17:15:00-05:00",
+          "end_time": "2025-02-20T18:00:00-05:00",
+          "participants": [
+            "coordinator@byhi.org",
+            "roosevelt.brown@gmail.com"
+          ],
+          "location": "Zoom",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dentist_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dental Cleaning",
+          "start_time": "2025-02-20T12:00:00-05:00",
+          "end_time": "2025-02-20T13:00:00-05:00",
+          "participants": [],
+          "location": "Brockton Family Dental",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_board_game_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Choir Rehearsal",
+          "start_time": "2025-02-20T18:30:00-05:00",
+          "end_time": "2025-02-20T20:00:00-05:00",
+          "participants": [
+            "music@newhopebaptist.org"
+          ],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

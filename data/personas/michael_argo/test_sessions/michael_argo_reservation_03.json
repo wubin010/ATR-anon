@@ -1,0 +1,103 @@
+{
+  "instruction": "Please book me a haircut in Ballard, Seattle for 2026-08-14 at 5:30pm — just pick a place and set it up.",
+  "gold_value": "svc_hair_ballard_bridge_01",
+  "session_id": "michael_argo_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "michael_argo_reservation_03",
+  "rule_ref": {
+    "rule_id": "michael_argo_reservation_03",
+    "rule_text": "For local service appointments, he prefers independent neighborhood providers over big chains.",
+    "canonical_answer": "When I book a local service, I prefer an independent local provider instead of a chain."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_hair_ballard_bridge_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Ballard Bridge Barber Studio",
+          "service_type": "haircut",
+          "location": "Ballard, Seattle",
+          "rating": 4.4,
+          "distance_km": 1.7,
+          "ownership_type": "independent",
+          "neighborhood": "Ballard",
+          "locations_count": 1
+        }
+      },
+      {
+        "id": "svc_hair_greatclips_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Great Clips Ballard Blocks",
+          "service_type": "haircut",
+          "location": "Ballard, Seattle",
+          "rating": 4.9,
+          "distance_km": 0.2,
+          "ownership_type": "chain",
+          "neighborhood": "Ballard",
+          "locations_count": 4400
+        }
+      },
+      {
+        "id": "svc_hair_supercuts_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Supercuts Market Street",
+          "service_type": "haircut",
+          "location": "Ballard, Seattle",
+          "rating": 4.8,
+          "distance_km": 0.4,
+          "ownership_type": "chain",
+          "neighborhood": "Ballard",
+          "locations_count": 2400
+        }
+      },
+      {
+        "id": "svc_hair_sportclips_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Sport Clips Leary Way",
+          "service_type": "haircut",
+          "location": "Ballard, Seattle",
+          "rating": 4.7,
+          "distance_km": 0.6,
+          "ownership_type": "chain",
+          "neighborhood": "Ballard",
+          "locations_count": 1900
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_hair_ballard_bridge_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

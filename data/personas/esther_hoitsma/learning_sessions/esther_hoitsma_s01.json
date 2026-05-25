@@ -1,0 +1,110 @@
+{
+  "session_id": "esther_hoitsma_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and reply to one message.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Lucia Ramirez",
+    "priority": "high",
+    "reply_language": "en",
+    "reply_points": [
+      "thank her for checking in",
+      "say Rosa had a calm evening and slept well",
+      "mention breakfast and morning meds are done",
+      "note Esther will send another update after lunch"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Lucia Ramirez"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_rosa_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lucia Ramirez",
+          "subject": "Quick update on Rosa?",
+          "body": "Hi Esther, could you let me know how Rosa did overnight and whether she took her morning medications? I want to update my brother before work. Thank you.",
+          "thread_id": "thr_rosa_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-15T06:42:00"
+        }
+      },
+      {
+        "id": "msg_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Darren Cole",
+          "subject": "Timesheet reminder",
+          "body": "Please upload yesterday's timesheet before noon if you haven't already.",
+          "thread_id": "thr_admin_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-15T07:05:00"
+        }
+      },
+      {
+        "id": "msg_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Maribel Soto",
+          "subject": "Art supplies for next week",
+          "body": "Can you bring extra watercolor paper when you visit next Tuesday?",
+          "thread_id": "thr_art_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-15T08:11:00"
+        }
+      }
+    ]
+  }
+}

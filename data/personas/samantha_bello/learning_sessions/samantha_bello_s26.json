@@ -1,0 +1,104 @@
+{
+  "session_id": "samantha_bello_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "communication",
+  "reason_for_call": "Draft a status update.",
+  "task_params": {
+    "sender": "Daniel Reeves",
+    "folder": "inbox",
+    "language": "en",
+    "subject": "Budget status update",
+    "reply_points": [
+      "FY26 budget model is updated through the latest department inputs",
+      "Three departments still have open assumptions on hiring and vendor costs",
+      "Procurement savings estimate is under review with operations",
+      "Cash-flow scenarios are built, but final recommendation is not locked",
+      "I will circulate a cleaner consolidated view by Friday afternoon"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Daniel Reeves",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_budget_01",
+        "subject": "Budget status update",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_budget_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Daniel Reeves",
+          "subject": "Need a budget status update",
+          "body": "Can you send me a short leadership-ready update on where the budgeting work stands? I want something concise that I can share upward.",
+          "thread_id": "thr_budget_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-26T09:18:00-04:00"
+        }
+      },
+      {
+        "id": "msg_ap_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lucia Morales",
+          "subject": "AP cleanup items",
+          "body": "Sharing the outstanding invoice list before tomorrow.",
+          "thread_id": "thr_ap_01",
+          "folder": "inbox",
+          "labels": [
+            "finance"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-26T08:02:00-04:00"
+        }
+      },
+      {
+        "id": "msg_hr_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Kevin Patel",
+          "subject": "Revised hiring timeline",
+          "body": "Please see the latest headcount timing assumptions.",
+          "thread_id": "thr_hr_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-25T16:41:00-04:00"
+        }
+      }
+    ]
+  }
+}

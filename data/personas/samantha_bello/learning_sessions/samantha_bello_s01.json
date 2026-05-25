@@ -1,0 +1,116 @@
+{
+  "session_id": "samantha_bello_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Block time on my calendar.",
+  "task_params": {
+    "calendar": "primary",
+    "title": "Quarter-end budget review",
+    "start_time": "2025-02-14T13:00:00-04:00",
+    "end_time": "2025-02-14T15:30:00-04:00",
+    "location": "Home office"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "primary"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-14T13:00:00-04:00",
+        "end_time": "2025-02-14T15:30:00-04:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Quarter-end budget review",
+        "start_time": "2025-02-14T13:00:00-04:00",
+        "end_time": "2025-02-14T15:30:00-04:00",
+        "location": "Home office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_surf_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dawn surf session",
+          "start_time": "2025-02-12T06:15:00-04:00",
+          "end_time": "2025-02-12T07:30:00-04:00",
+          "participants": [],
+          "location": "Rincon Beach",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_sync_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Finance team sync",
+          "start_time": "2025-02-13T09:00:00-04:00",
+          "end_time": "2025-02-13T10:00:00-04:00",
+          "participants": [
+            "maria@company.com",
+            "jlee@company.com"
+          ],
+          "location": "Zoom",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_vendor_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Vendor contract review",
+          "start_time": "2025-02-13T14:30:00-04:00",
+          "end_time": "2025-02-13T15:30:00-04:00",
+          "participants": [
+            "procurement@company.com"
+          ],
+          "location": "Conference Room B",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_yoga_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quarter-end budget review",
+          "start_time": "2025-02-14T13:00:00-04:00",
+          "end_time": "2025-02-14T15:30:00-04:00",
+          "participants": [],
+          "location": "Home office",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

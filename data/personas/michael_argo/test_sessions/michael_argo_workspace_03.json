@@ -1,0 +1,135 @@
+{
+  "instruction": "Please tidy the files sitting in /Studio/Dropoff — it's a mix of PDFs, spreadsheets, and docs that's built up over the last few months, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "michael_argo_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "michael_argo_workspace_03",
+  "rule_ref": {
+    "rule_id": "michael_argo_workspace_03",
+    "rule_text": "When organizing files, he prefers classifying them by project rather than by file type or date.",
+    "canonical_answer": "I organize my files by project first."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_dropoff_budget_01",
+        "type": "file",
+        "attributes": {
+          "name": "budget_v2.xlsx",
+          "file_type": "xlsx",
+          "location": "/Studio/Dropoff",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false,
+          "project": "Lumen Arcade",
+          "modified_date": "2026-04-09",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_dropoff_lighting_01",
+        "type": "file",
+        "attributes": {
+          "name": "lighting_notes.docx",
+          "file_type": "docx",
+          "location": "/Studio/Dropoff",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false,
+          "project": "Lumen Arcade",
+          "modified_date": "2026-04-10",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_dropoff_vendor_01",
+        "type": "file",
+        "attributes": {
+          "name": "vendor_contacts.pdf",
+          "file_type": "pdf",
+          "location": "/Studio/Dropoff",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false,
+          "project": "Tidal Veil",
+          "modified_date": "2026-05-02",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_dropoff_install_01",
+        "type": "file",
+        "attributes": {
+          "name": "install_checklist.docx",
+          "file_type": "docx",
+          "location": "/Studio/Dropoff",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false,
+          "project": "Tidal Veil",
+          "modified_date": "2026-05-04",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_dropoff_print_01",
+        "type": "file",
+        "attributes": {
+          "name": "print_mockup.pdf",
+          "file_type": "pdf",
+          "location": "/Studio/Dropoff",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false,
+          "project": "Echo Pavilion",
+          "modified_date": "2026-06-11",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_dropoff_cues_01",
+        "type": "file",
+        "attributes": {
+          "name": "cue_sheet.xlsx",
+          "file_type": "xlsx",
+          "location": "/Studio/Dropoff",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false,
+          "project": "Echo Pavilion",
+          "modified_date": "2026-06-12",
+          "priority": "medium"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "instruction": "I still haven't replied to the Women in Leadership Reception at Harbor Loft on 2026-09-15 from 5:30–7pm. See whether it clashes with anything I already have that evening, and send the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "anna_strahan_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "anna_strahan_scheduling_01",
+  "rule_ref": {
+    "rule_id": "anna_strahan_scheduling_01",
+    "rule_text": "When a calendar invitation overlaps with unresolved work or family demands, Anna prefers to respond tentatively rather than accept or decline outright.",
+    "canonical_answer": "If a commitment is still uncertain, I usually mark it tentative until I know my schedule will hold."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_leadership_reception_20260915",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Women in Leadership Reception",
+          "start_time": "2026-09-15T17:30:00-04:00",
+          "end_time": "2026-09-15T19:00:00-04:00",
+          "participants": [
+            "events@citywomenlead.org",
+            "anna.strahan@example.com"
+          ],
+          "location": "Harbor Loft",
+          "calendar": "invites",
+          "status": "pending",
+          "organizer": "City Women Lead Network",
+          "attendee_count": 140,
+          "rsvp_deadline": "2026-09-12T17:00:00-04:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_staff_scheduling_hold_20260915",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Staff scheduling coverage hold",
+          "start_time": "2026-09-15T17:00:00-04:00",
+          "end_time": "2026-09-15T18:00:00-04:00",
+          "participants": [
+            "anna.strahan@example.com",
+            "maria.velasquez@northclinic.org"
+          ],
+          "location": "Conference Room C",
+          "calendar": "work",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_noah_pickup_backup_20260915",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Noah school pickup backup window",
+          "start_time": "2026-09-15T18:00:00-04:00",
+          "end_time": "2026-09-15T19:00:00-04:00",
+          "participants": [
+            "anna.strahan@example.com"
+          ],
+          "location": "Brookside Elementary",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

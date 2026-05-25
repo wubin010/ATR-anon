@@ -1,0 +1,98 @@
+{
+  "session_id": "samantha_bello_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working note",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Art + Storytelling Consulting Ideas",
+    "location": "Consulting Practice",
+    "idea_points": [
+      "use visual metaphors to explain cash flow and budgeting",
+      "turn client case studies into short narrative teaching examples",
+      "blend bilingual storytelling with simple finance visuals",
+      "offer workshop formats for women and young adults",
+      "connect financial planning to coastal small-business realities"
+    ],
+    "audience_points": [
+      "small coastal business owners",
+      "women in the neighborhood",
+      "young adults learning budgeting basics"
+    ],
+    "format_keywords": [
+      "brainstorm",
+      "practical",
+      "personal"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Consulting Practice",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Art + Storytelling Consulting Ideas",
+        "location": "Consulting Practice",
+        "content_brief": "<authored from idea_points, audience_points, and format_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_consult_01",
+        "type": "document",
+        "attributes": {
+          "title": "Boutique Consulting Practice Notes",
+          "doc_type": "note",
+          "location": "Consulting Practice",
+          "content_brief": "Rough notes on services, values, and possible client types."
+        }
+      },
+      {
+        "id": "doc_consult_02",
+        "type": "document",
+        "attributes": {
+          "title": "Financial Literacy Workshop Concepts",
+          "doc_type": "note",
+          "location": "Consulting Practice",
+          "content_brief": "Early ideas for community workshops using visuals and examples."
+        }
+      },
+      {
+        "id": "doc_consult_03",
+        "type": "document",
+        "attributes": {
+          "title": "ESG Storytelling Examples",
+          "doc_type": "memo",
+          "location": "Consulting Practice",
+          "content_brief": "Examples of narrative framing for sustainability reporting."
+        }
+      }
+    ]
+  }
+}

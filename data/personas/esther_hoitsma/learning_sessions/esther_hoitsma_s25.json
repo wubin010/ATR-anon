@@ -1,0 +1,121 @@
+{
+  "session_id": "esther_hoitsma_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Boise",
+    "event_tags": [
+      "art",
+      "workshop"
+    ],
+    "date_time": "2025-02-20T18:30:00",
+    "ticket_type": "general_admission",
+    "ticket_count": 1,
+    "event_id": "evt_brushlight_01"
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Boise",
+        "event_tags": [
+          "art",
+          "workshop"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_brushlight_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_brushlight_01",
+        "type": "event",
+        "attributes": {
+          "name": "Brush & Light Watercolor Workshop",
+          "location": "Boise",
+          "date_time": "2025-02-20T18:30:00",
+          "price": 28.0,
+          "event_tags": [
+            "art",
+            "workshop",
+            "watercolor"
+          ]
+        }
+      },
+      {
+        "id": "evt_creativerecharge_02",
+        "type": "event",
+        "attributes": {
+          "name": "Creative Recharge Artist Talk",
+          "location": "Boise",
+          "date_time": "2025-02-20T19:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "art",
+            "talk",
+            "creative"
+          ]
+        }
+      },
+      {
+        "id": "evt_clayhands_03",
+        "type": "event",
+        "attributes": {
+          "name": "Clay Hands Open Studio Workshop",
+          "location": "Nampa",
+          "date_time": "2025-02-20T18:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "art",
+            "workshop",
+            "ceramics"
+          ]
+        }
+      },
+      {
+        "id": "evt_designideas_04",
+        "type": "event",
+        "attributes": {
+          "name": "Design Ideas Community Lecture",
+          "location": "Boise",
+          "date_time": "2025-02-21T18:30:00",
+          "price": 15.0,
+          "event_tags": [
+            "talk",
+            "design",
+            "creative"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "session_id": "iris_parker_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "commerce",
+  "reason_for_call": "Order a gift online",
+  "task_params": {
+    "category": "home decor",
+    "budget": 90,
+    "sort_by": "rating",
+    "product_id": "prod_frame_03",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "home decor",
+        "budget": 90,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_vase_01",
+          "prod_lamp_02",
+          "prod_frame_03",
+          "prod_throw_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_frame_03",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_vase_01",
+        "type": "product",
+        "attributes": {
+          "name": "Abstract Ceramic Bud Vase",
+          "price": 72.0,
+          "category": "home decor",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_lamp_02",
+        "type": "product",
+        "attributes": {
+          "name": "Modern Sculptural Desk Lamp",
+          "price": 88.0,
+          "category": "home decor",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_frame_03",
+        "type": "product",
+        "attributes": {
+          "name": "Gallery Floating Frame Set",
+          "price": 84.0,
+          "category": "home decor",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_throw_04",
+        "type": "product",
+        "attributes": {
+          "name": "Geometric Woven Throw Blanket",
+          "price": 58.0,
+          "category": "home decor",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

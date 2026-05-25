@@ -1,0 +1,177 @@
+{
+  "session_id": "nancy_marr_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Tohoku",
+      "spring",
+      "research"
+    ],
+    "destination_ids": [
+      "dst_tohoku_01"
+    ],
+    "destination": "Tohoku",
+    "stop_tags": [
+      "agriculture",
+      "art",
+      "nature"
+    ],
+    "selected_stop_ids": [
+      "stp_sendai_01",
+      "stp_hiraizumi_02",
+      "stp_akita_03"
+    ],
+    "duration_days": 6,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Tohoku",
+          "spring",
+          "research"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_tohoku_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Tohoku",
+        "stop_tags": [
+          "agriculture",
+          "art",
+          "nature"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Tohoku",
+        "duration_days": 6,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_sendai_01",
+          "stp_hiraizumi_02",
+          "stp_akita_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": false,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_tohoku_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Tohoku Research Retreat",
+          "region": "Tohoku, Japan",
+          "tags": [
+            "spring",
+            "research",
+            "nature",
+            "art",
+            "agriculture"
+          ]
+        }
+      },
+      {
+        "id": "stp_sendai_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sendai Morning Market and Food Research Walk",
+          "location": "Sendai, Tohoku",
+          "tags": [
+            "agriculture",
+            "food",
+            "research",
+            "urban"
+          ]
+        }
+      },
+      {
+        "id": "stp_hiraizumi_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Hiraizumi Temple Gardens and Quiet Heritage Loop",
+          "location": "Hiraizumi, Tohoku",
+          "tags": [
+            "art",
+            "history",
+            "nature",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "stp_akita_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Akita Rice Paddies Field Visit",
+          "location": "Akita, Tohoku",
+          "tags": [
+            "agriculture",
+            "research",
+            "nature",
+            "rural"
+          ]
+        }
+      },
+      {
+        "id": "stp_aomori_04",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Aomori Contemporary Art Museum Stop",
+          "location": "Aomori, Tohoku",
+          "tags": [
+            "art",
+            "museum",
+            "culture",
+            "indoor"
+          ]
+        }
+      }
+    ]
+  }
+}

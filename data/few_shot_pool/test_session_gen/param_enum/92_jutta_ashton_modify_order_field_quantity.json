@@ -1,0 +1,90 @@
+{
+  "instruction": "Please fix order 77421 for the Cedar Glow soy candle gift boxes before it ships — it should be going to 814 Pine Ridge Rd in Malott, and I only need 2 boxes instead of 3.",
+  "gold_value": "quantity",
+  "session_id": "jutta_ashton_commerce_06_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_commerce_06",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_commerce_06",
+    "rule_text": "When modifying an existing order, she is more likely to change the quantity than the shipping address.",
+    "canonical_answer": "Whenever I adjust an order, I always change the quantity first rather than rerouting it."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_cedar_glow_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cedar Glow Soy Candle Gift Box",
+          "price": 28.0,
+          "category": "home_fragrance",
+          "rating": 4.8,
+          "current_order_quantity": 3,
+          "current_shipping_address": "22 Willow Ct, Malott",
+          "alternate_shipping_address": "814 Pine Ridge Rd, Malott",
+          "gift_note": "Housewarming"
+        }
+      },
+      {
+        "id": "prod_pine_hearth_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pine Hearth Reed Diffuser Set",
+          "price": 31.0,
+          "category": "home_fragrance",
+          "rating": 4.9,
+          "current_order_quantity": 1,
+          "current_shipping_address": "22 Willow Ct, Malott",
+          "alternate_shipping_address": "77 Orchard Ave, Malott",
+          "gift_note": "Birthday"
+        }
+      },
+      {
+        "id": "prod_orchard_linen_01",
+        "type": "product",
+        "attributes": {
+          "name": "Orchard Linen Candle Trio",
+          "price": 24.0,
+          "category": "home_fragrance",
+          "rating": 4.7,
+          "current_order_quantity": 2,
+          "current_shipping_address": "22 Willow Ct, Malott",
+          "alternate_shipping_address": "19 Cedar Creek Ln, Malott",
+          "gift_note": "Thank-you"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "modify_order",
+          "arguments": {
+            "field": "quantity"
+          },
+          "compare_args": [
+            "field"
+          ]
+        }
+      ]
+    }
+  }
+}

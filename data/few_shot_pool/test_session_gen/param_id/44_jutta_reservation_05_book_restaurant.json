@@ -1,0 +1,83 @@
+{
+  "domain": "reservation",
+  "instruction": "Book a restaurant for us in Ballard, Seattle on Wednesday May 13, 2026 at 6:30pm — six of us from the neighborhood having dinner.",
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_ballard_amber_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Amber Current Taproom",
+          "cuisine": "New American",
+          "location": "Ballard, Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "communal tables near bar counter"
+        }
+      },
+      {
+        "id": "rst_ballard_dock_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "North Dock Kitchen",
+          "cuisine": "Seafood",
+          "location": "Ballard, Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "open kitchen dining room and shared high-top tables"
+        }
+      },
+      {
+        "id": "rst_ballard_cedar_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar Room Bistro",
+          "cuisine": "Pacific Northwest",
+          "location": "Ballard, Seattle",
+          "rating": 4.4,
+          "price_range": "$$$",
+          "seating_style": "booths and separated dining rooms"
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_reservation_05_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_reservation_05",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_reservation_05",
+    "rule_text": "For community gatherings or small group dinners, prioritize venues suited to conversation and group interaction rather than high-noise, individually-focused popular spots.",
+    "canonical_answer": "If it's a book club or community-friend dinner, pick somewhere we can actually talk — not the loud trendy places."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_ballard_cedar_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Ana Morales at Ridgeview Clinic about the Spanish discharge instructions wording check. Tell her I can revise the medication paragraph, ask her to attach the latest English source version so I match the current packet, and mention that I'll keep the wording clear and plain for patients.",
+  "gold_value": null,
+  "session_id": "esther_hoitsma_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "esther_hoitsma_communication_01",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_communication_01",
+    "rule_text": "For messages that represent her professionally, Esther prefers a draft-first workflow instead of sending immediately.",
+    "canonical_answer": "I always want professional messages drafted first so I can review the wording before anything goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_ana_discharge_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Ana Morales <ana.morales@ridgeviewclinic.org>",
+          "subject": "Spanish discharge instructions wording check",
+          "body": "Hi Esther, we're updating the discharge packet for an upcoming patient rollout and need a quick review of the Spanish instructions. Could you send back a revised paragraph for the medication section and let me know if there are any wording changes you recommend for clarity?",
+          "thread_id": "thr_ana_discharge_18",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-08T10:14"
+        }
+      },
+      {
+        "id": "msg_devon_lunch_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Devon Lee <devon.lee@personalmail.com>",
+          "subject": "Lunch after errands?",
+          "body": "Hey Esther, are you around this afternoon and want to grab lunch near the market? No rush if you're busy.",
+          "thread_id": "thr_devon_lunch_05",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-08T11:02"
+        }
+      },
+      {
+        "id": "msg_portal_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "billing@medscribeportal.com",
+          "subject": "April subscription invoice available",
+          "body": "Your monthly MedScribe Portal invoice is ready to view in the billing center.",
+          "thread_id": "thr_portal_invoice_27",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-08T07:41"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

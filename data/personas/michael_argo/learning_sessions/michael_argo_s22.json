@@ -1,0 +1,88 @@
+{
+  "session_id": "michael_argo_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "workspace",
+  "reason_for_call": "Create a new note",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Waterfront Dinner Texture + Lighting Ideas",
+    "location": "Creative Notes",
+    "content_brief_points": [
+      "glossy reflections on dark water",
+      "string lights broken into wavering lines",
+      "condensation on glass catching warm highlights",
+      "contrast between rough wood grain and smooth plates",
+      "orange and teal palette from lamps and river shadows"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Creative Notes",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Waterfront Dinner Texture + Lighting Ideas",
+        "location": "Creative Notes",
+        "content_brief": "<authored from content_brief_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Alley Mural Color Study",
+          "doc_type": "note",
+          "location": "Creative Notes",
+          "content_brief": "Quick visual notes on spray-paint layering, brick texture, and reflected neon."
+        }
+      },
+      {
+        "id": "doc_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Sketchbook Scan Index",
+          "doc_type": "note",
+          "location": "Creative Notes",
+          "content_brief": "Index of scanned sketchbook pages and tags for urban scenes."
+        }
+      },
+      {
+        "id": "doc_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Supplies to Refill",
+          "doc_type": "memo",
+          "location": "Studio Admin",
+          "content_brief": "Running list of inks, tape, charcoal sticks, and matte medium."
+        }
+      }
+    ]
+  }
+}

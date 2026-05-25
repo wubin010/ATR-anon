@@ -1,0 +1,84 @@
+{
+  "session_id": "esther_hoitsma_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "workspace",
+  "reason_for_call": "Update a savings document.",
+  "task_params": {
+    "location": "Finances",
+    "doc_type": "spreadsheet",
+    "title": "Savings Plan",
+    "paycheck_amount": 642,
+    "rent_amount": 300,
+    "gas_amount": 45,
+    "groceries_amount": 80,
+    "savings_amount": 217
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Finances",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_savings_01",
+        "content_delta": "<authored from paycheck_amount, rent_amount, gas_amount, groceries_amount, savings_amount>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_savings_01",
+        "type": "document",
+        "attributes": {
+          "title": "Savings Plan",
+          "doc_type": "spreadsheet",
+          "location": "Finances",
+          "content_brief": "Weekly savings tracker with paycheck, bills, groceries, gas, and amount set aside."
+        }
+      },
+      {
+        "id": "doc_budget_02",
+        "type": "document",
+        "attributes": {
+          "title": "Monthly Budget Overview",
+          "doc_type": "spreadsheet",
+          "location": "Finances",
+          "content_brief": "Monthly income and expense summary."
+        }
+      },
+      {
+        "id": "doc_notes_03",
+        "type": "document",
+        "attributes": {
+          "title": "CNA Study Notes",
+          "doc_type": "note",
+          "location": "Career",
+          "content_brief": "Notes from skills review and terminology practice."
+        }
+      }
+    ]
+  }
+}

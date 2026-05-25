@@ -1,0 +1,143 @@
+{
+  "session_id": "cassandra_tovar_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a team meeting",
+  "task_params": {
+    "calendar": "work",
+    "title": "Crew Check-in",
+    "start_time": "2025-04-18T16:30:00-04:00",
+    "end_time": "2025-04-18T16:50:00-04:00",
+    "participants": [
+      "marcus.hill@schoolav.net",
+      "jenna.price@schoolav.net",
+      "leo.banks@schoolav.net"
+    ],
+    "location": "Miller Learning Center"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work",
+        "participants": [
+          "marcus.hill@schoolav.net",
+          "jenna.price@schoolav.net",
+          "leo.banks@schoolav.net"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-18T16:30:00-04:00",
+        "end_time": "2025-04-18T16:50:00-04:00",
+        "participants": [
+          "marcus.hill@schoolav.net",
+          "jenna.price@schoolav.net",
+          "leo.banks@schoolav.net"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Crew Check-in",
+        "start_time": "2025-04-18T16:30:00-04:00",
+        "end_time": "2025-04-18T16:50:00-04:00",
+        "participants": [
+          "marcus.hill@schoolav.net",
+          "jenna.price@schoolav.net",
+          "leo.banks@schoolav.net"
+        ],
+        "location": "Miller Learning Center"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Classroom 204 Projector Alignment",
+          "start_time": "2025-04-18T14:00:00-04:00",
+          "end_time": "2025-04-18T15:15:00-04:00",
+          "participants": [
+            "marcus.hill@schoolav.net",
+            "jenna.price@schoolav.net",
+            "leo.banks@schoolav.net"
+          ],
+          "location": "Miller Learning Center",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Crew Check-in",
+          "start_time": "2025-04-18T16:30:00-04:00",
+          "end_time": "2025-04-18T16:50:00-04:00",
+          "participants": [
+            "marcus.hill@schoolav.net",
+            "leo.banks@schoolav.net"
+          ],
+          "location": "Warehouse Bay 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Network Audio Test with Facilities",
+          "start_time": "2025-04-18T17:00:00-04:00",
+          "end_time": "2025-04-18T17:45:00-04:00",
+          "participants": [
+            "jenna.price@schoolav.net",
+            "facilities.ops@schoolav.net"
+          ],
+          "location": "South Hall Rack Room",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Vendor Call: Display Mount Shipment",
+          "start_time": "2025-04-17T11:00:00-04:00",
+          "end_time": "2025-04-17T11:30:00-04:00",
+          "participants": [
+            "marcus.hill@schoolav.net"
+          ],
+          "location": "Phone",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

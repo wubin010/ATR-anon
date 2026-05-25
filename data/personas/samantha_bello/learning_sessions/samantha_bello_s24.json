@@ -1,0 +1,131 @@
+{
+  "session_id": "samantha_bello_s24",
+  "session_type": "learning",
+  "day_offset": 24,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a quick meeting",
+  "task_params": {
+    "calendar": "work",
+    "title": "Mentoring Chat with Mateo",
+    "start_time": "2025-03-19T15:00:00-04:00",
+    "end_time": "2025-03-19T15:30:00-04:00",
+    "participants": [
+      "mateo.cruz@seabreezeholdings.com"
+    ],
+    "location": "Zoom"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-19T15:00:00-04:00",
+        "end_time": "2025-03-19T15:30:00-04:00",
+        "participants": [
+          "mateo.cruz@seabreezeholdings.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Mentoring Chat with Mateo",
+        "start_time": "2025-03-19T15:00:00-04:00",
+        "end_time": "2025-03-19T15:30:00-04:00",
+        "participants": [
+          "mateo.cruz@seabreezeholdings.com"
+        ],
+        "location": "Zoom"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_budget_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Q2 Budget Review",
+          "start_time": "2025-03-17T09:00:00-04:00",
+          "end_time": "2025-03-17T10:30:00-04:00",
+          "participants": [
+            "finance-team@seabreezeholdings.com",
+            "luis.ortega@seabreezeholdings.com"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_erp_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Mentoring Chat with Mateo",
+          "start_time": "2025-03-19T15:00:00-04:00",
+          "end_time": "2025-03-19T15:30:00-04:00",
+          "participants": [
+            "it-project@seabreezeholdings.com",
+            "ana.rivera@seabreezeholdings.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_vendor_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Vendor Terms Negotiation",
+          "start_time": "2025-03-20T11:00:00-04:00",
+          "end_time": "2025-03-20T12:00:00-04:00",
+          "participants": [
+            "procurement@seabreezeholdings.com",
+            "marisol.vega@atlanticpaper.com"
+          ],
+          "location": "Conference Room A",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_esg_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "ESG Metrics Working Session",
+          "start_time": "2025-03-21T10:00:00-04:00",
+          "end_time": "2025-03-21T11:30:00-04:00",
+          "participants": [
+            "esg-team@seabreezeholdings.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

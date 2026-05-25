@@ -1,0 +1,130 @@
+{
+  "session_id": "michael_argo_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "travel",
+  "reason_for_call": "Set up trip alerts",
+  "task_params": {
+    "destination": "Chicago",
+    "duration_days": 3,
+    "traveler_count": 1,
+    "selected_stop_ids": [
+      "stop_chi_art_01",
+      "stop_chi_river_02",
+      "stop_chi_wicker_03"
+    ],
+    "update_scope": "schedule_change"
+  },
+  "expected_tools": [
+    "search_trip_stops",
+    "plan_trip",
+    "track_trip_updates"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Chicago"
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Chicago",
+        "duration_days": 3,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_chi_art_01",
+          "stop_chi_river_02",
+          "stop_chi_wicker_03"
+        ]
+      }
+    },
+    {
+      "tool": "track_trip_updates",
+      "arguments": {
+        "trip_id": "trip_chicago_01",
+        "update_scope": "schedule_change"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_chi_art_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Art Institute of Chicago",
+          "location": "Chicago",
+          "tags": [
+            "museum",
+            "art",
+            "indoor"
+          ],
+          "trip_id": "trip_chicago_01"
+        }
+      },
+      {
+        "id": "stop_chi_river_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Chicago Riverwalk",
+          "location": "Chicago",
+          "tags": [
+            "walk",
+            "river",
+            "outdoor"
+          ],
+          "trip_id": "trip_chicago_01"
+        }
+      },
+      {
+        "id": "stop_chi_wicker_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Wicker Park",
+          "location": "Chicago",
+          "tags": [
+            "neighborhood",
+            "street-art",
+            "cafes"
+          ],
+          "trip_id": "trip_chicago_01"
+        }
+      },
+      {
+        "id": "stop_chi_garden_04",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Garfield Park Conservatory",
+          "location": "Chicago",
+          "tags": [
+            "plants",
+            "nature",
+            "indoor"
+          ],
+          "trip_id": "trip_chicago_02"
+        }
+      }
+    ]
+  }
+}

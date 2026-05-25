@@ -1,0 +1,135 @@
+{
+  "instruction": "Please clean up the work files sitting in /Work/Shared/Client Ops Inbox. It's a mix of spreadsheets, PDFs, and docs from the shared client ops drop, and I just need them organized so they're easier to scan.",
+  "gold_value": "by_date",
+  "session_id": "esther_hoitsma_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "esther_hoitsma_workspace_03",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_workspace_03",
+    "rule_text": "When organizing work-related files, Esther prefers classifying them by date rather than by project or owner.",
+    "canonical_answer": "For my work files, I usually organize them by date so the timeline stays clear."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_clientops_northwind_budget_01",
+        "type": "file",
+        "attributes": {
+          "name": "Northwind renewal budget.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Shared/Client Ops Inbox",
+          "owner": "Esther Hoitsma",
+          "labels": [],
+          "archived": false,
+          "project": "Northwind Renewal",
+          "modified_date": "2026-03-04",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_clientops_northwind_summary_01",
+        "type": "file",
+        "attributes": {
+          "name": "Northwind kickoff summary.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Shared/Client Ops Inbox",
+          "owner": "Leah Park",
+          "labels": [],
+          "archived": false,
+          "project": "Northwind Renewal",
+          "modified_date": "2026-04-18",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_clientops_harbor_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "Harbor migration notes.docx",
+          "file_type": "docx",
+          "location": "/Work/Shared/Client Ops Inbox",
+          "owner": "Esther Hoitsma",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Migration",
+          "modified_date": "2026-02-27",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_clientops_harbor_costs_01",
+        "type": "file",
+        "attributes": {
+          "name": "Harbor vendor costs.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Shared/Client Ops Inbox",
+          "owner": "Rami Cole",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Migration",
+          "modified_date": "2026-04-02",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_clientops_maple_packet_01",
+        "type": "file",
+        "attributes": {
+          "name": "Maple onboarding packet.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Shared/Client Ops Inbox",
+          "owner": "Esther Hoitsma",
+          "labels": [],
+          "archived": false,
+          "project": "Maple Onboarding",
+          "modified_date": "2026-03-21",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_clientops_maple_checklist_01",
+        "type": "file",
+        "attributes": {
+          "name": "Maple site checklist.docx",
+          "file_type": "docx",
+          "location": "/Work/Shared/Client Ops Inbox",
+          "owner": "Leah Park",
+          "labels": [],
+          "archived": false,
+          "project": "Maple Onboarding",
+          "modified_date": "2026-05-06",
+          "priority": "medium"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_date"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

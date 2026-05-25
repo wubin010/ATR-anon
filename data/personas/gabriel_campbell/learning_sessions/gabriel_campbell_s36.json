@@ -1,0 +1,135 @@
+{
+  "session_id": "gabriel_campbell_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "reservation",
+  "reason_for_call": "Book a dinner reservation.",
+  "task_params": {
+    "location": "Cambridge",
+    "event_tags": [
+      "open mic",
+      "acoustic"
+    ],
+    "cuisine": "Mediterranean",
+    "date_time": "2025-04-25T18:30:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Cambridge",
+        "event_tags": [
+          "open mic",
+          "acoustic"
+        ]
+      }
+    },
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Cambridge",
+        "cuisine": "Mediterranean",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_oleana_01",
+        "date_time": "2025-04-25T18:30:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_lilypad_01",
+        "type": "event",
+        "attributes": {
+          "name": "Acoustic Open Mic at The Lilypad",
+          "location": "Cambridge",
+          "date_time": "2025-04-25T20:00:00",
+          "price": 10.0,
+          "event_tags": [
+            "open mic",
+            "acoustic",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_burren_02",
+        "type": "event",
+        "attributes": {
+          "name": "Songwriters Open Mic Night",
+          "location": "Somerville",
+          "date_time": "2025-04-25T19:30:00",
+          "price": 8.0,
+          "event_tags": [
+            "open mic",
+            "acoustic",
+            "songwriter"
+          ]
+        }
+      },
+      {
+        "id": "rst_oleana_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Oleana",
+          "cuisine": "Mediterranean",
+          "location": "Cambridge",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "cozy indoor"
+        }
+      },
+      {
+        "id": "rst_moona_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Moona",
+          "cuisine": "Mediterranean",
+          "location": "Cambridge",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "small dining room"
+        }
+      },
+      {
+        "id": "rst_giulia_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Giulia",
+          "cuisine": "Italian",
+          "location": "Cambridge",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "warm indoor"
+        }
+      }
+    ]
+  }
+}

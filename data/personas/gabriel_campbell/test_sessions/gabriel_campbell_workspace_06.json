@@ -1,0 +1,133 @@
+{
+  "instruction": "The file named \"Northstar FY26 budget workbook.xlsx\" is still in Downloads. Please move it to the most appropriate folder.",
+  "gold_value": "fld_northstar_01",
+  "session_id": "gabriel_campbell_workspace_06_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "gabriel_campbell_workspace_06",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_workspace_06",
+    "rule_text": "When moving active files, he prefers placing them into distinct project folders rather than broad type-based buckets.",
+    "canonical_answer": "I always move working files into the folder for the specific project, not just into a generic type folder."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_northstar_budget_workbook_01",
+        "type": "file",
+        "attributes": {
+          "name": "Northstar FY26 budget workbook.xlsx",
+          "file_type": "xlsx",
+          "location": "Downloads",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "northstar",
+            "budget",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_riverview_budget_workbook_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverview staffing budget workbook.xlsx",
+          "file_type": "xlsx",
+          "location": "Active Spreadsheets",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "riverview",
+            "budget",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_ops_q3_forecast_01",
+        "type": "file",
+        "attributes": {
+          "name": "Ops Q3 forecast.xlsx",
+          "file_type": "xlsx",
+          "location": "Active Spreadsheets",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "ops",
+            "forecast",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_northstar_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Northstar",
+          "purpose": "project folder"
+        }
+      },
+      {
+        "id": "fld_riverview_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Riverview",
+          "purpose": "project folder"
+        }
+      },
+      {
+        "id": "fld_active_spreadsheets_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Active Spreadsheets",
+          "purpose": "default folder for current spreadsheet files"
+        }
+      },
+      {
+        "id": "fld_documents_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Documents",
+          "purpose": "general folder for active documents"
+        }
+      },
+      {
+        "id": "fld_misc_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Misc",
+          "purpose": "general unassigned files"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "move_files",
+          "arguments": {
+            "folder_id": "fld_northstar_01"
+          },
+          "compare_args": [
+            "folder_id"
+          ]
+        }
+      ]
+    }
+  }
+}

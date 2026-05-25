@@ -1,0 +1,506 @@
+[
+  {
+    "rule_text": "For cooking or garden purchases, she prefers heirloom and fresh-herb options over plainer generic alternatives.",
+    "canonical_answer": "When I buy ingredients or garden items, I go for heirloom produce and fresh herbs when I can.",
+    "counterfactual_default": "Pick a generic or standard product without favoring heirloom or herb-forward options.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "experimenting with heirloom tomatoes and fresh rosemary in a modern twist on cornbread"
+      },
+      {
+        "type": "direct",
+        "content": "Gardening (vegetables, herbs, flowers)"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "romisha_shields_commerce_02",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a purchased item is wrong for her cooking, quilting, or event work, she prefers an exchange over a refund.",
+    "canonical_answer": "If something I bought isn’t right, I’d rather swap it for the right thing than just get my money back.",
+    "counterfactual_default": "Choose a refund as the standard return outcome.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Quilting and crochet"
+      },
+      {
+        "type": "direct",
+        "content": "an accomplished Southern soul-food cook"
+      },
+      {
+        "type": "inferred",
+        "content": "Because she actively uses supplies for cooking, crafts, and community events, replacing an unusable item keeps her plans moving better than simply reversing the purchase."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "romisha_shields_commerce_04",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For eating out with family or community groups, she prefers Southern or soul-food restaurants over trendier generic options.",
+    "canonical_answer": "When I go out to eat with my people, I like a good Southern or soul-food place.",
+    "counterfactual_default": "Pick a broadly popular restaurant without any Southern or soul-food bias.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Romisha Shields is a talkative, community-centered soul-food maestro"
+      },
+      {
+        "type": "direct",
+        "content": "soul-food staples like smoked catfish, candied yams, collard greens slow-cooked with smoked turkey"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "romisha_shields_reservation_01",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For leisure outings, she prefers tickets to gospel performances or classic-film screenings over more generic entertainment choices.",
+    "canonical_answer": "For a fun outing, I’d pick a gospel concert or a classic movie before most anything else.",
+    "counterfactual_default": "Choose whichever event is most generally popular or convenient.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "attending live performances at the local church’s annual gospel concert"
+      },
+      {
+        "type": "direct",
+        "content": "collecting classic films like Casablanca and Gone with the Wind"
+      },
+      {
+        "type": "direct",
+        "content": "attends local festivals, gospel concerts, and classic movie screenings at the community center"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "romisha_shields_reservation_03",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a local wellness or fitness appointment, she prefers low-impact options such as chair yoga over strenuous services.",
+    "canonical_answer": "For exercise or wellness, I stick with low-impact things like chair yoga.",
+    "counterfactual_default": "Pick any convenient provider without preferring low-impact services.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "enjoys low-impact fitness, attending a weekly chair-yoga class at the community center"
+      },
+      {
+        "type": "direct",
+        "content": "maintain her health through low-impact exercise"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "romisha_shields_reservation_04",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a trip, she prefers historical and civil-rights-related stops over generic sightseeing picks.",
+    "canonical_answer": "When I travel, I want the stops to teach me something about history, especially civil-rights history.",
+    "counterfactual_default": "Fill the itinerary with broadly popular attractions regardless of historical theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers road-trip itineraries that blend historical sightseeing with relaxed pacing"
+      },
+      {
+        "type": "direct",
+        "content": "they dream of a pilgrimage to civil-rights historic sites in Montgomery"
+      },
+      {
+        "type": "direct",
+        "content": "reading biographies of civil-rights leaders and historical accounts of Alabama"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "romisha_shields_travel_01",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For long-distance travel, she prefers ground transportation over flying.",
+    "canonical_answer": "I’d rather go by road or rail than fly when I can.",
+    "counterfactual_default": "Check and book flights first for longer trips.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers road-trip itineraries that blend historical sightseeing with relaxed pacing"
+      },
+      {
+        "type": "direct",
+        "content": "a weekend getaway to the Blue Ridge Mountains"
+      },
+      {
+        "type": "direct",
+        "content": "they dream of a leisurely cruise along the Gulf Coast"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "romisha_shields_travel_02",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing lodging, she favors accessible hotel options over standard offers that do not emphasize accessibility.",
+    "canonical_answer": "If I’m booking a place to stay, I want the option that’s easiest to get around in.",
+    "counterfactual_default": "Choose a hotel based mainly on price or popularity without prioritizing accessibility.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "a need for accessible accommodations shape their travel choices"
+      },
+      {
+        "type": "direct",
+        "content": "Age: 72"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "romisha_shields_travel_03",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If she does fly, she prefers an aisle seat rather than a window or middle seat.",
+    "canonical_answer": "When I have to fly, I want an aisle seat.",
+    "counterfactual_default": "Leave seat preference unspecified or default to a window seat.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Age: 72"
+      },
+      {
+        "type": "direct",
+        "content": "a need for accessible accommodations shape their travel choices"
+      },
+      {
+        "type": "inferred",
+        "content": "Her age and accessibility-minded travel habits make easier entry and exit more important than scenic seating."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "romisha_shields_travel_04",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a planned trip is disrupted, she prefers replacement stops that keep the same historical or cultural theme instead of swapping in any unrelated top-rated alternative.",
+    "canonical_answer": "If part of my trip falls through, I still want the replacement stop to fit the history and culture I went for in the first place.",
+    "counterfactual_default": "Replace the disrupted stop with any convenient or highly rated alternative.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers road-trip itineraries that blend historical sightseeing with relaxed pacing"
+      },
+      {
+        "type": "direct",
+        "content": "commitment to preserving local Black history"
+      },
+      {
+        "type": "direct",
+        "content": "they dream of a pilgrimage to civil-rights historic sites in Montgomery"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "romisha_shields_travel_05",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For church, outreach, fundraiser, or mentoring messages, she prefers drafting first rather than sending immediately.",
+    "canonical_answer": "For community messages, I like to see the wording in a draft before anything goes out.",
+    "counterfactual_default": "Send the message directly once the content is available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "storytelling talent to mentor younger neighbors"
+      },
+      {
+        "type": "direct",
+        "content": "active volunteerism, mentorship of younger neighbors"
+      },
+      {
+        "type": "direct",
+        "content": "while staying competitive about securing the spotlight in any event"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "romisha_shields_communication_01",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "She prefers community and church-related message threads to be explicitly labeled instead of left unlabeled in the general inbox.",
+    "canonical_answer": "I like church and community emails labeled so I can spot them fast.",
+    "counterfactual_default": "Leave the threads unlabeled and rely on the inbox as-is.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "active member of her Baptist church, participating in the choir, Bible study, and community outreach events"
+      },
+      {
+        "type": "direct",
+        "content": "coordinating family reunions, church socials, and fundraising events"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "romisha_shields_communication_02",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Messages connected to youth programs, church outreach, or local history work should be marked high priority for her.",
+    "canonical_answer": "If a message is about church outreach, youth programs, or history work, I want it marked high priority.",
+    "counterfactual_default": "Leave those messages at normal priority unless something urgent is explicitly stated.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "publish it through the local senior center as a fundraiser for youth programs"
+      },
+      {
+        "type": "direct",
+        "content": "creating a small audio archive for the Calhoun County historical society"
+      },
+      {
+        "type": "direct",
+        "content": "community outreach events"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "romisha_shields_communication_03",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation conflicts with something unresolved or she is not ready to commit, she prefers responding tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If I’m not sure I can make it, I’d rather answer maybe than yes or no.",
+    "counterfactual_default": "Accept or decline the invitation immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "flexible, sometimes disorganized planning style"
+      },
+      {
+        "type": "direct",
+        "content": "often worrying about details yet thriving on the buzz of church socials"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "romisha_shields_scheduling_02",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing files for her projects, she prefers grouping them by project rather than by type, date, owner, or priority.",
+    "canonical_answer": "I keep things sorted by project, like the cookbook or a church event, more than by file type.",
+    "counterfactual_default": "Organize the files by type or date as a generic scheme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "compile a family-recipe cookbook"
+      },
+      {
+        "type": "direct",
+        "content": "creating a small audio archive for the Calhoun County historical society"
+      },
+      {
+        "type": "direct",
+        "content": "coordinating family reunions, church socials, and fundraising events"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "romisha_shields_workspace_01",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "She prefers moving cookbook, oral-history, and event files into dedicated project folders instead of leaving them scattered where they were created.",
+    "canonical_answer": "I want my cookbook, history, and event papers moved into their own folders so I can find them later.",
+    "counterfactual_default": "Leave the files in their current mixed locations.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "carefree, sometimes disorganized approach to budgeting, health, and event planning"
+      },
+      {
+        "type": "direct",
+        "content": "compile a family-recipe cookbook"
+      },
+      {
+        "type": "direct",
+        "content": "document the oral histories of longtime Anniston residents"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "romisha_shields_workspace_02",
+    "persona_id": "romisha_shields",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

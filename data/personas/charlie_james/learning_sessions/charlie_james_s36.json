@@ -1,0 +1,111 @@
+{
+  "session_id": "charlie_james_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "travel",
+  "reason_for_call": "Book a hotel.",
+  "task_params": {
+    "location": "Nashville",
+    "guest_count": 1,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "check_in_date": "2025-09-19",
+    "check_out_date": "2025-09-21"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Nashville",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hot_midtown_02"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hot_riverfront_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverfront Works Hotel",
+          "location": "Nashville",
+          "check_in_date": "2025-09-19",
+          "check_out_date": "2025-09-21",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 149.0
+        }
+      },
+      {
+        "id": "hot_midtown_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Midtown Studio Inn",
+          "location": "Nashville",
+          "check_in_date": "2025-09-19",
+          "check_out_date": "2025-09-21",
+          "available_rooms": 3,
+          "max_guests_per_room": 1,
+          "price_per_night": 119.0
+        }
+      },
+      {
+        "id": "hot_gulch_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "The Gulch Stay",
+          "location": "Nashville",
+          "check_in_date": "2025-09-19",
+          "check_out_date": "2025-09-21",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 179.0
+        }
+      },
+      {
+        "id": "hot_airport_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Music City Airport Lodge",
+          "location": "Nashville",
+          "check_in_date": "2025-09-20",
+          "check_out_date": "2025-09-22",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 109.0
+        }
+      }
+    ]
+  }
+}

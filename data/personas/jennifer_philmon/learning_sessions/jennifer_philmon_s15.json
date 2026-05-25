@@ -1,0 +1,111 @@
+{
+  "session_id": "jennifer_philmon_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "commerce",
+  "reason_for_call": "Compare some gear",
+  "task_params": {
+    "category": "travel cooler",
+    "budget": 40,
+    "sort_by": "price_asc",
+    "product_ids": [
+      "prod_chillcube_01",
+      "prod_roadmate_02",
+      "prod_packnest_03"
+    ],
+    "list_name": "Road Trip Supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "travel cooler",
+        "budget": 40,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_chillcube_01",
+          "prod_roadmate_02",
+          "prod_packnest_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_roadmate_02"
+        ],
+        "list_name": "Road Trip Supplies"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_chillcube_01",
+        "type": "product",
+        "attributes": {
+          "name": "ChillCube Mini Travel Cooler",
+          "price": 24.99,
+          "category": "travel cooler",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_roadmate_02",
+        "type": "product",
+        "attributes": {
+          "name": "RoadMate Compact Travel Cooler",
+          "price": 34.5,
+          "category": "travel cooler",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_packnest_03",
+        "type": "product",
+        "attributes": {
+          "name": "PackNest Soft Travel Cooler",
+          "price": 39.99,
+          "category": "travel cooler",
+          "rating": 4.1
+        }
+      },
+      {
+        "id": "prod_trunktidy_04",
+        "type": "product",
+        "attributes": {
+          "name": "TrunkTidy Car Organizer",
+          "price": 18.99,
+          "category": "car organizer",
+          "rating": 4.0
+        }
+      }
+    ]
+  }
+}

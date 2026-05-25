@@ -1,0 +1,110 @@
+{
+  "session_id": "michael_argo_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "SD card",
+    "budget": 25,
+    "sort_by": "price_asc",
+    "quantity": 1,
+    "product_ids": [
+      "prod_sandisk_ultra_32_01",
+      "prod_lexar_blue_64_02",
+      "prod_samsung_evo_64_03"
+    ],
+    "product_id": "prod_lexar_blue_64_02"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "SD card",
+        "budget": 25,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_sandisk_ultra_32_01",
+          "prod_lexar_blue_64_02",
+          "prod_samsung_evo_64_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_lexar_blue_64_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sandisk_ultra_32_01",
+        "type": "product",
+        "attributes": {
+          "name": "SanDisk Ultra 32GB SD card",
+          "price": 14.99,
+          "category": "SD card",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_lexar_blue_64_02",
+        "type": "product",
+        "attributes": {
+          "name": "Lexar Blue Series 64GB SD card",
+          "price": 21.99,
+          "category": "SD card",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_samsung_evo_64_03",
+        "type": "product",
+        "attributes": {
+          "name": "Samsung EVO 64GB microSD card with adapter",
+          "price": 24.99,
+          "category": "SD card",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_anker_reader_04",
+        "type": "product",
+        "attributes": {
+          "name": "Anker USB-C SD card reader",
+          "price": 17.99,
+          "category": "card reader",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

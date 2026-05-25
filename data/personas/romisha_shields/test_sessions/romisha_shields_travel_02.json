@@ -1,0 +1,107 @@
+{
+  "instruction": "Please book my one-way trip for 2026-10-07 from Seattle, WA to Los Angeles, CA for one passenger. I only need this leg handled, so look at the available options and take care of it.",
+  "gold_value": null,
+  "session_id": "romisha_shields_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "romisha_shields_travel_02",
+  "rule_ref": {
+    "rule_id": "romisha_shields_travel_02",
+    "rule_text": "For long-distance travel, she prefers ground transportation over flying.",
+    "canonical_answer": "I’d rather go by road or rail than fly when I can."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_sea_lax_20261007_ak_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "Los Angeles, CA",
+          "departure_date": "2026-10-07",
+          "airline": "Alaska Airlines",
+          "price": 128,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_sea_lax_20261007_dl_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "Los Angeles, CA",
+          "departure_date": "2026-10-07",
+          "airline": "Delta Air Lines",
+          "price": 143,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_sea_lax_20261007_ua_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "Los Angeles, CA",
+          "departure_date": "2026-10-07",
+          "airline": "United Airlines",
+          "price": 151,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "trp_sea_lax_20261007_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "Los Angeles, CA",
+          "mode": "train",
+          "departure_date": "2026-10-07",
+          "price": 224,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "trp_sea_lax_20261007_bus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "Los Angeles, CA",
+          "mode": "bus",
+          "departure_date": "2026-10-07",
+          "price": 196,
+          "available_seats": 9
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

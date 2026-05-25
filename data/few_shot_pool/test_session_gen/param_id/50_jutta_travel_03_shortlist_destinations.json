@@ -1,0 +1,124 @@
+{
+  "domain": "travel",
+  "instruction": "I'm looking at a week-long break in October next year. Pick one of the candidates below to take forward into detailed research. Departure is Seattle, trip length 7 days, budget cap $1800; bonus if it works for October scenery and a walkable urban area.",
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_portland_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Portland",
+          "region": "Oregon",
+          "tags": [
+            "domestic",
+            "city",
+            "food",
+            "gardens",
+            "bookstores",
+            "weekend_trip",
+            "rail_access",
+            "road_trip"
+          ]
+        }
+      },
+      {
+        "id": "dest_kyoto_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Kyoto",
+          "region": "Japan",
+          "tags": [
+            "international",
+            "city",
+            "temples",
+            "historic_district",
+            "gardens",
+            "autumn_leaves",
+            "flight_required",
+            "long_haul"
+          ]
+        }
+      },
+      {
+        "id": "dest_paris_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Paris",
+          "region": "France",
+          "tags": [
+            "international",
+            "city",
+            "museums",
+            "historic_district",
+            "cafes",
+            "riverfront",
+            "flight_required",
+            "long_haul"
+          ]
+        }
+      },
+      {
+        "id": "dest_honolulu_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Honolulu",
+          "region": "Hawaii",
+          "tags": [
+            "domestic",
+            "beach",
+            "island",
+            "resort",
+            "ocean_view",
+            "flight_required",
+            "mid_haul"
+          ]
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_travel_03_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_travel_03",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_travel_03",
+    "rule_text": "On budget-constrained travel shortlisting, prioritize keeping nearby or domestic destinations reachable by ground transport rather than pushing ahead with high-cost transoceanic itineraries.",
+    "canonical_answer": "When the budget is tight, keep the closer trips that work by ground transport — push the transoceanic stuff to the back."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "shortlist_destinations",
+          "arguments": {
+            "destination_ids": [
+              "dest_portland_01"
+            ]
+          },
+          "compare_args": [
+            "destination_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

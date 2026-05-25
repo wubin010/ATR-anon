@@ -1,0 +1,102 @@
+{
+  "instruction": "Please order one rice dinner mix for the pantry, keep it under $5, and make sure it's mild. Just pick one for me.",
+  "gold_value": "prod_cajun_red_beans_rice_01",
+  "session_id": "john_brown_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "john_brown_commerce_01",
+  "rule_ref": {
+    "rule_id": "john_brown_commerce_01",
+    "rule_text": "When ordering food or cooking ingredients, he prefers Creole or Cajun options over more generic alternatives.",
+    "canonical_answer": "For food, I usually go for Creole or Cajun options first."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_cajun_red_beans_rice_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cajun Red Beans & Rice Mix",
+          "price": 4.79,
+          "category": "rice_dinner_mix",
+          "rating": 4.2,
+          "cuisine_style": "cajun",
+          "spice_level": "mild",
+          "review_count": 88
+        }
+      },
+      {
+        "id": "prod_bayou_jambalaya_01",
+        "type": "product",
+        "attributes": {
+          "name": "Bayou Jambalaya Rice Mix",
+          "price": 4.49,
+          "category": "rice_dinner_mix",
+          "rating": 4.8,
+          "cuisine_style": "creole",
+          "spice_level": "hot",
+          "review_count": 640,
+          "units_sold_last_30_days": 420
+        }
+      },
+      {
+        "id": "prod_homestyle_chicken_rice_01",
+        "type": "product",
+        "attributes": {
+          "name": "Homestyle Chicken Rice Skillet Mix",
+          "price": 3.29,
+          "category": "rice_dinner_mix",
+          "rating": 4.9,
+          "cuisine_style": "american",
+          "spice_level": "mild",
+          "review_count": 1820,
+          "units_sold_last_30_days": 950
+        }
+      },
+      {
+        "id": "prod_garden_herb_pilaf_01",
+        "type": "product",
+        "attributes": {
+          "name": "Garden Herb Rice Pilaf Mix",
+          "price": 2.79,
+          "category": "rice_dinner_mix",
+          "rating": 4.7,
+          "cuisine_style": "generic",
+          "spice_level": "mild",
+          "review_count": 930,
+          "units_sold_last_30_days": 610
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_cajun_red_beans_rice_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

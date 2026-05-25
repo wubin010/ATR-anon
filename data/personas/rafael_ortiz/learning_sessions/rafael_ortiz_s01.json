@@ -1,0 +1,136 @@
+{
+  "session_id": "rafael_ortiz_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Add a meeting to my calendar.",
+  "task_params": {
+    "calendar": "work",
+    "title": "Interdisciplinary huddle",
+    "start_time": "2025-02-12T15:30:00-06:00",
+    "end_time": "2025-02-12T15:45:00-06:00",
+    "participants": [
+      "charge.nurse@rgvmed.org",
+      "case.manager@rgvmed.org",
+      "pt.lead@rgvmed.org"
+    ],
+    "location": "3 West nurses station"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work",
+        "participants": [
+          "charge.nurse@rgvmed.org",
+          "case.manager@rgvmed.org",
+          "pt.lead@rgvmed.org"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-12T15:30:00-06:00",
+        "end_time": "2025-02-12T15:45:00-06:00",
+        "participants": [
+          "charge.nurse@rgvmed.org",
+          "case.manager@rgvmed.org",
+          "pt.lead@rgvmed.org"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Interdisciplinary huddle",
+        "start_time": "2025-02-12T15:30:00-06:00",
+        "end_time": "2025-02-12T15:45:00-06:00",
+        "participants": [
+          "charge.nurse@rgvmed.org",
+          "case.manager@rgvmed.org",
+          "pt.lead@rgvmed.org"
+        ],
+        "location": "3 West nurses station"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Med pass block",
+          "start_time": "2025-02-12T13:00:00-06:00",
+          "end_time": "2025-02-12T14:00:00-06:00",
+          "participants": [],
+          "location": "3 West",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Discharge planning review",
+          "start_time": "2025-02-12T14:15:00-06:00",
+          "end_time": "2025-02-12T15:00:00-06:00",
+          "participants": [
+            "charge.nurse@rgvmed.org",
+            "case.manager@rgvmed.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Interdisciplinary huddle",
+          "start_time": "2025-02-12T15:30:00-06:00",
+          "end_time": "2025-02-12T15:45:00-06:00",
+          "participants": [
+            "social.worker@rgvmed.org"
+          ],
+          "location": "3 West nurses station",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_personal_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pick up groceries",
+          "start_time": "2025-02-12T18:15:00-06:00",
+          "end_time": "2025-02-12T19:00:00-06:00",
+          "participants": [],
+          "location": "HEB",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

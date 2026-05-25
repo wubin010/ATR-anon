@@ -1,0 +1,97 @@
+{
+  "session_id": "eduardo_rivera_s51",
+  "session_type": "learning",
+  "day_offset": 51,
+  "domain": "reservation",
+  "reason_for_call": "Book an appointment.",
+  "task_params": {
+    "service_type": "massage",
+    "location": "Pittsburg",
+    "sort_by": "rating",
+    "date_time": "2025-03-06T18:30:00-08:00"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "massage",
+        "location": "Pittsburg",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "svc_delta_03",
+        "date_time": "2025-03-06T18:30:00-08:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_tranquil_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Tranquil Bodyworks",
+          "service_type": "massage",
+          "location": "Pittsburg",
+          "rating": 4.8,
+          "distance_km": 3.2
+        }
+      },
+      {
+        "id": "svc_restore_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Restore Wellness Studio",
+          "service_type": "massage",
+          "location": "Pittsburg",
+          "rating": 4.6,
+          "distance_km": 2.1
+        }
+      },
+      {
+        "id": "svc_delta_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Delta Recovery Spa",
+          "service_type": "massage",
+          "location": "Pittsburg",
+          "rating": 4.9,
+          "distance_km": 4.7
+        }
+      },
+      {
+        "id": "svc_balance_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Balance Point Therapy",
+          "service_type": "physical therapy",
+          "location": "Pittsburg",
+          "rating": 4.7,
+          "distance_km": 1.9
+        }
+      }
+    ]
+  }
+}

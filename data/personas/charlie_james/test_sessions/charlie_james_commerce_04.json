@@ -1,0 +1,89 @@
+{
+  "instruction": "Please handle the return for the flap disc from my recent order—the grit on the one that arrived is wrong.",
+  "gold_value": "exchange",
+  "session_id": "charlie_james_commerce_04_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "charlie_james_commerce_04",
+  "rule_ref": {
+    "rule_id": "charlie_james_commerce_04",
+    "rule_text": "When a purchased item is wrong or defective, he prefers an exchange rather than taking a refund.",
+    "canonical_answer": "If a tool or part is wrong, I usually want the replacement, not my money back."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_flap_disc_01",
+        "type": "product",
+        "attributes": {
+          "name": "Zirconia Flap Disc 4.5-Inch",
+          "price": 11.49,
+          "category": "abrasives",
+          "rating": 4.5,
+          "brand": "ForgeLine",
+          "order_id": "ord_49218_shop",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-12"
+        }
+      },
+      {
+        "id": "prod_welding_gloves_01",
+        "type": "product",
+        "attributes": {
+          "name": "Split Leather Welding Gloves",
+          "price": 18.99,
+          "category": "safety_gear",
+          "rating": 4.8,
+          "brand": "ArcShield",
+          "order_id": "ord_49107_shop",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-09"
+        }
+      },
+      {
+        "id": "prod_socket_adapter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Impact Socket Adapter Set",
+          "price": 16.25,
+          "category": "auto_tools",
+          "rating": 4.7,
+          "brand": "IronPeak",
+          "order_id": "ord_48966_shop",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-05"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

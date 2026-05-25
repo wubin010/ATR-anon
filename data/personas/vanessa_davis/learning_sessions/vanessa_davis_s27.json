@@ -1,0 +1,130 @@
+{
+  "session_id": "vanessa_davis_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a work conversation.",
+  "task_params": {
+    "calendar": "work",
+    "title": "Career path call with Marlon Brooks",
+    "start_time": "2025-03-19T12:15:00-07:00",
+    "end_time": "2025-03-19T12:45:00-07:00",
+    "participants": [
+      "marlon.brooks@highdeserttransit.com"
+    ],
+    "location": "Phone call"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-19T12:15:00-07:00",
+        "end_time": "2025-03-19T12:45:00-07:00",
+        "participants": [
+          "marlon.brooks@highdeserttransit.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Career path call with Marlon Brooks",
+        "start_time": "2025-03-19T12:15:00-07:00",
+        "end_time": "2025-03-19T12:45:00-07:00",
+        "participants": [
+          "marlon.brooks@highdeserttransit.com"
+        ],
+        "location": "Phone call"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_routecheck_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "West Yard route check-in",
+          "start_time": "2025-03-19T10:30:00-07:00",
+          "end_time": "2025-03-19T11:15:00-07:00",
+          "participants": [
+            "dispatch@kernfreight.com",
+            "vanessa.davis@kernfreight.com"
+          ],
+          "location": "Dispatch office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_lunchblock_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Career path call with Marlon Brooks",
+          "start_time": "2025-03-19T12:15:00-07:00",
+          "end_time": "2025-03-19T12:45:00-07:00",
+          "participants": [
+            "marlon.brooks@highdeserttransit.com"
+          ],
+          "location": "Phone call",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_safetyreview_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quarterly safety review prep",
+          "start_time": "2025-03-19T14:00:00-07:00",
+          "end_time": "2025-03-19T15:00:00-07:00",
+          "participants": [
+            "vanessa.davis@kernfreight.com",
+            "r.ortega@kernfreight.com"
+          ],
+          "location": "Training room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_familydinner_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Denise",
+          "start_time": "2025-03-19T18:30:00-07:00",
+          "end_time": "2025-03-19T20:00:00-07:00",
+          "participants": [
+            "denise.davis@example.com"
+          ],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

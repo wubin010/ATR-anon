@@ -1,0 +1,188 @@
+{
+  "session_id": "romisha_shields_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "drivable",
+      "historical",
+      "accessible"
+    ],
+    "destination_ids": [
+      "dest_montgomery_01",
+      "dest_tuscumbia_02"
+    ],
+    "destination": "Montgomery",
+    "duration_days": 3,
+    "traveler_count": 2,
+    "selected_stop_ids": [
+      "stop_mgm_legacy_01",
+      "stop_mgm_dexter_02",
+      "stop_mgm_riverwalk_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "drivable",
+          "historical",
+          "accessible"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_montgomery_01",
+          "dest_tuscumbia_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Montgomery",
+        "stop_tags": [
+          "historical",
+          "accessible"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Montgomery",
+        "duration_days": 3,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_mgm_legacy_01",
+          "stop_mgm_dexter_02",
+          "stop_mgm_riverwalk_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": false,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_montgomery_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Montgomery",
+          "region": "Alabama",
+          "tags": [
+            "drivable",
+            "historical",
+            "accessible",
+            "civil rights",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_tuscumbia_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Tuscumbia",
+          "region": "Alabama",
+          "tags": [
+            "drivable",
+            "historical",
+            "accessible",
+            "small town",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_natchez_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Natchez",
+          "region": "Mississippi",
+          "tags": [
+            "drivable",
+            "historical",
+            "river town",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "stop_mgm_legacy_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "The Legacy Museum",
+          "location": "Montgomery",
+          "tags": [
+            "historical",
+            "museum",
+            "accessible",
+            "civil rights"
+          ]
+        }
+      },
+      {
+        "id": "stop_mgm_dexter_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Dexter Avenue King Memorial Baptist Church",
+          "location": "Montgomery",
+          "tags": [
+            "historical",
+            "church",
+            "civil rights",
+            "accessible"
+          ]
+        }
+      },
+      {
+        "id": "stop_mgm_riverwalk_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Riverfront Park Walk",
+          "location": "Montgomery",
+          "tags": [
+            "historical",
+            "accessible",
+            "relaxed",
+            "scenic"
+          ]
+        }
+      }
+    ]
+  }
+}

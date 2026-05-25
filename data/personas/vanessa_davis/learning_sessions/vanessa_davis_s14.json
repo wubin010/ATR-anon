@@ -1,0 +1,118 @@
+{
+  "session_id": "vanessa_davis_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "scheduling",
+  "reason_for_call": "Handle a calendar plan.",
+  "task_params": {
+    "title": "Red Rock Canyon Stargazing Outing",
+    "start_time": "2025-03-29T18:45:00-07:00",
+    "end_time": "2025-03-29T22:15:00-07:00",
+    "location": "Red Rock Canyon State Park",
+    "response": "accept",
+    "remind_at": "2025-03-29T17:00:00-07:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "respond_to_event_invite",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "invites"
+      }
+    },
+    {
+      "tool": "respond_to_event_invite",
+      "arguments": {
+        "event_id": "evt_stargaze_01",
+        "response": "accept"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_stargaze_01",
+        "remind_at": "2025-03-29T17:00:00-07:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_stargaze_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Red Rock Canyon Stargazing Outing",
+          "start_time": "2025-03-29T18:45:00-07:00",
+          "end_time": "2025-03-29T22:15:00-07:00",
+          "participants": [
+            "Mojave Astronomy Club"
+          ],
+          "location": "Red Rock Canyon State Park",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_church_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Youth Vehicle Safety Workshop",
+          "start_time": "2025-03-29T14:00:00-07:00",
+          "end_time": "2025-03-29T16:00:00-07:00",
+          "participants": [
+            "New Hope Baptist Church"
+          ],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_route_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Route paperwork catch-up",
+          "start_time": "2025-03-29T09:30:00-07:00",
+          "end_time": "2025-03-29T10:30:00-07:00",
+          "participants": [],
+          "location": "Home office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Marcus",
+          "start_time": "2025-03-29T22:45:00-07:00",
+          "end_time": "2025-03-29T23:45:00-07:00",
+          "participants": [
+            "Marcus Davis"
+          ],
+          "location": "Mojave",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

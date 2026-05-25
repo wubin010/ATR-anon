@@ -1,0 +1,142 @@
+{
+  "session_id": "michael_argo_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox and draft replies.",
+  "task_params": {
+    "folder": "inbox",
+    "sender_one": "Riverfront Arts Center",
+    "sender_two": "Southeast Community College",
+    "message_ids": [
+      "msg_arts_01",
+      "msg_college_01"
+    ],
+    "priority": "high",
+    "label_ids": [
+      "lbl_action_01"
+    ],
+    "reply_points": [
+      "thank them for the acceptance",
+      "confirm attendance at the orientation",
+      "say he can bring 3 sample pieces",
+      "ask if digital portfolio links are welcome too"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "list_labels",
+    "label_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Riverfront Arts Center"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_arts_01",
+          "msg_college_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_arts_01"
+        ],
+        "label_ids": [
+          "lbl_action_01"
+        ]
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_arts_01",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_arts_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Riverfront Arts Center",
+          "subject": "Youth Mixed-Media Showcase: acceptance and next steps",
+          "body": "Hi Michael, your submission has been accepted for the Youth Mixed-Media Showcase. Please reply by Friday to confirm whether you can attend the artist orientation next Wednesday at 5:30 PM. You may bring up to 3 sample pieces for the preview table.",
+          "thread_id": "thr_arts_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-14T08:12:00"
+        }
+      },
+      {
+        "id": "msg_college_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Southeast Community College",
+          "subject": "Graphic Design certificate application received",
+          "body": "Hello Michael, we received your Graphic Design certificate application. Your file is complete, and no further action is needed right now. We will email you when the review is finished.",
+          "thread_id": "thr_college_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-14T09:03:00"
+        }
+      },
+      {
+        "id": "msg_store_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Board Barn",
+          "subject": "Your order has shipped",
+          "body": "Your tabletop order is on the way. Tracking updates will follow in a separate message.",
+          "thread_id": "thr_store_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-05-14T07:41:00"
+        }
+      },
+      {
+        "id": "lbl_action_01",
+        "type": "label",
+        "attributes": {
+          "name": "Needs Reply",
+          "topic": "follow-up"
+        }
+      }
+    ]
+  }
+}

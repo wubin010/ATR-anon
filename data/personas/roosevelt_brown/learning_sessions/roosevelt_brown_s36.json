@@ -1,0 +1,120 @@
+{
+  "session_id": "roosevelt_brown_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "reservation",
+  "reason_for_call": "Book some tickets.",
+  "task_params": {
+    "location": "Boston",
+    "event_tags": [
+      "art",
+      "exhibit"
+    ],
+    "date_time": "2025-09-13T14:00:00",
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Boston",
+        "event_tags": [
+          "art",
+          "exhibit"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_inklight_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_inklight_01",
+        "type": "event",
+        "attributes": {
+          "name": "Ink & Light: Contemporary Abstracts",
+          "location": "Boston",
+          "date_time": "2025-09-13T14:00:00",
+          "price": 24.0,
+          "event_tags": [
+            "art",
+            "exhibit",
+            "abstract"
+          ]
+        }
+      },
+      {
+        "id": "evt_harborphoto_02",
+        "type": "event",
+        "attributes": {
+          "name": "Harbor Frames Photography Showcase",
+          "location": "Boston",
+          "date_time": "2025-09-13T11:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "photography",
+            "gallery",
+            "exhibit"
+          ]
+        }
+      },
+      {
+        "id": "evt_ceramicpulse_03",
+        "type": "event",
+        "attributes": {
+          "name": "Ceramic Pulse at SoWa",
+          "location": "Boston",
+          "date_time": "2025-09-14T15:30:00",
+          "price": 20.0,
+          "event_tags": [
+            "art",
+            "ceramics",
+            "market"
+          ]
+        }
+      },
+      {
+        "id": "evt_colorfield_04",
+        "type": "event",
+        "attributes": {
+          "name": "Color Field Weekend Installation",
+          "location": "Cambridge",
+          "date_time": "2025-09-13T14:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "art",
+            "installation",
+            "exhibit"
+          ]
+        }
+      }
+    ]
+  }
+}

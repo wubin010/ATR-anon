@@ -1,0 +1,123 @@
+{
+  "session_id": "jennifer_philmon_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and reply to one message.",
+  "task_params": {
+    "folder": "inbox",
+    "target_sender": "Marta Reeves",
+    "priority": "high",
+    "archive_message_ids": [
+      "msg_ops_02",
+      "msg_ops_03"
+    ],
+    "reply_thread_id": "thr_ops_771",
+    "reply_points": [
+      "Acknowledge the note and thank her for flagging it",
+      "Say I can send the updated readings by 9 AM",
+      "Mention I already have the overnight pressure log",
+      "Keep the tone calm and straightforward"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "archive_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Marta Reeves"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_ops_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_ops_02",
+          "msg_ops_03"
+        ]
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_ops_771",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_ops_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marta Reeves",
+          "subject": "Need updated boiler readings before handoff",
+          "body": "Can you send me the updated boiler pressure and temperature readings before the morning handoff? I need them for the daily operations summary.",
+          "thread_id": "thr_ops_771",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T04:18:00"
+        }
+      },
+      {
+        "id": "msg_ops_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Safety Bulletin",
+          "subject": "Monthly PPE reminder",
+          "body": "Please review the updated PPE poster in the break room before the end of the month.",
+          "thread_id": "thr_ops_772",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T01:12:00"
+        }
+      },
+      {
+        "id": "msg_ops_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Plant Updates",
+          "subject": "Cafeteria vendor schedule",
+          "body": "The cafeteria vendor will arrive later than usual today. Breakfast service starts at 7:30.",
+          "thread_id": "thr_ops_773",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T02:05:00"
+        }
+      }
+    ]
+  }
+}

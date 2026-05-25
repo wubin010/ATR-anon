@@ -1,0 +1,104 @@
+{
+  "instruction": "My CareBridge telehealth subscription is still on the trial. Switch it to a paid option so I can keep using it for a small number of client sessions each month, but don't let the monthly bill jump too much.",
+  "gold_value": "pro",
+  "session_id": "kieren_ramseur_commerce_04_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "kieren_ramseur",
+  "rule_id": "kieren_ramseur_commerce_04",
+  "rule_ref": {
+    "rule_id": "kieren_ramseur_commerce_04",
+    "rule_text": "For software or service subscriptions that support her work, she prefers the professional middle tier over bare-bones or top-tier plans by default.",
+    "canonical_answer": "I always choose the pro-level plan before jumping to either the cheapest or the most expensive tier."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_carebridge_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "CareBridge Telehealth",
+          "plan": "trial",
+          "status": "active",
+          "price_per_period": 0.0,
+          "service_type": "telehealth platform",
+          "usage_context": "virtual client sessions",
+          "workspace_users": 1,
+          "monthly_sessions_last_period": 7,
+          "available_plans": [
+            {
+              "plan": "basic",
+              "price_per_period": 15.0
+            },
+            {
+              "plan": "pro",
+              "price_per_period": 69.0
+            },
+            {
+              "plan": "premium",
+              "price_per_period": 129.0
+            },
+            {
+              "plan": "enterprise",
+              "price_per_period": 399.0
+            }
+          ]
+        }
+      },
+      {
+        "id": "sub_practicenote_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "PracticeNote Forms",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 18.0,
+          "service_type": "intake forms",
+          "usage_context": "client onboarding paperwork"
+        }
+      },
+      {
+        "id": "sub_securevault_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "SecureVault Storage",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 96.0,
+          "service_type": "encrypted document storage",
+          "usage_context": "archived session files"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "pro"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

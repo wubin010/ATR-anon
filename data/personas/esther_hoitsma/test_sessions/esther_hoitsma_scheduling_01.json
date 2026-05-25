@@ -1,0 +1,93 @@
+{
+  "instruction": "I still haven't replied to the Caldwell United fall league mixer at Brookside Field on 2026-09-12 from 3:00 to 4:30pm. See what else I have then and send the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "esther_hoitsma_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "esther_hoitsma_scheduling_01",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_scheduling_01",
+    "rule_text": "When an invitation overlaps with work coverage or an unresolved commitment, Esther prefers to respond tentatively rather than accepting or declining right away.",
+    "canonical_answer": "When my schedule is still in flux, I usually mark invites as tentative until I know I can fully commit."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_caldwell_mixer_20260912",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Caldwell United Fall League Mixer",
+          "start_time": "2026-09-12T15:00:00-04:00",
+          "end_time": "2026-09-12T16:30:00-04:00",
+          "participants": [
+            "events@caldwellunited.org",
+            "esther.hoitsma@example.com"
+          ],
+          "location": "Brookside Field Clubhouse",
+          "calendar": "invites",
+          "status": "invited",
+          "organizer": "Caldwell United Co-ed Recreational Soccer League"
+        }
+      },
+      {
+        "id": "evt_work_client_schedule_coverage_20260912",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Client schedule coverage for Dana's desk",
+          "start_time": "2026-09-12T14:30:00-04:00",
+          "end_time": "2026-09-12T17:00:00-04:00",
+          "participants": [
+            "esther.hoitsma@example.com",
+            "dana.reyes@northshorept.com"
+          ],
+          "location": "Northshore PT front office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_maya_20260912",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Maya",
+          "start_time": "2026-09-12T19:00:00-04:00",
+          "end_time": "2026-09-12T20:30:00-04:00",
+          "participants": [
+            "esther.hoitsma@example.com",
+            "maya.bennett@example.com"
+          ],
+          "location": "Juniper Table",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

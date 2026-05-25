@@ -1,0 +1,154 @@
+{
+  "session_id": "joseph_eldridge_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a get-together.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Ham Radio Catch-up",
+    "start_time": "2025-03-28T19:30:00-04:00",
+    "end_time": "2025-03-28T20:30:00-04:00",
+    "participants": [
+      "Carl Benson",
+      "Marty Ruiz"
+    ],
+    "location": "Joseph's house"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-28T19:30:00-04:00",
+        "end_time": "2025-03-28T20:30:00-04:00",
+        "participants": [
+          "Carl Benson",
+          "Marty Ruiz"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Ham Radio Catch-up",
+        "start_time": "2025-03-28T19:30:00-04:00",
+        "end_time": "2025-03-28T20:30:00-04:00",
+        "participants": [
+          "Carl Benson",
+          "Marty Ruiz"
+        ],
+        "location": "Joseph's house"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_family_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Linda's sister",
+          "start_time": "2025-03-28T18:00:00-04:00",
+          "end_time": "2025-03-28T19:15:00-04:00",
+          "participants": [
+            "Joseph Eldridge",
+            "Linda Eldridge",
+            "Sharon Pike"
+          ],
+          "location": "Sharon's place",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_church_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church committee call",
+          "start_time": "2025-03-28T21:00:00-04:00",
+          "end_time": "2025-03-28T21:45:00-04:00",
+          "participants": [
+            "Joseph Eldridge",
+            "Deacon Mills",
+            "Ruth Carver"
+          ],
+          "location": "Phone",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Power module design review",
+          "start_time": "2025-03-28T16:00:00-04:00",
+          "end_time": "2025-03-28T17:00:00-04:00",
+          "participants": [
+            "Joseph Eldridge",
+            "Nina Patel",
+            "Evan Cho"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_walk_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Walking Club",
+          "start_time": "2025-03-29T08:30:00-04:00",
+          "end_time": "2025-03-29T09:30:00-04:00",
+          "participants": [
+            "Joseph Eldridge",
+            "Alan Forbes"
+          ],
+          "location": "Duke East Campus",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_radio_05",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Ham Radio Catch-up",
+          "start_time": "2025-03-28T19:30:00-04:00",
+          "end_time": "2025-03-28T20:30:00-04:00",
+          "participants": [
+            "Carl Benson",
+            "Marty Ruiz"
+          ],
+          "location": "Joseph's house",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      }
+    ]
+  }
+}

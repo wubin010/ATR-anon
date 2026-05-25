@@ -1,0 +1,97 @@
+{
+  "session_id": "romisha_shields_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "travel",
+  "reason_for_call": "Find a hotel.",
+  "task_params": {
+    "location": "Montgomery",
+    "guest_count": 2,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "hotel_offer_id": "hot_riverfront_01"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Montgomery",
+        "guest_count": 2,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hot_riverfront_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hot_riverfront_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverfront Suites Montgomery",
+          "location": "Montgomery, AL",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 129.0
+        }
+      },
+      {
+        "id": "hot_capitol_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Capitol Comfort Inn",
+          "location": "Montgomery, AL",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 149.0
+        }
+      },
+      {
+        "id": "hot_heritage_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Heritage Plaza Hotel",
+          "location": "Montgomery, AL",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 3,
+          "max_guests_per_room": 4,
+          "price_per_night": 165.0
+        }
+      }
+    ]
+  }
+}

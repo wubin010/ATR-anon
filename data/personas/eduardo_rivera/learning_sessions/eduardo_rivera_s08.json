@@ -1,0 +1,109 @@
+{
+  "session_id": "eduardo_rivera_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "scheduling",
+  "reason_for_call": "Add something to my calendar.",
+  "task_params": {
+    "title": "Volunteer Health Fair Planning",
+    "start_time": "2025-03-13T19:30:00-07:00",
+    "end_time": "2025-03-13T21:00:00-07:00",
+    "location": "Home"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-13T19:30:00-07:00",
+        "end_time": "2025-03-13T21:00:00-07:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Volunteer Health Fair Planning",
+        "start_time": "2025-03-13T19:30:00-07:00",
+        "end_time": "2025-03-13T21:00:00-07:00",
+        "location": "Home"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_workshop_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Lab Workflow Review",
+          "start_time": "2025-03-13T16:00:00-07:00",
+          "end_time": "2025-03-13T17:00:00-07:00",
+          "participants": [
+            "labteam@brightsmilelab.com"
+          ],
+          "location": "BrightSmile Lab",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Marisol",
+          "start_time": "2025-03-13T18:00:00-07:00",
+          "end_time": "2025-03-13T19:00:00-07:00",
+          "participants": [
+            "marisol.rivera@example.com"
+          ],
+          "location": "Los Medanos Bistro",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hike_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "East Bay Trail Hikers Meetup",
+          "start_time": "2025-03-15T08:00:00-07:00",
+          "end_time": "2025-03-15T11:00:00-07:00",
+          "participants": [
+            "events@eastbaytrailhikers.org"
+          ],
+          "location": "Mount Diablo",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_gallery_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Volunteer Health Fair Planning",
+          "start_time": "2025-03-13T19:30:00-07:00",
+          "end_time": "2025-03-13T21:00:00-07:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

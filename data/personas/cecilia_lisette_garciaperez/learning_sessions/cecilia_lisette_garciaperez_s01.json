@@ -1,0 +1,119 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Organize some calendar time.",
+  "task_params": {
+    "calendar": "work",
+    "title": "Quiet Editing Block",
+    "start_time": "2025-03-12T13:30:00-05:00",
+    "end_time": "2025-03-12T15:30:00-05:00",
+    "location": "Home office"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-12T13:30:00-05:00",
+        "end_time": "2025-03-12T15:30:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Quiet Editing Block",
+        "start_time": "2025-03-12T13:30:00-05:00",
+        "end_time": "2025-03-12T15:30:00-05:00",
+        "location": "Home office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Editorial Standup",
+          "start_time": "2025-03-10T09:00:00-05:00",
+          "end_time": "2025-03-10T09:30:00-05:00",
+          "participants": [
+            "marina@press.org",
+            "jlee@press.org"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Manuscript Review Meeting",
+          "start_time": "2025-03-11T11:00:00-05:00",
+          "end_time": "2025-03-11T12:00:00-05:00",
+          "participants": [
+            "ana@press.org",
+            "tom@press.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Translator Check-in",
+          "start_time": "2025-03-12T10:00:00-05:00",
+          "end_time": "2025-03-12T10:45:00-05:00",
+          "participants": [
+            "lucia@press.org"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quiet Editing Block",
+          "start_time": "2025-03-12T13:30:00-05:00",
+          "end_time": "2025-03-12T15:30:00-05:00",
+          "participants": [],
+          "location": "Home office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

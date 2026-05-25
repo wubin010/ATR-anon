@@ -1,0 +1,168 @@
+{
+  "session_id": "gabriel_campbell_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "lighthouse",
+      "coffee",
+      "coastal"
+    ],
+    "destination_ids": [
+      "dst_capecod_01"
+    ],
+    "destination": "Cape Cod",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "selected_stop_ids": [
+      "stp_nauset_01",
+      "stp_chatham_02",
+      "stp_wirehen_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "lighthouse",
+          "coffee",
+          "coastal"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_capecod_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Cape Cod",
+        "stop_tags": [
+          "lighthouse",
+          "coffee"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Cape Cod",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_nauset_01",
+          "stp_chatham_02",
+          "stp_wirehen_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_capecod_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Cape Cod",
+          "region": "Massachusetts",
+          "tags": [
+            "lighthouse",
+            "coastal",
+            "coffee",
+            "walks",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_newport_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Newport",
+          "region": "Rhode Island",
+          "tags": [
+            "coastal",
+            "mansions",
+            "coffee",
+            "harbor"
+          ]
+        }
+      },
+      {
+        "id": "stp_nauset_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Nauset Light Beach",
+          "location": "Cape Cod",
+          "tags": [
+            "lighthouse",
+            "coastal",
+            "walks",
+            "photography"
+          ]
+        }
+      },
+      {
+        "id": "stp_chatham_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Chatham Lighthouse",
+          "location": "Cape Cod",
+          "tags": [
+            "lighthouse",
+            "walks",
+            "coastal",
+            "views"
+          ]
+        }
+      },
+      {
+        "id": "stp_wirehen_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Snowy Owl Coffee Roasters",
+          "location": "Cape Cod",
+          "tags": [
+            "coffee",
+            "quiet",
+            "reading",
+            "break"
+          ]
+        }
+      }
+    ]
+  }
+}

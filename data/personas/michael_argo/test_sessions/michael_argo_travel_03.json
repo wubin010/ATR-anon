@@ -1,0 +1,154 @@
+{
+  "instruction": "Please book a hotel in New Orleans for 2 adults and 1 room for the stay from 2026-04-17 to 2026-04-20. Pick one of the available options and complete the booking.",
+  "gold_value": "hotel_nola_crescent_budget_inn_01",
+  "session_id": "michael_argo_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "michael_argo_travel_03",
+  "rule_ref": {
+    "rule_id": "michael_argo_travel_03",
+    "rule_text": "For hotel bookings, he favors budget-friendly offers over pricier stays.",
+    "canonical_answer": "When I book a place to stay, I go for the budget option."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hotel_nola_crescent_budget_inn_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Crescent Budget Inn",
+          "location": "Mid-City, New Orleans, Louisiana",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-20",
+          "available_rooms": 8,
+          "max_guests_per_room": 2,
+          "price_per_night": 129,
+          "category": "budget",
+          "star_rating": 3,
+          "rating": 4.2,
+          "review_count": 487,
+          "neighborhood_profile": "local corridor",
+          "distance_to_streetcar_min": 9
+        }
+      },
+      {
+        "id": "hotel_nola_royal_quarter_boutique_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Royal Quarter Boutique Hotel",
+          "location": "French Quarter, New Orleans, Louisiana",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-20",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "category": "upscale",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 2144,
+          "neighborhood_profile": "historic center",
+          "walk_time_to_riverfront_min": 6
+        }
+      },
+      {
+        "id": "hotel_nola_riverfront_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverfront Grand New Orleans",
+          "location": "Warehouse District, New Orleans, Louisiana",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-20",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 329,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 1788,
+          "neighborhood_profile": "riverfront arts district",
+          "amenities": [
+            "rooftop_pool",
+            "concierge",
+            "fitness_center"
+          ]
+        }
+      },
+      {
+        "id": "hotel_nola_garden_district_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Garden District Suites",
+          "location": "Garden District, New Orleans, Louisiana",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-20",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 259,
+          "category": "upscale",
+          "star_rating": 4,
+          "rating": 4.7,
+          "review_count": 1560,
+          "neighborhood_profile": "historic residential district",
+          "amenities": [
+            "courtyard",
+            "balcony_rooms",
+            "breakfast"
+          ]
+        }
+      },
+      {
+        "id": "hotel_nola_canal_central_hotel_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Canal Central Hotel",
+          "location": "Central Business District, New Orleans, Louisiana",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-20",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 239,
+          "category": "midrange",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 2310,
+          "neighborhood_profile": "downtown core",
+          "distance_to_transit_km": 0.2
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "hotel_nola_crescent_budget_inn_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

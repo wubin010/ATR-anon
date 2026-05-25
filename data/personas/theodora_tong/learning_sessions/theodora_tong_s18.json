@@ -1,0 +1,93 @@
+{
+  "session_id": "theodora_tong_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "template_doc_type": "template",
+    "location": "Writing",
+    "doc_type": "note",
+    "title": "Night Fragments and Image Ideas",
+    "content_brief": "A clean note for poetry fragments and image ideas with simple sections for lines, images, and tags."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Writing",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Night Fragments and Image Ideas",
+        "location": "Writing",
+        "content_brief": "A clean note for poetry fragments and image ideas with simple sections for lines, images, and tags."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Writing Capture Template",
+          "doc_type": "template",
+          "location": "Writing",
+          "content_brief": "Simple capture structure with sections for fragments, visual ideas, and keywords."
+        }
+      },
+      {
+        "id": "doc_note_02",
+        "type": "document",
+        "attributes": {
+          "title": "Sketchbook Thoughts",
+          "doc_type": "note",
+          "location": "Writing",
+          "content_brief": "Loose notes mixing short lines, image cues, and reflections."
+        }
+      },
+      {
+        "id": "doc_template_03",
+        "type": "document",
+        "attributes": {
+          "title": "Project Reflection Template",
+          "doc_type": "template",
+          "location": "Studio",
+          "content_brief": "Template for reviewing art sessions and next steps."
+        }
+      },
+      {
+        "id": "doc_note_04",
+        "type": "document",
+        "attributes": {
+          "title": "Reading Notes",
+          "doc_type": "note",
+          "location": "Class",
+          "content_brief": "Quotes and reactions from assigned reading."
+        }
+      }
+    ]
+  }
+}

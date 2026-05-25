@@ -1,0 +1,141 @@
+{
+  "instruction": "Book one hotel room in Savannah for 2 adults for May 14, 2026 through May 17, 2026. Pick one of the available options and take care of the booking.",
+  "gold_value": "htl_savannah_garden_inn_02",
+  "session_id": "vanessa_davis_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "vanessa_davis_travel_04",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_travel_04",
+    "rule_text": "When booking lodging for her own trips, she prefers modest budget-friendly hotel options over upscale ones.",
+    "canonical_answer": "I want practical, budget-conscious lodging rather than luxury hotel splurges."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_savannah_garden_inn_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Savannah Garden Inn",
+          "location": "Midtown Savannah, Georgia",
+          "check_in_date": "2026-05-14",
+          "check_out_date": "2026-05-17",
+          "available_rooms": 8,
+          "max_guests_per_room": 2,
+          "price_per_night": 149,
+          "category": "budget",
+          "star_rating": 3,
+          "rating": 4.3,
+          "review_count": 428,
+          "distance_to_historic_district_km": 4.8
+        }
+      },
+      {
+        "id": "htl_savannah_forsyth_grand_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Forsyth Grand Hotel",
+          "location": "Historic District, Savannah, Georgia",
+          "check_in_date": "2026-05-14",
+          "check_out_date": "2026-05-17",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 2510,
+          "distance_to_river_street_km": 0.6
+        }
+      },
+      {
+        "id": "htl_savannah_riverwalk_suites_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverwalk Suites Savannah",
+          "location": "River Street, Savannah, Georgia",
+          "check_in_date": "2026-05-14",
+          "check_out_date": "2026-05-17",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 259,
+          "category": "upscale",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 1762,
+          "distance_to_river_street_km": 0.1
+        }
+      },
+      {
+        "id": "htl_savannah_oak_manor_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Oak Manor House",
+          "location": "Historic District, Savannah, Georgia",
+          "check_in_date": "2026-05-14",
+          "check_out_date": "2026-05-17",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 229,
+          "category": "upscale",
+          "star_rating": 4,
+          "rating": 4.7,
+          "review_count": 1361,
+          "distance_to_forsyth_park_km": 0.3
+        }
+      },
+      {
+        "id": "htl_savannah_market_square_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Market Square Hotel",
+          "location": "City Market, Savannah, Georgia",
+          "check_in_date": "2026-05-14",
+          "check_out_date": "2026-05-17",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 239,
+          "category": "upscale",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 1984,
+          "distance_to_city_market_km": 0.1
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_savannah_garden_inn_02"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

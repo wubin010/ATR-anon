@@ -1,0 +1,160 @@
+{
+  "instruction": "Please book one hotel in Portland, Oregon for 2 adults and 1 room, and keep it under $420 per night. Just pick an available option and take care of it.",
+  "gold_value": "htl_portland_ink_house_01",
+  "session_id": "iris_parker_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "iris_parker_travel_05",
+  "rule_ref": {
+    "rule_id": "iris_parker_travel_05",
+    "rule_text": "When booking lodging, she prefers moderate-budget boutique or artsy accommodations over generic chain-style options.",
+    "canonical_answer": "I prefer moderately priced boutique hotels with some character."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_portland_ink_house_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Ink House Hotel",
+          "location": "Portland, Oregon",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 228,
+          "category": "midscale",
+          "property_style": "boutique hotel",
+          "brand_affiliation": "independent",
+          "neighborhood_profile": "Pearl District arts area",
+          "design_theme": "rotating local printmaking exhibits",
+          "rating": 4.4,
+          "review_count": 338
+        }
+      },
+      {
+        "id": "htl_portland_canvas_loft_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Canvas Loft Hotel",
+          "location": "Portland, Oregon",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 389,
+          "category": "luxury",
+          "property_style": "boutique hotel",
+          "brand_affiliation": "independent",
+          "neighborhood_profile": "central gallery corridor",
+          "design_theme": "contemporary sculpture collection",
+          "rating": 4.7,
+          "review_count": 982
+        }
+      },
+      {
+        "id": "htl_portland_cityline_express_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "CityLine Express Portland",
+          "location": "Portland, Oregon",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 164,
+          "category": "economy",
+          "property_style": "standard chain hotel",
+          "brand_affiliation": "national chain",
+          "neighborhood_profile": "downtown transit hub",
+          "rating": 4.6,
+          "review_count": 3410,
+          "amenities": [
+            "free_breakfast",
+            "24h_front_desk"
+          ]
+        }
+      },
+      {
+        "id": "htl_portland_convention_inn_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Portland Convention Inn",
+          "location": "Portland, Oregon",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 11,
+          "max_guests_per_room": 2,
+          "price_per_night": 179,
+          "category": "midscale",
+          "property_style": "chain hotel",
+          "brand_affiliation": "national chain",
+          "neighborhood_profile": "convention center district",
+          "rating": 4.8,
+          "review_count": 5275,
+          "amenities": [
+            "fitness_center",
+            "business_center"
+          ]
+        }
+      },
+      {
+        "id": "htl_portland_gateway_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Gateway Suites Portland",
+          "location": "Portland, Oregon",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 172,
+          "category": "midscale",
+          "property_style": "all-suite chain hotel",
+          "brand_affiliation": "national chain",
+          "neighborhood_profile": "medical district",
+          "rating": 4.7,
+          "review_count": 2194,
+          "amenities": [
+            "kitchenette",
+            "parking"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_portland_ink_house_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

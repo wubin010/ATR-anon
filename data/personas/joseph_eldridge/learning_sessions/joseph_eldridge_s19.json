@@ -1,0 +1,169 @@
+{
+  "session_id": "joseph_eldridge_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Germany",
+      "industrial heritage",
+      "slow travel"
+    ],
+    "destination_ids": [
+      "dest_ruhr_01"
+    ],
+    "destination": "Ruhr",
+    "duration_days": 8,
+    "traveler_count": 2,
+    "stop_tags": [
+      "industrial heritage",
+      "museum",
+      "scenic"
+    ],
+    "selected_stop_ids": [
+      "stop_zollverein_01",
+      "stop_gasometer_01",
+      "stop_landschaftspark_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Germany",
+          "industrial heritage",
+          "slow travel"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_ruhr_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Ruhr",
+        "stop_tags": [
+          "industrial heritage",
+          "museum",
+          "scenic"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Ruhr",
+        "duration_days": 8,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_zollverein_01",
+          "stop_gasometer_01",
+          "stop_landschaftspark_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_ruhr_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Ruhr",
+          "region": "Germany",
+          "tags": [
+            "industrial heritage",
+            "slow travel",
+            "museum",
+            "canal walks"
+          ]
+        }
+      },
+      {
+        "id": "dest_hamburg_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Hamburg",
+          "region": "Germany",
+          "tags": [
+            "port history",
+            "museum",
+            "urban"
+          ]
+        }
+      },
+      {
+        "id": "stop_zollverein_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Zollverein Coal Mine Industrial Complex",
+          "location": "Essen, Ruhr",
+          "tags": [
+            "industrial heritage",
+            "museum",
+            "architecture"
+          ]
+        }
+      },
+      {
+        "id": "stop_gasometer_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Gasometer Oberhausen",
+          "location": "Oberhausen, Ruhr",
+          "tags": [
+            "industrial heritage",
+            "scenic",
+            "exhibition"
+          ]
+        }
+      },
+      {
+        "id": "stop_landschaftspark_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Landschaftspark Duisburg-Nord",
+          "location": "Duisburg, Ruhr",
+          "tags": [
+            "industrial heritage",
+            "scenic",
+            "park"
+          ]
+        }
+      }
+    ]
+  }
+}

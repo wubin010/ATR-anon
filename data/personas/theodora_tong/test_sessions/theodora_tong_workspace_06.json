@@ -1,0 +1,165 @@
+{
+  "instruction": "Please sort the files sitting in /Desktop/Current — it's a mix of images, PDFs, spreadsheets, and docs from the last few months, and I just need the folder organized.",
+  "gold_value": "by_project",
+  "session_id": "theodora_tong_workspace_06_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "theodora_tong_workspace_06",
+  "rule_ref": {
+    "rule_id": "theodora_tong_workspace_06",
+    "rule_text": "When organizing creative and school files, she prefers them to be classified by project rather than by file type or date.",
+    "canonical_answer": "I organize files by project so my workshop, class, and art pieces stay grouped together."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_current_printshop_mockup_01",
+        "type": "file",
+        "attributes": {
+          "name": "homepage-mockup.png",
+          "file_type": "image",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Print Boutique Launch",
+          "modified_date": "2026-03-02",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_current_printshop_budget_01",
+        "type": "file",
+        "attributes": {
+          "name": "shipping-costs.xlsx",
+          "file_type": "xlsx",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Print Boutique Launch",
+          "modified_date": "2026-03-11",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_current_arthistory_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "lecture-outline.docx",
+          "file_type": "docx",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Art History 102",
+          "modified_date": "2026-04-05",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_current_arthistory_reading_01",
+        "type": "file",
+        "attributes": {
+          "name": "gallery-reading.pdf",
+          "file_type": "pdf",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Art History 102",
+          "modified_date": "2026-04-09",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_current_craftnight_flyer_01",
+        "type": "file",
+        "attributes": {
+          "name": "flyer-draft.png",
+          "file_type": "image",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Community Craft Night",
+          "modified_date": "2026-05-01",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_current_craftnight_signup_01",
+        "type": "file",
+        "attributes": {
+          "name": "volunteer-roster.xlsx",
+          "file_type": "xlsx",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Community Craft Night",
+          "modified_date": "2026-05-03",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_current_watercolor_ref_01",
+        "type": "file",
+        "attributes": {
+          "name": "color-study.docx",
+          "file_type": "docx",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Watercolor Series",
+          "modified_date": "2026-05-18",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_current_watercolor_handout_01",
+        "type": "file",
+        "attributes": {
+          "name": "materials-list.pdf",
+          "file_type": "pdf",
+          "location": "/Desktop/Current",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false,
+          "project": "Watercolor Series",
+          "modified_date": "2026-05-21",
+          "priority": "medium"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

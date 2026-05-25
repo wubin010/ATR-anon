@@ -1,0 +1,164 @@
+{
+  "instruction": "I'm putting together a 3-day solo trip to Kyoto. From the candidate stops below, choose one stop to make the main focus of the itinerary and go ahead with the plan.",
+  "gold_value": [
+    "stop_kyoto_higashiyama_artisan_01"
+  ],
+  "session_id": "eduardo_rivera_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "eduardo_rivera_travel_01",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_travel_01",
+    "rule_text": "When planning a trip, he prioritizes historic, artistic, and culturally immersive stops over generic luxury attractions.",
+    "canonical_answer": "When I travel, I want stops with cultural and artistic depth more than luxury attractions."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_kyoto_higashiyama_artisan_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Higashiyama Artisan Lanes",
+          "location": "Higashiyama, Kyoto, Japan",
+          "tags": [
+            "historic_district",
+            "traditional_architecture",
+            "artisan_workshops",
+            "tea_houses",
+            "temple_lanes",
+            "street_life",
+            "cultural_immersion"
+          ],
+          "rating": 4.5,
+          "review_count": 642
+        }
+      },
+      {
+        "id": "stop_kyoto_craft_gallery_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Kyoto Crafts & Design Gallery",
+          "location": "Nakagyo, Kyoto, Japan",
+          "tags": [
+            "design",
+            "crafts",
+            "gallery",
+            "indoor",
+            "shopping",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 5230
+        }
+      },
+      {
+        "id": "stop_kyoto_nijo_castle_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Nijō Castle",
+          "location": "Nakagyo, Kyoto, Japan",
+          "tags": [
+            "historic_site",
+            "castle",
+            "UNESCO",
+            "landmark",
+            "popular",
+            "guided_tours"
+          ],
+          "rating": 4.9,
+          "review_count": 18412
+        }
+      },
+      {
+        "id": "stop_kyoto_nishiki_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Nishiki Market Arcade",
+          "location": "Downtown Kyoto, Japan",
+          "tags": [
+            "market",
+            "food_stalls",
+            "street_life",
+            "shopping",
+            "tourist_hotspot",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 16104
+        }
+      },
+      {
+        "id": "stop_kyoto_kamo_rooftop_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Kamo River Luxury Tea Lounge",
+          "location": "Gion, Kyoto, Japan",
+          "tags": [
+            "luxury",
+            "afternoon_tea",
+            "river_view",
+            "designer_interiors",
+            "premium",
+            "reservation_only"
+          ],
+          "rating": 4.9,
+          "review_count": 3118
+        }
+      },
+      {
+        "id": "stop_kyoto_arashiyama_bamboo_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Arashiyama Bamboo Grove",
+          "location": "Arashiyama, Kyoto, Japan",
+          "tags": [
+            "scenic",
+            "nature",
+            "landmark",
+            "tourist_hotspot",
+            "popular",
+            "photo_spot"
+          ],
+          "rating": 4.8,
+          "review_count": 24376
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_kyoto_higashiyama_artisan_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

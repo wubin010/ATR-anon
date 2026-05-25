@@ -1,0 +1,111 @@
+{
+  "session_id": "eduardo_rivera_s52",
+  "session_type": "learning",
+  "day_offset": 52,
+  "domain": "workspace",
+  "reason_for_call": "Update a planning document",
+  "task_params": {
+    "location": "Career Planning",
+    "doc_type": "report",
+    "update_points": [
+      "add a 12-month CDT certification milestone plan",
+      "spell out steps toward lead laboratory manager responsibilities",
+      "make the boutique lab idea more concrete with service focus",
+      "include one conference or case-study goal",
+      "note community outreach through dental health workshops"
+    ],
+    "action_points": [
+      "price CDT exam and prep materials",
+      "ask supervisor about mentoring newer technicians",
+      "outline boutique lab services for dental and ocular cases"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document",
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Career Planning",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_career_roadmap_01",
+        "content_delta": "<authored from update_points>"
+      }
+    },
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_growth_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_career_roadmap_01",
+        "type": "document",
+        "attributes": {
+          "title": "Career Roadmap Draft",
+          "doc_type": "report",
+          "location": "Career Planning",
+          "content_brief": "Working career plan covering certification, leadership growth, and long-term lab ownership ideas."
+        }
+      },
+      {
+        "id": "doc_skill_gap_02",
+        "type": "document",
+        "attributes": {
+          "title": "Digital Workflow Skill Gap Notes",
+          "doc_type": "note",
+          "location": "Career Planning",
+          "content_brief": "Notes on scanning, CAD/CAM workflow, and training priorities."
+        }
+      },
+      {
+        "id": "doc_conference_03",
+        "type": "document",
+        "attributes": {
+          "title": "Conference Ideas 2025",
+          "doc_type": "memo",
+          "location": "Professional Development",
+          "content_brief": "Rough list of industry conferences and presentation ideas."
+        }
+      },
+      {
+        "id": "trk_growth_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Professional Growth Tracker"
+        }
+      }
+    ]
+  }
+}

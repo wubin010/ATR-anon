@@ -1,0 +1,87 @@
+{
+  "domain": "scheduling",
+  "instruction": "I haven't replied to that 3pm Saturday invite yet — I've already got something else booked at that time, send a fitting reply so they're not waiting.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_art_center_kids_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Kids Drawing Workshop — helper slot",
+          "start_time": "2026-04-18T15:00",
+          "end_time": "2026-04-18T17:00",
+          "participants": [
+            "marisol@riversideart.org"
+          ],
+          "location": "Riverside Community Art Center, Studio B",
+          "calendar": "default",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_pottery_class_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Wheel-throwing class — reserved spot",
+          "start_time": "2026-04-18T14:30",
+          "end_time": "2026-04-18T16:30",
+          "participants": [],
+          "location": "Clay Loft Studio",
+          "calendar": "default",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_sam_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Sam",
+          "start_time": "2026-04-18T19:00",
+          "end_time": "2026-04-18T20:30",
+          "participants": [
+            "sam.choi@example.com"
+          ],
+          "location": "North Pine Bistro",
+          "calendar": "default",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "session_id": "janice_savarese_scheduling_04_test",
+  "session_type": "test",
+  "persona_id": "janice_savarese",
+  "rule_id": "janice_savarese_scheduling_04",
+  "rule_ref": {
+    "rule_id": "janice_savarese_scheduling_04",
+    "rule_text": "Volunteer commitments at the community arts center default to keep / accept; do not treat them as ordinary cancellable events.",
+    "canonical_answer": "The community arts center volunteering — keep those slots for me, don't drop them like they're ordinary plans."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "accept"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

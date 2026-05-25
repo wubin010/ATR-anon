@@ -1,0 +1,120 @@
+{
+  "instruction": "Please book two tickets for something in Seattle on 2026-09-18, with a budget of up to $45 per person. Pick whichever option seems best.",
+  "gold_value": "evt_union_jazz_01",
+  "session_id": "cassandra_tovar_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "cassandra_tovar_reservation_02",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_reservation_02",
+    "rule_text": "When choosing entertainment tickets, she prefers jazz, gospel, or other live music events over non-music attractions.",
+    "canonical_answer": "For event tickets, I usually want live music—especially jazz, gospel, or soul-adjacent performances—over other kinds of events."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_union_jazz_01",
+        "type": "event",
+        "attributes": {
+          "name": "Union Street Jazz Cellar: Gospel & Soul Late Set",
+          "location": "Seattle",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 42,
+          "event_tags": [
+            "live_music",
+            "jazz",
+            "gospel",
+            "soul"
+          ],
+          "venue": "Union Street Jazz Cellar",
+          "popularity_rank": 4,
+          "expected_attendance": 140
+        }
+      },
+      {
+        "id": "evt_paramount_comedy_01",
+        "type": "event",
+        "attributes": {
+          "name": "Paramount Theater Stand-Up Headliner",
+          "location": "Seattle",
+          "date_time": "2026-09-18T20:30:00",
+          "price": 24,
+          "event_tags": [
+            "comedy",
+            "stand_up",
+            "touring_show"
+          ],
+          "venue": "Paramount Theater",
+          "popularity_rank": 1,
+          "expected_attendance": 2400
+        }
+      },
+      {
+        "id": "evt_mopop_afterhours_01",
+        "type": "event",
+        "attributes": {
+          "name": "Museum of Pop Culture After Hours",
+          "location": "Seattle",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 26,
+          "event_tags": [
+            "museum",
+            "pop_culture",
+            "immersive_exhibit"
+          ],
+          "venue": "Museum of Pop Culture",
+          "popularity_rank": 2,
+          "expected_attendance": 900
+        }
+      },
+      {
+        "id": "evt_harbor_magic_01",
+        "type": "event",
+        "attributes": {
+          "name": "Harbor Stage Illusion Showcase",
+          "location": "Seattle",
+          "date_time": "2026-09-18T20:15:00",
+          "price": 29,
+          "event_tags": [
+            "magic_show",
+            "illusion",
+            "touring_show"
+          ],
+          "venue": "Harbor Stage",
+          "popularity_rank": 3,
+          "expected_attendance": 650
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_union_jazz_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "session_id": "cassandra_tovar_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "commerce",
+  "reason_for_call": "Build a shopping list",
+  "task_params": {
+    "category": "produce",
+    "budget": 30,
+    "sort_by": "rating",
+    "items": [
+      "Collard Greens Bunch",
+      "Okra Basket",
+      "Yellow Onion Bag",
+      "Garlic Bulb Pack"
+    ],
+    "list_name": "Market Run and Weeknight Prep"
+  },
+  "expected_tools": [
+    "search_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "produce",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Collard Greens Bunch",
+          "Okra Basket",
+          "Yellow Onion Bag",
+          "Garlic Bulb Pack"
+        ],
+        "list_name": "Market Run and Weeknight Prep"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_collards_01",
+        "type": "product",
+        "attributes": {
+          "name": "Collard Greens Bunch",
+          "price": 3.5,
+          "category": "produce",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_okra_02",
+        "type": "product",
+        "attributes": {
+          "name": "Okra Basket",
+          "price": 4.25,
+          "category": "produce",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_onions_03",
+        "type": "product",
+        "attributes": {
+          "name": "Yellow Onion Bag",
+          "price": 2.99,
+          "category": "produce",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_garlic_04",
+        "type": "product",
+        "attributes": {
+          "name": "Garlic Bulb Pack",
+          "price": 2.5,
+          "category": "produce",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_kale_05",
+        "type": "product",
+        "attributes": {
+          "name": "Curly Kale Bunch",
+          "price": 3.25,
+          "category": "produce",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

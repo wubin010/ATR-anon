@@ -1,0 +1,105 @@
+{
+  "session_id": "theodora_tong_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "watercolor brushes",
+    "budget": 40,
+    "sort_by": "rating",
+    "product_id": "prod_sablemini_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "watercolor brushes",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_sablemini_01",
+          "prod_travelgold_02",
+          "prod_detailsnap_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_sablemini_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sablemini_01",
+        "type": "product",
+        "attributes": {
+          "name": "Silvercrest Mini Kolinsky Brush Set",
+          "price": 36.5,
+          "category": "watercolor brushes",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_travelgold_02",
+        "type": "product",
+        "attributes": {
+          "name": "Lark & Pine Golden Taklon Travel Brush Trio",
+          "price": 24.0,
+          "category": "watercolor brushes",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_detailsnap_03",
+        "type": "product",
+        "attributes": {
+          "name": "North Harbor Precision Detail Brush Pair",
+          "price": 18.75,
+          "category": "watercolor brushes",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_moplux_04",
+        "type": "product",
+        "attributes": {
+          "name": "Velour Series Mop Wash Brush",
+          "price": 41.25,
+          "category": "watercolor brushes",
+          "rating": 4.9
+        }
+      }
+    ]
+  }
+}

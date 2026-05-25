@@ -1,0 +1,100 @@
+{
+  "session_id": "theodora_tong_s56",
+  "session_type": "learning",
+  "day_offset": 56,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Next Season Portfolio Seeds",
+    "location": "Portfolio Planning",
+    "artist_influences_points": [
+      "Vincent van Gogh emotive color shifts",
+      "Yayoi Kusama immersive repetition and dots",
+      "Georgia O’Keeffe quiet floral scale",
+      "Stockade District texture studies",
+      "Mohawk River light and atmosphere"
+    ],
+    "color_palette_points": [
+      "muted sunflower yellow and midnight blue",
+      "sage green with clay pink",
+      "fog gray and charcoal",
+      "rust orange with cream highlights"
+    ],
+    "exhibit_ideas_points": [
+      "small series on urban textures and calm spaces",
+      "nature sketches paired with reflective captions",
+      "interactive corner with pattern studies",
+      "seasonal progression wall from spring to autumn"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Portfolio Planning",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Next Season Portfolio Seeds",
+        "location": "Portfolio Planning",
+        "content_brief": "<authored from artist_influences_points, color_palette_points, exhibit_ideas_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_portfolio_01",
+        "type": "document",
+        "attributes": {
+          "title": "Print Shop Product Notes",
+          "doc_type": "note",
+          "location": "Portfolio Planning",
+          "content_brief": "Brainstorm notes for print listings and image series."
+        }
+      },
+      {
+        "id": "doc_portfolio_02",
+        "type": "document",
+        "attributes": {
+          "title": "Workshop Themes Draft",
+          "doc_type": "note",
+          "location": "Portfolio Planning",
+          "content_brief": "Ideas for soothing art workshop themes and material pairings."
+        }
+      },
+      {
+        "id": "doc_journal_03",
+        "type": "document",
+        "attributes": {
+          "title": "Museum Reflection Fragments",
+          "doc_type": "note",
+          "location": "Personal Notes",
+          "content_brief": "Short reflections after local gallery and museum visits."
+        }
+      }
+    ]
+  }
+}

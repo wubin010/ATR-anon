@@ -1,0 +1,112 @@
+{
+  "session_id": "michael_argo_s38",
+  "session_type": "learning",
+  "day_offset": 38,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule my calendar.",
+  "task_params": {
+    "calendar": "personal",
+    "event_id": "evt_portfolio_01",
+    "new_start_time": "2025-03-18T13:00:00-04:00",
+    "new_end_time": "2025-03-18T16:00:00-04:00",
+    "title": "Portfolio Work Block",
+    "start_time": "2025-03-17T10:00:00-04:00",
+    "end_time": "2025-03-17T13:00:00-04:00"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "reschedule_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-18T13:00:00-04:00",
+        "end_time": "2025-03-18T16:00:00-04:00"
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_portfolio_01",
+        "new_start_time": "2025-03-18T13:00:00-04:00",
+        "new_end_time": "2025-03-18T16:00:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_portfolio_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Portfolio Work Block",
+          "start_time": "2025-03-17T10:00:00-04:00",
+          "end_time": "2025-03-17T13:00:00-04:00",
+          "participants": [],
+          "location": "Home Studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_grocery_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Grocery Run",
+          "start_time": "2025-03-18T09:30:00-04:00",
+          "end_time": "2025-03-18T10:30:00-04:00",
+          "participants": [],
+          "location": "Jeffersonville Market",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_recovery_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Recovery Afternoon",
+          "start_time": "2025-03-19T14:00:00-04:00",
+          "end_time": "2025-03-19T17:00:00-04:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_pickup_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Laundry Pickup",
+          "start_time": "2025-03-18T17:30:00-04:00",
+          "end_time": "2025-03-18T18:00:00-04:00",
+          "participants": [],
+          "location": "Main Street Cleaners",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

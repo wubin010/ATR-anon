@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner for four in Seattle on 2026-09-18 at 7:00pm — just pick a place and make the reservation.",
+  "gold_value": "rst_fern_table_01",
+  "session_id": "cecilia_lisette_garciaperez_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "cecilia_lisette_garciaperez_reservation_01",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_reservation_01",
+    "rule_text": "For restaurant reservations, she prefers intimate places suited to conversation over louder, more impersonal venues.",
+    "canonical_answer": "When I dine out, I prefer small, conversation-friendly places over loud scene-driven restaurants."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_fern_table_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Fern & Table",
+          "cuisine": "Pacific Northwest",
+          "location": "Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "32-seat dining room with well-spaced two-top and four-top tables"
+        }
+      },
+      {
+        "id": "rst_foundry_hall_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Foundry Hall",
+          "cuisine": "New American",
+          "location": "Seattle",
+          "rating": 4.9,
+          "price_range": "$$$",
+          "seating_style": "140-seat open dining hall with a central bar and communal tables"
+        }
+      },
+      {
+        "id": "rst_marquee_room_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Marquee Room",
+          "cuisine": "Contemporary",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "90-seat dining room with lounge seating and a live music stage"
+        }
+      },
+      {
+        "id": "rst_pier_exchange_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Pier Exchange",
+          "cuisine": "Seafood",
+          "location": "Seattle",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "large waterfront room with shared high-top tables and bar seating"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_fern_table_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

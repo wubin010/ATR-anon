@@ -1,0 +1,89 @@
+{
+  "session_id": "charlie_james_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Portland Restoration Studio Planning Outline",
+    "location": "Portland",
+    "planning_points": [
+      "shop vision centered on classic car restoration and custom artistry",
+      "services: paintwork, upholstery, fabrication, and mechanical upgrades",
+      "small apprenticeship program for local youth trainees",
+      "space needs: two bays, paint area, storage, and front desk",
+      "startup needs: tools, lift access, permits, and insurance",
+      "near-term goal: simple launch plan for the Portland neighborhood"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Portland",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Portland Restoration Studio Planning Outline",
+        "location": "Portland",
+        "content_brief": "<authored from planning_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_portland_01",
+        "type": "document",
+        "attributes": {
+          "title": "Portland Shop Brainstorm Notes",
+          "doc_type": "note",
+          "location": "Portland",
+          "content_brief": "Rough notes about a future restoration shop in Portland."
+        }
+      },
+      {
+        "id": "doc_portland_02",
+        "type": "document",
+        "attributes": {
+          "title": "Neighborhood Property Ideas",
+          "doc_type": "memo",
+          "location": "Portland",
+          "content_brief": "Possible storefront blocks and parking considerations in Portland."
+        }
+      },
+      {
+        "id": "doc_westend_01",
+        "type": "document",
+        "attributes": {
+          "title": "Apprenticeship Sketches",
+          "doc_type": "note",
+          "location": "West End",
+          "content_brief": "Ideas for mentoring and training younger helpers."
+        }
+      }
+    ]
+  }
+}

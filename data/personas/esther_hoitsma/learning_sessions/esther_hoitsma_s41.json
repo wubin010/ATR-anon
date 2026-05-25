@@ -1,0 +1,105 @@
+{
+  "session_id": "esther_hoitsma_s41",
+  "session_type": "learning",
+  "day_offset": 41,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "car charger",
+    "budget": 30,
+    "sort_by": "rating",
+    "product_id": "prod_charger_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "car charger",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_charger_01",
+          "prod_charger_02",
+          "prod_charger_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_charger_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_charger_01",
+        "type": "product",
+        "attributes": {
+          "name": "Anker PowerDrive 2 USB Car Charger",
+          "price": 19.99,
+          "category": "car charger",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_charger_02",
+        "type": "product",
+        "attributes": {
+          "name": "Belkin Dual USB-C Car Charger 42W",
+          "price": 24.95,
+          "category": "car charger",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_charger_03",
+        "type": "product",
+        "attributes": {
+          "name": "Scosche Fast Charge USB-C Car Charger",
+          "price": 15.49,
+          "category": "car charger",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_mount_01",
+        "type": "product",
+        "attributes": {
+          "name": "iOttie Easy One Touch Dashboard Mount",
+          "price": 26.99,
+          "category": "phone mount",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

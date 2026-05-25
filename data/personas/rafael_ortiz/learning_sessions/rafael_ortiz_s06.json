@@ -1,0 +1,108 @@
+{
+  "session_id": "rafael_ortiz_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "scheduling",
+  "reason_for_call": "Add a calendar reminder.",
+  "task_params": {
+    "title": "Call dentist for cleaning appointment",
+    "start_time": "2025-03-12T19:30:00-05:00",
+    "end_time": "2025-03-12T19:45:00-05:00",
+    "calendar": "personal"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-12T19:30:00-05:00",
+        "end_time": "2025-03-12T19:45:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Call dentist for cleaning appointment",
+        "start_time": "2025-03-12T19:30:00-05:00",
+        "end_time": "2025-03-12T19:45:00-05:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_soccer_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunday Pickup Soccer",
+          "start_time": "2025-03-09T08:00:00-05:00",
+          "end_time": "2025-03-09T10:00:00-05:00",
+          "participants": [
+            "Marco",
+            "Luis",
+            "Javi"
+          ],
+          "location": "Riverside Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_shift_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Day Shift",
+          "start_time": "2025-03-12T07:00:00-05:00",
+          "end_time": "2025-03-12T19:00:00-05:00",
+          "participants": [],
+          "location": "Hospital Unit 4B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_guitar_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Call dentist for cleaning appointment",
+          "start_time": "2025-03-12T19:30:00-05:00",
+          "end_time": "2025-03-12T19:45:00-05:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Elena",
+          "start_time": "2025-03-13T18:30:00-05:00",
+          "end_time": "2025-03-13T20:00:00-05:00",
+          "participants": [
+            "Elena"
+          ],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

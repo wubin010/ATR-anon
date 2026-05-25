@@ -1,0 +1,102 @@
+{
+  "session_id": "gabriel_campbell_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "communication",
+  "reason_for_call": "Draft an invite message",
+  "task_params": {
+    "sender": "Maya Chen",
+    "folder": "inbox",
+    "language": "en",
+    "invite_points": [
+      "say he is thinking of checking out the gallery and live music thing",
+      "keep it casual and low-pressure",
+      "mention they can join for any part of it",
+      "ask if they are up for it",
+      "friendly tone, not overly planned"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Chen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_gallery_07",
+        "language": "en",
+        "body": "<authored from invite_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Friday plans?",
+          "body": "Theo and I were talking about maybe doing something artsy later this week. Let me know if you hear about anything good.",
+          "thread_id": "thr_gallery_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-06T18:42:00"
+        }
+      },
+      {
+        "id": "msg_theo_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Theo Alvarez",
+          "subject": "Re: Friday plans?",
+          "body": "I am in if it stays relaxed. Could be fun to bounce between a show and some music.",
+          "thread_id": "thr_gallery_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-06T19:10:00"
+        }
+      },
+      {
+        "id": "msg_erin_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Erin Walsh",
+          "subject": "Volunteer shift notes",
+          "body": "Thanks again for helping at the health fair table.",
+          "thread_id": "thr_volunteer_12",
+          "folder": "inbox",
+          "labels": [
+            "community"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-06T15:05:00"
+        }
+      }
+    ]
+  }
+}

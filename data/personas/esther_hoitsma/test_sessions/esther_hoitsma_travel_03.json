@@ -1,0 +1,130 @@
+{
+  "instruction": "Please book travel from Boston, MA to Washington, DC for 6 adults. Pick one option from what's available and take care of it.",
+  "gold_value": "trp_bos_wdc_grouprail_01",
+  "session_id": "esther_hoitsma_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "esther_hoitsma_travel_03",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_travel_03",
+    "rule_text": "For regional group travel, Esther prefers shared ground transport over air travel when it helps the group stay together and save money.",
+    "canonical_answer": "On shorter regional trips with other people, I prefer shared ground travel so we can keep costs down and travel together."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "trp_bos_wdc_grouprail_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "mode": "train",
+          "departure_date": "2026-09-18",
+          "price": 516,
+          "available_seats": 6,
+          "operator": "Northeast Corridor Rail",
+          "travel_time_hours": 6.6,
+          "group_block_seating": true,
+          "assigned_car": "5"
+        }
+      },
+      {
+        "id": "trp_bos_wdc_expressrail_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "mode": "train",
+          "departure_date": "2026-09-18",
+          "price": 488,
+          "available_seats": 6,
+          "operator": "Capitol Express Rail",
+          "travel_time_hours": 5.9,
+          "group_block_seating": false,
+          "seat_distribution": "2 seats in car 3, 2 seats in car 7, 2 seats in car 8"
+        }
+      },
+      {
+        "id": "trp_bos_wdc_splittransfer_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "mode": "car_transfer",
+          "departure_date": "2026-09-18",
+          "price": 468,
+          "available_seats": 6,
+          "operator": "Metro Door-to-Door",
+          "travel_time_hours": 6.9,
+          "vehicle_count": 2,
+          "vehicle_setup": "2 separate SUVs with 3 passengers each",
+          "door_to_door": true
+        }
+      },
+      {
+        "id": "flt_bos_wdc_shuttle_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-18",
+          "airline": "Northeast Shuttle",
+          "price": 584,
+          "available_seats": 6,
+          "travel_time_hours": 1.5,
+          "nonstop": true,
+          "airport_pair": "BOS-DCA"
+        }
+      },
+      {
+        "id": "flt_bos_wdc_capitol_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-18",
+          "airline": "CapitolJet",
+          "price": 642,
+          "available_seats": 8,
+          "travel_time_hours": 1.4,
+          "nonstop": true,
+          "airport_pair": "BOS-DCA"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {
+            "transport_offer_id": "trp_bos_wdc_grouprail_01"
+          },
+          "compare_args": [
+            "transport_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

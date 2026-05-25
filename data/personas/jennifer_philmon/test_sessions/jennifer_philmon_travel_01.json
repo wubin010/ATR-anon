@@ -1,0 +1,107 @@
+{
+  "instruction": "On 2026-09-18 I'm going from Denver, CO to Salt Lake City, UT, one passenger, one-way only. Look at the available options and book it for me.",
+  "gold_value": null,
+  "session_id": "jennifer_philmon_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "jennifer_philmon_travel_01",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_travel_01",
+    "rule_text": "When planning personal travel, she prefers a road-trip style itinerary built around ground transportation rather than flying.",
+    "canonical_answer": "For my trips, I prefer to go by road or rail instead of booking flights."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_den_slc_20260918_sw_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Denver, CO",
+          "destination": "Salt Lake City, UT",
+          "departure_date": "2026-09-18",
+          "airline": "Southwest Airlines",
+          "price": 84,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_den_slc_20260918_dl_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Denver, CO",
+          "destination": "Salt Lake City, UT",
+          "departure_date": "2026-09-18",
+          "airline": "Delta Air Lines",
+          "price": 97,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_den_slc_20260918_ua_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Denver, CO",
+          "destination": "Salt Lake City, UT",
+          "departure_date": "2026-09-18",
+          "airline": "United Airlines",
+          "price": 109,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "trp_den_slc_20260918_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Denver, CO",
+          "destination": "Salt Lake City, UT",
+          "mode": "bus",
+          "departure_date": "2026-09-18",
+          "price": 129,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "trp_den_slc_20260918_train_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Denver, CO",
+          "destination": "Salt Lake City, UT",
+          "mode": "train",
+          "departure_date": "2026-09-18",
+          "price": 156,
+          "available_seats": 4
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

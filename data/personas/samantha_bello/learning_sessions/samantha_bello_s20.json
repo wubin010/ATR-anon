@@ -1,0 +1,113 @@
+{
+  "session_id": "samantha_bello_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "commerce",
+  "reason_for_call": "Compare some products",
+  "task_params": {
+    "category": "headphones",
+    "budget": 320,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_sony_01",
+      "prod_bose_02",
+      "prod_jabra_03"
+    ],
+    "list_name": "Work audio options"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "headphones",
+        "budget": 320,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_sony_01",
+          "prod_bose_02",
+          "prod_jabra_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_sony_01",
+          "prod_bose_02",
+          "prod_jabra_03"
+        ],
+        "list_name": "Work audio options"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sony_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sony WH-1000XM5 Noise Canceling Headphones",
+          "price": 299.99,
+          "category": "headphones",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_bose_02",
+        "type": "product",
+        "attributes": {
+          "name": "Bose QuietComfort Ultra Headphones",
+          "price": 319.0,
+          "category": "headphones",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_jabra_03",
+        "type": "product",
+        "attributes": {
+          "name": "Jabra Elite 85h Wireless Headphones",
+          "price": 249.99,
+          "category": "headphones",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_anker_04",
+        "type": "product",
+        "attributes": {
+          "name": "Soundcore Space One Headphones",
+          "price": 99.99,
+          "category": "headphones",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

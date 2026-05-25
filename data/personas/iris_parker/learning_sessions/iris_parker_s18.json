@@ -1,0 +1,101 @@
+{
+  "session_id": "iris_parker_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "location": "People Team/Workshops",
+    "doc_type": "note",
+    "document_title": "Manager Creative Workshop Outline",
+    "outline_points": [
+      "opening purpose tied to manager participation",
+      "three-part agenda with shorter segments",
+      "invitation language aligned with workshop promise",
+      "interactive exercise placeholder",
+      "clear next steps and owner assignments"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "People Team/Workshops",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_mgrworkshop_01",
+        "content_delta": "<authored from outline_points, document_title>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_mgrworkshop_01",
+        "type": "document",
+        "attributes": {
+          "title": "Manager Creative Workshop Outline",
+          "doc_type": "note",
+          "location": "People Team/Workshops",
+          "content_brief": "Early draft outline for a manager-facing creative culture workshop."
+        }
+      },
+      {
+        "id": "doc_invite_02",
+        "type": "document",
+        "attributes": {
+          "title": "Manager Creative Workshop Invitation Draft",
+          "doc_type": "memo",
+          "location": "People Team/Workshops",
+          "content_brief": "Draft invitation language emphasizing practical participation and culture-building."
+        }
+      },
+      {
+        "id": "doc_retro_03",
+        "type": "document",
+        "attributes": {
+          "title": "Workshop Debrief Notes",
+          "doc_type": "note",
+          "location": "People Team/Workshops",
+          "content_brief": "Observations from a previous internal workshop run."
+        }
+      },
+      {
+        "id": "file_brainstorm_01",
+        "type": "file",
+        "attributes": {
+          "name": "creative_workshop_brainstorm.docx",
+          "file_type": "docx",
+          "location": "People Team/Workshops",
+          "owner": "Iris Parker",
+          "labels": [
+            "workshop",
+            "draft"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

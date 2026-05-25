@@ -1,0 +1,87 @@
+{
+  "session_id": "charlie_james_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Restoration Trip Notebook",
+    "location": "Road Trips",
+    "content_points": [
+      "restoration ideas spotted on the trip",
+      "paint schemes inspired by murals, signs, and streets",
+      "business observations about shops, pricing, and customer flow",
+      "space for quick sketches and follow-up ideas"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Road Trips",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Restoration Trip Notebook",
+        "location": "Road Trips",
+        "content_brief": "<authored from content_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_route_01",
+        "type": "document",
+        "attributes": {
+          "title": "Asheville Auto Trail Notes",
+          "doc_type": "note",
+          "location": "Road Trips",
+          "content_brief": "Trip note with shop stops, color ideas, and parts leads."
+        }
+      },
+      {
+        "id": "doc_detroit_02",
+        "type": "document",
+        "attributes": {
+          "title": "Detroit Show Weekend Memo",
+          "doc_type": "memo",
+          "location": "Road Trips",
+          "content_brief": "Short memo on show impressions and vendor takeaways."
+        }
+      },
+      {
+        "id": "doc_bourbon_03",
+        "type": "document",
+        "attributes": {
+          "title": "Bourbon Trail Sketch Notes",
+          "doc_type": "note",
+          "location": "Road Trips",
+          "content_brief": "Notebook page ideas for finishes, textures, and roadside inspiration."
+        }
+      }
+    ]
+  }
+}

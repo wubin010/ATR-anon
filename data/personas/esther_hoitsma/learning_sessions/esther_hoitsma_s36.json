@@ -1,0 +1,103 @@
+{
+  "session_id": "esther_hoitsma_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "communication",
+  "reason_for_call": "Reply to a message",
+  "task_params": {
+    "sender": "Marilyn Peters",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank her for checking in and for her support",
+      "say work as a home health aide has been teaching me a lot",
+      "say I am still planning to pursue CNA certification soon",
+      "be honest that balancing work, savings, and school planning is taking time",
+      "keep the tone upbeat and grateful",
+      "mention I still feel committed to nursing"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Marilyn Peters",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_marilyn_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_marilyn_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marilyn Peters",
+          "subject": "Checking in on your nursing plans",
+          "body": "Hi Esther, I was thinking about you and wanted to check in. How are your nursing plans coming along? I always admired your drive, and I’d love to hear how things are going whenever you have a minute.",
+          "thread_id": "thr_marilyn_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-31T18:42:00"
+        }
+      },
+      {
+        "id": "msg_elena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Ruiz",
+          "subject": "Potluck signup for Saturday",
+          "body": "Can you bring your tamales again? Everybody loved them last time.",
+          "thread_id": "thr_elena_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-31T12:10:00"
+        }
+      },
+      {
+        "id": "msg_bills_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Treasure Valley Power",
+          "subject": "Your April statement is ready",
+          "body": "Your new monthly statement is now available in your account portal.",
+          "thread_id": "thr_bills_01",
+          "folder": "inbox",
+          "labels": [
+            "finance"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-30T09:05:00"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "domain": "commerce",
+  "instruction": "I was just about to order a packet of Brandywine Pink tomato seeds, and at checkout it told me they're out of stock — there were a few similar tomato seed varieties listed alongside. Handle this for me.",
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_seed_brandywine_01",
+        "type": "product",
+        "attributes": {
+          "name": "Brandywine Pink Heirloom Tomato Seeds",
+          "price": 6.49,
+          "category": "garden_seeds",
+          "rating": 4.5,
+          "stock_status": "out_of_stock",
+          "variety": "Brandywine Pink",
+          "seed_type": "heirloom",
+          "review_count": 214
+        }
+      },
+      {
+        "id": "prod_seed_cherokee_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cherokee Purple Heirloom Tomato Seeds",
+          "price": 5.49,
+          "category": "garden_seeds",
+          "rating": 4.8,
+          "stock_status": "in_stock",
+          "variety": "Cherokee Purple",
+          "seed_type": "heirloom",
+          "review_count": 2310
+        }
+      },
+      {
+        "id": "prod_seed_blackkrim_01",
+        "type": "product",
+        "attributes": {
+          "name": "Black Krim Heirloom Tomato Seeds",
+          "price": 5.99,
+          "category": "garden_seeds",
+          "rating": 4.9,
+          "stock_status": "in_stock",
+          "variety": "Black Krim",
+          "seed_type": "heirloom",
+          "review_count": 1840
+        }
+      },
+      {
+        "id": "prod_seed_bigbeef_01",
+        "type": "product",
+        "attributes": {
+          "name": "Big Beef Tomato Seeds",
+          "price": 3.99,
+          "category": "garden_seeds",
+          "rating": 4.7,
+          "stock_status": "in_stock",
+          "variety": "Big Beef",
+          "seed_type": "hybrid",
+          "review_count": 4020
+        }
+      }
+    ]
+  },
+  "session_id": "marlene_graham_commerce_03_test",
+  "session_type": "test",
+  "persona_id": "marlene_graham",
+  "rule_id": "marlene_graham_commerce_03",
+  "rule_ref": {
+    "rule_id": "marlene_graham_commerce_03",
+    "rule_text": "When a gardening item is out of stock, keep it on the wishlist for follow-up rather than auto-substituting a similar replacement.",
+    "canonical_answer": "If a gardening item is out of stock, leave it on the list — don't sub in a similar one without asking."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "build_shopping_list",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

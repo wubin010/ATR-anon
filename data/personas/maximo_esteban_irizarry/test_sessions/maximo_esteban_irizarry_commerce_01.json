@@ -1,0 +1,164 @@
+{
+  "instruction": "Please order one cooking base for weeknight dinners, keep it under $6, and just choose whichever seems best.",
+  "gold_value": "prod_cocina_islena_sofrito_01",
+  "session_id": "maximo_esteban_irizarry_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "maximo_esteban_irizarry_commerce_01",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_commerce_01",
+    "rule_text": "When shopping for food or cooking supplies, he prefers products suited to traditional Puerto Rican cooking over generic alternatives.",
+    "canonical_answer": "For cooking, I choose ingredients that fit Puerto Rican dishes and flavors."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_cocina_islena_sofrito_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cocina Isleña Sofrito Cooking Base",
+          "price": 5.49,
+          "category": "cooking base",
+          "rating": 4.4,
+          "cuisine_style": "Puerto Rican",
+          "format": "12 oz jar",
+          "primary_uses": [
+            "rice",
+            "beans",
+            "stews",
+            "pork"
+          ],
+          "ingredients_focus": [
+            "cilantro",
+            "culantro",
+            "garlic",
+            "sweet pepper"
+          ],
+          "dish_fit": [
+            "arroz con gandules",
+            "pasteles",
+            "pernil"
+          ],
+          "review_count": 121
+        }
+      },
+      {
+        "id": "prod_island_pantry_green_01",
+        "type": "product",
+        "attributes": {
+          "name": "Island Pantry Caribbean Green Seasoning Base",
+          "price": 4.99,
+          "category": "cooking base",
+          "rating": 4.9,
+          "cuisine_style": "Trinidadian",
+          "format": "12 oz jar",
+          "primary_uses": [
+            "rice",
+            "beans",
+            "marinades",
+            "chicken"
+          ],
+          "ingredients_focus": [
+            "cilantro",
+            "thyme",
+            "garlic"
+          ],
+          "dish_fit": [
+            "stews",
+            "rice dishes",
+            "grilled meats"
+          ],
+          "review_count": 1804
+        }
+      },
+      {
+        "id": "prod_roasted_garlic_starter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Roasted Garlic Skillet Starter",
+          "price": 3.79,
+          "category": "cooking base",
+          "rating": 4.8,
+          "cuisine_style": "general",
+          "format": "11 oz jar",
+          "primary_uses": [
+            "soups",
+            "stews",
+            "roasts",
+            "vegetables"
+          ],
+          "ingredients_focus": [
+            "garlic",
+            "onion",
+            "olive oil"
+          ],
+          "dish_fit": [
+            "one-pan meals",
+            "braises",
+            "weeknight dinners"
+          ],
+          "review_count": 2620
+        }
+      },
+      {
+        "id": "prod_classic_tomato_base_01",
+        "type": "product",
+        "attributes": {
+          "name": "Classic Tomato Herb Cooking Base",
+          "price": 2.99,
+          "category": "cooking base",
+          "rating": 4.9,
+          "cuisine_style": "general",
+          "format": "10 oz jar",
+          "primary_uses": [
+            "braises",
+            "skillet meals",
+            "casseroles",
+            "pasta"
+          ],
+          "ingredients_focus": [
+            "tomato",
+            "basil",
+            "garlic"
+          ],
+          "dish_fit": [
+            "weeknight dinners",
+            "simmer sauces",
+            "baked dishes"
+          ],
+          "review_count": 4410
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_cocina_islena_sofrito_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

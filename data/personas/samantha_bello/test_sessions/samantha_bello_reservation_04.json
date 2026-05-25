@@ -1,0 +1,91 @@
+{
+  "instruction": "Please book me a wellness appointment in downtown Seattle for 2026-08-14 at 6:00pm — just pick one and book it.",
+  "gold_value": "svc_wellness_harbor_community_01",
+  "session_id": "samantha_bello_reservation_04_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "samantha_bello_reservation_04",
+  "rule_ref": {
+    "rule_id": "samantha_bello_reservation_04",
+    "rule_text": "When booking a wellness-oriented appointment, Samantha prefers community-centered yoga or meditation providers over luxury spa-style providers.",
+    "canonical_answer": "For wellness appointments, I prefer community yoga or meditation providers over fancy spa options."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_wellness_harbor_community_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Harbor Community Center Yoga Collective",
+          "service_type": "yoga wellness",
+          "location": "Downtown Seattle",
+          "rating": 4.4,
+          "distance_km": 1.8
+        }
+      },
+      {
+        "id": "svc_wellness_stillpoint_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Stillpoint Private Meditation Lounge",
+          "service_type": "meditation wellness",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "distance_km": 0.3
+        }
+      },
+      {
+        "id": "svc_wellness_velvet_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Velvet Cedar Spa Retreat",
+          "service_type": "spa wellness",
+          "location": "Downtown Seattle",
+          "rating": 4.8,
+          "distance_km": 0.2
+        }
+      },
+      {
+        "id": "svc_wellness_aurelia_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Aurelia Boutique Yoga Atelier",
+          "service_type": "yoga wellness",
+          "location": "Downtown Seattle",
+          "rating": 4.7,
+          "distance_km": 0.4
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_wellness_harbor_community_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

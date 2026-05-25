@@ -1,0 +1,147 @@
+{
+  "instruction": "Book a hotel in Berlin for two adults, one room, and keep it under $260 per night. It’s just for a long weekend, so pick one and take care of it.",
+  "gold_value": "htl_berlin_atelier_passage_01",
+  "session_id": "gabriel_campbell_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "gabriel_campbell",
+  "rule_id": "gabriel_campbell_travel_04",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_travel_04",
+    "rule_text": "When booking lodging, he prefers hotel options in walkable arts districts or close to cultural sites rather than generic accommodations.",
+    "canonical_answer": "Whenever I book a hotel, I always favor places that put me within walking distance of museums, galleries, or good street photography."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_berlin_atelier_passage_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Atelier Passage Hotel",
+          "location": "Kreuzberg, Berlin",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 235,
+          "rating": 4.4,
+          "review_count": 318,
+          "neighborhood_profile": "gallery district",
+          "walk_time_to_cultural_site_min": 4,
+          "nearby_sites": [
+            "Berlinische Galerie",
+            "Jewish Museum Berlin"
+          ]
+        }
+      },
+      {
+        "id": "htl_berlin_loftworks_neukolln_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Loftworks Neukölln",
+          "location": "Neukölln, Berlin",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "rating": 4.7,
+          "review_count": 544,
+          "neighborhood_profile": "arts quarter",
+          "walk_time_to_cultural_site_min": 5,
+          "nearby_sites": [
+            "KINDL Centre for Contemporary Art"
+          ]
+        }
+      },
+      {
+        "id": "htl_berlin_hbf_express_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Berlin Hbf Express Hotel",
+          "location": "Hauptbahnhof, Berlin",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 12,
+          "max_guests_per_room": 2,
+          "price_per_night": 199,
+          "rating": 4.9,
+          "review_count": 2840,
+          "neighborhood_profile": "transport hub",
+          "distance_to_main_station_km": 0.1,
+          "walk_time_to_cultural_site_min": 28
+        }
+      },
+      {
+        "id": "htl_berlin_alexa_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Alexander Plaza Grand",
+          "location": "Alexanderplatz, Berlin",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 209,
+          "rating": 4.8,
+          "review_count": 1905,
+          "neighborhood_profile": "shopping district",
+          "distance_to_transit_km": 0.2,
+          "walk_time_to_cultural_site_min": 24
+        }
+      },
+      {
+        "id": "htl_berlin_airport_link_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Airport Link Berlin Hotel",
+          "location": "Schönefeld, Berlin",
+          "check_in_date": "2026-09-18",
+          "check_out_date": "2026-09-21",
+          "available_rooms": 15,
+          "max_guests_per_room": 2,
+          "price_per_night": 149,
+          "rating": 4.7,
+          "review_count": 1622,
+          "neighborhood_profile": "airport corridor",
+          "airport_shuttle": true,
+          "walk_time_to_cultural_site_min": 52
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_berlin_atelier_passage_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

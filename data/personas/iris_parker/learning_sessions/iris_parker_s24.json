@@ -1,0 +1,136 @@
+{
+  "session_id": "iris_parker_s24",
+  "session_type": "learning",
+  "day_offset": 24,
+  "domain": "commerce",
+  "reason_for_call": "Build a shopping list",
+  "task_params": {
+    "category": "grocery",
+    "budget": 45,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_clams_01",
+      "prod_potatoes_02",
+      "prod_cream_03",
+      "prod_bacon_04",
+      "prod_onion_05"
+    ],
+    "items": [
+      "Fresh Littleneck Clams",
+      "Yukon Gold Potatoes",
+      "Heavy Cream",
+      "Applewood Smoked Bacon",
+      "Yellow Onion"
+    ],
+    "list_name": "Sunday Dinner"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "grocery",
+        "budget": 45,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_clams_01",
+          "prod_potatoes_02",
+          "prod_cream_03",
+          "prod_bacon_04",
+          "prod_onion_05"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Fresh Littleneck Clams",
+          "Yukon Gold Potatoes",
+          "Heavy Cream",
+          "Applewood Smoked Bacon",
+          "Yellow Onion"
+        ],
+        "list_name": "Sunday Dinner"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_clams_01",
+        "type": "product",
+        "attributes": {
+          "name": "Fresh Littleneck Clams",
+          "price": 12.99,
+          "category": "grocery",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_potatoes_02",
+        "type": "product",
+        "attributes": {
+          "name": "Yukon Gold Potatoes",
+          "price": 4.49,
+          "category": "grocery",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_cream_03",
+        "type": "product",
+        "attributes": {
+          "name": "Heavy Cream",
+          "price": 3.99,
+          "category": "grocery",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_bacon_04",
+        "type": "product",
+        "attributes": {
+          "name": "Applewood Smoked Bacon",
+          "price": 6.49,
+          "category": "grocery",
+          "rating": 4.9
+        }
+      },
+      {
+        "id": "prod_onion_05",
+        "type": "product",
+        "attributes": {
+          "name": "Yellow Onion",
+          "price": 1.29,
+          "category": "grocery",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

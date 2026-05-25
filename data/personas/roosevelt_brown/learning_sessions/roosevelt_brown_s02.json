@@ -1,0 +1,123 @@
+{
+  "session_id": "roosevelt_brown_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files",
+  "task_params": {
+    "location": "Desktop",
+    "file_type": "xlsx",
+    "scheme": "by_project",
+    "destination_folder_id": "fld_qi_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Desktop",
+        "file_type": "xlsx"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_qiwait_01",
+          "fil_discharge_02",
+          "fil_noshow_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_qiwait_01",
+          "fil_discharge_02",
+          "fil_noshow_03"
+        ],
+        "folder_id": "fld_qi_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_qiwait_01",
+        "type": "file",
+        "attributes": {
+          "name": "QI_wait_times_baseline.xlsx",
+          "file_type": "xlsx",
+          "location": "Desktop/QI dump",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_discharge_02",
+        "type": "file",
+        "attributes": {
+          "name": "Discharge_followup_PDSA_v2.xlsx",
+          "file_type": "xlsx",
+          "location": "Desktop/loose files",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_noshow_03",
+        "type": "file",
+        "attributes": {
+          "name": "No_show_outreach_tracker.xlsx",
+          "file_type": "xlsx",
+          "location": "Desktop",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_qi_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Quality Improvement",
+          "purpose": "active quality improvement working files"
+        }
+      },
+      {
+        "id": "fld_archive_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Archive",
+          "purpose": "inactive files and old materials"
+        }
+      }
+    ]
+  }
+}

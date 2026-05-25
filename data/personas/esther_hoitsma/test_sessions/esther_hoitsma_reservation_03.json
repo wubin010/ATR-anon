@@ -1,0 +1,105 @@
+{
+  "instruction": "Please book me an elder care consultation in Denver for 2026-09-14 at 10:00am. Just pick a provider and set it up.",
+  "gold_value": "svc_elder_puente_01",
+  "session_id": "esther_hoitsma_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "esther_hoitsma_reservation_03",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_reservation_03",
+    "rule_text": "When booking a service appointment, Esther prefers a bilingual or culturally sensitive provider when one is available.",
+    "canonical_answer": "If I’m booking a service, I prefer someone bilingual or culturally aware whenever I can get that."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_elder_capitol_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Capitol Hill Senior Support",
+          "service_type": "elder care consultation",
+          "location": "Denver",
+          "rating": 4.9,
+          "distance_km": 0.3,
+          "years_in_business": 18
+        }
+      },
+      {
+        "id": "svc_elder_frontrange_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Front Range Elder Advisory",
+          "service_type": "elder care consultation",
+          "location": "Denver",
+          "rating": 4.8,
+          "distance_km": 0.7,
+          "appointment_modes": [
+            "in_person",
+            "virtual"
+          ]
+        }
+      },
+      {
+        "id": "svc_elder_cherry_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Cherry Creek Care Planning",
+          "service_type": "elder care consultation",
+          "location": "Denver",
+          "rating": 4.7,
+          "distance_km": 1.2,
+          "years_in_business": 12
+        }
+      },
+      {
+        "id": "svc_elder_puente_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Puente Vida Elder Care Guidance",
+          "service_type": "elder care consultation",
+          "location": "Denver",
+          "rating": 4.6,
+          "distance_km": 3.8,
+          "languages_spoken": [
+            "English",
+            "Spanish"
+          ],
+          "care_approach": [
+            "culturally sensitive intake",
+            "family-centered care planning"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_elder_puente_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "instruction": "I still haven’t replied to the River Loop Cycling Club social ride at Harbor Park on Saturday 2026-08-15 from 1–4pm, and they need a headcount. See what else I already have around then and send back the appropriate RSVP.",
+  "gold_value": "tentative",
+  "session_id": "charlie_james_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "charlie_james_scheduling_02",
+  "rule_ref": {
+    "rule_id": "charlie_james_scheduling_02",
+    "rule_text": "When an invite lands on a weekend or flexible personal slot, he prefers answering tentatively instead of committing right away.",
+    "canonical_answer": "If a weekend invite bumps into ride time or project time, I usually respond tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_river_loop_social_20260815",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "River Loop Cycling Club Social Ride",
+          "start_time": "2026-08-15T13:00:00-07:00",
+          "end_time": "2026-08-15T16:00:00-07:00",
+          "participants": [
+            "events@riverloop.cc",
+            "charlie.james@example.com"
+          ],
+          "location": "Harbor Park",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "River Loop Cycling Club",
+          "attendee_count": 36,
+          "rsvp_deadline": "2026-08-14T18:00:00-07:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_hill_loop_marco_20260815",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Hill loop ride with Marco",
+          "start_time": "2026-08-15T12:30:00-07:00",
+          "end_time": "2026-08-15T15:30:00-07:00",
+          "participants": [
+            "marco.riley@example.com"
+          ],
+          "location": "North Trailhead",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_workbench_project_20260815",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Workbench storage project block",
+          "start_time": "2026-08-15T15:00:00-07:00",
+          "end_time": "2026-08-15T17:30:00-07:00",
+          "participants": [],
+          "location": "Home garage",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_parts_supplier_checkin_20260817",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Parts supplier check-in",
+          "start_time": "2026-08-17T10:00:00-07:00",
+          "end_time": "2026-08-17T10:30:00-07:00",
+          "participants": [
+            "supplies@trailcraft.co"
+          ],
+          "location": "Video call",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

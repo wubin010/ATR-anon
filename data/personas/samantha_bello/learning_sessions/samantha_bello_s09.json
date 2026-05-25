@@ -1,0 +1,139 @@
+{
+  "session_id": "samantha_bello_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "communication",
+  "reason_for_call": "Triage my vendor messages.",
+  "task_params": {
+    "sender": "ventas@marazulpackaging.com",
+    "sender_two": "compras@caribecarton.com",
+    "priority": "high",
+    "label_ids": [
+      "lbl_costrisk_01"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "list_labels",
+    "label_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "ventas@marazulpackaging.com"
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "compras@caribecarton.com"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_marazul_01",
+          "msg_caribecarton_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_marazul_01",
+          "msg_caribecarton_01"
+        ],
+        "label_ids": [
+          "lbl_costrisk_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_marazul_01",
+        "type": "message",
+        "attributes": {
+          "sender": "ventas@marazulpackaging.com",
+          "subject": "Ajuste de precios para tapas compostables / Price adjustment",
+          "body": "Buenos dias, effective July 1 we will increase unit pricing on the 12oz compostable lids by 8.4% due to resin and freight costs. También cambia el mínimo por orden a 20,000 unidades. Let us know if you want to lock current pricing this week.",
+          "thread_id": "thr_vendor_201",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-19T09:14:00-04:00"
+        }
+      },
+      {
+        "id": "msg_caribecarton_01",
+        "type": "message",
+        "attributes": {
+          "sender": "compras@caribecarton.com",
+          "subject": "Carton corrugado: nuevo recargo por combustible / fuel surcharge",
+          "body": "Saludos, starting with the next shipment cycle there will be a temporary 6% fuel surcharge on corrugated master cases delivered to Puerto Rico. Si consolidan dos órdenes semanales en una sola salida, podemos revisar el impacto.",
+          "thread_id": "thr_vendor_202",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-19T10:02:00-04:00"
+        }
+      },
+      {
+        "id": "msg_solclean_01",
+        "type": "message",
+        "attributes": {
+          "sender": "service@solcleanpr.com",
+          "subject": "Factura enviada / Invoice sent",
+          "body": "Attached is the monthly cleaning invoice. Gracias por su pago puntual.",
+          "thread_id": "thr_vendor_203",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-19T08:21:00-04:00"
+        }
+      },
+      {
+        "id": "lbl_costrisk_01",
+        "type": "label",
+        "attributes": {
+          "name": "Cost Risk",
+          "topic": "Messages with possible budget or margin impact"
+        }
+      },
+      {
+        "id": "lbl_followup_02",
+        "type": "label",
+        "attributes": {
+          "name": "Vendor Follow-up",
+          "topic": "Supplier threads needing a reply"
+        }
+      }
+    ]
+  }
+}

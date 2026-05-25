@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner in Seattle for nine people from my neighborhood association on 2026-09-19 at 7:00pm — just pick a place and make the reservation.",
+  "gold_value": "rst_cedar_grove_kitchen_01",
+  "session_id": "romisha_shields_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "romisha_shields_reservation_01",
+  "rule_ref": {
+    "rule_id": "romisha_shields_reservation_01",
+    "rule_text": "For eating out with family or community groups, she prefers Southern or soul-food restaurants over trendier generic options.",
+    "canonical_answer": "When I go out to eat with my people, I like a good Southern or soul-food place."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_cedar_grove_kitchen_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar Grove Kitchen",
+          "cuisine": "Southern",
+          "location": "Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining room"
+        }
+      },
+      {
+        "id": "rst_harborline_kitchen_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harborline Kitchen",
+          "cuisine": "Contemporary American",
+          "location": "Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "rooftop dining"
+        }
+      },
+      {
+        "id": "rst_via_roma_social_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Via Roma Social",
+          "cuisine": "Italian",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "large dining room"
+        }
+      },
+      {
+        "id": "rst_saffron_market_bistro_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Saffron Market Bistro",
+          "cuisine": "Mediterranean",
+          "location": "Seattle",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "patio and main dining room"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_cedar_grove_kitchen_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

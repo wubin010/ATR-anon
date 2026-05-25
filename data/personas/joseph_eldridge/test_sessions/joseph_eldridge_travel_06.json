@@ -1,0 +1,131 @@
+{
+  "instruction": "I'm heading to Austin with a friend for a short trip, and it's our first time there. Please book 1 hotel room for 2 adults in Austin and keep it under $240 per night.",
+  "gold_value": "htl_austin_zilker_grove_01",
+  "session_id": "joseph_eldridge_travel_06_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "joseph_eldridge_travel_06",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_travel_06",
+    "rule_text": "When booking lodging for a trip, Joseph prefers quiet hotels near natural settings or restful surroundings over busy nightlife-centered options.",
+    "canonical_answer": "For hotels, I prefer somewhere quiet and restorative, ideally near nature rather than nightlife."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_austin_zilker_grove_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Zilker Grove Hotel",
+          "location": "Zilker, Austin, Texas",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 229,
+          "rating": 4.5,
+          "review_count": 267,
+          "neighborhood_profile": "parkside residential area",
+          "walk_time_to_green_space_min": 4,
+          "walk_time_to_main_nightlife_min": 34
+        }
+      },
+      {
+        "id": "htl_austin_sixth_street_social_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Sixth Street Social Hotel",
+          "location": "Downtown Austin, Texas",
+          "available_rooms": 8,
+          "max_guests_per_room": 2,
+          "price_per_night": 219,
+          "rating": 4.9,
+          "review_count": 3120,
+          "neighborhood_profile": "live-music and bar district",
+          "walk_time_to_green_space_min": 22,
+          "walk_time_to_main_nightlife_min": 2
+        }
+      },
+      {
+        "id": "htl_austin_rainey_central_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Rainey Central Hotel",
+          "location": "Rainey Street, Austin, Texas",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 199,
+          "rating": 4.8,
+          "review_count": 2411,
+          "neighborhood_profile": "entertainment corridor",
+          "walk_time_to_green_space_min": 18,
+          "walk_time_to_main_nightlife_min": 1
+        }
+      },
+      {
+        "id": "htl_austin_south_congress_promenade_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "South Congress Promenade Hotel",
+          "location": "South Congress, Austin, Texas",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 189,
+          "rating": 4.7,
+          "review_count": 1844,
+          "neighborhood_profile": "shopping and dining strip",
+          "walk_time_to_green_space_min": 17,
+          "walk_time_to_main_nightlife_min": 6
+        }
+      },
+      {
+        "id": "htl_austin_lake_retreat_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Lake Austin Retreat Lodge",
+          "location": "Lake Austin, Austin, Texas",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "rating": 4.7,
+          "review_count": 884,
+          "neighborhood_profile": "lakeside hillside area",
+          "walk_time_to_green_space_min": 3,
+          "walk_time_to_main_nightlife_min": 41
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_austin_zilker_grove_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "session_id": "romisha_shields_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order some home supplies.",
+  "task_params": {
+    "category": "pantry organization",
+    "budget": 35,
+    "sort_by": "price_asc",
+    "product_ids": [
+      "prod_labelset_01",
+      "prod_binset_02"
+    ],
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "pantry organization",
+        "budget": 35,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_labelset_01",
+          "prod_binset_02"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Clear Pantry Organization Label Set",
+          "Stackable Spice Shelf Container Set"
+        ],
+        "list_name": "Pantry organization"
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_binset_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_labelset_01",
+        "type": "product",
+        "attributes": {
+          "name": "Clear Pantry Organization Label Set",
+          "price": 8.99,
+          "category": "pantry organization",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_binset_02",
+        "type": "product",
+        "attributes": {
+          "name": "Stackable Spice Shelf Container Set",
+          "price": 24.99,
+          "category": "pantry organization",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_turntable_03",
+        "type": "product",
+        "attributes": {
+          "name": "Lazy Susan Spice Organizer Tray",
+          "price": 18.5,
+          "category": "pantry organization",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_jarset_04",
+        "type": "product",
+        "attributes": {
+          "name": "Glass Spice Jar and Label Bundle",
+          "price": 32.0,
+          "category": "pantry organization",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

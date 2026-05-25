@@ -1,0 +1,113 @@
+{
+  "session_id": "john_brown_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "travel",
+  "reason_for_call": "Book a quick trip.",
+  "task_params": {
+    "origin": "Baton Rouge",
+    "destination": "Montreal",
+    "passenger_count": 1,
+    "departure_date": "2025-09-12",
+    "return_date": "2025-09-15",
+    "seat_preference": "window",
+    "sort_by": "price_asc"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "Baton Rouge",
+        "destination": "Montreal",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_mtl_01",
+        "seat_preference": "window"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_mtl_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Baton Rouge",
+          "destination": "Montreal",
+          "departure_date": "2025-09-12",
+          "return_date": "2025-09-15",
+          "airline": "Air Canada",
+          "price": 318.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_mtl_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Baton Rouge",
+          "destination": "Montreal",
+          "departure_date": "2025-09-12",
+          "return_date": "2025-09-15",
+          "airline": "Delta",
+          "price": 356.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_mtl_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Baton Rouge",
+          "destination": "Montreal",
+          "departure_date": "2025-09-13",
+          "return_date": "2025-09-16",
+          "airline": "United",
+          "price": 289.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_mtl_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Baton Rouge",
+          "destination": "Montreal",
+          "departure_date": "2025-09-12",
+          "return_date": "2025-09-15",
+          "airline": "American",
+          "price": 402.0,
+          "available_seats": 7
+        }
+      }
+    ]
+  }
+}

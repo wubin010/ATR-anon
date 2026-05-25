@@ -1,0 +1,112 @@
+{
+  "session_id": "iris_parker_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "scheduling",
+  "reason_for_call": "Create a calendar hold.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "MFA museum visit",
+    "start_time": "2025-02-22T13:00:00-05:00",
+    "end_time": "2025-02-22T16:00:00-05:00",
+    "location": "Museum of Fine Arts Boston"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-22T13:00:00-05:00",
+        "end_time": "2025-02-22T16:00:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "MFA museum visit",
+        "start_time": "2025-02-22T13:00:00-05:00",
+        "end_time": "2025-02-22T16:00:00-05:00",
+        "location": "Museum of Fine Arts Boston"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_board_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Board Game Night",
+          "start_time": "2025-02-21T19:00:00-05:00",
+          "end_time": "2025-02-21T22:00:00-05:00",
+          "participants": [
+            "friends@group.local"
+          ],
+          "location": "Lowell",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_brunch_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "MFA museum visit",
+          "start_time": "2025-02-22T13:00:00-05:00",
+          "end_time": "2025-02-22T16:00:00-05:00",
+          "participants": [
+            "maya@example.com"
+          ],
+          "location": "Museum of Fine Arts Boston",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_review_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quarterly Talent Review Prep",
+          "start_time": "2025-02-22T17:30:00-05:00",
+          "end_time": "2025-02-22T18:30:00-05:00",
+          "participants": [
+            "peopleops@company.com"
+          ],
+          "location": "Home Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hike_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Cape Ann Hike",
+          "start_time": "2025-02-23T09:00:00-05:00",
+          "end_time": "2025-02-23T13:00:00-05:00",
+          "participants": [
+            "bostonoutdoorclub@example.org"
+          ],
+          "location": "Cape Ann",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

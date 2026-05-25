@@ -1,0 +1,169 @@
+{
+  "session_id": "eduardo_rivera_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Napa"
+    ],
+    "destination_ids": [
+      "dst_napa_01"
+    ],
+    "destination": "Napa",
+    "stop_tags": [
+      "vineyard",
+      "photo",
+      "sketch"
+    ],
+    "duration_days": 1,
+    "traveler_count": 2,
+    "selected_stop_ids": [
+      "stp_pond_01",
+      "stp_oaks_02",
+      "stp_plaza_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Napa"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_napa_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Napa",
+        "stop_tags": [
+          "vineyard",
+          "photo",
+          "sketch"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Napa",
+        "duration_days": 1,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_pond_01",
+          "stp_oaks_02",
+          "stp_plaza_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_napa_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Napa Valley",
+          "region": "Napa, CA",
+          "tags": [
+            "wine",
+            "vineyard",
+            "scenic",
+            "day trip"
+          ]
+        }
+      },
+      {
+        "id": "stp_pond_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Frog's Leap Winery Garden",
+          "location": "Napa",
+          "tags": [
+            "vineyard",
+            "garden",
+            "photo",
+            "walk"
+          ]
+        }
+      },
+      {
+        "id": "stp_oaks_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Di Rosa Center Meadow Trail",
+          "location": "Napa",
+          "tags": [
+            "art",
+            "sketch",
+            "photo",
+            "outdoor"
+          ]
+        }
+      },
+      {
+        "id": "stp_plaza_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Yountville Veterans Memorial Park",
+          "location": "Yountville, Napa",
+          "tags": [
+            "sketch",
+            "park",
+            "quiet",
+            "picnic"
+          ]
+        }
+      },
+      {
+        "id": "stp_cellar_04",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Domaine Carneros Terrace",
+          "location": "Napa",
+          "tags": [
+            "vineyard",
+            "viewpoint",
+            "photo",
+            "sparkling"
+          ]
+        }
+      }
+    ]
+  }
+}

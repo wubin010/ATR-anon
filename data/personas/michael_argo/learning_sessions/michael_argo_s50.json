@@ -1,0 +1,130 @@
+{
+  "session_id": "michael_argo_s50",
+  "session_type": "learning",
+  "day_offset": 50,
+  "domain": "workspace",
+  "reason_for_call": "Update a project spreadsheet",
+  "task_params": {
+    "location": "Portfolio",
+    "doc_type": "spreadsheet",
+    "title": "Portfolio Readiness Tracker",
+    "document_id": "doc_portfolio_01",
+    "ready_file_ids": [
+      "file_motion_01",
+      "file_poster_01"
+    ],
+    "salvageable_file_ids": [
+      "file_zine_01"
+    ],
+    "cut_file_ids": [
+      "file_arduino_01"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Portfolio",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_portfolio_01",
+        "content_delta": "<authored from ready_file_ids, salvageable_file_ids, cut_file_ids>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_portfolio_01",
+        "type": "document",
+        "attributes": {
+          "title": "Portfolio Readiness Tracker",
+          "doc_type": "spreadsheet",
+          "location": "Portfolio",
+          "content_brief": "Spreadsheet tracking portfolio pieces and current status columns."
+        }
+      },
+      {
+        "id": "file_motion_01",
+        "type": "file",
+        "attributes": {
+          "name": "motion-poster-loop.mp4",
+          "file_type": "image",
+          "location": "Portfolio/Exports",
+          "owner": "Michael Argo",
+          "labels": [
+            "portfolio",
+            "motion"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_poster_01",
+        "type": "file",
+        "attributes": {
+          "name": "riverfront-poster-final.png",
+          "file_type": "image",
+          "location": "Portfolio/Posters",
+          "owner": "Michael Argo",
+          "labels": [
+            "portfolio",
+            "poster"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_zine_01",
+        "type": "file",
+        "attributes": {
+          "name": "night-walk-zine-draft.pdf",
+          "file_type": "pdf",
+          "location": "Portfolio/Zines",
+          "owner": "Michael Argo",
+          "labels": [
+            "portfolio",
+            "draft"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_arduino_01",
+        "type": "file",
+        "attributes": {
+          "name": "arduino-light-box-notes.txt",
+          "file_type": "txt",
+          "location": "Portfolio/Installations",
+          "owner": "Michael Argo",
+          "labels": [
+            "portfolio",
+            "notes"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "session_id": "romisha_shields_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "photo album",
+    "budget": 30,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_album_01",
+      "prod_album_02",
+      "prod_album_03"
+    ],
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "photo album",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_album_01",
+          "prod_album_02",
+          "prod_album_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_album_03",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_album_01",
+        "type": "product",
+        "attributes": {
+          "name": "Heritage Keepsake Photo Album",
+          "price": 24.99,
+          "category": "photo album",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_album_02",
+        "type": "product",
+        "attributes": {
+          "name": "Grand Memories Scrapbook Album",
+          "price": 29.5,
+          "category": "photo album",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_album_03",
+        "type": "product",
+        "attributes": {
+          "name": "Family Archive Leatherette Photo Album",
+          "price": 27.99,
+          "category": "photo album",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_album_04",
+        "type": "product",
+        "attributes": {
+          "name": "Compact Snapshot Photo Album",
+          "price": 18.49,
+          "category": "photo album",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "instruction": "The plan for my Northbridge Coffee writing session in Lakeview is set: 2026-08-18 from 18:30 to 20:00. Keep this on my radar.",
+  "gold_value": null,
+  "session_id": "gabriel_campbell_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "gabriel_campbell_scheduling_02",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_scheduling_02",
+    "rule_text": "For important personal routines like writing sessions, yoga, or volunteer commitments, he prefers creating a real calendar event rather than just leaving himself a reminder.",
+    "canonical_answer": "Meaningful routines deserve an actual time block, not just a nudge."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_northbridge_writing_plan_01",
+        "type": "event",
+        "attributes": {
+          "title": "Northbridge Coffee writing session",
+          "start_time": "2026-08-18T18:30:00",
+          "end_time": "2026-08-18T20:00:00",
+          "participants": [],
+          "location": "Northbridge Coffee, Lakeview",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "personal_note"
+        }
+      },
+      {
+        "id": "evt_cedarflow_yoga_plan_02",
+        "type": "event",
+        "attributes": {
+          "title": "Cedar Flow sunrise yoga",
+          "start_time": "2026-08-20T07:00:00",
+          "end_time": "2026-08-20T08:00:00",
+          "participants": [],
+          "location": "Cedar Flow Studio, Capitol Hill",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "personal_note"
+        }
+      },
+      {
+        "id": "evt_rainier_volunteer_plan_03",
+        "type": "event",
+        "attributes": {
+          "title": "Rainier Community Health Fair volunteer shift",
+          "start_time": "2026-08-23T09:00:00",
+          "end_time": "2026-08-23T12:00:00",
+          "participants": [
+            "checkin@rainierhealthfair.org"
+          ],
+          "location": "Rainier Community Center",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "signup_portal"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

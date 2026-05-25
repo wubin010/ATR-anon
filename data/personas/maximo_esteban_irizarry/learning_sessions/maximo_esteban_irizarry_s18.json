@@ -1,0 +1,104 @@
+{
+  "session_id": "maximo_esteban_irizarry_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination": "Oaxaca",
+    "origin": "San Juan",
+    "passenger_count": 2,
+    "departure_date": "2025-10-14",
+    "return_date": "2025-10-21",
+    "sort_by": "price_asc"
+  },
+  "expected_tools": [
+    "search_flights"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "San Juan",
+        "destination": "Oaxaca",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_oax_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Oaxaca",
+          "departure_date": "2025-10-14",
+          "return_date": "2025-10-21",
+          "airline": "Aeromexico",
+          "price": 612.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_oax_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Oaxaca",
+          "departure_date": "2025-10-13",
+          "return_date": "2025-10-20",
+          "airline": "United",
+          "price": 548.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_oax_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Oaxaca",
+          "departure_date": "2025-10-14",
+          "return_date": "2025-10-21",
+          "airline": "Delta",
+          "price": 655.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_oax_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Juan",
+          "destination": "Oaxaca",
+          "departure_date": "2025-10-15",
+          "return_date": "2025-10-22",
+          "airline": "American",
+          "price": 589.0,
+          "available_seats": 2
+        }
+      }
+    ]
+  }
+}

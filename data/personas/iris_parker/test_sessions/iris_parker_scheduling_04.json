@@ -1,0 +1,95 @@
+{
+  "instruction": "The MFA outing on my personal calendar still feels a little rough around the edges—please update the event using the single detail that would improve it most.",
+  "gold_value": "location",
+  "session_id": "iris_parker_scheduling_04_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "iris_parker_scheduling_04",
+  "rule_ref": {
+    "rule_id": "iris_parker_scheduling_04",
+    "rule_text": "When adjusting an existing event for a cultural outing or workshop, she prefers changing the location rather than changing the title or participant list.",
+    "canonical_answer": "If an event needs refining, I usually change the location to fit the experience better."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_mfa_outing_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Friday thing",
+          "start_time": "2026-09-18T18:30:00",
+          "end_time": "2026-09-18T20:30:00",
+          "participants": [
+            "iris.parker@example.com",
+            "lena.shah@example.com",
+            "dev.morton@example.com",
+            "claire.ng@example.com",
+            "marco.ellis@example.com"
+          ],
+          "location": "MFA Boston",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_collage_lab_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Collage Lab Workshop",
+          "start_time": "2026-09-12T14:00:00",
+          "end_time": "2026-09-12T16:00:00",
+          "participants": [
+            "iris.parker@example.com",
+            "nora.blake@example.com"
+          ],
+          "location": "Cambridge Art Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_gallery_walk_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "SoWa Gallery Walk",
+          "start_time": "2026-09-21T11:00:00",
+          "end_time": "2026-09-21T13:30:00",
+          "participants": [
+            "iris.parker@example.com",
+            "maya.chen@example.com"
+          ],
+          "location": "SoWa Art + Design District",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "modify_event",
+          "arguments": {
+            "field": "location"
+          },
+          "compare_args": [
+            "field"
+          ]
+        }
+      ]
+    }
+  }
+}

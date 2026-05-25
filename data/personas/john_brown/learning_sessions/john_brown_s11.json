@@ -1,0 +1,86 @@
+{
+  "session_id": "john_brown_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "workspace",
+  "reason_for_call": "Update a work document.",
+  "task_params": {
+    "location": "Safety Campaigns",
+    "doc_type": "note",
+    "document_title": "Safety Signage Concept Note",
+    "inclusion_section_points": [
+      "use people and symbols that reflect a mixed workforce",
+      "avoid color choices that carry conflicting cultural meanings",
+      "pair icons with short plain-language labels",
+      "increase contrast and whitespace so key warnings scan faster",
+      "group hazards by visual priority with consistent shapes"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Safety Campaigns",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_signage_01",
+        "content_delta": "<authored from inclusion_section_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_signage_01",
+        "type": "document",
+        "attributes": {
+          "title": "Safety Signage Concept Note",
+          "doc_type": "note",
+          "location": "Safety Campaigns",
+          "content_brief": "Working concept note for a plant safety-signage refresh focused on readability, hazard hierarchy, and visual consistency."
+        }
+      },
+      {
+        "id": "doc_audit_02",
+        "type": "document",
+        "attributes": {
+          "title": "PPE Audit Summary",
+          "doc_type": "report",
+          "location": "Safety Campaigns",
+          "content_brief": "Recent audit summary covering PPE compliance gaps and corrective actions."
+        }
+      },
+      {
+        "id": "doc_training_03",
+        "type": "document",
+        "attributes": {
+          "title": "Toolbox Talk Visual Guidelines",
+          "doc_type": "memo",
+          "location": "Training Materials",
+          "content_brief": "Memo on formatting visual aids for short safety briefings."
+        }
+      }
+    ]
+  }
+}

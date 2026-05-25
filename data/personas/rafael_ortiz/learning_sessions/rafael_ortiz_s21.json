@@ -1,0 +1,103 @@
+{
+  "session_id": "rafael_ortiz_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "communication",
+  "reason_for_call": "Draft and send a thank-you note",
+  "task_params": {
+    "sender": "Maya Chen",
+    "folder": "inbox",
+    "thread_id": "thr_maya_recs_01",
+    "subject": "Re: Any good spots for a date night?",
+    "language": "en",
+    "reply_points": [
+      "thank her for recommending the restaurant",
+      "say the dinner was great and we really enjoyed it",
+      "mention the atmosphere felt perfect for date night",
+      "say we appreciated her thinking of us",
+      "keep it friendly and casual"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Chen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "thread_id": "thr_maya_recs_01",
+        "subject": "Re: Any good spots for a date night?",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Re: Any good spots for a date night?",
+          "body": "You two should try Ember Table on Main. The food is really solid and it has a cozy vibe without feeling too fancy. Let me know if y'all end up going!",
+          "thread_id": "thr_maya_recs_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-20T19:42:00"
+        }
+      },
+      {
+        "id": "msg_elena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Ramirez",
+          "subject": "Potluck signup",
+          "body": "Can you bring drinks for Saturday?",
+          "thread_id": "thr_elena_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-20T18:05:00"
+        }
+      },
+      {
+        "id": "msg_carlos_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Carlos Vega",
+          "subject": "Soccer this Sunday",
+          "body": "We’re still on for Riverside at 8 if the weather holds.",
+          "thread_id": "thr_carlos_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-20T16:11:00"
+        }
+      }
+    ]
+  }
+}

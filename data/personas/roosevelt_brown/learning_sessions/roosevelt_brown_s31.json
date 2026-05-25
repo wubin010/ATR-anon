@@ -1,0 +1,127 @@
+{
+  "session_id": "roosevelt_brown_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "travel",
+  "reason_for_call": "Narrow down a trip idea",
+  "task_params": {
+    "destination_constraints": [
+      "design",
+      "wellness",
+      "art museums"
+    ],
+    "region": "Europe",
+    "tags": [
+      "design",
+      "wellness",
+      "art museums"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "design",
+          "wellness",
+          "art museums"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_barcelona_01",
+          "dest_copenhagen_02",
+          "dest_rotterdam_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_barcelona_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Barcelona",
+          "region": "Europe",
+          "tags": [
+            "design",
+            "wellness",
+            "art museums",
+            "creative districts",
+            "architecture"
+          ]
+        }
+      },
+      {
+        "id": "dest_copenhagen_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Copenhagen",
+          "region": "Europe",
+          "tags": [
+            "design",
+            "wellness",
+            "art museums",
+            "cycling",
+            "public space"
+          ]
+        }
+      },
+      {
+        "id": "dest_rotterdam_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Rotterdam",
+          "region": "Europe",
+          "tags": [
+            "design",
+            "architecture",
+            "art museums",
+            "urban innovation"
+          ]
+        }
+      },
+      {
+        "id": "dest_mexicocity_04",
+        "type": "destination",
+        "attributes": {
+          "name": "Mexico City",
+          "region": "North America",
+          "tags": [
+            "art museums",
+            "creative districts",
+            "public health",
+            "food scene"
+          ]
+        }
+      }
+    ]
+  }
+}

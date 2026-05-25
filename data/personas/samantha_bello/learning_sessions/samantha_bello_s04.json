@@ -1,0 +1,99 @@
+{
+  "session_id": "samantha_bello_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "communication",
+  "reason_for_call": "Draft a team message",
+  "task_params": {
+    "recipient": "volunteer-team@rinconfinlit.org",
+    "subject": "Restarting Our Financial-Literacy Sessions / Reinicio de nuestras sesiones de educación financiera",
+    "language": "en",
+    "message_points": [
+      "Open with a warm thank-you to the volunteer team",
+      "Say the neighborhood financial-literacy sessions are restarting this month",
+      "Mention the first session is on May 28 at 6:30 PM",
+      "Location: Centro Comunitario de Rincon",
+      "Ask volunteers to reply if they can help that evening",
+      "Mention support is especially needed for setup and bilingual facilitation",
+      "Keep the tone encouraging and community-focused",
+      "Include both English and Spanish in the same message",
+      "Sign from Samantha"
+    ]
+  },
+  "expected_tools": [
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "recipient": "volunteer-team@rinconfinlit.org",
+        "subject": "Restarting Our Financial-Literacy Sessions / Reinicio de nuestras sesiones de educación financiera",
+        "body": "<authored from message_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_vol_01",
+        "type": "message",
+        "attributes": {
+          "sender": "marisol.cruz@rinconfinlit.org",
+          "subject": "Spring volunteer check-in",
+          "body": "Hi Samantha, a few of us are ready to help again whenever the community sessions restart. Let me know what dates you have in mind.",
+          "thread_id": "thr_vol_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-03T10:18:00"
+        }
+      },
+      {
+        "id": "msg_vol_02",
+        "type": "message",
+        "attributes": {
+          "sender": "samantha.bello@example.com",
+          "subject": "Thank you for helping at the budgeting workshop",
+          "body": "Team, thank you again for showing up for our last neighborhood budgeting workshop. Your support made the visuals and bilingual explanations much easier for everyone.",
+          "thread_id": "thr_vol_02",
+          "folder": "sent",
+          "labels": [
+            "community"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-14T19:42:00"
+        }
+      },
+      {
+        "id": "msg_vol_03",
+        "type": "message",
+        "attributes": {
+          "sender": "luis.rodriguez@rinconfinlit.org",
+          "subject": "Community center room availability",
+          "body": "The Centro Comunitario de Rincon is open most Wednesday evenings this month if you want to restart the financial-literacy sessions soon.",
+          "thread_id": "thr_vol_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-05-02T08:05:00"
+        }
+      }
+    ]
+  }
+}

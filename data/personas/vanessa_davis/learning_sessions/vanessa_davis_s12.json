@@ -1,0 +1,119 @@
+{
+  "session_id": "vanessa_davis_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "reservation",
+  "reason_for_call": "Book some event tickets.",
+  "task_params": {
+    "location": "Mojave",
+    "event_tags": [
+      "astronomy",
+      "clear-sky"
+    ],
+    "ticket_type": "senior",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Mojave",
+        "event_tags": [
+          "astronomy",
+          "clear-sky"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_starlight_01",
+        "ticket_type": "senior",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_starlight_01",
+        "type": "event",
+        "attributes": {
+          "name": "Starlight Desert Sky Watch",
+          "location": "Mojave",
+          "date_time": "2025-05-24T21:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "astronomy",
+            "clear-sky",
+            "outdoor"
+          ]
+        }
+      },
+      {
+        "id": "evt_observatory_02",
+        "type": "event",
+        "attributes": {
+          "name": "Mojave Observatory Open Night",
+          "location": "Mojave",
+          "date_time": "2025-05-25T20:30:00",
+          "price": 22.0,
+          "event_tags": [
+            "astronomy",
+            "observatory",
+            "guided"
+          ]
+        }
+      },
+      {
+        "id": "evt_rosetour_03",
+        "type": "event",
+        "attributes": {
+          "name": "Rosamond Planet Walk",
+          "location": "Rosamond",
+          "date_time": "2025-05-24T20:00:00",
+          "price": 12.0,
+          "event_tags": [
+            "astronomy",
+            "family",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "evt_music_04",
+        "type": "event",
+        "attributes": {
+          "name": "Sunset Jazz on the Patio",
+          "location": "Mojave",
+          "date_time": "2025-05-24T19:00:00",
+          "price": 25.0,
+          "event_tags": [
+            "music",
+            "outdoor",
+            "evening"
+          ]
+        }
+      }
+    ]
+  }
+}

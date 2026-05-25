@@ -1,0 +1,103 @@
+{
+  "instruction": "Please book dinner for three people in Portland on 2026-08-15 at 7:00pm; just pick a place and reserve it.",
+  "gold_value": "rst_firelight_wharf_01",
+  "session_id": "michael_argo_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "michael_argo_reservation_01",
+  "rule_ref": {
+    "rule_id": "michael_argo_reservation_01",
+    "rule_text": "For restaurant reservations, he prefers local indie or riverfront places over chain-style options.",
+    "canonical_answer": "I usually want a local indie spot, especially somewhere with riverfront character, instead of a chain restaurant."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_firelight_wharf_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Firelight Wharf Cafe",
+          "cuisine": "Seafood",
+          "location": "Portland",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "riverfront patio",
+          "brand_type": "local_indie",
+          "review_count": 146
+        }
+      },
+      {
+        "id": "rst_harborhouse_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor House Grill",
+          "cuisine": "American",
+          "location": "Portland",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "casual dining room",
+          "brand_type": "national_chain",
+          "review_count": 2410
+        }
+      },
+      {
+        "id": "rst_landingburger_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Landing Burger Co.",
+          "cuisine": "Burgers",
+          "location": "Portland",
+          "rating": 4.8,
+          "price_range": "$",
+          "seating_style": "family dining room",
+          "brand_type": "national_chain",
+          "review_count": 3180
+        }
+      },
+      {
+        "id": "rst_stonebridge_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Stonebridge Chophouse",
+          "cuisine": "Steakhouse",
+          "location": "Portland",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "upscale dining room",
+          "brand_type": "regional_chain",
+          "review_count": 1290
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_firelight_wharf_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

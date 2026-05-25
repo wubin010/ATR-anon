@@ -1,0 +1,174 @@
+{
+  "session_id": "jennifer_philmon_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Missouri",
+      "steam",
+      "historic"
+    ],
+    "destination_ids": [
+      "dst_hannibal_01"
+    ],
+    "destination": "Hannibal",
+    "stop_tags": [
+      "steam",
+      "museum",
+      "historic"
+    ],
+    "selected_stop_ids": [
+      "stp_marktwain_01",
+      "stp_bigriver_02",
+      "stp_rockcliffe_03"
+    ],
+    "duration_days": 3,
+    "traveler_count": 1
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Missouri",
+          "steam",
+          "historic"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_hannibal_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Hannibal",
+        "stop_tags": [
+          "steam",
+          "museum",
+          "historic"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Hannibal",
+        "duration_days": 3,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_marktwain_01",
+          "stp_bigriver_02",
+          "stp_rockcliffe_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_hannibal_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Hannibal",
+          "region": "Missouri",
+          "tags": [
+            "steam",
+            "historic",
+            "river town",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "dst_stjames_02",
+        "type": "destination",
+        "attributes": {
+          "name": "St. James",
+          "region": "Missouri",
+          "tags": [
+            "historic",
+            "small town",
+            "route stop"
+          ]
+        }
+      },
+      {
+        "id": "stp_marktwain_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mark Twain Riverboat",
+          "location": "Hannibal, Missouri",
+          "tags": [
+            "steam",
+            "historic",
+            "riverboat",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "stp_bigriver_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Big River Train Town Museum",
+          "location": "Hannibal, Missouri",
+          "tags": [
+            "steam",
+            "museum",
+            "historic",
+            "rail"
+          ]
+        }
+      },
+      {
+        "id": "stp_rockcliffe_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Rockcliffe Mansion",
+          "location": "Hannibal, Missouri",
+          "tags": [
+            "historic",
+            "museum",
+            "small town"
+          ]
+        }
+      }
+    ]
+  }
+}

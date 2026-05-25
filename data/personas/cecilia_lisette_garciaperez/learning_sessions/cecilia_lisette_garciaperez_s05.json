@@ -1,0 +1,103 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "reservation",
+  "reason_for_call": "Book a table.",
+  "task_params": {
+    "location": "Monte Vista",
+    "cuisine": "Cafe",
+    "sort_by": "price_asc",
+    "date_time": "2025-03-22T15:30:00-05:00",
+    "party_size": 6
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Monte Vista",
+        "cuisine": "Cafe",
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_inkwell_02",
+        "date_time": "2025-03-22T15:30:00-05:00",
+        "party_size": 6
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_larkspur_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Larkspur Café",
+          "cuisine": "Cafe",
+          "location": "Monte Vista",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "small dining room"
+        }
+      },
+      {
+        "id": "rst_inkwell_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "The Inkwell Coffee House",
+          "cuisine": "Cafe",
+          "location": "Monte Vista",
+          "rating": 4.3,
+          "price_range": "$",
+          "seating_style": "cozy tables"
+        }
+      },
+      {
+        "id": "rst_jasmine_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Jasmine Street Bistro",
+          "cuisine": "American",
+          "location": "Monte Vista",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "full-service dining room"
+        }
+      },
+      {
+        "id": "rst_quieta_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa Quieta Café",
+          "cuisine": "Cafe",
+          "location": "Monte Vista",
+          "rating": 4.1,
+          "price_range": "$$",
+          "seating_style": "patio and indoor tables"
+        }
+      }
+    ]
+  }
+}

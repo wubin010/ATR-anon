@@ -1,0 +1,99 @@
+{
+  "instruction": "Please order one bunch of kale for cooking, keep it under $5, and just pick one for me.",
+  "gold_value": "prod_decatur_field_kale_01",
+  "session_id": "cassandra_tovar_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "cassandra_tovar_commerce_02",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_commerce_02",
+    "rule_text": "When ordering produce or staple ingredients, she prefers locally grown options over generic alternatives.",
+    "canonical_answer": "If I’m ordering ingredients, I prefer locally grown produce whenever there’s a good option."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_decatur_field_kale_01",
+        "type": "product",
+        "attributes": {
+          "name": "Decatur Field Kale Bunch",
+          "price": 4.89,
+          "category": "kale",
+          "rating": 4.2,
+          "source_type": "locally grown",
+          "farm_region": "Decatur, Georgia",
+          "review_count": 31
+        }
+      },
+      {
+        "id": "prod_everyday_curly_kale_01",
+        "type": "product",
+        "attributes": {
+          "name": "Everyday Curly Kale Bunch",
+          "price": 2.29,
+          "category": "kale",
+          "rating": 4.9,
+          "source_type": "standard supply",
+          "review_count": 1840,
+          "units_sold_last_30_days": 1260
+        }
+      },
+      {
+        "id": "prod_freshhub_green_kale_01",
+        "type": "product",
+        "attributes": {
+          "name": "FreshHub Green Kale Bunch",
+          "price": 2.79,
+          "category": "kale",
+          "rating": 4.8,
+          "source_type": "standard supply",
+          "review_count": 1260,
+          "units_sold_last_30_days": 910
+        }
+      },
+      {
+        "id": "prod_family_choice_kale_01",
+        "type": "product",
+        "attributes": {
+          "name": "Family Choice Kale Bunch",
+          "price": 1.99,
+          "category": "kale",
+          "rating": 4.7,
+          "source_type": "standard supply",
+          "review_count": 960,
+          "units_sold_last_30_days": 780
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_decatur_field_kale_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "instruction": "Please handle the return for the mandoline slicer from my recent order—it just wasn't what I was hoping for.",
+  "gold_value": "exchange",
+  "session_id": "rafael_ortiz_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "rafael_ortiz_commerce_03",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_commerce_03",
+    "rule_text": "When a kitchen gadget order disappoints him, he prefers an exchange over a refund or store credit.",
+    "canonical_answer": "If a kitchen gadget misses the mark, I usually want an exchange so I can try a better version."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_mandoline_01",
+        "type": "product",
+        "attributes": {
+          "name": "ChefEdge Mandoline Slicer",
+          "price": 39.99,
+          "category": "kitchen_gadgets",
+          "rating": 4.1,
+          "brand": "ChefEdge",
+          "order_id": "ord_5312_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-12"
+        }
+      },
+      {
+        "id": "prod_blender_01",
+        "type": "product",
+        "attributes": {
+          "name": "RapidWhisk Immersion Blender",
+          "price": 58.0,
+          "category": "kitchen_gadgets",
+          "rating": 4.8,
+          "brand": "RapidWhisk",
+          "order_id": "ord_5288_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-09"
+        }
+      },
+      {
+        "id": "prod_container_01",
+        "type": "product",
+        "attributes": {
+          "name": "CedarStack Pantry Container Set",
+          "price": 27.5,
+          "category": "home_organization",
+          "rating": 4.7,
+          "brand": "CedarStack",
+          "order_id": "ord_5244_home",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-07"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

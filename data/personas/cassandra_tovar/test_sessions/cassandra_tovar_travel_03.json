@@ -1,0 +1,160 @@
+{
+  "instruction": "One stop on trip T-7311 in Nashville fell through. Please swap in a single replacement for a daytime visit near downtown Nashville that can fit in about 60–90 minutes and won't add much extra driving from the current route.",
+  "gold_value": [
+    "stop_nashville_sound_lab_archive_01"
+  ],
+  "session_id": "cassandra_tovar_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "cassandra_tovar_travel_03",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_travel_03",
+    "rule_text": "If a booked trip stop falls through, she prefers replacement stops that keep the same tech-or-audio theme rather than swapping in unrelated crowd-pleasers.",
+    "canonical_answer": "If part of my trip gets disrupted, I’d rather replace it with another tech or audio-focused stop that fits the original theme."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_nashville_sound_lab_archive_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Nashville Sound Lab Archive",
+          "stop_type": "audio_archive",
+          "location": "Downtown Nashville, Tennessee",
+          "tags": [
+            "audio",
+            "recording_history",
+            "mixing_console",
+            "indoor",
+            "daytime"
+          ],
+          "rating": 4.4,
+          "review_count": 186,
+          "detour_minutes_from_current_route": 9,
+          "visit_duration_hours": 1.25,
+          "trip_id": "T-7311"
+        }
+      },
+      {
+        "id": "stop_music_row_console_gallery_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Music Row Console Gallery",
+          "stop_type": "studio_exhibit",
+          "location": "Music Row, Nashville, Tennessee",
+          "tags": [
+            "audio",
+            "recording_equipment",
+            "studio_history",
+            "indoor",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 1310,
+          "detour_minutes_from_current_route": 24,
+          "visit_duration_hours": 1.5,
+          "trip_id": "T-7311"
+        }
+      },
+      {
+        "id": "stop_interactive_signal_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Interactive Signal Museum",
+          "stop_type": "tech_museum",
+          "location": "East Nashville, Tennessee",
+          "tags": [
+            "tech",
+            "electronics",
+            "interactive_exhibits",
+            "indoor",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 942,
+          "detour_minutes_from_current_route": 26,
+          "visit_duration_hours": 1.0,
+          "trip_id": "T-7311"
+        }
+      },
+      {
+        "id": "stop_frist_art_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Frist Art Museum",
+          "stop_type": "art_museum",
+          "location": "Downtown Nashville, Tennessee",
+          "tags": [
+            "art",
+            "museum",
+            "indoor",
+            "daytime",
+            "rotating_exhibits"
+          ],
+          "rating": 4.9,
+          "review_count": 3524,
+          "detour_minutes_from_current_route": 5,
+          "visit_duration_hours": 1.5,
+          "trip_id": "T-7311"
+        }
+      },
+      {
+        "id": "stop_cumberland_riverfront_walk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Cumberland Riverfront Walk",
+          "stop_type": "riverwalk",
+          "location": "Nashville, Tennessee",
+          "tags": [
+            "riverfront",
+            "scenic",
+            "outdoor",
+            "daytime",
+            "walking"
+          ],
+          "rating": 4.8,
+          "review_count": 4170,
+          "detour_minutes_from_current_route": 3,
+          "visit_duration_hours": 1.0,
+          "trip_id": "T-7311"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_nashville_sound_lab_archive_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

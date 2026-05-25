@@ -1,0 +1,110 @@
+{
+  "instruction": "I still need to answer the Harbor Hall mixer invite for 2026-07-18 from 6:00 to 8:00pm. See what I already committed to that evening and reply for me.",
+  "gold_value": "tentative",
+  "session_id": "john_brown_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "john_brown_scheduling_02",
+  "rule_ref": {
+    "rule_id": "john_brown_scheduling_02",
+    "rule_text": "When an invite overlaps with work, sports, or volunteer commitments and he is not sure yet, he prefers responding tentatively.",
+    "canonical_answer": "If I’m conflicted or still figuring out timing, I usually mark the invite tentative."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_harbor_mixer_20260718",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Summer Startup Mixer",
+          "start_time": "2026-07-18T18:00:00",
+          "end_time": "2026-07-18T20:00:00",
+          "participants": [
+            "events@riversidetech.org",
+            "john.brown@example.com"
+          ],
+          "location": "Harbor Hall",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_work_sprint_catchup_20260718",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "API release sprint catch-up",
+          "start_time": "2026-07-18T17:30:00",
+          "end_time": "2026-07-18T18:30:00",
+          "participants": [
+            "john.brown@example.com",
+            "maya.chen@example.com",
+            "dev-team@example.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_volleyball_league_20260718",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Co-ed Volleyball League Match",
+          "start_time": "2026-07-18T18:30:00",
+          "end_time": "2026-07-18T20:30:00",
+          "participants": [
+            "john.brown@example.com",
+            "alex.ramirez@example.com",
+            "team-red@example.com"
+          ],
+          "location": "Eastside Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_invite_potluck_20260725",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood Potluck",
+          "start_time": "2026-07-25T19:00:00",
+          "end_time": "2026-07-25T21:00:00",
+          "participants": [
+            "neighbors@riverviewhoa.org",
+            "john.brown@example.com"
+          ],
+          "location": "Riverview Park Shelter",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

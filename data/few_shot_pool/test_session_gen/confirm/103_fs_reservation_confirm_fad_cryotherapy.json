@@ -1,0 +1,82 @@
+{
+  "instruction": "Book me a cryotherapy session in Capitol Hill on 2026-08-11 at 5:30 pm. Use the saved phone number for the appointment.",
+  "gold_value": null,
+  "session_id": "fs_reservation_confirm_fad_cryotherapy_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "few_shot",
+  "rule_id": "fs_reservation_confirm_fad_cryotherapy",
+  "rule_ref": {
+    "rule_id": "fs_reservation_confirm_fad_cryotherapy",
+    "rule_text": "When a scheduled health-related appointment reflects a new or trendy wellness idea, the agent should ask her before booking it.",
+    "canonical_answer": "I have a rule: if it's a new health trend, ask me before booking anything."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates",
+      "get_user_confirmation"
+    ],
+    "references": [
+      {
+        "id": "prov_corecold_caphill_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Core Cold Studio",
+          "service_type": "cryotherapy",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.9,
+          "distance_km": 0.6
+        }
+      },
+      {
+        "id": "prov_zenfreeze_caphill_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "ZenFreeze Recovery",
+          "service_type": "cryotherapy",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.7,
+          "distance_km": 0.3
+        }
+      },
+      {
+        "id": "prov_reboot_caphill_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Reboot Lab",
+          "service_type": "cryotherapy",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.8,
+          "distance_km": 1.1
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "get_user_confirmation",
+          "arguments": {
+            "target_tool": "book_service_appointment"
+          },
+          "compare_args": [
+            "target_tool"
+          ]
+        }
+      ]
+    }
+  }
+}

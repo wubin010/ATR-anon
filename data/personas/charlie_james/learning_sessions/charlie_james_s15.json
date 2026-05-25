@@ -1,0 +1,86 @@
+{
+  "session_id": "charlie_james_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Restoration Studio Name Ideas",
+    "location": "Portland studio",
+    "idea_points": [
+      "names that feel soulful and professional",
+      "fit a classic car restoration business",
+      "leave room to add more ideas later"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Portland studio",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Restoration Studio Name Ideas",
+        "location": "Portland studio",
+        "content_brief": "<authored from idea_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_portlandplan_01",
+        "type": "document",
+        "attributes": {
+          "title": "Portland Studio Buildout Notes",
+          "doc_type": "note",
+          "location": "Portland studio",
+          "content_brief": "Rough notes about workspace layout, paint booth ideas, and front office setup."
+        }
+      },
+      {
+        "id": "doc_budget_02",
+        "type": "document",
+        "attributes": {
+          "title": "Equipment Budget Draft",
+          "doc_type": "spreadsheet",
+          "location": "Shop planning",
+          "content_brief": "Estimated costs for lifts, welders, compressors, and booth equipment."
+        }
+      },
+      {
+        "id": "doc_branding_03",
+        "type": "document",
+        "attributes": {
+          "title": "Color Inspiration Scrap Note",
+          "doc_type": "note",
+          "location": "Creative ideas",
+          "content_brief": "Paint palette thoughts inspired by jazz posters and quilt patterns."
+        }
+      }
+    ]
+  }
+}

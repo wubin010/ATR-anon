@@ -1,0 +1,97 @@
+{
+  "session_id": "rafael_ortiz_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "workspace",
+  "reason_for_call": "Update my task tracker.",
+  "task_params": {
+    "tracker_title": "Personal Task Tracker",
+    "school_next_action_points": [
+      "Finish dosage-calculation quiz review",
+      "Read two chapters for BSN leadership course",
+      "Pack laptop and charger for study block"
+    ],
+    "outreach_next_action_points": [
+      "Confirm bilingual blood-pressure handout copies",
+      "Text volunteer lead about table setup time",
+      "Restock glucose screening supplies list"
+    ],
+    "patient_safety_next_action_points": [
+      "Draft run-chart notes from recent med-error data",
+      "Email pharmacy contact for barcode scan exceptions",
+      "Outline two talking points for next huddle"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_personal_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from school_next_action_points>"
+      }
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_personal_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from outreach_next_action_points>"
+      }
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_personal_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from patient_safety_next_action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_personal_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Personal Task Tracker"
+        }
+      },
+      {
+        "id": "trk_clinical_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Clinical Certifications Tracker"
+        }
+      },
+      {
+        "id": "trk_outreach_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Community Outreach Log"
+        }
+      }
+    ]
+  }
+}

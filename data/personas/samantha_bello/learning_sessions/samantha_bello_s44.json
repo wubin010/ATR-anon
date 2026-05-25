@@ -1,0 +1,113 @@
+{
+  "session_id": "samantha_bello_s44",
+  "session_type": "learning",
+  "day_offset": 44,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a calendar block",
+  "task_params": {
+    "title": "Budgeting and Life Admin",
+    "start_time": "2025-03-16T09:30:00-04:00",
+    "end_time": "2025-03-16T12:30:00-04:00",
+    "location": "Home",
+    "calendar": "personal"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-16T09:30:00-04:00",
+        "end_time": "2025-03-16T12:30:00-04:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Budgeting and Life Admin",
+        "start_time": "2025-03-16T09:30:00-04:00",
+        "end_time": "2025-03-16T12:30:00-04:00",
+        "location": "Home"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_surf_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunrise Surf",
+          "start_time": "2025-03-16T06:30:00-04:00",
+          "end_time": "2025-03-16T08:00:00-04:00",
+          "participants": [],
+          "location": "Rincon Beach",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_yoga_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budgeting and Life Admin",
+          "start_time": "2025-03-16T09:30:00-04:00",
+          "end_time": "2025-03-16T12:30:00-04:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_call_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Check-in with Mom",
+          "start_time": "2025-03-16T13:00:00-04:00",
+          "end_time": "2025-03-16T13:30:00-04:00",
+          "participants": [
+            "mom@example.com"
+          ],
+          "location": "Phone",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_report_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quarterly Report Cleanup",
+          "start_time": "2025-03-15T08:30:00-04:00",
+          "end_time": "2025-03-15T10:30:00-04:00",
+          "participants": [],
+          "location": "Home Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "instruction": "Please write something up for the seniors' art-craft group I lead at the community center. Save it in /CommunityCenter/Art Programs, title it \"Button Collage Session Materials,\" and include the supply list, the room setup, and the steps for the activity.",
+  "gold_value": "template",
+  "session_id": "theodora_tong_workspace_02_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "theodora_tong_workspace_02",
+  "rule_ref": {
+    "rule_id": "theodora_tong_workspace_02",
+    "rule_text": "When setting up materials for recurring art sessions, she prefers a reusable template rather than starting from scratch each time.",
+    "canonical_answer": "For recurring workshop materials, I like a template I can reuse."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_button_collage_prep_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Button Collage Prep Notes",
+          "doc_type": "note",
+          "location": "/CommunityCenter/Art Programs",
+          "content_brief": "One-page outline for a senior button collage activity covering supplies, table arrangement, and the order of the craft steps."
+        }
+      },
+      {
+        "id": "doc_watercolor_table_setup_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Volunteer Reminder: Watercolor Table Setup",
+          "doc_type": "memo",
+          "location": "/CommunityCenter/Art Programs",
+          "content_brief": "Preparation instructions for cups, brushes, aprons, and seating before a watercolor group for older adults."
+        }
+      },
+      {
+        "id": "doc_tissue_flower_activity_outline_01",
+        "type": "document",
+        "attributes": {
+          "title": "Tissue Flower Activity Outline",
+          "doc_type": "note",
+          "location": "/CommunityCenter/Art Programs",
+          "content_brief": "Short write-up for a flower-making session with a materials list, setup notes, and activity flow."
+        }
+      },
+      {
+        "id": "doc_spring_senior_art_hour_recap_01",
+        "type": "document",
+        "attributes": {
+          "title": "Spring Senior Art Hour Recap",
+          "doc_type": "report",
+          "location": "/CommunityCenter/Art Programs",
+          "content_brief": "Summary of attendance, favorite projects, and supply usage from recent community-center art gatherings."
+        }
+      },
+      {
+        "id": "doc_senior_craft_session_planner_01",
+        "type": "document",
+        "attributes": {
+          "title": "Senior Craft Session Planner",
+          "doc_type": "template",
+          "location": "/CommunityCenter/Templates",
+          "content_brief": "Blank layout with sections for supplies, room setup, activity steps, and cleanup notes for community-center craft groups."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

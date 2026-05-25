@@ -1,0 +1,150 @@
+{
+  "instruction": "I'm spending a relaxed solo day in Sacramento. From the candidate places below, pick one daytime stop for the outing that I can do in about 2–3 hours and add it to a simple one-day plan starting in Sacramento.",
+  "gold_value": [
+    "stop_sacramento_rr_museum_01"
+  ],
+  "session_id": "jennifer_philmon_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "jennifer_philmon_travel_02",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_travel_02",
+    "rule_text": "When choosing places to include on a leisure trip, she favors historic steam-engine and industrial-heritage stops over generic tourist attractions.",
+    "canonical_answer": "When I travel for fun, I like stops tied to steam engines and industrial history more than standard tourist spots."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_sacramento_rr_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "California State Railroad Museum",
+          "location": "Old Sacramento, Sacramento, California",
+          "tags": [
+            "railroad_history",
+            "steam_engines",
+            "industrial_heritage",
+            "museum",
+            "daytime"
+          ],
+          "rating": 4.6,
+          "review_count": 2241,
+          "walk_time_from_downtown_min": 12,
+          "visit_duration_hours": 2.5
+        }
+      },
+      {
+        "id": "stop_old_sac_waterfront_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Old Sacramento Waterfront Promenade",
+          "location": "Old Sacramento, Sacramento, California",
+          "tags": [
+            "waterfront",
+            "historic_district",
+            "shopping",
+            "river_views",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 6820,
+          "walk_time_from_downtown_min": 10,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_crocker_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Crocker Art Museum",
+          "location": "Sacramento, California",
+          "tags": [
+            "art",
+            "museum",
+            "galleries",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 3914,
+          "walk_time_from_downtown_min": 9,
+          "visit_duration_hours": 2.5
+        }
+      },
+      {
+        "id": "stop_delta_king_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Delta King Riverboat",
+          "location": "Old Sacramento, Sacramento, California",
+          "tags": [
+            "riverboat",
+            "history",
+            "waterfront",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 4875,
+          "walk_time_from_downtown_min": 11,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_doce_discovery_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Old Sacramento Living History Program",
+          "location": "Old Sacramento, Sacramento, California",
+          "tags": [
+            "historic_district",
+            "walking_tour",
+            "costumed_interpreters",
+            "daytime",
+            "family_friendly"
+          ],
+          "rating": 4.8,
+          "review_count": 1560,
+          "walk_time_from_downtown_min": 8,
+          "visit_duration_hours": 2.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_sacramento_rr_museum_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

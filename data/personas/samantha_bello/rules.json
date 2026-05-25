@@ -1,0 +1,573 @@
+[
+  {
+    "rule_text": "When she is preparing an outgoing message that represents her professionally or in community work, Samantha prefers it to be drafted for review rather than sent immediately.",
+    "canonical_answer": "I like important work or community messages drafted first so I can review the tone before they go out.",
+    "counterfactual_default": "Send the message directly once the content is available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "anxiety‑driven perfectionism"
+      },
+      {
+        "type": "direct",
+        "content": "facilitates cross‑functional meetings in both Spanish and English to bridge cultural and linguistic gaps"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "samantha_bello_communication_01",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation lands on a schedule that may shift around hybrid work or sunrise self-care routines, Samantha prefers to reply tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If an invite might conflict with my hybrid schedule or dawn routines, I usually mark it tentative first.",
+    "counterfactual_default": "Accept or decline the invitation immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "thriving in a flexible hybrid work arrangement that accommodates their love for spontaneous sunrise surf sessions"
+      },
+      {
+        "type": "direct",
+        "content": "weekly yoga classes at the community center"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "samantha_bello_scheduling_01",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring self-care or volunteer commitments, Samantha prefers putting a real calendar block on the schedule rather than only setting a private reminder.",
+    "canonical_answer": "For yoga, volunteering, and other regular commitments, I prefer a real calendar event so the time is actually blocked.",
+    "counterfactual_default": "Set only a reminder without creating a calendar event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly yoga classes at the community center"
+      },
+      {
+        "type": "direct",
+        "content": "Volunteering for a community financial‑literacy project"
+      },
+      {
+        "type": "direct",
+        "content": "A personal ambition is to secure a flexible, hybrid work arrangement that allows her to balance demanding projects with the self‑care routines she relies on"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "samantha_bello_scheduling_02",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing work files, Samantha prefers them to be classified by project rather than by generic type or date.",
+    "canonical_answer": "I organize work files by project first, especially for things like ESG, SAP, and budgeting work.",
+    "counterfactual_default": "Classify files by type or by date.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "SAP ERP migrations, and ESG reporting"
+      },
+      {
+        "type": "direct",
+        "content": "Budgeting and forecasting"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "samantha_bello_workspace_01",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she is cleaning up photo or art files, Samantha prefers deleting obvious blurry duplicates outright rather than archiving them.",
+    "canonical_answer": "For bad duplicate shots or unusable art-file clutter, I delete them instead of saving them somewhere.",
+    "counterfactual_default": "Archive the files or leave them stored.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "curates photo essays of local festivals"
+      },
+      {
+        "type": "direct",
+        "content": "She enjoys photography, focusing on coastal landscapes, historic architecture, and candid moments at festivals."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "delete_files",
+      "param": null
+    },
+    "rule_id": "samantha_bello_workspace_04",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When moving files into folders, Samantha prefers project-specific destinations such as ESG, SAP, or budgeting folders over generic catch-all folders.",
+    "canonical_answer": "When files are being moved, I want them in the specific project folder, not a miscellaneous catch-all.",
+    "counterfactual_default": "Move the files into a broad general folder.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "SAP ERP migrations, and ESG reporting"
+      },
+      {
+        "type": "direct",
+        "content": "budgeting"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "samantha_bello_workspace_05",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a restaurant, Samantha prefers places that blend Puerto Rican flavors with global influences rather than purely standard fare.",
+    "canonical_answer": "For dining out, I usually choose places that mix Puerto Rican cooking with interesting global twists.",
+    "counterfactual_default": "Pick a generic restaurant without regard to fusion or local flavor.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "adding global twists like Thai basil, Greek feta, and Japanese miso"
+      },
+      {
+        "type": "direct",
+        "content": "Cooking fusion Puerto Rican dishes"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "samantha_bello_reservation_01",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing among events to attend, Samantha prefers local culture-rich options such as festivals, film, or soccer over generic entertainment picks.",
+    "canonical_answer": "If I’m picking an event, I prefer something rooted in local culture, art, or Puerto Rican sports.",
+    "counterfactual_default": "Select the most generic or mainstream entertainment option available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "avidly follows Bayamón FC"
+      },
+      {
+        "type": "direct",
+        "content": "Rincon International Film Festival"
+      },
+      {
+        "type": "direct",
+        "content": "curates photo essays of local festivals"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "samantha_bello_reservation_03",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a wellness-oriented appointment, Samantha prefers community-centered yoga or meditation providers over luxury spa-style providers.",
+    "canonical_answer": "For wellness appointments, I prefer community yoga or meditation providers over fancy spa options.",
+    "counterfactual_default": "Choose a premium spa or the most upscale provider.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly yoga classes at the community center"
+      },
+      {
+        "type": "direct",
+        "content": "guided meditation sessions at the community center support her mental‑health routine"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "samantha_bello_reservation_04",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When selecting stops for a new trip, Samantha prefers an itinerary that combines surf, culture, and cuisine rather than focusing on only one theme.",
+    "canonical_answer": "I like trip stops that give me some mix of surf, culture, and good food rather than just one of those.",
+    "counterfactual_default": "Pick stops based on a single theme such as sightseeing alone or the top-rated attractions only.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers spontaneous weekend getaways that blend surf, culture, and cuisine"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "samantha_bello_travel_02",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a trip is disrupted, Samantha prefers replacement stops that preserve the original surf-culture-cuisine mix rather than swapping in any generic high-rated alternative.",
+    "canonical_answer": "If a trip gets disrupted, I want replacement stops that keep the same surf, culture, and food vibe.",
+    "counterfactual_default": "Replace the disrupted stop with any convenient or highly rated alternative.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers spontaneous weekend getaways that blend surf, culture, and cuisine"
+      },
+      {
+        "type": "direct",
+        "content": "balancing modest travel budgets with an insatiable curiosity for global artistic immersion"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "samantha_bello_travel_03",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking flights, Samantha prefers a window seat.",
+    "canonical_answer": "I always prefer a window seat when I fly.",
+    "counterfactual_default": "Choose an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "coastal landscapes"
+      },
+      {
+        "type": "direct",
+        "content": "vibrant street murals into watercolor seascapes and abstract canvases"
+      },
+      {
+        "type": "inferred",
+        "content": "Her visual-art and landscape-photography interests make scenic views during travel unusually valuable to her."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "samantha_bello_travel_04",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging, Samantha prefers modest-budget hotels with local character over more expensive generic luxury options.",
+    "canonical_answer": "For hotels, I prefer something budget-conscious and locally characterful rather than luxury for its own sake.",
+    "counterfactual_default": "Choose a more upscale or generic premium hotel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balancing modest travel budgets with an insatiable curiosity for global artistic immersion"
+      },
+      {
+        "type": "direct",
+        "content": "historic streets of Cartagena"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "samantha_bello_travel_05",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she is preparing for a cooking project, Samantha prefers collecting ingredients into a shopping list first rather than placing an order immediately.",
+    "canonical_answer": "When I’m planning a dish, I like to build a shopping list first before ordering anything.",
+    "counterfactual_default": "Place an order for ingredients right away.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "experiments in the kitchen with traditional mofongo and arroz con gandules"
+      },
+      {
+        "type": "direct",
+        "content": "frequently prepares citrus‑marinated snapper ceviche"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    },
+    "rule_id": "samantha_bello_commerce_01",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering food or garden items, Samantha prefers products that support Puerto Rican cooking with global twists, especially fresh herbs and distinctive ingredients, over plain generic staples.",
+    "canonical_answer": "If I’m ordering ingredients or herb items, I go for things that let me cook Puerto Rican dishes with a global twist.",
+    "counterfactual_default": "Choose the most standard or generic pantry items.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "adding global twists like Thai basil, Greek feta, and Japanese miso"
+      },
+      {
+        "type": "direct",
+        "content": "Gardening (herb balcony garden)"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "samantha_bello_commerce_02",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an ordered item is wrong but still useful in the right version, Samantha prefers an exchange rather than a refund.",
+    "canonical_answer": "If the item is useful but not the right version, I’d rather exchange it than just get a refund.",
+    "counterfactual_default": "Request a refund instead of a replacement.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often attending local workshops to learn new techniques"
+      },
+      {
+        "type": "direct",
+        "content": "experiments in the kitchen"
+      },
+      {
+        "type": "inferred",
+        "content": "Because she actively uses creative and culinary materials, receiving the correct version matters more than simply reversing the purchase."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "samantha_bello_commerce_03",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When adjusting a software subscription for work, Samantha prefers the pro tier rather than basic or premium extremes.",
+    "canonical_answer": "For work software, I usually want the pro plan because it balances capability and budget.",
+    "counterfactual_default": "Either stay on basic to save money or jump to a higher premium tier.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Power BI, QuickBooks, SAP ERP"
+      },
+      {
+        "type": "direct",
+        "content": "balancing modest travel budgets"
+      },
+      {
+        "type": "inferred",
+        "content": "Her advanced professional tool use suggests she needs more than entry-level features, while her budget-conscious habits argue against overbuying top tiers."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "samantha_bello_commerce_04",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When messages relate to compliance, reporting, or finance deadlines, Samantha prefers them to be marked high priority.",
+    "canonical_answer": "Compliance, reporting, and finance deadline messages should be high priority for me.",
+    "counterfactual_default": "Leave those messages at normal priority.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "creating management reports that meet both local Puerto Rico tax requirements and U.S. federal standards"
+      },
+      {
+        "type": "direct",
+        "content": "Regulatory compliance (Puerto Rico and US)"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "samantha_bello_communication_02",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When messages are about art workshops, festivals, or community financial-literacy work, Samantha prefers applying a dedicated label instead of leaving them unlabeled.",
+    "canonical_answer": "I like my art, festival, and volunteer messages labeled into their own category so they don’t get lost.",
+    "counterfactual_default": "Leave the messages unlabeled in the general inbox.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often attending local workshops to learn new techniques"
+      },
+      {
+        "type": "direct",
+        "content": "curates photo essays of local festivals"
+      },
+      {
+        "type": "direct",
+        "content": "Volunteering for a community financial‑literacy project"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "samantha_bello_communication_03",
+    "persona_id": "samantha_bello",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

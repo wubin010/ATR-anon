@@ -1,0 +1,163 @@
+{
+  "instruction": "I'm starting from scratch on a first-time Berlin trip for myself: 3 days, solo. From the candidate stops below, pick one must-do place to anchor the itinerary and build the plan around it.",
+  "gold_value": [
+    "stop_berlin_hackesche_hofe_01"
+  ],
+  "session_id": "michael_argo_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "michael_argo_travel_04",
+  "rule_ref": {
+    "rule_id": "michael_argo_travel_04",
+    "rule_text": "When building a trip, he prefers stops centered on art districts, historic streets, temples, galleries, or sketch-worthy urban areas rather than generic tourist attractions.",
+    "canonical_answer": "I like my trips to include art-filled or historic places where I can sketch and explore, not just generic tourist stops."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_berlin_hackesche_hofe_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Hackesche Höfe & Spandauer Vorstadt",
+          "stop_type": "historic_district",
+          "location": "Berlin, Germany",
+          "tags": [
+            "historic_streets",
+            "courtyards",
+            "galleries",
+            "cafes",
+            "street_art",
+            "local_shops",
+            "walkable"
+          ],
+          "rating": 4.6,
+          "review_count": 7210,
+          "visit_duration_hours": 4.0,
+          "nearby_walkable_spots_count": 11,
+          "ticket_required": false
+        }
+      },
+      {
+        "id": "stop_berlin_auguststrasse_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Auguststraße Gallery Mile",
+          "stop_type": "gallery_district",
+          "location": "Berlin, Germany",
+          "tags": [
+            "galleries",
+            "contemporary_art",
+            "cafes",
+            "design",
+            "street_art",
+            "walkable"
+          ],
+          "rating": 4.8,
+          "review_count": 9340,
+          "visit_duration_hours": 1.5,
+          "nearby_walkable_spots_count": 4,
+          "ticket_required": false
+        }
+      },
+      {
+        "id": "stop_berlin_brandenburg_gate_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Brandenburg Gate",
+          "stop_type": "landmark",
+          "location": "Berlin, Germany",
+          "tags": [
+            "landmark",
+            "iconic",
+            "historic_monument",
+            "photo_spot",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 64120,
+          "visit_duration_hours": 1.0,
+          "nearby_walkable_spots_count": 3,
+          "ticket_required": false
+        }
+      },
+      {
+        "id": "stop_berlin_tv_tower_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Berlin TV Tower",
+          "stop_type": "observation_tower",
+          "location": "Berlin, Germany",
+          "tags": [
+            "landmark",
+            "skyline_view",
+            "ticketed_attraction",
+            "popular",
+            "observation_deck"
+          ],
+          "rating": 4.8,
+          "review_count": 58440,
+          "visit_duration_hours": 1.5,
+          "nearby_walkable_spots_count": 2,
+          "ticket_required": true
+        }
+      },
+      {
+        "id": "stop_berlin_museum_island_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Museum Island",
+          "stop_type": "museum_complex",
+          "location": "Berlin, Germany",
+          "tags": [
+            "museums",
+            "UNESCO",
+            "riverfront",
+            "landmark",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 41230,
+          "visit_duration_hours": 3.0,
+          "nearby_walkable_spots_count": 5,
+          "ticket_required": true
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_berlin_hackesche_hofe_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

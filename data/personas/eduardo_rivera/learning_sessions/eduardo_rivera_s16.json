@@ -1,0 +1,82 @@
+{
+  "session_id": "eduardo_rivera_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Travel Plans",
+    "doc_type": "note",
+    "title": "Paso Robles Getaway Planning Note",
+    "content_brief": "Start a trip-planning note with sections for estimated costs, possible stops, and photo ideas for a Paso Robles getaway."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Travel Plans",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Paso Robles Getaway Planning Note",
+        "location": "Travel Plans",
+        "content_brief": "Start a trip-planning note with sections for estimated costs, possible stops, and photo ideas for a Paso Robles getaway."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_trip_01",
+        "type": "document",
+        "attributes": {
+          "title": "Big Sur Sunrise Drive Notes",
+          "doc_type": "note",
+          "location": "Travel Plans",
+          "content_brief": "Rough route ideas, parking notes, and overlook stops for a coastal drive."
+        }
+      },
+      {
+        "id": "doc_trip_02",
+        "type": "document",
+        "attributes": {
+          "title": "Napa Tasting Budget Scratchpad",
+          "doc_type": "note",
+          "location": "Travel Plans",
+          "content_brief": "Budget ranges for tasting fees, gas, snacks, and one night stay."
+        }
+      },
+      {
+        "id": "doc_trip_03",
+        "type": "document",
+        "attributes": {
+          "title": "Gallery Weekend Possibilities",
+          "doc_type": "note",
+          "location": "Travel Plans",
+          "content_brief": "Loose list of art stops, downtown walks, and meal ideas."
+        }
+      }
+    ]
+  }
+}

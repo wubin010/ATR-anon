@@ -1,0 +1,126 @@
+{
+  "session_id": "anna_strahan_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule something on my calendar.",
+  "task_params": {
+    "calendar": "work",
+    "title": "Quality & Safety Committee",
+    "start_time": "2025-02-18T14:00:00-06:00",
+    "end_time": "2025-02-18T15:00:00-06:00",
+    "new_start_time": "2025-02-18T16:00:00-06:00",
+    "new_end_time": "2025-02-18T17:00:00-06:00"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "reschedule_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-18T16:00:00-06:00",
+        "end_time": "2025-02-18T17:00:00-06:00"
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_qsc_01",
+        "new_start_time": "2025-02-18T16:00:00-06:00",
+        "new_end_time": "2025-02-18T17:00:00-06:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_qsc_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quality & Safety Committee",
+          "start_time": "2025-02-18T14:00:00-06:00",
+          "end_time": "2025-02-18T15:00:00-06:00",
+          "participants": [
+            "anna.strahan@northshoreclinic.org",
+            "maria.gibbs@northshoreclinic.org",
+            "derek.lanoux@northshoreclinic.org",
+            "helen.pike@northshoreclinic.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_cor_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Clinic Operations Review",
+          "start_time": "2025-02-18T14:30:00-06:00",
+          "end_time": "2025-02-18T15:30:00-06:00",
+          "participants": [
+            "anna.strahan@northshoreclinic.org",
+            "paul.esparza@northshoreclinic.org",
+            "nina.chauvin@northshoreclinic.org"
+          ],
+          "location": "Admin Suite 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_huddle_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning Staffing Huddle",
+          "start_time": "2025-02-18T08:15:00-06:00",
+          "end_time": "2025-02-18T08:45:00-06:00",
+          "participants": [
+            "anna.strahan@northshoreclinic.org",
+            "ops-team@northshoreclinic.org"
+          ],
+          "location": "Nurses Station West",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget Variance Check-in",
+          "start_time": "2025-02-18T11:00:00-06:00",
+          "end_time": "2025-02-18T11:30:00-06:00",
+          "participants": [
+            "anna.strahan@northshoreclinic.org",
+            "jason.reed@northshoreclinic.org"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "session_id": "anna_strahan_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "travel",
+  "reason_for_call": "Book a short trip.",
+  "task_params": {
+    "location": "Provence",
+    "guest_count": 2,
+    "room_count": 1,
+    "hotel_offer_id": "htl_lavender_inn_01"
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Provence"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_provence_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Provence",
+        "guest_count": 2,
+        "room_count": 1,
+        "sort_by": "relevance"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "htl_lavender_inn_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_provence_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Provence Countryside",
+          "region": "Provence",
+          "tags": [
+            "spring",
+            "quiet",
+            "villages",
+            "scenic"
+          ]
+        }
+      },
+      {
+        "id": "dest_nice_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Nice Coast",
+          "region": "French Riviera",
+          "tags": [
+            "beach",
+            "city",
+            "nightlife",
+            "spring"
+          ]
+        }
+      },
+      {
+        "id": "htl_lavender_inn_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Lavender Hill Inn",
+          "location": "Provence",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-21",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 189.0
+        }
+      },
+      {
+        "id": "htl_avignon_suites_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Avignon Central Suites",
+          "location": "Provence",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-21",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 172.0
+        }
+      },
+      {
+        "id": "htl_marseille_harbor_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Marseille Harbor Hotel",
+          "location": "Marseille",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-21",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 165.0
+        }
+      }
+    ]
+  }
+}

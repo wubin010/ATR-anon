@@ -1,0 +1,166 @@
+{
+  "session_id": "vanessa_davis_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination": "New Orleans",
+    "duration_days": 4,
+    "traveler_count": 2,
+    "destination_constraints": [
+      "New Orleans",
+      "jazz",
+      "food"
+    ],
+    "stop_tags": [
+      "jazz",
+      "history",
+      "food"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "New Orleans",
+          "jazz",
+          "food"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_neworleans_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "New Orleans",
+        "stop_tags": [
+          "jazz",
+          "history",
+          "food"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "New Orleans",
+        "duration_days": 4,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_preservationhall_01",
+          "stp_backstreet_01",
+          "stp_stroch_01",
+          "stp_frenchmen_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_neworleans_01",
+        "type": "destination",
+        "attributes": {
+          "name": "New Orleans",
+          "region": "Louisiana",
+          "tags": [
+            "jazz",
+            "food",
+            "history",
+            "culture",
+            "budget-friendly"
+          ]
+        }
+      },
+      {
+        "id": "stp_frenchmen_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Frenchmen Street Live Music Walk",
+          "location": "New Orleans",
+          "tags": [
+            "jazz",
+            "music",
+            "nightlife",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "stp_preservationhall_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Preservation Hall",
+          "location": "New Orleans",
+          "tags": [
+            "jazz",
+            "history",
+            "music",
+            "landmark"
+          ]
+        }
+      },
+      {
+        "id": "stp_backstreet_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Backstreet Cultural Museum",
+          "location": "New Orleans",
+          "tags": [
+            "history",
+            "culture",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "stp_stroch_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "St. Roch Market",
+          "location": "New Orleans",
+          "tags": [
+            "food",
+            "market",
+            "casual",
+            "budget-friendly"
+          ]
+        }
+      }
+    ]
+  }
+}

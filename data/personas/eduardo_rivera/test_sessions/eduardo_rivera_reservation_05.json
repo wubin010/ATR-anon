@@ -1,0 +1,104 @@
+{
+  "instruction": "Please book me a dental cleaning in San Antonio for 2026-08-14 at 4:30pm — just choose one and set it up.",
+  "gold_value": "svc_dental_barrio_01",
+  "session_id": "eduardo_rivera_reservation_05_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "eduardo_rivera_reservation_05",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_reservation_05",
+    "rule_text": "When booking a local service appointment, he favors independent or community-rooted providers over impersonal chain options.",
+    "canonical_answer": "For local appointments, I prefer independent or community-rooted providers over chain businesses."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_dental_barrio_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Barrio Community Dental Collective",
+          "service_type": "dental cleaning",
+          "location": "West Side, San Antonio",
+          "rating": 4.5,
+          "distance_km": 3.6,
+          "ownership_model": "independent",
+          "brand_scope": "single-location practice",
+          "community_partnerships": "monthly oral-health education sessions at El Camino Community Center",
+          "festival_participation": "Fiesta de los Niños health booth"
+        }
+      },
+      {
+        "id": "svc_dental_smilehub_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "SmileHub Dental",
+          "service_type": "dental cleaning",
+          "location": "Downtown San Antonio",
+          "rating": 4.9,
+          "distance_km": 0.4,
+          "ownership_model": "national chain",
+          "brand_scope": "national chain",
+          "locations_count": 86
+        }
+      },
+      {
+        "id": "svc_dental_metrocare_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "MetroCare Dental Center",
+          "service_type": "dental cleaning",
+          "location": "Alamo Heights, San Antonio",
+          "rating": 4.8,
+          "distance_km": 1.1,
+          "ownership_model": "regional chain",
+          "brand_scope": "regional chain",
+          "locations_count": 24
+        }
+      },
+      {
+        "id": "svc_dental_carepoint_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "CarePoint Dental Studio",
+          "service_type": "dental cleaning",
+          "location": "North Central, San Antonio",
+          "rating": 4.7,
+          "distance_km": 0.8,
+          "ownership_model": "franchise chain",
+          "brand_scope": "franchise network",
+          "locations_count": 41
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_dental_barrio_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

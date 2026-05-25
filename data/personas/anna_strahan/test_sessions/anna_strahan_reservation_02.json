@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm in New Orleans and want two tickets for a live music night out; keep it under $50 each, pick something and book it.",
+  "gold_value": "evt_frenchmen_zydeco_01",
+  "session_id": "anna_strahan_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "anna_strahan_reservation_02",
+  "rule_ref": {
+    "rule_id": "anna_strahan_reservation_02",
+    "rule_text": "When choosing concert or performance tickets, Anna prefers intimate jazz or zydeco events over larger, more generic mainstream shows.",
+    "canonical_answer": "For live music, I’d rather book an intimate jazz or zydeco event than a big generic show."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_frenchmen_zydeco_01",
+        "type": "event",
+        "attributes": {
+          "name": "Frenchmen Lantern Room Zydeco Trio",
+          "location": "Frenchmen Street, New Orleans",
+          "date_time": "2026-06-20T20:30:00",
+          "price": 46,
+          "event_tags": [
+            "zydeco",
+            "small venue",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_smoothie_pop_01",
+        "type": "event",
+        "attributes": {
+          "name": "Summer Nights Pop Tour at Smoothie King Center",
+          "location": "Smoothie King Center, New Orleans",
+          "date_time": "2026-06-20T20:00:00",
+          "price": 39,
+          "event_tags": [
+            "pop",
+            "arena show",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_riverfront_jazz_01",
+        "type": "event",
+        "attributes": {
+          "name": "Riverfront Jazz All-Stars Gala",
+          "location": "Riverfront Pavilion, New Orleans",
+          "date_time": "2026-06-20T19:30:00",
+          "price": 49,
+          "event_tags": [
+            "jazz",
+            "festival headliner",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_saenger_revue_01",
+        "type": "event",
+        "attributes": {
+          "name": "Saenger Theatre Soul Classics Revue",
+          "location": "Saenger Theatre, New Orleans",
+          "date_time": "2026-06-20T20:00:00",
+          "price": 44,
+          "event_tags": [
+            "revue",
+            "touring show",
+            "live music"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_frenchmen_zydeco_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

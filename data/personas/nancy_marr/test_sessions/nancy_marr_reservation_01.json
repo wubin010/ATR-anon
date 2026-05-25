@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner in Downtown Seattle for two people on 2026-09-18 at 7:30pm; keep it around $$ and just choose a place for me.",
+  "gold_value": "rst_lantern_room_01",
+  "session_id": "nancy_marr_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "nancy_marr_reservation_01",
+  "rule_ref": {
+    "rule_id": "nancy_marr_reservation_01",
+    "rule_text": "When making restaurant reservations, Nancy prefers quiet, intimate places over loud or high-energy venues.",
+    "canonical_answer": "I’d rather book somewhere quiet and intimate than a bustling spot."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_lantern_room_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Lantern Room Bistro",
+          "cuisine": "French",
+          "location": "Downtown Seattle",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "small dining room with candlelit two-top tables and low music"
+        }
+      },
+      {
+        "id": "rst_skyline_social_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Skyline Social Kitchen",
+          "cuisine": "New American",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "open-plan rooftop room with communal tables and a busy bar"
+        }
+      },
+      {
+        "id": "rst_harbor_noodle_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor Noodle House",
+          "cuisine": "Japanese",
+          "location": "Downtown Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "compact room with close-set tables and upbeat music"
+        }
+      },
+      {
+        "id": "rst_willow_table_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Willow Table",
+          "cuisine": "Italian",
+          "location": "Downtown Seattle",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "quiet dining room with large communal farm tables"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_lantern_room_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

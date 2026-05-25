@@ -1,0 +1,116 @@
+{
+  "session_id": "vanessa_davis_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "scheduling",
+  "reason_for_call": "Add time on my calendar",
+  "task_params": {
+    "title": "Retirement and Travel Planning",
+    "start_time": "2025-03-29T14:00:00-07:00",
+    "end_time": "2025-03-29T16:30:00-07:00",
+    "location": "Home office"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-29T14:00:00-07:00",
+        "end_time": "2025-03-29T16:30:00-07:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Retirement and Travel Planning",
+        "start_time": "2025-03-29T14:00:00-07:00",
+        "end_time": "2025-03-29T16:30:00-07:00",
+        "location": "Home office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_routecheck_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Route paperwork catch-up",
+          "start_time": "2025-03-28T17:30:00-07:00",
+          "end_time": "2025-03-28T18:30:00-07:00",
+          "participants": [],
+          "location": "Dispatch office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_church_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Youth outreach vehicle safety session",
+          "start_time": "2025-03-29T10:00:00-07:00",
+          "end_time": "2025-03-29T11:30:00-07:00",
+          "participants": [
+            "church youth team"
+          ],
+          "location": "Community church hall",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_family_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Call with niece",
+          "start_time": "2025-03-29T18:00:00-07:00",
+          "end_time": "2025-03-29T18:30:00-07:00",
+          "participants": [
+            "niece"
+          ],
+          "location": "Phone",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hike_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Retirement and Travel Planning",
+          "start_time": "2025-03-29T14:00:00-07:00",
+          "end_time": "2025-03-29T16:30:00-07:00",
+          "participants": [
+            "spouse"
+          ],
+          "location": "Home office",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

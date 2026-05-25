@@ -1,0 +1,113 @@
+{
+  "session_id": "charlie_james_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a get-together.",
+  "task_params": {
+    "title": "Family Cookout",
+    "start_time": "2025-03-30T14:00:00-04:00",
+    "end_time": "2025-03-30T17:00:00-04:00",
+    "participants": [
+      "Maya James",
+      "Darius James",
+      "Aunt Renee"
+    ],
+    "location": "Charlie's place"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-30T14:00:00-04:00",
+        "end_time": "2025-03-30T17:00:00-04:00",
+        "participants": [
+          "Maya James",
+          "Darius James",
+          "Aunt Renee"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Family Cookout",
+        "start_time": "2025-03-30T14:00:00-04:00",
+        "end_time": "2025-03-30T17:00:00-04:00",
+        "participants": [
+          "Maya James",
+          "Darius James",
+          "Aunt Renee"
+        ],
+        "location": "Charlie's place"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_bike_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "West End Cycling Club Ride",
+          "start_time": "2025-03-30T08:00:00-04:00",
+          "end_time": "2025-03-30T10:30:00-04:00",
+          "participants": [
+            "West End Cycling Club"
+          ],
+          "location": "Shawnee Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_shop_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Family Cookout",
+          "start_time": "2025-03-30T14:00:00-04:00",
+          "end_time": "2025-03-30T17:00:00-04:00",
+          "participants": [
+            "Maya James",
+            "Darius James",
+            "Aunt Renee"
+          ],
+          "location": "Charlie's place",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_call_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Call with Marcus",
+          "start_time": "2025-03-30T18:30:00-04:00",
+          "end_time": "2025-03-30T19:00:00-04:00",
+          "participants": [
+            "Marcus Lee"
+          ],
+          "location": "Phone",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

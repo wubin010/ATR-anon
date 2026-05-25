@@ -1,0 +1,105 @@
+{
+  "session_id": "gabriel_campbell_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "Patient Experience Ideas Cost Comparison",
+    "location": "Patient Experience",
+    "column_keywords": [
+      "Idea",
+      "Patient impact",
+      "Rough startup cost",
+      "Ongoing cost",
+      "Operational notes",
+      "Leadership priority"
+    ],
+    "idea_keywords": [
+      "waiting room art refresh",
+      "volunteer wayfinding greeter",
+      "bedside communication cards",
+      "quiet hours pilot",
+      "discharge comfort kit"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Patient Experience"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Patient Experience Ideas Cost Comparison",
+        "location": "Patient Experience",
+        "content_brief": "<authored from column_keywords and idea_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_px_01",
+        "type": "document",
+        "attributes": {
+          "title": "Patient Experience Quick Wins",
+          "doc_type": "memo",
+          "location": "Patient Experience",
+          "content_brief": "Short list of near-term service ideas collected from staff huddles."
+        }
+      },
+      {
+        "id": "doc_px_02",
+        "type": "document",
+        "attributes": {
+          "title": "FY Planning Notes for Patient Experience",
+          "doc_type": "note",
+          "location": "Patient Experience",
+          "content_brief": "Planning notes with rough themes for service improvements and budget sensitivity."
+        }
+      },
+      {
+        "id": "doc_px_03",
+        "type": "document",
+        "attributes": {
+          "title": "Patient Experience Leadership Readout Draft",
+          "doc_type": "report",
+          "location": "Patient Experience",
+          "content_brief": "Draft leadership summary on current patient satisfaction initiatives."
+        }
+      },
+      {
+        "id": "doc_ops_01",
+        "type": "document",
+        "attributes": {
+          "title": "Operations Throughput Dashboard Notes",
+          "doc_type": "note",
+          "location": "Operations",
+          "content_brief": "Notes tied to wait-time reduction metrics."
+        }
+      }
+    ]
+  }
+}

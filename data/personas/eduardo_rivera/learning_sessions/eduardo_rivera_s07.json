@@ -1,0 +1,89 @@
+{
+  "session_id": "eduardo_rivera_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working note.",
+  "task_params": {
+    "doc_type": "note",
+    "location": "Personal Projects/Design Notes",
+    "title": "Mexican Folk-Art Palette Ideas",
+    "palette_points": [
+      "deep turquoise with coral red",
+      "marigold yellow with cobalt blue",
+      "terracotta with cactus green",
+      "hot pink accents against cream base",
+      "indigo and orange for high contrast",
+      "include notes on where each combo might work"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Personal Projects/Design Notes",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Mexican Folk-Art Palette Ideas",
+        "location": "Personal Projects/Design Notes",
+        "content_brief": "<authored from palette_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_design_01",
+        "type": "document",
+        "attributes": {
+          "title": "Poster Layout Thumbnails",
+          "doc_type": "note",
+          "location": "Personal Projects/Design Notes",
+          "content_brief": "Quick thumbnail sketches and layout directions for a future print poster."
+        }
+      },
+      {
+        "id": "doc_design_02",
+        "type": "document",
+        "attributes": {
+          "title": "Watercolor Texture Tests",
+          "doc_type": "note",
+          "location": "Personal Projects/Design Notes",
+          "content_brief": "Swatch observations for layered watercolor textures and pigment lift behavior."
+        }
+      },
+      {
+        "id": "doc_design_03",
+        "type": "document",
+        "attributes": {
+          "title": "3D Print Finish Experiments",
+          "doc_type": "report",
+          "location": "Personal Projects/Design Notes",
+          "content_brief": "Short report comparing primers, sanding passes, and paint adhesion on test prints."
+        }
+      }
+    ]
+  }
+}

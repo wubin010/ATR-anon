@@ -1,0 +1,97 @@
+{
+  "session_id": "michael_argo_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "location": "New Orleans",
+    "guest_count": 1,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "hotel_offer_id": "hot_fq_01"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "New Orleans",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hot_fq_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hot_fq_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "French Quarter Sketch Inn",
+          "location": "New Orleans",
+          "check_in_date": "2025-04-18",
+          "check_out_date": "2025-04-20",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 89.0
+        }
+      },
+      {
+        "id": "hot_mr_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Marigny Corner Rooms",
+          "location": "New Orleans",
+          "check_in_date": "2025-04-18",
+          "check_out_date": "2025-04-20",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 104.0
+        }
+      },
+      {
+        "id": "hot_gd_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Garden District Walkup",
+          "location": "New Orleans",
+          "check_in_date": "2025-04-18",
+          "check_out_date": "2025-04-20",
+          "available_rooms": 4,
+          "max_guests_per_room": 1,
+          "price_per_night": 97.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "session_id": "vanessa_davis_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "workspace",
+  "reason_for_call": "Update a work note",
+  "task_params": {
+    "location": "Mojave",
+    "doc_type": "note",
+    "title": "High Desert Route Planning Notes",
+    "lesson_points": [
+      "Crosswind gusts built fast west of Mojave and needed slower pacing",
+      "Loose shoulder gravel near Kramer Junction cut safe pull-off options",
+      "Two-lane stretches with blowing dust reduced sight distance",
+      "Fuel buffer should stay higher when wind pushes consumption up",
+      "Add alternate path note for rough pavement on the Barstow side"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Mojave",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_route_01",
+        "content_delta": "<authored from lesson_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_route_01",
+        "type": "document",
+        "attributes": {
+          "title": "High Desert Route Planning Notes",
+          "doc_type": "note",
+          "location": "Mojave",
+          "content_brief": "Working note with route reminders, hazard spots, and seasonal driving lessons across the high desert."
+        }
+      },
+      {
+        "id": "doc_safety_02",
+        "type": "document",
+        "attributes": {
+          "title": "Tanker Pre-Trip Safety Reminders",
+          "doc_type": "note",
+          "location": "Mojave Yard",
+          "content_brief": "Quick checklist for walkaround inspection, hoses, placards, and brake checks."
+        }
+      },
+      {
+        "id": "doc_sales_03",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Client Follow-Up Calls",
+          "doc_type": "memo",
+          "location": "Mojave Office",
+          "content_brief": "Client callback priorities and pending rate discussions."
+        }
+      },
+      {
+        "id": "doc_weather_04",
+        "type": "document",
+        "attributes": {
+          "title": "Desert Wind Watch Summary",
+          "doc_type": "report",
+          "location": "Mojave",
+          "content_brief": "Short report on recent gust patterns, dust pockets, and road exposure zones."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "session_id": "maximo_esteban_irizarry_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Ponce",
+    "event_tags": [
+      "gallery",
+      "opening",
+      "landscape"
+    ],
+    "date_time": "2025-05-17T18:00:00-04:00",
+    "ticket_count": 2,
+    "ticket_type": "senior"
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Ponce",
+        "event_tags": [
+          "gallery",
+          "opening",
+          "landscape"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_tallerverde_01",
+        "ticket_type": "senior",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_tallerverde_01",
+        "type": "event",
+        "attributes": {
+          "name": "Taller Verde Gallery Opening",
+          "location": "Ponce",
+          "date_time": "2025-05-17T18:00:00-04:00",
+          "price": 18.0,
+          "event_tags": [
+            "gallery",
+            "opening",
+            "landscape",
+            "rural"
+          ]
+        }
+      },
+      {
+        "id": "evt_nocturnaurbana_02",
+        "type": "event",
+        "attributes": {
+          "name": "Nocturna Urbana Photo Night",
+          "location": "Ponce",
+          "date_time": "2025-05-17T19:30:00-04:00",
+          "price": 22.0,
+          "event_tags": [
+            "gallery",
+            "opening",
+            "photography",
+            "urban"
+          ]
+        }
+      },
+      {
+        "id": "evt_campovivo_03",
+        "type": "event",
+        "attributes": {
+          "name": "Campo Vivo Exhibition Reception",
+          "location": "Ponce",
+          "date_time": "2025-05-18T16:00:00-04:00",
+          "price": 16.0,
+          "event_tags": [
+            "gallery",
+            "landscape",
+            "painting",
+            "rural"
+          ]
+        }
+      },
+      {
+        "id": "evt_bahiacolor_04",
+        "type": "event",
+        "attributes": {
+          "name": "Bahia Color Opening Evening",
+          "location": "Mayaguez",
+          "date_time": "2025-05-17T18:00:00-04:00",
+          "price": 20.0,
+          "event_tags": [
+            "gallery",
+            "opening",
+            "abstract"
+          ]
+        }
+      }
+    ]
+  }
+}

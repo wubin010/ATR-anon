@@ -1,0 +1,154 @@
+{
+  "instruction": "One stop on trip T-5814 near Moab fell through. Please swap in a single replacement for the evening of 2026-08-14 that fits in about 1 to 2 hours and does not require a long drive out from Moab.",
+  "gold_value": [
+    "stop_moab_sand_flats_sky_01"
+  ],
+  "session_id": "vanessa_davis_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "vanessa_davis_travel_02",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_travel_02",
+    "rule_text": "If a booked trip stop falls through, she prefers replacement stops that preserve the original nature-or-astronomy theme instead of swapping in any high-rated alternative.",
+    "canonical_answer": "If part of my trip breaks, I want the replacement stop to keep the same desert, hiking, or stargazing vibe."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_moab_sand_flats_sky_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sand Flats Dark Sky Pullout",
+          "location": "Moab, Utah",
+          "tags": [
+            "desert",
+            "stargazing",
+            "night_sky",
+            "scenic_drive",
+            "evening"
+          ],
+          "trip_id": "T-5814",
+          "rating": 4.6,
+          "review_count": 214,
+          "detour_minutes_from_moab_route": 18,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_moab_night_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Moab Main Street Night Market",
+          "location": "Downtown Moab, Utah",
+          "tags": [
+            "downtown",
+            "food",
+            "shopping",
+            "evening",
+            "popular"
+          ],
+          "trip_id": "T-5814",
+          "rating": 4.9,
+          "review_count": 1326,
+          "detour_minutes_from_moab_route": 3,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_moab_history_house_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Moab Film & History House",
+          "location": "Moab, Utah",
+          "tags": [
+            "museum",
+            "indoor",
+            "history",
+            "evening"
+          ],
+          "trip_id": "T-5814",
+          "rating": 4.8,
+          "review_count": 904,
+          "detour_minutes_from_moab_route": 5,
+          "visit_duration_hours": 1.0
+        }
+      },
+      {
+        "id": "stop_moab_riverwalk_lights_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Colorado River Walk at Lions Park",
+          "location": "Moab, Utah",
+          "tags": [
+            "riverwalk",
+            "evening",
+            "scenic",
+            "popular"
+          ],
+          "trip_id": "T-5814",
+          "rating": 4.8,
+          "review_count": 1187,
+          "detour_minutes_from_moab_route": 7,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_moab_dead_horse_rim_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Dead Horse Rim Night Overlook",
+          "location": "Canyonlands area near Moab, Utah",
+          "tags": [
+            "desert",
+            "stargazing",
+            "night_sky",
+            "viewpoint",
+            "evening",
+            "popular"
+          ],
+          "trip_id": "T-5814",
+          "rating": 4.9,
+          "review_count": 1880,
+          "detour_minutes_from_moab_route": 37,
+          "visit_duration_hours": 1.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_moab_sand_flats_sky_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

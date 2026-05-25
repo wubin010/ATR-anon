@@ -1,0 +1,131 @@
+{
+  "session_id": "anna_strahan_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a work block",
+  "task_params": {
+    "title": "MHA Application Work Block",
+    "start_time": "2025-03-18T18:30:00-05:00",
+    "end_time": "2025-03-18T20:30:00-05:00",
+    "calendar": "personal",
+    "location": "Home office"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-18T18:30:00-05:00",
+        "end_time": "2025-03-18T20:30:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "MHA Application Work Block",
+        "start_time": "2025-03-18T18:30:00-05:00",
+        "end_time": "2025-03-18T20:30:00-05:00",
+        "location": "Home office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_annualreview_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Annual Physical",
+          "start_time": "2025-03-17T09:00:00-05:00",
+          "end_time": "2025-03-17T10:00:00-05:00",
+          "participants": [],
+          "location": "Northshore Family Clinic",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budgetsync_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget Sync",
+          "start_time": "2025-03-18T14:00:00-05:00",
+          "end_time": "2025-03-18T15:00:00-05:00",
+          "participants": [
+            "finance@clinic.org",
+            "ops@clinic.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_bookclub_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Book Club",
+          "start_time": "2025-03-19T19:00:00-05:00",
+          "end_time": "2025-03-19T20:30:00-05:00",
+          "participants": [
+            "bookclub@group.org"
+          ],
+          "location": "Madisonville Library",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_teamhuddle_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Team Huddle",
+          "start_time": "2025-03-20T08:30:00-05:00",
+          "end_time": "2025-03-20T09:00:00-05:00",
+          "participants": [
+            "clinicstaff@clinic.org"
+          ],
+          "location": "Admin Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_mhawork_05",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "MHA Application Work Block",
+          "start_time": "2025-03-18T18:30:00-05:00",
+          "end_time": "2025-03-18T20:30:00-05:00",
+          "participants": [],
+          "location": "Home office",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

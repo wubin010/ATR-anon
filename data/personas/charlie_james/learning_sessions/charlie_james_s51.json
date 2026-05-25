@@ -1,0 +1,121 @@
+{
+  "session_id": "charlie_james_s51",
+  "session_type": "learning",
+  "day_offset": 51,
+  "domain": "reservation",
+  "reason_for_call": "Book some tickets.",
+  "task_params": {
+    "location": "Louisville",
+    "event_tags": [
+      "soccer",
+      "sports"
+    ],
+    "ticket_type": "senior",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Louisville",
+        "event_tags": [
+          "soccer",
+          "sports"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_loucity_01",
+        "ticket_type": "senior",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_loucity_01",
+        "type": "event",
+        "attributes": {
+          "name": "Louisville City FC vs Tampa Bay Rowdies",
+          "location": "Louisville",
+          "date_time": "2025-10-11T19:30:00-04:00",
+          "price": 28.0,
+          "event_tags": [
+            "soccer",
+            "sports",
+            "weekend",
+            "outdoor"
+          ]
+        }
+      },
+      {
+        "id": "evt_bats_02",
+        "type": "event",
+        "attributes": {
+          "name": "Louisville Bats vs Indianapolis Indians",
+          "location": "Louisville",
+          "date_time": "2025-10-12T15:05:00-04:00",
+          "price": 22.0,
+          "event_tags": [
+            "baseball",
+            "sports",
+            "weekend",
+            "outdoor"
+          ]
+        }
+      },
+      {
+        "id": "evt_jazz_03",
+        "type": "event",
+        "attributes": {
+          "name": "River City Jazz Night",
+          "location": "Louisville",
+          "date_time": "2025-10-11T20:00:00-04:00",
+          "price": 35.0,
+          "event_tags": [
+            "music",
+            "live",
+            "indoor"
+          ]
+        }
+      },
+      {
+        "id": "evt_racing_04",
+        "type": "event",
+        "attributes": {
+          "name": "Fall Harness Racing Showcase",
+          "location": "Lexington",
+          "date_time": "2025-10-11T18:00:00-04:00",
+          "price": 18.0,
+          "event_tags": [
+            "sports",
+            "racing",
+            "outdoor"
+          ]
+        }
+      }
+    ]
+  }
+}

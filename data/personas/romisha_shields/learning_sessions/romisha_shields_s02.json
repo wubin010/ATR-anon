@@ -1,0 +1,87 @@
+{
+  "session_id": "romisha_shields_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Start a new note.",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Family Cookbook - Cornbread Ideas",
+    "location": "Cookbook Drafts",
+    "content_brief": "Starter note for family cookbook cornbread section",
+    "recipe_points": [
+      "heirloom tomatoes folded into the batter",
+      "fresh rosemary for a modern twist",
+      "keep the soul-food cornbread base",
+      "test balance between savory and sweet",
+      "note texture ideas for a family version"
+    ]
+  },
+  "expected_tools": [
+    "create_document",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Family Cookbook - Cornbread Ideas",
+        "location": "Cookbook Drafts",
+        "content_brief": "Starter note for family cookbook cornbread section"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_cookbook_01",
+        "content_delta": "<authored from recipe_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_cookbook_01",
+        "type": "document",
+        "attributes": {
+          "title": "Family Cookbook - Pie Notes",
+          "doc_type": "note",
+          "location": "Cookbook Drafts",
+          "content_brief": "Rough notes for sweet potato pie stories and variations"
+        }
+      },
+      {
+        "id": "doc_cookbook_02",
+        "type": "document",
+        "attributes": {
+          "title": "Church Supper Menu Ideas",
+          "doc_type": "note",
+          "location": "Kitchen Notes",
+          "content_brief": "Dish ideas for the next fellowship meal"
+        }
+      },
+      {
+        "id": "fold_cookbook_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Cookbook Drafts",
+          "purpose": "Working drafts and notes for the family cookbook"
+        }
+      }
+    ]
+  }
+}

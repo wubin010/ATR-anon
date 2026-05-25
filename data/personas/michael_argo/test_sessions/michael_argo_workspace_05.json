@@ -1,0 +1,219 @@
+{
+  "instruction": "Please tidy up the Mercer street walk batch in /photos/street/mercer_walk. The blurred bus-stop frame, the extra scan of the umbrella portrait, and the two warm-up pavement texture shots don't need to stay mixed in with the main set — pull those out so the review batch is cleaner.",
+  "gold_value": null,
+  "session_id": "michael_argo_workspace_05_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "michael_argo_workspace_05",
+  "rule_ref": {
+    "rule_id": "michael_argo_workspace_05",
+    "rule_text": "For clearly bad photo takes, duplicate scans, or useless creative clutter, he prefers deleting them outright rather than keeping them around.",
+    "canonical_answer": "If a shot or scan is obviously bad or duplicate, I’d rather delete it than let it clutter everything up."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_mercer_busstop_06_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_busstop_06.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "bus_stop"
+          ],
+          "archived": false,
+          "captured_at": "2026-04-11T18:42:09",
+          "series": "Mercer street walk",
+          "shot_note": "sharp silhouette"
+        }
+      },
+      {
+        "id": "fil_mercer_busstop_07_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_busstop_07.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "bus_stop"
+          ],
+          "archived": false,
+          "captured_at": "2026-04-11T18:42:14",
+          "series": "Mercer street walk",
+          "shot_note": "motion blur"
+        }
+      },
+      {
+        "id": "fil_mercer_umbrella_scan_a_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_umbrella_portrait_scan_a.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "umbrella_portrait",
+            "scan"
+          ],
+          "archived": false,
+          "scanned_at": "2026-04-12T10:13:00",
+          "series": "Mercer street walk",
+          "scan_pass": "first"
+        }
+      },
+      {
+        "id": "fil_mercer_umbrella_scan_b_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_umbrella_portrait_scan_b.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "umbrella_portrait",
+            "scan"
+          ],
+          "archived": false,
+          "scanned_at": "2026-04-12T10:16:00",
+          "series": "Mercer street walk",
+          "scan_pass": "second"
+        }
+      },
+      {
+        "id": "fil_mercer_pavement_texture_01_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_pavement_texture_01.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "texture"
+          ],
+          "archived": false,
+          "captured_at": "2026-04-11T18:21:02",
+          "series": "Mercer street walk",
+          "sequence": "warmup"
+        }
+      },
+      {
+        "id": "fil_mercer_pavement_texture_02_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_pavement_texture_02.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "texture"
+          ],
+          "archived": false,
+          "captured_at": "2026-04-11T18:21:19",
+          "series": "Mercer street walk",
+          "sequence": "warmup"
+        }
+      },
+      {
+        "id": "fil_mercer_crosswalk_reflection_03_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_crosswalk_reflection_03.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "crosswalk"
+          ],
+          "archived": false,
+          "captured_at": "2026-04-11T18:37:51",
+          "series": "Mercer street walk",
+          "shot_note": "keeper"
+        }
+      },
+      {
+        "id": "fil_mercer_newsstand_gesture_02_01",
+        "type": "file",
+        "attributes": {
+          "name": "mercer_newsstand_gesture_02.jpg",
+          "file_type": "image",
+          "location": "/photos/street/mercer_walk",
+          "owner": "Michael Argo",
+          "labels": [
+            "street",
+            "mercer_walk",
+            "newsstand"
+          ],
+          "archived": false,
+          "captured_at": "2026-04-11T18:49:33",
+          "series": "Mercer street walk",
+          "shot_note": "keeper"
+        }
+      },
+      {
+        "id": "fld_street_walk_outtakes_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Street Walk Outtakes",
+          "purpose": "Storage for near-miss frames, warm-up tests, and alternate versions kept outside current review sets."
+        }
+      },
+      {
+        "id": "fld_scan_variants_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Scan Variants Archive",
+          "purpose": "Archive for extra scan passes and duplicate digitizations retained for reference."
+        }
+      },
+      {
+        "id": "fld_contact_sheet_holds_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Contact Sheet Holds",
+          "purpose": "Holding area for images pulled from an edit batch without discarding them."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "delete_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

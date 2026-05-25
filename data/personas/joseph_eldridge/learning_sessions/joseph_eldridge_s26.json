@@ -1,0 +1,176 @@
+{
+  "session_id": "joseph_eldridge_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Spencer",
+      "rail"
+    ],
+    "destination_ids": [
+      "dst_spencer_01"
+    ],
+    "destination": "Spencer",
+    "stop_tags": [
+      "rail history",
+      "museum"
+    ],
+    "selected_stop_ids": [
+      "stop_spencer_museum_01",
+      "stop_spencer_depot_02"
+    ],
+    "duration_days": 1,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Spencer",
+          "rail"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_spencer_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Spencer",
+        "stop_tags": [
+          "rail history",
+          "museum"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Spencer",
+        "duration_days": 1,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_spencer_museum_01",
+          "stop_spencer_depot_02"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_spencer_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Spencer",
+          "region": "North Carolina Piedmont",
+          "tags": [
+            "rail",
+            "rail history",
+            "museum",
+            "day trip"
+          ]
+        }
+      },
+      {
+        "id": "dst_salisbury_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Salisbury",
+          "region": "North Carolina Piedmont",
+          "tags": [
+            "historic downtown",
+            "rail corridor",
+            "day trip"
+          ]
+        }
+      },
+      {
+        "id": "dst_burlington_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Burlington",
+          "region": "North Carolina Piedmont",
+          "tags": [
+            "textiles",
+            "museum",
+            "regional outing"
+          ]
+        }
+      },
+      {
+        "id": "stop_spencer_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "North Carolina Transportation Museum",
+          "location": "Spencer",
+          "tags": [
+            "rail history",
+            "museum",
+            "locomotives"
+          ]
+        }
+      },
+      {
+        "id": "stop_spencer_depot_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Spencer Depot District",
+          "location": "Spencer",
+          "tags": [
+            "rail history",
+            "museum",
+            "historic station"
+          ]
+        }
+      },
+      {
+        "id": "stop_spencer_yadkin_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Yadkin River Park Overlook",
+          "location": "Spencer",
+          "tags": [
+            "scenic",
+            "walking",
+            "river"
+          ]
+        }
+      }
+    ]
+  }
+}

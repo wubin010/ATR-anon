@@ -1,0 +1,97 @@
+{
+  "session_id": "vanessa_davis_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "template",
+    "title": "Pre-Trip Running Checklist",
+    "location": "Fleet Ops",
+    "checklist_points": [
+      "pre-trip inspection section for lights, tires, brakes, fluids",
+      "maintenance notes section with date, issue, and repair follow-up",
+      "paperwork deadlines section for registration, permits, and inspection dates",
+      "simple format she can keep updating between trips"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Fleet Ops",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "template",
+        "title": "Pre-Trip Running Checklist",
+        "location": "Fleet Ops",
+        "content_brief": "<authored from checklist_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_fleet_01",
+        "type": "document",
+        "attributes": {
+          "title": "Vehicle Inspection Template",
+          "doc_type": "template",
+          "location": "Fleet Ops",
+          "content_brief": "Basic inspection template with cab, tires, and brake checkpoints."
+        }
+      },
+      {
+        "id": "doc_fleet_02",
+        "type": "document",
+        "attributes": {
+          "title": "Maintenance Follow-Up Notes",
+          "doc_type": "note",
+          "location": "Fleet Ops",
+          "content_brief": "Running maintenance note with issue summaries and repair status."
+        }
+      },
+      {
+        "id": "doc_fleet_03",
+        "type": "document",
+        "attributes": {
+          "title": "DOT Renewal Dates",
+          "doc_type": "spreadsheet",
+          "location": "Fleet Ops",
+          "content_brief": "Spreadsheet tracking permit and inspection renewal dates."
+        }
+      },
+      {
+        "id": "doc_admin_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly Sales Call Notes",
+          "doc_type": "note",
+          "location": "Sales Admin",
+          "content_brief": "Call notes and customer follow-ups."
+        }
+      }
+    ]
+  }
+}

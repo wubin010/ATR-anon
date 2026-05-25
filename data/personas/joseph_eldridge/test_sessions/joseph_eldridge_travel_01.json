@@ -1,0 +1,107 @@
+{
+  "instruction": "On 2026-09-18 I need to get from Atlanta, GA to Washington, DC for client meetings. It's just me, and I only need the outbound leg. Check the available options and take care of the booking.",
+  "gold_value": null,
+  "session_id": "joseph_eldridge_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "joseph_eldridge_travel_01",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_travel_01",
+    "rule_text": "For purposeful regional travel, Joseph prefers ground transport over flying.",
+    "canonical_answer": "For regional trips, I prefer to go by ground rather than fly."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_atl_wdc_20260918_dl_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta, GA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-18",
+          "airline": "Delta Air Lines",
+          "price": 119,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_atl_wdc_20260918_aa_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta, GA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-18",
+          "airline": "American Airlines",
+          "price": 127,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_atl_wdc_20260918_ua_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta, GA",
+          "destination": "Washington, DC",
+          "departure_date": "2026-09-18",
+          "airline": "United Airlines",
+          "price": 134,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "trp_atl_wdc_20260918_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Atlanta, GA",
+          "destination": "Washington, DC",
+          "mode": "train",
+          "departure_date": "2026-09-18",
+          "price": 186,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "trp_atl_wdc_20260918_bus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Atlanta, GA",
+          "destination": "Washington, DC",
+          "mode": "bus",
+          "departure_date": "2026-09-18",
+          "price": 168,
+          "available_seats": 12
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "instruction": "Please create a short update for the Solace inverter team about the connector redesign, the latest grounding test results, and what is still pending for IEC, UL, and FCC review. Save it in /Engineering/Compliance and title it \"Solace Inverter Connector and Grounding Update\".",
+  "gold_value": "report",
+  "session_id": "joseph_eldridge_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "joseph_eldridge_workspace_03",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_workspace_03",
+    "rule_text": "For formal engineering, compliance, or consulting writeups, Joseph prefers creating a report rather than a casual memo or note.",
+    "canonical_answer": "For formal technical or compliance writeups, I want a proper report, not a casual memo."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_solace_fcc_followup_01",
+        "type": "document",
+        "attributes": {
+          "title": "Solace FCC Retest Follow-Up",
+          "doc_type": "memo",
+          "location": "/Engineering/Compliance",
+          "content_brief": "Short internal update on emissions issues still open after the pre-scan for the Solace inverter."
+        }
+      },
+      {
+        "id": "doc_ground_bench_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Grounding Bench Notes - Rev C Housing",
+          "doc_type": "note",
+          "location": "/Engineering/Compliance",
+          "content_brief": "Technician notes from continuity checks and chassis bonding observations on the latest housing revision."
+        }
+      },
+      {
+        "id": "doc_aurora_isolation_verification_01",
+        "type": "document",
+        "attributes": {
+          "title": "Aurora Drive Isolation Verification",
+          "doc_type": "report",
+          "location": "/Engineering/Compliance",
+          "content_brief": "Verification record of creepage, clearance, and insulation testing against IEC and UL requirements."
+        }
+      },
+      {
+        "id": "doc_external_lab_action_items_01",
+        "type": "document",
+        "attributes": {
+          "title": "External Lab Visit Action Items",
+          "doc_type": "memo",
+          "location": "/Engineering/Compliance",
+          "content_brief": "Follow-up list covering labeling changes, cable routing checks, and retest preparation."
+        }
+      },
+      {
+        "id": "doc_solace_weekly_checkin_01",
+        "type": "document",
+        "attributes": {
+          "title": "Solace Weekly Check-In",
+          "doc_type": "memo",
+          "location": "/Engineering/Compliance",
+          "content_brief": "Brief team summary covering connector changes, test progress, and open certification tasks."
+        }
+      },
+      {
+        "id": "doc_solace_open_items_01",
+        "type": "document",
+        "attributes": {
+          "title": "Solace Open Compliance Items",
+          "doc_type": "note",
+          "location": "/Engineering/Compliance",
+          "content_brief": "Running list of remaining IEC, UL, and FCC items for the Solace inverter program."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "report"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

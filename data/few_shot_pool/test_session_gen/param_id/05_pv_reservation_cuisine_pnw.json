@@ -1,0 +1,93 @@
+{
+  "session_id": "fs_reservation_pv_cuisine_pnw_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "few_shot",
+  "rule_id": "fs_reservation_pv_cuisine_pnw",
+  "instruction": "Saturday evening at 7pm, four people, dinner in Seattle — pick a place and book it.",
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_italian_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bella Italia Trattoria",
+          "cuisine": "Italian",
+          "location": "Seattle",
+          "price_range": "$$",
+          "rating": 4.9
+        }
+      },
+      {
+        "id": "rst_japanese_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Sakura Sushi House",
+          "cuisine": "Japanese",
+          "location": "Seattle",
+          "price_range": "$$",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "rst_french_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Le Petit Bistro",
+          "cuisine": "French",
+          "location": "Seattle",
+          "price_range": "$$$",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "rst_pnw_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cascade Harvest Kitchen",
+          "cuisine": "Pacific Northwest",
+          "location": "Seattle",
+          "price_range": "$$",
+          "rating": 4.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_pnw_01",
+            "date_time": "2026-04-20T19:00:00",
+            "party_size": 4
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_reservation_pv_cuisine_pnw",
+    "rule_text": "When booking restaurants, the user defaults to Pacific Northwest cuisine featuring local ingredients.",
+    "canonical_answer": "When you're picking a restaurant, start with Pacific Northwest places that do well with local ingredients."
+  }
+}

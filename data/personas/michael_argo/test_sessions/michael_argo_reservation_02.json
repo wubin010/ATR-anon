@@ -1,0 +1,111 @@
+{
+  "instruction": "I'm in Seattle and want tickets for an evening out for two people; keep it under $70 each, pick something, and book it.",
+  "gold_value": "evt_signalroom_01",
+  "session_id": "michael_argo_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "michael_argo_reservation_02",
+  "rule_ref": {
+    "rule_id": "michael_argo_reservation_02",
+    "rule_text": "When choosing event tickets, he prefers small local arts or indie events rather than large-scale spectator events.",
+    "canonical_answer": "I’d rather go to a smaller local arts or indie event than a big spectator event."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_signalroom_01",
+        "type": "event",
+        "attributes": {
+          "name": "Signal Room Local Indie Showcase",
+          "location": "Ballard, Seattle",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 44,
+          "event_tags": [
+            "indie_rock",
+            "local_music",
+            "small_venue",
+            "arts_event"
+          ]
+        }
+      },
+      {
+        "id": "evt_mariners_01",
+        "type": "event",
+        "attributes": {
+          "name": "Seattle Mariners vs. Boston Red Sox",
+          "location": "T-Mobile Park, Seattle",
+          "date_time": "2026-09-18T19:10:00",
+          "price": 42,
+          "event_tags": [
+            "baseball",
+            "major_league",
+            "stadium",
+            "spectator_sport"
+          ]
+        }
+      },
+      {
+        "id": "evt_citylights_arena_01",
+        "type": "event",
+        "attributes": {
+          "name": "City Lights Arena Tour",
+          "location": "Climate Pledge Arena, Seattle",
+          "date_time": "2026-09-18T20:30:00",
+          "price": 68,
+          "event_tags": [
+            "arena_concert",
+            "mainstream_pop",
+            "touring_act",
+            "spectator_event"
+          ]
+        }
+      },
+      {
+        "id": "evt_sounders_01",
+        "type": "event",
+        "attributes": {
+          "name": "Seattle Sounders Home Match",
+          "location": "Lumen Field, Seattle",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 38,
+          "event_tags": [
+            "soccer",
+            "pro_sports",
+            "stadium",
+            "spectator_sport"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_signalroom_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

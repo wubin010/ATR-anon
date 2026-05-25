@@ -1,0 +1,141 @@
+{
+  "instruction": "Please book one hotel in Quebec City for 2 adults and 1 room for June 12 to June 15, 2026. Choose whichever option seems best from the available offers and take care of the booking.",
+  "gold_value": "htl_quebeccity_rue_st_jean_inn_02",
+  "session_id": "eduardo_rivera_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "eduardo_rivera_travel_03",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_travel_03",
+    "rule_text": "When booking lodging, he prefers modest hotel options over luxury stays.",
+    "canonical_answer": "I usually choose modest hotels because I care more about the trip than luxury lodging."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_quebeccity_harbor_view_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Harbor View Grand",
+          "location": "Quebec City, Canada",
+          "check_in_date": "2026-06-12",
+          "check_out_date": "2026-06-15",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 249,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 3180,
+          "amenities": [
+            "spa",
+            "concierge",
+            "river_view",
+            "fine_dining"
+          ]
+        }
+      },
+      {
+        "id": "htl_quebeccity_rue_st_jean_inn_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Rue Saint-Jean Inn",
+          "location": "Quebec City, Canada",
+          "check_in_date": "2026-06-12",
+          "check_out_date": "2026-06-15",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 219,
+          "category": "modest",
+          "star_rating": 3,
+          "rating": 4.4,
+          "review_count": 412,
+          "amenities": [
+            "wifi",
+            "breakfast",
+            "air_conditioning"
+          ]
+        }
+      },
+      {
+        "id": "htl_quebeccity_chateau_dufferin_club_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Chateau Dufferin Club",
+          "location": "Quebec City, Canada",
+          "check_in_date": "2026-06-12",
+          "check_out_date": "2026-06-15",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 239,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 2265,
+          "amenities": [
+            "valet",
+            "fitness_center",
+            "lounge",
+            "city_view"
+          ]
+        }
+      },
+      {
+        "id": "htl_quebeccity_old_port_residence_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Old Port Residence Hotel",
+          "location": "Quebec City, Canada",
+          "check_in_date": "2026-06-12",
+          "check_out_date": "2026-06-15",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 259,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.7,
+          "review_count": 1744,
+          "amenities": [
+            "suite",
+            "concierge",
+            "rooftop_terrace"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_quebeccity_rue_st_jean_inn_02"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

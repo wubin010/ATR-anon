@@ -1,0 +1,97 @@
+{
+  "session_id": "vanessa_davis_s24",
+  "session_type": "learning",
+  "day_offset": 24,
+  "domain": "reservation",
+  "reason_for_call": "Book a wellness appointment.",
+  "task_params": {
+    "service_type": "yoga",
+    "location": "Mojave",
+    "sort_by": "rating",
+    "date_time": "2025-03-29T10:30:00-07:00"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "yoga",
+        "location": "Mojave",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "sp_highdesert_03",
+        "date_time": "2025-03-29T10:30:00-07:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "sp_desertflow_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Desert Flow Yoga Studio",
+          "service_type": "yoga",
+          "location": "Mojave",
+          "rating": 4.8,
+          "distance_km": 3.2
+        }
+      },
+      {
+        "id": "sp_sunrisewell_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Sunrise Wellness Collective",
+          "service_type": "massage",
+          "location": "Mojave",
+          "rating": 4.7,
+          "distance_km": 2.4
+        }
+      },
+      {
+        "id": "sp_highdesert_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "High Desert Stretch & Yoga",
+          "service_type": "yoga",
+          "location": "Mojave",
+          "rating": 4.9,
+          "distance_km": 5.1
+        }
+      },
+      {
+        "id": "sp_tehachapibalance_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Tehachapi Balance Room",
+          "service_type": "yoga",
+          "location": "Tehachapi",
+          "rating": 4.6,
+          "distance_km": 34.8
+        }
+      }
+    ]
+  }
+}

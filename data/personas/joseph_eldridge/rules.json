@@ -1,0 +1,606 @@
+[
+  {
+    "rule_text": "For substantive outreach, technical coordination, or mentorship emails, Joseph prefers a draft he can review before anything is sent.",
+    "canonical_answer": "I prefer to review a draft first for important messages, especially anything technical, professional, or mentoring-related.",
+    "counterfactual_default": "Send the composed message directly once the content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He is also a strong technical communicator—delivering conference keynotes, teaching continuing‑education classes, writing detailed design documentation, and mentoring junior engineers."
+      },
+      {
+        "type": "direct",
+        "content": "Joseph Eldridge is a senior electrical engineering consultant renowned for his analog circuit design, power‑electronics, and IoT integration expertise; they blend decades of hands‑on experience with a methodical, agile project‑management style"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "joseph_eldridge_communication_01",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing work files, Joseph prefers them classified by project rather than by generic type or date buckets.",
+    "canonical_answer": "I organize engineering files by project first, not by file type or date.",
+    "counterfactual_default": "Classify the files by type or date because those are the most generic organizing schemes.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "His project‑management skill set includes Agile and Waterfall scheduling, risk assessment, and cross‑functional team coordination"
+      },
+      {
+        "type": "direct",
+        "content": "His systematic approach, reliability, and organized work style make him a trusted resource"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "joseph_eldridge_workspace_01",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When moving files, Joseph prefers destination folders that match the active project or client rather than dumping everything into a generic catchall folder.",
+    "canonical_answer": "When files need to be moved, I want them placed with the right project or client materials, not in a miscellaneous folder.",
+    "counterfactual_default": "Move the files into a general-purpose folder such as Downloads, Miscellaneous, or a broad archive.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "His systematic approach, reliability, and organized work style make him a trusted resource"
+      },
+      {
+        "type": "direct",
+        "content": "Joseph Eldridge is a senior electrical engineering consultant"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "joseph_eldridge_workspace_02",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For formal engineering, compliance, or consulting writeups, Joseph prefers creating a report rather than a casual memo or note.",
+    "canonical_answer": "For formal technical or compliance writeups, I want a proper report, not a casual memo.",
+    "counterfactual_default": "Create a quick note or memo because it is lighter-weight and faster.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "ensure compliance with IEC, UL, and FCC standards"
+      },
+      {
+        "type": "direct",
+        "content": "writing detailed design documentation"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "joseph_eldridge_workspace_03",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he starts a reusable planning artifact for recurring workshops, mentorship sessions, or checklists, Joseph prefers a template rather than an ordinary one-off note.",
+    "canonical_answer": "For something I expect to reuse, I prefer a template instead of a one-off document.",
+    "counterfactual_default": "Create a regular note or memo without building it for reuse.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "planned a future trip to the Ruhr region of Germany to study industrial heritage sites"
+      },
+      {
+        "type": "direct",
+        "content": "he intends to author a practical handbook on designing reliable electronics for the real world"
+      },
+      {
+        "type": "inferred",
+        "content": "A handbook author, mentor, and methodical project manager is likely to reuse structured formats for recurring sessions and checklists rather than recreate them from scratch."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "joseph_eldridge_workspace_05",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation overlaps with an unresolved commitment, Joseph prefers replying tentatively rather than accepting or declining too quickly.",
+    "canonical_answer": "If I am not sure I can make something because of overlapping commitments, I respond as tentative first.",
+    "counterfactual_default": "Accept or decline the invite outright to clear it quickly.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "yet occasionally over‑commits to hobby projects at the expense of sleep"
+      },
+      {
+        "type": "direct",
+        "content": "To manage his anxiety and maintain emotional well‑being, he has set personal boundaries on project scope"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "joseph_eldridge_scheduling_01",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a shared mentorship, church, civic, or theater commitment, Joseph prefers creating a real calendar event instead of keeping it as only a private reminder.",
+    "canonical_answer": "If other people are involved, I want it on the calendar as a real event, not just a private reminder to myself.",
+    "counterfactual_default": "Set a personal reminder for himself without creating a shared calendar event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He and his wife, both active members of their local church and civic organizations"
+      },
+      {
+        "type": "direct",
+        "content": "Joseph is also eager to formalize a mentorship program within the IEEE local chapter and the UNC‑Durham engineering department"
+      },
+      {
+        "type": "direct",
+        "content": "As the resident lighting coordinator for the community theater"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "joseph_eldridge_scheduling_03",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For purposeful regional travel, Joseph prefers ground transport over flying.",
+    "canonical_answer": "For regional trips, I prefer to go by ground rather than fly.",
+    "counterfactual_default": "Look for flights first because they are the standard long-distance booking option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Joseph Eldridge favours purposeful travel that balances engineering curiosity and natural serenity, having toured the historic Durham‑Chapel Hill rail corridor"
+      },
+      {
+        "type": "direct",
+        "content": "An avid model‑railroader, he designs and builds a detailed miniature representation of the historic Durham‑Chapel Hill railway corridor"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "joseph_eldridge_travel_01",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ground transport options are available, Joseph prefers rail-oriented offers over buses or generic car transfers.",
+    "canonical_answer": "If I am traveling on the ground, I prefer the train when that is an option.",
+    "counterfactual_default": "Choose whatever ground option is cheapest or most generic, such as a bus or car transfer.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "having toured the historic Durham‑Chapel Hill rail corridor"
+      },
+      {
+        "type": "direct",
+        "content": "An avid model‑railroader"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": "transport_offer_id"
+    },
+    "rule_id": "joseph_eldridge_travel_02",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a trip, Joseph prefers stops tied to rail history, industrial heritage, renewable energy, or natural trails over generic tourist attractions.",
+    "canonical_answer": "When I travel, I want stops with engineering, rail, industrial, or trail value rather than generic tourist spots.",
+    "counterfactual_default": "Pick mainstream tourist highlights or the highest-rated attractions regardless of theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "planned a future trip to the Ruhr region of Germany to study industrial heritage sites"
+      },
+      {
+        "type": "direct",
+        "content": "visited the National Renewable Energy Laboratory in Colorado"
+      },
+      {
+        "type": "direct",
+        "content": "explored the Appalachian Trail’s Blue Ridge segment"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "joseph_eldridge_travel_03",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If one part of a trip falls through, Joseph prefers replacing only the disrupted stop rather than rebuilding the whole itinerary.",
+    "canonical_answer": "When a trip problem affects just one stop, I prefer swapping that one piece instead of redoing everything.",
+    "counterfactual_default": "Rework the whole trip plan once a disruption happens.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they blend decades of hands‑on experience with a methodical, agile project‑management style"
+      },
+      {
+        "type": "direct",
+        "content": "His systematic approach, reliability, and organized work style make him a trusted resource"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "replacement_type"
+    },
+    "rule_id": "joseph_eldridge_travel_04",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a planned stop must be replaced, Joseph prefers an alternative that preserves the original trip theme, such as nature, rail history, or engineering interest.",
+    "canonical_answer": "If a stop has to change, I want the replacement to match the original theme of the trip.",
+    "counterfactual_default": "Substitute any convenient or highly rated stop without regard to the original theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "favours purposeful travel that balances engineering curiosity and natural serenity"
+      },
+      {
+        "type": "direct",
+        "content": "having toured the historic Durham‑Chapel Hill rail corridor, explored the Appalachian Trail’s Blue Ridge segment, visited the National Renewable Energy Laboratory in Colorado"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "joseph_eldridge_travel_05",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging for a trip, Joseph prefers quiet hotels near natural settings or restful surroundings over busy nightlife-centered options.",
+    "canonical_answer": "For hotels, I prefer somewhere quiet and restorative, ideally near nature rather than nightlife.",
+    "counterfactual_default": "Choose the most central or entertainment-heavy hotel area for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "favours purposeful travel that balances engineering curiosity and natural serenity"
+      },
+      {
+        "type": "direct",
+        "content": "Gardening offers him a peaceful escape"
+      },
+      {
+        "type": "direct",
+        "content": "He enjoys weekend hikes in Eno River State Park"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "joseph_eldridge_travel_06",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When dining out, Joseph prefers restaurants that align with Southern comfort food rather than trend-driven or highly experimental menus.",
+    "canonical_answer": "When I go out to eat, I prefer Southern comfort food over trendy experimental places.",
+    "counterfactual_default": "Pick a fashionable, eclectic, or generic top-rated restaurant without regard to Southern comfort food.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Joseph Eldridge delights in cooking Southern comfort foods such as crispy fried chicken, buttery cornbread, and smoky collard greens"
+      },
+      {
+        "type": "direct",
+        "content": "Living in Durham and the neighboring Orange County has immersed him in the blend of Southern hospitality"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "joseph_eldridge_reservation_01",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking performance tickets, Joseph prefers symphony, blues, or theater events over generic spectacle or sports entertainment.",
+    "canonical_answer": "For live events, I usually want symphony, blues, or theater rather than generic big-spectacle entertainment.",
+    "counterfactual_default": "Choose the most popular or broadly entertaining event regardless of artistic style.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "a regular patron of the Durham Symphony Orchestra"
+      },
+      {
+        "type": "direct",
+        "content": "an avid listener of B.B. King’s blues"
+      },
+      {
+        "type": "direct",
+        "content": "As the resident lighting coordinator for the community theater"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "joseph_eldridge_reservation_02",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For gardening purchases, Joseph prefers native or pollinator-supporting plants over generic ornamental landscaping items.",
+    "canonical_answer": "For the garden, I prefer native plants that support pollinators rather than generic ornamentals.",
+    "counterfactual_default": "Choose decorative or broadly popular garden products without prioritizing native habitat value.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "he tends a native‑plant garden that attracts local pollinators"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "joseph_eldridge_commerce_01",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When technical gear, tools, or hobby equipment arrives defective, Joseph prefers an exchange rather than a refund so he can keep the project moving.",
+    "canonical_answer": "If a tool or technical item is defective, I usually want an exchange instead of a refund.",
+    "counterfactual_default": "Request a refund and decide later whether to repurchase.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "His systematic approach, reliability, and organized work style make him a trusted resource for troubleshooting, reliability engineering, and compliance audits."
+      },
+      {
+        "type": "direct",
+        "content": "His workshop is filled with woodworking projects"
+      },
+      {
+        "type": "direct",
+        "content": "An avid model‑railroader"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "joseph_eldridge_commerce_02",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When cutting back on a recurring service for balance, Joseph prefers a basic plan rather than staying on a higher tier.",
+    "canonical_answer": "If I scale a subscription back, I prefer to drop to the basic plan.",
+    "counterfactual_default": "Keep the current tier or only step down slightly to a mid-level plan.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "To manage his anxiety and maintain emotional well‑being, he has set personal boundaries on project scope, prioritizing part‑time engagements"
+      },
+      {
+        "type": "direct",
+        "content": "ultimately, his ambition is to leave a lasting imprint on the regional engineering community while preserving his own mental health and work‑life balance"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "joseph_eldridge_commerce_03",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Joseph prefers recreational updates like sports chatter to be marked low priority rather than treated as inbox-urgent.",
+    "canonical_answer": "I keep sports and other recreational updates at low priority because they are not urgent for me.",
+    "counterfactual_default": "Leave those messages at normal priority in the active queue.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "follows the Duke Blue Devils men’s basketball and the Carolina Hurricanes"
+      },
+      {
+        "type": "direct",
+        "content": "socially vibrant engineer who calms anxiety through methodical woodworking, radio chatter, and mindfulness"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "joseph_eldridge_communication_02",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When labeling messages, Joseph prefers role-based labels such as consulting, theater, church, or mentoring rather than leaving community commitments mixed together.",
+    "canonical_answer": "I like messages labeled by the role or community they belong to, such as consulting, theater, church, or mentoring.",
+    "counterfactual_default": "Leave the threads unlabeled or apply only generic labels like personal or work.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He and his wife, both active members of their local church and civic organizations"
+      },
+      {
+        "type": "direct",
+        "content": "As the resident lighting coordinator for the community theater"
+      },
+      {
+        "type": "direct",
+        "content": "Joseph is also eager to formalize a mentorship program within the IEEE local chapter"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "joseph_eldridge_communication_03",
+    "persona_id": "joseph_eldridge",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

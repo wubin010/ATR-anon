@@ -1,0 +1,133 @@
+{
+  "session_id": "joseph_eldridge_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and reply to one message.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Maya Chen",
+    "priority": "high",
+    "label_ids": [
+      "lbl_client-action_01"
+    ],
+    "reply_points": [
+      "Acknowledge the note and thank her for flagging it early",
+      "Confirm I can review the bench-test summary today",
+      "Say I will send comments by 3 PM",
+      "Ask her to attach the latest schematic revision if available",
+      "Keep the tone calm and concise"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "label_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Maya Chen"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01"
+        ],
+        "label_ids": [
+          "lbl_client-action_01"
+        ]
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_maya_01",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Need your review on bench-test summary",
+          "body": "Good morning Joseph — before the client check-in, could you take a look at the bench-test summary from last night? I want to make sure the interpretation is sound. If you have time today, I would appreciate a quick response. Also let me know if you need the latest schematic revision.",
+          "thread_id": "thr_maya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T06:18:00"
+        }
+      },
+      {
+        "id": "msg_news_01",
+        "type": "message",
+        "attributes": {
+          "sender": "IEEE Spectrum",
+          "subject": "Weekly electronics roundup",
+          "body": "Your weekly digest of power electronics, embedded systems, and standards news.",
+          "thread_id": "thr_news_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T05:40:00"
+        }
+      },
+      {
+        "id": "msg_vendor_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Triad Components",
+          "subject": "February line card update",
+          "body": "Sharing our latest component availability sheet and updated lead times.",
+          "thread_id": "thr_vendor_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T06:02:00"
+        }
+      },
+      {
+        "id": "lbl_client-action_01",
+        "type": "label",
+        "attributes": {
+          "name": "Client Action",
+          "topic": "messages requiring direct client follow-up"
+        }
+      }
+    ]
+  }
+}

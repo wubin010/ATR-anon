@@ -1,0 +1,178 @@
+{
+  "session_id": "charlie_james_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "cars",
+      "music",
+      "art"
+    ],
+    "destination": "Nashville",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "stop_tags": [
+      "cars",
+      "music",
+      "art"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "cars",
+          "music",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_nashville_01",
+          "dest_bowlinggreen_01",
+          "dest_cincinnati_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Nashville",
+        "stop_tags": [
+          "cars",
+          "music",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Nashville",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_lane_01",
+          "stop_country_01",
+          "stop_framist_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_nashville_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Nashville",
+          "region": "Tennessee",
+          "tags": [
+            "music",
+            "art",
+            "cars",
+            "road trip",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_bowlinggreen_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Bowling Green",
+          "region": "Kentucky",
+          "tags": [
+            "cars",
+            "museum",
+            "road trip",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_cincinnati_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Cincinnati",
+          "region": "Ohio",
+          "tags": [
+            "art",
+            "music",
+            "museum",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "stop_lane_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lane Motor Museum",
+          "location": "Nashville",
+          "tags": [
+            "cars",
+            "museum",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "stop_country_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Country Music Hall of Fame and Museum",
+          "location": "Nashville",
+          "tags": [
+            "music",
+            "museum",
+            "art"
+          ]
+        }
+      },
+      {
+        "id": "stop_framist_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Frist Art Museum",
+          "location": "Nashville",
+          "tags": [
+            "art",
+            "museum"
+          ]
+        }
+      }
+    ]
+  }
+}

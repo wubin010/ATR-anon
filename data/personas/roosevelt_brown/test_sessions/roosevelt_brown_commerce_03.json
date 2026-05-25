@@ -1,0 +1,95 @@
+{
+  "instruction": "Please reset my PodLens Studio subscription to the default paid tier and keep the service active.",
+  "gold_value": "pro",
+  "session_id": "roosevelt_brown_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "roosevelt_brown_commerce_03",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_commerce_03",
+    "rule_text": "For software or recurring services that support analytics, content creation, or collaboration, he tends to move up to the pro tier rather than stay on basic.",
+    "canonical_answer": "For tools I rely on for analytics or creative work, I prefer the pro plan over basic."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_podlens_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "PodLens Studio",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 9.99,
+          "service_type": "podcast editing and listener analytics",
+          "billing_cycle": "monthly"
+        }
+      },
+      {
+        "id": "sub_familycart_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "FamilyCart Lists",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 5.99,
+          "service_type": "shared grocery lists",
+          "billing_cycle": "monthly"
+        }
+      },
+      {
+        "id": "sub_watchtower_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "WatchTower Plus",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 29.99,
+          "service_type": "home camera monitoring",
+          "billing_cycle": "monthly"
+        }
+      },
+      {
+        "id": "sub_meetgrid_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "MeetGrid",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 14.99,
+          "service_type": "team video meetings",
+          "billing_cycle": "monthly"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "pro"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

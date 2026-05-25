@@ -1,0 +1,111 @@
+{
+  "session_id": "joseph_eldridge_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "commerce",
+  "reason_for_call": "Compare some products",
+  "task_params": {
+    "category": "humidity meter",
+    "budget": 50,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_pinless_01",
+      "prod_thermopro_02",
+      "prod_klein_03"
+    ],
+    "list_name": "Wood Shop Supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "humidity meter",
+        "budget": 50,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_pinless_01",
+          "prod_thermopro_02",
+          "prod_klein_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_pinless_01"
+        ],
+        "list_name": "Wood Shop Supplies"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_pinless_01",
+        "type": "product",
+        "attributes": {
+          "name": "LignoMate Compact Humidity Meter",
+          "price": 44.99,
+          "category": "humidity meter",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_thermopro_02",
+        "type": "product",
+        "attributes": {
+          "name": "ThermoPro Mini Humidity Meter",
+          "price": 18.99,
+          "category": "humidity meter",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_klein_03",
+        "type": "product",
+        "attributes": {
+          "name": "Klein Tools Pocket Humidity Meter",
+          "price": 39.5,
+          "category": "humidity meter",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_govee_04",
+        "type": "product",
+        "attributes": {
+          "name": "Govee Bluetooth Hygrometer",
+          "price": 16.99,
+          "category": "humidity sensor",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

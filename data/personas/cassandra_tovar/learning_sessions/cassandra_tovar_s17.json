@@ -1,0 +1,88 @@
+{
+  "session_id": "cassandra_tovar_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "memo",
+    "title": "Church Audio Upgrade Ideas",
+    "location": "Church Media/Audio",
+    "memo_points": [
+      "replace the aging vocal mics with clearer handhelds",
+      "add a stage box to reduce long cable runs",
+      "set up separate monitor mixes for singers and keys",
+      "train volunteers on gain staging and feedback prevention",
+      "save scene presets for sermon, worship, and announcements"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Church Media/Audio",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "Church Audio Upgrade Ideas",
+        "location": "Church Media/Audio",
+        "content_brief": "<authored from memo_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_audio_01",
+        "type": "document",
+        "attributes": {
+          "title": "Sunday Service Mix Notes",
+          "doc_type": "note",
+          "location": "Church Media/Audio",
+          "content_brief": "Quick notes about muddy vocals, weak monitors, and feedback during worship set."
+        }
+      },
+      {
+        "id": "doc_audio_02",
+        "type": "document",
+        "attributes": {
+          "title": "Sanctuary Equipment Inventory",
+          "doc_type": "spreadsheet",
+          "location": "Church Media/Audio",
+          "content_brief": "Current inventory of mixer, speakers, microphones, DI boxes, and cabling."
+        }
+      },
+      {
+        "id": "doc_video_01",
+        "type": "document",
+        "attributes": {
+          "title": "Livestream Camera Angle Checklist",
+          "doc_type": "note",
+          "location": "Church Media/Video",
+          "content_brief": "Volunteer checklist for camera framing and switching."
+        }
+      }
+    ]
+  }
+}

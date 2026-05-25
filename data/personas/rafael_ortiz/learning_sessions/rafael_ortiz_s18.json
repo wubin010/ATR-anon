@@ -1,0 +1,74 @@
+{
+  "session_id": "rafael_ortiz_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "workspace",
+  "reason_for_call": "Update a work tracker.",
+  "task_params": {
+    "tracker_title": "Med-Surg Quality Improvement Tracker",
+    "update_action": "create_entry",
+    "entry_payload_points": [
+      "near-miss insulin dose caught during bedside double-check",
+      "MAR timing mismatch after transfer from ED",
+      "Spanish discharge teaching improved teach-back accuracy",
+      "IV pump library override happened during busy med pass",
+      "need follow-up on handoff workflow and barcode scanning"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_qi_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_payload_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_qi_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Med-Surg Quality Improvement Tracker"
+        }
+      },
+      {
+        "id": "trk_educ_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Staff Education Follow-up Log"
+        }
+      },
+      {
+        "id": "trk_supply_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Unit Supply Issues Tracker"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "instruction": "A few Anniston interview files are still scattered across Desktop, Downloads, and Documents. Please put them all into one folder so they're easier to find later.",
+  "gold_value": "folder_anniston_voices_project_01",
+  "session_id": "romisha_shields_workspace_02_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "romisha_shields_workspace_02",
+  "rule_ref": {
+    "rule_id": "romisha_shields_workspace_02",
+    "rule_text": "She prefers moving cookbook, oral-history, and event files into dedicated project folders instead of leaving them scattered where they were created.",
+    "canonical_answer": "I want my cookbook, history, and event papers moved into their own folders so I can find them later."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_anniston_barbershop_transcript_01",
+        "type": "file",
+        "attributes": {
+          "name": "Anniston Barber Shop interview transcript.docx",
+          "file_type": "docx",
+          "location": "Desktop",
+          "labels": [
+            "anniston",
+            "interview",
+            "transcript"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_anniston_deacon_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "Anniston church deacon interview notes.txt",
+          "file_type": "txt",
+          "location": "Downloads",
+          "labels": [
+            "anniston",
+            "interview",
+            "notes"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_anniston_mainstreet_summary_01",
+        "type": "file",
+        "attributes": {
+          "name": "Anniston Main Street resident audio summary.docx",
+          "file_type": "docx",
+          "location": "Documents",
+          "labels": [
+            "anniston",
+            "resident",
+            "history"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "folder_anniston_voices_project_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Anniston Voices Project",
+          "purpose": "project folder for resident oral-history interviews, transcripts, and planning materials"
+        }
+      },
+      {
+        "id": "folder_anniston_interview_drafts_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Anniston Interview Drafts",
+          "purpose": "temporary holding area for active transcripts, notes, and recordings"
+        }
+      },
+      {
+        "id": "folder_local_history_transcripts_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Local History Transcripts",
+          "purpose": "completed interview transcripts grouped by file type"
+        }
+      },
+      {
+        "id": "folder_desktop_working_files_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Desktop Working Files",
+          "purpose": "general workspace folder for items still being sorted"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "move_files",
+          "arguments": {
+            "folder_id": "folder_anniston_voices_project_01"
+          },
+          "compare_args": [
+            "folder_id"
+          ]
+        }
+      ]
+    }
+  }
+}

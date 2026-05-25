@@ -1,0 +1,132 @@
+{
+  "session_id": "michael_argo_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a group plan.",
+  "task_params": {
+    "title": "Board Game Night",
+    "start_time": "2025-02-08T18:30:00-05:00",
+    "end_time": "2025-02-08T22:00:00-05:00",
+    "participants": [
+      "Eli Turner",
+      "Nina Patel",
+      "Chris Morales"
+    ],
+    "location": "Michael's apartment"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-08T18:30:00-05:00",
+        "end_time": "2025-02-08T22:00:00-05:00",
+        "participants": [
+          "Eli Turner",
+          "Nina Patel",
+          "Chris Morales"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Board Game Night",
+        "start_time": "2025-02-08T18:30:00-05:00",
+        "end_time": "2025-02-08T22:00:00-05:00",
+        "participants": [
+          "Eli Turner",
+          "Nina Patel",
+          "Chris Morales"
+        ],
+        "location": "Michael's apartment"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_primary_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverfront sketch meetup",
+          "start_time": "2025-02-08T13:00:00-05:00",
+          "end_time": "2025-02-08T15:00:00-05:00",
+          "participants": [
+            "Michael Argo",
+            "Sam Becker"
+          ],
+          "location": "Riverfront Arts Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_primary_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Family dinner",
+          "start_time": "2025-02-08T17:00:00-05:00",
+          "end_time": "2025-02-08T18:00:00-05:00",
+          "participants": [
+            "Michael Argo",
+            "Mom",
+            "Dad"
+          ],
+          "location": "Home",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_primary_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunday hike planning call",
+          "start_time": "2025-02-09T11:00:00-05:00",
+          "end_time": "2025-02-09T11:30:00-05:00",
+          "participants": [
+            "Michael Argo",
+            "Trail Runners group"
+          ],
+          "location": "Phone",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_primary_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Board Game Night",
+          "start_time": "2025-02-08T18:30:00-05:00",
+          "end_time": "2025-02-08T22:00:00-05:00",
+          "participants": [
+            "Eli Turner",
+            "Nina Patel",
+            "Chris Morales"
+          ],
+          "location": "Michael's apartment",
+          "calendar": "personal",
+          "status": "planned"
+        }
+      }
+    ]
+  }
+}

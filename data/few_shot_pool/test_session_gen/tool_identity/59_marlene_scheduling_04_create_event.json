@@ -1,0 +1,85 @@
+{
+  "domain": "scheduling",
+  "instruction": "Add a community-garden new-volunteer workshop to my calendar for June 17, 2026 (Wednesday) 18:30–20:00 at Maple Street Community Center Room 2. Attendees: tina.lee@greenthread.org, marcus.ng@greenthread.org, priya.patel@greenthread.org. Time is already locked in over group chat, just take care of it.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_existing_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Volunteer orientation prep",
+          "start_time": "2026-06-17T16:30:00",
+          "end_time": "2026-06-17T17:15:00",
+          "participants": [
+            "tina.lee@greenthread.org"
+          ],
+          "location": "Maple Street Community Center Lobby",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_existing_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood grant call",
+          "start_time": "2026-06-17T20:30:00",
+          "end_time": "2026-06-17T21:15:00",
+          "participants": [
+            "marcus.ng@greenthread.org"
+          ],
+          "location": "Zoom",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_existing_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "School pickup",
+          "start_time": "2026-06-17T15:00:00",
+          "end_time": "2026-06-17T15:45:00",
+          "participants": [
+            "priya.patel@greenthread.org"
+          ],
+          "location": "Lincoln Elementary",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "session_id": "marlene_graham_scheduling_04_test",
+  "session_type": "test",
+  "persona_id": "marlene_graham",
+  "rule_id": "marlene_graham_scheduling_04",
+  "rule_ref": {
+    "rule_id": "marlene_graham_scheduling_04",
+    "rule_text": "Before scheduling new community meetings, workshops, or any multi-person coordination event, check for conflicts before placing it on the calendar rather than creating the event directly.",
+    "canonical_answer": "For community meetings, workshops, or anything with multiple people, please check for conflicts first, then put it on the calendar."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "check_conflicts",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

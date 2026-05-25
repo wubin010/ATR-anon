@@ -1,0 +1,89 @@
+{
+  "instruction": "Please take care of the return for the quilting ruler set from my recent order. It isn't right for my quilting work.",
+  "gold_value": "exchange",
+  "session_id": "romisha_shields_commerce_04_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "romisha_shields_commerce_04",
+  "rule_ref": {
+    "rule_id": "romisha_shields_commerce_04",
+    "rule_text": "When a purchased item is wrong for her cooking, quilting, or event work, she prefers an exchange over a refund.",
+    "canonical_answer": "If something I bought isn’t right, I’d rather swap it for the right thing than just get my money back."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_quiltline_ruler_01",
+        "type": "product",
+        "attributes": {
+          "name": "Acrylic Quilting Ruler Set",
+          "price": 19.99,
+          "category": "quilting_tools",
+          "rating": 4.5,
+          "brand": "QuiltLine",
+          "order_id": "ord_5912_quilt",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-10"
+        }
+      },
+      {
+        "id": "prod_riverbend_sheetpan_01",
+        "type": "product",
+        "attributes": {
+          "name": "Heavy-Gauge Half Sheet Pan",
+          "price": 24,
+          "category": "bakeware",
+          "rating": 4.8,
+          "brand": "Riverbend Kitchen",
+          "order_id": "ord_5871_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-08"
+        }
+      },
+      {
+        "id": "prod_gatherwell_clipset_01",
+        "type": "product",
+        "attributes": {
+          "name": "Banquet Tablecloth Clip Set",
+          "price": 13.5,
+          "category": "event_supplies",
+          "rating": 4.7,
+          "brand": "GatherWell",
+          "order_id": "ord_5844_event",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-06"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

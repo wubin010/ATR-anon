@@ -1,0 +1,121 @@
+{
+  "session_id": "romisha_shields_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "reservation",
+  "reason_for_call": "Book some event tickets.",
+  "task_params": {
+    "location": "Anniston",
+    "event_tags": [
+      "festival",
+      "gospel"
+    ],
+    "event_id": "evt_anniston_gospel_01",
+    "ticket_type": "senior",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Anniston",
+        "event_tags": [
+          "festival",
+          "gospel"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_anniston_gospel_01",
+        "ticket_type": "senior",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_anniston_gospel_01",
+        "type": "event",
+        "attributes": {
+          "name": "Anniston Gospel Food & Arts Festival",
+          "location": "Anniston",
+          "date_time": "2025-08-16T11:00:00-05:00",
+          "price": 18.0,
+          "event_tags": [
+            "festival",
+            "gospel",
+            "food",
+            "arts"
+          ]
+        }
+      },
+      {
+        "id": "evt_anniston_craft_02",
+        "type": "event",
+        "attributes": {
+          "name": "Downtown Anniston Summer Craft Fair",
+          "location": "Anniston",
+          "date_time": "2025-08-16T10:00:00-05:00",
+          "price": 12.0,
+          "event_tags": [
+            "festival",
+            "crafts",
+            "family"
+          ]
+        }
+      },
+      {
+        "id": "evt_oxford_music_03",
+        "type": "event",
+        "attributes": {
+          "name": "Oxford Park Evening Music Fair",
+          "location": "Oxford",
+          "date_time": "2025-08-16T18:30:00-05:00",
+          "price": 20.0,
+          "event_tags": [
+            "fair",
+            "music",
+            "outdoor"
+          ]
+        }
+      },
+      {
+        "id": "evt_anniston_history_04",
+        "type": "event",
+        "attributes": {
+          "name": "Anniston Heritage Street Festival",
+          "location": "Anniston",
+          "date_time": "2025-08-17T13:00:00-05:00",
+          "price": 15.0,
+          "event_tags": [
+            "festival",
+            "history",
+            "community"
+          ]
+        }
+      }
+    ]
+  }
+}

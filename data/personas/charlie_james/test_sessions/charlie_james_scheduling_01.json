@@ -1,0 +1,103 @@
+{
+  "instruction": "The details in our New Hope Church middle-school mentoring text thread are settled: 2026-09-15 from 18:30 to 19:30 in Room 4, with devon.reed@newhope.org and melissa.clark@newhope.org involved. Take care of it and keep me on top of it.",
+  "gold_value": null,
+  "session_id": "charlie_james_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "charlie_james_scheduling_01",
+  "rule_ref": {
+    "rule_id": "charlie_james_scheduling_01",
+    "rule_text": "For church outreach, coaching, or mentoring sessions with other people involved, he prefers creating a shared calendar event rather than keeping it as a private reminder.",
+    "canonical_answer": "If other people are part of it, I want it on the calendar as a real event, not just a reminder to myself."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_newhope_mentoring_thread_01",
+        "type": "event",
+        "attributes": {
+          "title": "New Hope middle-school mentoring thread",
+          "start_time": "2026-09-15T18:30:00",
+          "end_time": "2026-09-15T19:30:00",
+          "participants": [
+            "devon.reed@newhope.org",
+            "melissa.clark@newhope.org"
+          ],
+          "location": "New Hope Church Room 4",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_text"
+        }
+      },
+      {
+        "id": "evt_newhope_pantry_checkin_02",
+        "type": "event",
+        "attributes": {
+          "title": "New Hope outreach food pantry check-in",
+          "start_time": "2026-09-18T17:00:00",
+          "end_time": "2026-09-18T18:00:00",
+          "participants": [
+            "andrea.holt@newhope.org",
+            "kevin.morris@newhope.org"
+          ],
+          "location": "New Hope Church Fellowship Hall",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "email_thread"
+        }
+      },
+      {
+        "id": "evt_eastside_coaching_notes_03",
+        "type": "event",
+        "attributes": {
+          "title": "Eastside youth coaching session notes",
+          "start_time": "2026-09-16T16:00:00",
+          "end_time": "2026-09-16T17:00:00",
+          "participants": [
+            "trent.wilson@eastsideyouth.org"
+          ],
+          "location": "Eastside Field House",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "text_thread"
+        }
+      },
+      {
+        "id": "evt_dental_cleaning_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dental cleaning",
+          "start_time": "2026-09-15T10:00:00",
+          "end_time": "2026-09-15T11:00:00",
+          "participants": [],
+          "location": "Bright Smiles Dental",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

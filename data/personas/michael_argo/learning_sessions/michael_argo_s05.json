@@ -1,0 +1,97 @@
+{
+  "session_id": "michael_argo_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "reservation",
+  "reason_for_call": "Book a service appointment.",
+  "task_params": {
+    "service_type": "haircut",
+    "location": "Jeffersonville",
+    "date_time": "2025-03-14T16:30:00",
+    "sort_by": "rating"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "haircut",
+        "location": "Jeffersonville",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "sp_rivercut_01",
+        "date_time": "2025-03-14T16:30:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "sp_rivercut_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "RiverCut Barbers",
+          "service_type": "haircut",
+          "location": "Jeffersonville",
+          "rating": 4.8,
+          "distance_km": 2.1
+        }
+      },
+      {
+        "id": "sp_mapleclips_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Maple Clips Studio",
+          "service_type": "haircut",
+          "location": "Jeffersonville",
+          "rating": 4.5,
+          "distance_km": 3.4
+        }
+      },
+      {
+        "id": "sp_ohiogroom_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Ohio Groom Room",
+          "service_type": "haircut",
+          "location": "Clarksville",
+          "rating": 4.7,
+          "distance_km": 5.6
+        }
+      },
+      {
+        "id": "sp_trimcraft_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "TrimCraft Salon",
+          "service_type": "haircut",
+          "location": "Jeffersonville",
+          "rating": 4.2,
+          "distance_km": 1.8
+        }
+      }
+    ]
+  }
+}

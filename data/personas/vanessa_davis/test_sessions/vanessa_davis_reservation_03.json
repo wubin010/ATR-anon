@@ -1,0 +1,91 @@
+{
+  "instruction": "Please book me a wellness appointment in Old Town Scottsdale for 2026-09-18 at 6:00pm — just choose a place for me.",
+  "gold_value": "svc_wellness_trailline_01",
+  "session_id": "vanessa_davis_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "vanessa_davis_reservation_03",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_reservation_03",
+    "rule_text": "For wellness appointments, she prefers booking practical back-relief services like yoga-oriented care over purely pampering appointments.",
+    "canonical_answer": "When I book a service for myself, I prefer something that helps my back and mobility, like yoga-related care, over pampering."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_wellness_oasisglow_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Oasis Glow Spa",
+          "service_type": "spa wellness",
+          "location": "Old Town Scottsdale",
+          "rating": 4.9,
+          "distance_km": 0.2
+        }
+      },
+      {
+        "id": "svc_wellness_velvetcactus_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Velvet Cactus Facial Lounge",
+          "service_type": "facial wellness",
+          "location": "Old Town Scottsdale",
+          "rating": 4.8,
+          "distance_km": 0.4
+        }
+      },
+      {
+        "id": "svc_wellness_desertdew_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Desert Dew Beauty Studio",
+          "service_type": "beauty wellness",
+          "location": "Old Town Scottsdale",
+          "rating": 4.7,
+          "distance_km": 0.6
+        }
+      },
+      {
+        "id": "svc_wellness_trailline_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Trailline Yoga Wellness",
+          "service_type": "yoga wellness",
+          "location": "Old Town Scottsdale",
+          "rating": 4.4,
+          "distance_km": 1.8
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_wellness_trailline_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

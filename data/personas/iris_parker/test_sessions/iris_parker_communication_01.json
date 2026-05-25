@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Lena Ortiz at CityWorks University about the employer-branding panel invitation. Tell her I'm open to joining, ask whether they want a short bio and headshot for the event page, and say I'd also like a quick breakdown of the student audience before I lock in talking points.",
+  "gold_value": null,
+  "session_id": "iris_parker_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "iris_parker_communication_01",
+  "rule_ref": {
+    "rule_id": "iris_parker_communication_01",
+    "rule_text": "For messages that represent her professionally or touch workplace culture, she prefers to draft them for review rather than send them immediately.",
+    "canonical_answer": "I always draft professionally important messages first so I can review the tone before anything goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_panel_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Ortiz <lena.ortiz@cityworksu.edu>",
+          "subject": "Employer-branding panel invitation",
+          "body": "Hello Iris, we're putting together a CityWorks University panel for students interested in people operations and employer branding. Would you be open to representing Northbridge and speaking about your team's approach to mentorship and manager communication? If you're available, please let me know, and we can also use a short bio and headshot for the event page.",
+          "thread_id": "thr_lena_panel_08",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-09-03T10:14"
+        }
+      },
+      {
+        "id": "msg_sonia_exitinterviews_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Sonia Patel <sonia.patel@northbridgeco.com>",
+          "subject": "Exit interview summary template",
+          "body": "I updated the exit interview summary template with the new retention-code fields. When you have a minute, can you check whether the manager follow-up section still matches what you want?",
+          "thread_id": "thr_sonia_exit_21",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-09-03T09:02"
+        }
+      },
+      {
+        "id": "msg_vendor_perks_01",
+        "type": "message",
+        "attributes": {
+          "sender": "accounts@perkstream.io",
+          "subject": "September benefits platform invoice",
+          "body": "Your September invoice for the PerkStream benefits platform is now available in the billing portal.",
+          "thread_id": "thr_perkstream_invoice_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-09-03T07:41"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

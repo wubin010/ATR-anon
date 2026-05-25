@@ -1,0 +1,117 @@
+{
+  "domain": "workspace",
+  "instruction": "Take care of those three Maple Mutual 2021 files in my workspace: the claim audit checklist, the compliance exception notes, and the supporting correspondence. All three are leftovers from 2021; I no longer use them, just clutter.",
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_maple_audit_checklist_2021",
+        "type": "file",
+        "attributes": {
+          "name": "Maple Mutual claim audit checklist.xlsx",
+          "file_type": "xlsx",
+          "location": "/clients/maple/review",
+          "owner": "Jutta Ashton",
+          "labels": [
+            "review"
+          ],
+          "archived": false,
+          "project": "maple_2021_audit",
+          "modified_date": "2021-09-14",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_maple_compliance_notes_2021",
+        "type": "file",
+        "attributes": {
+          "name": "Maple Mutual compliance exception notes.docx",
+          "file_type": "docx",
+          "location": "/clients/maple/review",
+          "owner": "Jutta Ashton",
+          "labels": [
+            "review"
+          ],
+          "archived": false,
+          "project": "maple_2021_audit",
+          "modified_date": "2021-10-02",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_maple_supporting_correspondence_2021",
+        "type": "file",
+        "attributes": {
+          "name": "Maple Mutual supporting correspondence.pdf",
+          "file_type": "pdf",
+          "location": "/clients/maple/review",
+          "owner": "Jutta Ashton",
+          "labels": [
+            "review"
+          ],
+          "archived": false,
+          "project": "maple_2021_audit",
+          "modified_date": "2021-11-18",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_maple_open_claims_tracker_2026",
+        "type": "file",
+        "attributes": {
+          "name": "Maple Mutual Q3 open claims tracker.xlsx",
+          "file_type": "xlsx",
+          "location": "/clients/maple/review",
+          "owner": "Jutta Ashton",
+          "labels": [
+            "active"
+          ],
+          "archived": false,
+          "project": "maple_2026_claims",
+          "modified_date": "2026-08-03",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fld_client_history_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Client History",
+          "location": "/clients/history"
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_workspace_03_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_workspace_03",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_workspace_03",
+    "rule_text": "When tidying work or professional materials, default to keeping the structured records and moving or archiving them rather than deleting outright.",
+    "canonical_answer": "Keep the work and professional records — file them away, don't just delete them."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "archive_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

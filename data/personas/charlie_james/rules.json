@@ -1,0 +1,614 @@
+[
+  {
+    "rule_text": "For regional getaways, he prefers to travel over the ground rather than book a flight.",
+    "canonical_answer": "For weekend and regional trips, I’d rather go by road or rail than fly.",
+    "counterfactual_default": "Book the most convenient flight for the destination.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Charlie James prefers road‑trip adventures"
+      },
+      {
+        "type": "direct",
+        "content": "budget constraints keep them focused on regional destinations that can be explored in a weekend"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "charlie_james_travel_01",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a trip, he likes the itinerary to include automobile, craft, or neighborhood culture stops instead of only generic tourist highlights.",
+    "canonical_answer": "When I travel, I want stops that connect to cars, local art, or neighborhood culture.",
+    "counterfactual_default": "Pick the most popular general-interest attractions regardless of his restoration and arts interests.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefer road‑trip adventures that combine automobile nostalgia with cultural curiosity"
+      },
+      {
+        "type": "direct",
+        "content": "driven to Detroit for the North American International Auto Show, cruised through Asheville’s art districts"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "charlie_james_travel_02",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a planned stop falls through during a trip, he prefers replacement stops that keep the same auto-or-arts theme rather than any generic substitute nearby.",
+    "canonical_answer": "If a stop on my trip changes, I want the replacement to match the same car or cultural vibe.",
+    "counterfactual_default": "Swap in whatever replacement stop is easiest or highest rated.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "road‑trip adventures that combine automobile nostalgia with cultural curiosity"
+      },
+      {
+        "type": "direct",
+        "content": "often charting routes on a weathered map with flexible stop‑overs"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "charlie_james_travel_03",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a trip needs a hotel, he favors budget-conscious, practical lodging over premium luxury stays.",
+    "canonical_answer": "For road trips, I just want a solid, affordable place to stay instead of a fancy hotel.",
+    "counterfactual_default": "Choose a more upscale or amenity-heavy hotel offer.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "budget constraints keep them focused on regional destinations that can be explored in a weekend"
+      },
+      {
+        "type": "direct",
+        "content": "Charlie James prefers road‑trip adventures"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "charlie_james_travel_04",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If he does fly, he prefers a window seat.",
+    "canonical_answer": "When I end up on a plane, I like a window seat.",
+    "counterfactual_default": "Pick an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "inferred",
+        "content": "He draws inspiration from visual surroundings, including 'illuminated murals inspire new vehicle color palettes' and frequent art-focused travel, so a view-oriented seat fits his established habit of looking outward for ideas."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "charlie_james_travel_05",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For restaurant reservations, he prefers local Southern or soulful cooking over generic mainstream options.",
+    "canonical_answer": "When I go out, I’d rather eat somewhere with real Southern or soulful food.",
+    "counterfactual_default": "Choose a broadly popular restaurant without regard to Southern or local flavor.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Charlie James’s palate is rooted in Southern soul‑food tradition"
+      },
+      {
+        "type": "direct",
+        "content": "favoring crispy fried catfish, slow‑cooked collard greens, buttery cornbread, and sweet potato pie"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "charlie_james_reservation_01",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a local service appointment, he prefers an independent neighborhood provider over a polished chain option.",
+    "canonical_answer": "If I’m booking a local service, I’d rather go with somebody rooted in the neighborhood.",
+    "counterfactual_default": "Choose the most standardized chain or highest-volume provider.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "planning a boutique restoration studio in the historic Portland neighborhood"
+      },
+      {
+        "type": "direct",
+        "content": "His family’s hands‑on work ethic"
+      },
+      {
+        "type": "direct",
+        "content": "willingness to mentor younger community members"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "charlie_james_reservation_03",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For formal outreach, shop proposals, or mentorship messages, he prefers to draft the message first instead of sending it immediately.",
+    "canonical_answer": "For anything formal or important, I like to see it as a draft before it goes out.",
+    "counterfactual_default": "Send the message directly once the content is available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "They combine three decades of engine diagnostics, transmission repair, and metal fabrication with a vivid imagination"
+      },
+      {
+        "type": "direct",
+        "content": "Their relaxed attitude toward paperwork sometimes leaves the shop desk cluttered"
+      },
+      {
+        "type": "direct",
+        "content": "he hopes to showcase his custom builds at regional auto shows and contribute a regular column on innovative repair techniques to a local automotive magazine"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "charlie_james_communication_01",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Messages about ASE certification, customers, or apprentices should be marked high priority rather than left at the default level.",
+    "canonical_answer": "If a message affects certification, customers, or my apprentices, I treat it as high priority.",
+    "counterfactual_default": "Leave those messages at normal priority unless they look obviously urgent.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "They are pursuing ASE Master Technician certification"
+      },
+      {
+        "type": "direct",
+        "content": "mentors apprentices"
+      },
+      {
+        "type": "direct",
+        "content": "communicates clearly with customers"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "charlie_james_communication_02",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "He prefers to label project emails by topic instead of just leaving them in a general inbox pile.",
+    "canonical_answer": "I like project emails labeled so I can separate restoration, certification, and community stuff.",
+    "counterfactual_default": "Leave the messages unlabeled or rely only on the inbox.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Their relaxed attitude toward paperwork sometimes leaves the shop desk cluttered"
+      },
+      {
+        "type": "direct",
+        "content": "planning a boutique restoration studio"
+      },
+      {
+        "type": "direct",
+        "content": "develop a mentorship program"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "charlie_james_communication_03",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing files, he prefers grouping them by project rather than by file type or date.",
+    "canonical_answer": "I organize files around the project they belong to, not just by date or file type.",
+    "counterfactual_default": "Sort the files by date or type because that is the easiest generic scheme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "custom vehicle designs"
+      },
+      {
+        "type": "direct",
+        "content": "planning a boutique restoration studio"
+      },
+      {
+        "type": "direct",
+        "content": "Their relaxed attitude toward paperwork sometimes leaves the shop desk cluttered"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "charlie_james_workspace_01",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "He prefers moving working files into specific project folders instead of letting them sit loose in a general workspace.",
+    "canonical_answer": "I want active files moved into the right project folder so the shop mess doesn’t spread to my digital stuff.",
+    "counterfactual_default": "Leave the files where they are or only classify them without relocating them.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Their relaxed attitude toward paperwork sometimes leaves the shop desk cluttered"
+      },
+      {
+        "type": "direct",
+        "content": "often sketching concepts on coffee‑stained napkins"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "charlie_james_workspace_02",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For obvious duplicate or throwaway work files, he prefers deleting them outright rather than keeping extra clutter.",
+    "canonical_answer": "If a file is just a duplicate or throwaway version, I’d rather delete it than babysit more clutter.",
+    "counterfactual_default": "Archive the files or keep them around just in case.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Their relaxed attitude toward paperwork sometimes leaves the shop desk cluttered"
+      },
+      {
+        "type": "inferred",
+        "content": "Because he already fights clutter in his workspace, a decisive cleanup preference for obvious duplicates is a meaningful departure from the usual keep-everything default."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "delete_files",
+      "param": null
+    },
+    "rule_id": "charlie_james_workspace_03",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When starting a repeatable shop process document, he prefers a template rather than a freeform memo or report.",
+    "canonical_answer": "If it’s something I’ll reuse in the shop, I want it built as a template.",
+    "counterfactual_default": "Create a one-off note or memo for the process.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "pursuing ASE Master Technician certification"
+      },
+      {
+        "type": "direct",
+        "content": "planning a boutique restoration studio"
+      },
+      {
+        "type": "direct",
+        "content": "develop a mentorship program that offers hands‑on training"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "charlie_james_workspace_04",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For church outreach, coaching, or mentoring sessions with other people involved, he prefers creating a shared calendar event rather than keeping it as a private reminder.",
+    "canonical_answer": "If other people are part of it, I want it on the calendar as a real event, not just a reminder to myself.",
+    "counterfactual_default": "Set a private reminder for himself without creating a shared event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "coach youth baseball at the church’s outreach program"
+      },
+      {
+        "type": "direct",
+        "content": "willingness to mentor younger community members"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "charlie_james_scheduling_01",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invite lands on a weekend or flexible personal slot, he prefers answering tentatively instead of committing right away.",
+    "canonical_answer": "If a weekend invite bumps into ride time or project time, I usually respond tentative first.",
+    "counterfactual_default": "Accept or decline the invite immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekend rides"
+      },
+      {
+        "type": "direct",
+        "content": "Their fitness routine is flexible, favoring spontaneous bike rides over rigid gym schedules"
+      },
+      {
+        "type": "direct",
+        "content": "often charting routes on a weathered map with flexible stop‑overs"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "charlie_james_scheduling_02",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For purchases tied to his work or hobbies, he prefers parts, tools, or maker-oriented supplies over flashy novelty items.",
+    "canonical_answer": "When I buy something, I’d rather it help me build, fix, cook, or grow something than just look flashy.",
+    "counterfactual_default": "Choose a more decorative, novelty, or status-driven product.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "master mechanic’s skill set"
+      },
+      {
+        "type": "direct",
+        "content": "Building scale model kits of classic muscle cars"
+      },
+      {
+        "type": "direct",
+        "content": "Gardening"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "charlie_james_commerce_02",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If an order needs fixing, he prefers changing the shipping address rather than changing the quantity.",
+    "canonical_answer": "When I need to adjust an order, it’s usually the delivery address I want changed, not the amount.",
+    "counterfactual_default": "Modify the quantity because that is a more common adjustment.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Occupation: automotive_service_technician_or_mechanic"
+      },
+      {
+        "type": "direct",
+        "content": "planning a boutique restoration studio in the historic Portland neighborhood"
+      },
+      {
+        "type": "inferred",
+        "content": "A working mechanic and future shop owner is more likely to route materials to the correct work location than to casually alter item counts."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "modify_order",
+      "param": "field"
+    },
+    "rule_id": "charlie_james_commerce_03",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a purchased item is wrong or defective, he prefers an exchange rather than taking a refund.",
+    "canonical_answer": "If a tool or part is wrong, I usually want the replacement, not my money back.",
+    "counterfactual_default": "Request a refund and shop again later.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "three decades of engine diagnostics, transmission repair, and metal fabrication"
+      },
+      {
+        "type": "direct",
+        "content": "His welding and metal‑fabrication skills enable him to fabricate custom brackets and restore vintage frames"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "charlie_james_commerce_04",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a subscription starts feeling too expensive, he prefers dropping to the basic tier instead of keeping a higher plan.",
+    "canonical_answer": "If a subscription gets too costly, I’d rather step it down to basic than keep paying for extras.",
+    "counterfactual_default": "Stay on the current higher-tier plan for the extra features.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "budget constraints keep them focused on regional destinations that can be explored in a weekend"
+      },
+      {
+        "type": "direct",
+        "content": "basic CAD software"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "charlie_james_commerce_05",
+    "persona_id": "charlie_james",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

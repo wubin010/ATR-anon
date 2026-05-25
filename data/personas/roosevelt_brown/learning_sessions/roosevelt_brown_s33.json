@@ -1,0 +1,125 @@
+{
+  "session_id": "roosevelt_brown_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "workspace",
+  "reason_for_call": "Organize some documents",
+  "task_params": {
+    "location": "Downloads",
+    "name": "Career Growth",
+    "scheme": "by_project",
+    "target_keywords": [
+      "MHA vs MBA",
+      "grad school compare"
+    ]
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Downloads"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_mha_01",
+          "fil_grad_02"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_mha_01",
+          "fil_grad_02"
+        ],
+        "folder_id": "fld_career_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_mha_01",
+        "type": "file",
+        "attributes": {
+          "name": "MHA_vs_MBA_comparison_notes.txt",
+          "file_type": "txt",
+          "location": "Downloads",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_grad_02",
+        "type": "file",
+        "attributes": {
+          "name": "grad_school_compare_scratchpad.txt",
+          "file_type": "txt",
+          "location": "Downloads",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_resume_03",
+        "type": "file",
+        "attributes": {
+          "name": "resume_revision_2025.docx",
+          "file_type": "docx",
+          "location": "Career Growth",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "career"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_career_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Career Growth",
+          "purpose": "Store resumes, degree planning, and leadership development materials."
+        }
+      },
+      {
+        "id": "fld_admin_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Admin Archive",
+          "purpose": "Older operational and compliance files."
+        }
+      }
+    ]
+  }
+}

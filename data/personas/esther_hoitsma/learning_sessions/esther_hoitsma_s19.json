@@ -1,0 +1,98 @@
+{
+  "session_id": "esther_hoitsma_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "template_doc_type": "template",
+    "location": "Finances",
+    "doc_type": "spreadsheet",
+    "title": "Travel Fund and CNA Fees Savings Tracker",
+    "content_brief_points": [
+      "two sections: travel fund and CNA fees",
+      "columns for goal amount, saved, remaining, target date",
+      "include a total monthly contribution row",
+      "simple tracker I can update regularly"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Finances",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Travel Fund and CNA Fees Savings Tracker",
+        "location": "Finances",
+        "content_brief": "<authored from content_brief_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_budget_01",
+        "type": "document",
+        "attributes": {
+          "title": "Monthly Budget Template",
+          "doc_type": "template",
+          "location": "Finances",
+          "content_brief": "Basic budget sheet with income, expenses, savings, and notes tabs."
+        }
+      },
+      {
+        "id": "doc_goal_02",
+        "type": "document",
+        "attributes": {
+          "title": "Savings Goal Planner",
+          "doc_type": "template",
+          "location": "Finances",
+          "content_brief": "Template for tracking multiple savings goals with target amounts and progress."
+        }
+      },
+      {
+        "id": "doc_shift_03",
+        "type": "document",
+        "attributes": {
+          "title": "Shift Notes Archive",
+          "doc_type": "note",
+          "location": "Work",
+          "content_brief": "Archived care notes and reminders."
+        }
+      },
+      {
+        "id": "doc_trip_04",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Trip Ideas",
+          "doc_type": "spreadsheet",
+          "location": "Travel",
+          "content_brief": "Possible destinations, estimated costs, and packing notes."
+        }
+      }
+    ]
+  }
+}

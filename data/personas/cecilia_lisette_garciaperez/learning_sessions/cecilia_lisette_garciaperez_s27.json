@@ -1,0 +1,104 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "communication",
+  "reason_for_call": "Send a thank-you message.",
+  "task_params": {
+    "sender": "Marina Alvarez",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank them for coming over",
+      "mention the wonderful stories they shared",
+      "thank them for bringing the wine",
+      "say the evening felt warm and easy",
+      "invite them back again soon"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Marina Alvarez",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "thread_id": "thd_dinner_01",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_marina_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marina Alvarez",
+          "subject": "Last night was lovely",
+          "body": "Thank you again for having us. We had such a good time catching up at your table.",
+          "thread_id": "thd_dinner_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-28T08:12:00-05:00"
+        }
+      },
+      {
+        "id": "msg_editorial_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Rafael Mendez",
+          "subject": "Proof pages for review",
+          "body": "Sending the updated pages before noon. Let me know if the captions still need trimming.",
+          "thread_id": "thd_work_14",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-03-28T07:41:00-05:00"
+        }
+      },
+      {
+        "id": "msg_bookclub_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Robles",
+          "subject": "Salon notes and poems",
+          "body": "Here are the notes from last week's reading circle, plus the Paz poem we mentioned.",
+          "thread_id": "thd_salon_07",
+          "folder": "archive",
+          "labels": [
+            "reading"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-03-25T18:06:00-05:00"
+        }
+      }
+    ]
+  }
+}

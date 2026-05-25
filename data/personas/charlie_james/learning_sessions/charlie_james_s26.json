@@ -1,0 +1,102 @@
+{
+  "session_id": "charlie_james_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "location": "Studio Planning",
+    "doc_type": "spreadsheet",
+    "title": "Restoration Studio Budget",
+    "template_doc_type": "template",
+    "budget_sections_points": [
+      "startup costs section",
+      "monthly overhead section",
+      "tools and equipment section",
+      "parts and materials section",
+      "paint and body supplies section",
+      "apprenticeship program costs section",
+      "estimated income section",
+      "totals row for each section"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Studio Planning",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Restoration Studio Budget",
+        "location": "Studio Planning",
+        "content_brief": "<authored from budget_sections_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Small Shop Startup Budget Template",
+          "doc_type": "template",
+          "location": "Studio Planning",
+          "content_brief": "Basic template for startup costs, monthly expenses, and revenue estimates."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Creative Workspace Expense Template",
+          "doc_type": "template",
+          "location": "Studio Planning",
+          "content_brief": "Template with equipment, supplies, rent, utilities, and contingency sections."
+        }
+      },
+      {
+        "id": "doc_note_03",
+        "type": "document",
+        "attributes": {
+          "title": "Portland storefront ideas",
+          "doc_type": "note",
+          "location": "Studio Planning",
+          "content_brief": "Rough notes on possible shop layout and neighborhood fit."
+        }
+      },
+      {
+        "id": "doc_sheet_04",
+        "type": "document",
+        "attributes": {
+          "title": "Tool Replacement Log",
+          "doc_type": "spreadsheet",
+          "location": "Shop Admin",
+          "content_brief": "Running list of replaced shop tools and purchase dates."
+        }
+      }
+    ]
+  }
+}

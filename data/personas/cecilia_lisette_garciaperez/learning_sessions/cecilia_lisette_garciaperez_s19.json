@@ -1,0 +1,111 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "travel",
+  "reason_for_call": "Book a place to stay.",
+  "task_params": {
+    "location": "Fredericksburg",
+    "check_in_date": "2025-10-17",
+    "check_out_date": "2025-10-19",
+    "guest_count": 1,
+    "room_count": 1,
+    "sort_by": "price_asc"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Fredericksburg",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "htl_mesquite_02"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_cottonwood_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Cottonwood Creek Inn",
+          "location": "Fredericksburg",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-19",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 139.0
+        }
+      },
+      {
+        "id": "htl_mesquite_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Mesquite Quiet Lodge",
+          "location": "Fredericksburg",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-19",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 125.0
+        }
+      },
+      {
+        "id": "htl_pecan_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Pecan House Suites",
+          "location": "Fredericksburg",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 119.0
+        }
+      },
+      {
+        "id": "htl_riverstone_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverstone Motor Court",
+          "location": "Fredericksburg",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-19",
+          "available_rooms": 5,
+          "max_guests_per_room": 1,
+          "price_per_night": 149.0
+        }
+      }
+    ]
+  }
+}

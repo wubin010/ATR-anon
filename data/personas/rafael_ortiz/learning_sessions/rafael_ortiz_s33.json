@@ -1,0 +1,94 @@
+{
+  "session_id": "rafael_ortiz_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "travel",
+  "reason_for_call": "Book ground transportation",
+  "task_params": {
+    "origin": "Seattle",
+    "destination": "Port Angeles",
+    "passenger_count": 2,
+    "departure_date": "2025-09-18",
+    "transport_offer_id": "transport_coach_01"
+  },
+  "expected_tools": [
+    "search_ground_transport",
+    "book_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Seattle",
+        "destination": "Port Angeles",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "transport_coach_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "transport_coach_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "Port Angeles",
+          "mode": "bus",
+          "departure_date": "2025-09-18",
+          "price": 49.0,
+          "available_seats": 12
+        }
+      },
+      {
+        "id": "transport_shuttle_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "Port Angeles",
+          "mode": "car-transfer",
+          "departure_date": "2025-09-18",
+          "price": 138.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "transport_train_03",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "Port Angeles",
+          "mode": "train",
+          "departure_date": "2025-09-19",
+          "price": 61.0,
+          "available_seats": 20
+        }
+      }
+    ]
+  }
+}

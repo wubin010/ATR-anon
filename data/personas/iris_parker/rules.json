@@ -1,0 +1,535 @@
+[
+  {
+    "rule_text": "For messages that represent her professionally or touch workplace culture, she prefers to draft them for review rather than send them immediately.",
+    "canonical_answer": "I always draft professionally important messages first so I can review the tone before anything goes out.",
+    "counterfactual_default": "Send the message directly once the requested content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Occupation: human_resources_manager"
+      },
+      {
+        "type": "direct",
+        "content": "She cultivates a habit of journaling and reflective writing"
+      },
+      {
+        "type": "direct",
+        "content": "Employer branding"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "iris_parker_communication_01",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Before sending a message to a broad employee or stakeholder audience, the agent should check with her first.",
+    "canonical_answer": "I want to approve broad workplace messages before they are sent.",
+    "counterfactual_default": "Send the prepared message directly to the intended group.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Iris Parker, a Boston-based human resources leader"
+      },
+      {
+        "type": "direct",
+        "content": "employee engagement initiatives"
+      },
+      {
+        "type": "direct",
+        "content": "Employer branding"
+      }
+    ],
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "send_message"
+    },
+    "rule_id": "iris_parker_communication_02",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When maintaining an existing tracker for ongoing work, she prefers to record a next action instead of just logging a passive update.",
+    "canonical_answer": "In active trackers, I like to capture the next action so the work keeps moving.",
+    "counterfactual_default": "Add a general status update without specifying a next step.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Feedback and development planning"
+      },
+      {
+        "type": "direct",
+        "content": "clear metrics, feedback loops, and development plans"
+      },
+      {
+        "type": "direct",
+        "content": "strategic workforce planning"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "update_tracker",
+      "param": "update_action"
+    },
+    "rule_id": "iris_parker_workspace_02",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a meal out, she favors farm-to-table restaurants over generic options.",
+    "canonical_answer": "I prefer farm-to-table places when I book restaurants.",
+    "counterfactual_default": "Choose a broadly popular restaurant without emphasizing sourcing style.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Iris Parker enjoys farm-to-table cuisine"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "iris_parker_reservation_01",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For short regional getaways, she prefers ground transport over booking a flight.",
+    "canonical_answer": "For New England trips, I prefer trains or other ground transport instead of flying.",
+    "counterfactual_default": "Check flight options first and book a flight if one is available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often planning weekend getaways to New England gems such as Martha’s Vineyard, Portland ME, and Salem"
+      },
+      {
+        "type": "direct",
+        "content": "cycles with the Cambridge Cycle Collective"
+      },
+      {
+        "type": "direct",
+        "content": "stays active through the Boston Outdoor Club"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "iris_parker_travel_01",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a flight, she prefers a window seat.",
+    "canonical_answer": "If I have to fly, I want a window seat.",
+    "counterfactual_default": "Pick an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Photography of urban and natural scenes"
+      },
+      {
+        "type": "direct",
+        "content": "weekend hikes along the New England coastline"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "iris_parker_travel_02",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a trip, she prefers stops centered on art, history, or literary culture rather than generic sightseeing fillers.",
+    "canonical_answer": "I build trips around cultural stops like museums, historic tours, and literary places.",
+    "counterfactual_default": "Choose a mix of top-rated attractions without a strong cultural theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Iris Parker favors culturally rich, moderate-budget travel"
+      },
+      {
+        "type": "direct",
+        "content": "saving for a dream summer immersion in Kyoto to explore Japanese literature and tea-house art"
+      },
+      {
+        "type": "direct",
+        "content": "Martha’s Vineyard, Portland ME, and Salem for historic tours"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "iris_parker_travel_03",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a booked trip stop falls through, she prefers replacement stops that preserve the original cultural or artistic theme.",
+    "canonical_answer": "If a trip stop changes, I want the replacement to keep the same cultural feel.",
+    "counterfactual_default": "Swap in any convenient or highly rated alternative stop.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balancing detailed itineraries with spontaneous art-festival visits"
+      },
+      {
+        "type": "direct",
+        "content": "culturally rich, moderate-budget travel"
+      },
+      {
+        "type": "inferred",
+        "content": "Because her travel is intentionally curated around art, history, and literature, a disruption should be repaired with a same-theme substitute rather than a generic replacement."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "iris_parker_travel_04",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging, she prefers moderate-budget boutique or artsy accommodations over generic chain-style options.",
+    "canonical_answer": "I prefer moderately priced boutique hotels with some character.",
+    "counterfactual_default": "Choose the cheapest or most standard hotel that meets the basics.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Iris Parker favors culturally rich, moderate-budget travel"
+      },
+      {
+        "type": "direct",
+        "content": "frequenting the Museum of Fine Arts and contemporary Cambridge galleries"
+      },
+      {
+        "type": "inferred",
+        "content": "Her mix of moderate budgeting and strong aesthetic interests points toward characterful boutique lodging rather than purely utilitarian chain hotels."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "iris_parker_travel_05",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation conflicts with something not fully sorted out yet, she prefers to reply tentatively rather than accept or decline outright.",
+    "canonical_answer": "If timing is still unsettled, I respond tentative first.",
+    "counterfactual_default": "Accept or decline the invitation immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "integrating progressive workplace practices such as flexible scheduling"
+      },
+      {
+        "type": "direct",
+        "content": "using strong emotional intelligence to de-escalate tense situations"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "iris_parker_scheduling_01",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For events she plans to attend, she prefers a reminder tied to the event timing rather than a generic one-off reminder.",
+    "canonical_answer": "For booked events, I like reminders anchored right before the event.",
+    "counterfactual_default": "Set a standalone one-time reminder at an arbitrary time.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "attending live theater productions, indie film screenings, and occasional wine-tasting events"
+      },
+      {
+        "type": "direct",
+        "content": "balancing detailed itineraries with spontaneous art-festival visits"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "iris_parker_scheduling_02",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When adjusting an existing event for a cultural outing or workshop, she prefers changing the location rather than changing the title or participant list.",
+    "canonical_answer": "If an event needs refining, I usually change the location to fit the experience better.",
+    "counterfactual_default": "Edit the title or attendee list before reconsidering the venue.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "curating internal art exhibitions"
+      },
+      {
+        "type": "direct",
+        "content": "frequenting the Museum of Fine Arts and contemporary Cambridge galleries"
+      },
+      {
+        "type": "inferred",
+        "content": "Because she thinks in curatorial terms and values setting, venue choice is a primary lever in shaping the feel of a workshop or arts-related gathering."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "modify_event",
+      "param": "field"
+    },
+    "rule_id": "iris_parker_scheduling_04",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When buying supplies or specialty goods, she prefers products with a local or boutique angle over generic mass-market picks.",
+    "canonical_answer": "I usually choose local or boutique products when I order specialty items.",
+    "counterfactual_default": "Pick the most common or generic product option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "a rotating selection of boutique Massachusetts wines"
+      },
+      {
+        "type": "direct",
+        "content": "local art fairs in Middlesex County"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "iris_parker_commerce_01",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a purchased arts or cooking item is wrong, she prefers an exchange rather than giving up on it with a refund.",
+    "canonical_answer": "If I ordered the right kind of item but got the wrong version, I usually want an exchange.",
+    "counterfactual_default": "Request a refund and stop the purchase altogether.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "collecting prints by Yayoi Kusama and Kehinde Wiley for her office"
+      },
+      {
+        "type": "direct",
+        "content": "frequently cooking New England clam chowder, roasted beet salad with dill-infused vinaigrette, and grilled octopus"
+      },
+      {
+        "type": "inferred",
+        "content": "Her curated tastes in art and cooking imply she still wants the intended item when the issue is mismatch or defect, making exchange more natural than abandoning the purchase."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "iris_parker_commerce_03",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a local appointment tied to her creative hobbies, she prefers community studio providers over generic service providers.",
+    "canonical_answer": "For creative appointments, I prefer community studio-style providers.",
+    "counterfactual_default": "Choose any available provider with good availability.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "She practices oil painting and pottery at community studios"
+      },
+      {
+        "type": "direct",
+        "content": "shaping pottery on a wheel"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "iris_parker_reservation_03",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For arts newsletters and gallery announcements, she prefers marking them low priority rather than leaving them at a normal inbox level.",
+    "canonical_answer": "I keep arts newsletters in my inbox ecosystem, but I mark them low priority.",
+    "counterfactual_default": "Leave those messages at normal priority.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "frequently visits the Museum of Fine Arts in Boston, contemporary galleries in Cambridge, and local art fairs"
+      },
+      {
+        "type": "direct",
+        "content": "always seeking new cultural experiences"
+      },
+      {
+        "type": "inferred",
+        "content": "She wants to retain a steady stream of cultural information, but as an HR leader she also needs her active queue reserved for operational communication."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "iris_parker_communication_03",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "After reading recurring arts and community newsletters, she prefers archiving them into a dedicated inspiration folder rather than keeping them in the active inbox.",
+    "canonical_answer": "Once I’ve read arts newsletters, I archive them into an inspiration folder.",
+    "counterfactual_default": "Leave the newsletters sitting in the main inbox.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "local art fairs in Middlesex County"
+      },
+      {
+        "type": "direct",
+        "content": "internal art exhibitions and creative workshops"
+      },
+      {
+        "type": "inferred",
+        "content": "Her curatorial habits suggest she wants cultural material preserved for later reference, but separated from day-to-day operational mail."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "archive_messages",
+      "param": "folder_id"
+    },
+    "rule_id": "iris_parker_communication_05",
+    "persona_id": "iris_parker",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

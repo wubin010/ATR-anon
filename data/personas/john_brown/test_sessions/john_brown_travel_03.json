@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book the lowest-priced flight from Atlanta to Nashville for just me from the available options. I'm only taking a backpack, so use the traveler details and payment method already on file.",
+  "gold_value": "window",
+  "session_id": "john_brown_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "john_brown_travel_03",
+  "rule_ref": {
+    "rule_id": "john_brown_travel_03",
+    "rule_text": "When booking a flight, he prefers a window seat.",
+    "canonical_answer": "If I do fly, I always prefer a window seat."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_atl_bna_peachtree_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta",
+          "destination": "Nashville",
+          "departure_date": "2026-08-14",
+          "airline": "Peachtree Air",
+          "price": 118.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_atl_bna_cumberland_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta",
+          "destination": "Nashville",
+          "departure_date": "2026-08-14",
+          "airline": "Cumberland Connect",
+          "price": 136.0,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "flt_atl_bna_skybend_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta",
+          "destination": "Nashville",
+          "departure_date": "2026-08-14",
+          "airline": "SkyBend",
+          "price": 149.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_atl_mem_peachtree_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Atlanta",
+          "destination": "Memphis",
+          "departure_date": "2026-08-14",
+          "airline": "Peachtree Air",
+          "price": 99.0,
+          "available_seats": 6
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

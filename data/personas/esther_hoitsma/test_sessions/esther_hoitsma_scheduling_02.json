@@ -1,0 +1,83 @@
+{
+  "instruction": "The details in our Eastview senior center potluck thread are finally settled: 2026-09-18 from 18:00 to 20:00 at Eastview Senior Center Lounge, with liam.wu@eastview.org, sara.nolan@eastview.org, and priya.desai@eastview.org involved. Keep this on my radar.",
+  "gold_value": null,
+  "session_id": "esther_hoitsma_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "esther_hoitsma_scheduling_02",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_scheduling_02",
+    "rule_text": "For group plans like potlucks, volunteer events, or teammate meetups, Esther prefers creating a shared calendar event rather than a private reminder.",
+    "canonical_answer": "If other people are involved, I want it on the calendar as a real shared event, not just a personal reminder."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_eastview_potluck_thread_01",
+        "type": "event",
+        "attributes": {
+          "title": "Eastview senior center potluck thread",
+          "start_time": "2026-09-18T18:00:00",
+          "end_time": "2026-09-18T20:00:00",
+          "participants": [],
+          "location": "Eastview Senior Center Lounge",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_eastview_teammate_meetup_thread_02",
+        "type": "event",
+        "attributes": {
+          "title": "Eastview teammate meetup thread",
+          "start_time": "2026-09-24T17:30:00",
+          "end_time": "2026-09-24T19:00:00",
+          "participants": [],
+          "location": "Eastview Cafe Annex",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_screening_shift_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Blood pressure screening shift",
+          "start_time": "2026-09-16T10:00:00",
+          "end_time": "2026-09-16T12:00:00",
+          "participants": [
+            "maria.gomez@eastview.org"
+          ],
+          "location": "Eastview Senior Center Room 4",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

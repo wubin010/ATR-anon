@@ -1,0 +1,100 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Shared Drive/Mentoring Program",
+    "doc_type": "note",
+    "title": "Bilingual Mentoring Program Outline",
+    "destination_location": "Shared Drive/Program Drafts",
+    "outline_points": [
+      "program purpose for bilingual mentor-mentee support",
+      "eligibility for mentors and participants",
+      "meeting cadence and suggested session format",
+      "Spanish and English materials plan",
+      "training topics for mentors",
+      "progress check-ins and feedback process"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Shared Drive/Mentoring Program",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Bilingual Mentoring Program Outline",
+        "location": "Shared Drive/Program Drafts",
+        "content_brief": "<authored from outline_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Mentor Intake Notes",
+          "doc_type": "note",
+          "location": "Shared Drive/Mentoring Program",
+          "content_brief": "Rough notes on intake questions, bilingual support needs, and matching considerations."
+        }
+      },
+      {
+        "id": "doc_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Workshop Debrief Notes",
+          "doc_type": "note",
+          "location": "Shared Drive/Mentoring Program",
+          "content_brief": "Scattered observations from a volunteer workshop, including training gaps and scheduling ideas."
+        }
+      },
+      {
+        "id": "doc_notes_03",
+        "type": "document",
+        "attributes": {
+          "title": "Parent Outreach Notes",
+          "doc_type": "note",
+          "location": "Shared Drive/Mentoring Program",
+          "content_brief": "Community feedback about language access, trust-building, and preferred communication channels."
+        }
+      },
+      {
+        "id": "doc_rep_01",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly Literacy Summary",
+          "doc_type": "report",
+          "location": "Shared Drive/Literacy Reports",
+          "content_brief": "Unrelated quarterly program summary."
+        }
+      }
+    ]
+  }
+}

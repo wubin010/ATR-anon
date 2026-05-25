@@ -1,0 +1,103 @@
+{
+  "session_id": "iris_parker_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "travel",
+  "reason_for_call": "Compare trip flights.",
+  "task_params": {
+    "origin": "Boston",
+    "destination": "Tokyo",
+    "passenger_count": 2,
+    "departure_date": "2026-07-10",
+    "return_date": "2026-07-21"
+  },
+  "expected_tools": [
+    "search_flights"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "Boston",
+        "destination": "Tokyo",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_tokyo_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Tokyo",
+          "departure_date": "2026-07-10",
+          "return_date": "2026-07-21",
+          "airline": "Japan Airlines",
+          "price": 1485.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_tokyo_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Tokyo",
+          "departure_date": "2026-07-09",
+          "return_date": "2026-07-21",
+          "airline": "Delta",
+          "price": 1320.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_tokyo_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Tokyo",
+          "departure_date": "2026-07-10",
+          "return_date": "2026-07-22",
+          "airline": "United",
+          "price": 1395.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_tokyo_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Tokyo",
+          "departure_date": "2026-07-10",
+          "return_date": "2026-07-21",
+          "airline": "American Airlines",
+          "price": 1540.0,
+          "available_seats": 3
+        }
+      }
+    ]
+  }
+}

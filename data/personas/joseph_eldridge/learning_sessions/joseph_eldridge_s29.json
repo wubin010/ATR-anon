@@ -1,0 +1,134 @@
+{
+  "session_id": "joseph_eldridge_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "workspace",
+  "reason_for_call": "Archive some old project files.",
+  "task_params": {
+    "location": "Projects/Inverter Retrofit",
+    "file_type": "pdf",
+    "folder_id": "fld_archive_01",
+    "file_ids": [
+      "file_invspec_01",
+      "file_testpkg_02",
+      "file_fieldrev_03"
+    ]
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "archive_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Projects/Inverter Retrofit",
+        "file_type": "pdf"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "archive_files",
+      "arguments": {
+        "file_ids": [
+          "file_invspec_01",
+          "file_testpkg_02",
+          "file_fieldrev_03"
+        ],
+        "folder_id": "fld_archive_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_invspec_01",
+        "type": "file",
+        "attributes": {
+          "name": "Inverter Retrofit Final Spec Draft v12.pdf",
+          "file_type": "pdf",
+          "location": "Projects/Inverter Retrofit",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "inverter",
+            "draft",
+            "final-phase"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_testpkg_02",
+        "type": "file",
+        "attributes": {
+          "name": "Inverter Retrofit Test Package Draft Notes.pdf",
+          "file_type": "pdf",
+          "location": "Projects/Inverter Retrofit",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "inverter",
+            "draft",
+            "test"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_fieldrev_03",
+        "type": "file",
+        "attributes": {
+          "name": "Inverter Retrofit Field Revision Draft Markups.pdf",
+          "file_type": "pdf",
+          "location": "Projects/Inverter Retrofit",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "inverter",
+            "draft",
+            "revision"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_closeout_04",
+        "type": "file",
+        "attributes": {
+          "name": "Inverter Retrofit Closeout Summary.docx",
+          "file_type": "docx",
+          "location": "Projects/Inverter Retrofit",
+          "owner": "Joseph Eldridge",
+          "labels": [
+            "inverter",
+            "closeout"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived Project Drafts",
+          "purpose": "Store superseded draft files from completed engineering work"
+        }
+      }
+    ]
+  }
+}

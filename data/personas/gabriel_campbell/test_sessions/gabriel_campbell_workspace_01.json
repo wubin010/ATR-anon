@@ -1,0 +1,129 @@
+{
+  "instruction": "Please tidy the files sitting in /Work/Incoming — it's a jumble of PDFs, spreadsheets, and docs from the last few months, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "gabriel_campbell_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "gabriel_campbell_workspace_01",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_workspace_01",
+    "rule_text": "When organizing files, he prefers a project-based scheme rather than sorting primarily by type or date.",
+    "canonical_answer": "I always organize files by project first."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_incoming_01",
+        "type": "file",
+        "attributes": {
+          "name": "budget assumptions.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Incoming",
+          "owner": "Gabriel Campbell",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Pilot",
+          "modified_date": "2026-02-18"
+        }
+      },
+      {
+        "id": "fil_incoming_02",
+        "type": "file",
+        "attributes": {
+          "name": "site visit notes.docx",
+          "file_type": "docx",
+          "location": "/Work/Incoming",
+          "owner": "Gabriel Campbell",
+          "labels": [],
+          "archived": false,
+          "project": "Crescent Review",
+          "modified_date": "2026-03-02"
+        }
+      },
+      {
+        "id": "fil_incoming_03",
+        "type": "file",
+        "attributes": {
+          "name": "signature page.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Incoming",
+          "owner": "Gabriel Campbell",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Pilot",
+          "modified_date": "2026-03-05"
+        }
+      },
+      {
+        "id": "fil_incoming_04",
+        "type": "file",
+        "attributes": {
+          "name": "staffing draft.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Incoming",
+          "owner": "Gabriel Campbell",
+          "labels": [],
+          "archived": false,
+          "project": "Lakeside Update",
+          "modified_date": "2026-04-11"
+        }
+      },
+      {
+        "id": "fil_incoming_05",
+        "type": "file",
+        "attributes": {
+          "name": "call summary.docx",
+          "file_type": "docx",
+          "location": "/Work/Incoming",
+          "owner": "Gabriel Campbell",
+          "labels": [],
+          "archived": false,
+          "project": "Lakeside Update",
+          "modified_date": "2026-04-14"
+        }
+      },
+      {
+        "id": "fil_incoming_06",
+        "type": "file",
+        "attributes": {
+          "name": "requirements packet.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Incoming",
+          "owner": "Gabriel Campbell",
+          "labels": [],
+          "archived": false,
+          "project": "Crescent Review",
+          "modified_date": "2026-05-01"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

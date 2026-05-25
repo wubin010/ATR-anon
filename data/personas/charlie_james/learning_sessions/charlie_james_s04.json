@@ -1,0 +1,103 @@
+{
+  "session_id": "charlie_james_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "communication",
+  "reason_for_call": "Reply to a message",
+  "task_params": {
+    "sender": "Denise Carter",
+    "folder": "inbox",
+    "reply_points": [
+      "Thank her for reaching out",
+      "Say I can help with the youth program",
+      "Available Thursday after 6 PM",
+      "Available Saturday from 9 AM to noon",
+      "Ask what supplies or setup help are needed"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Denise Carter",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_youth_04",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_youth_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Denise Carter",
+          "subject": "Youth program help this week",
+          "body": "Hi Charlie, hope you're doing well. We're pulling together volunteers for the youth program this week and I wanted to see if you might be able to help. We could use an extra hand for Thursday evening activities, and we may also need someone to help with setup on Saturday morning. Let me know what your availability looks like. Thanks so much.",
+          "thread_id": "thr_youth_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-04T08:42:00"
+        }
+      },
+      {
+        "id": "msg_shop_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Rick Holloway",
+          "subject": "Parts invoice for the Chevelle",
+          "body": "Charlie, sending over the updated invoice for the rear suspension parts. Call me if anything looks off.",
+          "thread_id": "thr_shop_18",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-03-04T10:15:00"
+        }
+      },
+      {
+        "id": "msg_family_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Monica James",
+          "subject": "Dinner at my place Sunday",
+          "body": "Just checking if you're still coming by Sunday. I can make catfish if you want.",
+          "thread_id": "thr_family_07",
+          "folder": "inbox",
+          "labels": [
+            "family"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-03T19:21:00"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "session_id": "romisha_shields_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination": "Montgomery",
+    "duration_days": 3,
+    "traveler_count": 2,
+    "destination_constraints": [
+      "Montgomery",
+      "civil rights",
+      "relaxed"
+    ],
+    "stop_tags": [
+      "civil rights",
+      "history"
+    ],
+    "selected_stop_ids": [
+      "stop_legacy_01",
+      "stop_dexter_02",
+      "stop_memorial_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Montgomery",
+          "civil rights",
+          "relaxed"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_montgomery_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Montgomery",
+        "stop_tags": [
+          "civil rights",
+          "history"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Montgomery",
+        "duration_days": 3,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_legacy_01",
+          "stop_dexter_02",
+          "stop_memorial_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_montgomery_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Montgomery",
+          "region": "Alabama",
+          "tags": [
+            "civil rights",
+            "history",
+            "relaxed",
+            "road trip"
+          ]
+        }
+      },
+      {
+        "id": "dest_birmingham_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Birmingham",
+          "region": "Alabama",
+          "tags": [
+            "civil rights",
+            "history",
+            "city"
+          ]
+        }
+      },
+      {
+        "id": "stop_legacy_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "The Legacy Museum",
+          "location": "Montgomery",
+          "tags": [
+            "civil rights",
+            "history",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "stop_dexter_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Dexter Avenue King Memorial Baptist Church",
+          "location": "Montgomery",
+          "tags": [
+            "civil rights",
+            "history",
+            "church"
+          ]
+        }
+      },
+      {
+        "id": "stop_memorial_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "National Memorial for Peace and Justice",
+          "location": "Montgomery",
+          "tags": [
+            "civil rights",
+            "history",
+            "memorial"
+          ]
+        }
+      }
+    ]
+  }
+}

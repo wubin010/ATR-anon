@@ -1,0 +1,129 @@
+{
+  "session_id": "anna_strahan_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "workspace",
+  "reason_for_call": "Organize some workspace files",
+  "task_params": {
+    "location": "Q3 Compliance Drop",
+    "file_type": "pdf",
+    "file_ids": [
+      "file_hipaa_01",
+      "file_cms_02",
+      "file_state_03"
+    ],
+    "scheme": "by_type",
+    "folder_id": "fld_compliance_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Q3 Compliance Drop",
+        "file_type": "pdf"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_hipaa_01",
+          "file_cms_02",
+          "file_state_03"
+        ],
+        "scheme": "by_type"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_hipaa_01",
+          "file_cms_02",
+          "file_state_03"
+        ],
+        "folder_id": "fld_compliance_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_hipaa_01",
+        "type": "file",
+        "attributes": {
+          "name": "HIPAA Incident Summary.pdf",
+          "file_type": "pdf",
+          "location": "Q3 Compliance Drop",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_cms_02",
+        "type": "file",
+        "attributes": {
+          "name": "CMS Audit Response Draft.pdf",
+          "file_type": "pdf",
+          "location": "Q3 Compliance Drop",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_state_03",
+        "type": "file",
+        "attributes": {
+          "name": "Louisiana State Compliance Checklist.pdf",
+          "file_type": "pdf",
+          "location": "Q3 Compliance Drop",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_budget_04",
+        "type": "file",
+        "attributes": {
+          "name": "Budget Variance Notes.xlsx",
+          "file_type": "xlsx",
+          "location": "Finance Working",
+          "owner": "Anna Strahan",
+          "labels": [
+            "budget"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_compliance_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Compliance Reports",
+          "purpose": "Filed compliance reports and audit materials"
+        }
+      }
+    ]
+  }
+}

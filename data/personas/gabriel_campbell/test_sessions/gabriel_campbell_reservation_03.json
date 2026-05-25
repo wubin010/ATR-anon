@@ -1,0 +1,123 @@
+{
+  "instruction": "Please book dinner in Boston for two people on 2026-09-18 at 7:00pm; just pick a place and make the reservation.",
+  "gold_value": "rst_saltwharf_01",
+  "session_id": "gabriel_campbell_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "gabriel_campbell_reservation_03",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_reservation_03",
+    "rule_text": "When reserving a meal out, he prefers independent local places with strong New England seafood or creative vegetable-forward options over chain restaurants.",
+    "canonical_answer": "Whenever I book a table, I always lean toward local spots that reflect my seafood tastes or my roasted-vegetable side of eating."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_saltwharf_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Salt Wharf Kitchen",
+          "cuisine": "New England seafood",
+          "location": "Boston",
+          "rating": 4.3,
+          "price_range": "$$$",
+          "seating_style": "bistro",
+          "brand_type": "independent local",
+          "review_count": 128,
+          "menu_highlights": [
+            "clam chowder",
+            "lobster roll",
+            "oysters"
+          ]
+        }
+      },
+      {
+        "id": "rst_harborline_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harborline Grill",
+          "cuisine": "American",
+          "location": "Boston",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "brand_type": "national chain",
+          "review_count": 2840,
+          "menu_highlights": [
+            "burgers",
+            "steak",
+            "nachos"
+          ]
+        }
+      },
+      {
+        "id": "rst_greenfire_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Greenfire Table",
+          "cuisine": "Vegetarian",
+          "location": "Boston",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "fast casual",
+          "brand_type": "national chain",
+          "review_count": 1915,
+          "menu_highlights": [
+            "roasted vegetable bowls",
+            "grain plates",
+            "shared salads"
+          ]
+        }
+      },
+      {
+        "id": "rst_beaconcommons_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Beacon Commons Bistro",
+          "cuisine": "New American",
+          "location": "Boston",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "bistro",
+          "brand_type": "independent local",
+          "review_count": 642,
+          "menu_highlights": [
+            "roast chicken",
+            "steak frites",
+            "burger"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_saltwharf_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

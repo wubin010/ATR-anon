@@ -1,0 +1,115 @@
+{
+  "session_id": "michael_argo_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "fineliner set",
+    "budget": 15,
+    "sort_by": "price_asc",
+    "quantity": 1,
+    "list_name": "Sketch supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "fineliner set",
+        "budget": 15,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_artline_01",
+          "prod_mono_02",
+          "prod_graphite_04"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_artline_01"
+        ],
+        "list_name": "Sketch supplies"
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_artline_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_artline_01",
+        "type": "product",
+        "attributes": {
+          "name": "Artline Sketch Fineliner Set of 6",
+          "price": 12.49,
+          "category": "fineliner set",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_mono_02",
+        "type": "product",
+        "attributes": {
+          "name": "MonoDraft Fineliner Set of 8",
+          "price": 14.99,
+          "category": "fineliner set",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_inkwell_03",
+        "type": "product",
+        "attributes": {
+          "name": "Inkwell Studio Fineliner Set of 10",
+          "price": 18.5,
+          "category": "fineliner set",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_graphite_04",
+        "type": "product",
+        "attributes": {
+          "name": "Graphite Trail Fineliner Set of 4",
+          "price": 9.99,
+          "category": "fineliner set",
+          "rating": 4.0
+        }
+      }
+    ]
+  }
+}

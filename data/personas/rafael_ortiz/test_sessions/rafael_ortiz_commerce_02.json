@@ -1,0 +1,122 @@
+{
+  "instruction": "Please order one hominy for a small pot of pozole. Keep it under $8 and make it a regular-size pack, not a bulk one. Just pick one for me.",
+  "gold_value": "prod_mercado_fresh_hominy_01",
+  "session_id": "rafael_ortiz_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "rafael_ortiz_commerce_02",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_commerce_02",
+    "rule_text": "For Mexican cooking ingredients, he favors traditional fresh components over shortcut or generic substitutes.",
+    "canonical_answer": "For my Mexican dishes, I prefer ordering the real fresh ingredients instead of shortcut substitutes."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_mercado_fresh_hominy_01",
+        "type": "product",
+        "attributes": {
+          "name": "Mercado Fresh White Hominy",
+          "price": 7.49,
+          "category": "hominy",
+          "rating": 4.3,
+          "ingredient_form": "fresh refrigerated kernels",
+          "prep_style": "nixtamalized whole hominy",
+          "size_oz": 18,
+          "packaging": "tray pack",
+          "review_count": 46
+        }
+      },
+      {
+        "id": "prod_mercado_fresh_hominy_family_01",
+        "type": "product",
+        "attributes": {
+          "name": "Mercado Fresh White Hominy Family Pack",
+          "price": 7.99,
+          "category": "hominy",
+          "rating": 4.8,
+          "ingredient_form": "fresh refrigerated kernels",
+          "prep_style": "nixtamalized whole hominy",
+          "size_oz": 52,
+          "packaging": "bulk tub",
+          "review_count": 214
+        }
+      },
+      {
+        "id": "prod_pantrystar_white_hominy_01",
+        "type": "product",
+        "attributes": {
+          "name": "PantryStar White Hominy",
+          "price": 2.79,
+          "category": "hominy",
+          "rating": 4.9,
+          "ingredient_form": "canned",
+          "prep_style": "pre-cooked shelf-stable",
+          "size_oz": 15,
+          "packaging": "can",
+          "review_count": 1840
+        }
+      },
+      {
+        "id": "prod_casa_lista_yellow_hominy_01",
+        "type": "product",
+        "attributes": {
+          "name": "Casa Lista Yellow Hominy",
+          "price": 2.49,
+          "category": "hominy",
+          "rating": 4.8,
+          "ingredient_form": "canned",
+          "prep_style": "pre-cooked shelf-stable",
+          "size_oz": 15,
+          "packaging": "can",
+          "review_count": 1310
+        }
+      },
+      {
+        "id": "prod_weeknight_pozole_starter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Weeknight Pozole Starter with Hominy",
+          "price": 5.99,
+          "category": "hominy",
+          "rating": 4.7,
+          "ingredient_form": "seasoned pouch",
+          "prep_style": "shortcut starter mix",
+          "size_oz": 16,
+          "packaging": "pouch",
+          "review_count": 690
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_mercado_fresh_hominy_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

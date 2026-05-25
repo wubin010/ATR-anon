@@ -1,0 +1,396 @@
+[
+  {
+    "rule_text": "For regional leisure trips, Nancy tends to choose ground transportation instead of flying.",
+    "canonical_answer": "For trips like my autumn getaways, I usually prefer to go by road or rail rather than book a flight.",
+    "counterfactual_default": "A person without this rule would check flight options first for intercity travel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "taking autumn road trips to Québec City’s historic districts"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "nancy_marr_travel_02",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing stops for a new trip, Nancy favors places centered on nature and local food culture over generic tourist attractions.",
+    "canonical_answer": "I like trip stops that immerse me in landscapes, markets, and local food rather than standard tourist checklists.",
+    "counterfactual_default": "A person without this rule would pick the most famous or highest-rated stops regardless of theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balances a love for natural immersion and artistic discovery"
+      },
+      {
+        "type": "direct",
+        "content": "exploring the Apostle Islands National Lakeshore’s sea caves and culinary markets in Duluth"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "nancy_marr_travel_04",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If part of a trip falls through, Nancy prefers replacement stops that preserve the original nature-or-culture theme of the trip.",
+    "canonical_answer": "When a stop changes, I want the substitute to keep the same feel as the original trip rather than just fill the gap.",
+    "counterfactual_default": "A person without this rule would swap in any convenient or highly rated alternative stop.",
+    "evidence": [
+      {
+        "type": "inferred",
+        "content": "Because she favors thoughtful travel that balances natural immersion and artistic discovery, a disruption should be repaired with same-theme replacements rather than unrelated substitutes."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "nancy_marr_travel_05",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When making restaurant reservations, Nancy prefers quiet, intimate places over loud or high-energy venues.",
+    "canonical_answer": "I’d rather book somewhere quiet and intimate than a bustling spot.",
+    "counterfactual_default": "A person without this rule would choose restaurants based mainly on popularity, trendiness, or broad availability.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "preferring small gatherings where deep conversation can flourish"
+      },
+      {
+        "type": "direct",
+        "content": "attending intimate acoustic sets by Bon Iver at the Dakota Café"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "nancy_marr_reservation_01",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For dining out, Nancy tends to favor restaurants with seasonal, locally sourced menus over generic options.",
+    "canonical_answer": "I usually choose places that feel seasonal and locally rooted, especially if they highlight good ingredients.",
+    "counterfactual_default": "A person without this rule would pick any convenient restaurant that fits the time and party size.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "values sustainability, creativity, and quiet contribution to the collective well-being"
+      },
+      {
+        "type": "direct",
+        "content": "participation in local farmers’ markets"
+      },
+      {
+        "type": "direct",
+        "content": "develop a pilot line of functional foods featuring locally grown Minnesota ingredients"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "nancy_marr_reservation_02",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When selecting events to attend, Nancy prefers intimate local arts or acoustic events over mass-market spectacles.",
+    "canonical_answer": "I’m much more likely to choose a small local art or acoustic event than a huge flashy production.",
+    "counterfactual_default": "A person without this rule would choose whatever event is biggest, most famous, or most heavily promoted.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "attending intimate acoustic sets by Bon Iver at the Dakota Café"
+      },
+      {
+        "type": "direct",
+        "content": "In the evenings, she attends intimate art openings, pottery workshops, and live acoustic sets at local cafés"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "nancy_marr_reservation_04",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a personal class or wellness appointment, Nancy prefers low-key local studios or craft-oriented providers over generic commercial services.",
+    "canonical_answer": "I usually book with local, community-feeling providers instead of big generic service chains.",
+    "counterfactual_default": "A person without this rule would choose the most convenient or cheapest provider regardless of atmosphere.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "morning tai chi at a local studio affiliated with the Twin Cities Yoga Collective"
+      },
+      {
+        "type": "direct",
+        "content": "pottery skills in weekend workshops led by local artisan Anna Smith"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "nancy_marr_reservation_05",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a service booking is for a fad-like wellness offering, the agent should check with Nancy before committing.",
+    "canonical_answer": "If it’s some trendy wellness thing rather than an established class or service, ask me first before booking it.",
+    "counterfactual_default": "A person without this rule would go ahead and book the appointment if it generally matched her interests.",
+    "evidence": [
+      {
+        "type": "inferred",
+        "content": "Her background in microbiological testing, statistical analysis, and food-safety regulation suggests she is evidence-minded and unlikely to want surprise bookings for trend-driven wellness services."
+      }
+    ],
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "book_service_appointment"
+    },
+    "rule_id": "nancy_marr_reservation_06",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Because she sometimes forgets appointments, Nancy prefers reminders to be set for scheduled activities rather than relying on memory alone.",
+    "canonical_answer": "I like a reminder attached to appointments because I do sometimes forget them.",
+    "counterfactual_default": "A person without this rule would simply create or keep the appointment without adding any reminder.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "even as they occasionally forget appointments"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": null
+    },
+    "rule_id": "nancy_marr_scheduling_01",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring classes or volunteer activities, Nancy prefers weekly reminders rather than one-off alerts.",
+    "canonical_answer": "For things I do regularly, a weekly reminder works better for me than a single reminder.",
+    "counterfactual_default": "A person without this rule would typically set a one-time reminder or no recurring reminder at all.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they maintain a low-key fitness routine of morning tai chi"
+      },
+      {
+        "type": "direct",
+        "content": "she volunteers monthly at a community garden"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "nancy_marr_scheduling_02",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When writing messages that represent her work or projects, Nancy prefers to draft them first rather than send them immediately.",
+    "canonical_answer": "I like to draft important messages first so I can make sure they’re clear and well-phrased.",
+    "counterfactual_default": "A person without this rule would send the message directly once the content was available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Her communication strengths enable her to distill technical findings into clear reports and concise presentations"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "nancy_marr_communication_01",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation conflicts with unresolved plans, Nancy prefers replying tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If I’m not sure yet, I usually respond as tentative instead of forcing an early yes or no.",
+    "counterfactual_default": "A person without this rule would either accept immediately or decline to clear the calendar.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they are relaxed about deadlines and occasionally disorganized"
+      },
+      {
+        "type": "direct",
+        "content": "even as they occasionally forget appointments"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "nancy_marr_scheduling_03",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For purchases connected to food, gardening, or household ingredients, Nancy prefers locally sourced or regenerative products when available.",
+    "canonical_answer": "I usually choose products with local or regenerative sourcing over generic alternatives.",
+    "counterfactual_default": "A person without this rule would choose based mostly on price, convenience, or broad ratings.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "values sustainability"
+      },
+      {
+        "type": "direct",
+        "content": "develop a pilot line of functional foods featuring locally grown Minnesota ingredients"
+      },
+      {
+        "type": "direct",
+        "content": "guides regional farms and artisanal producers toward regenerative practices"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "nancy_marr_commerce_01",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If something she bought does not work out, Nancy prefers an exchange over a refund so the item can still be put to use.",
+    "canonical_answer": "If a purchase misses the mark, I usually prefer exchanging it rather than just asking for a refund.",
+    "counterfactual_default": "A person without this rule would usually request a refund to get the money back.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "values sustainability, creativity, and quiet contribution to the collective well-being"
+      },
+      {
+        "type": "inferred",
+        "content": "Her sustainability-oriented, practical farm-rooted background makes replacement and continued use more appealing than treating the item as disposable."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "nancy_marr_commerce_03",
+    "persona_id": "nancy_marr",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

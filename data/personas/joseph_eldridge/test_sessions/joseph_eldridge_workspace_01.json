@@ -1,0 +1,135 @@
+{
+  "instruction": "Please tidy up the files sitting in /Engineering/Dropoff — it's a jumble of PDFs, spreadsheets, and docs, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "joseph_eldridge_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "joseph_eldridge_workspace_01",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_workspace_01",
+    "rule_text": "When organizing work files, Joseph prefers them classified by project rather than by generic type or date buckets.",
+    "canonical_answer": "I organize engineering files by project first, not by file type or date."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_eng_dropoff_atlas_01",
+        "type": "file",
+        "attributes": {
+          "name": "design_notes.docx",
+          "file_type": "docx",
+          "location": "/Engineering/Dropoff",
+          "owner": "Joseph Eldridge",
+          "labels": [],
+          "archived": false,
+          "project": "Atlas Retrofit",
+          "modified_date": "2026-02-18",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_eng_dropoff_harbor_01",
+        "type": "file",
+        "attributes": {
+          "name": "budget_check.xlsx",
+          "file_type": "xlsx",
+          "location": "/Engineering/Dropoff",
+          "owner": "Joseph Eldridge",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Ventilation",
+          "modified_date": "2026-02-27",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_eng_dropoff_northyard_01",
+        "type": "file",
+        "attributes": {
+          "name": "permit_packet.pdf",
+          "file_type": "pdf",
+          "location": "/Engineering/Dropoff",
+          "owner": "Joseph Eldridge",
+          "labels": [],
+          "archived": false,
+          "project": "North Yard Upgrade",
+          "modified_date": "2026-03-03",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_eng_dropoff_harbor_02",
+        "type": "file",
+        "attributes": {
+          "name": "field_recap.docx",
+          "file_type": "docx",
+          "location": "/Engineering/Dropoff",
+          "owner": "Joseph Eldridge",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Ventilation",
+          "modified_date": "2026-03-19",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_eng_dropoff_atlas_02",
+        "type": "file",
+        "attributes": {
+          "name": "parts_matrix.xlsx",
+          "file_type": "xlsx",
+          "location": "/Engineering/Dropoff",
+          "owner": "Joseph Eldridge",
+          "labels": [],
+          "archived": false,
+          "project": "Atlas Retrofit",
+          "modified_date": "2026-04-07",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_eng_dropoff_northyard_02",
+        "type": "file",
+        "attributes": {
+          "name": "inspection_summary.pdf",
+          "file_type": "pdf",
+          "location": "/Engineering/Dropoff",
+          "owner": "Joseph Eldridge",
+          "labels": [],
+          "archived": false,
+          "project": "North Yard Upgrade",
+          "modified_date": "2026-04-22",
+          "priority": "high"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

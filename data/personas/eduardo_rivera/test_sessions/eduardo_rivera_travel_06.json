@@ -1,0 +1,111 @@
+{
+  "instruction": "Please book the cheapest flight you can find from Oakland to San Diego for just me. I’m traveling light and heading straight to a meeting after I land, so use the usual traveler details and card on file and go ahead once you find the best match.",
+  "gold_value": "window",
+  "session_id": "eduardo_rivera_travel_06_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "eduardo_rivera_travel_06",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_travel_06",
+    "rule_text": "When he does fly, he prefers a window seat for the views.",
+    "canonical_answer": "If I have to fly, I prefer a window seat for the scenery."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_oak_san_pacifica_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Oakland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Pacifica Air",
+          "price": 121.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_oak_san_skybridge_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Oakland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "SkyBridge",
+          "price": 154.0,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "flt_oak_san_coastjet_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Oakland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "CoastJet",
+          "price": 137.0,
+          "available_seats": 2
+        }
+      },
+      {
+        "id": "flt_oak_phx_suncrest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Oakland",
+          "destination": "Phoenix",
+          "departure_date": "2026-08-14",
+          "airline": "Suncrest",
+          "price": 99.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_sjc_san_pacifica_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "San Jose",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Pacifica Air",
+          "price": 112.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

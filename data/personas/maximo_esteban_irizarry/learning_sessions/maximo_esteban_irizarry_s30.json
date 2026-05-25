@@ -1,0 +1,143 @@
+{
+  "session_id": "maximo_esteban_irizarry_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files",
+  "task_params": {
+    "location": "Desktop",
+    "file_type": "image",
+    "scheme": "by_type",
+    "file_ids": [
+      "file_scanbox_01",
+      "file_scanbox_02",
+      "file_painting_01",
+      "file_painting_02"
+    ],
+    "folder_id": "fld_art_archive_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Desktop",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_scanbox_01",
+          "file_scanbox_02",
+          "file_painting_01",
+          "file_painting_02"
+        ],
+        "scheme": "by_type"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_scanbox_01",
+          "file_scanbox_02",
+          "file_painting_01",
+          "file_painting_02"
+        ],
+        "folder_id": "fld_art_archive_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_scanbox_01",
+        "type": "file",
+        "attributes": {
+          "name": "old_photo_scan_1978_01.jpg",
+          "file_type": "image",
+          "location": "Desktop",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_scanbox_02",
+        "type": "file",
+        "attributes": {
+          "name": "old_photo_scan_1981_02.png",
+          "file_type": "image",
+          "location": "Desktop",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_painting_01",
+        "type": "file",
+        "attributes": {
+          "name": "draft_painting_hillside_a.jpg",
+          "file_type": "image",
+          "location": "Desktop",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_painting_02",
+        "type": "file",
+        "attributes": {
+          "name": "draft_painting_ceiba_study.png",
+          "file_type": "image",
+          "location": "Desktop",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_art_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Art Archive",
+          "purpose": "Long-term storage for finished and older visual art files"
+        }
+      },
+      {
+        "id": "fld_client_work_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Client Work",
+          "purpose": "Active consultancy project files"
+        }
+      }
+    ]
+  }
+}

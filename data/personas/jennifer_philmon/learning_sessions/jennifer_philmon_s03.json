@@ -1,0 +1,105 @@
+{
+  "session_id": "jennifer_philmon_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "watercolor brushes",
+    "budget": 15,
+    "sort_by": "price_asc",
+    "quantity": 1,
+    "list_name": "Art Box Replacements"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "watercolor brushes",
+        "budget": 15,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_brushset_01",
+          "prod_brushset_02",
+          "prod_brushset_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_brushset_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_brushset_01",
+        "type": "product",
+        "attributes": {
+          "name": "Student Watercolor Brushes Set of 10",
+          "price": 8.99,
+          "category": "watercolor brushes",
+          "rating": 4.1
+        }
+      },
+      {
+        "id": "prod_brushset_02",
+        "type": "product",
+        "attributes": {
+          "name": "Taklon Watercolor Brushes Set of 7",
+          "price": 12.49,
+          "category": "watercolor brushes",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_brushset_03",
+        "type": "product",
+        "attributes": {
+          "name": "Round and Flat Watercolor Brushes Set of 6",
+          "price": 14.99,
+          "category": "watercolor brushes",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_brushset_04",
+        "type": "product",
+        "attributes": {
+          "name": "Professional Watercolor Mop Brush Set",
+          "price": 22.5,
+          "category": "watercolor brushes",
+          "rating": 4.8
+        }
+      }
+    ]
+  }
+}

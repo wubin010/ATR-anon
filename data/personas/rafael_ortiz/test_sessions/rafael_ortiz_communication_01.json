@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Lena Morales at Eastside Wellness about the community diabetes workshop. Tell her I can lead the evening session, ask whether they want the handout prepared in both English and Spanish, and let her know I can arrive 20 minutes early to test the projector.",
+  "gold_value": null,
+  "session_id": "rafael_ortiz_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "rafael_ortiz_communication_01",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_communication_01",
+    "rule_text": "When communicating about outreach, teaching, or professional coordination, he prefers drafting messages for review rather than sending them immediately.",
+    "canonical_answer": "For outreach or professional messages, I like to draft them first before they go out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_workshop_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Morales <lena.morales@eastsidewellness.org>",
+          "subject": "Community diabetes workshop speaker details",
+          "body": "Hi Rafael, we're finalizing the community diabetes workshop at Eastside Wellness for April 18 and wanted to confirm whether you can lead the evening session on glucose monitoring and preventive care. If you're available, please let me know whether you need projector access and whether you'd like us to print bilingual handouts for attendees.",
+          "thread_id": "thr_lena_workshop_12",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-02T10:14:00"
+        }
+      },
+      {
+        "id": "msg_jonah_emr_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Jonah Price <jonah.price@riverbendclinic.org>",
+          "subject": "EMR note template cleanup",
+          "body": "Could you take a quick look at the duplicated fields in the preventive visit template before we push the update to staff next week?",
+          "thread_id": "thr_jonah_emr_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-02T08:31:00"
+        }
+      },
+      {
+        "id": "msg_billing_portal_01",
+        "type": "message",
+        "attributes": {
+          "sender": "billing@chartflowhealth.com",
+          "subject": "Your monthly account statement is ready",
+          "body": "Your April account statement is now available in the ChartFlow billing portal.",
+          "thread_id": "thr_billing_portal_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-02T07:05:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "instruction": "Please handle the return for the wall art from my recent order.",
+  "gold_value": "exchange",
+  "session_id": "iris_parker_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "iris_parker_commerce_03",
+  "rule_ref": {
+    "rule_id": "iris_parker_commerce_03",
+    "rule_text": "When a purchased arts or cooking item is wrong, she prefers an exchange rather than giving up on it with a refund.",
+    "canonical_answer": "If I ordered the right kind of item but got the wrong version, I usually want an exchange."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_riverline_abstract_print_01",
+        "type": "product",
+        "attributes": {
+          "name": "Riverline Abstract Print",
+          "price": 58.0,
+          "category": "wall art",
+          "rating": 4.6,
+          "brand": "Riverline Studio",
+          "ordered_size": "24 x 36",
+          "received_size": "18 x 24",
+          "ordered_frame_finish": "natural oak",
+          "received_frame_finish": "black",
+          "order_id": "ord_6412_office",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-16"
+        }
+      },
+      {
+        "id": "prod_harbor_steel_stockpot_01",
+        "type": "product",
+        "attributes": {
+          "name": "Harbor Steel Stockpot",
+          "price": 68.0,
+          "category": "cookware",
+          "rating": 4.9,
+          "brand": "Harbor Steel",
+          "order_id": "ord_6384_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-14"
+        }
+      },
+      {
+        "id": "prod_willow_recipe_stand_01",
+        "type": "product",
+        "attributes": {
+          "name": "Willow Cookbook Stand",
+          "price": 27.0,
+          "category": "kitchen accessories",
+          "rating": 4.8,
+          "brand": "Willow Home",
+          "order_id": "ord_6339_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-12"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

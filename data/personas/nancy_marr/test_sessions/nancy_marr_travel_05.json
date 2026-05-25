@@ -1,0 +1,202 @@
+{
+  "instruction": "A stop on trip T-7314 fell through. Please swap in one replacement for a daytime visit in the Oak Creek area that fits in about 1–2 hours and does not add a big detour to the current route.",
+  "gold_value": [
+    "stop_sedona_bubbling_ponds_01"
+  ],
+  "session_id": "nancy_marr_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "nancy_marr_travel_05",
+  "rule_ref": {
+    "rule_id": "nancy_marr_travel_05",
+    "rule_text": "If part of a trip falls through, Nancy prefers replacement stops that preserve the original nature-or-culture theme of the trip.",
+    "canonical_answer": "When a stop changes, I want the substitute to keep the same feel as the original trip rather than just fill the gap."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_sedona_west_fork_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "West Fork Trail",
+          "location": "Sedona, Arizona",
+          "tags": [
+            "nature",
+            "canyon",
+            "forest",
+            "hike",
+            "daytime"
+          ],
+          "trip_id": "T-7314",
+          "itinerary_status": "scheduled",
+          "visit_duration_hours": 3.0,
+          "detour_minutes_from_current_route": 26
+        }
+      },
+      {
+        "id": "stop_sedona_crescent_moon_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Crescent Moon Ranch",
+          "location": "Oak Creek, Sedona, Arizona",
+          "tags": [
+            "nature",
+            "creek",
+            "red_rocks",
+            "scenic",
+            "daytime"
+          ],
+          "trip_id": "T-7314",
+          "itinerary_status": "scheduled",
+          "visit_duration_hours": 2.5,
+          "detour_minutes_from_current_route": 22
+        }
+      },
+      {
+        "id": "stop_sedona_red_rock_garden_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Red Rock Pollinator Garden",
+          "location": "Oak Creek, Sedona, Arizona",
+          "tags": [
+            "nature",
+            "garden",
+            "wildlife",
+            "daytime"
+          ],
+          "trip_id": "T-7314",
+          "itinerary_status": "disrupted",
+          "availability_status": "closed_for_repairs",
+          "visit_duration_hours": 1.5,
+          "detour_minutes_from_current_route": 10
+        }
+      },
+      {
+        "id": "stop_sedona_bubbling_ponds_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Bubbling Ponds Preserve",
+          "location": "Sedona, Arizona",
+          "tags": [
+            "nature",
+            "wetlands",
+            "birdwatching",
+            "daytime"
+          ],
+          "rating": 4.4,
+          "review_count": 186,
+          "visit_duration_hours": 1.5,
+          "detour_minutes_from_current_route": 12
+        }
+      },
+      {
+        "id": "stop_sedona_fay_canyon_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Fay Canyon Trail",
+          "location": "Sedona, Arizona",
+          "tags": [
+            "nature",
+            "red_rocks",
+            "hike",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 2410,
+          "visit_duration_hours": 2.8,
+          "detour_minutes_from_current_route": 34
+        }
+      },
+      {
+        "id": "stop_sedona_arts_center_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sedona Arts Center",
+          "location": "Oak Creek, Sedona, Arizona",
+          "tags": [
+            "art",
+            "gallery",
+            "local_crafts",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 3912,
+          "visit_duration_hours": 1.5,
+          "detour_minutes_from_current_route": 6
+        }
+      },
+      {
+        "id": "stop_sedona_heritage_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sedona Heritage Museum",
+          "location": "Oak Creek, Sedona, Arizona",
+          "tags": [
+            "history",
+            "culture",
+            "museum",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 1674,
+          "visit_duration_hours": 1.0,
+          "detour_minutes_from_current_route": 8
+        }
+      },
+      {
+        "id": "stop_sedona_creekside_sculpture_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Creekside Sculpture Walk",
+          "location": "Oak Creek, Sedona, Arizona",
+          "tags": [
+            "art",
+            "outdoor",
+            "sculpture",
+            "daytime"
+          ],
+          "rating": 4.7,
+          "review_count": 1288,
+          "visit_duration_hours": 1.0,
+          "detour_minutes_from_current_route": 4
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_sedona_bubbling_ponds_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

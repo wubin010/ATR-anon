@@ -1,0 +1,103 @@
+{
+  "session_id": "vanessa_davis_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "Flagstaff",
+    "cuisine": "American",
+    "sort_by": "rating",
+    "date_time": "2025-06-21T19:00:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Flagstaff",
+        "cuisine": "American",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_lumberyard_01",
+        "date_time": "2025-06-21T19:00:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_lumberyard_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "The Lumberyard Tap Room & Grille",
+          "cuisine": "American",
+          "location": "Flagstaff",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual"
+        }
+      },
+      {
+        "id": "rst_josephines_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Josephine's Modern American Bistro",
+          "cuisine": "American",
+          "location": "Flagstaff",
+          "rating": 4.5,
+          "price_range": "$$$",
+          "seating_style": "bistro"
+        }
+      },
+      {
+        "id": "rst_salsa_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Salsa Brava",
+          "cuisine": "Mexican",
+          "location": "Flagstaff",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual"
+        }
+      },
+      {
+        "id": "rst_osteria_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Osteria Canyon",
+          "cuisine": "Italian",
+          "location": "Flagstaff",
+          "rating": 4.3,
+          "price_range": "$$$",
+          "seating_style": "casual"
+        }
+      }
+    ]
+  }
+}

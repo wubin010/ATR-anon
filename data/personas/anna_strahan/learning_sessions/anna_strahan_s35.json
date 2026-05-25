@@ -1,0 +1,103 @@
+{
+  "session_id": "anna_strahan_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "reservation",
+  "reason_for_call": "Book a restaurant reservation.",
+  "task_params": {
+    "location": "Covington",
+    "cuisine": "dessert",
+    "date_time": "2025-03-21T20:15:00",
+    "party_size": 3,
+    "seating_style": "table"
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Covington",
+        "cuisine": "dessert",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_sweetolive_01",
+        "date_time": "2025-03-21T20:15:00",
+        "party_size": 3
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_sweetolive_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Sweet Olive Dessert Bar",
+          "cuisine": "dessert",
+          "location": "Covington",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "table"
+        }
+      },
+      {
+        "id": "rst_cedarandcream_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar & Cream Cafe",
+          "cuisine": "dessert",
+          "location": "Covington",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "table"
+        }
+      },
+      {
+        "id": "rst_moonlitbeignet_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Moonlit Beignet Room",
+          "cuisine": "dessert",
+          "location": "Mandeville",
+          "rating": 4.6,
+          "price_range": "$",
+          "seating_style": "counter"
+        }
+      },
+      {
+        "id": "rst_lacremeporch_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "La Creme Porch",
+          "cuisine": "French dessert",
+          "location": "Covington",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "table"
+        }
+      }
+    ]
+  }
+}

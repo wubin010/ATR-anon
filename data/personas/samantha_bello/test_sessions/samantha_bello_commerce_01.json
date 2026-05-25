@@ -1,0 +1,139 @@
+{
+  "instruction": "I'm planning snapper ceviche and I'm out of limes, red onion, cilantro, and aji dulce peppers. Go ahead and get what I need for it.",
+  "gold_value": null,
+  "session_id": "samantha_bello_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "samantha_bello_commerce_01",
+  "rule_ref": {
+    "rule_id": "samantha_bello_commerce_01",
+    "rule_text": "When she is preparing for a cooking project, Samantha prefers collecting ingredients into a shopping list first rather than placing an order immediately.",
+    "canonical_answer": "When I’m planning a dish, I like to build a shopping list first before ordering anything."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_ceviche_prep_box_01",
+        "type": "product",
+        "attributes": {
+          "name": "Citrus Snapper Ceviche Prep Box",
+          "price": 17.49,
+          "category": "seafood_cooking",
+          "rating": 4.9,
+          "stock_status": "in_stock",
+          "review_count": 2940,
+          "contents": "key limes, red onion, fresh cilantro, aji dulce peppers"
+        }
+      },
+      {
+        "id": "prod_key_limes_01",
+        "type": "product",
+        "attributes": {
+          "name": "Key Limes, 1 lb Bag",
+          "price": 3.49,
+          "category": "seafood_cooking",
+          "rating": 4.7,
+          "stock_status": "in_stock",
+          "review_count": 640,
+          "form": "fresh citrus",
+          "origin": "Florida"
+        }
+      },
+      {
+        "id": "prod_red_onion_01",
+        "type": "product",
+        "attributes": {
+          "name": "Red Onion, 2-Count",
+          "price": 2.29,
+          "category": "seafood_cooking",
+          "rating": 4.6,
+          "stock_status": "in_stock",
+          "review_count": 390,
+          "form": "fresh produce"
+        }
+      },
+      {
+        "id": "prod_cilantro_01",
+        "type": "product",
+        "attributes": {
+          "name": "Fresh Cilantro Bunch",
+          "price": 1.89,
+          "category": "seafood_cooking",
+          "rating": 4.8,
+          "stock_status": "in_stock",
+          "review_count": 710,
+          "form": "fresh herb",
+          "origin": "California"
+        }
+      },
+      {
+        "id": "prod_aji_dulce_01",
+        "type": "product",
+        "attributes": {
+          "name": "Aji Dulce Peppers, 8 oz Pack",
+          "price": 4.29,
+          "category": "seafood_cooking",
+          "rating": 4.7,
+          "stock_status": "in_stock",
+          "review_count": 280,
+          "form": "fresh peppers",
+          "origin": "Puerto Rico"
+        }
+      },
+      {
+        "id": "prod_lime_juice_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cold-Pressed Lime Juice Bottle",
+          "price": 4.99,
+          "category": "seafood_cooking",
+          "rating": 4.9,
+          "stock_status": "in_stock",
+          "review_count": 1820,
+          "form": "bottled juice",
+          "size": "12 fl oz"
+        }
+      },
+      {
+        "id": "prod_cilantro_dried_01",
+        "type": "product",
+        "attributes": {
+          "name": "Freeze-Dried Cilantro Jar",
+          "price": 5.49,
+          "category": "seafood_cooking",
+          "rating": 4.9,
+          "stock_status": "in_stock",
+          "review_count": 2100,
+          "form": "dried herb",
+          "size": "1.7 oz"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "build_shopping_list",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

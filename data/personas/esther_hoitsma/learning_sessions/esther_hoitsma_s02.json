@@ -1,0 +1,92 @@
+{
+  "session_id": "esther_hoitsma_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a study note",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "CNA Prep",
+    "title": "Patient Safety Basics Review",
+    "safety_points": [
+      "hand hygiene before and after every patient contact",
+      "use gloves and PPE when exposure risk is present",
+      "confirm patient identity before care tasks",
+      "keep bed low and call light within reach",
+      "lock wheelchair and bed brakes during transfers",
+      "report changes in vital signs or condition promptly",
+      "follow fall prevention steps and clear trip hazards",
+      "document care accurately and right away"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "CNA Prep",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Patient Safety Basics Review",
+        "location": "CNA Prep",
+        "content_brief": "<authored from safety_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_cna_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "CNA Skills Study Template",
+          "doc_type": "template",
+          "location": "CNA Prep",
+          "content_brief": "Simple study template with headings for topic, key reminders, and quick review bullets."
+        }
+      },
+      {
+        "id": "doc_shift_note_02",
+        "type": "document",
+        "attributes": {
+          "title": "Home Care Shift Notes Example",
+          "doc_type": "note",
+          "location": "Work Notes",
+          "content_brief": "Example of concise patient care documentation from a prior shift."
+        }
+      },
+      {
+        "id": "doc_exam_outline_03",
+        "type": "document",
+        "attributes": {
+          "title": "CNA Exam Outline",
+          "doc_type": "report",
+          "location": "CNA Prep",
+          "content_brief": "Outline of major exam domains including infection control and safety."
+        }
+      }
+    ]
+  }
+}

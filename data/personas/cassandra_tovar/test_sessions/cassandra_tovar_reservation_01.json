@@ -1,0 +1,91 @@
+{
+  "instruction": "Please book dinner for four in Midtown Atlanta on 2026-07-18 at 7:00pm — just pick a place and make the reservation.",
+  "gold_value": "rst_magnolia_hearth_01",
+  "session_id": "cassandra_tovar_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "cassandra_tovar_reservation_01",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_reservation_01",
+    "rule_text": "When choosing where to eat out, she prefers Southern comfort food or soulful local cooking over generic chain restaurants.",
+    "canonical_answer": "If I’m booking a meal out, I’d rather go somewhere known for Southern comfort food or local soul-inflected cooking than a chain."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_magnolia_hearth_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Magnolia Hearth Kitchen",
+          "cuisine": "Southern comfort food",
+          "location": "Midtown Atlanta",
+          "rating": 4.4,
+          "price_range": "$$"
+        }
+      },
+      {
+        "id": "rst_cheesecake_peachtree_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "The Cheesecake Factory Peachtree",
+          "cuisine": "American chain",
+          "location": "Midtown Atlanta",
+          "rating": 4.9,
+          "price_range": "$$"
+        }
+      },
+      {
+        "id": "rst_olive_garden_midtown_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Olive Garden Midtown",
+          "cuisine": "Italian chain",
+          "location": "Midtown Atlanta",
+          "rating": 4.8,
+          "price_range": "$$"
+        }
+      },
+      {
+        "id": "rst_pfchangs_colony_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "P.F. Chang's Colony Square",
+          "cuisine": "Asian chain",
+          "location": "Midtown Atlanta",
+          "rating": 4.7,
+          "price_range": "$$"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_magnolia_hearth_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "session_id": "iris_parker_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "workspace",
+  "reason_for_call": "Organize some work files",
+  "task_params": {
+    "location": "Interview Debriefs",
+    "file_type": "docx",
+    "scheme": "by_project",
+    "file_ids": [
+      "file_debrief_01",
+      "file_debrief_02",
+      "file_debrief_03"
+    ],
+    "folder_id": "fld_hiringops_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Interview Debriefs",
+        "file_type": "docx"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_debrief_01",
+          "file_debrief_02",
+          "file_debrief_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_debrief_01",
+          "file_debrief_02",
+          "file_debrief_03"
+        ],
+        "folder_id": "fld_hiringops_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_debrief_01",
+        "type": "file",
+        "attributes": {
+          "name": "Sales Manager interview debrief - Maya Chen.docx",
+          "file_type": "docx",
+          "location": "Interview Debriefs",
+          "owner": "Iris Parker",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_debrief_02",
+        "type": "file",
+        "attributes": {
+          "name": "Product Designer interview debrief - Leo Martinez.docx",
+          "file_type": "docx",
+          "location": "Interview Debriefs",
+          "owner": "Iris Parker",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_debrief_03",
+        "type": "file",
+        "attributes": {
+          "name": "Data Analyst interview debrief - Priya Nair.docx",
+          "file_type": "docx",
+          "location": "Interview Debriefs",
+          "owner": "Iris Parker",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_notes_04",
+        "type": "file",
+        "attributes": {
+          "name": "Benefits renewal notes.txt",
+          "file_type": "txt",
+          "location": "HR Admin",
+          "owner": "Iris Parker",
+          "labels": [
+            "admin"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_hiringops_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Hiring Ops / Debriefs",
+          "purpose": "Organized storage for current interview debrief files"
+        }
+      }
+    ]
+  }
+}

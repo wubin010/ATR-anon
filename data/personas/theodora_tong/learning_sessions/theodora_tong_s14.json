@@ -1,0 +1,190 @@
+{
+  "session_id": "theodora_tong_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Adirondack foothills",
+      "quiet",
+      "budget"
+    ],
+    "destination_ids": [
+      "dst_northville_01",
+      "dst_speculator_02"
+    ],
+    "destination": "Northville",
+    "stop_tags": [
+      "lake",
+      "trail",
+      "quiet"
+    ],
+    "selected_stop_ids": [
+      "st_northville_lake_01",
+      "st_sacandaga_path_02",
+      "st_northville_gallery_03"
+    ],
+    "duration_days": 2,
+    "traveler_count": 1
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Adirondack foothills",
+          "quiet",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_northville_01",
+          "dst_speculator_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Northville",
+        "stop_tags": [
+          "lake",
+          "trail",
+          "quiet"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Northville",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "st_northville_lake_01",
+          "st_sacandaga_path_02",
+          "st_northville_gallery_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_northville_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Northville",
+          "region": "Adirondack foothills",
+          "tags": [
+            "quiet",
+            "budget",
+            "lake",
+            "small town",
+            "restorative"
+          ]
+        }
+      },
+      {
+        "id": "dst_speculator_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Speculator",
+          "region": "Adirondack foothills",
+          "tags": [
+            "quiet",
+            "budget",
+            "forest",
+            "spring",
+            "restorative"
+          ]
+        }
+      },
+      {
+        "id": "dst_lakegeorge_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Lake George",
+          "region": "Adirondack foothills",
+          "tags": [
+            "busy",
+            "lake",
+            "shopping",
+            "spring"
+          ]
+        }
+      },
+      {
+        "id": "st_northville_lake_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Northville Waterfront Park",
+          "location": "Northville",
+          "tags": [
+            "lake",
+            "quiet",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "st_sacandaga_path_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Great Sacandaga lakeside path",
+          "location": "Northville",
+          "tags": [
+            "trail",
+            "lake",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "st_northville_gallery_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Northville small arts gallery",
+          "location": "Northville",
+          "tags": [
+            "quiet",
+            "art",
+            "indoor"
+          ]
+        }
+      }
+    ]
+  }
+}

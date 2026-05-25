@@ -1,0 +1,85 @@
+{
+  "session_id": "joseph_eldridge_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "workspace",
+  "reason_for_call": "Update a document",
+  "task_params": {
+    "location": "Keynotes",
+    "doc_type": "report",
+    "title": "Power Electronics Keynote Outline",
+    "example_points": [
+      "Add EV fast-charger thermal derating case from municipal fleet retrofit",
+      "Add inverter reliability lesson from capacitor ripple-current redesign",
+      "Add IoT remote monitoring example that caught field voltage imbalance early",
+      "Emphasize compliance tradeoff between UL margins and deployment schedule"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Keynotes",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_keynote_01",
+        "content_delta": "<authored from example_points, title>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_keynote_01",
+        "type": "document",
+        "attributes": {
+          "title": "Power Electronics Keynote Outline",
+          "doc_type": "report",
+          "location": "Keynotes",
+          "content_brief": "Speaking outline for a keynote on practical power electronics design, with sections on reliability, compliance, and field lessons."
+        }
+      },
+      {
+        "id": "doc_keynote_02",
+        "type": "document",
+        "attributes": {
+          "title": "Mentoring Talk Notes",
+          "doc_type": "note",
+          "location": "Keynotes",
+          "content_brief": "Notes for a mentoring session on communicating engineering tradeoffs to junior staff."
+        }
+      },
+      {
+        "id": "doc_consult_03",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Power Electronics Consulting Highlights",
+          "doc_type": "report",
+          "location": "Consulting",
+          "content_brief": "Summary of recent consulting work on EV chargers, inverter reliability, remote monitoring, and compliance reviews."
+        }
+      }
+    ]
+  }
+}

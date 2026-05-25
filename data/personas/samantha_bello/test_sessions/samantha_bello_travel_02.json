@@ -1,0 +1,147 @@
+{
+  "instruction": "I'm starting from scratch on a 2-day solo trip to San Sebastian. From the candidate stops below, pick one place to build the itinerary around and go ahead with that choice.",
+  "gold_value": [
+    "stop_sansebastian_gros_zurriola_01"
+  ],
+  "session_id": "samantha_bello_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "samantha_bello_travel_02",
+  "rule_ref": {
+    "rule_id": "samantha_bello_travel_02",
+    "rule_text": "When selecting stops for a new trip, Samantha prefers an itinerary that combines surf, culture, and cuisine rather than focusing on only one theme.",
+    "canonical_answer": "I like trip stops that give me some mix of surf, culture, and good food rather than just one of those."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_sansebastian_gros_zurriola_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Gros and Zurriola",
+          "stop_type": "district",
+          "location": "San Sebastian, Spain",
+          "tags": [
+            "surf",
+            "beach",
+            "pintxos",
+            "cafes",
+            "arts_scene",
+            "walkable"
+          ],
+          "rating": 4.6,
+          "review_count": 684
+        }
+      },
+      {
+        "id": "stop_sansebastian_parte_vieja_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Parte Vieja",
+          "stop_type": "historic_district",
+          "location": "San Sebastian, Spain",
+          "tags": [
+            "historic_quarter",
+            "architecture",
+            "pintxos",
+            "plazas",
+            "churches",
+            "nightlife"
+          ],
+          "rating": 4.9,
+          "review_count": 13840
+        }
+      },
+      {
+        "id": "stop_sansebastian_zurriola_beach_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Zurriola Beach",
+          "stop_type": "beach",
+          "location": "San Sebastian, Spain",
+          "tags": [
+            "surf",
+            "beach",
+            "boardwalk",
+            "sunrise",
+            "skatepark"
+          ],
+          "rating": 4.8,
+          "review_count": 7215
+        }
+      },
+      {
+        "id": "stop_sansebastian_san_telmo_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "San Telmo Museum",
+          "stop_type": "museum",
+          "location": "San Sebastian, Spain",
+          "tags": [
+            "museum",
+            "basque_history",
+            "exhibitions",
+            "cloister",
+            "indoor"
+          ],
+          "rating": 4.8,
+          "review_count": 3172
+        }
+      },
+      {
+        "id": "stop_sansebastian_la_concha_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "La Concha Promenade",
+          "stop_type": "waterfront",
+          "location": "San Sebastian, Spain",
+          "tags": [
+            "beach",
+            "scenic",
+            "bay_view",
+            "landmark",
+            "promenade"
+          ],
+          "rating": 4.9,
+          "review_count": 16504
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_sansebastian_gros_zurriola_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "session_id": "cassandra_tovar_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "AV Side-Gig Equipment Inventory",
+    "location": "Side Gig Admin",
+    "columns_keywords": [
+      "item name",
+      "category",
+      "brand/model",
+      "quantity",
+      "condition",
+      "storage location",
+      "purchase date",
+      "replacement cost",
+      "job use notes"
+    ],
+    "tracking_keywords": [
+      "track what is already owned",
+      "spot duplicate gear",
+      "see what needs repair",
+      "note items used for small installs"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Side Gig Admin",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "AV Side-Gig Equipment Inventory",
+        "location": "Side Gig Admin",
+        "content_brief": "<authored from columns_keywords and tracking_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Freelance Gear Checkout Template",
+          "doc_type": "template",
+          "location": "Side Gig Admin",
+          "content_brief": "Template for logging borrowed mics, cables, stands, and return status."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Small Job Materials Template",
+          "doc_type": "template",
+          "location": "Side Gig Admin",
+          "content_brief": "Reusable materials sheet for adapters, fasteners, labels, and consumables."
+        }
+      },
+      {
+        "id": "doc_sheet_03",
+        "type": "document",
+        "attributes": {
+          "title": "Church Video Cable Map",
+          "doc_type": "spreadsheet",
+          "location": "Volunteer Media",
+          "content_brief": "Cable runs, labels, destinations, and spare lengths for sanctuary video feeds."
+        }
+      },
+      {
+        "id": "doc_template_04",
+        "type": "document",
+        "attributes": {
+          "title": "Equipment Maintenance Log Template",
+          "doc_type": "template",
+          "location": "Shop Docs",
+          "content_brief": "Template for service dates, faults found, parts replaced, and retest notes."
+        }
+      }
+    ]
+  }
+}

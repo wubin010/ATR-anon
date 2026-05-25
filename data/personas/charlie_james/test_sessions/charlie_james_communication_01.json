@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Dana Lewis at Northwest Auto Review about the contributor invitation. Tell her I'd be glad to do it, I can send a short bio and three topic ideas, and I'd like to focus on diagnostics, transmission troubleshooting, and metal fabrication. Also ask what word count and monthly deadline she has in mind.",
+  "gold_value": null,
+  "session_id": "charlie_james_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "charlie_james_communication_01",
+  "rule_ref": {
+    "rule_id": "charlie_james_communication_01",
+    "rule_text": "For formal outreach, shop proposals, or mentorship messages, he prefers to draft the message first instead of sending it immediately.",
+    "canonical_answer": "For anything formal or important, I like to see it as a draft before it goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_dana_column_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dana Lewis <dana@northwestautoreview.com>",
+          "subject": "Contributor invitation: repair-techniques column",
+          "body": "Hi Charlie, I'm the editor at Northwest Auto Review. We're lining up contributors for a regular column on innovative repair techniques and custom fabrication, and your shop's work came up more than once. If you're interested, send over a short bio, a few topic ideas, and a sense of your availability for a monthly piece. We also feature one build photo with each contributor profile.",
+          "thread_id": "thr_dana_column_12",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-21T10:14"
+        }
+      },
+      {
+        "id": "msg_tina_rotors_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Tina Brooks <tina@midstateparts.com>",
+          "subject": "Brake rotor backorder update",
+          "body": "The rotors for the silver Tacoma won't arrive until Friday. Let me know if you want a substitute brand pulled from the regional warehouse.",
+          "thread_id": "thr_tina_rotors_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-21T08:37"
+        }
+      },
+      {
+        "id": "msg_luis_bbq_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Luis Ortega <luis.ortega@gmail.com>",
+          "subject": "Barbecue at my place",
+          "body": "You still coming by Sunday afternoon? Bring that photo of the chopped pickup if you can.",
+          "thread_id": "thr_luis_bbq_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-08-20T19:42"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

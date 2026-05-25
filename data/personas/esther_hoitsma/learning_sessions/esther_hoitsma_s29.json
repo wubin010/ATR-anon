@@ -1,0 +1,108 @@
+{
+  "session_id": "esther_hoitsma_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "trail socks",
+    "budget": 20,
+    "quantity": 2,
+    "product_ids": [
+      "prod_trailsock_01",
+      "prod_trailsock_02",
+      "prod_trailsock_03"
+    ]
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "trail socks",
+        "budget": 20,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_trailsock_01",
+          "prod_trailsock_02",
+          "prod_trailsock_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_trailsock_02",
+        "quantity": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_trailsock_01",
+        "type": "product",
+        "attributes": {
+          "name": "SummitDry Trail Socks 2-Pack",
+          "price": 14.99,
+          "category": "trail socks",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_trailsock_02",
+        "type": "product",
+        "attributes": {
+          "name": "Ridgeline Merino Trail Socks",
+          "price": 18.5,
+          "category": "trail socks",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_trailsock_03",
+        "type": "product",
+        "attributes": {
+          "name": "CreekStep Cushion Trail Socks",
+          "price": 12.0,
+          "category": "trail socks",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_hikeess_04",
+        "type": "product",
+        "attributes": {
+          "name": "Pine Loop Mini First Aid Kit",
+          "price": 16.75,
+          "category": "small hiking essential",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "session_id": "michael_argo_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "workspace",
+  "reason_for_call": "Organize some project files",
+  "task_params": {
+    "location": "Downloads",
+    "file_type": "image",
+    "folder_id": "fld_getaway_01",
+    "file_ids": [
+      "fil_polaroid_01",
+      "fil_sketch_02",
+      "fil_riverwalk_03"
+    ],
+    "scheme": "by_project"
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Downloads",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_polaroid_01",
+          "fil_sketch_02",
+          "fil_riverwalk_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_polaroid_01",
+          "fil_sketch_02",
+          "fil_riverwalk_03"
+        ],
+        "folder_id": "fld_getaway_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_polaroid_01",
+        "type": "file",
+        "attributes": {
+          "name": "polaroid_bridge_scan.jpg",
+          "file_type": "image",
+          "location": "Downloads",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_sketch_02",
+        "type": "file",
+        "attributes": {
+          "name": "streetcar_sketch.png",
+          "file_type": "image",
+          "location": "Downloads",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverwalk_03",
+        "type": "file",
+        "attributes": {
+          "name": "riverwalk_evening.jpg",
+          "file_type": "image",
+          "location": "Downloads",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_getaway_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Getaway Project",
+          "purpose": "Dedicated folder for trip photos and sketches"
+        }
+      },
+      {
+        "id": "fld_portfolio_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Portfolio Drafts",
+          "purpose": "Works in progress for design portfolio"
+        }
+      }
+    ]
+  }
+}

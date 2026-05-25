@@ -1,0 +1,578 @@
+[
+  {
+    "rule_text": "For outreach, applications, or other important messages, she prefers to have a draft prepared for review instead of sending the message immediately.",
+    "canonical_answer": "I like important messages drafted first so I can sit with the wording before anything goes out.",
+    "counterfactual_default": "Send the message directly once the content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Theodora Tong is a quiet, introspective creator"
+      },
+      {
+        "type": "direct",
+        "content": "She keeps a handwritten journal where she writes poetry, reflections, and short stories."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "theodora_tong_communication_01",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning groceries or cooking supplies, she prefers to build a shopping list instead of placing an order right away.",
+    "canonical_answer": "For food and cooking supplies, I usually make a list first instead of buying on impulse.",
+    "counterfactual_default": "Place an order for the ingredients immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "meticulously budgets their student life"
+      },
+      {
+        "type": "direct",
+        "content": "Theodora Tong enjoys moderately skilled home cooking"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    },
+    "rule_id": "theodora_tong_commerce_01",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For routine purchases, she prefers student-discounted or budget-conscious options over pricier equivalents.",
+    "canonical_answer": "For everyday purchases, I go for the student-friendly budget option whenever I can.",
+    "counterfactual_default": "Choose a standard or nicer product without specifically favoring student-budget options.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "always using student discounts and budget hostels to stretch their limited funds"
+      },
+      {
+        "type": "direct",
+        "content": "meticulously budgets their student life"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "theodora_tong_commerce_02",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When the purchase is for core painting tools, she prefers premium brushes over cheaper art-supply alternatives.",
+    "canonical_answer": "If I’m buying brushes, I’m willing to splurge on the premium ones.",
+    "counterfactual_default": "Pick the cheaper or more generic art-supply option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "occasionally splurging on premium brushes"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "theodora_tong_commerce_03",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring digital services, she prefers the basic tier rather than upgrading to higher plans.",
+    "canonical_answer": "I keep subscriptions on the basic plan unless there’s a very specific reason not to.",
+    "counterfactual_default": "Upgrade to a higher tier for extra features.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "meticulously budgets their student life"
+      },
+      {
+        "type": "direct",
+        "content": "stretch their limited funds"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "theodora_tong_commerce_04",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an art or craft purchase arrives wrong, she prefers an exchange so she can still use the item for her practice.",
+    "canonical_answer": "If an art supply is wrong, I’d rather exchange it than just get my money back.",
+    "counterfactual_default": "Request a refund instead of replacing the item.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "She is proficient in digital illustration using tools such as Procreate and Adobe Photoshop, and she practices watercolor and charcoal drawing."
+      },
+      {
+        "type": "direct",
+        "content": "they channel their quiet determination into every canvas"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "theodora_tong_commerce_05",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For regional or contemplative trips, she prefers ground transport over flying.",
+    "canonical_answer": "For trips I can reasonably do over land, I’d rather take ground transport than fly.",
+    "counterfactual_default": "Look for a flight first, especially for intercity travel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Theodora Tong prefers solitary, contemplative trips"
+      },
+      {
+        "type": "direct",
+        "content": "weekend escapes to the Adirondack foothills, cultural strolls through Montreal’s Old Port, and museum visits in Washington, D.C."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "theodora_tong_travel_01",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging, she prefers budget hostels over more conventional hotel stays.",
+    "canonical_answer": "I usually choose a budget hostel if it helps me stretch the trip affordably.",
+    "counterfactual_default": "Book a standard hotel offer rather than a hostel-style budget stay.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "always using student discounts and budget hostels to stretch their limited funds"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "theodora_tong_travel_02",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she does fly, she prefers a window seat for the view and reflective travel time.",
+    "canonical_answer": "If I’m on a plane, I want the window seat.",
+    "counterfactual_default": "Choose any seat or prioritize aisle access.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Photography of urban textures and seasonal landscapes allows her to capture quiet moments."
+      },
+      {
+        "type": "direct",
+        "content": "they relish the quiet reflection each new landscape provides"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "theodora_tong_travel_03",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a trip, she prefers stops centered on museums, gardens, and quiet nature rather than nightlife or high-energy attractions.",
+    "canonical_answer": "I plan trips around museums, gardens, and quiet scenic places, not nightlife.",
+    "counterfactual_default": "Choose generally popular attractions without especially favoring quiet cultural or nature stops.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "cultural strolls through Montreal’s Old Port, and museum visits in Washington, D.C."
+      },
+      {
+        "type": "direct",
+        "content": "dreaming of a spring pilgrimage to Kyoto’s zen gardens"
+      },
+      {
+        "type": "direct",
+        "content": "The proximity to the Mohawk River and the surrounding countryside fostered her love for quiet natural settings"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "theodora_tong_travel_04",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a trip stop falls through, she prefers replacement stops that preserve the original quiet cultural or nature theme rather than swapping in any generic top-rated alternative.",
+    "canonical_answer": "When a stop changes, I want the replacement to keep the same calm museum-or-nature feel.",
+    "counterfactual_default": "Replace the disrupted stop with whatever alternative is most convenient or highest rated.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Theodora Tong prefers solitary, contemplative trips"
+      },
+      {
+        "type": "direct",
+        "content": "they relish the quiet reflection each new landscape provides"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "theodora_tong_travel_05",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing a place to eat out, she prefers quiet, herb-forward or thoughtfully prepared spots over loud trendy venues.",
+    "canonical_answer": "If I’m eating out, I prefer somewhere calm with simple, thoughtful food rather than a loud trendy place.",
+    "counterfactual_default": "Choose a popular or energetic restaurant without prioritizing calm atmosphere or herb-forward food.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they cherish the quiet solitude that fuels their artistic curiosity"
+      },
+      {
+        "type": "direct",
+        "content": "regularly preparing rosemary‑infused roasted potatoes, lemon‑basil quinoa bowls"
+      },
+      {
+        "type": "direct",
+        "content": "using fresh basil, thyme, and garlic harvested from their indoor herb garden"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "theodora_tong_reservation_01",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For outings that need tickets, she prefers museum, gallery, or arts-oriented events over louder entertainment options.",
+    "canonical_answer": "When I go out, I’d rather get tickets for an art or museum event than for something loud or flashy.",
+    "counterfactual_default": "Choose a mainstream entertainment event without a strong arts preference.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "she frequently visits the Schenectady Museum and local galleries for quiet inspiration"
+      },
+      {
+        "type": "direct",
+        "content": "visiting art museums"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "theodora_tong_reservation_02",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For wellness or movement appointments, she prefers gentle, low-impact providers over intense gym-style services.",
+    "canonical_answer": "For exercise or wellness appointments, I go for gentle low-impact options, not intense gym sessions.",
+    "counterfactual_default": "Choose a standard fitness-oriented provider without specifically favoring gentler options.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Theodora Tong enjoys low‑impact fitness, attending weekly gentle yoga classes at the community center"
+      },
+      {
+        "type": "direct",
+        "content": "they favor solitary, reflective movement over crowded gym environments"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "theodora_tong_reservation_04",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For scheduled classes, volunteer sessions, or workshops, she prefers reminders timed before the event so she does not lose track of time.",
+    "canonical_answer": "I like reminders set before events because I can disappear into creative work and lose track of time.",
+    "counterfactual_default": "Set a one-off reminder at a generic time or skip a pre-event reminder.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they habitually lose track of time sketching by candlelight"
+      },
+      {
+        "type": "direct",
+        "content": "while juggling community college courses, volunteer art‑craft sessions"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "theodora_tong_scheduling_01",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring self-care or upkeep activities like yoga or plant care, she prefers a weekly reminder cadence rather than a one-time prompt.",
+    "canonical_answer": "For habits I’m trying to keep up with, a weekly reminder works best for me.",
+    "counterfactual_default": "Set only a single reminder instead of a recurring weekly one.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "attending weekly gentle yoga classes at the community center"
+      },
+      {
+        "type": "direct",
+        "content": "often forgetting to water their herb garden on rainy days"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "theodora_tong_scheduling_02",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When invited to crowded fitness or noisy group activities, she prefers to decline rather than commit out of politeness.",
+    "canonical_answer": "If an invitation is for a crowded or high-energy group activity, I usually decline.",
+    "counterfactual_default": "Accept the invite or leave it tentative to be agreeable.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they favor solitary, reflective movement over crowded gym environments"
+      },
+      {
+        "type": "direct",
+        "content": "they cherish the quiet solitude that fuels their artistic curiosity"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "theodora_tong_scheduling_03",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When setting up materials for recurring art sessions, she prefers a reusable template rather than starting from scratch each time.",
+    "canonical_answer": "For recurring workshop materials, I like a template I can reuse.",
+    "counterfactual_default": "Create a one-off note or document each time a session is planned.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "design soothing therapeutic art workshops for seniors"
+      },
+      {
+        "type": "direct",
+        "content": "Occasionally, she volunteers at the community center, leading small art‑craft sessions for seniors"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "theodora_tong_workspace_02",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing research on art theory or psychology, she prefers a report format rather than an informal note.",
+    "canonical_answer": "For deeper research writeups, I prefer a report so the thinking is organized.",
+    "counterfactual_default": "Jot the material into a casual note instead of structuring it as a report.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "She writes poetry and short reflective prose, and she excels at critical reading and research, often digging deep into artistic movements and psychological concepts."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "theodora_tong_workspace_04",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing creative and school files, she prefers them to be classified by project rather than by file type or date.",
+    "canonical_answer": "I organize files by project so my workshop, class, and art pieces stay grouped together.",
+    "counterfactual_default": "Sort files by generic categories like type or date.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "juggling community college courses, volunteer art‑craft sessions, and an emerging online print boutique"
+      },
+      {
+        "type": "direct",
+        "content": "digital illustration, watercolor painting, charcoal drawing"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "theodora_tong_workspace_06",
+    "persona_id": "theodora_tong",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

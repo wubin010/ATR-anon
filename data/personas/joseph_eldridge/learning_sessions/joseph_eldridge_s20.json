@@ -1,0 +1,117 @@
+{
+  "session_id": "joseph_eldridge_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and flag messages.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Marta Chen",
+    "priority": "high",
+    "label_ids": [
+      "lbl_clienturgent_01"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "label_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Marta Chen"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_marta_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_marta_01"
+        ],
+        "label_ids": [
+          "lbl_clienturgent_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_marta_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marta Chen",
+          "subject": "Client power inverter spec discrepancy",
+          "body": "Joseph, the client noticed a discrepancy in the latest power inverter spec sheet and wants clarification before approving the prototype build.",
+          "thread_id": "thr_marta_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-21T11:18:00"
+        }
+      },
+      {
+        "id": "msg_owen_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Owen Briggs",
+          "subject": "Lunch and learns next month",
+          "body": "Checking whether you'd like to present at one of the lunch and learn sessions next month.",
+          "thread_id": "thr_owen_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-21T10:42:00"
+        }
+      },
+      {
+        "id": "msg_vendor_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Piedmont Components",
+          "subject": "Updated capacitor pricing sheet",
+          "body": "Please find attached the revised pricing for the capacitor order discussed last week.",
+          "thread_id": "thr_vendor_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-06-21T09:03:00"
+        }
+      },
+      {
+        "id": "lbl_clienturgent_01",
+        "type": "label",
+        "attributes": {
+          "name": "Client Urgent",
+          "topic": "client escalation"
+        }
+      }
+    ]
+  }
+}

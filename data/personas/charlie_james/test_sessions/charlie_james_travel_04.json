@@ -1,0 +1,146 @@
+{
+  "instruction": "I'm headed to Sedona for a quick weekend getaway with one other person. Please choose a hotel in Sedona and book 1 room for 2 adults.",
+  "gold_value": "hotel_sedona_oak_creek_lodge_01",
+  "session_id": "charlie_james_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "charlie_james_travel_04",
+  "rule_ref": {
+    "rule_id": "charlie_james_travel_04",
+    "rule_text": "When a trip needs a hotel, he favors budget-conscious, practical lodging over premium luxury stays.",
+    "canonical_answer": "For road trips, I just want a solid, affordable place to stay instead of a fancy hotel."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hotel_sedona_oak_creek_lodge_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Oak Creek Motor Lodge",
+          "location": "Sedona, Arizona",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 129,
+          "category": "budget",
+          "star_rating": 2,
+          "rating": 4.3,
+          "review_count": 418,
+          "neighborhood": "West Sedona",
+          "amenities": [
+            "free_parking",
+            "guest_laundry",
+            "mini_fridge"
+          ]
+        }
+      },
+      {
+        "id": "hotel_sedona_red_rock_spa_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Red Rock Spa Resort",
+          "location": "Sedona, Arizona",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 8,
+          "max_guests_per_room": 2,
+          "price_per_night": 349,
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 2890,
+          "neighborhood": "Uptown Sedona",
+          "amenities": [
+            "full_service_spa",
+            "infinity_pool",
+            "valet",
+            "mountain_view"
+          ]
+        }
+      },
+      {
+        "id": "hotel_sedona_canyon_vista_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Canyon Vista Grand Hotel",
+          "location": "Sedona, Arizona",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 319,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 2211,
+          "neighborhood": "Oak Creek Canyon",
+          "amenities": [
+            "rooftop_bar",
+            "heated_pool",
+            "concierge",
+            "balcony"
+          ]
+        }
+      },
+      {
+        "id": "hotel_sedona_juniper_mesa_resort_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Juniper Mesa Resort",
+          "location": "Sedona, Arizona",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 7,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "category": "luxury",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 1745,
+          "neighborhood": "Chapel Area",
+          "amenities": [
+            "spa_tubs",
+            "fireplaces",
+            "shuttle",
+            "restaurant"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "hotel_sedona_oak_creek_lodge_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

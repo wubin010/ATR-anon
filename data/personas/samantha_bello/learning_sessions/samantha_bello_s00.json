@@ -1,0 +1,125 @@
+{
+  "session_id": "samantha_bello_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and draft a reply",
+  "task_params": {
+    "sender": "Elena Torres",
+    "folder": "inbox",
+    "priority": "high",
+    "language": "en",
+    "reply_points": [
+      "confirm she will bring the updated cash flow bridge",
+      "say variance notes for operating expenses are ready",
+      "mention final capex numbers will be sent within 30 minutes",
+      "keep tone concise and professional"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Elena Torres",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_elena_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_elena_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_elena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Torres",
+          "subject": "Need updated numbers before leadership check-in",
+          "body": "Hi Samantha, can you confirm whether you have the revised cash flow bridge and the latest variance notes ready for this morning? If capex changed again, I need that too before we walk in.",
+          "thread_id": "thr_elena_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T07:18:00-04:00"
+        }
+      },
+      {
+        "id": "msg_vendor_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Caribe Office Supply",
+          "subject": "Invoice copy attached",
+          "body": "Sharing the PDF copy of last month's office supply invoice for your records.",
+          "thread_id": "thr_vendor_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T06:42:00-04:00"
+        }
+      },
+      {
+        "id": "msg_hr_01",
+        "type": "message",
+        "attributes": {
+          "sender": "HR Updates",
+          "subject": "Open enrollment reminder",
+          "body": "This is a reminder that benefits enrollment closes next week.",
+          "thread_id": "thr_hr_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T05:55:00-04:00"
+        }
+      },
+      {
+        "id": "msg_team_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marco Ruiz",
+          "subject": "Draft dashboard screenshots",
+          "body": "Attaching the latest dashboard screenshots for review whenever you have time.",
+          "thread_id": "thr_marco_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T07:02:00-04:00"
+        }
+      }
+    ]
+  }
+}

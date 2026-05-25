@@ -1,0 +1,102 @@
+{
+  "domain": "travel",
+  "instruction": "On June 14, 2026 I'm going from Seattle, WA to San Francisco, CA, one passenger, one-way only. Look at the available options and book it.",
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_sea_sfo_alaska_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "departure_date": "2026-06-14",
+          "airline": "Alaska Airlines",
+          "price": 89
+        }
+      },
+      {
+        "id": "flt_sea_sfo_delta_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "departure_date": "2026-06-14",
+          "airline": "Delta Air Lines",
+          "price": 97
+        }
+      },
+      {
+        "id": "flt_sea_sfo_united_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "departure_date": "2026-06-14",
+          "airline": "United Airlines",
+          "price": 102
+        }
+      },
+      {
+        "id": "trp_sea_sfo_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "mode": "train",
+          "departure_date": "2026-06-14",
+          "price": 159
+        }
+      },
+      {
+        "id": "trp_sea_sfo_bus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Seattle, WA",
+          "destination": "San Francisco, CA",
+          "mode": "bus",
+          "departure_date": "2026-06-14",
+          "price": 145
+        }
+      }
+    ]
+  },
+  "session_id": "elizabeth_pesacreta_travel_01_test",
+  "session_type": "test",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_travel_01",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_travel_01",
+    "rule_text": "For travel bookings without an explicit transport preference, the user defaults to checking ground transport options for medium-to-long-distance trips before considering flights.",
+    "canonical_answer": "If I haven't said otherwise, for medium-to-long trips I'd rather take a train or coach — don't jump straight to flights."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

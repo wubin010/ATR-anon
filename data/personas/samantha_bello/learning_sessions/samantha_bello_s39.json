@@ -1,0 +1,144 @@
+{
+  "session_id": "samantha_bello_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "travel",
+  "reason_for_call": "Browse some lodging options.",
+  "task_params": {
+    "destination_constraints": [
+      "Spain",
+      "Seville",
+      "walkable"
+    ],
+    "location": "Seville",
+    "guest_count": 1,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "check_in_date": "2025-09-18",
+    "check_out_date": "2025-09-22"
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_hotels"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Spain",
+          "Seville",
+          "walkable"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_seville_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Seville",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_seville_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Seville",
+          "region": "Andalusia, Spain",
+          "tags": [
+            "walkable",
+            "charm",
+            "culture",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "dest_granada_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Granada",
+          "region": "Andalusia, Spain",
+          "tags": [
+            "walkable",
+            "history",
+            "charm",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "hot_patio_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Hotel Patio de las Flores",
+          "location": "Seville",
+          "check_in_date": "2025-09-18",
+          "check_out_date": "2025-09-22",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 118.0
+        }
+      },
+      {
+        "id": "hot_alameda_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Casa Alameda Suites",
+          "location": "Seville",
+          "check_in_date": "2025-09-18",
+          "check_out_date": "2025-09-22",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 132.0
+        }
+      },
+      {
+        "id": "hot_giralda_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Giralda Corner Hotel",
+          "location": "Seville",
+          "check_in_date": "2025-09-18",
+          "check_out_date": "2025-09-22",
+          "available_rooms": 5,
+          "max_guests_per_room": 1,
+          "price_per_night": 149.0
+        }
+      }
+    ]
+  }
+}

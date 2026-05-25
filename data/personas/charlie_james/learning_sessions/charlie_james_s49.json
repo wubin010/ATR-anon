@@ -1,0 +1,129 @@
+{
+  "session_id": "charlie_james_s49",
+  "session_type": "learning",
+  "day_offset": 49,
+  "domain": "commerce",
+  "reason_for_call": "Build a shopping list.",
+  "task_params": {
+    "category": "cookout groceries",
+    "budget": 40,
+    "sort_by": "rating",
+    "items": [
+      "Delta Pride Catfish Fillets",
+      "Stone Ground Cornmeal",
+      "Buttermilk Cornbread Mix",
+      "Fresh Okra",
+      "Beefsteak Tomatoes"
+    ],
+    "list_name": "Backyard Cookout List"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "cookout groceries",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_catfish_01",
+          "prod_cornmeal_02",
+          "prod_cornbread_03",
+          "prod_okra_04",
+          "prod_tomatoes_05"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Delta Pride Catfish Fillets",
+          "Stone Ground Cornmeal",
+          "Buttermilk Cornbread Mix",
+          "Fresh Okra",
+          "Beefsteak Tomatoes"
+        ],
+        "list_name": "Backyard Cookout List"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_catfish_01",
+        "type": "product",
+        "attributes": {
+          "name": "Delta Pride Catfish Fillets",
+          "price": 14.99,
+          "category": "cookout groceries",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_cornmeal_02",
+        "type": "product",
+        "attributes": {
+          "name": "Stone Ground Cornmeal",
+          "price": 4.49,
+          "category": "cookout groceries",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_cornbread_03",
+        "type": "product",
+        "attributes": {
+          "name": "Buttermilk Cornbread Mix",
+          "price": 3.79,
+          "category": "cookout groceries",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_okra_04",
+        "type": "product",
+        "attributes": {
+          "name": "Fresh Okra",
+          "price": 2.99,
+          "category": "cookout groceries",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_tomatoes_05",
+        "type": "product",
+        "attributes": {
+          "name": "Beefsteak Tomatoes",
+          "price": 3.49,
+          "category": "cookout groceries",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

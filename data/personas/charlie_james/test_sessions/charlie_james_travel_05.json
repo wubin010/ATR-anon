@@ -1,0 +1,99 @@
+{
+  "instruction": "It’s just a short solo trip, so please book the lowest-priced flight from Chicago to Minneapolis for me and use the usual traveler details and card on file.",
+  "gold_value": "window",
+  "session_id": "charlie_james_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "charlie_james_travel_05",
+  "rule_ref": {
+    "rule_id": "charlie_james_travel_05",
+    "rule_text": "If he does fly, he prefers a window seat.",
+    "canonical_answer": "When I end up on a plane, I like a window seat."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_chi_msp_lakeside_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Minneapolis",
+          "departure_date": "2026-08-18",
+          "airline": "Lakeside Air",
+          "price": 129,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_chi_msp_midwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Minneapolis",
+          "departure_date": "2026-08-18",
+          "airline": "Midwest Connect",
+          "price": 156,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_chi_msp_northloop_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Minneapolis",
+          "departure_date": "2026-08-18",
+          "airline": "NorthLoop Airlines",
+          "price": 174,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "flt_chi_stl_gateway_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "St. Louis",
+          "departure_date": "2026-08-18",
+          "airline": "Gateway Air",
+          "price": 98,
+          "available_seats": 5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

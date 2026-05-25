@@ -1,0 +1,144 @@
+{
+  "instruction": "I'm sketching a 2-day Portland trip for 2 adults. We won't have a car, so pick one stop in Portland itself to anchor the plan and keep it reasonably priced.",
+  "gold_value": [
+    "stop_portland_zenger_01"
+  ],
+  "session_id": "marlene_graham_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "marlene_graham",
+  "rule_id": "marlene_graham_travel_03",
+  "rule_ref": {
+    "rule_id": "marlene_graham_travel_03",
+    "rule_text": "For fresh trip planning, she prefers choosing agritourism or farm-to-table themed stops over generic tourist highlights.",
+    "canonical_answer": "Whenever I plan a trip, I always choose stops tied to farming, food production, or hands-on learning."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_portland_zenger_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Zenger Farm Educational Tour",
+          "stop_type": "farm",
+          "location": "Southeast Portland",
+          "tags": [
+            "urban_farm",
+            "food_production",
+            "hands_on_learning",
+            "transit_access",
+            "market_garden"
+          ],
+          "rating": 4.6,
+          "admission_price": 12,
+          "annual_visitors": 48000
+        }
+      },
+      {
+        "id": "stop_portland_sauvie_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sauvie Island Farm Tasting Barn",
+          "stop_type": "farm",
+          "location": "Sauvie Island outside Portland",
+          "tags": [
+            "orchard",
+            "food_production",
+            "farm_tasting",
+            "drive_required"
+          ],
+          "rating": 4.8,
+          "admission_price": 38,
+          "annual_visitors": 125000
+        }
+      },
+      {
+        "id": "stop_portland_jgarden_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Portland Japanese Garden",
+          "stop_type": "garden",
+          "location": "West Hills, Portland",
+          "tags": [
+            "garden",
+            "city_landmark",
+            "transit_access"
+          ],
+          "rating": 4.9,
+          "admission_price": 18,
+          "annual_visitors": 470000
+        }
+      },
+      {
+        "id": "stop_portland_powells_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Powell's City of Books",
+          "stop_type": "bookstore",
+          "location": "Downtown Portland",
+          "tags": [
+            "indoor",
+            "shopping",
+            "transit_access"
+          ],
+          "rating": 4.8,
+          "admission_price": 0,
+          "annual_visitors": 3000000
+        }
+      },
+      {
+        "id": "stop_portland_pittock_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Pittock Mansion",
+          "stop_type": "historic_house",
+          "location": "West Hills, Portland",
+          "tags": [
+            "historic_house",
+            "city_views",
+            "transit_access"
+          ],
+          "rating": 4.7,
+          "admission_price": 15,
+          "annual_visitors": 330000
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_portland_zenger_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

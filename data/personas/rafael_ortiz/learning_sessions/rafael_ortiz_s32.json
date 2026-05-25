@@ -1,0 +1,94 @@
+{
+  "session_id": "rafael_ortiz_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "communication",
+  "reason_for_call": "Draft a work message.",
+  "task_params": {
+    "recipient": "melissa.hardin@rgvmed.org",
+    "subject": "Interested in Taking On More Leadership Responsibility",
+    "language": "en",
+    "body_points": [
+      "express appreciation for current role and growth opportunities",
+      "say I want to take on more leadership responsibility",
+      "mention leading team huddles and quality improvement work",
+      "offer to help mentor newer nurses or coordinate small projects",
+      "ask for feedback on skills to build for a charge nurse path",
+      "keep the tone confident, respectful, and not pushy"
+    ]
+  },
+  "expected_tools": [
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "recipient": "melissa.hardin@rgvmed.org",
+        "subject": "Interested in Taking On More Leadership Responsibility",
+        "body": "<authored from body_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_unit_01",
+        "type": "message",
+        "attributes": {
+          "sender": "melissa.hardin@rgvmed.org",
+          "subject": "Staffing update for next pay period",
+          "body": "Rafael, thanks again for helping keep the unit organized this week. I'll send the revised staffing grid shortly.",
+          "thread_id": "thr_unit_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-11T09:18:00"
+        }
+      },
+      {
+        "id": "msg_edu_02",
+        "type": "message",
+        "attributes": {
+          "sender": "clinical.education@rgvmed.org",
+          "subject": "Reminder: competency check-off window",
+          "body": "Please complete your annual competency check-off by the end of the month.",
+          "thread_id": "thr_edu_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-10T14:05:00"
+        }
+      },
+      {
+        "id": "msg_peer_03",
+        "type": "message",
+        "attributes": {
+          "sender": "andrea.lopez@rgvmed.org",
+          "subject": "Thanks for covering report",
+          "body": "Appreciate you stepping in during handoff yesterday.",
+          "thread_id": "thr_peer_03",
+          "folder": "sent",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-09T18:42:00"
+        }
+      }
+    ]
+  }
+}

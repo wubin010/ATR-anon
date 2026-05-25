@@ -1,0 +1,92 @@
+{
+  "session_id": "eduardo_rivera_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "workspace",
+  "reason_for_call": "Refresh a work note",
+  "task_params": {
+    "location": "Career Notes",
+    "doc_type": "note",
+    "content_delta_points": [
+      "add goal of becoming lead lab manager",
+      "mention improving production timelines",
+      "mention mentoring newer technicians",
+      "mention stronger digital imaging protocols",
+      "mention building more cross-team communication"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Career Notes",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_devnote_01",
+        "content_delta": "<authored from content_delta_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_devnote_01",
+        "type": "document",
+        "attributes": {
+          "title": "Professional Development Note",
+          "doc_type": "note",
+          "location": "Career Notes",
+          "content_brief": "Ongoing note about growth goals, training ideas, and leadership development."
+        }
+      },
+      {
+        "id": "doc_training_02",
+        "type": "document",
+        "attributes": {
+          "title": "CDT Study Outline",
+          "doc_type": "note",
+          "location": "Career Notes",
+          "content_brief": "Checklist and study topics for certification prep."
+        }
+      },
+      {
+        "id": "doc_qa_03",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly QA Summary",
+          "doc_type": "report",
+          "location": "Lab Operations",
+          "content_brief": "Recent quality metrics and recurring remake causes."
+        }
+      },
+      {
+        "id": "trk_growth_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Skills Growth Tracker"
+        }
+      }
+    ]
+  }
+}

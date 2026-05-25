@@ -1,0 +1,91 @@
+{
+  "session_id": "theodora_tong_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a planning document.",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Community Center",
+    "doc_type": "note",
+    "title": "Soothing Art Workshop Plan for Seniors",
+    "content_brief": "Simple planning note for a senior art workshop at the Community Center later this month.",
+    "plan_points": [
+      "gentle watercolor activity with simple shapes",
+      "60-minute session with slow pacing",
+      "materials list: paper, brushes, water cups, palettes",
+      "welcome and calming breathing opener",
+      "seated setup with easy cleanup steps",
+      "encouraging prompt focused on color and memory"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Community Center",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Soothing Art Workshop Plan for Seniors",
+        "location": "Community Center",
+        "content_brief": "<authored from content_brief, plan_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Center Workshop Planning Template",
+          "doc_type": "template",
+          "location": "Community Center Programs",
+          "content_brief": "Template for planning community center workshops with sections for goals, materials, timing, setup, and facilitation notes."
+        }
+      },
+      {
+        "id": "doc_note_02",
+        "type": "document",
+        "attributes": {
+          "title": "Spring Craft Circle Notes",
+          "doc_type": "note",
+          "location": "Community Center Programs",
+          "content_brief": "Notes from a previous community art session for older adults."
+        }
+      },
+      {
+        "id": "doc_template_03",
+        "type": "document",
+        "attributes": {
+          "title": "Volunteer Session Outline Template",
+          "doc_type": "template",
+          "location": "Volunteer Resources",
+          "content_brief": "Basic outline template for small group volunteer-led sessions."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "session_id": "samantha_bello_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meetup.",
+  "task_params": {
+    "title": "Brunch with Elena",
+    "start_time": "2025-03-23T08:30:00-04:00",
+    "end_time": "2025-03-23T10:00:00-04:00",
+    "participants": [
+      "elena.bello@example.com"
+    ],
+    "location": "The English Rose, Rincon"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-23T08:30:00-04:00",
+        "end_time": "2025-03-23T10:00:00-04:00",
+        "participants": [
+          "elena.bello@example.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Brunch with Elena",
+        "start_time": "2025-03-23T08:30:00-04:00",
+        "end_time": "2025-03-23T10:00:00-04:00",
+        "participants": [
+          "elena.bello@example.com"
+        ],
+        "location": "The English Rose, Rincon"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_primary_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Brunch with Elena",
+          "start_time": "2025-03-23T08:30:00-04:00",
+          "end_time": "2025-03-23T10:00:00-04:00",
+          "participants": [
+            "elena.bello@example.com"
+          ],
+          "location": "The English Rose, Rincon",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_primary_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget Review Prep",
+          "start_time": "2025-03-23T11:30:00-04:00",
+          "end_time": "2025-03-23T12:30:00-04:00",
+          "participants": [],
+          "location": "Home Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_primary_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Call with Mom",
+          "start_time": "2025-03-22T17:00:00-04:00",
+          "end_time": "2025-03-22T17:30:00-04:00",
+          "participants": [
+            "maria.bello@example.com"
+          ],
+          "location": "",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_primary_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Gallery Walk",
+          "start_time": "2025-03-23T15:00:00-04:00",
+          "end_time": "2025-03-23T16:30:00-04:00",
+          "participants": [
+            "lucia.ortiz@example.com"
+          ],
+          "location": "Plaza de Rincon",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

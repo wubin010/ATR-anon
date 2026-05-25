@@ -1,0 +1,130 @@
+{
+  "session_id": "cassandra_tovar_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "scheduling",
+  "reason_for_call": "Plan a shared gathering.",
+  "task_params": {
+    "title": "Family Brunch Planning",
+    "start_time": "2025-05-25T11:00:00-04:00",
+    "end_time": "2025-05-25T12:30:00-04:00",
+    "participants": [
+      "monica.tovar@example.com",
+      "devin.tovar@example.com",
+      "imani.tovar@example.com",
+      "terrence.tovar@example.com"
+    ],
+    "location": "Cassandra's place"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-05-25T11:00:00-04:00",
+        "end_time": "2025-05-25T12:30:00-04:00",
+        "participants": [
+          "monica.tovar@example.com",
+          "devin.tovar@example.com",
+          "imani.tovar@example.com",
+          "terrence.tovar@example.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Family Brunch Planning",
+        "start_time": "2025-05-25T11:00:00-04:00",
+        "end_time": "2025-05-25T12:30:00-04:00",
+        "participants": [
+          "monica.tovar@example.com",
+          "devin.tovar@example.com",
+          "imani.tovar@example.com",
+          "terrence.tovar@example.com"
+        ],
+        "location": "Cassandra's place"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_church_audio_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church Audio Team Check-in",
+          "start_time": "2025-05-25T08:00:00-04:00",
+          "end_time": "2025-05-25T09:15:00-04:00",
+          "participants": [
+            "worship-team@newhope.org"
+          ],
+          "location": "New Hope Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_jog_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning Jog",
+          "start_time": "2025-05-25T06:45:00-04:00",
+          "end_time": "2025-05-25T07:30:00-04:00",
+          "participants": [],
+          "location": "Decatur Greenway",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_cable_run_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "School Gym Cable Run",
+          "start_time": "2025-05-24T14:00:00-04:00",
+          "end_time": "2025-05-24T17:00:00-04:00",
+          "participants": [
+            "crewlead@avsouth.com",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Avondale Middle School",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_cousin_grad_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Family Brunch Planning",
+          "start_time": "2025-05-25T11:00:00-04:00",
+          "end_time": "2025-05-25T12:30:00-04:00",
+          "participants": [
+            "monica.tovar@example.com",
+            "devin.tovar@example.com",
+            "imani.tovar@example.com"
+          ],
+          "location": "Uncle Marcus's backyard",
+          "calendar": "invites",
+          "status": "tentative"
+        }
+      }
+    ]
+  }
+}

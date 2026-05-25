@@ -1,0 +1,78 @@
+{
+  "session_id": "fs_reservation_confirm_before_appointment_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "few_shot",
+  "rule_id": "fs_reservation_confirm_before_appointment",
+  "instruction": "Book a 60-minute deep tissue massage on 2026-06-14 at 4 pm in Capitol Hill. Two adults, contact me at the saved phone number.",
+  "local_env": {
+    "tools": [
+      "book_event_ticket",
+      "book_restaurant",
+      "book_service_appointment",
+      "cancel_event_ticket",
+      "cancel_restaurant_reservation",
+      "cancel_service_appointment",
+      "get_user_confirmation",
+      "modify_event_ticket",
+      "modify_restaurant_reservation",
+      "modify_service_appointment",
+      "search_events",
+      "search_restaurants",
+      "search_service_providers",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "prov_serenity_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Serenity Massage Studio",
+          "service_type": "massage",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prov_pinecrest_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Pinecrest Bodywork Clinic",
+          "service_type": "massage",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prov_aurora_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Aurora Therapeutic Massage",
+          "service_type": "massage",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.7
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "get_user_confirmation",
+          "arguments": {
+            "target_tool": "book_service_appointment"
+          },
+          "compare_args": [
+            "target_tool"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_reservation_confirm_before_appointment",
+    "rule_text": "Before booking any service appointment, always run the choice by me to confirm first. I like a beat to mentally commit to a time before it gets locked in on my calendar.",
+    "canonical_answer": "Always check in with me before locking in a service appointment — I want a moment to commit before the slot is booked."
+  }
+}

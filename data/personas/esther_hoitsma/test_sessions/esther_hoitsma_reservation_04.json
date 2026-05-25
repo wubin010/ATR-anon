@@ -1,0 +1,89 @@
+{
+  "instruction": "Could you update my Kumo Counter reservation in Capitol Hill? The evening got pushed later, so 8:15 would work better than 7:30, and the group is five instead of three. Only change one part of the booking for now—whichever seems like the better adjustment.",
+  "gold_value": "party_size",
+  "session_id": "esther_hoitsma_reservation_04_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "esther_hoitsma_reservation_04",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_reservation_04",
+    "rule_text": "When restaurant plans shift, Esther prefers adjusting the reservation by party size rather than changing the whole time slot first.",
+    "canonical_answer": "If dinner plans change, I usually want to fix the headcount before I move the reservation time."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rest_kumo_counter_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Kumo Counter",
+          "cuisine": "Japanese",
+          "location": "Capitol Hill",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "counter seating",
+          "reservation_id": "res_kumo_counter_731",
+          "date_time": "2026-05-22T19:30:00",
+          "party_size": 3
+        }
+      },
+      {
+        "id": "rest_cedar_table_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar Table",
+          "cuisine": "Mediterranean",
+          "location": "Capitol Hill",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "table service",
+          "reservation_id": "res_cedar_table_204",
+          "date_time": "2026-05-24T20:00:00",
+          "party_size": 4
+        }
+      },
+      {
+        "id": "rest_lantern_room_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Lantern Room",
+          "cuisine": "Japanese",
+          "location": "Capitol Hill",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "dining room"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "modify_restaurant_reservation",
+          "arguments": {
+            "field": "party_size"
+          },
+          "compare_args": [
+            "field"
+          ]
+        }
+      ]
+    }
+  }
+}

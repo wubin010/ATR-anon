@@ -1,0 +1,138 @@
+{
+  "session_id": "vanessa_davis_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "travel",
+  "reason_for_call": "Check some trip options",
+  "task_params": {
+    "origin": "LAX",
+    "destination": "New Orleans",
+    "passenger_count": 2,
+    "sort_by": "price_asc",
+    "departure_date": "2025-10-16",
+    "return_date": "2025-10-21",
+    "destination_constraints": [
+      "New Orleans"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_flights"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "New Orleans"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_neworleans_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "LAX",
+        "destination": "New Orleans",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_neworleans_01",
+        "type": "destination",
+        "attributes": {
+          "name": "New Orleans",
+          "region": "Louisiana",
+          "tags": [
+            "jazz",
+            "culture",
+            "food"
+          ]
+        }
+      },
+      {
+        "id": "flt_laxmsy_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "LAX",
+          "destination": "New Orleans",
+          "departure_date": "2025-10-16",
+          "return_date": "2025-10-21",
+          "airline": "Delta",
+          "price": 438.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_laxmsy_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "LAX",
+          "destination": "New Orleans",
+          "departure_date": "2025-10-16",
+          "return_date": "2025-10-21",
+          "airline": "Southwest",
+          "price": 412.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_laxmsy_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "LAX",
+          "destination": "New Orleans",
+          "departure_date": "2025-10-15",
+          "return_date": "2025-10-20",
+          "airline": "American",
+          "price": 389.0,
+          "available_seats": 2
+        }
+      },
+      {
+        "id": "flt_laxmsy_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "LAX",
+          "destination": "New Orleans",
+          "departure_date": "2025-10-16",
+          "return_date": "2025-10-22",
+          "airline": "United",
+          "price": 401.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  }
+}

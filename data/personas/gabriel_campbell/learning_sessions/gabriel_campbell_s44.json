@@ -1,0 +1,105 @@
+{
+  "session_id": "gabriel_campbell_s44",
+  "session_type": "learning",
+  "day_offset": 44,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "acoustic guitar strings",
+    "budget": 20,
+    "sort_by": "rating",
+    "quantity": 2
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "acoustic guitar strings",
+        "budget": 20,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_strings_01",
+          "prod_strings_02",
+          "prod_strings_03",
+          "prod_strings_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_strings_01",
+        "quantity": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_strings_01",
+        "type": "product",
+        "attributes": {
+          "name": "D'Addario Phosphor Bronze EJ16 Light Acoustic Guitar Strings",
+          "price": 14.99,
+          "category": "acoustic guitar strings",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_strings_02",
+        "type": "product",
+        "attributes": {
+          "name": "Elixir Nanoweb 80/20 Bronze Light Acoustic Guitar Strings",
+          "price": 18.49,
+          "category": "acoustic guitar strings",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_strings_03",
+        "type": "product",
+        "attributes": {
+          "name": "Ernie Ball Earthwood Light Acoustic Guitar Strings",
+          "price": 9.99,
+          "category": "acoustic guitar strings",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_strings_04",
+        "type": "product",
+        "attributes": {
+          "name": "Martin Authentic Acoustic Lifespan 2.0 Light Guitar Strings",
+          "price": 19.99,
+          "category": "acoustic guitar strings",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

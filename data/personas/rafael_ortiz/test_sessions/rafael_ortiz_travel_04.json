@@ -1,0 +1,161 @@
+{
+  "instruction": "One stop on trip T-7712 on the Olympic Peninsula fell through. Please swap in a single daytime replacement near Port Angeles that can fit in about 1-2 hours and shouldn't add more than about 20 minutes of detour from the current route.",
+  "gold_value": [
+    "stop_salt_creek_klallam_01"
+  ],
+  "session_id": "rafael_ortiz_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "rafael_ortiz_travel_04",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_travel_04",
+    "rule_text": "If a trip stop falls through, he prefers replacement stops that preserve the original nature-and-culture theme instead of swapping to any generic highly rated alternative.",
+    "canonical_answer": "If part of my trip breaks, I want replacement stops that keep the same outdoor-and-cultural feel."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_salt_creek_klallam_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Salt Creek Coast and Klallam Story Point",
+          "location": "Port Angeles, Olympic Peninsula, Washington",
+          "tags": [
+            "nature",
+            "coastline",
+            "tidepools",
+            "indigenous_heritage",
+            "daytime",
+            "shore_walk"
+          ],
+          "trip_id": "T-7712",
+          "stop_type": "coastal_walk",
+          "rating": 4.6,
+          "review_count": 184,
+          "detour_minutes_from_current_route": 16,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_dungeness_heritage_loop_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Dungeness Spit and Heritage Loop",
+          "location": "Sequim, Olympic Peninsula, Washington",
+          "tags": [
+            "nature",
+            "shoreline",
+            "birdwatching",
+            "tribal_history",
+            "daytime",
+            "walking_loop"
+          ],
+          "trip_id": "T-7712",
+          "stop_type": "coastal_trail",
+          "rating": 4.9,
+          "review_count": 1260,
+          "detour_minutes_from_current_route": 34,
+          "visit_duration_hours": 3.0
+        }
+      },
+      {
+        "id": "stop_hurricane_ridge_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Hurricane Ridge Viewpoint",
+          "location": "Port Angeles, Olympic Peninsula, Washington",
+          "tags": [
+            "nature",
+            "mountain_views",
+            "scenic",
+            "popular",
+            "daytime"
+          ],
+          "trip_id": "T-7712",
+          "stop_type": "viewpoint",
+          "rating": 4.9,
+          "review_count": 4120,
+          "detour_minutes_from_current_route": 10,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_port_angeles_art_center_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Port Angeles Fine Arts Center",
+          "location": "Port Angeles, Olympic Peninsula, Washington",
+          "tags": [
+            "art",
+            "museum",
+            "gallery",
+            "daytime",
+            "popular"
+          ],
+          "trip_id": "T-7712",
+          "stop_type": "museum",
+          "rating": 4.8,
+          "review_count": 930,
+          "detour_minutes_from_current_route": 5,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_harbor_pier_walk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Port Angeles Harbor Pier",
+          "location": "Port Angeles, Olympic Peninsula, Washington",
+          "tags": [
+            "waterfront",
+            "boardwalk",
+            "easy_stop",
+            "daytime"
+          ],
+          "trip_id": "T-7712",
+          "stop_type": "pier",
+          "rating": 4.7,
+          "review_count": 2105,
+          "detour_minutes_from_current_route": 3,
+          "visit_duration_hours": 1.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_salt_creek_klallam_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "session_id": "michael_argo_s40",
+  "session_type": "learning",
+  "day_offset": 40,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "note",
+    "location": "Arduino Art Build",
+    "document_id": "doc_brainstorm_01",
+    "doc_type": "report",
+    "title": "Arduino Art Build Project Brief",
+    "brief_points": [
+      "Concept: interactive mixed-media piece with light and sensor response",
+      "Use simple Arduino control with LEDs, wiring, and a proximity sensor",
+      "Materials should include board, jumper wires, LEDs, resistor pack, sensor, power source",
+      "Add enclosure or mounting surface that supports painted visual elements",
+      "Build order should start with concept sketch, then parts test, then assembly, then final tuning"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Arduino Art Build",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "Arduino Art Build Project Brief",
+        "location": "Arduino Art Build",
+        "content_brief": "<authored from brief_points>"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_brainstorm_01",
+        "content_delta": "<authored from brief_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_brainstorm_01",
+        "type": "document",
+        "attributes": {
+          "title": "Arduino Art Build Brainstorm Notes",
+          "doc_type": "note",
+          "location": "Arduino Art Build",
+          "content_brief": "Loose concept notes about an interactive art piece using LEDs, sensor input, layered visuals, and a simple physical housing."
+        }
+      },
+      {
+        "id": "doc_parts_02",
+        "type": "document",
+        "attributes": {
+          "title": "Arduino Parts Scratch List",
+          "doc_type": "note",
+          "location": "Arduino Art Build",
+          "content_brief": "Rough list of Arduino Uno, breadboard, jumper wires, LEDs, resistor kit, ultrasonic sensor, USB power bank, and acrylic panel ideas."
+        }
+      },
+      {
+        "id": "doc_color_03",
+        "type": "document",
+        "attributes": {
+          "title": "Riverfront Poster Color Study",
+          "doc_type": "note",
+          "location": "Studio Sketches",
+          "content_brief": "Color palette ideas for a poster project."
+        }
+      }
+    ]
+  }
+}

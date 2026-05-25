@@ -1,0 +1,121 @@
+{
+  "session_id": "samantha_bello_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Rincón",
+    "event_tags": [
+      "film",
+      "festival"
+    ],
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Rincón",
+        "event_tags": [
+          "film",
+          "festival"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_rinconfilm_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_rinconfilm_01",
+        "type": "event",
+        "attributes": {
+          "name": "Rincón International Film Festival: Opening Night Shorts",
+          "location": "Rincón",
+          "date_time": "2025-05-23T19:30:00-04:00",
+          "price": 18.0,
+          "event_tags": [
+            "film",
+            "festival",
+            "shorts",
+            "indie"
+          ]
+        }
+      },
+      {
+        "id": "evt_domesdoc_02",
+        "type": "event",
+        "attributes": {
+          "name": "Cinema by the Coast: Caribbean Documentary Showcase",
+          "location": "Rincón",
+          "date_time": "2025-05-24T18:00:00-04:00",
+          "price": 15.0,
+          "event_tags": [
+            "film",
+            "documentary",
+            "cultural"
+          ]
+        }
+      },
+      {
+        "id": "evt_plazaarte_03",
+        "type": "event",
+        "attributes": {
+          "name": "Plaza Arte Nocturno: Mural Walk and Live Music",
+          "location": "Rincón",
+          "date_time": "2025-05-23T20:00:00-04:00",
+          "price": 12.0,
+          "event_tags": [
+            "art",
+            "music",
+            "cultural",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "evt_mayaindie_04",
+        "type": "event",
+        "attributes": {
+          "name": "Mayagüez Indie Screenings: New Voices Program",
+          "location": "Mayagüez",
+          "date_time": "2025-05-23T19:00:00-04:00",
+          "price": 16.0,
+          "event_tags": [
+            "film",
+            "festival",
+            "indie"
+          ]
+        }
+      }
+    ]
+  }
+}

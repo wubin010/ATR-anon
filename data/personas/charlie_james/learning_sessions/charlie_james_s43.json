@@ -1,0 +1,116 @@
+{
+  "session_id": "charlie_james_s43",
+  "session_type": "learning",
+  "day_offset": 43,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule something on my calendar.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Community Center Pickup Basketball",
+    "start_time": "2025-03-18T18:30:00-04:00",
+    "end_time": "2025-03-18T20:00:00-04:00",
+    "new_start_time": "2025-03-20T19:00:00-04:00",
+    "new_end_time": "2025-03-20T20:30:00-04:00"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "reschedule_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-20T19:00:00-04:00",
+        "end_time": "2025-03-20T20:30:00-04:00"
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_pickup_01",
+        "new_start_time": "2025-03-20T19:00:00-04:00",
+        "new_end_time": "2025-03-20T20:30:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_pickup_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Center Pickup Basketball",
+          "start_time": "2025-03-18T18:30:00-04:00",
+          "end_time": "2025-03-18T20:00:00-04:00",
+          "participants": [],
+          "location": "West End Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Malik",
+          "start_time": "2025-03-20T17:30:00-04:00",
+          "end_time": "2025-03-20T18:30:00-04:00",
+          "participants": [
+            "Malik"
+          ],
+          "location": "Shawnee Park Cafe",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_church_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Youth Outreach Planning Call",
+          "start_time": "2025-03-20T21:00:00-04:00",
+          "end_time": "2025-03-20T21:45:00-04:00",
+          "participants": [
+            "Deacon Harris",
+            "Tanya"
+          ],
+          "location": "Phone call",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_oil_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Truck Oil Change Reminder",
+          "start_time": "2025-03-19T08:00:00-04:00",
+          "end_time": "2025-03-19T08:30:00-04:00",
+          "participants": [],
+          "location": "Home garage",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

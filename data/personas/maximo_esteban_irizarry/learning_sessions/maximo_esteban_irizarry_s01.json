@@ -1,0 +1,126 @@
+{
+  "session_id": "maximo_esteban_irizarry_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meeting.",
+  "task_params": {
+    "calendar": "work",
+    "participants": [
+      "elena.rosario@coastalcode.dev"
+    ],
+    "title": "Accessibility backlog review",
+    "start_time": "2025-02-12T10:00:00-04:00",
+    "end_time": "2025-02-12T10:45:00-04:00",
+    "location": "Reading Room"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-12T10:00:00-04:00",
+        "end_time": "2025-02-12T10:45:00-04:00",
+        "participants": [
+          "elena.rosario@coastalcode.dev"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Accessibility backlog review",
+        "start_time": "2025-02-12T10:00:00-04:00",
+        "end_time": "2025-02-12T10:45:00-04:00",
+        "participants": [
+          "elena.rosario@coastalcode.dev"
+        ],
+        "location": "Reading Room"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_consult_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Consultancy call with Panadería Cumbre",
+          "start_time": "2025-02-12T13:00:00-04:00",
+          "end_time": "2025-02-12T14:00:00-04:00",
+          "participants": [
+            "owner@panaderiacumbre.com"
+          ],
+          "location": "Video call",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_consult_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Consultancy call with Archivo del Barrio",
+          "start_time": "2025-02-12T17:00:00-04:00",
+          "end_time": "2025-02-12T18:00:00-04:00",
+          "participants": [
+            "coord@archivodelbarrio.org"
+          ],
+          "location": "Video call",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_standup_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Accessibility backlog review",
+          "start_time": "2025-02-12T10:00:00-04:00",
+          "end_time": "2025-02-12T10:45:00-04:00",
+          "participants": [
+            "team@lowbandwidthlab.dev"
+          ],
+          "location": "Workshop Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_personal_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Evening walk",
+          "start_time": "2025-02-12T19:00:00-04:00",
+          "end_time": "2025-02-12T19:45:00-04:00",
+          "participants": [],
+          "location": "Orocovis plaza",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

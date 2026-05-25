@@ -1,0 +1,91 @@
+{
+  "session_id": "eduardo_rivera_s47",
+  "session_type": "learning",
+  "day_offset": 47,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "doc_type": "report",
+    "title": "Conference Case Study Idea - Cultural Motifs in Prosthetic Aesthetics",
+    "location": "Work/Conference Concepts",
+    "content_brief": "Draft a case-study concept document on blending cultural motifs with prosthetic aesthetics.",
+    "case_study_points": [
+      "problem: prosthetics often prioritize function over personal identity",
+      "focus on integrating cultural motifs without reducing clinical usability",
+      "use examples from ocular and dental prosthetic design workflows",
+      "cover material, color-matching, and patient consultation considerations",
+      "note ethical boundary between personalization and stereotyping",
+      "outline possible before-and-after case narrative structure",
+      "include conference-ready sections: background, method, outcomes, discussion"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Work/Conference Concepts",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "Conference Case Study Idea - Cultural Motifs in Prosthetic Aesthetics",
+        "location": "Work/Conference Concepts",
+        "content_brief": "Draft a case-study concept document on blending cultural motifs with prosthetic aesthetics."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_conf_01",
+        "type": "document",
+        "attributes": {
+          "title": "Conference Abstract Notes - Digital Ocular Workflow",
+          "doc_type": "note",
+          "location": "Work/Conference Concepts",
+          "content_brief": "Rough notes for a future conference abstract on digital ocular prosthesis workflow."
+        }
+      },
+      {
+        "id": "doc_conf_02",
+        "type": "document",
+        "attributes": {
+          "title": "Case Presentation Template - Clinical Design Story",
+          "doc_type": "template",
+          "location": "Work/Conference Concepts",
+          "content_brief": "Reusable structure for case presentations with background, process, and outcomes."
+        }
+      },
+      {
+        "id": "doc_conf_03",
+        "type": "document",
+        "attributes": {
+          "title": "Report Draft - Shade Matching Documentation",
+          "doc_type": "report",
+          "location": "Work/Conference Concepts",
+          "content_brief": "Prior draft about documenting aesthetic shade-matching decisions."
+        }
+      }
+    ]
+  }
+}

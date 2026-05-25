@@ -1,0 +1,106 @@
+{
+  "session_id": "michael_argo_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "Trips",
+    "title": "Chicago Packing Checklist",
+    "trip_keywords": [
+      "train trip",
+      "3 days",
+      "chargers",
+      "sketchbook limit",
+      "clothes",
+      "toiletries",
+      "camera"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Trips",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Chicago Packing Checklist",
+        "location": "Trips",
+        "content_brief": "<authored from trip_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_pack_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Travel Packing Template",
+          "doc_type": "template",
+          "location": "Trips",
+          "content_brief": "Reusable packing checklist template with sections for essentials, clothes, toiletries, tech, and extras."
+        }
+      },
+      {
+        "id": "doc_trip_02",
+        "type": "document",
+        "attributes": {
+          "title": "Nashville Weekend Ideas",
+          "doc_type": "note",
+          "location": "Trips",
+          "content_brief": "Loose notes for a short city trip with food spots and train times."
+        }
+      },
+      {
+        "id": "doc_art_03",
+        "type": "document",
+        "attributes": {
+          "title": "Gallery Visit Supplies",
+          "doc_type": "note",
+          "location": "Art",
+          "content_brief": "Checklist of sketching supplies and camera gear for a museum day."
+        }
+      },
+      {
+        "id": "file_ref_04",
+        "type": "file",
+        "attributes": {
+          "name": "union-station-platform-photo.jpg",
+          "file_type": "image",
+          "location": "Trips/Chicago",
+          "owner": "Michael",
+          "labels": [
+            "travel",
+            "photo"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

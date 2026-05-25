@@ -1,0 +1,102 @@
+{
+  "session_id": "iris_parker_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "Portland",
+    "cuisine": "farm-to-table",
+    "date_time": "2025-05-17T19:00:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Portland",
+        "cuisine": "farm-to-table",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_earthwharf_01",
+        "date_time": "2025-05-17T19:00:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_earthwharf_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Earth & Wharf Kitchen",
+          "cuisine": "farm-to-table",
+          "location": "Portland",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "cozy dining room"
+        }
+      },
+      {
+        "id": "rst_harvesttide_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harvest Tide",
+          "cuisine": "farm-to-table",
+          "location": "Portland",
+          "rating": 4.6,
+          "price_range": "$$",
+          "seating_style": "waterfront"
+        }
+      },
+      {
+        "id": "rst_pineroot_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Pine Root Supper Club",
+          "cuisine": "New American",
+          "location": "Portland",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "rustic"
+        }
+      },
+      {
+        "id": "rst_saltmeadow_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Salt Meadow Table",
+          "cuisine": "seafood",
+          "location": "Portland",
+          "rating": 4.5,
+          "price_range": "$$$",
+          "seating_style": "modern bistro"
+        }
+      }
+    ]
+  }
+}

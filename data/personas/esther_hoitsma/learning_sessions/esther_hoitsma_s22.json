@@ -1,0 +1,105 @@
+{
+  "session_id": "esther_hoitsma_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a reminder",
+  "task_params": {
+    "calendar": "personal",
+    "title": "CNA Skills Checkpoint",
+    "start_time": "2025-04-14T17:30:00-06:00",
+    "end_time": "2025-04-14T18:15:00-06:00",
+    "remind_at": "2025-04-11T18:00:00-06:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_cna_checkpoint_01",
+        "remind_at": "2025-04-11T18:00:00-06:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_cna_checkpoint_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "CNA Skills Checkpoint",
+          "start_time": "2025-04-14T17:30:00-06:00",
+          "end_time": "2025-04-14T18:15:00-06:00",
+          "participants": [],
+          "location": "West Valley Training Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_soccer_practice_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Caldwell United Practice",
+          "start_time": "2025-04-11T19:00:00-06:00",
+          "end_time": "2025-04-11T20:30:00-06:00",
+          "participants": [
+            "teammates@caldwellunited.example"
+          ],
+          "location": "Memorial Park Fields",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_shift_hansen_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Client Hansen Evening Shift",
+          "start_time": "2025-04-14T14:00:00-06:00",
+          "end_time": "2025-04-14T17:00:00-06:00",
+          "participants": [],
+          "location": "Hansen Residence",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_library_talk_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Public Library Health Careers Talk",
+          "start_time": "2025-04-12T11:00:00-06:00",
+          "end_time": "2025-04-12T12:00:00-06:00",
+          "participants": [],
+          "location": "Boise Public Library",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

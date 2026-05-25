@@ -1,0 +1,103 @@
+{
+  "session_id": "eduardo_rivera_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "reservation",
+  "reason_for_call": "Plan a reservation.",
+  "task_params": {
+    "location": "Monterey",
+    "cuisine": "Californian",
+    "sort_by": "price_asc",
+    "date_time": "2025-06-21T19:00:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Monterey",
+        "cuisine": "Californian",
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_tidehouse_03",
+        "date_time": "2025-06-21T19:00:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_tidehouse_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor Lantern",
+          "cuisine": "Seafood",
+          "location": "Monterey",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "formal dining room"
+        }
+      },
+      {
+        "id": "rst_tidehouse_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cypress Table",
+          "cuisine": "Californian",
+          "location": "Monterey",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining room"
+        }
+      },
+      {
+        "id": "rst_tidehouse_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Old Wharf Grill",
+          "cuisine": "Californian",
+          "location": "Monterey",
+          "rating": 4.1,
+          "price_range": "$",
+          "seating_style": "patio"
+        }
+      },
+      {
+        "id": "rst_tidehouse_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Juniper Coast",
+          "cuisine": "Californian",
+          "location": "Monterey",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "upscale lounge"
+        }
+      }
+    ]
+  }
+}

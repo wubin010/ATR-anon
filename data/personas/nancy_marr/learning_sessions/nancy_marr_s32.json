@@ -1,0 +1,126 @@
+{
+  "session_id": "nancy_marr_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "workspace",
+  "reason_for_call": "Organize some photos",
+  "task_params": {
+    "location": "Camera Uploads/Garden 2024",
+    "file_type": "image",
+    "file_ids": [
+      "fil_tomato_blossom_01",
+      "fil_bee_coneflower_02",
+      "fil_rainbarrel_vines_03"
+    ],
+    "folder_id": "fld_blog_photo_selects_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Camera Uploads/Garden 2024",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_tomato_blossom_01",
+          "fil_bee_coneflower_02",
+          "fil_rainbarrel_vines_03"
+        ],
+        "folder_id": "fld_blog_photo_selects_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_tomato_blossom_01",
+        "type": "file",
+        "attributes": {
+          "name": "tomato-blossom-closeup.jpg",
+          "file_type": "image",
+          "location": "Camera Uploads/Garden 2024",
+          "owner": "Nancy Marr",
+          "labels": [
+            "garden",
+            "recent",
+            "favorite"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_bee_coneflower_02",
+        "type": "file",
+        "attributes": {
+          "name": "bee-on-coneflower.jpg",
+          "file_type": "image",
+          "location": "Camera Uploads/Garden 2024",
+          "owner": "Nancy Marr",
+          "labels": [
+            "garden",
+            "recent",
+            "pollinator"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_rainbarrel_vines_03",
+        "type": "file",
+        "attributes": {
+          "name": "rainbarrel-and-vines.png",
+          "file_type": "image",
+          "location": "Camera Uploads/Garden 2024",
+          "owner": "Nancy Marr",
+          "labels": [
+            "garden",
+            "recent"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_blog_photo_selects_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Blog Photo Selects",
+          "purpose": "picked images to prep for blog posts"
+        }
+      },
+      {
+        "id": "fld_archive_garden_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Garden Archive",
+          "purpose": "older garden photos and backups"
+        }
+      }
+    ]
+  }
+}

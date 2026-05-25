@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm in Lyon for a trip and need a dinner reservation for two on 2026-10-08 at 7:30pm. Please choose a place and book it.",
+  "gold_value": "rst_lyon_marmite_01",
+  "session_id": "jennifer_philmon_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "jennifer_philmon_reservation_01",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_reservation_01",
+    "rule_text": "When choosing restaurants while traveling, she leans toward hearty, practical places that fit a modest budget rather than upscale dining.",
+    "canonical_answer": "When I eat out on trips, I prefer hearty budget-friendly places over fancy restaurants."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_lyon_marmite_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "La Marmite des Canuts",
+          "cuisine": "Traditional Lyonnaise",
+          "location": "Lyon",
+          "rating": 4.4,
+          "price_range": "$",
+          "seating_style": "casual bistro"
+        }
+      },
+      {
+        "id": "rst_lyon_atelier_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Atelier Lumiere",
+          "cuisine": "Modern French tasting menu",
+          "location": "Lyon",
+          "rating": 4.9,
+          "price_range": "$$$$",
+          "seating_style": "chef's counter"
+        }
+      },
+      {
+        "id": "rst_lyon_belvedere_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Le Belvedere",
+          "cuisine": "Contemporary French small plates",
+          "location": "Lyon",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "rooftop dining"
+        }
+      },
+      {
+        "id": "rst_lyon_verte_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Verte Saison Cafe",
+          "cuisine": "Salads and grain bowls",
+          "location": "Lyon",
+          "rating": 4.7,
+          "price_range": "$",
+          "seating_style": "stylish cafe"
+        }
+      },
+      {
+        "id": "rst_lyon_boeuf_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Boeuf & Vin Brasserie",
+          "cuisine": "Steakhouse",
+          "location": "Lyon",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "brasserie"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_lyon_marmite_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

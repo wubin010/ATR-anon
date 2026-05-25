@@ -1,0 +1,192 @@
+{
+  "session_id": "maximo_esteban_irizarry_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "coastal",
+      "quiet",
+      "photography",
+      "off-season"
+    ],
+    "destination_ids": [
+      "dest_port_townsend_01",
+      "dest_morro_bay_02"
+    ],
+    "destination": "Morro Bay",
+    "duration_days": 4,
+    "traveler_count": 2,
+    "selected_stop_ids": [
+      "stop_morro_embarcadero_01",
+      "stop_montana_oro_02",
+      "stop_sweet_springs_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "coastal",
+          "quiet",
+          "photography",
+          "off-season"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_port_townsend_01",
+          "dest_morro_bay_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Morro Bay",
+        "stop_tags": [
+          "photography",
+          "quiet"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Morro Bay",
+        "duration_days": 4,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_morro_embarcadero_01",
+          "stop_montana_oro_02",
+          "stop_sweet_springs_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_stopovers": false,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_port_townsend_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Port Townsend",
+          "region": "Washington coast",
+          "tags": [
+            "coastal",
+            "quiet",
+            "photography",
+            "off-season",
+            "historic",
+            "food"
+          ]
+        }
+      },
+      {
+        "id": "dest_morro_bay_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Morro Bay",
+          "region": "California coast",
+          "tags": [
+            "coastal",
+            "quiet",
+            "photography",
+            "off-season",
+            "seafood",
+            "birdwatching"
+          ]
+        }
+      },
+      {
+        "id": "dest_galveston_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Galveston",
+          "region": "Texas coast",
+          "tags": [
+            "coastal",
+            "food",
+            "historic",
+            "boardwalk"
+          ]
+        }
+      },
+      {
+        "id": "stop_morro_embarcadero_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Morro Bay Embarcadero",
+          "location": "Morro Bay",
+          "tags": [
+            "waterfront",
+            "photography",
+            "seafood",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "stop_montana_oro_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Montaña de Oro Bluff Trail",
+          "location": "Morro Bay",
+          "tags": [
+            "coastal",
+            "nature",
+            "photography",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "stop_sweet_springs_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sweet Springs Nature Preserve",
+          "location": "Morro Bay",
+          "tags": [
+            "quiet",
+            "birdwatching",
+            "photography",
+            "nature"
+          ]
+        }
+      }
+    ]
+  }
+}

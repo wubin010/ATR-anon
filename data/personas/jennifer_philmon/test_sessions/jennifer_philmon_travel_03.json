@@ -1,0 +1,160 @@
+{
+  "instruction": "One stop on trip T-8842 in Scranton fell through. Please swap in a single replacement for a daytime visit near Scranton that fits in about 60–90 minutes and doesn't add more than roughly 10 minutes of detour from the current route.",
+  "gold_value": [
+    "stop_scranton_iron_furnaces_01"
+  ],
+  "session_id": "jennifer_philmon_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "jennifer_philmon_travel_03",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_travel_03",
+    "rule_text": "When a trip stop falls through, she prefers replacement stops that keep the same industrial-history theme rather than any convenient substitute.",
+    "canonical_answer": "If a planned stop breaks, I want another industrial or steam-history stop in its place."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_scranton_iron_furnaces_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Scranton Iron Furnaces",
+          "trip_id": "T-8842",
+          "location": "Scranton, Pennsylvania",
+          "stop_type": "industrial_heritage_site",
+          "tags": [
+            "industrial_history",
+            "ironworks",
+            "heritage",
+            "outdoor",
+            "daytime"
+          ],
+          "rating": 4.4,
+          "review_count": 612,
+          "detour_minutes_from_route": 9,
+          "visit_duration_hours": 1.25
+        }
+      },
+      {
+        "id": "stop_steamtown_nhs_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Steamtown National Historic Site",
+          "trip_id": "T-8842",
+          "location": "Scranton, Pennsylvania",
+          "stop_type": "rail_museum",
+          "tags": [
+            "industrial_history",
+            "rail_history",
+            "steam_engines",
+            "museum",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 5210,
+          "detour_minutes_from_route": 18,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_nay_aug_park_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Nay Aug Park",
+          "trip_id": "T-8842",
+          "location": "Scranton, Pennsylvania",
+          "stop_type": "city_park",
+          "tags": [
+            "park",
+            "waterfall",
+            "scenic",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 3774,
+          "detour_minutes_from_route": 4,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_electric_city_aquarium_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Electric City Aquarium",
+          "trip_id": "T-8842",
+          "location": "Scranton, Pennsylvania",
+          "stop_type": "aquarium",
+          "tags": [
+            "aquarium",
+            "indoor",
+            "family",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 2196,
+          "detour_minutes_from_route": 3,
+          "visit_duration_hours": 1.25
+        }
+      },
+      {
+        "id": "stop_everhart_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Everhart Museum",
+          "trip_id": "T-8842",
+          "location": "Scranton, Pennsylvania",
+          "stop_type": "museum",
+          "tags": [
+            "art",
+            "natural_history",
+            "museum",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 1483,
+          "detour_minutes_from_route": 6,
+          "visit_duration_hours": 1.25
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_scranton_iron_furnaces_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

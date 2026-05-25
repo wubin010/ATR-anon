@@ -1,0 +1,124 @@
+{
+  "session_id": "john_brown_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Baton Rouge",
+    "event_tags": [
+      "art",
+      "exhibit",
+      "opening"
+    ],
+    "event_name": "Magnolia Warehouse Exhibit Opening",
+    "ticket_type": "general_admission",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Baton Rouge",
+        "event_tags": [
+          "art",
+          "exhibit",
+          "opening"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_magnolia_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_magnolia_01",
+        "type": "event",
+        "attributes": {
+          "name": "After Hours: Magnolia Warehouse Exhibit Opening",
+          "location": "Baton Rouge",
+          "date_time": "2025-05-22T18:30:00",
+          "price": 18.0,
+          "event_tags": [
+            "art",
+            "exhibit",
+            "opening",
+            "gallery"
+          ]
+        }
+      },
+      {
+        "id": "evt_river_02",
+        "type": "event",
+        "attributes": {
+          "name": "River Center Photo Showcase",
+          "location": "Baton Rouge",
+          "date_time": "2025-05-22T19:00:00",
+          "price": 12.0,
+          "event_tags": [
+            "art",
+            "exhibit",
+            "photography"
+          ]
+        }
+      },
+      {
+        "id": "evt_cedar_03",
+        "type": "event",
+        "attributes": {
+          "name": "Cedar Street Print Fair Opening Night",
+          "location": "Baton Rouge",
+          "date_time": "2025-05-23T18:00:00",
+          "price": 20.0,
+          "event_tags": [
+            "art",
+            "opening",
+            "prints",
+            "market"
+          ]
+        }
+      },
+      {
+        "id": "evt_lsu_04",
+        "type": "event",
+        "attributes": {
+          "name": "LSU Museum Student Installation Walkthrough",
+          "location": "Baton Rouge",
+          "date_time": "2025-05-21T17:45:00",
+          "price": 0.0,
+          "event_tags": [
+            "art",
+            "installation",
+            "talk"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "session_id": "fs_scheduling_pc_weekly_recurring_reminder_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "persona_id": "few_shot",
+  "rule_id": "fs_scheduling_pc_weekly_recurring_reminder",
+  "instruction": "Saturday morning 10–11am I want to do spring tilling and fertilizing in the backyard — put it on my calendar. Set up the related reminder too.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": []
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_scheduling_pc_weekly_recurring_reminder",
+    "rule_text": "When setting reminders for gardening or seasonal household tasks, must use cadence=weekly (recurring weekly), not once or before_event — the user believes such tasks need ongoing attention and a single reminder is useless.",
+    "canonical_answer": "Garden stuff and other things that need ongoing attention — set those reminders on a weekly cadence, don't give me a one-shot, I'll forget by the next week."
+  }
+}

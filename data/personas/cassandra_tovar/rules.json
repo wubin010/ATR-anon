@@ -1,0 +1,354 @@
+[
+  {
+    "rule_text": "For outreach to clients, schools, or church teams, she prefers a reviewable draft before anything is sent.",
+    "canonical_answer": "I like messages to clients, school partners, or church teams drafted first so I can review the tone and details before they go out.",
+    "counterfactual_default": "Send the composed message directly once the content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "their disciplined, bullet‑journal‑driven workflow ensures every installation is documented to NEC code"
+      },
+      {
+        "type": "direct",
+        "content": "Leading small crews on tight deadlines, they balance assertiveness with cooperative mentoring"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "cassandra_tovar_communication_01",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning conference or expo travel within practical driving range, she prefers ground transportation over flying.",
+    "canonical_answer": "For regional work or conference trips, I usually prefer to drive or take ground transport instead of booking a flight.",
+    "counterfactual_default": "Look for and book flight options first.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Cassandra Tovar prefers road‑trip itineraries that combine tech exposure with culinary discovery"
+      },
+      {
+        "type": "direct",
+        "content": "They recently drove to Austin for SXSW’s interactive track"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "cassandra_tovar_travel_01",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When building a new trip itinerary, she prefers stops tied to AV, electronics, sound systems, or related tech culture over generic tourist attractions.",
+    "canonical_answer": "When I plan a trip, I like the stops to center on AV, electronics, or sound‑system culture instead of just standard sightseeing.",
+    "counterfactual_default": "Pick the most popular general-interest attractions in the destination.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "planning trips around AV expos or regional conferences"
+      },
+      {
+        "type": "direct",
+        "content": "study the city’s historic sound‑system installations in jazz clubs"
+      },
+      {
+        "type": "direct",
+        "content": "tour a cutting‑edge smart‑home showroom"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "cassandra_tovar_travel_02",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a booked trip stop falls through, she prefers replacement stops that keep the same tech-or-audio theme rather than swapping in unrelated crowd-pleasers.",
+    "canonical_answer": "If part of my trip gets disrupted, I’d rather replace it with another tech or audio-focused stop that fits the original theme.",
+    "counterfactual_default": "Replace the disrupted stop with any convenient or highly rated alternative.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "planning trips around AV expos or regional conferences"
+      },
+      {
+        "type": "direct",
+        "content": "study the city’s historic sound‑system installations in jazz clubs"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "cassandra_tovar_travel_03",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing where to eat out, she prefers Southern comfort food or soulful local cooking over generic chain restaurants.",
+    "canonical_answer": "If I’m booking a meal out, I’d rather go somewhere known for Southern comfort food or local soul-inflected cooking than a chain.",
+    "counterfactual_default": "Choose a convenient, familiar, or broadly popular chain restaurant.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "a quiet love for Southern comfort food"
+      },
+      {
+        "type": "direct",
+        "content": "a short stay in Savannah gave them a taste of Southern cooking traditions"
+      },
+      {
+        "type": "direct",
+        "content": "They love cooking Southern comfort dishes"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "cassandra_tovar_reservation_01",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing entertainment tickets, she prefers jazz, gospel, or other live music events over non-music attractions.",
+    "canonical_answer": "For event tickets, I usually want live music—especially jazz, gospel, or soul-adjacent performances—over other kinds of events.",
+    "counterfactual_default": "Pick a broadly popular event without prioritizing live music.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Their artistic palette is anchored by a love for R&B, soul, and gospel"
+      },
+      {
+        "type": "direct",
+        "content": "They attend monthly open‑mic nights at a downtown jazz club"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "cassandra_tovar_reservation_02",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If the service being considered feels trendy, experimental, or fad-driven, the agent should check with her before booking it.",
+    "canonical_answer": "If a service looks trendy or experimental instead of proven, ask me before booking it.",
+    "counterfactual_default": "Go ahead and book the service if it appears to fit the request.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "always balancing the newest ideas with proven methods"
+      },
+      {
+        "type": "direct",
+        "content": "curiosity drives them to experiment with emerging standards like Dante"
+      }
+    ],
+    "check_type": "confirm",
+    "action_step": {
+      "tool": "get_user_confirmation",
+      "param": "book_service_appointment"
+    },
+    "rule_id": "cassandra_tovar_reservation_05",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For grocery or ingredient purchases, she prefers to assemble a shopping list first rather than placing immediate piecemeal orders.",
+    "canonical_answer": "For food or kitchen supplies, I usually want a shopping list built first so I can plan before buying.",
+    "counterfactual_default": "Place the needed items into orders directly as they come up.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "methodical budgeting"
+      },
+      {
+        "type": "direct",
+        "content": "Bullet journaling is a daily habit that helps her track projects and personal goals"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    },
+    "rule_id": "cassandra_tovar_commerce_01",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering produce or staple ingredients, she prefers locally grown options over generic alternatives.",
+    "canonical_answer": "If I’m ordering ingredients, I prefer locally grown produce whenever there’s a good option.",
+    "counterfactual_default": "Choose a standard or generic product without prioritizing local sourcing.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "They source locally grown kale and black‑eyed peas at the Decatur farmers market"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "cassandra_tovar_commerce_02",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For personal commitments like jogs, yoga, or self-study, she prefers a private reminder rather than creating a formal calendar event.",
+    "canonical_answer": "For my personal routines, I’d rather set myself a reminder than clutter the calendar with a full event.",
+    "counterfactual_default": "Create a normal calendar event for the activity.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Bullet journaling is a daily habit that helps her track projects and personal goals"
+      },
+      {
+        "type": "direct",
+        "content": "she also jogs through Decatur’s parks and practices gentle yoga"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": null
+    },
+    "rule_id": "cassandra_tovar_scheduling_01",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invite conflicts with work, church, or volunteer responsibilities that are not yet settled, she prefers responding tentatively rather than accepting or declining outright.",
+    "canonical_answer": "If an invitation overlaps with commitments I’m still sorting out, I usually respond as tentative first.",
+    "counterfactual_default": "Accept or decline the invitation immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "On Sundays they volunteer as a sound‑board operator for the church’s worship team"
+      },
+      {
+        "type": "direct",
+        "content": "Leading small crews on tight deadlines"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "cassandra_tovar_scheduling_03",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing the priority level for messages, she prefers marking community, school, or church coordination threads as high priority over casual updates.",
+    "canonical_answer": "I mark church, school, or community coordination messages as high priority because those commitments affect other people’s plans.",
+    "counterfactual_default": "Leave the messages at normal priority unless they are obviously urgent in the moment.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "This cultural foundation fuels her ambition to provide reliable AV solutions for schools, churches, and community centers"
+      },
+      {
+        "type": "direct",
+        "content": "On Sundays they volunteer as a sound‑board operator for the church’s worship team"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "cassandra_tovar_communication_04",
+    "persona_id": "cassandra_tovar",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

@@ -1,0 +1,594 @@
+[
+  {
+    "rule_text": "When he is preparing outreach, thought-leadership, or nuanced professional correspondence, he prefers to draft the message first rather than sending it immediately.",
+    "canonical_answer": "If a message carries strategy, advocacy, or polished public-facing ideas, I draft it before it goes out.",
+    "counterfactual_default": "A person without this rule would send the completed message directly once the requested content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "writing an online blog on art, health, and society"
+      },
+      {
+        "type": "direct",
+        "content": "He possesses exceptional communication skills, adept at negotiating with multidisciplinary teams, stakeholders, and external partners."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "gabriel_campbell_communication_01",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invite overlaps with unresolved work or travel uncertainty, he prefers a tentative response rather than accepting or declining outright.",
+    "canonical_answer": "Whenever my schedule is not fully settled, I always respond tentatively instead of pretending the conflict is already resolved.",
+    "counterfactual_default": "A person without this rule would usually accept if interested or decline if there is any possible conflict.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "plan meticulous weekend getaways"
+      },
+      {
+        "type": "direct",
+        "content": "The New England emphasis on modesty, punctuality, and community service informs his reliable and organized professional demeanor"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "gabriel_campbell_scheduling_01",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For important personal routines like writing sessions, yoga, or volunteer commitments, he prefers creating a real calendar event rather than just leaving himself a reminder.",
+    "canonical_answer": "Meaningful routines deserve an actual time block, not just a nudge.",
+    "counterfactual_default": "A person without this rule would often set a reminder instead of blocking time on the calendar.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "practices yoga to maintain his renowned calm and resilience"
+      },
+      {
+        "type": "direct",
+        "content": "volunteers at community health fairs"
+      },
+      {
+        "type": "direct",
+        "content": "retreats to a quiet corner of a coffee shop to draft reflections for an online blog"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "gabriel_campbell_scheduling_02",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he does want reminders for recurring self-care or fitness habits, he prefers them to repeat weekly.",
+    "canonical_answer": "I always set recurring personal-practice reminders on a weekly rhythm.",
+    "counterfactual_default": "A person without this rule would often make a one-time reminder or choose an ad hoc cadence.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "cycle the Quincy shoreline with the Quincy Shoreline Cycling Club"
+      },
+      {
+        "type": "direct",
+        "content": "hike the Blue Hills Reservation on weekends"
+      },
+      {
+        "type": "direct",
+        "content": "attend yoga at Sage Yoga Studio"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "gabriel_campbell_scheduling_03",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing files, he prefers a project-based scheme rather than sorting primarily by type or date.",
+    "canonical_answer": "I always organize files by project first.",
+    "counterfactual_default": "A person without this rule would commonly sort files by type or date because those are the easiest generic schemes.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Strategic Healthcare Management, Financial Planning & Budgeting, Regulatory Compliance (HIPAA, CMS), Process Improvement (Lean Six Sigma)"
+      },
+      {
+        "type": "direct",
+        "content": "channel a fiercely competitive yet remarkably calm demeanor into championing evidence-based art-therapy programs"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "gabriel_campbell_workspace_01",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When starting a new write-up on healthcare metrics or operational findings, he prefers a formal report rather than an informal note.",
+    "canonical_answer": "Whenever I start a new analysis of performance findings, I always put it into a report format.",
+    "counterfactual_default": "A person without this rule would often capture the material in a quick note first.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "His strong data analysis and reporting capabilities translate complex performance metrics into actionable insights for senior leadership."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "gabriel_campbell_workspace_02",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he needs a reusable structure for recurring health-fair or art-therapy planning, he prefers creating a template rather than a one-off note.",
+    "canonical_answer": "Repeatable program work should start from a template, not a scratch note.",
+    "counterfactual_default": "A person without this rule would usually make a single note and rewrite the structure each time.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "organizing art-therapy stations and health education workshops"
+      },
+      {
+        "type": "direct",
+        "content": "Program Development (Art Therapy Integration)"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "gabriel_campbell_workspace_03",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning trips, he prefers stops centered on art, photography walks, or scenic cultural landscapes rather than generic tourist filler.",
+    "canonical_answer": "Whenever I build a trip, I always choose stops that feed art, photography, or meaningful landscape experiences.",
+    "counterfactual_default": "A person without this rule would tend to pick broadly popular tourist stops with the highest general appeal.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "dreaming of immersive art pilgrimages to Florence’s Uffizi Gallery, Kyoto’s Zen gardens, and Berlin’s avant-garde scene"
+      },
+      {
+        "type": "direct",
+        "content": "spontaneous photo walks in new cities"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "gabriel_campbell_travel_01",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an existing trip has to be replanned, he prefers replacement stops that preserve the original art-or-nature theme rather than swapping in any convenient high-rated alternative.",
+    "canonical_answer": "Whenever a stop falls through, I always replace it with something in the same artistic or landscape spirit.",
+    "counterfactual_default": "A person without this rule would replace the disrupted stop with whatever alternative is most convenient or most popular.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "plan meticulous weekend getaways to Cape Cod’s lighthouse trails and Martha’s Vineyard’s vineyards"
+      },
+      {
+        "type": "direct",
+        "content": "dreaming of immersive art pilgrimages"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "gabriel_campbell_travel_02",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For regional or weekend travel, he prefers ground transportation over flying.",
+    "canonical_answer": "For shorter getaways, I always take ground transport instead of a flight when that option exists.",
+    "counterfactual_default": "A person without this rule would often check flights first or book the fastest air option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "plan meticulous weekend getaways to Cape Cod’s lighthouse trails and Martha’s Vineyard’s vineyards"
+      },
+      {
+        "type": "direct",
+        "content": "balancing a modest budget"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "gabriel_campbell_travel_03",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing lodging, he prefers hotel options that are modestly priced but within walking distance of arts districts or photogenic neighborhoods.",
+    "canonical_answer": "Whenever I book a hotel, I always favor a budget-conscious place that lets me walk to galleries, museums, or good street scenes.",
+    "counterfactual_default": "A person without this rule would typically optimize for either the cheapest room anywhere or the most comfortable room regardless of location.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balancing a modest budget with a penchant for spontaneous photo walks in new cities"
+      },
+      {
+        "type": "direct",
+        "content": "frequent trips to European cultural capitals"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "gabriel_campbell_travel_04",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking event tickets, he prefers contemporary art, museum, literary, or music events over generic entertainment options.",
+    "canonical_answer": "I always choose cultural events that connect to art, ideas, or acoustic music before more generic entertainment.",
+    "counterfactual_default": "A person without this rule would choose whichever event is most mainstream, closest, or broadly popular.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "frequent the Institute of Contemporary Art and Museum of Fine Arts Boston"
+      },
+      {
+        "type": "direct",
+        "content": "jam on acoustic guitar playing Nick Drake covers at café open-mic nights"
+      },
+      {
+        "type": "direct",
+        "content": "deep-dive reading in philosophy, literary theory, and the latest trends in visual culture"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "gabriel_campbell_reservation_01",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When reserving a meal out, he prefers independent local places with strong New England seafood or creative vegetable-forward options over chain restaurants.",
+    "canonical_answer": "Whenever I book a table, I always lean toward local spots that reflect my seafood tastes or my roasted-vegetable side of eating.",
+    "counterfactual_default": "A person without this rule would often pick a familiar chain or the most convenient generic restaurant.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "relish New England clam chowder, lobster rolls, and roasted vegetable quinoa bowls spiced with cumin and smoked paprika"
+      },
+      {
+        "type": "direct",
+        "content": "locally sourced olives"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "gabriel_campbell_reservation_03",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When stocking up on food or household staples, he prefers building a running list rather than placing an impulse order immediately.",
+    "canonical_answer": "I always collect staples into a list first instead of impulse-ordering them one by one.",
+    "counterfactual_default": "A person without this rule would place an order for the needed item as soon as it comes up.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "moderate cooking skills"
+      },
+      {
+        "type": "direct",
+        "content": "often skip lunch when deep-in research for a blog post"
+      },
+      {
+        "type": "inferred",
+        "content": "Because he gets absorbed in research and meal timing is irregular, a running list helps him batch practical purchases instead of making ad hoc orders."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    },
+    "rule_id": "gabriel_campbell_commerce_01",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing among products to order for food treats or hosting supplies, he prefers locally sourced or artisanal options over mass-market equivalents.",
+    "canonical_answer": "Whenever I order special food items, I always pick the local or artisanal version first.",
+    "counterfactual_default": "A person without this rule would usually choose the cheapest or most generic product that fits the category.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "charcuterie boards featuring artisanal cheese and locally sourced olives"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "gabriel_campbell_commerce_02",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For subscriptions he is no longer really using, he prefers canceling them outright rather than merely pausing them.",
+    "canonical_answer": "I never keep an underused subscription lingering; I cancel it rather than putting it on pause.",
+    "counterfactual_default": "A person without this rule would often pause the subscription first to avoid a full cutoff.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balancing a modest budget"
+      },
+      {
+        "type": "direct",
+        "content": "data-driven strategic planning"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "cancel_subscription",
+      "param": null
+    },
+    "rule_id": "gabriel_campbell_commerce_03",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When files are no longer active, he prefers archiving them into a project-specific archive folder rather than leaving them mixed into general storage.",
+    "canonical_answer": "Inactive files always go into the archive for the project they belonged to.",
+    "counterfactual_default": "A person without this rule would often leave the files where they are or archive them into a generic catch-all location.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Strategic Healthcare Management"
+      },
+      {
+        "type": "direct",
+        "content": "reliable and organized professional demeanor"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "archive_files",
+      "param": "folder_id"
+    },
+    "rule_id": "gabriel_campbell_workspace_05",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When moving active files, he prefers placing them into distinct project folders rather than broad type-based buckets.",
+    "canonical_answer": "I always move working files into the folder for the specific project, not just into a generic type folder.",
+    "counterfactual_default": "A person without this rule would often move files into broad folders like documents, images, or misc.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "overseeing operational workflows"
+      },
+      {
+        "type": "direct",
+        "content": "aligning clinical services with financial sustainability"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "gabriel_campbell_workspace_06",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When messages concern operational decisions, patient services, or senior-leadership matters, he prefers marking them high priority rather than leaving them at normal priority.",
+    "canonical_answer": "I always mark operational and leadership-critical messages as high priority.",
+    "counterfactual_default": "A person without this rule would usually leave most messages at normal priority unless something looked obviously urgent.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "reduce wait times"
+      },
+      {
+        "type": "direct",
+        "content": "translate complex performance metrics into actionable insights for senior leadership"
+      },
+      {
+        "type": "direct",
+        "content": "targeting positions such as Director of Patient Services or Chief Operating Officer"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "gabriel_campbell_communication_04",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a local service appointment tied to his wellness habits, he prefers providers aligned with yoga or restorative self-care rather than generic service options.",
+    "canonical_answer": "Whenever I book a personal wellness appointment, I always choose a provider that fits my yoga-and-recovery routine.",
+    "counterfactual_default": "A person without this rule would pick whichever provider has the earliest opening or most generic availability.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "attend yoga at Sage Yoga Studio"
+      },
+      {
+        "type": "direct",
+        "content": "practices yoga to maintain his renowned calm and resilience"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "gabriel_campbell_reservation_04",
+    "persona_id": "gabriel_campbell",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

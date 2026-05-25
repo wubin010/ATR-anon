@@ -1,0 +1,104 @@
+{
+  "session_id": "gabriel_campbell_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "commerce",
+  "reason_for_call": "Order an item online",
+  "task_params": {
+    "category": "rain jacket",
+    "budget": 140,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "rain jacket",
+        "budget": 140,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_tideway_01",
+          "prod_harbor_02",
+          "prod_noreast_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_tideway_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_tideway_01",
+        "type": "product",
+        "attributes": {
+          "name": "Tideway Aero Rain Shell",
+          "price": 129.0,
+          "category": "rain jacket",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_harbor_02",
+        "type": "product",
+        "attributes": {
+          "name": "Harbor Mist Packable Jacket",
+          "price": 94.0,
+          "category": "rain jacket",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_noreast_03",
+        "type": "product",
+        "attributes": {
+          "name": "Nor'east Commuter Shell",
+          "price": 138.0,
+          "category": "rain jacket",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_breakwater_04",
+        "type": "product",
+        "attributes": {
+          "name": "Breakwater Thermal Cycling Vest",
+          "price": 88.0,
+          "category": "cycling vest",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

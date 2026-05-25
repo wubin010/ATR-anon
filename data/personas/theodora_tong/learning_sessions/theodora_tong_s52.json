@@ -1,0 +1,117 @@
+{
+  "session_id": "theodora_tong_s52",
+  "session_type": "learning",
+  "day_offset": 52,
+  "domain": "commerce",
+  "reason_for_call": "Compare craft supplies",
+  "task_params": {
+    "category": "bookbinding",
+    "budget": 35,
+    "product_ids": [
+      "prod_starter_01",
+      "prod_kit_02",
+      "prod_paper_03"
+    ],
+    "items": [
+      "ThreadBound Starter Bookbinding Set",
+      "Pocket Press Beginner Journal Kit",
+      "Acid-Free Text Block Paper Pack"
+    ],
+    "list_name": "Journal materials"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "bookbinding",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_starter_01",
+          "prod_kit_02",
+          "prod_paper_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "ThreadBound Starter Bookbinding Set",
+          "Pocket Press Beginner Journal Kit",
+          "Acid-Free Text Block Paper Pack"
+        ],
+        "list_name": "Journal materials"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_starter_01",
+        "type": "product",
+        "attributes": {
+          "name": "ThreadBound Starter Bookbinding Set",
+          "price": 24.99,
+          "category": "bookbinding",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_kit_02",
+        "type": "product",
+        "attributes": {
+          "name": "Pocket Press Beginner Journal Kit",
+          "price": 31.5,
+          "category": "bookbinding",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_paper_03",
+        "type": "product",
+        "attributes": {
+          "name": "Acid-Free Text Block Paper Pack",
+          "price": 12.75,
+          "category": "bookbinding",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_tools_04",
+        "type": "product",
+        "attributes": {
+          "name": "Awl and Bone Folder Basics Bundle",
+          "price": 18.25,
+          "category": "bookbinding",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

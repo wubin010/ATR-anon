@@ -1,0 +1,101 @@
+{
+  "session_id": "vanessa_davis_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "communication",
+  "reason_for_call": "Send an announcement message.",
+  "task_params": {
+    "sender": "Pastor Elaine Brooks",
+    "recipient": "church-team@newhopecommunity.org",
+    "subject": "Workshop Time Confirmed",
+    "language": "en",
+    "announcement_points": [
+      "let the team know the workshop time is now set",
+      "workshop will be this Saturday from 10:00 AM to 12:00 PM",
+      "thank everyone for being flexible while the time got sorted out",
+      "ask the team to share it with anyone helping that day"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Pastor Elaine Brooks",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "recipient": "church-team@newhopecommunity.org",
+        "subject": "Workshop Time Confirmed",
+        "body": "<authored from announcement_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_church_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Pastor Elaine Brooks",
+          "subject": "Workshop time is confirmed",
+          "body": "Hi Vanessa, we finally nailed it down. The vehicle safety workshop will be this Saturday from 10:00 AM to 12:00 PM in the fellowship hall. Please send a note out to the church team when you get a chance. Thanks for waiting on this.",
+          "thread_id": "thr_church_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-23T09:12:00"
+        }
+      },
+      {
+        "id": "msg_family_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Denise Carter",
+          "subject": "Sunday dinner headcount",
+          "body": "Hey Vanessa, just checking how many folks are coming by after church this week so I can plan the sides.",
+          "thread_id": "thr_family_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-23T07:45:00"
+        }
+      },
+      {
+        "id": "msg_work_03",
+        "type": "message",
+        "attributes": {
+          "sender": "RidgeLine Dispatch",
+          "subject": "Updated route paperwork",
+          "body": "Your revised delivery paperwork is attached. Please review before tomorrow morning's run.",
+          "thread_id": "thr_work_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-03-22T18:20:00"
+        }
+      }
+    ]
+  }
+}

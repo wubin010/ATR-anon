@@ -1,0 +1,167 @@
+{
+  "session_id": "joseph_eldridge_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Blue Ridge",
+      "overnight",
+      "hike",
+      "meal"
+    ],
+    "destination": "Blowing Rock",
+    "duration_days": 2,
+    "traveler_count": 2,
+    "stop_tags": [
+      "gentle hike",
+      "restaurant"
+    ],
+    "selected_stop_ids": [
+      "stop_mosescone_01",
+      "stop_bistroroca_02"
+    ],
+    "destination_ids": [
+      "dest_blowingrock_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Blue Ridge",
+          "overnight",
+          "hike",
+          "meal"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_blowingrock_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Blowing Rock",
+        "stop_tags": [
+          "gentle hike",
+          "restaurant"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Blowing Rock",
+        "duration_days": 2,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_mosescone_01",
+          "stop_bistroroca_02"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_blowingrock_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Blowing Rock",
+          "region": "Blue Ridge",
+          "tags": [
+            "overnight",
+            "hike",
+            "meal",
+            "small town"
+          ]
+        }
+      },
+      {
+        "id": "dest_boone_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Boone",
+          "region": "Blue Ridge",
+          "tags": [
+            "mountain",
+            "restaurants",
+            "college town"
+          ]
+        }
+      },
+      {
+        "id": "stop_mosescone_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Moses H. Cone Memorial Park Carriage Trails",
+          "location": "Blowing Rock",
+          "tags": [
+            "gentle hike",
+            "scenic",
+            "outdoors"
+          ]
+        }
+      },
+      {
+        "id": "stop_bistroroca_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Bistro Roca",
+          "location": "Blowing Rock",
+          "tags": [
+            "restaurant",
+            "dinner",
+            "relaxed"
+          ]
+        }
+      },
+      {
+        "id": "stop_tweetsie_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Tweetsie Railroad",
+          "location": "Blowing Rock",
+          "tags": [
+            "family",
+            "attraction",
+            "railroad"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "session_id": "romisha_shields_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "workspace",
+  "reason_for_call": "Sort some craft files",
+  "task_params": {
+    "location": "Craft Files",
+    "file_ids": [
+      "file_babyquilt_01",
+      "file_yarnlist_02",
+      "file_giftideas_03"
+    ],
+    "scheme": "by_type",
+    "patterns_folder_id": "fld_patterns_01",
+    "supplies_folder_id": "fld_supplies_02",
+    "gifts_folder_id": "fld_gifts_03"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Craft Files"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_babyquilt_01",
+          "file_yarnlist_02",
+          "file_giftideas_03"
+        ],
+        "scheme": "by_type"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_babyquilt_01"
+        ],
+        "folder_id": "fld_patterns_01"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_yarnlist_02"
+        ],
+        "folder_id": "fld_supplies_02"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_giftideas_03"
+        ],
+        "folder_id": "fld_gifts_03"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_babyquilt_01",
+        "type": "file",
+        "attributes": {
+          "name": "Baby Quilt Star Pattern.pdf",
+          "file_type": "pdf",
+          "location": "Craft Files",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_yarnlist_02",
+        "type": "file",
+        "attributes": {
+          "name": "Blue Shawl Yarn List.xlsx",
+          "file_type": "xlsx",
+          "location": "Craft Files",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_giftideas_03",
+        "type": "file",
+        "attributes": {
+          "name": "Holiday Gift Crochet Ideas.docx",
+          "file_type": "docx",
+          "location": "Craft Files",
+          "owner": "Romisha Shields",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_patterns_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Patterns",
+          "purpose": "Finished and in-progress pattern files"
+        }
+      },
+      {
+        "id": "fld_supplies_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Supply Lists",
+          "purpose": "Material lists and shopping sheets"
+        }
+      },
+      {
+        "id": "fld_gifts_03",
+        "type": "folder",
+        "attributes": {
+          "name": "Gift Ideas",
+          "purpose": "Idea notes for handmade presents"
+        }
+      }
+    ]
+  }
+}

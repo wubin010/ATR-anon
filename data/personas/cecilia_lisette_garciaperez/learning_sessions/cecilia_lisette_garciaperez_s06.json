@@ -1,0 +1,90 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Anthology Ideas",
+    "doc_type": "memo",
+    "title": "Mexican-American Anthology Theme Memo",
+    "source_doc_type": "note",
+    "memo_points": [
+      "intergenerational memory and oral history",
+      "borderland identity in everyday American life",
+      "language shifting between Spanish and English",
+      "food, ritual, and family as cultural archive",
+      "regional Texas voices alongside migration stories",
+      "tension between assimilation and preservation"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Anthology Ideas",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "Mexican-American Anthology Theme Memo",
+        "location": "Anthology Ideas",
+        "content_brief": "<authored from memo_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Anthology Fragments and Themes",
+          "doc_type": "note",
+          "location": "Anthology Ideas",
+          "content_brief": "Scattered notes on recurring topics for a Mexican-American anthology concept."
+        }
+      },
+      {
+        "id": "doc_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Salon Notes on Community Essays",
+          "doc_type": "note",
+          "location": "Anthology Ideas",
+          "content_brief": "Observations from recent literary conversations about voice, memory, and place."
+        }
+      },
+      {
+        "id": "doc_memo_03",
+        "type": "document",
+        "attributes": {
+          "title": "Regional Publishing Series Possibilities",
+          "doc_type": "memo",
+          "location": "Editorial Strategy",
+          "content_brief": "Outline of future series concepts for culturally focused publishing work."
+        }
+      }
+    ]
+  }
+}

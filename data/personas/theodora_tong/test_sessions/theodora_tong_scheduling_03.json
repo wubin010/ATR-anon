@@ -1,0 +1,102 @@
+{
+  "instruction": "I still haven't replied to the Pulse Loft invitation—please RSVP for me.",
+  "gold_value": "decline",
+  "session_id": "theodora_tong_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "theodora_tong_scheduling_03",
+  "rule_ref": {
+    "rule_id": "theodora_tong_scheduling_03",
+    "rule_text": "When invited to crowded fitness or noisy group activities, she prefers to decline rather than commit out of politeness.",
+    "canonical_answer": "If an invitation is for a crowded or high-energy group activity, I usually decline."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_pulse_loft_spin_social_20260612",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neon Spin Night + DJ Social",
+          "start_time": "2026-06-12T18:30:00",
+          "end_time": "2026-06-12T20:00:00",
+          "participants": [
+            "events@pulseloftstudio.com",
+            "theodora.tong@example.com"
+          ],
+          "location": "Pulse Loft Fitness Studio",
+          "calendar": "invites",
+          "status": "needs_response",
+          "organizer": "Pulse Loft Events Team",
+          "attendee_count": 42,
+          "registered_count": 38,
+          "music": "live DJ",
+          "rsvp_deadline": "2026-06-10T17:00:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_riverside_gallery_preview_20260614",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverside Gallery Summer Preview Reception",
+          "start_time": "2026-06-14T19:00:00",
+          "end_time": "2026-06-14T21:00:00",
+          "participants": [
+            "programs@riversidegallery.org",
+            "theodora.tong@example.com"
+          ],
+          "location": "Riverside Gallery",
+          "calendar": "invites",
+          "status": "needs_response",
+          "organizer": "Riverside Gallery Programs",
+          "attendee_count": 120,
+          "rsvp_deadline": "2026-06-11T18:00:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_client_review_20260613",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Client illustration review",
+          "start_time": "2026-06-13T11:00:00",
+          "end_time": "2026-06-13T12:00:00",
+          "participants": [
+            "mina.park@example.com",
+            "theodora.tong@example.com"
+          ],
+          "location": "North Dock Studio",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "decline"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

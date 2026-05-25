@@ -1,0 +1,84 @@
+{
+  "instruction": "I'm trying to free up a little room in my monthly budget for a trip. Please bring the cost of my CloudKeep subscription down a notch, but don't shut it off since I still need access to the files in there.",
+  "gold_value": "basic",
+  "session_id": "esther_hoitsma_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "esther_hoitsma_commerce_03",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_commerce_03",
+    "rule_text": "When she needs to trim recurring costs without giving a service up entirely, Esther prefers switching to the basic plan.",
+    "canonical_answer": "If I’m trying to save money but still keep a service, I move it down to the basic plan."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_cloudkeep_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "CloudKeep",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 17.99,
+          "storage_used_gb": 420,
+          "synced_devices": 5,
+          "shared_folders": 12
+        }
+      },
+      {
+        "id": "sub_focusflow_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "FocusFlow",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 9.99,
+          "projects_tracked": 18,
+          "team_members": 3
+        }
+      },
+      {
+        "id": "sub_recipebox_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "RecipeBox",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 4.99,
+          "saved_recipes": 146,
+          "meal_plans_per_month": 8
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "change_subscription_plan",
+          "arguments": {
+            "new_plan": "basic"
+          },
+          "compare_args": [
+            "new_plan"
+          ]
+        }
+      ]
+    }
+  }
+}

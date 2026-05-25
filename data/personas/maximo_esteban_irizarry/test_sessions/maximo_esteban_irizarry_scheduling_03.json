@@ -1,0 +1,108 @@
+{
+  "instruction": "I still haven't answered the Barrio Arts potluck invite at Casita Verde. Look at what I already have on the calendar for that evening and send back the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "maximo_esteban_irizarry_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "maximo_esteban_irizarry_scheduling_03",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_scheduling_03",
+    "rule_text": "When an invitation overlaps with something unresolved or potentially tiring, he prefers to respond tentatively rather than accepting or declining right away.",
+    "canonical_answer": "If an invite conflicts with my energy or plans, I usually answer tentatively first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_barrio_arts_potluck_20260911",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Barrio Arts Potluck & Open Mic",
+          "start_time": "2026-09-11T19:00:00",
+          "end_time": "2026-09-11T21:30:00",
+          "participants": [
+            "events@barrioarts.org",
+            "maximo.irizarry@example.com"
+          ],
+          "location": "Casita Verde Community Hall",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_clinic_intake_shift_20260911",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community clinic intake shift",
+          "start_time": "2026-09-11T18:00:00",
+          "end_time": "2026-09-11T20:30:00",
+          "participants": [
+            "maximo.irizarry@example.com",
+            "triage@southsideclinic.org"
+          ],
+          "location": "Southside Free Clinic",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_block_association_chili_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Block Association Chili Night",
+          "start_time": "2026-09-18T19:00:00",
+          "end_time": "2026-09-18T21:00:00",
+          "participants": [
+            "hello@mapleblock.org",
+            "maximo.irizarry@example.com"
+          ],
+          "location": "Maple Social Club",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_credit_union_checkin_20260911",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Credit union paperwork check-in",
+          "start_time": "2026-09-11T15:30:00",
+          "end_time": "2026-09-11T16:00:00",
+          "participants": [
+            "maximo.irizarry@example.com",
+            "service@harborcu.org"
+          ],
+          "location": "Harbor Credit Union",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

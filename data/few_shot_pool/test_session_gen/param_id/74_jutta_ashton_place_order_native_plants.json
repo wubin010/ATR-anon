@@ -1,0 +1,108 @@
+{
+  "instruction": "I need one plant for a small front garden display by the mailbox—keep it under $40 and make sure it won't get too tall. Pick one and order it for me.",
+  "gold_value": "prod_douglas_aster_01",
+  "session_id": "jutta_ashton_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_commerce_02",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_commerce_02",
+    "rule_text": "When shopping for plants for her garden displays, she prefers native plants over generic decorative options.",
+    "canonical_answer": "I always choose native plants for my garden arrangements."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_douglas_aster_01",
+        "type": "product",
+        "attributes": {
+          "name": "Douglas Aster Starter Plant",
+          "price": 32,
+          "category": "garden_plants",
+          "rating": 4.2,
+          "plant_class": "native perennial",
+          "native_region": "Pacific Northwest",
+          "mature_height_in": 18,
+          "flower_color": "lavender",
+          "container_size": "1-gallon"
+        }
+      },
+      {
+        "id": "prod_showy_milkweed_01",
+        "type": "product",
+        "attributes": {
+          "name": "Showy Milkweed 2-Gallon Plant",
+          "price": 36,
+          "category": "garden_plants",
+          "rating": 4.6,
+          "plant_class": "native perennial",
+          "native_region": "North America",
+          "mature_height_in": 42,
+          "flower_color": "pink",
+          "container_size": "2-gallon"
+        }
+      },
+      {
+        "id": "prod_sunburst_petunia_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sunburst Petunia Patio Plant",
+          "price": 24,
+          "category": "garden_plants",
+          "rating": 4.9,
+          "plant_class": "ornamental annual",
+          "mature_height_in": 12,
+          "flower_color": "orange-pink",
+          "reviews_count": 918,
+          "units_sold_last_30_days": 640
+        }
+      },
+      {
+        "id": "prod_royal_coleus_01",
+        "type": "product",
+        "attributes": {
+          "name": "Royal Coleus Color Mix",
+          "price": 19,
+          "category": "garden_plants",
+          "rating": 4.8,
+          "plant_class": "ornamental foliage",
+          "mature_height_in": 14,
+          "leaf_color": "purple-lime",
+          "reviews_count": 701,
+          "units_sold_last_30_days": 510
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_douglas_aster_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

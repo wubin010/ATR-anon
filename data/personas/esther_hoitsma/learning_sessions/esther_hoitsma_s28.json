@@ -1,0 +1,94 @@
+{
+  "session_id": "esther_hoitsma_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Trips",
+    "doc_type": "note",
+    "title": "Hiking Weekend Packing Checklist",
+    "content_points": [
+      "phone charger and watch charger",
+      "blister pads and moleskin",
+      "small first aid basics",
+      "water bottles or hydration pack",
+      "trail snacks",
+      "extra socks",
+      "light rain layer",
+      "headlamp",
+      "sunblock and lip balm",
+      "ID and trail pass"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Trips",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Hiking Weekend Packing Checklist",
+        "location": "Trips",
+        "content_brief": "<authored from content_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Road Trip Packing Template",
+          "doc_type": "template",
+          "location": "Trips",
+          "content_brief": "Reusable checklist template with sections for clothing, chargers, food, safety, and paperwork."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Camping Overnight Gear Template",
+          "doc_type": "template",
+          "location": "Trips",
+          "content_brief": "Packing template organized by shelter, layers, lighting, food, hydration, and emergency items."
+        }
+      },
+      {
+        "id": "doc_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Soccer Tournament Snack List",
+          "doc_type": "note",
+          "location": "Personal",
+          "content_brief": "Quick list of drinks, fruit, and recovery snacks for team travel."
+        }
+      }
+    ]
+  }
+}

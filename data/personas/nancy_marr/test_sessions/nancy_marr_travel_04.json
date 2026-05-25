@@ -1,0 +1,147 @@
+{
+  "instruction": "I'm starting from scratch on a first-time 3-day solo trip in Duluth. From the candidate stops below, choose exactly one stop to use as the single anchor for the itinerary. For this step, only select that one anchor stop and do not add any other stops yet.",
+  "gold_value": [
+    "stop_duluth_lakewalk_market_01"
+  ],
+  "session_id": "nancy_marr_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "nancy_marr_travel_04",
+  "rule_ref": {
+    "rule_id": "nancy_marr_travel_04",
+    "rule_text": "When choosing stops for a new trip, Nancy favors places centered on nature and local food culture over generic tourist attractions.",
+    "canonical_answer": "I like trip stops that immerse me in landscapes, markets, and local food rather than standard tourist checklists."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_duluth_lakewalk_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lakewalk Harbor Market Loop",
+          "stop_type": "waterfront_market_district",
+          "location": "Duluth, Minnesota",
+          "tags": [
+            "lakefront",
+            "nature",
+            "boardwalk",
+            "harbor",
+            "local_food",
+            "farmers_market",
+            "regional_food"
+          ],
+          "rating": 4.6,
+          "review_count": 418
+        }
+      },
+      {
+        "id": "stop_duluth_aerial_lift_bridge_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Aerial Lift Bridge",
+          "stop_type": "landmark",
+          "location": "Duluth, Minnesota",
+          "tags": [
+            "bridge",
+            "landmark",
+            "harbor",
+            "photo_spot",
+            "iconic"
+          ],
+          "rating": 4.9,
+          "review_count": 8421
+        }
+      },
+      {
+        "id": "stop_duluth_glensheen_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Glensheen Mansion",
+          "stop_type": "historic_estate",
+          "location": "Duluth, Minnesota",
+          "tags": [
+            "mansion",
+            "historic_estate",
+            "guided_tour",
+            "lakeside",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 6710
+        }
+      },
+      {
+        "id": "stop_duluth_enger_tower_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Enger Tower & Gardens",
+          "stop_type": "park",
+          "location": "Duluth, Minnesota",
+          "tags": [
+            "park",
+            "gardens",
+            "viewpoint",
+            "nature",
+            "skyline_view"
+          ],
+          "rating": 4.8,
+          "review_count": 3914
+        }
+      },
+      {
+        "id": "stop_duluth_lincoln_park_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lincoln Park Craft District",
+          "stop_type": "food_district",
+          "location": "Duluth, Minnesota",
+          "tags": [
+            "local_food",
+            "brewery",
+            "cider_house",
+            "shops",
+            "district"
+          ],
+          "rating": 4.7,
+          "review_count": 2546
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_duluth_lakewalk_market_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

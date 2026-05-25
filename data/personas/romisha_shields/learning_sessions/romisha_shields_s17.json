@@ -1,0 +1,94 @@
+{
+  "session_id": "romisha_shields_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "commerce",
+  "reason_for_call": "Order some garden supplies",
+  "task_params": {
+    "category": "seeds",
+    "budget": 20,
+    "sort_by": "rating",
+    "product_id": "prod_tomato_01",
+    "quantity": 2
+  },
+  "expected_tools": [
+    "search_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "seeds",
+        "budget": 20,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_tomato_01",
+        "quantity": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_tomato_01",
+        "type": "product",
+        "attributes": {
+          "name": "Brandywine Heirloom Tomato Seeds",
+          "price": 4.99,
+          "category": "seeds",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_tomato_02",
+        "type": "product",
+        "attributes": {
+          "name": "Cherokee Purple Tomato Seeds",
+          "price": 5.49,
+          "category": "seeds",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_tomato_03",
+        "type": "product",
+        "attributes": {
+          "name": "San Marzano Tomato Seeds",
+          "price": 3.79,
+          "category": "seeds",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_tools_04",
+        "type": "product",
+        "attributes": {
+          "name": "Hand Trowel",
+          "price": 8.99,
+          "category": "garden tools",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

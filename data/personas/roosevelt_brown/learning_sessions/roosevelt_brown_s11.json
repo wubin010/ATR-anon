@@ -1,0 +1,122 @@
+{
+  "session_id": "roosevelt_brown_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meeting.",
+  "task_params": {
+    "title": "Volunteer Health Fair Planning Meeting",
+    "start_time": "2025-03-18T16:30:00-04:00",
+    "end_time": "2025-03-18T17:15:00-04:00",
+    "participants": [
+      "maya.johnson@brocktonhealth.org",
+      "eli.rivera@brocktonhealth.org"
+    ],
+    "location": "Community Outreach Conference Room"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-18T16:30:00-04:00",
+        "end_time": "2025-03-18T17:15:00-04:00",
+        "participants": [
+          "maya.johnson@brocktonhealth.org",
+          "eli.rivera@brocktonhealth.org"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Volunteer Health Fair Planning Meeting",
+        "start_time": "2025-03-18T16:30:00-04:00",
+        "end_time": "2025-03-18T17:15:00-04:00",
+        "participants": [
+          "maya.johnson@brocktonhealth.org",
+          "eli.rivera@brocktonhealth.org"
+        ],
+        "location": "Community Outreach Conference Room"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_clinic_huddle_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Clinic Operations Huddle",
+          "start_time": "2025-03-18T08:30:00-04:00",
+          "end_time": "2025-03-18T09:00:00-04:00",
+          "participants": [
+            "ops-team@brocktonclinic.org"
+          ],
+          "location": "Admin Pod A",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_patient_flow_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Flow Review",
+          "start_time": "2025-03-18T15:00:00-04:00",
+          "end_time": "2025-03-18T16:00:00-04:00",
+          "participants": [
+            "nursing-leads@brocktonclinic.org",
+            "frontdesk@brocktonclinic.org"
+          ],
+          "location": "Clinic Conference Room 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_sync_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Volunteer Health Fair Planning Meeting",
+          "start_time": "2025-03-18T16:30:00-04:00",
+          "end_time": "2025-03-18T17:15:00-04:00",
+          "participants": [
+            "finance@brocktonclinic.org"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dentist_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dentist Appointment",
+          "start_time": "2025-03-18T12:00:00-04:00",
+          "end_time": "2025-03-18T13:00:00-04:00",
+          "participants": [],
+          "location": "Main Street Dental",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

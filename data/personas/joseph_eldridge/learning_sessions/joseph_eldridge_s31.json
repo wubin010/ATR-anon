@@ -1,0 +1,117 @@
+{
+  "session_id": "joseph_eldridge_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "commerce",
+  "reason_for_call": "Order a couple items online",
+  "task_params": {
+    "category": "garden",
+    "budget": 35,
+    "product_ids": [
+      "prod_kneel_01",
+      "prod_kneel_02",
+      "prod_glove_01",
+      "prod_glove_02"
+    ],
+    "items": [
+      "EverTread Thick Foam Kneeling Pad",
+      "RootShield Waterproof Garden Gloves"
+    ],
+    "list_name": "Garden supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "garden",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_kneel_01",
+          "prod_kneel_02",
+          "prod_glove_01",
+          "prod_glove_02"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "EverTread Thick Foam Kneeling Pad",
+          "RootShield Waterproof Garden Gloves"
+        ],
+        "list_name": "Garden supplies"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_kneel_01",
+        "type": "product",
+        "attributes": {
+          "name": "EverTread Thick Foam Kneeling Pad",
+          "price": 19.99,
+          "category": "garden",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_kneel_02",
+        "type": "product",
+        "attributes": {
+          "name": "GreenHold Heavy-Duty Kneeling Pad",
+          "price": 24.5,
+          "category": "garden",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_glove_01",
+        "type": "product",
+        "attributes": {
+          "name": "RootShield Waterproof Garden Gloves",
+          "price": 14.99,
+          "category": "garden",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_glove_02",
+        "type": "product",
+        "attributes": {
+          "name": "BriarGuard Reinforced Garden Gloves",
+          "price": 16.75,
+          "category": "garden",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

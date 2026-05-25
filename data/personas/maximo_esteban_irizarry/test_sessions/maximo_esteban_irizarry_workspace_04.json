@@ -1,0 +1,112 @@
+{
+  "instruction": "Please update the existing prep checklist for the API Design Workshop now that the room layout is finished. Make the checklist reflect what still needs to happen for the caterer.",
+  "gold_value": "record_next_action",
+  "session_id": "maximo_esteban_irizarry_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "maximo_esteban_irizarry_workspace_04",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_workspace_04",
+    "rule_text": "When he is keeping up an existing checklist or workshop log, he prefers recording the next action rather than just changing the status.",
+    "canonical_answer": "On an existing tracker, I like to record the next action so the follow-up stays concrete."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_api_design_workshop_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "API Design Workshop Prep Checklist",
+          "entries": [
+            {
+              "entry_id": "ENT_room_layout_01",
+              "status": "done",
+              "payload": "Finalize room layout and seating map"
+            },
+            {
+              "entry_id": "ENT_av_check_01",
+              "status": "in_progress",
+              "payload": "Confirm projector and microphone setup"
+            },
+            {
+              "entry_id": "ENT_catering_01",
+              "status": "pending",
+              "payload": "Send final headcount to caterer"
+            }
+          ]
+        }
+      },
+      {
+        "id": "trk_security_briefing_workshop_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Security Briefing Workshop Prep Checklist",
+          "entries": [
+            {
+              "entry_id": "ENT_signage_01",
+              "status": "done",
+              "payload": "Print room signage"
+            },
+            {
+              "entry_id": "ENT_badges_01",
+              "status": "in_progress",
+              "payload": "Prepare attendee badges"
+            },
+            {
+              "entry_id": "ENT_refreshments_01",
+              "status": "pending",
+              "payload": "Confirm refreshment order"
+            }
+          ]
+        }
+      },
+      {
+        "id": "trk_junior_dev_mentoring_log_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Junior Developer Mentoring Log",
+          "entries": [
+            {
+              "entry_id": "ENT_pairing_01",
+              "status": "done",
+              "payload": "Pairing session on test coverage"
+            },
+            {
+              "entry_id": "ENT_feedback_01",
+              "status": "in_progress",
+              "payload": "Review pull request feedback themes"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "update_tracker",
+          "arguments": {
+            "update_action": "record_next_action"
+          },
+          "compare_args": [
+            "update_action"
+          ]
+        }
+      ]
+    }
+  }
+}

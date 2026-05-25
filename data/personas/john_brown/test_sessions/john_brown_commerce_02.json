@@ -1,0 +1,99 @@
+{
+  "instruction": "I'm making gumbo at home and need one item ordered for it. Keep it under $7 and just pick one.",
+  "gold_value": "prod_bayou_pantry_roux_flour_01",
+  "session_id": "john_brown_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "john_brown_commerce_02",
+  "rule_ref": {
+    "rule_id": "john_brown_commerce_02",
+    "rule_text": "When ordering ingredients for home cooking, he prefers items that support scratch-made dishes like roux-based cooking over ready-made shortcuts.",
+    "canonical_answer": "If I’m buying cooking ingredients, I’d rather get the pieces to make it from scratch than premade shortcuts."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_bayou_pantry_roux_flour_01",
+        "type": "product",
+        "attributes": {
+          "name": "Bayou Pantry Gumbo Roux Flour",
+          "price": 6.49,
+          "category": "gumbo_ingredients",
+          "rating": 4.2,
+          "product_form": "flour",
+          "dish_style": "roux_based",
+          "review_count": 64
+        }
+      },
+      {
+        "id": "prod_pelican_dark_roux_kit_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pelican Dark Roux Gumbo Kit",
+          "price": 8.59,
+          "category": "gumbo_ingredients",
+          "rating": 4.8,
+          "product_form": "kit",
+          "dish_style": "roux_based",
+          "review_count": 402
+        }
+      },
+      {
+        "id": "prod_quickpot_cajun_mix_01",
+        "type": "product",
+        "attributes": {
+          "name": "Quick Pot Cajun Gumbo Mix",
+          "price": 4.29,
+          "category": "gumbo_ingredients",
+          "rating": 4.9,
+          "product_form": "mix",
+          "cook_time_min": 20,
+          "review_count": 1880
+        }
+      },
+      {
+        "id": "prod_stovetop_gumbo_starter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Stovetop Gumbo Starter Sauce",
+          "price": 5.99,
+          "category": "gumbo_ingredients",
+          "rating": 4.8,
+          "product_form": "jarred_base",
+          "serves": 6,
+          "review_count": 1325
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_bayou_pantry_roux_flour_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

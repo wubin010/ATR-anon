@@ -1,0 +1,103 @@
+{
+  "session_id": "vanessa_davis_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "Lancaster",
+    "cuisine": "seafood",
+    "sort_by": "rating",
+    "date_time": "2025-03-29T19:00:00-07:00",
+    "party_size": 1
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Lancaster",
+        "cuisine": "seafood",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_harborpot_01",
+        "date_time": "2025-03-29T19:00:00-07:00",
+        "party_size": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_harborpot_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor Pot Lancaster",
+          "cuisine": "seafood boil",
+          "location": "Lancaster",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual"
+        }
+      },
+      {
+        "id": "rst_crabcove_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Crab Cove Kitchen",
+          "cuisine": "seafood",
+          "location": "Lancaster",
+          "rating": 4.5,
+          "price_range": "$$$",
+          "seating_style": "relaxed dining"
+        }
+      },
+      {
+        "id": "rst_baybucket_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bay Bucket House",
+          "cuisine": "seafood cajun",
+          "location": "Palmdale",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "family-style"
+        }
+      },
+      {
+        "id": "rst_smokestack_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Smokestack Grill",
+          "cuisine": "barbecue",
+          "location": "Lancaster",
+          "rating": 4.6,
+          "price_range": "$$",
+          "seating_style": "casual"
+        }
+      }
+    ]
+  }
+}

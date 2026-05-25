@@ -1,0 +1,92 @@
+{
+  "session_id": "roosevelt_brown_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "location": "Clinic Strategy",
+    "doc_type": "note",
+    "title": "Health Equity Initiative Planning Sprint",
+    "content_brief": "Capture goals, stakeholder ideas, early workstreams, metrics, risks, and immediate next steps for the clinic's health-equity initiative."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Clinic Strategy",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Health Equity Initiative Planning Sprint",
+        "location": "Clinic Strategy",
+        "content_brief": "Capture goals, stakeholder ideas, early workstreams, metrics, risks, and immediate next steps for the clinic's health-equity initiative."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_strategy_01",
+        "type": "document",
+        "attributes": {
+          "title": "Patient Experience Redesign Brainstorm",
+          "doc_type": "note",
+          "location": "Clinic Strategy",
+          "content_brief": "Raw meeting notes on patient journey friction points and service redesign ideas."
+        }
+      },
+      {
+        "id": "doc_strategy_02",
+        "type": "document",
+        "attributes": {
+          "title": "Community Partnership Opportunities Q3",
+          "doc_type": "memo",
+          "location": "Clinic Strategy",
+          "content_brief": "Possible local partners, outreach channels, and engagement themes for clinic programs."
+        }
+      },
+      {
+        "id": "doc_strategy_03",
+        "type": "document",
+        "attributes": {
+          "title": "Access Metrics Baseline",
+          "doc_type": "report",
+          "location": "Clinic Strategy",
+          "content_brief": "Baseline utilization, no-show, and patient access metrics by service line."
+        }
+      },
+      {
+        "id": "doc_ops_01",
+        "type": "document",
+        "attributes": {
+          "title": "Staffing Grid July",
+          "doc_type": "spreadsheet",
+          "location": "Operations",
+          "content_brief": "Weekly staffing coverage and open shifts."
+        }
+      }
+    ]
+  }
+}

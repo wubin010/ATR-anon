@@ -1,0 +1,135 @@
+{
+  "instruction": "Please tidy up everything in /Work/Shared/Incoming — it's a jumble of PDFs, spreadsheets, and docs, and I just need the files organized so I can find things again.",
+  "gold_value": "by_project",
+  "session_id": "roosevelt_brown_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "roosevelt_brown_workspace_01",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_workspace_01",
+    "rule_text": "For work files, he prefers organizing them by project rather than by type or date.",
+    "canonical_answer": "I keep work files organized by project first, not just by file type or date."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_incoming_px_01",
+        "type": "file",
+        "attributes": {
+          "name": "survey_notes.docx",
+          "file_type": "docx",
+          "location": "/Work/Shared/Incoming",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Discharge Experience Refresh",
+          "modified_date": "2026-03-11",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_incoming_px_02",
+        "type": "file",
+        "attributes": {
+          "name": "vendor_costs.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Shared/Incoming",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Clinic Check-In Pilot",
+          "modified_date": "2026-03-14",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_incoming_px_03",
+        "type": "file",
+        "attributes": {
+          "name": "message_map.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Shared/Incoming",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Nurse Callback Redesign",
+          "modified_date": "2026-03-18",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_incoming_px_04",
+        "type": "file",
+        "attributes": {
+          "name": "staffing_outline.docx",
+          "file_type": "docx",
+          "location": "/Work/Shared/Incoming",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Wayfinding Signage Update",
+          "modified_date": "2026-03-22",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_incoming_px_05",
+        "type": "file",
+        "attributes": {
+          "name": "response_tracker.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Shared/Incoming",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Billing FAQ Cleanup",
+          "modified_date": "2026-03-27",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_incoming_px_06",
+        "type": "file",
+        "attributes": {
+          "name": "feedback_summary.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Shared/Incoming",
+          "owner": "Roosevelt Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Care Team Handoff Review",
+          "modified_date": "2026-04-01",
+          "priority": "medium"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

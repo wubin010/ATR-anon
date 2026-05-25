@@ -1,0 +1,135 @@
+{
+  "instruction": "Please tidy the files sitting in /Operations/Dropoff — it's a mix of PDFs, spreadsheets, and docs from the last few months, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "john_brown_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "john_brown_workspace_01",
+  "rule_ref": {
+    "rule_id": "john_brown_workspace_01",
+    "rule_text": "When organizing files from his projects, he prefers grouping them by project rather than by type or date.",
+    "canonical_answer": "I organize working files by project first, not just by file type or date."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_dropoff_signage_01",
+        "type": "file",
+        "attributes": {
+          "name": "layout_review.pdf",
+          "file_type": "pdf",
+          "location": "/Operations/Dropoff",
+          "owner": "John Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Forklift Safety Signage",
+          "modified_date": "2026-07-02",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_dropoff_signage_02",
+        "type": "file",
+        "attributes": {
+          "name": "vendor_quote.xlsx",
+          "file_type": "xlsx",
+          "location": "/Operations/Dropoff",
+          "owner": "John Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Forklift Safety Signage",
+          "modified_date": "2026-07-07",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_dropoff_flow_01",
+        "type": "file",
+        "attributes": {
+          "name": "process_walk.docx",
+          "file_type": "docx",
+          "location": "/Operations/Dropoff",
+          "owner": "John Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Receiving Flow Kaizen",
+          "modified_date": "2026-08-11",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_dropoff_flow_02",
+        "type": "file",
+        "attributes": {
+          "name": "before_after_photos.pdf",
+          "file_type": "pdf",
+          "location": "/Operations/Dropoff",
+          "owner": "John Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Receiving Flow Kaizen",
+          "modified_date": "2026-08-13",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_dropoff_board_01",
+        "type": "file",
+        "attributes": {
+          "name": "shift_handoff_notes.docx",
+          "file_type": "docx",
+          "location": "/Operations/Dropoff",
+          "owner": "John Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Cell 2 Visual Board",
+          "modified_date": "2026-09-03",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_dropoff_board_02",
+        "type": "file",
+        "attributes": {
+          "name": "parts_shortage_log.xlsx",
+          "file_type": "xlsx",
+          "location": "/Operations/Dropoff",
+          "owner": "John Brown",
+          "labels": [],
+          "archived": false,
+          "project": "Cell 2 Visual Board",
+          "modified_date": "2026-09-05",
+          "priority": "high"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

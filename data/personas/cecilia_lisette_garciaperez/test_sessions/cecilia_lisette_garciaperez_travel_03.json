@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm putting together a quick weekend getaway to New Orleans, LA from Austin, TX, leaving on 2026-10-09. It's just me, and I only need the outbound leg right now—please check the available options and book it.",
+  "gold_value": null,
+  "session_id": "cecilia_lisette_garciaperez_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "cecilia_lisette_garciaperez_travel_03",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_travel_03",
+    "rule_text": "For weekend getaways, she prefers ground transportation over flights when a reasonable option exists.",
+    "canonical_answer": "For short trips, I prefer to go by train, bus, or car transfer instead of flying."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_aus_nor_20261009_southwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Austin, TX",
+          "destination": "New Orleans, LA",
+          "departure_date": "2026-10-09",
+          "airline": "Southwest Airlines",
+          "price": 118,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_aus_nor_20261009_delta_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Austin, TX",
+          "destination": "New Orleans, LA",
+          "departure_date": "2026-10-09",
+          "airline": "Delta Air Lines",
+          "price": 129,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_aus_nor_20261009_american_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Austin, TX",
+          "destination": "New Orleans, LA",
+          "departure_date": "2026-10-09",
+          "airline": "American Airlines",
+          "price": 136,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "trp_aus_nor_20261009_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Austin, TX",
+          "destination": "New Orleans, LA",
+          "mode": "bus",
+          "departure_date": "2026-10-09",
+          "price": 165,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "trp_aus_nor_20261009_train_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Austin, TX",
+          "destination": "New Orleans, LA",
+          "mode": "train",
+          "departure_date": "2026-10-09",
+          "price": 189,
+          "available_seats": 7
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "instruction": "Please update the priority on the Crescent City Arts Guide message about the Marigny gallery night and Frenchmen jazz picks that's in my inbox.",
+  "gold_value": "low",
+  "session_id": "anna_strahan_communication_04_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "anna_strahan_communication_04",
+  "rule_ref": {
+    "rule_id": "anna_strahan_communication_04",
+    "rule_text": "When she receives promotional or newsletter-style messages about cultural events she may browse later, Anna prefers marking them low priority rather than treating them as normal inbox work.",
+    "canonical_answer": "I usually mark promotional arts and event emails as low priority so they don’t compete with work messages."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_crescentcityarts_marigny_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Crescent City Arts Guide",
+          "subject": "Marigny gallery night and Frenchmen jazz picks",
+          "body": "This week's roundup includes small-gallery openings in the Marigny, late jazz set listings on Frenchmen Street, ticket links, and neighborhood event details around New Orleans.",
+          "thread_id": "thr_crescentcityarts_marigny_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2026-04-09T08:15:00"
+        }
+      },
+      {
+        "id": "msg_crescentcityarts_bywater_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Crescent City Arts Guide",
+          "subject": "Bywater open studios and courtyard sculpture map",
+          "body": "Monthly arts listings with venue hours, a walking map, and RSVP links for open studios and sculpture courtyards in the Bywater.",
+          "thread_id": "thr_crescentcityarts_bywater_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-05T09:02:00"
+        }
+      },
+      {
+        "id": "msg_nolanightmusic_calendar_01",
+        "type": "message",
+        "attributes": {
+          "sender": "NOLA Night Music",
+          "subject": "Thursday club listings and late set calendar",
+          "body": "A local music bulletin with club schedules, cover charges, reservation links, and neighborhood jazz recommendations for the week.",
+          "thread_id": "thr_nolanightmusic_calendar_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-08T17:40:00"
+        }
+      },
+      {
+        "id": "msg_regionalcare_staffing_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Regional Care Operations",
+          "subject": "Revised staffing grid for outpatient services",
+          "body": "Attached is the updated staffing grid with call coverage notes and open items for the outpatient services team.",
+          "thread_id": "thr_regionalcare_staffing_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2026-04-09T07:25:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_message_priority",
+          "arguments": {
+            "priority": "low"
+          },
+          "compare_args": [
+            "priority"
+          ]
+        }
+      ]
+    }
+  }
+}

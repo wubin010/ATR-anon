@@ -1,0 +1,135 @@
+{
+  "instruction": "Book one of these Boston hotel options for two teammates for April 17 to April 19. Keep it in Fenway or Back Bay, and make sure the room has a private bathroom.",
+  "gold_value": "htl_boston_backbay_twinshare_01",
+  "session_id": "esther_hoitsma_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "esther_hoitsma_travel_04",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_travel_04",
+    "rule_text": "When booking lodging for group trips, Esther prefers hotel offers that support roommate-style cost sharing rather than private single-occupancy options.",
+    "canonical_answer": "If I’m traveling with a group, I prefer lodging that lets us split the room and the cost."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_boston_backbay_twinshare_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Back Bay Twinshare Inn",
+          "location": "Back Bay, Boston",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 8,
+          "max_guests_per_room": 2,
+          "price_per_night": 268,
+          "rating": 4.4,
+          "review_count": 412,
+          "room_count_included": 1,
+          "occupancy_mode": "shared room",
+          "bed_layout": "2 twin beds",
+          "bathroom_type": "private bathroom",
+          "walking_time_to_fenway_min": 10,
+          "property_style": "independent hotel"
+        }
+      },
+      {
+        "id": "htl_boston_fenway_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Fenway Suites Hotel",
+          "location": "Fenway, Boston",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 19,
+          "max_guests_per_room": 2,
+          "price_per_night": 295,
+          "rating": 4.9,
+          "review_count": 2874,
+          "room_count_included": 1,
+          "occupancy_mode": "private room",
+          "bed_layout": "2 queen beds",
+          "bathroom_type": "private bathroom",
+          "walking_time_to_fenway_min": 4,
+          "property_style": "major chain"
+        }
+      },
+      {
+        "id": "htl_boston_beacon_standard_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Beacon Standard Hotel",
+          "location": "Back Bay, Boston",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 27,
+          "max_guests_per_room": 2,
+          "price_per_night": 289,
+          "rating": 4.8,
+          "review_count": 2210,
+          "room_count_included": 1,
+          "occupancy_mode": "private room",
+          "bed_layout": "1 queen bed",
+          "bathroom_type": "private bathroom",
+          "walking_time_to_fenway_min": 6,
+          "property_style": "national chain"
+        }
+      },
+      {
+        "id": "htl_boston_lansdowne_bunk_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Lansdowne Bunk Lodge",
+          "location": "Fenway, Boston",
+          "check_in_date": "2026-04-17",
+          "check_out_date": "2026-04-19",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 189,
+          "rating": 4.6,
+          "review_count": 487,
+          "room_count_included": 1,
+          "occupancy_mode": "shared room",
+          "bed_layout": "2 twin beds",
+          "bathroom_type": "shared hallway bathroom",
+          "walking_time_to_fenway_min": 5,
+          "property_style": "budget lodge"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_boston_backbay_twinshare_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

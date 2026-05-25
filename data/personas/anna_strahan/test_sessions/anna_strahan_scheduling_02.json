@@ -1,0 +1,90 @@
+{
+  "instruction": "Please set a reminder for the Maple Street Library book club on 2026-09-14 in the evening — I don't want to forget about it.",
+  "gold_value": "weekly",
+  "session_id": "anna_strahan_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "anna_strahan_scheduling_02",
+  "rule_ref": {
+    "rule_id": "anna_strahan_scheduling_02",
+    "rule_text": "For recurring personal commitments like book club or similar standing routines, Anna prefers weekly reminders rather than one-off alerts.",
+    "canonical_answer": "For regular commitments, I prefer a weekly reminder instead of a single one-time ping."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_maple_book_club_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "September Book Club — The Left Hand of Darkness",
+          "start_time": "2026-09-14T19:00:00",
+          "end_time": "2026-09-14T20:30:00",
+          "location": "Maple Street Library",
+          "calendar": "personal",
+          "status": "confirmed",
+          "participants": [
+            "anna.strahan@example.com",
+            "bookclub@maplestreetlibrary.org"
+          ]
+        }
+      },
+      {
+        "id": "evt_maple_author_talk_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Author Talk: New Voices in Fiction",
+          "start_time": "2026-09-14T17:30:00",
+          "end_time": "2026-09-14T18:30:00",
+          "location": "Maple Street Library",
+          "calendar": "personal",
+          "status": "confirmed",
+          "participants": [
+            "events@maplestreetlibrary.org"
+          ]
+        }
+      },
+      {
+        "id": "evt_city_parks_forum_20260916",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "City Parks Feedback Forum",
+          "start_time": "2026-09-16T18:00:00",
+          "end_time": "2026-09-16T19:15:00",
+          "location": "Civic Center Room 204",
+          "calendar": "personal",
+          "status": "confirmed",
+          "participants": [
+            "parksdept@city.gov"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

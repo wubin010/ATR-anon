@@ -1,0 +1,126 @@
+{
+  "session_id": "michael_argo_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files",
+  "task_params": {
+    "location": "Downloads/Notes Dump",
+    "file_ids": [
+      "fil_debate_case_01",
+      "fil_ethics_summary_02",
+      "fil_logic_quotes_03"
+    ],
+    "folder_id": "fld_writing_ideas_01",
+    "scheme": "by_project"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Downloads/Notes Dump"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_debate_case_01",
+          "fil_ethics_summary_02",
+          "fil_logic_quotes_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_debate_case_01",
+          "fil_ethics_summary_02",
+          "fil_logic_quotes_03"
+        ],
+        "folder_id": "fld_writing_ideas_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_debate_case_01",
+        "type": "file",
+        "attributes": {
+          "name": "debate_case_blocks.txt",
+          "file_type": "txt",
+          "location": "Downloads/Notes Dump",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_ethics_summary_02",
+        "type": "file",
+        "attributes": {
+          "name": "ethics_reading_summary.txt",
+          "file_type": "txt",
+          "location": "Downloads/Notes Dump",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_logic_quotes_03",
+        "type": "file",
+        "attributes": {
+          "name": "logic_quotes_scan.jpg",
+          "file_type": "image",
+          "location": "Downloads/Notes Dump",
+          "owner": "Michael Argo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_writing_ideas_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Writing Ideas",
+          "purpose": "Clean home for notes and source material for future essays and projects"
+        }
+      },
+      {
+        "id": "fld_archive_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Archive",
+          "purpose": "Older inactive files"
+        }
+      }
+    ]
+  }
+}

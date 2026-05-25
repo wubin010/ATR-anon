@@ -1,0 +1,116 @@
+{
+  "instruction": "Book one ground transport option for 2 adults traveling from Philadelphia to Washington on 2026-06-14. Use one of the available offers below and complete the booking.",
+  "gold_value": "transport_phl_was_regional_01",
+  "session_id": "joseph_eldridge_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "joseph_eldridge_travel_02",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_travel_02",
+    "rule_text": "When ground transport options are available, Joseph prefers rail-oriented offers over buses or generic car transfers.",
+    "canonical_answer": "If I am traveling on the ground, I prefer the train when that is an option."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "transport_phl_was_regional_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Philadelphia",
+          "destination": "Washington",
+          "mode": "train",
+          "departure_date": "2026-06-14T09:15:00",
+          "price": 72,
+          "available_seats": 4,
+          "operator": "Northeast Regional",
+          "duration_minutes": 108,
+          "rating": 4.8,
+          "review_count": 412
+        }
+      },
+      {
+        "id": "transport_phl_was_express_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Philadelphia",
+          "destination": "Washington",
+          "mode": "train",
+          "departure_date": "2026-06-14T07:50:00",
+          "price": 68,
+          "available_seats": 3,
+          "operator": "Corridor Express",
+          "duration_minutes": 96,
+          "rating": 4.4,
+          "review_count": 988
+        }
+      },
+      {
+        "id": "transport_phl_was_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Philadelphia",
+          "destination": "Washington",
+          "mode": "bus",
+          "departure_date": "2026-06-14T08:30:00",
+          "price": 34,
+          "available_seats": 26,
+          "operator": "Capital Coach",
+          "duration_minutes": 185,
+          "rating": 4.9,
+          "review_count": 3821
+        }
+      },
+      {
+        "id": "transport_phl_was_car_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Philadelphia",
+          "destination": "Washington",
+          "mode": "car_transfer",
+          "departure_date": "2026-06-14T09:00:00",
+          "price": 89,
+          "available_seats": 3,
+          "operator": "CityLine Transfer",
+          "duration_minutes": 160,
+          "rating": 4.7,
+          "review_count": 1406,
+          "pickup_type": "door_to_door"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {
+            "transport_offer_id": "transport_phl_was_regional_01"
+          },
+          "compare_args": [
+            "transport_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

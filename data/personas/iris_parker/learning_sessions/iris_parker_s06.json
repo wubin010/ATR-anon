@@ -1,0 +1,141 @@
+{
+  "session_id": "iris_parker_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "scheduling",
+  "reason_for_call": "Reschedule something on my calendar.",
+  "task_params": {
+    "calendar": "work",
+    "participants": [
+      "Noah Chen"
+    ],
+    "title": "1:1 with Noah",
+    "start_time": "2025-03-13T12:00:00-04:00",
+    "end_time": "2025-03-13T12:30:00-04:00",
+    "new_start_time": "2025-03-13T13:30:00-04:00",
+    "new_end_time": "2025-03-13T14:00:00-04:00"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "reschedule_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work",
+        "participants": [
+          "Noah Chen"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-13T12:00:00-04:00",
+        "end_time": "2025-03-13T12:30:00-04:00",
+        "participants": [
+          "Noah Chen"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-13T13:30:00-04:00",
+        "end_time": "2025-03-13T14:00:00-04:00",
+        "participants": [
+          "Noah Chen"
+        ]
+      }
+    },
+    {
+      "tool": "reschedule_event",
+      "arguments": {
+        "event_id": "evt_noah_01",
+        "new_start_time": "2025-03-13T13:30:00-04:00",
+        "new_end_time": "2025-03-13T14:00:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_noah_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "1:1 with Noah",
+          "start_time": "2025-03-13T12:00:00-04:00",
+          "end_time": "2025-03-13T12:30:00-04:00",
+          "participants": [
+            "Noah Chen"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_interview_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Candidate Debrief",
+          "start_time": "2025-03-13T12:15:00-04:00",
+          "end_time": "2025-03-13T12:45:00-04:00",
+          "participants": [
+            "Iris Parker",
+            "Maya Patel",
+            "Jordan Lee"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "People Ops Budget Review",
+          "start_time": "2025-03-13T13:00:00-04:00",
+          "end_time": "2025-03-13T13:30:00-04:00",
+          "participants": [
+            "Iris Parker",
+            "Sam Rivera"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_focus_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Focus Block",
+          "start_time": "2025-03-13T14:30:00-04:00",
+          "end_time": "2025-03-13T15:30:00-04:00",
+          "participants": [
+            "Iris Parker"
+          ],
+          "location": "",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

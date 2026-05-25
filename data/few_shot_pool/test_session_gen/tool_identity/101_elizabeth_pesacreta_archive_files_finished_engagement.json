@@ -1,0 +1,137 @@
+{
+  "instruction": "Please get the Harbor Steel OSHA audit files off my working area: the walkthrough checklist, the corrective-action memo, and the exit summary in /clients/working/harbor_steel. That engagement is finished, so put those three with the closed cases and leave the Harbor Steel follow-up roster where it is.",
+  "gold_value": null,
+  "session_id": "elizabeth_pesacreta_workspace_06_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_workspace_06",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_workspace_06",
+    "rule_text": "When organizing professional documents after active use, she prefers archiving them into a dedicated folder rather than leaving them in working space.",
+    "canonical_answer": "Whenever a work document is no longer active, I always archive it into the proper folder."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_harbor_walkthrough_checklist_01",
+        "type": "file",
+        "attributes": {
+          "name": "Harbor Steel OSHA walkthrough checklist.xlsx",
+          "file_type": "xlsx",
+          "location": "/clients/working/harbor_steel",
+          "owner": "Elizabeth Pesacreta",
+          "labels": [
+            "audit"
+          ],
+          "archived": false,
+          "project": "harbor_steel_osha_audit",
+          "modified_date": "2026-02-18",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_harbor_corrective_action_memo_01",
+        "type": "file",
+        "attributes": {
+          "name": "Harbor Steel corrective-action memo.docx",
+          "file_type": "docx",
+          "location": "/clients/working/harbor_steel",
+          "owner": "Elizabeth Pesacreta",
+          "labels": [
+            "audit"
+          ],
+          "archived": false,
+          "project": "harbor_steel_osha_audit",
+          "modified_date": "2026-02-22",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_harbor_exit_summary_01",
+        "type": "file",
+        "attributes": {
+          "name": "Harbor Steel exit summary.pdf",
+          "file_type": "pdf",
+          "location": "/clients/working/harbor_steel",
+          "owner": "Elizabeth Pesacreta",
+          "labels": [
+            "audit"
+          ],
+          "archived": false,
+          "project": "harbor_steel_osha_audit",
+          "modified_date": "2026-02-27",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_harbor_followup_roster_01",
+        "type": "file",
+        "attributes": {
+          "name": "Harbor Steel follow-up roster.xlsx",
+          "file_type": "xlsx",
+          "location": "/clients/working/harbor_steel",
+          "owner": "Elizabeth Pesacreta",
+          "labels": [
+            "active"
+          ],
+          "archived": false,
+          "project": "harbor_steel_post_audit_followup",
+          "modified_date": "2026-03-09",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fld_closed_cases_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Closed Client Cases",
+          "location": "/clients/closed",
+          "purpose": "Finished client materials kept outside active working folders."
+        }
+      },
+      {
+        "id": "fld_pending_followups_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Pending Follow-Ups",
+          "location": "/clients/pending",
+          "purpose": "Open client items awaiting more work."
+        }
+      },
+      {
+        "id": "fld_reference_library_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Compliance Reference Library",
+          "location": "/clients/reference",
+          "purpose": "Reusable standards, guidance, and sample policies."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "archive_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

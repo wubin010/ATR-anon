@@ -1,0 +1,112 @@
+{
+  "session_id": "anna_strahan_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Compare some products",
+  "task_params": {
+    "category": "portable watercolor travel kit",
+    "budget": 60,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_travelkit_01",
+      "prod_travelkit_02",
+      "prod_travelkit_03"
+    ],
+    "quantity": 1,
+    "list_name": "Watercolor supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "portable watercolor travel kit",
+        "budget": 60,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_travelkit_01",
+          "prod_travelkit_02",
+          "prod_travelkit_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_travelkit_02"
+        ],
+        "list_name": "Watercolor supplies"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_travelkit_01",
+        "type": "product",
+        "attributes": {
+          "name": "Bayou Pocket Watercolor Travel Kit",
+          "price": 42.0,
+          "category": "portable watercolor travel kit",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_travelkit_02",
+        "type": "product",
+        "attributes": {
+          "name": "Crescent Field Watercolor Travel Set",
+          "price": 58.0,
+          "category": "portable watercolor travel kit",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_travelkit_03",
+        "type": "product",
+        "attributes": {
+          "name": "Marsh Light Compact Watercolor Kit",
+          "price": 35.0,
+          "category": "portable watercolor travel kit",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_travelkit_04",
+        "type": "product",
+        "attributes": {
+          "name": "Studio Table Watercolor Box",
+          "price": 72.0,
+          "category": "portable watercolor travel kit",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

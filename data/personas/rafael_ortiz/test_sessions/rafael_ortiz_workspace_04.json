@@ -1,0 +1,150 @@
+{
+  "instruction": "Please tidy up the files sitting in /Shared/Desk/ToSort — it’s a mix of PDFs, spreadsheets, and docs from the last few months, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "rafael_ortiz_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "rafael_ortiz_workspace_04",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_workspace_04",
+    "rule_text": "He prefers work files classified by project rather than by generic type or date buckets.",
+    "canonical_answer": "I organize my files by project first, not just by type or date."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_tosort_hearthealth_01",
+        "type": "file",
+        "attributes": {
+          "name": "facilitator_notes.docx",
+          "file_type": "docx",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Heart Health Workshop",
+          "modified_date": "2026-06-03",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_diabetesprev_01",
+        "type": "file",
+        "attributes": {
+          "name": "attendance_roll.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Diabetes Prevention Series",
+          "modified_date": "2026-06-14",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_tosort_handoff_01",
+        "type": "file",
+        "attributes": {
+          "name": "handoff_checklist.pdf",
+          "file_type": "pdf",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Clinic Handoff Improvement",
+          "modified_date": "2026-07-01",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_tosort_careteam_01",
+        "type": "file",
+        "attributes": {
+          "name": "room_layout.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Care Team Meeting Refresh",
+          "modified_date": "2026-07-18",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_fallsrisk_01",
+        "type": "file",
+        "attributes": {
+          "name": "followup_summary.docx",
+          "file_type": "docx",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Falls Risk Outreach",
+          "modified_date": "2026-08-05",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_bpoutreach_01",
+        "type": "file",
+        "attributes": {
+          "name": "registration_counts.csv",
+          "file_type": "csv",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Blood Pressure Outreach Day",
+          "modified_date": "2026-08-12",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_tosort_medreview_01",
+        "type": "file",
+        "attributes": {
+          "name": "budget_snapshot.pdf",
+          "file_type": "pdf",
+          "location": "/Shared/Desk/ToSort",
+          "owner": "Rafael Ortiz",
+          "labels": [],
+          "archived": false,
+          "project": "Medication Review Pilot",
+          "modified_date": "2026-08-22",
+          "priority": "high"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

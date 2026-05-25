@@ -1,0 +1,170 @@
+{
+  "instruction": "I'm planning a 3-day solo trip to Tokyo from scratch. From the candidate stops below, pick one place to anchor the itinerary and build the plan around it. I want a spot that's easy to explore on foot and has enough going on nearby to help shape the rest of the trip.",
+  "gold_value": [
+    "stop_tokyo_akihabara_01"
+  ],
+  "session_id": "cassandra_tovar_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "cassandra_tovar_travel_02",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_travel_02",
+    "rule_text": "When building a new trip itinerary, she prefers stops tied to AV, electronics, sound systems, or related tech culture over generic tourist attractions.",
+    "canonical_answer": "When I plan a trip, I like the stops to center on AV, electronics, or sound‑system culture instead of just standard sightseeing."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_tokyo_akihabara_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Akihabara Electric Town",
+          "stop_type": "shopping_district",
+          "location": "Chiyoda, Tokyo",
+          "tags": [
+            "electronics",
+            "audio",
+            "hi_fi",
+            "gaming",
+            "cafes",
+            "shopping"
+          ],
+          "rating": 4.4,
+          "review_count": 12680,
+          "walkability": "high",
+          "visit_duration_hours": 3.0,
+          "nearby_food_spots": 26,
+          "nearby_transit_access": "strong"
+        }
+      },
+      {
+        "id": "stop_tokyo_sensoji_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sensō-ji and Nakamise Area",
+          "stop_type": "historic_district",
+          "location": "Asakusa, Tokyo",
+          "tags": [
+            "historic",
+            "temple",
+            "market_street",
+            "snacks",
+            "shopping",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 58900,
+          "walkability": "high",
+          "visit_duration_hours": 4.5,
+          "nearby_food_spots": 41,
+          "nearby_transit_access": "strong"
+        }
+      },
+      {
+        "id": "stop_tokyo_shibuya_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Shibuya Crossing and Center District",
+          "stop_type": "city_district",
+          "location": "Shibuya, Tokyo",
+          "tags": [
+            "landmark",
+            "shopping",
+            "food",
+            "nightlife",
+            "city_views",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 44750,
+          "walkability": "high",
+          "visit_duration_hours": 5.0,
+          "nearby_food_spots": 58,
+          "nearby_transit_access": "major_hub"
+        }
+      },
+      {
+        "id": "stop_tokyo_skytree_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Tokyo Skytree Town",
+          "stop_type": "observation_tower_complex",
+          "location": "Sumida, Tokyo",
+          "tags": [
+            "observation_deck",
+            "shopping",
+            "riverfront",
+            "landmark",
+            "family_friendly",
+            "popular"
+          ],
+          "rating": 4.7,
+          "review_count": 39820,
+          "walkability": "medium",
+          "visit_duration_hours": 4.0,
+          "nearby_food_spots": 37,
+          "nearby_transit_access": "strong"
+        }
+      },
+      {
+        "id": "stop_tokyo_ginza_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Ginza Main Streets",
+          "stop_type": "shopping_district",
+          "location": "Ginza, Tokyo",
+          "tags": [
+            "shopping",
+            "cafes",
+            "department_stores",
+            "food",
+            "boulevards",
+            "popular"
+          ],
+          "rating": 4.6,
+          "review_count": 27400,
+          "walkability": "high",
+          "visit_duration_hours": 4.0,
+          "nearby_food_spots": 49,
+          "nearby_transit_access": "strong"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_tokyo_akihabara_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

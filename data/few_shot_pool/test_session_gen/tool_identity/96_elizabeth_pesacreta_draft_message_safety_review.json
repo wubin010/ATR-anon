@@ -1,0 +1,85 @@
+{
+  "instruction": "Reply to Maya Chen at Riverton Plastics about the loading dock barrier review. Tell her I can come by Wednesday morning, ask her to send the current dock layout and any recent incident photos first, and let her know I'll use the OSHA walking-working surfaces checklist as the starting point.",
+  "gold_value": null,
+  "session_id": "elizabeth_pesacreta_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_communication_01",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_communication_01",
+    "rule_text": "For cross-functional or outward-facing communication, she prefers drafting messages first rather than sending them immediately.",
+    "canonical_answer": "I have a rule: for messages that represent me to others, I always draft them first."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_dock_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen <maya.chen@rivertonplastics.com>",
+          "subject": "Loading dock barrier review",
+          "body": "Hi Elizabeth, we're planning a barrier upgrade around the loading dock at our Riverton Plastics site and would like your input before we finalize anything. Are you available for a walkthrough next week? If so, let me know what documents or photos you want us to send ahead of time.",
+          "thread_id": "thr_maya_dock_14",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-07-09T08:46"
+        }
+      },
+      {
+        "id": "msg_omar_incident_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Omar Ruiz <omar.ruiz@northplant.local>",
+          "subject": "Incident log cleanup",
+          "body": "Can you take a look at the duplicated entries in the near-miss log before the team meeting this afternoon?",
+          "thread_id": "thr_omar_incident_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-07-09T09:12"
+        }
+      },
+      {
+        "id": "msg_vendor_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "accounts@measuredsystems.com",
+          "subject": "June calibration invoice",
+          "body": "Your June calibration invoice is now available in the customer portal.",
+          "thread_id": "thr_vendor_invoice_33",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-07-09T07:18"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

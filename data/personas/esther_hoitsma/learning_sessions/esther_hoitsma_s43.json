@@ -1,0 +1,100 @@
+{
+  "session_id": "esther_hoitsma_s43",
+  "session_type": "learning",
+  "day_offset": 43,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "location": "Art Programs",
+    "doc_type": "report",
+    "document_id": "doc_artoutline_01",
+    "source_doc_type": "note",
+    "theme_keyword": "art program",
+    "month_keyword": "April",
+    "update_points": [
+      "add strongest April ideas into pitch-ready outline",
+      "include bilingual activities for seniors",
+      "highlight watercolor and mixed-media session ideas",
+      "note community partner angle for local senior centers",
+      "mention simple supply needs and low-cost setup",
+      "make the outline sound ready for future pitching"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Art Programs",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_artoutline_01",
+        "content_delta": "<authored from update_points, theme_keyword, month_keyword>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_artoutline_01",
+        "type": "document",
+        "attributes": {
+          "title": "Art Program Outline Draft",
+          "doc_type": "report",
+          "location": "Art Programs",
+          "content_brief": "Early outline for a future pitch about culturally relevant art activities for seniors."
+        }
+      },
+      {
+        "id": "doc_aprilideas_01",
+        "type": "document",
+        "attributes": {
+          "title": "April art program brainstorm",
+          "doc_type": "note",
+          "location": "Art Programs",
+          "content_brief": "April notes on watercolor sessions, bilingual prompts, and low-cost supply ideas for senior participation in an art program."
+        }
+      },
+      {
+        "id": "doc_aprilvisit_02",
+        "type": "document",
+        "attributes": {
+          "title": "April senior center visit notes",
+          "doc_type": "note",
+          "location": "Art Programs",
+          "content_brief": "Observations from April visit: mixed-media interest, possible community partner support, and easy setup needs for an art program."
+        }
+      },
+      {
+        "id": "doc_mayideas_03",
+        "type": "document",
+        "attributes": {
+          "title": "May creative workshop ideas",
+          "doc_type": "note",
+          "location": "Art Programs",
+          "content_brief": "Fresh workshop concepts for later planning, not focused on April."
+        }
+      }
+    ]
+  }
+}

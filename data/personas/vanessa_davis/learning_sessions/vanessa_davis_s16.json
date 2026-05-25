@@ -1,0 +1,107 @@
+{
+  "session_id": "vanessa_davis_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a packing note",
+  "task_params": {
+    "doc_type": "note",
+    "location": "Road Trips",
+    "title": "Red Rock Canyon Scenic Drive Packing Note",
+    "packing_points": [
+      "camera body and wide-angle lens",
+      "spare battery and memory cards",
+      "tripod and lens cloth",
+      "small daypack with trail map",
+      "water bottles and electrolyte packets",
+      "sun hat, sunscreen, and light jacket",
+      "sturdy shoes and basic first-aid kit",
+      "folding camp chair and small blanket",
+      "thermos of coffee and easy snacks"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Road Trips",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Red Rock Canyon Scenic Drive Packing Note",
+        "location": "Road Trips",
+        "content_brief": "<authored from packing_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_tripnotes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Alabama Hills Sunrise Photo Checklist",
+          "doc_type": "note",
+          "location": "Road Trips",
+          "content_brief": "Packing checklist for a sunrise photography stop with camera gear, layers, snacks, and roadside essentials."
+        }
+      },
+      {
+        "id": "doc_tripnotes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Owens Valley Stargazing Night Drive Notes",
+          "doc_type": "note",
+          "location": "Road Trips",
+          "content_brief": "Night-drive prep note covering binoculars, warm layers, hot drinks, flashlight, and folding chairs."
+        }
+      },
+      {
+        "id": "doc_home_01",
+        "type": "document",
+        "attributes": {
+          "title": "Garage Shelf Supply List",
+          "doc_type": "note",
+          "location": "Home Projects",
+          "content_brief": "Lumber sizes, screws, stain options, and measuring notes for a garage shelving build."
+        }
+      },
+      {
+        "id": "file_cam_01",
+        "type": "file",
+        "attributes": {
+          "name": "red-rock-overlook.jpg",
+          "file_type": "image",
+          "location": "Photos/Scouting",
+          "owner": "Vanessa",
+          "labels": [
+            "desert",
+            "scouting"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

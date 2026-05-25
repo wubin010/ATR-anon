@@ -1,0 +1,137 @@
+{
+  "instruction": "I'm starting from scratch on a first-time Barcelona trip for myself: 3 days, solo. From the candidate stops below, pick one place to anchor the itinerary and build the plan around it.",
+  "gold_value": [
+    "stop_barcelona_gothic_quarter_01"
+  ],
+  "session_id": "janice_savarese_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "janice_savarese",
+  "rule_id": "janice_savarese_travel_01",
+  "rule_ref": {
+    "rule_id": "janice_savarese_travel_01",
+    "rule_text": "For trips she is planning from scratch, she favors stops with strong architecture, street life, or cultural atmosphere over generic sightseeing picks.",
+    "canonical_answer": "Whenever I plan a trip, I choose stops with architecture, street scenes, or cultural texture over generic checklist attractions."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_barcelona_gothic_quarter_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Gothic Quarter",
+          "stop_type": "historic_district",
+          "location": "Barcelona",
+          "tags": [
+            "historic_quarter",
+            "medieval_architecture",
+            "pedestrian_lanes",
+            "street_cafes",
+            "small_plazas",
+            "local_shops"
+          ]
+        }
+      },
+      {
+        "id": "stop_barcelona_sagrada_familia_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sagrada Família",
+          "stop_type": "basilica",
+          "location": "Barcelona",
+          "tags": [
+            "gaudi",
+            "architecture",
+            "landmark",
+            "UNESCO",
+            "ticketed_attraction"
+          ]
+        }
+      },
+      {
+        "id": "stop_barcelona_casa_batllo_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Casa Batlló",
+          "stop_type": "house_museum",
+          "location": "Barcelona",
+          "tags": [
+            "gaudi",
+            "architecture",
+            "landmark",
+            "house_museum",
+            "ticketed_attraction"
+          ]
+        }
+      },
+      {
+        "id": "stop_barcelona_park_guell_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Park Güell",
+          "stop_type": "park",
+          "location": "Barcelona",
+          "tags": [
+            "gaudi",
+            "park",
+            "viewpoint",
+            "landmark",
+            "UNESCO"
+          ]
+        }
+      },
+      {
+        "id": "stop_barcelona_barceloneta_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Barceloneta Beach",
+          "stop_type": "beach",
+          "location": "Barcelona",
+          "tags": [
+            "beach",
+            "waterfront",
+            "boardwalk",
+            "promenade",
+            "sunset"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_barcelona_gothic_quarter_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

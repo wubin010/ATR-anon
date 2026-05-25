@@ -1,0 +1,119 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "scheduling",
+  "reason_for_call": "Handle an invitation response",
+  "task_params": {
+    "title": "Westside Adult Literacy Volunteer Orientation",
+    "start_time": "2025-05-22T18:30:00-05:00",
+    "end_time": "2025-05-22T20:00:00-05:00",
+    "response": "accept",
+    "remind_at": "2025-05-21T18:30:00-05:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "respond_to_event_invite",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "invites"
+      }
+    },
+    {
+      "tool": "respond_to_event_invite",
+      "arguments": {
+        "event_id": "evt_literacy_01",
+        "response": "accept"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_literacy_01",
+        "remind_at": "2025-05-21T18:30:00-05:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_literacy_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Westside Adult Literacy Volunteer Orientation",
+          "start_time": "2025-05-22T18:30:00-05:00",
+          "end_time": "2025-05-22T20:00:00-05:00",
+          "participants": [
+            "volunteers@westsideliteracy.org"
+          ],
+          "location": "Westside Learning Center",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_garden_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Garden Bed Prep Day",
+          "start_time": "2025-05-10T08:00:00-05:00",
+          "end_time": "2025-05-10T11:30:00-05:00",
+          "participants": [
+            "hello@greenblocksa.org"
+          ],
+          "location": "Jefferson Community Garden",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_history_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Barrio Stories Archive Kickoff",
+          "start_time": "2025-05-29T19:00:00-05:00",
+          "end_time": "2025-05-29T21:00:00-05:00",
+          "participants": [
+            "programs@barrioarchive.org"
+          ],
+          "location": "Guadalupe Cultural Arts Center",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_bookfair_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood Used Book Fair Setup",
+          "start_time": "2025-05-17T14:00:00-05:00",
+          "end_time": "2025-05-17T17:00:00-05:00",
+          "participants": [
+            "events@friendslibrarysa.org"
+          ],
+          "location": "Memorial Branch Library",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      }
+    ]
+  }
+}

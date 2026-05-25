@@ -1,0 +1,110 @@
+{
+  "session_id": "roosevelt_brown_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "commerce",
+  "reason_for_call": "Order some art supplies",
+  "task_params": {
+    "category": "sketchbook",
+    "budget": 25,
+    "category_two": "acrylic markers",
+    "budget_two": 30,
+    "quantity": 1,
+    "quantity_two": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "sketchbook",
+        "budget": 25,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "acrylic markers",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_sketch_01",
+        "quantity": 1
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_marker_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sketch_01",
+        "type": "product",
+        "attributes": {
+          "name": "Midnight Grain Hardcover Sketchbook",
+          "price": 18.99,
+          "category": "sketchbook",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_sketch_02",
+        "type": "product",
+        "attributes": {
+          "name": "Studio Flex Mixed Media Sketchbook",
+          "price": 24.5,
+          "category": "sketchbook",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_marker_01",
+        "type": "product",
+        "attributes": {
+          "name": "BoldLine Acrylic Marker Set - 12 Colors",
+          "price": 27.99,
+          "category": "acrylic markers",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_marker_02",
+        "type": "product",
+        "attributes": {
+          "name": "Vivid Flow Acrylic Paint Markers - 10 Pack",
+          "price": 21.49,
+          "category": "acrylic markers",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

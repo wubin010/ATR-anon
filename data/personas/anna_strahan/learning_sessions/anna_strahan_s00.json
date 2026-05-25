@@ -1,0 +1,109 @@
+{
+  "session_id": "anna_strahan_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and reply to one message",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Maya Patel",
+    "priority": "high",
+    "reply_points": [
+      "approve moving the vaccination fridge service to Wednesday afternoon",
+      "ask facilities to confirm the exact arrival window",
+      "remind staff to keep backup coolers ready during the service visit",
+      "thank her for flagging it early"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Maya Patel"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_patel_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_patel_01",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_patel_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Patel",
+          "subject": "Need your decision: fridge maintenance reschedule",
+          "body": "The vendor can no longer come Tuesday morning for the vaccination fridge service. They offered Wednesday afternoon instead. I need your approval before I confirm with facilities and notify nursing.",
+          "thread_id": "thr_patel_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-03T06:42:00"
+        }
+      },
+      {
+        "id": "msg_benton_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Chris Benton",
+          "subject": "Updated copier lease quote",
+          "body": "Sending over the revised monthly lease estimate for the front office copier. No action needed today unless you want me to proceed this week.",
+          "thread_id": "thr_benton_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-03T07:18:00"
+        }
+      },
+      {
+        "id": "msg_hsu_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dr. Lena Hsu",
+          "subject": "FYI: resident shadowing schedule posted",
+          "body": "I uploaded the final resident shadowing schedule for this month. Just an FYI so you know the front desk requests should taper off.",
+          "thread_id": "thr_hsu_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-03T07:31:00"
+        }
+      }
+    ]
+  }
+}

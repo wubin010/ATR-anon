@@ -1,0 +1,124 @@
+{
+  "session_id": "samantha_bello_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a planning call",
+  "task_params": {
+    "title": "Volunteer Group Planning Call",
+    "start_time": "2025-03-21T18:30:00-04:00",
+    "end_time": "2025-03-21T19:15:00-04:00",
+    "participants": [
+      "volunteer-group@rinconliteracy.org",
+      "mariela@rinconliteracy.org",
+      "david@rinconliteracy.org"
+    ],
+    "location": "Zoom"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-21T18:30:00-04:00",
+        "end_time": "2025-03-21T19:15:00-04:00",
+        "participants": [
+          "volunteer-group@rinconliteracy.org",
+          "mariela@rinconliteracy.org",
+          "david@rinconliteracy.org"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Volunteer Group Planning Call",
+        "start_time": "2025-03-21T18:30:00-04:00",
+        "end_time": "2025-03-21T19:15:00-04:00",
+        "participants": [
+          "volunteer-group@rinconliteracy.org",
+          "mariela@rinconliteracy.org",
+          "david@rinconliteracy.org"
+        ],
+        "location": "Zoom"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_yoga_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Center Yoga",
+          "start_time": "2025-03-20T18:00:00-04:00",
+          "end_time": "2025-03-20T19:00:00-04:00",
+          "participants": [],
+          "location": "Rincon Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_deadline_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "ESG Budget Review Deadline Block",
+          "start_time": "2025-03-19T19:00:00-04:00",
+          "end_time": "2025-03-19T20:30:00-04:00",
+          "participants": [
+            "finance-team@coastalholdings.com"
+          ],
+          "location": "Home Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_1on1_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Volunteer Group Planning Call",
+          "start_time": "2025-03-21T18:30:00-04:00",
+          "end_time": "2025-03-21T19:15:00-04:00",
+          "participants": [
+            "ana@coastalholdings.com"
+          ],
+          "location": "Teams",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Lucia",
+          "start_time": "2025-03-21T20:00:00-04:00",
+          "end_time": "2025-03-21T21:30:00-04:00",
+          "participants": [
+            "lucia@gmail.com"
+          ],
+          "location": "Casa Verde",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

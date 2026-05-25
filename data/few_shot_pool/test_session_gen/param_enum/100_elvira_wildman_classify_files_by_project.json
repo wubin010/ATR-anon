@@ -1,0 +1,136 @@
+{
+  "instruction": "Please tidy the files sitting in /Work/Incoming — it's a jumble of PDFs, spreadsheets, and docs and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "elvira_wildman_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "elvira_wildman",
+  "rule_id": "elvira_wildman_workspace_04",
+  "rule_ref": {
+    "rule_id": "elvira_wildman_workspace_04",
+    "rule_text": "For office file organization, she prefers classifying materials by project rather than by generic type.",
+    "canonical_answer": "I always organize work files by project when I’m sorting them."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_incoming_aurora_01",
+        "type": "file",
+        "attributes": {
+          "name": "field_notes.docx",
+          "file_type": "docx",
+          "location": "/Work/Incoming",
+          "owner": "Elvira Wildman",
+          "labels": [],
+          "archived": false,
+          "project": "Aurora Retrofit",
+          "modified_date": "2026-09-14",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_incoming_harbor_01",
+        "type": "file",
+        "attributes": {
+          "name": "budget_snapshot.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Incoming",
+          "owner": "Elvira Wildman",
+          "labels": [],
+          "archived": false,
+          "project": "Harbor Sensor",
+          "modified_date": "2026-09-15",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_incoming_maple_01",
+        "type": "file",
+        "attributes": {
+          "name": "vendor_packet.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Incoming",
+          "owner": "Elvira Wildman",
+          "labels": [],
+          "archived": false,
+          "project": "Maple Expansion",
+          "modified_date": "2026-09-15",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_incoming_nimbus_01",
+        "type": "file",
+        "attributes": {
+          "name": "status_outline.docx",
+          "file_type": "docx",
+          "location": "/Work/Incoming",
+          "owner": "Elvira Wildman",
+          "labels": [],
+          "archived": false,
+          "project": "Nimbus Migration",
+          "modified_date": "2026-09-16",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_incoming_silverline_01",
+        "type": "file",
+        "attributes": {
+          "name": "cost_rollup.xlsx",
+          "file_type": "xlsx",
+          "location": "/Work/Incoming",
+          "owner": "Elvira Wildman",
+          "labels": [],
+          "archived": false,
+          "project": "Silverline QA",
+          "modified_date": "2026-09-16",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_incoming_westbridge_01",
+        "type": "file",
+        "attributes": {
+          "name": "approval_scan.pdf",
+          "file_type": "pdf",
+          "location": "/Work/Incoming",
+          "owner": "Elvira Wildman",
+          "labels": [],
+          "archived": false,
+          "project": "Westbridge Launch",
+          "modified_date": "2026-09-17",
+          "priority": "high"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

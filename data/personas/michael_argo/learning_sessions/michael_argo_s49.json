@@ -1,0 +1,120 @@
+{
+  "session_id": "michael_argo_s49",
+  "session_type": "learning",
+  "day_offset": 49,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Indianapolis",
+    "event_tags": [
+      "museum",
+      "workshop"
+    ],
+    "event_id": "evt_newfields_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Indianapolis",
+        "event_tags": [
+          "museum",
+          "workshop"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_newfields_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_newfields_01",
+        "type": "event",
+        "attributes": {
+          "name": "Newfields After Hours: Surrealism and Sound",
+          "location": "Indianapolis",
+          "date_time": "2025-03-22T19:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "museum",
+            "art",
+            "gallery"
+          ]
+        }
+      },
+      {
+        "id": "evt_eiteljorg_02",
+        "type": "event",
+        "attributes": {
+          "name": "Eiteljorg Printmaking Workshop",
+          "location": "Indianapolis",
+          "date_time": "2025-03-23T13:00:00",
+          "price": 35.0,
+          "event_tags": [
+            "workshop",
+            "art",
+            "printmaking"
+          ]
+        }
+      },
+      {
+        "id": "evt_arthouse_03",
+        "type": "event",
+        "attributes": {
+          "name": "Indy Art Center Zine Lab",
+          "location": "Indianapolis",
+          "date_time": "2025-03-24T18:30:00",
+          "price": 22.0,
+          "event_tags": [
+            "workshop",
+            "zines",
+            "creative"
+          ]
+        }
+      },
+      {
+        "id": "evt_history_04",
+        "type": "event",
+        "attributes": {
+          "name": "Indiana History Center Evening Tour",
+          "location": "Indianapolis",
+          "date_time": "2025-03-22T17:30:00",
+          "price": 16.0,
+          "event_tags": [
+            "museum",
+            "history",
+            "tour"
+          ]
+        }
+      }
+    ]
+  }
+}

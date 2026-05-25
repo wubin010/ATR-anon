@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book me a haircut appointment in Ponce, Puerto Rico for 2026-07-09 at 4:30pm — just pick a place and handle it.",
+  "gold_value": "svc_haircut_sananton_01",
+  "session_id": "maximo_esteban_irizarry_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "maximo_esteban_irizarry_reservation_03",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_reservation_03",
+    "rule_text": "When booking local service appointments, he prefers familiar, community-oriented providers over anonymous chain-style options.",
+    "canonical_answer": "For local appointments, I prefer someone rooted in the community over a generic chain provider."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_haircut_sananton_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Barbería San Antón",
+          "service_type": "haircut",
+          "location": "Ponce, Puerto Rico",
+          "rating": 4.5,
+          "distance_km": 2.2,
+          "business_model": "family-owned neighborhood shop",
+          "established_year": 1989
+        }
+      },
+      {
+        "id": "svc_haircut_clipstop_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "ClipStop Ponce Centro",
+          "service_type": "haircut",
+          "location": "Ponce, Puerto Rico",
+          "rating": 4.9,
+          "distance_km": 0.3,
+          "business_model": "regional chain",
+          "branch_count": 18
+        }
+      },
+      {
+        "id": "svc_haircut_stylehub_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "StyleHub Express",
+          "service_type": "haircut",
+          "location": "Ponce, Puerto Rico",
+          "rating": 4.8,
+          "distance_km": 0.6,
+          "business_model": "national chain",
+          "branch_count": 63
+        }
+      },
+      {
+        "id": "svc_haircut_freshfade_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "FreshFade Plaza",
+          "service_type": "haircut",
+          "location": "Ponce, Puerto Rico",
+          "rating": 4.7,
+          "distance_km": 0.4,
+          "business_model": "franchise chain",
+          "branch_count": 27
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_haircut_sananton_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

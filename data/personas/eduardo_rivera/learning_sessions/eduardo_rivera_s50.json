@@ -1,0 +1,114 @@
+{
+  "session_id": "eduardo_rivera_s50",
+  "session_type": "learning",
+  "day_offset": 50,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "design book",
+    "budget": 35,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "design book",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_nightsketch_01",
+          "prod_formcolor_02",
+          "prod_materialplay_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_formcolor_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_nightsketch_01",
+        "type": "product",
+        "attributes": {
+          "name": "Night Sketches: Visual Ideas After Dark",
+          "price": 24.99,
+          "category": "design book",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_formcolor_02",
+        "type": "product",
+        "attributes": {
+          "name": "Form and Color: A Studio Design Workbook",
+          "price": 31.5,
+          "category": "design book",
+          "rating": 4.9
+        }
+      },
+      {
+        "id": "prod_materialplay_03",
+        "type": "product",
+        "attributes": {
+          "name": "Material Play: Objects, Texture, Process",
+          "price": 34.0,
+          "category": "design book",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_typelab_04",
+        "type": "product",
+        "attributes": {
+          "name": "Type Lab: Experimental Letterforms",
+          "price": 38.0,
+          "category": "design book",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_tasklamp_05",
+        "type": "product",
+        "attributes": {
+          "name": "Compact Desk Task Lamp",
+          "price": 29.99,
+          "category": "lighting",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

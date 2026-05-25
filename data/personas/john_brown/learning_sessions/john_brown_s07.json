@@ -1,0 +1,119 @@
+{
+  "session_id": "john_brown_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "communication",
+  "reason_for_call": "Draft a message",
+  "task_params": {
+    "sender": "Maya Thompson",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "greet her politely",
+      "ask what materials students should bring for the next session",
+      "ask if any handouts or supplies will be provided on site",
+      "say I want to make sure the students come prepared",
+      "thank her for the help"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Thompson",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_outreach_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_outreach_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Thompson",
+          "subject": "STEM Outreach schedule update",
+          "body": "Hi John, thanks again for volunteering. Our next student session is coming up soon. I'll send more details once the room and activity plan are finalized.",
+          "thread_id": "thr_outreach_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-11T16:20:00"
+        }
+      },
+      {
+        "id": "msg_team_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Carlos Nguyen",
+          "subject": "Safety sign mockup feedback",
+          "body": "Can you revise the forklift warning icon before Friday? The team liked the color palette but wants stronger contrast.",
+          "thread_id": "thr_design_02",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-02-11T09:05:00"
+        }
+      },
+      {
+        "id": "msg_league_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Avery Collins",
+          "subject": "Volleyball lineup",
+          "body": "We might be short one player this week. Let me know if your class runs late and I can adjust rotations.",
+          "thread_id": "thr_sports_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-10T18:42:00"
+        }
+      },
+      {
+        "id": "msg_prof_04",
+        "type": "message",
+        "attributes": {
+          "sender": "Dr. Elaine Foster",
+          "subject": "Office hours follow-up",
+          "body": "Good talking with you today. The ergonomics case study examples are posted now if you want to review them before lab.",
+          "thread_id": "thr_class_04",
+          "folder": "archive",
+          "labels": [
+            "school"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-02-08T14:10:00"
+        }
+      }
+    ]
+  }
+}

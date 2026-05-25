@@ -1,0 +1,106 @@
+{
+  "session_id": "eduardo_rivera_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "commerce",
+  "reason_for_call": "Order a home item.",
+  "task_params": {
+    "category": "table runner",
+    "budget": 40,
+    "sort_by": "rating",
+    "product_id": "prod_otomi_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "table runner",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_otomi_01",
+          "prod_sunburst_02",
+          "prod_talavera_03",
+          "prod_coral_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_otomi_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_otomi_01",
+        "type": "product",
+        "attributes": {
+          "name": "Otomi Fiesta Table Runner",
+          "price": 34.0,
+          "category": "table runner",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_sunburst_02",
+        "type": "product",
+        "attributes": {
+          "name": "Sunburst Stripe Table Runner",
+          "price": 28.0,
+          "category": "table runner",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_talavera_03",
+        "type": "product",
+        "attributes": {
+          "name": "Talavera Bloom Table Runner",
+          "price": 39.0,
+          "category": "table runner",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_coral_04",
+        "type": "product",
+        "attributes": {
+          "name": "Coral Chili Woven Table Runner",
+          "price": 22.0,
+          "category": "table runner",
+          "rating": 4.2
+        }
+      }
+    ]
+  }
+}

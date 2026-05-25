@@ -1,0 +1,117 @@
+{
+  "instruction": "Please book dinner in Atlanta for 4 people on 2026-09-18 at 7:30pm—just pick a spot and reserve it.",
+  "gold_value": "rst_sweet_auburn_supper_01",
+  "session_id": "charlie_james_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "charlie_james_reservation_01",
+  "rule_ref": {
+    "rule_id": "charlie_james_reservation_01",
+    "rule_text": "For restaurant reservations, he prefers local Southern or soulful cooking over generic mainstream options.",
+    "canonical_answer": "When I go out, I’d rather eat somewhere with real Southern or soulful food."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_sweet_auburn_supper_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Sweet Auburn Supper House",
+          "cuisine": "Southern soul food",
+          "location": "Atlanta",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "brand_type": "independent local",
+          "review_count": 184
+        }
+      },
+      {
+        "id": "rst_peachtree_chophouse_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Peachtree Chophouse",
+          "cuisine": "Steakhouse",
+          "location": "Atlanta",
+          "rating": 4.9,
+          "price_range": "$$$",
+          "seating_style": "fine dining",
+          "brand_type": "popular local",
+          "review_count": 1680
+        }
+      },
+      {
+        "id": "rst_bella_strada_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bella Strada",
+          "cuisine": "Italian",
+          "location": "Atlanta",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "trendy bistro",
+          "brand_type": "popular local",
+          "review_count": 1325
+        }
+      },
+      {
+        "id": "rst_southern_junction_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Southern Junction Grill",
+          "cuisine": "Southern-inspired American",
+          "location": "Atlanta",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "brand_type": "regional chain",
+          "review_count": 2410
+        }
+      },
+      {
+        "id": "rst_midtown_kitchen_hall_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Midtown Kitchen Hall",
+          "cuisine": "New American",
+          "location": "Atlanta",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "busy brasserie",
+          "brand_type": "popular local",
+          "review_count": 1950
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_sweet_auburn_supper_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

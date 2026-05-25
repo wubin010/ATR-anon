@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book the lowest-priced flight from Chicago to Minneapolis for just me from the available options. It’s a quick in-and-out trip and I’m only bringing a backpack, so use my usual traveler details and card on file once you find the best match.",
+  "gold_value": "window",
+  "session_id": "samantha_bello_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "samantha_bello_travel_04",
+  "rule_ref": {
+    "rule_id": "samantha_bello_travel_04",
+    "rule_text": "When booking flights, Samantha prefers a window seat.",
+    "canonical_answer": "I always prefer a window seat when I fly."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_ord_msp_lakefront_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Minneapolis",
+          "departure_date": "2026-07-22",
+          "airline": "Lakefront Air",
+          "price": 118,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "flt_ord_msp_prairiejet_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Minneapolis",
+          "departure_date": "2026-07-22",
+          "airline": "PrairieJet",
+          "price": 154,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_ord_det_midwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Chicago",
+          "destination": "Detroit",
+          "departure_date": "2026-07-22",
+          "airline": "Midwest Connect",
+          "price": 101,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "flt_mke_msp_northstar_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Milwaukee",
+          "destination": "Minneapolis",
+          "departure_date": "2026-07-22",
+          "airline": "Northstar",
+          "price": 109,
+          "available_seats": 7
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

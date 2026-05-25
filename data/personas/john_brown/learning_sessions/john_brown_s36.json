@@ -1,0 +1,112 @@
+{
+  "session_id": "john_brown_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a planning block",
+  "task_params": {
+    "title": "Mural sketching and social flex block",
+    "start_time": "2025-03-16T16:30:00-05:00",
+    "end_time": "2025-03-16T19:00:00-05:00",
+    "location": "Downtown Baton Rouge"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-16T16:30:00-05:00",
+        "end_time": "2025-03-16T19:00:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Mural sketching and social flex block",
+        "start_time": "2025-03-16T16:30:00-05:00",
+        "end_time": "2025-03-16T19:00:00-05:00",
+        "location": "Downtown Baton Rouge"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_family_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church with family",
+          "start_time": "2025-03-16T09:30:00-05:00",
+          "end_time": "2025-03-16T12:15:00-05:00",
+          "participants": [
+            "Mom",
+            "Aunt Lisa"
+          ],
+          "location": "Greater King David Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_lunch_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunday family lunch",
+          "start_time": "2025-03-16T12:45:00-05:00",
+          "end_time": "2025-03-16T14:15:00-05:00",
+          "participants": [
+            "Mom",
+            "Cousin Dre"
+          ],
+          "location": "Grandma's house",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_game_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community center pickup basketball",
+          "start_time": "2025-03-16T19:30:00-05:00",
+          "end_time": "2025-03-16T21:00:00-05:00",
+          "participants": [
+            "Malik",
+            "Tre"
+          ],
+          "location": "BREC Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_shift_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Mural sketching and social flex block",
+          "start_time": "2025-03-16T16:30:00-05:00",
+          "end_time": "2025-03-16T19:00:00-05:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

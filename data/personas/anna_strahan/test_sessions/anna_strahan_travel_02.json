@@ -1,0 +1,140 @@
+{
+  "instruction": "A stop on trip T-6114 in Asheville fell through. Please swap in one replacement for an afternoon visit near downtown Asheville that can fit in about 60-90 minutes and will not take us far off the current route.",
+  "gold_value": [
+    "stop_asheville_rad_greenway_01"
+  ],
+  "session_id": "anna_strahan_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "anna_strahan_travel_02",
+  "rule_ref": {
+    "rule_id": "anna_strahan_travel_02",
+    "rule_text": "When a trip needs replanning after a disruption, Anna prefers replacement stops that preserve the original balance of outdoor exploration and local culture rather than generic substitutes.",
+    "canonical_answer": "If a stop falls through, I want the replacement to keep the same mix of nature and local culture."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_asheville_rad_greenway_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "River Arts Greenway & Studios",
+          "location": "Asheville, North Carolina",
+          "trip_id": "T-6114",
+          "stop_type": "arts_district_greenway",
+          "tags": [
+            "outdoor",
+            "river_walk",
+            "local_art",
+            "working_studios",
+            "murals",
+            "walking"
+          ],
+          "rating": 4.5,
+          "review_count": 322,
+          "detour_minutes_from_downtown_route": 9,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_asheville_blue_ridge_overlook_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Blue Ridge Scenic Overlook",
+          "location": "Asheville, North Carolina",
+          "trip_id": "T-6114",
+          "stop_type": "viewpoint",
+          "tags": [
+            "outdoor",
+            "mountain_view",
+            "short_trail",
+            "walking",
+            "scenic"
+          ],
+          "rating": 4.9,
+          "review_count": 2481,
+          "detour_minutes_from_downtown_route": 6,
+          "visit_duration_hours": 1.25
+        }
+      },
+      {
+        "id": "stop_asheville_craft_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Asheville Craft Market Hall",
+          "location": "Downtown Asheville, North Carolina",
+          "trip_id": "T-6114",
+          "stop_type": "market_hall",
+          "tags": [
+            "local_culture",
+            "crafts",
+            "music",
+            "makers",
+            "downtown"
+          ],
+          "rating": 4.8,
+          "review_count": 1910,
+          "detour_minutes_from_downtown_route": 2,
+          "visit_duration_hours": 1.25
+        }
+      },
+      {
+        "id": "stop_asheville_french_broad_walk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "French Broad Riverwalk",
+          "location": "Asheville, North Carolina",
+          "trip_id": "T-6114",
+          "stop_type": "riverwalk",
+          "tags": [
+            "outdoor",
+            "river_path",
+            "walking",
+            "bridges",
+            "greenway"
+          ],
+          "rating": 4.7,
+          "review_count": 1180,
+          "detour_minutes_from_downtown_route": 4,
+          "visit_duration_hours": 1.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_asheville_rad_greenway_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

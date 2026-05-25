@@ -1,0 +1,73 @@
+{
+  "session_id": "michael_argo_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "workspace",
+  "reason_for_call": "Update a project tracker",
+  "task_params": {
+    "tracker_title": "Portfolio Progress Tracker",
+    "update_action": "create_entry",
+    "entry_payload_points": [
+      "Neon Alley photo composite moved to final color pass",
+      "exported three candidate crops for portfolio review",
+      "needs typography overlay decision next",
+      "target finish by Friday night"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_portfolio_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_payload_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_portfolio_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Portfolio Progress Tracker"
+        }
+      },
+      {
+        "id": "trk_habits_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Weekly Practice Log"
+        }
+      },
+      {
+        "id": "trk_apps_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Internship Applications Tracker"
+        }
+      }
+    ]
+  }
+}

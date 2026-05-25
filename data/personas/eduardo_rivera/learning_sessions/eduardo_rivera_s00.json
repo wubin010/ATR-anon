@@ -1,0 +1,125 @@
+{
+  "session_id": "eduardo_rivera_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and reply to one message",
+  "task_params": {
+    "target_sender": "Dr. Nina Shah",
+    "folder": "inbox",
+    "priority": "high",
+    "language": "en",
+    "reply_points": [
+      "Received the scan files and prescription",
+      "Case is in production this morning",
+      "Wax try-in will be ready by 3 PM today",
+      "Will call the clinic if any fit issue appears"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Dr. Nina Shah"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_nina_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_nina_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_nina_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dr. Nina Shah",
+          "subject": "Need same-day status on ocular case for M. Torres",
+          "body": "Good morning Eduardo, can you send me a same-day update on the ocular prosthesis case for M. Torres? The patient is asking whether we are still on track for today's wax try-in.",
+          "thread_id": "thr_nina_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T06:18:00-08:00"
+        }
+      },
+      {
+        "id": "msg_supply_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Bay Dental Supply",
+          "subject": "Invoice for milling burs shipment",
+          "body": "Attached is the invoice for the burs shipment delivered yesterday.",
+          "thread_id": "thr_supply_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T05:47:00-08:00"
+        }
+      },
+      {
+        "id": "msg_team_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marco Alvarez",
+          "subject": "Updated weekend maintenance checklist",
+          "body": "I added the compressor checks to the weekend maintenance list.",
+          "thread_id": "thr_team_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T06:42:00-08:00"
+        }
+      },
+      {
+        "id": "msg_nina_old_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dr. Nina Shah",
+          "subject": "Photos received for last week's socket revision case",
+          "body": "Thanks for sending the photos. The color match looked excellent.",
+          "thread_id": "thr_nina_old_01",
+          "folder": "archive",
+          "labels": [],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-02-07T16:11:00-08:00"
+        }
+      }
+    ]
+  }
+}

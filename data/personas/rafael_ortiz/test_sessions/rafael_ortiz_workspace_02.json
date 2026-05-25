@@ -1,0 +1,95 @@
+{
+  "instruction": "Please write something up for our Southside community blood pressure workshops and save it in /Community Education/Outreach. Title it \"Blood Pressure Check-In Questions\" and cover opening questions, medication review prompts, and signs that should lead participants to follow up with a clinic.",
+  "gold_value": "template",
+  "session_id": "rafael_ortiz_workspace_02_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "rafael_ortiz_workspace_02",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_workspace_02",
+    "rule_text": "For recurring teaching or outreach materials, he prefers creating reusable templates instead of one-off documents.",
+    "canonical_answer": "For teaching and outreach materials, I like reusable templates instead of starting from scratch every time."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_southside_bp_screening_recap_01",
+        "type": "document",
+        "attributes": {
+          "title": "Southside Blood Pressure Screening Recap",
+          "doc_type": "report",
+          "location": "/Community Education/Outreach",
+          "content_brief": "Summary of attendance, referral counts, and volunteer observations from a neighborhood screening event."
+        }
+      },
+      {
+        "id": "doc_bp_workshop_intro_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Blood Pressure Workshop Intro Notes",
+          "doc_type": "note",
+          "location": "/Community Education/Outreach",
+          "content_brief": "Brief speaking notes covering introductions, home monitoring reminders, and discussion prompts for a community session."
+        }
+      },
+      {
+        "id": "doc_bp_outreach_followup_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Blood Pressure Outreach Follow-Up Memo",
+          "doc_type": "memo",
+          "location": "/Community Education/Outreach",
+          "content_brief": "Handoff note listing participants who asked for callback after a church outreach table."
+        }
+      },
+      {
+        "id": "doc_cholesterol_class_questions_01",
+        "type": "document",
+        "attributes": {
+          "title": "Cholesterol Class Questions",
+          "doc_type": "note",
+          "location": "/Community Education/Outreach",
+          "content_brief": "Facilitator notes with discussion questions for a public education session on diet, lab results, and medication adherence."
+        }
+      },
+      {
+        "id": "doc_bp_counseling_questions_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Blood Pressure Counseling Question Sheet",
+          "doc_type": "template",
+          "location": "/Community Education/Templates",
+          "content_brief": "Blank question-and-response format with sections for symptoms, medications, and follow-up guidance."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

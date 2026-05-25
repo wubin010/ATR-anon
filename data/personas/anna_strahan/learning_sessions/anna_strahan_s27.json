@@ -1,0 +1,112 @@
+{
+  "session_id": "anna_strahan_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "travel",
+  "reason_for_call": "Book a flight.",
+  "task_params": {
+    "origin": "New Orleans",
+    "destination": "Marseille",
+    "passenger_count": 2,
+    "departure_date": "2025-04-14",
+    "return_date": "2025-04-24",
+    "seat_preference": "aisle"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "New Orleans",
+        "destination": "Marseille",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_dl_02",
+        "seat_preference": "aisle"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_af_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Marseille",
+          "departure_date": "2025-04-14",
+          "return_date": "2025-04-24",
+          "airline": "Air France",
+          "price": 1482.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_dl_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Marseille",
+          "departure_date": "2025-04-14",
+          "return_date": "2025-04-24",
+          "airline": "Delta",
+          "price": 1325.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_ua_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Marseille",
+          "departure_date": "2025-04-15",
+          "return_date": "2025-04-24",
+          "airline": "United",
+          "price": 1198.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_ba_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Nice",
+          "departure_date": "2025-04-14",
+          "return_date": "2025-04-24",
+          "airline": "British Airways",
+          "price": 1260.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  }
+}

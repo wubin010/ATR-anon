@@ -1,0 +1,111 @@
+{
+  "instruction": "Please book the lowest-priced flight from Portland to San Diego for just me from the available options. I’m only bringing a small backpack and want the trip to be easy, so use the usual traveler details and payment method on file and go ahead once you find the best match.",
+  "gold_value": "window",
+  "session_id": "roosevelt_brown_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "roosevelt_brown_travel_04",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_travel_04",
+    "rule_text": "When he does fly, he prefers a window seat rather than an aisle or middle seat.",
+    "canonical_answer": "If I’m on a flight, I like a window seat for the view and the headspace."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_pdx_sandiego_sunwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "SunWest",
+          "price": 129.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_pdx_sandiego_harborjet_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "HarborJet",
+          "price": 156.0,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "flt_pdx_sandiego_bluecanyon_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Blue Canyon Air",
+          "price": 184.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_pdx_phoenix_sunwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "Phoenix",
+          "departure_date": "2026-08-14",
+          "airline": "SunWest",
+          "price": 118.0,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "flt_sea_sandiego_coastline_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Coastline Air",
+          "price": 137.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

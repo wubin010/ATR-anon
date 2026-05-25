@@ -1,0 +1,105 @@
+{
+  "session_id": "michael_argo_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "portable charger",
+    "budget": 35,
+    "sort_by": "rating",
+    "quantity": 1,
+    "product_id": "prod_anchor_01"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "portable charger",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_anchor_01",
+          "prod_iniu_02",
+          "prod_baseus_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_anchor_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_anchor_01",
+        "type": "product",
+        "attributes": {
+          "name": "Anker PowerCore Slim 10000 Portable Charger",
+          "price": 29.99,
+          "category": "portable charger",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_iniu_02",
+        "type": "product",
+        "attributes": {
+          "name": "INIU 10000mAh Portable Charger",
+          "price": 24.99,
+          "category": "portable charger",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_baseus_03",
+        "type": "product",
+        "attributes": {
+          "name": "Baseus 20000mAh Portable Charger",
+          "price": 34.5,
+          "category": "portable charger",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_belkin_04",
+        "type": "product",
+        "attributes": {
+          "name": "Belkin BoostCharge Portable Charger 10000",
+          "price": 39.99,
+          "category": "portable charger",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

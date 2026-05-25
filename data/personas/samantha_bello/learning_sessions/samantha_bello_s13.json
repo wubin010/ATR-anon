@@ -1,0 +1,178 @@
+{
+  "session_id": "samantha_bello_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "beach",
+      "food",
+      "art"
+    ],
+    "destination": "Vieques",
+    "duration_days": 3,
+    "traveler_count": 1,
+    "stop_tags": [
+      "beach",
+      "food",
+      "art"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "beach",
+          "food",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_vieques_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Vieques",
+        "stop_tags": [
+          "beach",
+          "food",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Vieques",
+        "duration_days": 3,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_sunbay_01",
+          "stp_tinbox_02",
+          "stp_galeria_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_vieques_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Vieques",
+          "region": "Puerto Rico",
+          "tags": [
+            "beach",
+            "food",
+            "art",
+            "budget",
+            "island"
+          ]
+        }
+      },
+      {
+        "id": "dst_ponce_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Ponce",
+          "region": "Puerto Rico",
+          "tags": [
+            "art",
+            "food",
+            "historic",
+            "city",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "dst_culebra_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Culebra",
+          "region": "Puerto Rico",
+          "tags": [
+            "beach",
+            "snorkeling",
+            "nature",
+            "island"
+          ]
+        }
+      },
+      {
+        "id": "stp_sunbay_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Sun Bay Beach",
+          "location": "Vieques",
+          "tags": [
+            "beach",
+            "relax",
+            "swim"
+          ]
+        }
+      },
+      {
+        "id": "stp_tinbox_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Tin Box",
+          "location": "Vieques",
+          "tags": [
+            "food",
+            "local",
+            "casual"
+          ]
+        }
+      },
+      {
+        "id": "stp_galeria_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Vieques Art Gallery",
+          "location": "Vieques",
+          "tags": [
+            "art",
+            "gallery",
+            "local"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "session_id": "theodora_tong_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "commerce",
+  "reason_for_call": "Build a shopping list.",
+  "task_params": {
+    "category": "herb growing supplies",
+    "budget": 30,
+    "list_name": "Pantry and Herbs",
+    "product_ids": [
+      "prod_herbkit_01",
+      "prod_potmix_02",
+      "prod_markers_03"
+    ],
+    "items": [
+      "Organic Basil Starter Kit",
+      "Indoor Potting Mix 8 qt",
+      "Waterproof Plant Markers 12-pack",
+      "olive oil",
+      "garlic powder",
+      "sea salt",
+      "rolled oats"
+    ]
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "herb growing supplies",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_herbkit_01",
+          "prod_potmix_02",
+          "prod_markers_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Organic Basil Starter Kit",
+          "Indoor Potting Mix 8 qt",
+          "Waterproof Plant Markers 12-pack",
+          "olive oil",
+          "garlic powder",
+          "sea salt",
+          "rolled oats"
+        ],
+        "list_name": "Pantry and Herbs"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_herbkit_01",
+        "type": "product",
+        "attributes": {
+          "name": "Organic Basil Starter Kit",
+          "price": 12.99,
+          "category": "herb growing supplies",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_potmix_02",
+        "type": "product",
+        "attributes": {
+          "name": "Indoor Potting Mix 8 qt",
+          "price": 8.49,
+          "category": "herb growing supplies",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_markers_03",
+        "type": "product",
+        "attributes": {
+          "name": "Waterproof Plant Markers 12-pack",
+          "price": 5.99,
+          "category": "herb growing supplies",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_can_04",
+        "type": "product",
+        "attributes": {
+          "name": "Mini Copper Watering Can",
+          "price": 16.5,
+          "category": "herb growing supplies",
+          "rating": 4.8
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "session_id": "eduardo_rivera_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "tripod",
+    "budget": 120,
+    "sort_by": "rating",
+    "selected_product_id": "prod_ulanzi_zero_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "tripod",
+        "budget": 120,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_ulanzi_zero_01",
+          "prod_kf_compact_02",
+          "prod_sirui_am_03",
+          "prod_rollei_mini_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_ulanzi_zero_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_ulanzi_zero_01",
+        "type": "product",
+        "attributes": {
+          "name": "Ulanzi Zero F38 Travel Tripod",
+          "price": 119.99,
+          "category": "tripod",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_kf_compact_02",
+        "type": "product",
+        "attributes": {
+          "name": "K&F Concept Compact Carbon Travel Tripod",
+          "price": 109.99,
+          "category": "tripod",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_sirui_am_03",
+        "type": "product",
+        "attributes": {
+          "name": "Sirui AM-225 Compact Tripod",
+          "price": 99.95,
+          "category": "tripod",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_rollei_mini_04",
+        "type": "product",
+        "attributes": {
+          "name": "Rollei Compact Traveler Mini Tripod",
+          "price": 69.99,
+          "category": "tripod",
+          "rating": 4.2
+        }
+      }
+    ]
+  }
+}

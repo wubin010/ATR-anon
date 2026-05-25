@@ -1,0 +1,107 @@
+{
+  "instruction": "I want to head to Portland, ME from New York, NY for a quick weekend away. One traveler, outbound on 2026-09-18 only — please look at the available options and book the travel.",
+  "gold_value": null,
+  "session_id": "roosevelt_brown_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "roosevelt_brown_travel_02",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_travel_02",
+    "rule_text": "For spontaneous weekend trips in the Northeast, he prefers booking ground transport rather than flights.",
+    "canonical_answer": "For quick regional getaways, I’d rather take ground transport than fly."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_nyc_pwm_20260918_b6_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New York, NY",
+          "destination": "Portland, ME",
+          "departure_date": "2026-09-18",
+          "airline": "JetBlue",
+          "price": 109,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_nyc_pwm_20260918_dl_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New York, NY",
+          "destination": "Portland, ME",
+          "departure_date": "2026-09-18",
+          "airline": "Delta Air Lines",
+          "price": 121,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "flt_nyc_pwm_20260918_aa_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New York, NY",
+          "destination": "Portland, ME",
+          "departure_date": "2026-09-18",
+          "airline": "American Airlines",
+          "price": 134,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "trp_nyc_pwm_20260918_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "New York, NY",
+          "destination": "Portland, ME",
+          "mode": "bus",
+          "departure_date": "2026-09-18",
+          "price": 168,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "trp_nyc_pwm_20260918_train_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "New York, NY",
+          "destination": "Portland, ME",
+          "mode": "train",
+          "departure_date": "2026-09-18",
+          "price": 186,
+          "available_seats": 9
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

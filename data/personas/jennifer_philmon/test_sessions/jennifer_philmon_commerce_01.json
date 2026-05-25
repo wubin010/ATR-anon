@@ -1,0 +1,115 @@
+{
+  "instruction": "I'm making a one-pot red lentil curry and just noticed I'm out of red lentils, coconut milk, and yellow curry paste. Go ahead and take care of getting what I need.",
+  "gold_value": null,
+  "session_id": "jennifer_philmon_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "jennifer_philmon_commerce_01",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_commerce_01",
+    "rule_text": "When organizing ingredients for cooking, she prefers building a shopping list first instead of placing grocery-style orders immediately.",
+    "canonical_answer": "For cooking supplies, I like to build a list first rather than ordering on the spot."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_bundle_curry_01",
+        "type": "product",
+        "attributes": {
+          "name": "One-Pot Red Lentil Curry Pantry Kit",
+          "price": 15.49,
+          "category": "one_pot_cooking",
+          "rating": 4.9,
+          "review_count": 3510,
+          "contents": "red lentils, coconut milk, yellow curry paste"
+        }
+      },
+      {
+        "id": "prod_lentils_01",
+        "type": "product",
+        "attributes": {
+          "name": "Organic Red Lentils, 2 lb",
+          "price": 4.29,
+          "category": "one_pot_cooking",
+          "rating": 4.8,
+          "review_count": 920,
+          "form": "dry lentils"
+        }
+      },
+      {
+        "id": "prod_coconut_milk_01",
+        "type": "product",
+        "attributes": {
+          "name": "Thai Style Coconut Milk, 2-Pack",
+          "price": 5.99,
+          "category": "one_pot_cooking",
+          "rating": 4.8,
+          "review_count": 1840,
+          "form": "canned coconut milk"
+        }
+      },
+      {
+        "id": "prod_curry_paste_01",
+        "type": "product",
+        "attributes": {
+          "name": "Yellow Curry Paste Jar",
+          "price": 3.89,
+          "category": "one_pot_cooking",
+          "rating": 4.7,
+          "review_count": 760,
+          "form": "curry paste"
+        }
+      },
+      {
+        "id": "prod_mealkit_curry_01",
+        "type": "product",
+        "attributes": {
+          "name": "Quick Red Lentil Curry Dinner Kit",
+          "price": 12.99,
+          "category": "one_pot_cooking",
+          "rating": 4.8,
+          "review_count": 2680,
+          "contents": "red lentils, coconut milk powder, curry seasoning"
+        }
+      },
+      {
+        "id": "prod_simmer_sauce_01",
+        "type": "product",
+        "attributes": {
+          "name": "Yellow Coconut Curry Simmer Sauce",
+          "price": 4.99,
+          "category": "one_pot_cooking",
+          "rating": 4.9,
+          "review_count": 2890,
+          "form": "prepared sauce"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "build_shopping_list",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

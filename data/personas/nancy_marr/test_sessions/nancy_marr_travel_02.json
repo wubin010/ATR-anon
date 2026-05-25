@@ -1,0 +1,107 @@
+{
+  "instruction": "Please handle the booking for my short getaway to Quebec City, QC from Toronto, ON on 2026-10-09. It's just me, and I only need the outbound leg.",
+  "gold_value": null,
+  "session_id": "nancy_marr_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "nancy_marr_travel_02",
+  "rule_ref": {
+    "rule_id": "nancy_marr_travel_02",
+    "rule_text": "For regional leisure trips, Nancy tends to choose ground transportation instead of flying.",
+    "canonical_answer": "For trips like my autumn getaways, I usually prefer to go by road or rail rather than book a flight."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_tor_que_20261009_ac_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Toronto, ON",
+          "destination": "Quebec City, QC",
+          "departure_date": "2026-10-09",
+          "airline": "Air Canada",
+          "price": 119,
+          "available_seats": 7
+        }
+      },
+      {
+        "id": "flt_tor_que_20261009_pd_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Toronto, ON",
+          "destination": "Quebec City, QC",
+          "departure_date": "2026-10-09",
+          "airline": "Porter Airlines",
+          "price": 128,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_tor_que_20261009_ws_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Toronto, ON",
+          "destination": "Quebec City, QC",
+          "departure_date": "2026-10-09",
+          "airline": "WestJet",
+          "price": 141,
+          "available_seats": 9
+        }
+      },
+      {
+        "id": "trp_tor_que_20261009_train_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Toronto, ON",
+          "destination": "Quebec City, QC",
+          "mode": "train",
+          "departure_date": "2026-10-09",
+          "price": 214,
+          "available_seats": 18
+        }
+      },
+      {
+        "id": "trp_tor_que_20261009_bus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Toronto, ON",
+          "destination": "Quebec City, QC",
+          "mode": "bus",
+          "departure_date": "2026-10-09",
+          "price": 196,
+          "available_seats": 12
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

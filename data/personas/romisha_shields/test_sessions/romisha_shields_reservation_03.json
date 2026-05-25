@@ -1,0 +1,115 @@
+{
+  "instruction": "I'm in Seattle and want two tickets for a fun night out; keep it under $30 per person, pick something for me, and book it.",
+  "gold_value": "evt_beacon_classic_01",
+  "session_id": "romisha_shields_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "romisha_shields_reservation_03",
+  "rule_ref": {
+    "rule_id": "romisha_shields_reservation_03",
+    "rule_text": "For leisure outings, she prefers tickets to gospel performances or classic-film screenings over more generic entertainment choices.",
+    "canonical_answer": "For a fun outing, I’d pick a gospel concert or a classic movie before most anything else."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_beacon_classic_01",
+        "type": "event",
+        "attributes": {
+          "name": "Beacon Classic Film Night: Casablanca",
+          "location": "Columbia City, Seattle",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 29,
+          "event_tags": [
+            "classic_film",
+            "film_screening",
+            "community_center"
+          ],
+          "rating": 4.3,
+          "review_count": 61
+        }
+      },
+      {
+        "id": "evt_laughs_headliner_01",
+        "type": "event",
+        "attributes": {
+          "name": "Seattle Laughs Live Headliner Showcase",
+          "location": "Downtown Seattle",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 24,
+          "event_tags": [
+            "comedy_show",
+            "live_entertainment",
+            "headliner"
+          ],
+          "rating": 4.9,
+          "review_count": 2130
+        }
+      },
+      {
+        "id": "evt_pop_singalong_01",
+        "type": "event",
+        "attributes": {
+          "name": "Neon Avenue Pop Hits Singalong",
+          "location": "Capitol Hill, Seattle",
+          "date_time": "2026-09-18T20:30:00",
+          "price": 22,
+          "event_tags": [
+            "live_music",
+            "singalong",
+            "pop_covers"
+          ],
+          "rating": 4.8,
+          "review_count": 1675
+        }
+      },
+      {
+        "id": "evt_variety_center_01",
+        "type": "event",
+        "attributes": {
+          "name": "Seattle Center Late Night Variety Spectacular",
+          "location": "Seattle Center, Seattle",
+          "date_time": "2026-09-18T19:45:00",
+          "price": 20,
+          "event_tags": [
+            "variety_show",
+            "live_entertainment",
+            "festival_favorite"
+          ],
+          "rating": 4.7,
+          "review_count": 980
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_beacon_classic_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

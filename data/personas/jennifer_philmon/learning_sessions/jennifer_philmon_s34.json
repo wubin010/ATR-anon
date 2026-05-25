@@ -1,0 +1,104 @@
+{
+  "session_id": "jennifer_philmon_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Road Trips",
+    "doc_type": "note",
+    "title": "Packing Checklist",
+    "checklist_points": [
+      "watercolor paper pad",
+      "travel brush set",
+      "water cup and rag",
+      "camera body and charged battery",
+      "memory cards",
+      "tripod",
+      "phone charger",
+      "snacks and water",
+      "first-aid basics",
+      "paper map"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Road Trips",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Packing Checklist",
+        "location": "Road Trips",
+        "content_brief": "<authored from checklist_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Trip Packing Template",
+          "doc_type": "template",
+          "location": "Road Trips",
+          "content_brief": "Simple checklist template with category headers for gear, clothes, and essentials."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Camera Outing Checklist Template",
+          "doc_type": "template",
+          "location": "Road Trips",
+          "content_brief": "Short reusable packing checklist focused on camera gear and accessories."
+        }
+      },
+      {
+        "id": "doc_note_03",
+        "type": "document",
+        "attributes": {
+          "title": "Museum Stop Ideas",
+          "doc_type": "note",
+          "location": "Road Trips",
+          "content_brief": "List of possible stops and timing notes for a future drive."
+        }
+      },
+      {
+        "id": "doc_report_04",
+        "type": "document",
+        "attributes": {
+          "title": "Mileage Budget Estimate",
+          "doc_type": "report",
+          "location": "Road Trips",
+          "content_brief": "Estimated fuel cost, tolls, and lodging ranges for a multi-day drive."
+        }
+      }
+    ]
+  }
+}

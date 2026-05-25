@@ -1,0 +1,110 @@
+{
+  "session_id": "anna_strahan_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "travel",
+  "reason_for_call": "Find a hotel option.",
+  "task_params": {
+    "location": "Aix-en-Provence",
+    "guest_count": 2,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "hotel_offer_id": "hot_bastide_02"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Aix-en-Provence",
+        "guest_count": 2,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hot_bastide_02"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hot_bastide_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "La Bastide des Fontaines",
+          "location": "Aix-en-Provence",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-22",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 185.0
+        }
+      },
+      {
+        "id": "hot_cloitre_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Hotel du Cloitre",
+          "location": "Aix-en-Provence",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-22",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 210.0
+        }
+      },
+      {
+        "id": "hot_mirabeau_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Maison Mirabeau",
+          "location": "Aix-en-Provence",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-22",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 248.0
+        }
+      },
+      {
+        "id": "hot_port_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Le Petit Port",
+          "location": "Marseille",
+          "check_in_date": "2026-04-18",
+          "check_out_date": "2026-04-22",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 169.0
+        }
+      }
+    ]
+  }
+}

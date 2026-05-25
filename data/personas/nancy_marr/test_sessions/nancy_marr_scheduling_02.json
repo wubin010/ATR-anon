@@ -1,0 +1,80 @@
+{
+  "instruction": "Set a reminder for the tai chi class at Maple Grove Community Center on 2026-06-12 — I don't want to miss it.",
+  "gold_value": "weekly",
+  "session_id": "nancy_marr_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "nancy_marr_scheduling_02",
+  "rule_ref": {
+    "rule_id": "nancy_marr_scheduling_02",
+    "rule_text": "For recurring classes or volunteer activities, Nancy prefers weekly reminders rather than one-off alerts.",
+    "canonical_answer": "For things I do regularly, a weekly reminder works better for me than a single reminder."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_tai_chi_mgc_20260612",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning Tai Chi Class",
+          "start_time": "2026-06-12T08:00:00",
+          "end_time": "2026-06-12T09:00:00",
+          "location": "Maple Grove Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_healthy_aging_lecture_20260612",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Healthy Aging Lecture",
+          "start_time": "2026-06-12T11:00:00",
+          "end_time": "2026-06-12T12:30:00",
+          "location": "Maple Grove Community Center, Hall A",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_june_book_club_20260614",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "June Book Club",
+          "start_time": "2026-06-14T19:00:00",
+          "end_time": "2026-06-14T20:30:00",
+          "location": "West Branch Library",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

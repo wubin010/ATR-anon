@@ -1,0 +1,126 @@
+{
+  "session_id": "cassandra_tovar_s00",
+  "session_type": "learning",
+  "day_offset": 0,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox and answer one message",
+  "task_params": {
+    "urgent_sender": "Nina Patel",
+    "archive_sender": "Warehouse Auto",
+    "priority": "high",
+    "language": "en",
+    "reply_points": [
+      "Acknowledge the projector shipment delay note",
+      "Say I still plan to be on site this afternoon",
+      "Ask whether the carts already have power at the classrooms",
+      "Request a quick text if the delivery window changes again"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "archive_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Nina Patel"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_nina_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Warehouse Auto"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_warehouse_01"
+        ]
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_nina_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_nina_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Nina Patel",
+          "subject": "Re: Eastview install timing update",
+          "body": "Morning Cassandra — the projector shipment is running late and may not land before lunch. I still need to know if you're coming this afternoon so I can have facilities unlock the classroom carts. If the truck slips again I'll let you know.",
+          "thread_id": "thr_nina_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T07:18:00"
+        }
+      },
+      {
+        "id": "msg_warehouse_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Warehouse Auto",
+          "subject": "Daily stock digest",
+          "body": "Automated inventory summary for regional consumables and accessories. No action needed unless discrepancies are reported.",
+          "thread_id": "thr_warehouse_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T06:42:00"
+        }
+      },
+      {
+        "id": "msg_janelle_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Janelle Brooks",
+          "subject": "Timesheet reminder",
+          "body": "Please submit your hours by end of day Friday.",
+          "thread_id": "thr_janelle_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T07:05:00"
+        }
+      }
+    ]
+  }
+}

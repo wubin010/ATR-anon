@@ -1,0 +1,129 @@
+{
+  "session_id": "theodora_tong_s51",
+  "session_type": "learning",
+  "day_offset": 51,
+  "domain": "workspace",
+  "reason_for_call": "Organize a creative folder",
+  "task_params": {
+    "location": "Creative Archive",
+    "file_type": "image",
+    "file_ids": [
+      "file_scanpages_01",
+      "file_poemscan_02",
+      "file_refphoto_03"
+    ],
+    "scheme": "by_type",
+    "folder_id": "fld_artsort_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Creative Archive",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_scanpages_01",
+          "file_poemscan_02",
+          "file_refphoto_03"
+        ],
+        "scheme": "by_type"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_scanpages_01",
+          "file_poemscan_02",
+          "file_refphoto_03"
+        ],
+        "folder_id": "fld_artsort_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_scanpages_01",
+        "type": "file",
+        "attributes": {
+          "name": "journal_pages_march_scan.jpg",
+          "file_type": "image",
+          "location": "Creative Archive",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_poemscan_02",
+        "type": "file",
+        "attributes": {
+          "name": "poem_draft_blue_ink.png",
+          "file_type": "image",
+          "location": "Creative Archive",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_refphoto_03",
+        "type": "file",
+        "attributes": {
+          "name": "reference_photo_window_shadow.jpeg",
+          "file_type": "image",
+          "location": "Creative Archive",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_workshop_04",
+        "type": "file",
+        "attributes": {
+          "name": "senior_workshop_flyer.pdf",
+          "file_type": "pdf",
+          "location": "Community Center",
+          "owner": "Theodora Tong",
+          "labels": [
+            "volunteer"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_artsort_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Art Sorting",
+          "purpose": "Temporary folder for grouped visual materials"
+        }
+      }
+    ]
+  }
+}

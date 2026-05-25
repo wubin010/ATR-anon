@@ -1,0 +1,89 @@
+{
+  "instruction": "Please take care of the return for the Arduino sensor kit from my recent order—it just didn't work out.",
+  "gold_value": "exchange",
+  "session_id": "michael_argo_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "michael_argo_commerce_02",
+  "rule_ref": {
+    "rule_id": "michael_argo_commerce_02",
+    "rule_text": "When returning art gear, electronics parts, or other project supplies that did not work out, he prefers an exchange rather than a refund.",
+    "canonical_answer": "If something I need for a project is wrong, I usually want an exchange so I still end up with a usable item."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_arduino_sensor_kit_01",
+        "type": "product",
+        "attributes": {
+          "name": "Arduino Sensor Starter Kit",
+          "price": 42.99,
+          "category": "electronics_parts",
+          "rating": 4.4,
+          "brand": "CircuitBloom",
+          "order_id": "ord_5912_lab",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-11"
+        }
+      },
+      {
+        "id": "prod_ring_light_clamp_01",
+        "type": "product",
+        "attributes": {
+          "name": "LED Ring Light Clamp",
+          "price": 36.5,
+          "category": "studio_accessories",
+          "rating": 4.8,
+          "brand": "LumaNest",
+          "order_id": "ord_5884_studio",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-09"
+        }
+      },
+      {
+        "id": "prod_canvas_frame_set_01",
+        "type": "product",
+        "attributes": {
+          "name": "Canvas Frame Hanging Set",
+          "price": 18.99,
+          "category": "art_supplies",
+          "rating": 4.9,
+          "brand": "Northline",
+          "order_id": "ord_5840_home",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-06"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

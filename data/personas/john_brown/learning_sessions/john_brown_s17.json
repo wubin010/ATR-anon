@@ -1,0 +1,111 @@
+{
+  "session_id": "john_brown_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "travel",
+  "reason_for_call": "Book a place to stay.",
+  "task_params": {
+    "location": "Montreal",
+    "guest_count": 2,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "check_in_date": "2025-10-17",
+    "check_out_date": "2025-10-20"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Montreal",
+        "guest_count": 2,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "htl_plateau_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_plateau_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Hotel Plateau Arts",
+          "location": "Montreal",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 142.0
+        }
+      },
+      {
+        "id": "htl_oldport_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Old Port Stay",
+          "location": "Montreal",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 176.0
+        }
+      },
+      {
+        "id": "htl_mileend_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Mile End Loft Hotel",
+          "location": "Montreal",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-21",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 129.0
+        }
+      },
+      {
+        "id": "htl_centreville_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Centre Ville Suites",
+          "location": "Montreal",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 2,
+          "max_guests_per_room": 4,
+          "price_per_night": 198.0
+        }
+      }
+    ]
+  }
+}

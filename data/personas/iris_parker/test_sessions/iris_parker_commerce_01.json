@@ -1,0 +1,122 @@
+{
+  "instruction": "Please order one jar of blueberry jam for the pantry, keep it under $12 and 10 oz or less, and just pick one for me.",
+  "gold_value": "prod_mill_brook_blueberry_01",
+  "session_id": "iris_parker_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "iris_parker_commerce_01",
+  "rule_ref": {
+    "rule_id": "iris_parker_commerce_01",
+    "rule_text": "When buying supplies or specialty goods, she prefers products with a local or boutique angle over generic mass-market picks.",
+    "canonical_answer": "I usually choose local or boutique products when I order specialty items."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_mill_brook_blueberry_01",
+        "type": "product",
+        "attributes": {
+          "name": "Mill Brook Blueberry Jam",
+          "price": 10.99,
+          "category": "blueberry jam",
+          "rating": 4.3,
+          "jar_size_oz": 9,
+          "origin_region": "Middlesex County, Massachusetts",
+          "producer_scale": "independent producer",
+          "production_style": "small-batch",
+          "review_count": 57
+        }
+      },
+      {
+        "id": "prod_harbor_house_blueberry_01",
+        "type": "product",
+        "attributes": {
+          "name": "Harbor House Blueberry Jam",
+          "price": 11.79,
+          "category": "blueberry jam",
+          "rating": 4.6,
+          "jar_size_oz": 17,
+          "origin_region": "Plymouth County, Massachusetts",
+          "producer_scale": "independent producer",
+          "production_style": "small-batch",
+          "review_count": 91
+        }
+      },
+      {
+        "id": "prod_smuckers_blueberry_01",
+        "type": "product",
+        "attributes": {
+          "name": "Smucker's Blueberry Jam",
+          "price": 5.49,
+          "category": "blueberry jam",
+          "rating": 4.9,
+          "jar_size_oz": 10,
+          "producer_scale": "national brand",
+          "distribution_scope": "mass market",
+          "review_count": 4210,
+          "units_sold_last_30_days": 3800
+        }
+      },
+      {
+        "id": "prod_bonne_maman_blueberry_01",
+        "type": "product",
+        "attributes": {
+          "name": "Bonne Maman Blueberry Jam",
+          "price": 7.99,
+          "category": "blueberry jam",
+          "rating": 4.8,
+          "jar_size_oz": 9.5,
+          "producer_scale": "national brand",
+          "distribution_scope": "mass market",
+          "review_count": 2634,
+          "units_sold_last_30_days": 2400
+        }
+      },
+      {
+        "id": "prod_market_pantry_blueberry_01",
+        "type": "product",
+        "attributes": {
+          "name": "Market Pantry Blueberry Jam",
+          "price": 3.99,
+          "category": "blueberry jam",
+          "rating": 4.7,
+          "jar_size_oz": 10,
+          "producer_scale": "store brand",
+          "distribution_scope": "mass market",
+          "review_count": 1890,
+          "units_sold_last_30_days": 3100
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_mill_brook_blueberry_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

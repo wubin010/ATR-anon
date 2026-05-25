@@ -1,0 +1,108 @@
+{
+  "instruction": "I still haven't answered the Harbor Hall community dinner invite. Check whether it conflicts with what's on my calendar and respond to it for me so they aren't waiting on me.",
+  "gold_value": "tentative",
+  "session_id": "gabriel_campbell_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "gabriel_campbell_scheduling_01",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_scheduling_01",
+    "rule_text": "When an invite overlaps with unresolved work or travel uncertainty, he prefers a tentative response rather than accepting or declining outright.",
+    "canonical_answer": "Whenever my schedule is not fully settled, I always respond tentatively instead of pretending the conflict is already resolved."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_harbor_hall_dinner_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Harbor Hall Community Dinner",
+          "start_time": "2026-09-18T18:30:00-04:00",
+          "end_time": "2026-09-18T20:30:00-04:00",
+          "participants": [
+            "events@harborhall.org",
+            "gabriel.campbell@example.com"
+          ],
+          "location": "Harbor Hall, Portland",
+          "calendar": "invites",
+          "status": "needs_action"
+        }
+      },
+      {
+        "id": "evt_invite_west_end_gallery_20260920",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "West End Gallery Opening Reception",
+          "start_time": "2026-09-20T19:00:00-04:00",
+          "end_time": "2026-09-20T21:00:00-04:00",
+          "participants": [
+            "rsvp@westendgallery.org",
+            "gabriel.campbell@example.com"
+          ],
+          "location": "West End Gallery",
+          "calendar": "invites",
+          "status": "needs_action"
+        }
+      },
+      {
+        "id": "evt_work_boston_trip_hold_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Client trip hold — Boston",
+          "start_time": "2026-09-18T16:00:00-04:00",
+          "end_time": "2026-09-18T21:00:00-04:00",
+          "participants": [
+            "gabriel.campbell@example.com",
+            "ops@northshoreadvisory.com"
+          ],
+          "location": "Boston",
+          "calendar": "work",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_q3_budget_review_20260919",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Q3 Budget Review",
+          "start_time": "2026-09-19T09:00:00-04:00",
+          "end_time": "2026-09-19T10:00:00-04:00",
+          "participants": [
+            "gabriel.campbell@example.com",
+            "finance@northshoreadvisory.com"
+          ],
+          "location": "Northshore Advisory HQ",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

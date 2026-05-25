@@ -1,0 +1,103 @@
+{
+  "instruction": "Please take care of the return for the watercolor paper pad from my recent order—the item that arrived wasn't the one I meant to buy.",
+  "gold_value": "exchange",
+  "session_id": "anna_strahan_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "anna_strahan_commerce_03",
+  "rule_ref": {
+    "rule_id": "anna_strahan_commerce_03",
+    "rule_text": "If an ordered item for painting, cooking, or gardening arrives wrong, Anna prefers an exchange rather than a refund.",
+    "canonical_answer": "When a supply order is wrong, I usually want an exchange so I still end up with the right item."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_watercolor_paper_01",
+        "type": "product",
+        "attributes": {
+          "name": "Watercolor Paper Pad",
+          "price": 18.5,
+          "category": "painting_supplies",
+          "rating": 4.6,
+          "brand": "Riverbank Studio",
+          "order_id": "ord_7319_art",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-10"
+        }
+      },
+      {
+        "id": "prod_chef_knife_01",
+        "type": "product",
+        "attributes": {
+          "name": "Chef Knife",
+          "price": 41.0,
+          "category": "kitchen_tools",
+          "rating": 4.9,
+          "brand": "Oak & Iron",
+          "order_id": "ord_7281_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-08"
+        }
+      },
+      {
+        "id": "prod_pruning_shears_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pruning Shears",
+          "price": 27.5,
+          "category": "gardening_tools",
+          "rating": 4.8,
+          "brand": "Green Hollow",
+          "order_id": "ord_7274_garden",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-07"
+        }
+      },
+      {
+        "id": "prod_throw_pillows_01",
+        "type": "product",
+        "attributes": {
+          "name": "Striped Throw Pillow Set",
+          "price": 34.99,
+          "category": "home_decor",
+          "rating": 4.95,
+          "brand": "Harbor Glow",
+          "order_id": "ord_7264_home",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-06"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

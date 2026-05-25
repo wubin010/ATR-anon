@@ -1,0 +1,139 @@
+{
+  "session_id": "rafael_ortiz_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "scheduling",
+  "reason_for_call": "Find time for a meeting",
+  "task_params": {
+    "calendar": "work",
+    "participants": [
+      "Marisol Vega",
+      "Daniel Kim"
+    ],
+    "title": "Community Health Outreach Planning Session",
+    "start_time": "2025-03-19T15:00:00-05:00",
+    "end_time": "2025-03-19T16:00:00-05:00",
+    "location": "Conference Room B"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work",
+        "participants": [
+          "Marisol Vega",
+          "Daniel Kim"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-19T15:00:00-05:00",
+        "end_time": "2025-03-19T16:00:00-05:00",
+        "participants": [
+          "Marisol Vega",
+          "Daniel Kim"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Community Health Outreach Planning Session",
+        "start_time": "2025-03-19T15:00:00-05:00",
+        "end_time": "2025-03-19T16:00:00-05:00",
+        "participants": [
+          "Marisol Vega",
+          "Daniel Kim"
+        ],
+        "location": "Conference Room B"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Med-Surg Team Huddle",
+          "start_time": "2025-03-19T08:30:00-05:00",
+          "end_time": "2025-03-19T09:00:00-05:00",
+          "participants": [
+            "Rafael Ortiz",
+            "Charge Nurse Team"
+          ],
+          "location": "Nurses Station East",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Education Materials Review",
+          "start_time": "2025-03-19T11:00:00-05:00",
+          "end_time": "2025-03-19T12:00:00-05:00",
+          "participants": [
+            "Rafael Ortiz",
+            "Marisol Vega"
+          ],
+          "location": "Education Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Health Outreach Planning Session",
+          "start_time": "2025-03-19T15:00:00-05:00",
+          "end_time": "2025-03-19T16:00:00-05:00",
+          "participants": [
+            "Rafael Ortiz",
+            "Daniel Kim",
+            "Outreach Team"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_pers_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dentist Cleaning",
+          "start_time": "2025-03-19T17:30:00-05:00",
+          "end_time": "2025-03-19T18:30:00-05:00",
+          "participants": [
+            "Rafael Ortiz"
+          ],
+          "location": "Sunshine Dental",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

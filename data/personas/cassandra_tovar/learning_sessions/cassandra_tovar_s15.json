@@ -1,0 +1,117 @@
+{
+  "session_id": "cassandra_tovar_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Downtown Decatur",
+    "event_tags": [
+      "open mic",
+      "jazz"
+    ],
+    "name": "Blue Note Basement Open Mic & Jazz Jam",
+    "ticket_type": "general_admission",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Downtown Decatur",
+        "event_tags": [
+          "open mic",
+          "jazz"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_bluenote_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_bluenote_01",
+        "type": "event",
+        "attributes": {
+          "name": "Blue Note Basement Open Mic & Jazz Jam",
+          "location": "Downtown Decatur",
+          "date_time": "2025-05-02T20:00:00-04:00",
+          "price": 18.0,
+          "event_tags": [
+            "open mic",
+            "jazz",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_ebenezer_02",
+        "type": "event",
+        "attributes": {
+          "name": "Ebenezer Rooftop Soul Session",
+          "location": "Downtown Decatur",
+          "date_time": "2025-05-03T19:30:00-04:00",
+          "price": 22.0,
+          "event_tags": [
+            "soul",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_midtown_03",
+        "type": "event",
+        "attributes": {
+          "name": "Midtown After Hours Jazz Quartet",
+          "location": "Midtown Atlanta",
+          "date_time": "2025-05-02T21:00:00-04:00",
+          "price": 25.0,
+          "event_tags": [
+            "jazz",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_square_04",
+        "type": "event",
+        "attributes": {
+          "name": "Decatur Square Comedy Open Mic",
+          "location": "Downtown Decatur",
+          "date_time": "2025-05-01T20:30:00-04:00",
+          "price": 12.0,
+          "event_tags": [
+            "open mic",
+            "comedy"
+          ]
+        }
+      }
+    ]
+  }
+}

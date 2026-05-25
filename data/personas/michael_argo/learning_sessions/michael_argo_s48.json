@@ -1,0 +1,108 @@
+{
+  "session_id": "michael_argo_s48",
+  "session_type": "learning",
+  "day_offset": 48,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a recurring reminder.",
+  "task_params": {
+    "title": "Portfolio Review",
+    "start_time": "2025-02-18T19:00:00-05:00",
+    "end_time": "2025-02-18T20:00:00-05:00",
+    "calendar": "personal",
+    "target_id": "evt_portfolio_01",
+    "remind_at": "2025-02-18T19:00:00-05:00",
+    "cadence": "weekly"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_portfolio_01",
+        "remind_at": "2025-02-18T19:00:00-05:00",
+        "cadence": "weekly"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_portfolio_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Portfolio Review",
+          "start_time": "2025-02-18T19:00:00-05:00",
+          "end_time": "2025-02-18T20:00:00-05:00",
+          "participants": [],
+          "location": "",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_pickup_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pickup Basketball",
+          "start_time": "2025-02-18T17:30:00-05:00",
+          "end_time": "2025-02-18T18:30:00-05:00",
+          "participants": [
+            "Jordan"
+          ],
+          "location": "Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_sketch_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverfront Sketch Session",
+          "start_time": "2025-02-19T15:00:00-05:00",
+          "end_time": "2025-02-19T17:00:00-05:00",
+          "participants": [],
+          "location": "Riverfront Arts Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hike_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Trail Runners Meetup",
+          "start_time": "2025-02-22T09:00:00-05:00",
+          "end_time": "2025-02-22T11:30:00-05:00",
+          "participants": [
+            "Trail Runners Club"
+          ],
+          "location": "Hoosier National Forest",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

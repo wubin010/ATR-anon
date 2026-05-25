@@ -1,0 +1,103 @@
+{
+  "session_id": "esther_hoitsma_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a restaurant.",
+  "task_params": {
+    "location": "Nampa",
+    "cuisine": "Mexican",
+    "date_time": "2025-05-25T18:30:00",
+    "party_size": 5,
+    "restaurant_id": "rst_fiesta_01"
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Nampa",
+        "cuisine": "Mexican",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_fiesta_01",
+        "date_time": "2025-05-25T18:30:00",
+        "party_size": 5
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_fiesta_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Fiesta Guadalajara",
+          "cuisine": "Mexican",
+          "location": "Nampa",
+          "rating": 4.6,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_agave_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Agave Azul",
+          "cuisine": "Mexican",
+          "location": "Nampa",
+          "rating": 4.3,
+          "price_range": "$$",
+          "seating_style": "family style"
+        }
+      },
+      {
+        "id": "rst_brick_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Brick 29 Bistro",
+          "cuisine": "American",
+          "location": "Nampa",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "bistro"
+        }
+      },
+      {
+        "id": "rst_casa_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa Mexico",
+          "cuisine": "Mexican",
+          "location": "Caldwell",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      }
+    ]
+  }
+}

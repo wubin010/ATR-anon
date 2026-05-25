@@ -1,0 +1,111 @@
+{
+  "session_id": "roosevelt_brown_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "travel",
+  "reason_for_call": "Book a place to stay.",
+  "task_params": {
+    "location": "Manhattan",
+    "guest_count": 2,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "check_in_date": "2025-10-18",
+    "check_out_date": "2025-10-20"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Manhattan",
+        "guest_count": 2,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "htl_gallery_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_gallery_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Gallery Row Hotel",
+          "location": "Midtown Manhattan",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 245.0
+        }
+      },
+      {
+        "id": "htl_riverside_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverside Lantern Inn",
+          "location": "Upper West Side Manhattan",
+          "check_in_date": "2025-10-17",
+          "check_out_date": "2025-10-19",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 210.0
+        }
+      },
+      {
+        "id": "htl_brooklyn_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Bridgeview Suites",
+          "location": "Downtown Brooklyn",
+          "check_in_date": "2025-10-18",
+          "check_out_date": "2025-10-20",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 189.0
+        }
+      },
+      {
+        "id": "htl_nomad_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "NoMad House Hotel",
+          "location": "NoMad Manhattan",
+          "check_in_date": "2025-10-19",
+          "check_out_date": "2025-10-21",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 230.0
+        }
+      }
+    ]
+  }
+}

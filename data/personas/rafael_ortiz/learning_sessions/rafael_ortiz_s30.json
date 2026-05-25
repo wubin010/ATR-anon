@@ -1,0 +1,91 @@
+{
+  "session_id": "rafael_ortiz_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "Community Outreach",
+    "title": "Diabetes Education Outreach Handout Draft",
+    "content_brief": "One-page bilingual outreach handout draft for diabetes education at a community event",
+    "handout_points": [
+      "short intro on why diabetes prevention and control matter",
+      "3 everyday blood sugar tips with simple wording",
+      "healthy plate idea with culturally familiar foods",
+      "signs that mean someone should seek medical care",
+      "encouraging clinic follow-up and screening reminder",
+      "include English and Spanish section headers"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Community Outreach",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Diabetes Education Outreach Handout Draft",
+        "location": "Community Outreach",
+        "content_brief": "<authored from content_brief, handout_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Health Fair Flyer Template",
+          "doc_type": "template",
+          "location": "Community Outreach",
+          "content_brief": "One-page outreach layout with headline, key tips, resources, and contact block"
+        }
+      },
+      {
+        "id": "doc_tpl_02",
+        "type": "document",
+        "attributes": {
+          "title": "Bilingual Preventive Care Handout Template",
+          "doc_type": "template",
+          "location": "Community Outreach",
+          "content_brief": "Simple English-Spanish handout structure for patient education"
+        }
+      },
+      {
+        "id": "doc_rep_01",
+        "type": "document",
+        "attributes": {
+          "title": "Hypertension Workshop Summary",
+          "doc_type": "report",
+          "location": "Community Outreach",
+          "content_brief": "Recap of screening turnout and education topics from last outreach event"
+        }
+      }
+    ]
+  }
+}

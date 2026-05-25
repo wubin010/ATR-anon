@@ -1,0 +1,116 @@
+{
+  "session_id": "vanessa_davis_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "scheduling",
+  "reason_for_call": "Set a reminder",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Church Youth Outreach Planning Call",
+    "start_time": "2025-05-18T15:00:00-07:00",
+    "end_time": "2025-05-18T16:00:00-07:00",
+    "remind_at": "2025-05-16T20:00:00-07:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_church_01",
+        "remind_at": "2025-05-16T20:00:00-07:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_church_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church Youth Outreach Planning Call",
+          "start_time": "2025-05-18T15:00:00-07:00",
+          "end_time": "2025-05-18T16:00:00-07:00",
+          "participants": [
+            "Vanessa Davis",
+            "Deacon Miller",
+            "Sister Angela"
+          ],
+          "location": "Phone call",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Fleet Safety Check-In",
+          "start_time": "2025-05-16T17:30:00-07:00",
+          "end_time": "2025-05-16T18:00:00-07:00",
+          "participants": [
+            "Vanessa Davis",
+            "Dispatch Team"
+          ],
+          "location": "Work yard office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_family_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Marcus",
+          "start_time": "2025-05-16T19:00:00-07:00",
+          "end_time": "2025-05-16T20:30:00-07:00",
+          "participants": [
+            "Vanessa Davis",
+            "Marcus Davis"
+          ],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hobby_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Astronomy Club Night Walk",
+          "start_time": "2025-05-17T21:00:00-07:00",
+          "end_time": "2025-05-17T23:00:00-07:00",
+          "participants": [
+            "Vanessa Davis",
+            "Mojave Astronomy Club"
+          ],
+          "location": "Red Rock overlook",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

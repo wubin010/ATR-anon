@@ -1,0 +1,112 @@
+{
+  "session_id": "rafael_ortiz_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "scheduling",
+  "reason_for_call": "Add something to my calendar",
+  "task_params": {
+    "title": "Pharmacology study block",
+    "start_time": "2025-05-22T19:30:00-05:00",
+    "end_time": "2025-05-22T21:00:00-05:00",
+    "calendar": "personal",
+    "location": "Home office"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-05-22T19:30:00-05:00",
+        "end_time": "2025-05-22T21:00:00-05:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Pharmacology study block",
+        "start_time": "2025-05-22T19:30:00-05:00",
+        "end_time": "2025-05-22T21:00:00-05:00",
+        "location": "Home office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_shift_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Day Shift",
+          "start_time": "2025-05-22T07:00:00-05:00",
+          "end_time": "2025-05-22T15:30:00-05:00",
+          "participants": [],
+          "location": "Regional Medical Center",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Elena and her parents",
+          "start_time": "2025-05-22T17:30:00-05:00",
+          "end_time": "2025-05-22T19:00:00-05:00",
+          "participants": [
+            "Elena Ortiz",
+            "Rosa Martinez",
+            "Javier Martinez"
+          ],
+          "location": "Elena's parents' house",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_soccer_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pickup Soccer",
+          "start_time": "2025-05-23T20:00:00-05:00",
+          "end_time": "2025-05-23T21:30:00-05:00",
+          "participants": [
+            "Marco",
+            "Luis",
+            "Ben"
+          ],
+          "location": "Riverside Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_mass_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pharmacology study block",
+          "start_time": "2025-05-22T19:30:00-05:00",
+          "end_time": "2025-05-22T21:00:00-05:00",
+          "participants": [],
+          "location": "Home office",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      }
+    ]
+  }
+}

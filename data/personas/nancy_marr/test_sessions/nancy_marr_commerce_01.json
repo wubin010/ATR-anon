@@ -1,0 +1,103 @@
+{
+  "instruction": "Please order one jar of honey for the kitchen, keep it under $10, and just pick one for me.",
+  "gold_value": "prod_prairie_table_honey_01",
+  "session_id": "nancy_marr_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "nancy_marr_commerce_01",
+  "rule_ref": {
+    "rule_id": "nancy_marr_commerce_01",
+    "rule_text": "For purchases connected to food, gardening, or household ingredients, Nancy prefers locally sourced or regenerative products when available.",
+    "canonical_answer": "I usually choose products with local or regenerative sourcing over generic alternatives."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_prairie_table_honey_01",
+        "type": "product",
+        "attributes": {
+          "name": "Prairie Table Wildflower Honey",
+          "price": 9.49,
+          "category": "honey",
+          "rating": 4.3,
+          "source_origin": "Minnesota apiaries",
+          "farming_practice": "regenerative forage plantings",
+          "size_oz": 12,
+          "review_count": 72
+        }
+      },
+      {
+        "id": "prod_everyday_clover_honey_01",
+        "type": "product",
+        "attributes": {
+          "name": "Everyday Clover Honey",
+          "price": 5.29,
+          "category": "honey",
+          "rating": 4.9,
+          "source_origin": "national commodity blend",
+          "farming_practice": "standard",
+          "size_oz": 12,
+          "review_count": 2480
+        }
+      },
+      {
+        "id": "prod_sunny_vale_honey_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sunny Vale Orange Blossom Honey",
+          "price": 6.19,
+          "category": "honey",
+          "rating": 4.8,
+          "source_origin": "imported and domestic blend",
+          "farming_practice": "standard",
+          "size_oz": 12,
+          "review_count": 1330
+        }
+      },
+      {
+        "id": "prod_meadow_ridge_honey_01",
+        "type": "product",
+        "attributes": {
+          "name": "Meadow Ridge Wildflower Honey",
+          "price": 10.79,
+          "category": "honey",
+          "rating": 4.8,
+          "source_origin": "Minnesota apiaries",
+          "farming_practice": "regenerative forage plantings",
+          "size_oz": 12,
+          "review_count": 410
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_prairie_table_honey_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

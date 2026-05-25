@@ -1,0 +1,124 @@
+{
+  "session_id": "anna_strahan_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "reservation",
+  "reason_for_call": "Book an outing.",
+  "task_params": {
+    "location": "Covington",
+    "event_tags": [
+      "art",
+      "gallery"
+    ],
+    "event_id": "evt_sttammany_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Covington",
+        "event_tags": [
+          "art",
+          "gallery"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_sttammany_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_sttammany_01",
+        "type": "event",
+        "attributes": {
+          "name": "St. Tammany Art House Weekend Exhibit",
+          "location": "Covington",
+          "date_time": "2025-03-29T14:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "art",
+            "gallery",
+            "local artists",
+            "exhibit"
+          ]
+        }
+      },
+      {
+        "id": "evt_folk_02",
+        "type": "event",
+        "attributes": {
+          "name": "Northshore Folk Craft Showcase",
+          "location": "Covington",
+          "date_time": "2025-03-29T11:00:00",
+          "price": 12.0,
+          "event_tags": [
+            "crafts",
+            "gallery",
+            "folk art",
+            "market"
+          ]
+        }
+      },
+      {
+        "id": "evt_museum_03",
+        "type": "event",
+        "attributes": {
+          "name": "Regional History Museum Quiet Hours",
+          "location": "Mandeville",
+          "date_time": "2025-03-29T13:30:00",
+          "price": 15.0,
+          "event_tags": [
+            "museum",
+            "history",
+            "cultural",
+            "guided"
+          ]
+        }
+      },
+      {
+        "id": "evt_jazz_04",
+        "type": "event",
+        "attributes": {
+          "name": "Madisonville Listening Room Jazz Matinee",
+          "location": "Madisonville",
+          "date_time": "2025-03-29T16:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "music",
+            "jazz",
+            "cultural",
+            "indoor"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "instruction": "Please book 1 hotel room in Lisbon for 1 guest from the hotel offers below. Just pick one of the available options and make the booking.",
+  "gold_value": "hotel_lisbon_rato_gallery_walk_01",
+  "session_id": "gabriel_campbell_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "gabriel_campbell_travel_04",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_travel_04",
+    "rule_text": "When choosing lodging, he prefers hotel options that are modestly priced but within walking distance of arts districts or photogenic neighborhoods.",
+    "canonical_answer": "Whenever I book a hotel, I always favor a budget-conscious place that lets me walk to galleries, museums, or good street scenes."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hotel_lisbon_riverside_value_inn_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverside Value Inn",
+          "location": "Lisbon, Portugal",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 86,
+          "neighborhood": "Parque das Nações",
+          "category": "budget",
+          "star_rating": 2,
+          "rating": 4.3,
+          "review_count": 1184,
+          "walking_minutes_to_chiado_galleries": 41,
+          "walking_minutes_to_alfama_viewpoints": 46,
+          "amenities": [
+            "wifi",
+            "airport_shuttle"
+          ]
+        }
+      },
+      {
+        "id": "hotel_lisbon_alfama_panoramic_grand_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Alfama Panoramic Grand",
+          "location": "Lisbon, Portugal",
+          "available_rooms": 2,
+          "max_guests_per_room": 2,
+          "price_per_night": 318,
+          "neighborhood": "Alfama",
+          "category": "luxury",
+          "star_rating": 5,
+          "rating": 4.9,
+          "review_count": 3011,
+          "walking_minutes_to_chiado_galleries": 16,
+          "walking_minutes_to_alfama_viewpoints": 4,
+          "amenities": [
+            "rooftop_bar",
+            "spa",
+            "concierge"
+          ]
+        }
+      },
+      {
+        "id": "hotel_lisbon_avenida_business_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Avenida Business Suites",
+          "location": "Lisbon, Portugal",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 121,
+          "neighborhood": "Avenidas Novas",
+          "category": "standard",
+          "star_rating": 4,
+          "rating": 4.8,
+          "review_count": 1672,
+          "walking_minutes_to_chiado_galleries": 29,
+          "walking_minutes_to_alfama_viewpoints": 33,
+          "amenities": [
+            "gym",
+            "breakfast",
+            "metro_nearby"
+          ]
+        }
+      },
+      {
+        "id": "hotel_lisbon_chiado_boutique_house_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Chiado Boutique House",
+          "location": "Lisbon, Portugal",
+          "available_rooms": 1,
+          "max_guests_per_room": 2,
+          "price_per_night": 248,
+          "neighborhood": "Chiado",
+          "category": "boutique",
+          "star_rating": 4,
+          "rating": 4.7,
+          "review_count": 842,
+          "walking_minutes_to_chiado_galleries": 3,
+          "walking_minutes_to_alfama_viewpoints": 15,
+          "amenities": [
+            "wifi",
+            "lounge",
+            "late_check_in"
+          ]
+        }
+      },
+      {
+        "id": "hotel_lisbon_rato_gallery_walk_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Rato Gallery Walk Hotel",
+          "location": "Lisbon, Portugal",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 142,
+          "neighborhood": "Príncipe Real",
+          "category": "standard",
+          "star_rating": 3,
+          "rating": 4.4,
+          "review_count": 524,
+          "walking_minutes_to_chiado_galleries": 9,
+          "walking_minutes_to_alfama_viewpoints": 18,
+          "amenities": [
+            "wifi",
+            "breakfast"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "hotel_lisbon_rato_gallery_walk_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

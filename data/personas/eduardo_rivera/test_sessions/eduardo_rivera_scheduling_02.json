@@ -1,0 +1,80 @@
+{
+  "instruction": "Please set a reminder for my CDT bench practice on 2026-09-03 at 7:00pm so I don't lose track of it after work.",
+  "gold_value": "weekly",
+  "session_id": "eduardo_rivera_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "eduardo_rivera_scheduling_02",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_scheduling_02",
+    "rule_text": "For recurring personal routines like hikes, rides, or study practice, he prefers weekly reminders instead of one-off nudges.",
+    "canonical_answer": "For routines I want to keep up with, a weekly reminder works better for me than a one-time alert."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_cdt_bench_practice_20260903",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "CDT bench practice — crown waxing drills",
+          "start_time": "2026-09-03T19:00:00",
+          "end_time": "2026-09-03T21:00:00",
+          "location": "Home lab bench",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_vendor_webinar_20260903",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dental Materials Vendor Webinar",
+          "start_time": "2026-09-03T17:30:00",
+          "end_time": "2026-09-03T18:30:00",
+          "location": "Online",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_family_dinner_20260904",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Lucia and Mateo",
+          "start_time": "2026-09-04T19:30:00",
+          "end_time": "2026-09-04T21:00:00",
+          "location": "Oakland",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

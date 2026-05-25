@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner for four in Seattle on 2026-09-19 at 7:30pm, keep it to a $$ price range, and just pick a place for me.",
+  "gold_value": "rst_earth_hearth_01",
+  "session_id": "iris_parker_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "iris_parker_reservation_01",
+  "rule_ref": {
+    "rule_id": "iris_parker_reservation_01",
+    "rule_text": "When booking a meal out, she favors farm-to-table restaurants over generic options.",
+    "canonical_answer": "I prefer farm-to-table places when I book restaurants."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_earth_hearth_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Earth & Hearth Kitchen",
+          "cuisine": "Farm-to-table",
+          "location": "Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining room"
+        }
+      },
+      {
+        "id": "rst_harborline_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harborline Grill",
+          "cuisine": "Steakhouse",
+          "location": "Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "waterfront patio"
+        }
+      },
+      {
+        "id": "rst_mori_house_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Mori House",
+          "cuisine": "Japanese",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "sushi bar"
+        }
+      },
+      {
+        "id": "rst_piazza_centrale_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Piazza Centrale",
+          "cuisine": "Italian",
+          "location": "Seattle",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "busy dining room"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_earth_hearth_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

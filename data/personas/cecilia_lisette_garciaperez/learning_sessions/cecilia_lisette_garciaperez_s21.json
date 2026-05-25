@@ -1,0 +1,105 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "books",
+    "budget": 45,
+    "sort_by": "rating",
+    "product_id": "prod_cocinaantigua_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "books",
+        "budget": 45,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_cocinaantigua_01",
+          "prod_pueblamesa_02",
+          "prod_mercadosabores_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_cocinaantigua_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_cocinaantigua_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cocina Antigua de México: Vintage Recipes and Kitchen Notes",
+          "price": 38.0,
+          "category": "books",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_pueblamesa_02",
+        "type": "product",
+        "attributes": {
+          "name": "La Mesa Poblana: A Vintage Mexican Family Cookbook",
+          "price": 42.5,
+          "category": "books",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_mercadosabores_03",
+        "type": "product",
+        "attributes": {
+          "name": "Sabores del Mercado: Classic Mexican Market Cooking",
+          "price": 29.99,
+          "category": "books",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_talaveraplatter_04",
+        "type": "product",
+        "attributes": {
+          "name": "Hand-Painted Talavera Serving Platter",
+          "price": 54.0,
+          "category": "home decor",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

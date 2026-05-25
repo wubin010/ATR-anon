@@ -1,0 +1,185 @@
+{
+  "session_id": "joseph_eldridge_s51",
+  "session_type": "learning",
+  "day_offset": 51,
+  "domain": "travel",
+  "reason_for_call": "Plan a longer trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Germany",
+      "industrial heritage",
+      "nature"
+    ],
+    "destination_ids": [
+      "dst_ruhr_01"
+    ],
+    "destination": "Ruhr",
+    "stop_tags": [
+      "industrial heritage",
+      "engineering",
+      "nature"
+    ],
+    "selected_stop_ids": [
+      "stp_zollverein_01",
+      "stp_gasometer_02",
+      "stp_baldeney_03"
+    ],
+    "duration_days": 8,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Germany",
+          "industrial heritage",
+          "nature"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_ruhr_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Ruhr",
+        "stop_tags": [
+          "industrial heritage",
+          "engineering",
+          "nature"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Ruhr",
+        "duration_days": 8,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_zollverein_01",
+          "stp_gasometer_02",
+          "stp_baldeney_03"
+        ],
+        "include_daily_breakdown": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_ruhr_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Ruhr",
+          "region": "Germany",
+          "tags": [
+            "industrial heritage",
+            "engineering",
+            "nature",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "dst_hamburg_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Hamburg",
+          "region": "Germany",
+          "tags": [
+            "port",
+            "engineering",
+            "architecture",
+            "urban"
+          ]
+        }
+      },
+      {
+        "id": "dst_alsace_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Alsace",
+          "region": "France",
+          "tags": [
+            "nature",
+            "villages",
+            "wine",
+            "scenic"
+          ]
+        }
+      },
+      {
+        "id": "stp_zollverein_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Zollverein Coal Mine Industrial Complex",
+          "location": "Essen, Ruhr",
+          "tags": [
+            "industrial heritage",
+            "engineering",
+            "museum"
+          ]
+        }
+      },
+      {
+        "id": "stp_gasometer_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Gasometer Oberhausen",
+          "location": "Oberhausen, Ruhr",
+          "tags": [
+            "industrial heritage",
+            "engineering",
+            "exhibition"
+          ]
+        }
+      },
+      {
+        "id": "stp_baldeney_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Baldeneysee Lakeside Trail",
+          "location": "Essen, Ruhr",
+          "tags": [
+            "nature",
+            "walking",
+            "lake"
+          ]
+        }
+      }
+    ]
+  }
+}

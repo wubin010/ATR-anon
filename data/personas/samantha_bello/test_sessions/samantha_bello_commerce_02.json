@@ -1,0 +1,103 @@
+{
+  "instruction": "Please order one herb plant I can cook with, under $10. Pick whichever seems best.",
+  "gold_value": "prod_thai_culantro_duo_01",
+  "session_id": "samantha_bello_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "samantha_bello_commerce_02",
+  "rule_ref": {
+    "rule_id": "samantha_bello_commerce_02",
+    "rule_text": "When ordering food or garden items, Samantha prefers products that support Puerto Rican cooking with global twists, especially fresh herbs and distinctive ingredients, over plain generic staples.",
+    "canonical_answer": "If I’m ordering ingredients or herb items, I go for things that let me cook Puerto Rican dishes with a global twist."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_thai_culantro_duo_01",
+        "type": "product",
+        "attributes": {
+          "name": "Thai Basil & Culantro Duo Herb Planter",
+          "price": 9.79,
+          "category": "herb_plants",
+          "rating": 4.2,
+          "variety_mix": "thai basil, culantro",
+          "container_size": "6-inch planter",
+          "reviews_count": 61,
+          "units_sold_last_30_days": 37
+        }
+      },
+      {
+        "id": "prod_genovese_basil_01",
+        "type": "product",
+        "attributes": {
+          "name": "Genovese Basil Starter Plant",
+          "price": 6.49,
+          "category": "herb_plants",
+          "rating": 4.9,
+          "variety_mix": "sweet basil",
+          "container_size": "4-inch pot",
+          "reviews_count": 1540,
+          "units_sold_last_30_days": 640
+        }
+      },
+      {
+        "id": "prod_culantro_starter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Culantro Starter Herb Plant",
+          "price": 5.99,
+          "category": "herb_plants",
+          "rating": 4.7,
+          "variety_mix": "culantro",
+          "container_size": "4-inch pot",
+          "reviews_count": 402,
+          "units_sold_last_30_days": 210
+        }
+      },
+      {
+        "id": "prod_curly_parsley_01",
+        "type": "product",
+        "attributes": {
+          "name": "Curly Parsley Windowbox Plant",
+          "price": 4.99,
+          "category": "herb_plants",
+          "rating": 4.8,
+          "variety_mix": "parsley",
+          "container_size": "4-inch pot",
+          "reviews_count": 980,
+          "units_sold_last_30_days": 420
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_thai_culantro_duo_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

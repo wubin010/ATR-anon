@@ -1,0 +1,101 @@
+{
+  "session_id": "theodora_tong_s53",
+  "session_type": "learning",
+  "day_offset": 53,
+  "domain": "communication",
+  "reason_for_call": "Draft a message",
+  "task_params": {
+    "sender": "Maya Rivera",
+    "folder": "inbox",
+    "thread_id": "thr_maya_01",
+    "language": "en",
+    "body_points": [
+      "say hi and check in gently",
+      "mention no pressure to reply quickly",
+      "say you've been thinking of her",
+      "offer to listen if she wants to talk",
+      "suggest a short walk or tea sometime"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Rivera",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_maya_01",
+        "language": "en",
+        "body": "<authored from body_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Rivera",
+          "subject": "sorry ive been quiet",
+          "body": "Hey Theo, sorry I've been off the grid. Things have been a lot lately and I keep meaning to text back properly.",
+          "thread_id": "thr_maya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-21T18:42:00"
+        }
+      },
+      {
+        "id": "msg_lena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Brooks",
+          "subject": "studio photos",
+          "body": "Just sent over the photos from the workshop wall if you want to use any of them.",
+          "thread_id": "thr_lena_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-22T10:15:00"
+        }
+      },
+      {
+        "id": "msg_maya_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Rivera",
+          "subject": "Re: coffee soon?",
+          "body": "I do want to catch up, I just feel overwhelmed and bad at replying right now.",
+          "thread_id": "thr_maya_01",
+          "folder": "sent",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T15:05:00"
+        }
+      }
+    ]
+  }
+}

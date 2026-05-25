@@ -1,0 +1,102 @@
+{
+  "session_id": "rafael_ortiz_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "communication",
+  "reason_for_call": "Reply to a work message",
+  "task_params": {
+    "sender": "Maya Chen",
+    "folder": "inbox",
+    "message_id": "msg_shift_01",
+    "thread_id": "thr_shift_204",
+    "language": "en",
+    "reply_points": [
+      "Thanks for checking in",
+      "Keep the revised handoff note in the patient chart",
+      "Flag pending labs during bedside report",
+      "Use secure chat only for urgent changes after report",
+      "Happy to walk through it together next shift"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Chen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_shift_204",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_shift_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Quick follow-up on the handoff change",
+          "body": "Hey Rafael, can you send me the workflow tweak you mentioned during shift change? I want to make sure I'm doing the handoff note and urgent updates the same way you described.",
+          "thread_id": "thr_shift_204",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-16T18:42:00"
+        }
+      },
+      {
+        "id": "msg_unit_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Jordan Patel",
+          "subject": "Supply cart restock question",
+          "body": "Can you confirm whether the wound care cart was restocked after nights?",
+          "thread_id": "thr_unit_118",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-16T17:05:00"
+        }
+      },
+      {
+        "id": "msg_social_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Luis Ramirez",
+          "subject": "Sunday soccer",
+          "body": "You in for the game this weekend?",
+          "thread_id": "thr_social_77",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-16T16:10:00"
+        }
+      }
+    ]
+  }
+}

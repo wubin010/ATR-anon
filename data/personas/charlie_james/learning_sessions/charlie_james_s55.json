@@ -1,0 +1,96 @@
+{
+  "session_id": "charlie_james_s55",
+  "session_type": "learning",
+  "day_offset": 55,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Writing Desk",
+    "doc_type": "note",
+    "title": "Repair and Restoration Column Outline",
+    "outline_points": [
+      "open with why small repairs matter before full restoration",
+      "include a quick diagnostic checklist for common problems",
+      "highlight safe tool use and knowing when to stop",
+      "show one creative salvage example with reused parts",
+      "end with encouragement for beginners to document their work"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Writing Desk",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Repair and Restoration Column Outline",
+        "location": "Writing Desk",
+        "content_brief": "<authored from outline_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Column Ideas - Shop Wisdom",
+          "doc_type": "note",
+          "location": "Writing Desk",
+          "content_brief": "Loose ideas for practical repair lessons drawn from garage experience."
+        }
+      },
+      {
+        "id": "doc_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Restoration Anecdotes for Local Readers",
+          "doc_type": "note",
+          "location": "Writing Desk",
+          "content_brief": "Short examples about creative fixes, bodywork saves, and community interest stories."
+        }
+      },
+      {
+        "id": "doc_tpl_03",
+        "type": "document",
+        "attributes": {
+          "title": "Monthly Column Structure",
+          "doc_type": "template",
+          "location": "Writing Desk",
+          "content_brief": "Simple intro-body-close structure for short magazine pieces."
+        }
+      },
+      {
+        "id": "fld_write_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Writing Desk",
+          "purpose": "Drafts, notes, and article materials."
+        }
+      }
+    ]
+  }
+}

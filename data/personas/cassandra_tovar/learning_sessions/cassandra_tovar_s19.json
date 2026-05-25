@@ -1,0 +1,111 @@
+{
+  "session_id": "cassandra_tovar_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "travel",
+  "reason_for_call": "Book a hotel stay",
+  "task_params": {
+    "location": "Birmingham",
+    "guest_count": 1,
+    "room_count": 1,
+    "sort_by": "price_asc",
+    "check_in_date": "2025-05-14",
+    "check_out_date": "2025-05-16"
+  },
+  "expected_tools": [
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Birmingham",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "htl_birm_suites_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_birm_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Birmingham South Suites",
+          "location": "Birmingham, AL",
+          "check_in_date": "2025-05-14",
+          "check_out_date": "2025-05-16",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 92.0
+        }
+      },
+      {
+        "id": "htl_downtown_inn_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Downtown Civic Inn",
+          "location": "Birmingham, AL",
+          "check_in_date": "2025-05-14",
+          "check_out_date": "2025-05-16",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 108.0
+        }
+      },
+      {
+        "id": "htl_airport_lodge_03",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Airport Lodge Birmingham",
+          "location": "Birmingham, AL",
+          "check_in_date": "2025-05-15",
+          "check_out_date": "2025-05-17",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 79.0
+        }
+      },
+      {
+        "id": "htl_homeplace_04",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "HomePlace Express Birmingham",
+          "location": "Birmingham, AL",
+          "check_in_date": "2025-05-14",
+          "check_out_date": "2025-05-16",
+          "available_rooms": 2,
+          "max_guests_per_room": 1,
+          "price_per_night": 96.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "session_id": "gabriel_campbell_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meeting",
+  "task_params": {
+    "title": "Coffee chat with Dana re: senior ops path",
+    "start_time": "2025-03-18T08:00:00-04:00",
+    "end_time": "2025-03-18T08:45:00-04:00",
+    "participants": [
+      "dana.mercer@harborhealth.org"
+    ],
+    "location": "Tatte Bakery | Kendall Square"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-18T08:00:00-04:00",
+        "end_time": "2025-03-18T08:45:00-04:00",
+        "participants": [
+          "dana.mercer@harborhealth.org"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Coffee chat with Dana re: senior ops path",
+        "start_time": "2025-03-18T08:00:00-04:00",
+        "end_time": "2025-03-18T08:45:00-04:00",
+        "participants": [
+          "dana.mercer@harborhealth.org"
+        ],
+        "location": "Tatte Bakery | Kendall Square"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Throughput Review",
+          "start_time": "2025-03-18T09:00:00-04:00",
+          "end_time": "2025-03-18T10:00:00-04:00",
+          "participants": [
+            "gabriel.campbell@quincycare.org",
+            "ops-team@quincycare.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_personal_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Yoga Class",
+          "start_time": "2025-03-18T06:30:00-04:00",
+          "end_time": "2025-03-18T07:15:00-04:00",
+          "participants": [],
+          "location": "Sage Yoga Studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "1:1 with Priya",
+          "start_time": "2025-03-18T11:30:00-04:00",
+          "end_time": "2025-03-18T12:00:00-04:00",
+          "participants": [
+            "gabriel.campbell@quincycare.org",
+            "priya.shah@quincycare.org"
+          ],
+          "location": "Office 4C",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_invite_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Coffee chat with Dana re: senior ops path",
+          "start_time": "2025-03-18T08:00:00-04:00",
+          "end_time": "2025-03-18T08:45:00-04:00",
+          "participants": [
+            "events@nehsalliance.org"
+          ],
+          "location": "Zoom",
+          "calendar": "invites",
+          "status": "tentative"
+        }
+      }
+    ]
+  }
+}

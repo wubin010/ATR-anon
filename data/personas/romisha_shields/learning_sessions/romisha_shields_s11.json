@@ -1,0 +1,111 @@
+{
+  "session_id": "romisha_shields_s11",
+  "session_type": "learning",
+  "day_offset": 11,
+  "domain": "commerce",
+  "reason_for_call": "Order a craft item online.",
+  "task_params": {
+    "category": "crochet set",
+    "budget": 30,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_crochet_01",
+      "prod_crochet_02",
+      "prod_crochet_03"
+    ],
+    "list_name": "Baby shawl gift ideas"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "crochet set",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_crochet_01",
+          "prod_crochet_02",
+          "prod_crochet_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_crochet_02"
+        ],
+        "list_name": "Baby shawl gift ideas"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_crochet_01",
+        "type": "product",
+        "attributes": {
+          "name": "Willow & Loop Crochet Set",
+          "price": 24.99,
+          "category": "crochet set",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_crochet_02",
+        "type": "product",
+        "attributes": {
+          "name": "Soft Start Crochet Hook and Yarn Kit",
+          "price": 29.5,
+          "category": "crochet set",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_crochet_03",
+        "type": "product",
+        "attributes": {
+          "name": "Little Cloud Crochet Bundle",
+          "price": 18.75,
+          "category": "crochet set",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_crochet_04",
+        "type": "product",
+        "attributes": {
+          "name": "Heirloom Stitch Crochet Starter Pack",
+          "price": 33,
+          "category": "crochet set",
+          "rating": 4.9
+        }
+      }
+    ]
+  }
+}

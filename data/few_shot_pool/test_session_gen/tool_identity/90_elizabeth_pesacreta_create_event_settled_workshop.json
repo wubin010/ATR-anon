@@ -1,0 +1,85 @@
+{
+  "instruction": "The details in our Bayside design-thinking workshop thread are finally settled: 2026-11-12 from 18:00 to 19:30 at Harbor Youth Center Room B, with nina.cho@bayside.org, avery.khan@bayside.org, and marco.rios@bayside.org involved. Keep this on my radar.",
+  "gold_value": null,
+  "session_id": "elizabeth_pesacreta_scheduling_04_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_scheduling_04",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_scheduling_04",
+    "rule_text": "For shared activities like volunteer sessions or workshops, she prefers creating a calendar event instead of keeping the plan only in message threads.",
+    "canonical_answer": "Whenever I'm coordinating a real activity with others, I always create a calendar event for it."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_bayside_workshop_thread_01",
+        "type": "event",
+        "attributes": {
+          "title": "Bayside design-thinking workshop thread",
+          "start_time": "2026-11-12T18:00:00",
+          "end_time": "2026-11-12T19:30:00",
+          "participants": [],
+          "location": "Harbor Youth Center",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_southside_firstaid_thread_02",
+        "type": "event",
+        "attributes": {
+          "title": "Southside first-aid volunteer thread",
+          "start_time": "2026-11-19T17:30:00",
+          "end_time": "2026-11-19T19:00:00",
+          "participants": [],
+          "location": "Riverside Community Hall",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "group_chat"
+        }
+      },
+      {
+        "id": "evt_board_meeting_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood board meeting",
+          "start_time": "2026-11-10T18:00:00",
+          "end_time": "2026-11-10T19:00:00",
+          "participants": [
+            "chair@harbor.org",
+            "secretary@harbor.org"
+          ],
+          "location": "Harbor Youth Center Conference Room",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

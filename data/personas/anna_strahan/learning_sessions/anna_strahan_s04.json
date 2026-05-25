@@ -1,0 +1,102 @@
+{
+  "session_id": "anna_strahan_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "reservation",
+  "reason_for_call": "Help me book a dinner reservation.",
+  "task_params": {
+    "location": "Covington",
+    "cuisine": "Italian",
+    "date_time": "2025-02-20T19:00:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Covington",
+        "cuisine": "Italian",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_tulios_01",
+        "date_time": "2025-02-20T19:00:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_tulios_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Tulio's Italian Table",
+          "cuisine": "Italian",
+          "location": "Covington",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "dining room"
+        }
+      },
+      {
+        "id": "rst_marais_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cafe Marais",
+          "cuisine": "French",
+          "location": "Covington",
+          "rating": 4.5,
+          "price_range": "$$$",
+          "seating_style": "bistro"
+        }
+      },
+      {
+        "id": "rst_roma_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Trattoria Roma",
+          "cuisine": "Italian",
+          "location": "Covington",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "patio"
+        }
+      },
+      {
+        "id": "rst_bayou_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bayou Supper Club",
+          "cuisine": "Southern",
+          "location": "Mandeville",
+          "rating": 4.6,
+          "price_range": "$$$",
+          "seating_style": "dining room"
+        }
+      }
+    ]
+  }
+}

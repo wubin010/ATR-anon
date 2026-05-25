@@ -1,0 +1,112 @@
+{
+  "instruction": "Please order one shelf-stable side mix for dinner, keep it under $6, and just pick one for me.",
+  "gold_value": "prod_delta_cornbread_01",
+  "session_id": "vanessa_davis_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "vanessa_davis_commerce_02",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_commerce_02",
+    "rule_text": "When ordering food ingredients, she favors Southern comfort staples and seafood-boil items over generic convenience foods.",
+    "canonical_answer": "If I’m ordering ingredients, I want Southern comfort staples or seafood-boil items, not just generic convenience stuff."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_delta_cornbread_01",
+        "type": "product",
+        "attributes": {
+          "name": "Delta Stone-Ground Cornbread Mix",
+          "price": 5.79,
+          "category": "side mix",
+          "rating": 4.3,
+          "cuisine_style": "southern",
+          "review_count": 86,
+          "prep_style": "oven bake"
+        }
+      },
+      {
+        "id": "prod_bayou_hushpuppy_01",
+        "type": "product",
+        "attributes": {
+          "name": "Bayou Buttermilk Hush Puppy Mix",
+          "price": 6.89,
+          "category": "side mix",
+          "rating": 4.8,
+          "cuisine_style": "southern",
+          "review_count": 522,
+          "prep_style": "fry mix"
+        }
+      },
+      {
+        "id": "prod_creamy_mac_01",
+        "type": "product",
+        "attributes": {
+          "name": "Creamy Stove-Top Mac & Cheese Mix",
+          "price": 3.49,
+          "category": "side mix",
+          "rating": 4.9,
+          "review_count": 1830,
+          "prep_style": "quick cook",
+          "units_sold_last_30_days": 1400
+        }
+      },
+      {
+        "id": "prod_garlic_mashed_01",
+        "type": "product",
+        "attributes": {
+          "name": "Garlic Instant Mashed Potatoes",
+          "price": 2.99,
+          "category": "side mix",
+          "rating": 4.8,
+          "review_count": 1410,
+          "prep_style": "instant",
+          "units_sold_last_30_days": 1280
+        }
+      },
+      {
+        "id": "prod_cheddar_rice_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cheddar Broccoli Rice Side",
+          "price": 2.79,
+          "category": "side mix",
+          "rating": 4.7,
+          "review_count": 980,
+          "prep_style": "boxed convenience",
+          "units_sold_last_30_days": 990
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_delta_cornbread_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

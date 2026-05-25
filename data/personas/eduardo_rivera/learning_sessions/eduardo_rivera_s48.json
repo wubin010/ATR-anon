@@ -1,0 +1,107 @@
+{
+  "session_id": "eduardo_rivera_s48",
+  "session_type": "learning",
+  "day_offset": 48,
+  "domain": "scheduling",
+  "reason_for_call": "Set a reminder",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Conference case-study draft",
+    "start_time": "2025-03-19T19:30:00-07:00",
+    "end_time": "2025-03-19T21:00:00-07:00",
+    "remind_at": "2025-03-19T18:45:00-07:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_case_01",
+        "remind_at": "2025-03-19T18:45:00-07:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_case_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Conference case-study draft",
+          "start_time": "2025-03-19T19:30:00-07:00",
+          "end_time": "2025-03-19T21:00:00-07:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_walk_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Evening neighborhood walk",
+          "start_time": "2025-03-18T20:00:00-07:00",
+          "end_time": "2025-03-18T20:45:00-07:00",
+          "participants": [],
+          "location": "Pittsburg Marina",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_lab_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Digital workflow QA review",
+          "start_time": "2025-03-19T15:00:00-07:00",
+          "end_time": "2025-03-19T16:00:00-07:00",
+          "participants": [
+            "lab-team@work.example"
+          ],
+          "location": "Lab conference room",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_gallery_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Gallery opening downtown",
+          "start_time": "2025-03-20T18:30:00-07:00",
+          "end_time": "2025-03-20T20:30:00-07:00",
+          "participants": [
+            "spouse@example.com"
+          ],
+          "location": "Downtown Arts District",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "session_id": "nancy_marr_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "commerce",
+  "reason_for_call": "Compare some products",
+  "task_params": {
+    "category": "binoculars",
+    "budget": 180,
+    "sort_by": "rating",
+    "list_name": "Birdwatching options"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "binoculars",
+        "budget": 180,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_trailview_01",
+          "prod_fieldnest_03",
+          "prod_pineglass_02"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_trailview_01",
+          "prod_fieldnest_03",
+          "prod_pineglass_02"
+        ],
+        "list_name": "Birdwatching options"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_trailview_01",
+        "type": "product",
+        "attributes": {
+          "name": "TrailView 8x32 Binoculars",
+          "price": 149.0,
+          "category": "binoculars",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_pineglass_02",
+        "type": "product",
+        "attributes": {
+          "name": "PineGlass 10x32 Binoculars",
+          "price": 169.0,
+          "category": "binoculars",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_fieldnest_03",
+        "type": "product",
+        "attributes": {
+          "name": "FieldNest 8x42 Binoculars",
+          "price": 179.0,
+          "category": "binoculars",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_skyramble_04",
+        "type": "product",
+        "attributes": {
+          "name": "SkyRamble Compact 8x25 Binoculars",
+          "price": 99.0,
+          "category": "binoculars",
+          "rating": 4.2
+        }
+      }
+    ]
+  }
+}

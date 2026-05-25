@@ -1,0 +1,106 @@
+{
+  "session_id": "iris_parker_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "communication",
+  "reason_for_call": "Draft a work note",
+  "task_params": {
+    "sender": "Maya Chen",
+    "folder": "sent",
+    "thread_id": "thr_hiring_17",
+    "subject": "Candidate feedback summary",
+    "language": "en",
+    "body_points": [
+      "Thank her for the time yesterday and follow-up patience",
+      "Summarize that panel feedback was consistently positive",
+      "Highlight strong stakeholder communication and thoughtful answers",
+      "Note one concern about ramp time on technical systems",
+      "Recommend moving the candidate to the final round",
+      "Offer to discuss details live if helpful"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Chen",
+        "folder": "sent"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_hiring_17",
+        "subject": "Candidate feedback summary",
+        "language": "en",
+        "body": "<authored from body_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_hiring_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Candidate feedback summary",
+          "body": "Hi Iris — just checking whether you had a chance to send over the candidate feedback summary you mentioned. Once I have it, I can align with the rest of the panel and decide next steps. Thanks.",
+          "thread_id": "thr_hiring_17",
+          "folder": "sent",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-11T09:18:00"
+        }
+      },
+      {
+        "id": "msg_hiring_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Interview panel timing",
+          "body": "I moved the debrief by thirty minutes so everyone can join. Let me know if that still works.",
+          "thread_id": "thr_hiring_11",
+          "folder": "inbox",
+          "labels": [
+            "recruiting"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-10T16:02:00"
+        }
+      },
+      {
+        "id": "msg_hiring_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Daniel Ruiz",
+          "subject": "Offer approval routing",
+          "body": "Can you confirm whether finance has signed off on the compensation band yet?",
+          "thread_id": "thr_hiring_09",
+          "folder": "sent",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-02-11T08:05:00"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Emilia Park at Northline Residency about the application packet. Thank her for reaching out, tell her I can send my portfolio PDF and artist statement, and ask whether they'd also like a short bio and exhibition history included.",
+  "gold_value": null,
+  "session_id": "theodora_tong_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "theodora_tong_communication_01",
+  "rule_ref": {
+    "rule_id": "theodora_tong_communication_01",
+    "rule_text": "For outreach, applications, or other important messages, she prefers to have a draft prepared for review instead of sending the message immediately.",
+    "canonical_answer": "I like important messages drafted first so I can sit with the wording before anything goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_emilia_residency_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Emilia Park <emilia@northlineresidency.org>",
+          "subject": "Northline Residency application packet",
+          "body": "Hi Theodora, thanks again for your interest in the Northline Residency. If you'd like to apply for the spring cohort, send along your portfolio PDF and artist statement when you have a chance. If you already have a short bio or exhibition history prepared, we can include those too.",
+          "thread_id": "thr_emilia_residency_18",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-03T10:14"
+        }
+      },
+      {
+        "id": "msg_jonah_poster_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Jonah Bell <jonah@riverposters.com>",
+          "subject": "Poster pickup details",
+          "body": "Your print order is ready for pickup at the River Posters studio. Let me know if you'd rather have it mailed instead.",
+          "thread_id": "thr_jonah_poster_06",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-08-03T09:02"
+        }
+      },
+      {
+        "id": "msg_lena_reading_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Wu <lena@stillwaterbooks.org>",
+          "subject": "Reading series check-in",
+          "body": "Just checking whether you're still interested in joining our small reading series later this season. No pressure if your schedule is full.",
+          "thread_id": "thr_lena_reading_11",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-03T08:21"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

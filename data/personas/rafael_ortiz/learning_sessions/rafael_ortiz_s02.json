@@ -1,0 +1,104 @@
+{
+  "session_id": "rafael_ortiz_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "Quality Improvement",
+    "title": "Medication Safety Pitch - Barcode Scanning Compliance",
+    "pitch_points": [
+      "problem: missed barcode scans during med pass still create near-miss risk",
+      "proposal: brief shift huddle reminder plus scanner readiness check",
+      "pilot on one med-surg unit for two weeks",
+      "track compliance rate and near-miss reports before and after",
+      "include bilingual patient ID confirmation as a reinforcement step"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Quality Improvement",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Medication Safety Pitch - Barcode Scanning Compliance",
+        "location": "Quality Improvement",
+        "content_brief": "<authored from pitch_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_qi_01",
+        "type": "document",
+        "attributes": {
+          "title": "QI Pitch Template",
+          "doc_type": "template",
+          "location": "Quality Improvement",
+          "content_brief": "Simple project pitch outline with sections for problem, proposed change, pilot scope, measures, and next steps."
+        }
+      },
+      {
+        "id": "doc_qi_02",
+        "type": "document",
+        "attributes": {
+          "title": "Falls Reduction Idea Notes",
+          "doc_type": "note",
+          "location": "Quality Improvement",
+          "content_brief": "Working note from a prior unit safety idea with rough bullets and follow-up questions."
+        }
+      },
+      {
+        "id": "doc_qi_03",
+        "type": "document",
+        "attributes": {
+          "title": "Medication Near-Miss Review",
+          "doc_type": "report",
+          "location": "Quality Improvement",
+          "content_brief": "Summary of recent near-miss patterns including workflow interruptions and scanning gaps."
+        }
+      },
+      {
+        "id": "file_qi_01",
+        "type": "file",
+        "attributes": {
+          "name": "med_safety_whiteboard.jpg",
+          "file_type": "image",
+          "location": "Quality Improvement",
+          "owner": "Rafael Ortiz",
+          "labels": [
+            "safety",
+            "unit"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

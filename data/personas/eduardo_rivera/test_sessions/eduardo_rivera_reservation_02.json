@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner for four in Seattle on 2026-07-18 at 7:30pm — just pick a place and make the reservation.",
+  "gold_value": "rst_mar_y_maiz_01",
+  "session_id": "eduardo_rivera_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "eduardo_rivera_reservation_02",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_reservation_02",
+    "rule_text": "When booking a restaurant, he gravitates toward Mexican or modern Mexican-inspired places over generic options.",
+    "canonical_answer": "If we're eating out, I usually want Mexican or Mexican-inspired food over something generic."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_mar_y_maiz_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Mar y Maiz Kitchen",
+          "cuisine": "Modern Mexican",
+          "location": "Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_pine_street_trattoria_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Pine Street Trattoria",
+          "cuisine": "Italian",
+          "location": "Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "bustling dining room"
+        }
+      },
+      {
+        "id": "rst_harbor_house_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor House Grill",
+          "cuisine": "American",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "waterfront dining"
+        }
+      },
+      {
+        "id": "rst_sora_izakaya_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Sora Izakaya",
+          "cuisine": "Japanese",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "lively small plates"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_mar_y_maiz_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

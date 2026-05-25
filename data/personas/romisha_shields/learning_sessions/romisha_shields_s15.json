@@ -1,0 +1,85 @@
+{
+  "session_id": "romisha_shields_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "workspace",
+  "reason_for_call": "Update a note",
+  "task_params": {
+    "location": "Local History",
+    "doc_type": "note",
+    "title": "Anniston Local History Memories",
+    "memory_points": [
+      "Mama took us to Quintard Mall when it first felt brand-new",
+      "The church mothers kept fans moving during summer revivals",
+      "We listened for the train at night from the back porch",
+      "Neighbors traded garden tomatoes and stories over the fence"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Local History",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_local_history_01",
+        "content_delta": "<authored from memory_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_local_history_01",
+        "type": "document",
+        "attributes": {
+          "title": "Anniston Local History Memories",
+          "doc_type": "note",
+          "location": "Local History",
+          "content_brief": "Personal memories and neighborhood stories from Anniston."
+        }
+      },
+      {
+        "id": "doc_local_history_02",
+        "type": "document",
+        "attributes": {
+          "title": "West Anniston Church Stories",
+          "doc_type": "note",
+          "location": "Local History",
+          "content_brief": "Notes about church programs, revivals, and longtime members."
+        }
+      },
+      {
+        "id": "doc_family_01",
+        "type": "document",
+        "attributes": {
+          "title": "Family Reunion Recipes",
+          "doc_type": "note",
+          "location": "Family Notes",
+          "content_brief": "Recipe reminders and reunion planning details."
+        }
+      }
+    ]
+  }
+}

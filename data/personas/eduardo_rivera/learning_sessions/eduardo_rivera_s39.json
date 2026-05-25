@@ -1,0 +1,87 @@
+{
+  "session_id": "eduardo_rivera_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Dinner Party Prep",
+    "location": "Personal/Hosting",
+    "content_points": [
+      "Menu ideas",
+      "Shopping needs",
+      "Possible dessert volunteers",
+      "Keep it as a simple planning note"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Personal/Hosting",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Dinner Party Prep",
+        "location": "Personal/Hosting",
+        "content_brief": "<authored from content_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_hosting_01",
+        "type": "document",
+        "attributes": {
+          "title": "Backyard Gathering Checklist",
+          "doc_type": "note",
+          "location": "Personal/Hosting",
+          "content_brief": "Guest list, seating, drinks, and cleanup reminders."
+        }
+      },
+      {
+        "id": "doc_hosting_02",
+        "type": "document",
+        "attributes": {
+          "title": "Potluck Ideas",
+          "doc_type": "note",
+          "location": "Personal/Hosting",
+          "content_brief": "Shared dish ideas and a rough signup list."
+        }
+      },
+      {
+        "id": "doc_kitchen_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly Grocery Staples",
+          "doc_type": "spreadsheet",
+          "location": "Personal/Kitchen",
+          "content_brief": "Recurring pantry and produce items."
+        }
+      }
+    ]
+  }
+}

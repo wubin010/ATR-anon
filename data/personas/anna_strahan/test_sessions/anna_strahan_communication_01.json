@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Monica Reyes at South Harbor Neighborhood Center about the community blood pressure screening series. Tell her the clinic can provide two nurses and one bilingual volunteer, say it's fine to mention the diabetes-risk handouts and free blood pressure checks, and ask her to send the latest resident flyer text before it goes out.",
+  "gold_value": null,
+  "session_id": "anna_strahan_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "anna_strahan_communication_01",
+  "rule_ref": {
+    "rule_id": "anna_strahan_communication_01",
+    "rule_text": "When she is preparing outward-facing messages about clinic initiatives or community health programs, Anna prefers them to be drafted for review rather than sent immediately.",
+    "canonical_answer": "I like outreach and clinic-related messages drafted first so I can review the wording before anything goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_monica_screening_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Monica Reyes <monica.reyes@southharborneighborhood.org>",
+          "subject": "Community blood pressure screening series",
+          "body": "Hi Anna, we're getting ready to promote the summer community blood pressure screening series for South Harbor residents and want to make sure the clinic details are accurate before we circulate anything. Can you confirm whether your team can provide nurses and a bilingual volunteer, and whether we should mention the diabetes-risk handouts and free blood pressure checks in the outreach copy? If you have any updated flyer text, send it along and we'll work it into the resident notice.",
+          "thread_id": "thr_monica_screening_18",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-05-21T09:14"
+        }
+      },
+      {
+        "id": "msg_oliver_fridge_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Oliver Grant <oliver.grant@riversideclinic.org>",
+          "subject": "Vaccine fridge maintenance window",
+          "body": "Facilities can service the vaccine refrigerator on Friday after 4 pm if that won't interfere with the evening immunization appointments. Let me know whether we should reschedule the maintenance.",
+          "thread_id": "thr_oliver_facilities_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-05-21T08:03"
+        }
+      },
+      {
+        "id": "msg_printbridge_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "billing@printbridge.com",
+          "subject": "Your monthly invoice is ready",
+          "body": "Your May printing services invoice is now available in the customer portal.",
+          "thread_id": "thr_printbridge_invoice_11",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-05-21T07:42"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "session_id": "jennifer_philmon_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "St. Louis",
+    "event_tags": [
+      "art",
+      "museum"
+    ],
+    "event_id": "evt_citymuseum_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "St. Louis",
+        "event_tags": [
+          "art",
+          "museum"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_citymuseum_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_citymuseum_01",
+        "type": "event",
+        "attributes": {
+          "name": "City Museum After Hours: Found Object Gallery Walk",
+          "location": "St. Louis",
+          "date_time": "2025-05-22T19:00:00-05:00",
+          "price": 18.0,
+          "event_tags": [
+            "art",
+            "museum",
+            "gallery",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "evt_pulitzer_02",
+        "type": "event",
+        "attributes": {
+          "name": "Pulitzer Arts Foundation Evening Exhibition",
+          "location": "St. Louis",
+          "date_time": "2025-05-22T18:30:00-05:00",
+          "price": 22.0,
+          "event_tags": [
+            "art",
+            "gallery",
+            "exhibition"
+          ]
+        }
+      },
+      {
+        "id": "evt_lambert_03",
+        "type": "event",
+        "attributes": {
+          "name": "Foundry Art Centre Quiet Night Tour",
+          "location": "St. Charles",
+          "date_time": "2025-05-22T19:30:00-05:00",
+          "price": 15.0,
+          "event_tags": [
+            "art",
+            "museum",
+            "tour"
+          ]
+        }
+      },
+      {
+        "id": "evt_mocastl_04",
+        "type": "event",
+        "attributes": {
+          "name": "Contemporary Art Talk and Viewing",
+          "location": "St. Louis",
+          "date_time": "2025-05-23T19:00:00-05:00",
+          "price": 20.0,
+          "event_tags": [
+            "art",
+            "museum",
+            "talk"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "session_id": "gabriel_campbell_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "communication",
+  "reason_for_call": "Triage a message and draft a follow-up",
+  "task_params": {
+    "folder": "sent",
+    "subject": "community partnerships",
+    "language": "en",
+    "followup_points": [
+      "thank them for the earlier exchange",
+      "restate interest in collaborating",
+      "mention art-therapy pilot possibilities",
+      "suggest a short call next week",
+      "ask what timing works on their side"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "sent"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_comm_02",
+        "language": "en",
+        "body": "<authored from followup_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_sent_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Gabriel Campbell <gabriel.campbell@harborpointhealth.org>",
+          "subject": "Re: Community partnerships for neighborhood wellness outreach",
+          "body": "Hi Maya, I appreciated your note about local collaboration opportunities. I think there could be a strong fit between your coalition's outreach work and our patient engagement goals, especially if we explore a small art-therapy element as part of a broader community wellness effort. Happy to compare ideas once schedules calm down.",
+          "thread_id": "thr_comm_01",
+          "folder": "sent",
+          "labels": [
+            "work"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-04-28T15:42:00"
+        }
+      },
+      {
+        "id": "msg_sent_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Gabriel Campbell <gabriel.campbell@harborpointhealth.org>",
+          "subject": "Community partnerships and fall programming ideas",
+          "body": "Hi Maya, circling back on community partnerships as we think about fall programming. I would still love to explore whether a joint pilot around creative wellness or art-therapy-informed patient engagement could make sense. If your team is open, I can put together a concise concept outline and we can find time to discuss.",
+          "thread_id": "thr_comm_02",
+          "folder": "sent",
+          "labels": [
+            "work",
+            "outreach"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-19T09:18:00"
+        }
+      },
+      {
+        "id": "msg_sent_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Gabriel Campbell <gabriel.campbell@harborpointhealth.org>",
+          "subject": "Q3 staffing dashboard revisions",
+          "body": "I've attached the revised dashboard with the throughput and staffing updates incorporated. Let me know if you want me to break out the ambulatory figures separately before leadership review.",
+          "thread_id": "thr_ops_03",
+          "folder": "sent",
+          "labels": [
+            "work"
+          ],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-05-22T17:06:00"
+        }
+      },
+      {
+        "id": "msg_inbox_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Patel <mpatel@southshorecoalition.org>",
+          "subject": "Re: Community partnerships and fall programming ideas",
+          "body": "Thanks, Gabriel. I agree there may be room for a joint effort here. Things are a little packed on our end this week, but I would be glad to reconnect soon.",
+          "thread_id": "thr_comm_02",
+          "folder": "inbox",
+          "labels": [
+            "work",
+            "outreach"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-20T11:03:00"
+        }
+      }
+    ]
+  }
+}

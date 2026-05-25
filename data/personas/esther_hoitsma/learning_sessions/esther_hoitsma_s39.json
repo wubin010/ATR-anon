@@ -1,0 +1,97 @@
+{
+  "session_id": "esther_hoitsma_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "template_doc_type": "template",
+    "doc_type": "report",
+    "location": "Senior Center Programs",
+    "title": "Bilingual Art Activities for Seniors",
+    "idea_points": [
+      "watercolor activity prompts in English and Spanish",
+      "adapt projects for limited hand strength and mobility",
+      "use familiar cultural themes and seasonal memories",
+      "include simple supply list and setup steps",
+      "note social benefits like conversation and confidence"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Senior Center Programs",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "Bilingual Art Activities for Seniors",
+        "location": "Senior Center Programs",
+        "content_brief": "<authored from idea_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Program Concept Brief Template",
+          "doc_type": "template",
+          "location": "Senior Center Programs",
+          "content_brief": "Short report template with sections for overview, goals, supplies, accessibility, and expected impact."
+        }
+      },
+      {
+        "id": "doc_report_02",
+        "type": "document",
+        "attributes": {
+          "title": "Chair Yoga Activity Pilot",
+          "doc_type": "report",
+          "location": "Senior Center Programs",
+          "content_brief": "Pilot summary for a low-mobility group activity with participation notes and benefits."
+        }
+      },
+      {
+        "id": "doc_note_03",
+        "type": "document",
+        "attributes": {
+          "title": "Family Story Circle Notes",
+          "doc_type": "note",
+          "location": "Senior Center Programs",
+          "content_brief": "Brainstorm notes on bilingual conversation prompts for elders."
+        }
+      },
+      {
+        "id": "folder_programs_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Senior Center Programs",
+          "purpose": "Working materials and planning documents for activity ideas."
+        }
+      }
+    ]
+  }
+}

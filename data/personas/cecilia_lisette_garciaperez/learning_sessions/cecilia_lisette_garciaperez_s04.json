@@ -1,0 +1,107 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "communication",
+  "reason_for_call": "Draft a follow-up note.",
+  "task_params": {
+    "sender": "Maya Torres",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank her for the thoughtful mentoring conversation",
+      "say her reporting instincts are strong",
+      "mention the lead is promising but still too broad",
+      "ask for a sharper nut graf near the top",
+      "suggest trimming repeated background in the middle sections",
+      "recommend adding two concrete community voices",
+      "encourage her not to lose her original angle",
+      "invite her to send a revised draft by Friday afternoon"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Torres",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_maya_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Torres",
+          "subject": "Thank you for today's mentoring chat",
+          "body": "Hi Cecilia, thank you again for taking the time to walk through my feature draft with me today. I left with a lot to think about, especially around focus and structure. If you have a moment later, I'd really appreciate any quick written guidance on what to tackle first in revision.",
+          "thread_id": "thr_maya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-05T15:42:00"
+        }
+      },
+      {
+        "id": "msg_jon_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Jon Feldman",
+          "subject": "Budget copy edits needed",
+          "body": "Can you review the revised budget language before noon tomorrow?",
+          "thread_id": "thr_jon_01",
+          "folder": "inbox",
+          "labels": [
+            "finance"
+          ],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-05-05T10:18:00"
+        }
+      },
+      {
+        "id": "msg_lucia_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lucia Benitez",
+          "subject": "Re: Festival program captions",
+          "body": "Thanks, the bilingual captions look great now.",
+          "thread_id": "thr_lucia_01",
+          "folder": "archive",
+          "labels": [
+            "completed"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-05-03T09:11:00"
+        }
+      }
+    ]
+  }
+}

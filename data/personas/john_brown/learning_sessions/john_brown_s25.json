@@ -1,0 +1,124 @@
+{
+  "session_id": "john_brown_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule an activity",
+  "task_params": {
+    "title": "Pickup Basketball",
+    "start_time": "2025-02-26T18:30:00-06:00",
+    "end_time": "2025-02-26T20:00:00-06:00",
+    "location": "Highland Road Community Park"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "primary"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-02-26T18:30:00-06:00",
+        "end_time": "2025-02-26T20:00:00-06:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Pickup Basketball",
+        "start_time": "2025-02-26T18:30:00-06:00",
+        "end_time": "2025-02-26T20:00:00-06:00",
+        "location": "Highland Road Community Park"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_safety_lab_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Plant Safety Lab",
+          "start_time": "2025-02-24T15:00:00-06:00",
+          "end_time": "2025-02-24T17:30:00-06:00",
+          "participants": [
+            "lab group"
+          ],
+          "location": "Patrick F. Taylor Hall",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_volleyball_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pickup Basketball",
+          "start_time": "2025-02-26T18:30:00-06:00",
+          "end_time": "2025-02-26T20:00:00-06:00",
+          "participants": [
+            "league team"
+          ],
+          "location": "Highland Road Community Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_study_group_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "IE Study Group",
+          "start_time": "2025-02-27T18:00:00-06:00",
+          "end_time": "2025-02-27T20:00:00-06:00",
+          "participants": [
+            "study group"
+          ],
+          "location": "LSU Library",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_shift_review_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Shift Ergonomics Review",
+          "start_time": "2025-02-28T16:30:00-06:00",
+          "end_time": "2025-02-28T18:00:00-06:00",
+          "participants": [
+            "operations team"
+          ],
+          "location": "North Plant Conference Room",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

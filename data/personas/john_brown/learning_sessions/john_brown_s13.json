@@ -1,0 +1,126 @@
+{
+  "session_id": "john_brown_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "communication",
+  "reason_for_call": "Triage my messages",
+  "task_params": {
+    "folder": "inbox",
+    "urgent_sender": "Maya Patel",
+    "archive_sender": "Caleb Nguyen",
+    "priority": "high"
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "archive_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Patel",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Caleb Nguyen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_caleb_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Patel",
+          "subject": "Line 3 signage proofs need final edits",
+          "body": "Can you review the latest signage proofs tonight? The vendor cutoff is tomorrow morning and we still need your safety note checked before I send the package.",
+          "thread_id": "thr_maya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-13T16:42:00"
+        }
+      },
+      {
+        "id": "msg_caleb_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Caleb Nguyen",
+          "subject": "Youth center volunteer shirt sizes",
+          "body": "Hey, when you get a sec can you send your shirt size for the volunteer event? No rush, I am just collecting the list this week.",
+          "thread_id": "thr_caleb_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-13T11:08:00"
+        }
+      },
+      {
+        "id": "msg_evans_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dr. Evans",
+          "subject": "Lab report rubric posted",
+          "body": "The updated rubric is now in the course portal. Please use that version for the next submission.",
+          "thread_id": "thr_evans_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-13T09:14:00"
+        }
+      },
+      {
+        "id": "msg_maya_00",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Patel",
+          "subject": "Earlier proof set",
+          "body": "Old draft attached for reference.",
+          "thread_id": "thr_maya_00",
+          "folder": "archive",
+          "labels": [],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-02-10T14:20:00"
+        }
+      }
+    ]
+  }
+}

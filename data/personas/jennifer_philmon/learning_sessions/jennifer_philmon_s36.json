@@ -1,0 +1,105 @@
+{
+  "session_id": "jennifer_philmon_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "reservation",
+  "reason_for_call": "Book some event tickets.",
+  "task_params": {
+    "location": "O'Fallon",
+    "event_tags": [
+      "sports",
+      "baseball"
+    ],
+    "event_id": "evt_raptors_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 3
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "O'Fallon",
+        "event_tags": [
+          "sports",
+          "baseball"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_raptors_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 3
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_raptors_01",
+        "type": "event",
+        "attributes": {
+          "name": "O'Fallon Hoots vs. Alton River Dragons",
+          "location": "O'Fallon",
+          "date_time": "2025-08-16T19:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "sports",
+            "baseball",
+            "minor league"
+          ]
+        }
+      },
+      {
+        "id": "evt_slam_02",
+        "type": "event",
+        "attributes": {
+          "name": "St. Charles Summer Slam Wrestling Night",
+          "location": "O'Fallon",
+          "date_time": "2025-08-16T20:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "sports",
+            "wrestling",
+            "live entertainment"
+          ]
+        }
+      },
+      {
+        "id": "evt_kickers_03",
+        "type": "event",
+        "attributes": {
+          "name": "O'Fallon United Indoor Soccer Showcase",
+          "location": "O'Fallon",
+          "date_time": "2025-08-17T18:30:00",
+          "price": 16.0,
+          "event_tags": [
+            "sports",
+            "soccer",
+            "family"
+          ]
+        }
+      }
+    ]
+  }
+}

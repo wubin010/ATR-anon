@@ -1,0 +1,103 @@
+{
+  "session_id": "roosevelt_brown_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "communication",
+  "reason_for_call": "Draft a work email",
+  "task_params": {
+    "sender": "linda.chen@harborpointhealth.org",
+    "folder": "inbox",
+    "language": "en",
+    "body_points": [
+      "thank her for supporting my professional growth",
+      "say I am exploring graduate school planning",
+      "ask what professional-development support may be available",
+      "mention tuition assistance or schedule flexibility as examples",
+      "ask if she would be open to a brief conversation next week",
+      "keep the tone respectful and appreciative"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "linda.chen@harborpointhealth.org",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_checkin_14",
+        "language": "en",
+        "body": "<authored from body_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_supervisor_01",
+        "type": "message",
+        "attributes": {
+          "sender": "linda.chen@harborpointhealth.org",
+          "subject": "Quarterly check-in follow-up",
+          "body": "Roosevelt, thanks again for the thoughtful conversation during our quarterly check-in. If there are development goals you want to discuss this spring, feel free to reply here and we can set aside time.",
+          "thread_id": "thr_checkin_14",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-04-30T09:18:00"
+        }
+      },
+      {
+        "id": "msg_supervisor_02",
+        "type": "message",
+        "attributes": {
+          "sender": "linda.chen@harborpointhealth.org",
+          "subject": "Updated staffing dashboard",
+          "body": "Sharing the latest staffing dashboard before tomorrow's leadership review.",
+          "thread_id": "thr_dashboard_08",
+          "folder": "archive",
+          "labels": [
+            "operations"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-04-12T16:42:00"
+        }
+      },
+      {
+        "id": "msg_coworker_01",
+        "type": "message",
+        "attributes": {
+          "sender": "mark.delgado@harborpointhealth.org",
+          "subject": "Patient experience workshop notes",
+          "body": "Attaching notes from the workshop. Let me know what should go into the redesign summary.",
+          "thread_id": "thr_workshop_22",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-05-01T11:06:00"
+        }
+      }
+    ]
+  }
+}

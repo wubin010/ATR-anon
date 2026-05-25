@@ -1,0 +1,114 @@
+{
+  "instruction": "I still haven't answered the Midtown Commons accessibility panel invite for 3:00–4:30pm. See whether it overlaps with anything already on my calendar, then send the reply for me.",
+  "gold_value": "tentative",
+  "session_id": "iris_parker_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "iris_parker_scheduling_01",
+  "rule_ref": {
+    "rule_id": "iris_parker_scheduling_01",
+    "rule_text": "When an invitation conflicts with something not fully sorted out yet, she prefers to reply tentatively rather than accept or decline outright.",
+    "canonical_answer": "If timing is still unsettled, I respond tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_midtown_commons_accessibility_panel",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Accessibility Strategy Panel",
+          "start_time": "2026-09-17T15:00:00-04:00",
+          "end_time": "2026-09-17T16:30:00-04:00",
+          "participants": [
+            "iris.parker@example.com",
+            "events@midtowncommons.org",
+            "alex.reyes@civicdesign.org"
+          ],
+          "location": "Midtown Commons",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "Midtown Commons Programs",
+          "rsvp_deadline": "2026-09-15T17:00:00-04:00",
+          "source": "official_email",
+          "attendee_count": 85
+        }
+      },
+      {
+        "id": "evt_hold_possible_portfolio_review",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Hold: possible portfolio review with Maren",
+          "start_time": "2026-09-17T14:30:00-04:00",
+          "end_time": "2026-09-17T16:00:00-04:00",
+          "participants": [
+            "iris.parker@example.com",
+            "maren.kim@example.com"
+          ],
+          "location": "Studio 4B",
+          "calendar": "work",
+          "status": "tentative",
+          "source": "manual_entry"
+        }
+      },
+      {
+        "id": "evt_design_team_checkin",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Design team check-in",
+          "start_time": "2026-09-17T11:00:00-04:00",
+          "end_time": "2026-09-17T11:30:00-04:00",
+          "participants": [
+            "iris.parker@example.com",
+            "design-team@example.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_nadia",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Nadia",
+          "start_time": "2026-09-17T19:00:00-04:00",
+          "end_time": "2026-09-17T20:30:00-04:00",
+          "participants": [
+            "iris.parker@example.com",
+            "nadia.ross@example.com"
+          ],
+          "location": "Juniper Table",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

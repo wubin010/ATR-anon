@@ -1,0 +1,177 @@
+{
+  "instruction": "Please clean up the Riverside bench quote batch in /shop/desk/riverside_bench. Keep the final estimate sheet, the vendor pricing sheet, and the client summary, but get the extra repeated copies and scratch versions out of the desk folder so it's easier to work from.",
+  "gold_value": null,
+  "session_id": "charlie_james_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "charlie_james_workspace_03",
+  "rule_ref": {
+    "rule_id": "charlie_james_workspace_03",
+    "rule_text": "For obvious duplicate or throwaway work files, he prefers deleting them outright rather than keeping extra clutter.",
+    "canonical_answer": "If a file is just a duplicate or throwaway version, I’d rather delete it than babysit more clutter."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_riverside_bench_final_estimate_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench final estimate.xlsx",
+          "file_type": "xlsx",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverside_bench_final_estimate_dup_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench final estimate (1).xlsx",
+          "file_type": "xlsx",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverside_bench_vendor_pricing_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench vendor pricing.xlsx",
+          "file_type": "xlsx",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverside_bench_client_summary_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench client summary.docx",
+          "file_type": "docx",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverside_bench_client_summary_copy_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench client summary copy.docx",
+          "file_type": "docx",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "active"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverside_bench_scratch_pad_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench scratch pad.txt",
+          "file_type": "txt",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "notes"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_riverside_bench_rough_totals_01",
+        "type": "file",
+        "attributes": {
+          "name": "Riverside bench rough totals.txt",
+          "file_type": "txt",
+          "location": "/shop/desk/riverside_bench",
+          "owner": "Charlie James",
+          "labels": [
+            "quote",
+            "bench",
+            "notes"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_completed_quotes_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Completed Quotes Archive",
+          "purpose": "Long-term storage for finished estimate materials moved off the active desk."
+        }
+      },
+      {
+        "id": "fld_desk_overflow_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Desk Overflow Archive",
+          "purpose": "Holding area for extra work files removed from active desk folders."
+        }
+      },
+      {
+        "id": "fld_supplier_reference_library_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Supplier Reference Library",
+          "purpose": "Saved vendor catalogs, standard price sheets, and reusable reference material."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "delete_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

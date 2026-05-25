@@ -1,0 +1,113 @@
+{
+  "session_id": "michael_argo_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "commerce",
+  "reason_for_call": "Compare some items for a purchase.",
+  "task_params": {
+    "category": "soldering accessories",
+    "budget": 35,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_helpinghands_01",
+      "prod_spongekit_02",
+      "prod_tipcleaner_03"
+    ],
+    "list_name": "installation parts"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "soldering accessories",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_helpinghands_01",
+          "prod_spongekit_02",
+          "prod_tipcleaner_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_helpinghands_01",
+          "prod_spongekit_02",
+          "prod_tipcleaner_03"
+        ],
+        "list_name": "installation parts"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_helpinghands_01",
+        "type": "product",
+        "attributes": {
+          "name": "Beginner Helping Hands with Magnifier",
+          "price": 18.99,
+          "category": "soldering accessories",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_spongekit_02",
+        "type": "product",
+        "attributes": {
+          "name": "Soldering Iron Cleaning Sponge Kit",
+          "price": 7.49,
+          "category": "soldering accessories",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_tipcleaner_03",
+        "type": "product",
+        "attributes": {
+          "name": "Brass Tip Cleaner Cup",
+          "price": 9.99,
+          "category": "soldering accessories",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_desolderpump_04",
+        "type": "product",
+        "attributes": {
+          "name": "Compact Desoldering Pump",
+          "price": 11.95,
+          "category": "soldering accessories",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "instruction": "I still haven't answered that 3–5pm River Pavilion Featured Local Voices panel invite. See whether it overlaps with anything else I've got at that time, and reply for me so they aren't left waiting.",
+  "gold_value": "tentative",
+  "session_id": "nancy_marr_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "nancy_marr_scheduling_03",
+  "rule_ref": {
+    "rule_id": "nancy_marr_scheduling_03",
+    "rule_text": "When an invitation conflicts with unresolved plans, Nancy prefers replying tentatively instead of accepting or declining outright.",
+    "canonical_answer": "If I’m not sure yet, I usually respond as tentative instead of forcing an early yes or no."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_featured_local_voices_20260822",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Featured Local Voices Panel",
+          "start_time": "2026-08-22T15:00:00",
+          "end_time": "2026-08-22T17:00:00",
+          "participants": [
+            "nancy.marr@example.com",
+            "programs@riverpavilion.org",
+            "speakers@cityvoices.org"
+          ],
+          "location": "River Pavilion",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "City Voices Program Office",
+          "attendee_count": 140,
+          "rsvp_deadline": "2026-08-20T17:00:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_lena_catchup_hold_20260822",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Lena catch-up — penciled in",
+          "start_time": "2026-08-22T14:30:00",
+          "end_time": "2026-08-22T16:30:00",
+          "participants": [
+            "nancy.marr@example.com",
+            "lena.orozco@example.com"
+          ],
+          "location": "Juniper Tea Room",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "text_message"
+        }
+      },
+      {
+        "id": "evt_dinner_eric_20260822",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Eric",
+          "start_time": "2026-08-22T19:00:00",
+          "end_time": "2026-08-22T20:30:00",
+          "participants": [
+            "nancy.marr@example.com",
+            "eric.hale@example.com"
+          ],
+          "location": "Harbor Kitchen",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

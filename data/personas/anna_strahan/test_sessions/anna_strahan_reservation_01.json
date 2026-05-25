@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner in Seattle for two people at 7:00pm on 2026-08-14 — just pick a place and reserve it.",
+  "gold_value": "rst_bayou_harbor_01",
+  "session_id": "anna_strahan_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "anna_strahan_reservation_01",
+  "rule_ref": {
+    "rule_id": "anna_strahan_reservation_01",
+    "rule_text": "When dining out, Anna prefers reservations at local Cajun or Creole restaurants over generic chain options.",
+    "canonical_answer": "If I’m booking a restaurant, I prefer a local Cajun or Creole place over a chain."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_bayou_harbor_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bayou Harbor Kitchen",
+          "cuisine": "Cajun/Creole",
+          "location": "Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "independent neighborhood restaurant"
+        }
+      },
+      {
+        "id": "rst_riverfront_cajun_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Riverfront Cajun Table",
+          "cuisine": "Cajun/Creole",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "regional chain"
+        }
+      },
+      {
+        "id": "rst_union_station_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Union Station Grill",
+          "cuisine": "American",
+          "location": "Seattle",
+          "rating": 4.9,
+          "price_range": "$",
+          "seating_style": "national chain"
+        }
+      },
+      {
+        "id": "rst_pine_market_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Pine Market Kitchen",
+          "cuisine": "New American",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "independent bistro"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_bayou_harbor_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

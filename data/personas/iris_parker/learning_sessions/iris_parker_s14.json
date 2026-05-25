@@ -1,0 +1,88 @@
+{
+  "session_id": "iris_parker_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "spreadsheet",
+    "location": "HR Team",
+    "title": "Employee Engagement Ideas Comparison",
+    "content_points": [
+      "Columns for idea, rough cost, morale impact, owner, notes",
+      "Include ideas: lunch and learn, volunteer day, art workshop",
+      "Use simple labels for cost: low, medium, high",
+      "Use simple labels for morale impact: low, medium, high"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "HR Team",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Employee Engagement Ideas Comparison",
+        "location": "HR Team",
+        "content_brief": "<authored from content_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Program Comparison Grid Template",
+          "doc_type": "template",
+          "location": "HR Team",
+          "content_brief": "Simple comparison layout with columns for initiative, estimated cost, impact, owner, and notes."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Workshop Planning Template",
+          "doc_type": "template",
+          "location": "HR Team",
+          "content_brief": "Planning worksheet for internal culture events and participation ideas."
+        }
+      },
+      {
+        "id": "doc_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly Engagement Snapshot",
+          "doc_type": "report",
+          "location": "HR Team",
+          "content_brief": "Recent summary of employee feedback themes and morale trends."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "session_id": "theodora_tong_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "communication",
+  "reason_for_call": "Draft a reply message",
+  "task_params": {
+    "sender": "Mara Feldman",
+    "folder": "inbox",
+    "reply_language": "en",
+    "reply_points": [
+      "thank her for reaching out",
+      "say I'd be glad to help with the next art-craft session",
+      "mention I'm available next Thursday afternoon",
+      "offer to bring watercolor paper and brushes",
+      "ask how many seniors are expected"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Mara Feldman",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_mara_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_mara_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Mara Feldman",
+          "subject": "Next art-craft session",
+          "body": "Hi Theodora, I hope you're doing well. We're putting together the next art-craft session at the community center and I wanted to see if you'd be available to help out again. Let me know if you're interested and what your availability looks like.",
+          "thread_id": "thr_mara_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-06T10:14:00"
+        }
+      },
+      {
+        "id": "msg_center_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Schenectady Community Center",
+          "subject": "Volunteer orientation reminder",
+          "body": "Just a reminder that volunteer orientation starts at 5 PM tomorrow in Room B.",
+          "thread_id": "thr_center_02",
+          "folder": "inbox",
+          "labels": [
+            "volunteer"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-05T16:20:00"
+        }
+      },
+      {
+        "id": "msg_supply_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Art House Supplies",
+          "subject": "Your receipt from yesterday",
+          "body": "Thanks for your purchase. Your receipt is attached for the watercolor paper and brush set.",
+          "thread_id": "thr_supply_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-05T09:02:00"
+        }
+      }
+    ]
+  }
+}

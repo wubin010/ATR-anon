@@ -1,0 +1,113 @@
+{
+  "session_id": "samantha_bello_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "origin": "BQN",
+    "destination": "Cartagena",
+    "passenger_count": 1,
+    "departure_date": "2025-03-21",
+    "return_date": "2025-03-24",
+    "sort_by": "price_asc",
+    "seat_preference": "window"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "BQN",
+        "destination": "Cartagena",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_cartagena_01",
+        "seat_preference": "window"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_cartagena_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "BQN",
+          "destination": "Cartagena",
+          "departure_date": "2025-03-21",
+          "return_date": "2025-03-24",
+          "airline": "Caribe Air",
+          "price": 289.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_cartagena_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "BQN",
+          "destination": "Cartagena",
+          "departure_date": "2025-03-22",
+          "return_date": "2025-03-24",
+          "airline": "Tropical Wings",
+          "price": 245.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_cartagena_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "BQN",
+          "destination": "Cartagena",
+          "departure_date": "2025-03-21",
+          "return_date": "2025-03-23",
+          "airline": "IslaJet",
+          "price": 259.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_cartagena_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "BQN",
+          "destination": "Cartagena",
+          "departure_date": "2025-03-21",
+          "return_date": "2025-03-24",
+          "airline": "Atlántico Air",
+          "price": 332.0,
+          "available_seats": 6
+        }
+      }
+    ]
+  }
+}

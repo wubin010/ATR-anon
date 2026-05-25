@@ -1,0 +1,144 @@
+{
+  "session_id": "romisha_shields_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "communication",
+  "reason_for_call": "Triage my messages",
+  "task_params": {
+    "folder": "inbox",
+    "reunion_sender": "Laverne Cousins",
+    "church_sender": "New Hope Baptist Church",
+    "garden_sender": "Calhoun Garden Club"
+  },
+  "expected_tools": [
+    "list_labels",
+    "search_messages",
+    "label_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Laverne Cousins"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_01"
+        ],
+        "label_ids": [
+          "lbl_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "New Hope Baptist Church"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_02"
+        ],
+        "label_ids": [
+          "lbl_02"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Laverne Cousins",
+          "subject": "Reunion headcount and T-shirt sizes",
+          "body": "Hey family, I'm trying to lock in the reunion headcount by tonight. Please send me your household count and shirt sizes.",
+          "thread_id": "thr_201",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-28T09:12:00"
+        }
+      },
+      {
+        "id": "msg_02",
+        "type": "message",
+        "attributes": {
+          "sender": "New Hope Baptist Church",
+          "subject": "Ushers needed for Sunday fellowship",
+          "body": "Sister Shields, we still need two volunteers to greet at the fellowship hall before service this Sunday.",
+          "thread_id": "thr_202",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-28T11:05:00"
+        }
+      },
+      {
+        "id": "msg_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Calhoun Garden Club",
+          "subject": "Tomato swap and seed table",
+          "body": "Reminder that the garden club tomato swap will include a seed table and tips on late-summer planting.",
+          "thread_id": "thr_203",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-28T14:20:00"
+        }
+      },
+      {
+        "id": "lbl_01",
+        "type": "label",
+        "attributes": {
+          "name": "Reunion",
+          "topic": "family reunion"
+        }
+      },
+      {
+        "id": "lbl_02",
+        "type": "label",
+        "attributes": {
+          "name": "Church",
+          "topic": "church matters"
+        }
+      },
+      {
+        "id": "lbl_03",
+        "type": "label",
+        "attributes": {
+          "name": "Garden",
+          "topic": "garden club and yard notes"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "instruction": "One stop on trip SCZ-8824 in Santa Cruz fell through. Please swap in a single daytime replacement that fits in about 1–2 hours and doesn't add much extra driving from the current route.",
+  "gold_value": [
+    "stop_pleasure_point_41st_01"
+  ],
+  "session_id": "samantha_bello_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "samantha_bello_travel_03",
+  "rule_ref": {
+    "rule_id": "samantha_bello_travel_03",
+    "rule_text": "When a trip is disrupted, Samantha prefers replacement stops that preserve the original surf-culture-cuisine mix rather than swapping in any generic high-rated alternative.",
+    "canonical_answer": "If a trip gets disrupted, I want replacement stops that keep the same surf, culture, and food vibe."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_pleasure_point_41st_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Pleasure Point Bluffs & 41st Avenue Walk",
+          "location": "Pleasure Point, Santa Cruz, California",
+          "tags": [
+            "surf",
+            "murals",
+            "cafes",
+            "tacos",
+            "local_shops",
+            "daytime"
+          ],
+          "trip_id": "SCZ-8824",
+          "rating": 4.6,
+          "review_count": 342,
+          "detour_minutes_from_route": 12,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_cowell_wharf_loop_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Cowell Beach & Wharf Loop",
+          "location": "Santa Cruz, California",
+          "tags": [
+            "beach",
+            "surf_views",
+            "seafood",
+            "arcade",
+            "daytime"
+          ],
+          "trip_id": "SCZ-8824",
+          "rating": 4.8,
+          "review_count": 4180,
+          "detour_minutes_from_route": 5,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_downtown_murals_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Downtown Santa Cruz Murals & Market",
+          "location": "Downtown Santa Cruz, California",
+          "tags": [
+            "murals",
+            "galleries",
+            "cafes",
+            "food_hall",
+            "daytime"
+          ],
+          "trip_id": "SCZ-8824",
+          "rating": 4.7,
+          "review_count": 1014,
+          "detour_minutes_from_route": 6,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_west_cliff_lighthouse_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "West Cliff Lighthouse Loop",
+          "location": "West Cliff, Santa Cruz, California",
+          "tags": [
+            "surf_views",
+            "lighthouse",
+            "scenic",
+            "daytime"
+          ],
+          "trip_id": "SCZ-8824",
+          "rating": 4.9,
+          "review_count": 2635,
+          "detour_minutes_from_route": 4,
+          "visit_duration_hours": 1.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_pleasure_point_41st_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

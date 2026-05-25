@@ -1,0 +1,90 @@
+{
+  "session_id": "romisha_shields_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "scheduling",
+  "reason_for_call": "Set a reminder",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Senior Walking Group",
+    "start_time": "2025-03-15T09:00:00-05:00",
+    "end_time": "2025-03-15T10:00:00-05:00",
+    "remind_at": "2025-03-15T08:20:00-05:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_walk_01",
+        "remind_at": "2025-03-15T08:20:00-05:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_walk_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Walking Group",
+          "start_time": "2025-03-15T09:00:00-05:00",
+          "end_time": "2025-03-15T10:00:00-05:00",
+          "participants": [],
+          "location": "Zinn Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_yoga_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Chair Yoga Class",
+          "start_time": "2025-03-14T11:00:00-05:00",
+          "end_time": "2025-03-14T12:00:00-05:00",
+          "participants": [],
+          "location": "Anniston Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_choir_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Choir Rehearsal",
+          "start_time": "2025-03-15T18:00:00-05:00",
+          "end_time": "2025-03-15T19:30:00-05:00",
+          "participants": [],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

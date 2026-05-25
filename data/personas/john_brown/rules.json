@@ -1,0 +1,515 @@
+[
+  {
+    "rule_text": "When he asks for help sending a message about applications, safety work, or outreach, he prefers it drafted for review instead of being sent immediately.",
+    "canonical_answer": "I like job, safety, and mentorship messages drafted first so I can review the wording before anything goes out.",
+    "counterfactual_default": "Send the completed message directly once the content is prepared.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Effective oral and written communication"
+      },
+      {
+        "type": "direct",
+        "content": "routinely facilitates safety briefings"
+      },
+      {
+        "type": "direct",
+        "content": "STEM mentorship volunteer work"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "john_brown_communication_01",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For Gulf Coast and other regional leisure travel, he prefers ground transportation over flights.",
+    "canonical_answer": "For shorter regional trips, I’d rather go by road or rail than fly.",
+    "counterfactual_default": "Check flight options first for out-of-town travel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "John Brown prefers spontaneous road trips along the Gulf Coast"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "john_brown_travel_02",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a flight, he prefers a window seat.",
+    "canonical_answer": "If I do fly, I always prefer a window seat.",
+    "counterfactual_default": "Choose an aisle seat for convenience or leave the seat preference unspecified.",
+    "evidence": [
+      {
+        "type": "inferred",
+        "content": "He is visually oriented through murals, digital illustration, and cultural exploration, so a window seat better matches his habit of taking in scenery during travel."
+      },
+      {
+        "type": "direct",
+        "content": "love for cultural immersion"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "john_brown_travel_03",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing stops for a fresh trip, he prefers culturally rich destinations such as music districts, art areas, historic neighborhoods, or festival-centered stops over generic sightseeing picks.",
+    "canonical_answer": "When I travel, I pick stops with music, art, festivals, or local history over generic tourist filler.",
+    "counterfactual_default": "Choose the most popular or highest-rated stops regardless of cultural character.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "love for cultural immersion"
+      },
+      {
+        "type": "direct",
+        "content": "New Orleans for Mardi Gras, Austin for South by Southwest, and a weekend in Charleston’s historic district"
+      },
+      {
+        "type": "direct",
+        "content": "dreaming of a tech‑focused VR conference in Tokyo and a jazz‑laden stay in Montreal"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "john_brown_travel_04",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a booked trip stop falls through, he prefers replacement stops that preserve the same cultural theme instead of swapping to whatever option is merely most convenient.",
+    "canonical_answer": "If part of my trip breaks, I want a replacement that keeps the same music, art, or local-culture vibe.",
+    "counterfactual_default": "Replace the disrupted stop with any workable alternative regardless of theme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "love for cultural immersion"
+      },
+      {
+        "type": "direct",
+        "content": "jazz‑laden stay in Montreal"
+      },
+      {
+        "type": "direct",
+        "content": "tech‑focused VR conference in Tokyo"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "john_brown_travel_05",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering food or cooking ingredients, he prefers Creole or Cajun options over more generic alternatives.",
+    "canonical_answer": "For food, I usually go for Creole or Cajun options first.",
+    "counterfactual_default": "Pick whatever option is cheapest, most popular, or most neutral.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "John Brown’s palate thrives on Creole classics like gumbo, jambalaya, and crawfish étouffée"
+      },
+      {
+        "type": "direct",
+        "content": "He also enjoys trying out new cuisines at food festivals, especially Creole and Cajun dishes"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "john_brown_commerce_01",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering ingredients for home cooking, he prefers items that support scratch-made dishes like roux-based cooking over ready-made shortcuts.",
+    "canonical_answer": "If I’m buying cooking ingredients, I’d rather get the pieces to make it from scratch than premade shortcuts.",
+    "counterfactual_default": "Choose convenient prepared mixes or ready-to-eat substitutes.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often experimenting in their modest kitchen with homemade roux and Andouille sausage"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "john_brown_commerce_02",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing a restaurant, he prefers places known for Creole, Cajun, or fusion food over generic American spots.",
+    "canonical_answer": "When I go out to eat, I lean toward Creole, Cajun, or creative fusion places.",
+    "counterfactual_default": "Book the closest or most generally rated restaurant without a cuisine preference.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "palate thrives on Creole classics like gumbo, jambalaya, and crawfish étouffée"
+      },
+      {
+        "type": "direct",
+        "content": "eagerly sampling fusion dishes at local food festivals"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "john_brown_reservation_01",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing live events, he prefers jazz, hip-hop, or brass-band performances over generic entertainment options.",
+    "canonical_answer": "For nights out, I usually want jazz, hip-hop, or brass-band events first.",
+    "counterfactual_default": "Choose any available event with good reviews or convenient timing.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "frequents jazz nights at the LSU Rural Life Museum featuring Herbie Hancock, hip‑hop shows downtown with Kendrick Lamar tracks, and brass‑band parades during Mardi Gras"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "john_brown_reservation_02",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When selecting local service appointments, he prefers options tied to sports recovery or ergonomic improvement over purely cosmetic services.",
+    "canonical_answer": "For appointments, I’m more interested in sports recovery or ergonomic help than cosmetic stuff.",
+    "counterfactual_default": "Choose whichever provider is cheapest, closest, or most available regardless of service style.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "a perpetual quest for ergonomic perfection"
+      },
+      {
+        "type": "direct",
+        "content": "weekend pickup basketball at the local community center and a co‑ed volleyball league"
+      },
+      {
+        "type": "direct",
+        "content": "He conducts time-and-motion studies and ergonomic risk assessments"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "john_brown_reservation_04",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When changing a subscription tier, he prefers the basic plan unless there is a clear need for more.",
+    "canonical_answer": "I usually keep subscriptions on the basic plan unless I really need extra features.",
+    "counterfactual_default": "Choose a mid-tier or upgraded plan for more capability by default.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balancing limited student budget with a love for cultural immersion"
+      },
+      {
+        "type": "direct",
+        "content": "Education Level: some_college"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "john_brown_commerce_05",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing files from his projects, he prefers grouping them by project rather than by type or date.",
+    "canonical_answer": "I organize working files by project first, not just by file type or date.",
+    "counterfactual_default": "Sort files by type or recency because that is simpler and more generic.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "creating ergonomically sound, visually engaging safety signage while leading small cross‑functional teams"
+      },
+      {
+        "type": "direct",
+        "content": "Process mapping, Lean manufacturing"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "john_brown_workspace_01",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he has mixed creative and technical files to organize, he prefers moving them into dedicated project folders instead of merely classifying them in place.",
+    "canonical_answer": "When my files get messy, I’d rather move them into the right project folders than just tag them and leave them scattered.",
+    "counterfactual_default": "Apply classifications or labels without relocating the files.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "occasionally disorganized lifestyle"
+      },
+      {
+        "type": "direct",
+        "content": "digital illustration"
+      },
+      {
+        "type": "direct",
+        "content": "Advanced Excel"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "move_files",
+      "param": null
+    },
+    "rule_id": "john_brown_workspace_02",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When scheduling his own activities around sports, volunteer work, or concerts, he prefers putting them on the calendar as real events rather than using a private reminder alone.",
+    "canonical_answer": "For things I plan to attend or run, I want an actual calendar event, not just a reminder.",
+    "counterfactual_default": "Set a reminder without creating a full calendar event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly co-ed volleyball league"
+      },
+      {
+        "type": "direct",
+        "content": "volunteer referee for youth games whenever time permits"
+      },
+      {
+        "type": "direct",
+        "content": "jazz concerts at the LSU Rural Life Museum, hip-hop shows at downtown venues"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "john_brown_scheduling_01",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invite overlaps with work, sports, or volunteer commitments and he is not sure yet, he prefers responding tentatively.",
+    "canonical_answer": "If I’m conflicted or still figuring out timing, I usually mark the invite tentative.",
+    "counterfactual_default": "Accept or decline the invite immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "their relaxed approach to deadlines sometimes leads to last‑minute sprint sessions"
+      },
+      {
+        "type": "direct",
+        "content": "weekend pickup basketball at the local community center and a co‑ed volleyball league"
+      },
+      {
+        "type": "direct",
+        "content": "volunteer referee for youth games whenever time permits"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "john_brown_scheduling_02",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When prioritizing messages, he prefers marking safety, school, or team-coordination messages as high priority.",
+    "canonical_answer": "I treat safety, school, and team-coordination messages as high priority.",
+    "counterfactual_default": "Leave most incoming messages at normal priority unless explicitly urgent.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "focused on health and safety"
+      },
+      {
+        "type": "direct",
+        "content": "leads small cross‑functional teams"
+      },
+      {
+        "type": "direct",
+        "content": "plans to finish his bachelor's degree in industrial engineering within the next two years"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "john_brown_communication_02",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When labeling messages, he prefers labels that sort them by project rather than by broad type alone.",
+    "canonical_answer": "When I label messages, I want them grouped by project so related threads stay together.",
+    "counterfactual_default": "Apply broad generic labels such as personal, work, or school without project-level grouping.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "creating ergonomically sound, visually engaging safety signage while leading small cross‑functional teams"
+      },
+      {
+        "type": "direct",
+        "content": "Process mapping"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "john_brown_communication_03",
+    "persona_id": "john_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

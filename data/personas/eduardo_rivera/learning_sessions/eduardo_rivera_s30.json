@@ -1,0 +1,107 @@
+{
+  "session_id": "eduardo_rivera_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a reminder.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Brentwood farmers market run",
+    "start_time": "2025-08-02T07:30:00-07:00",
+    "end_time": "2025-08-02T09:00:00-07:00",
+    "remind_at": "2025-08-02T06:15:00-07:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_market_01",
+        "remind_at": "2025-08-02T06:15:00-07:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_market_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Brentwood farmers market run",
+          "start_time": "2025-08-02T07:30:00-07:00",
+          "end_time": "2025-08-02T09:00:00-07:00",
+          "participants": [],
+          "location": "Brentwood Farmers Market",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hike_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Mount Diablo trail hike",
+          "start_time": "2025-08-02T10:30:00-07:00",
+          "end_time": "2025-08-02T13:00:00-07:00",
+          "participants": [],
+          "location": "Mount Diablo State Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_lab_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Model pickup from clinic",
+          "start_time": "2025-08-01T16:00:00-07:00",
+          "end_time": "2025-08-01T16:30:00-07:00",
+          "participants": [
+            "frontdesk@pittsburgdental.example"
+          ],
+          "location": "Pittsburg Dental Lab",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dinner_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Marisol",
+          "start_time": "2025-08-01T19:00:00-07:00",
+          "end_time": "2025-08-01T21:00:00-07:00",
+          "participants": [
+            "marisol.r@example.com"
+          ],
+          "location": "Downtown Pittsburg",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

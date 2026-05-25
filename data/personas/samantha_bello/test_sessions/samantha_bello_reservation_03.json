@@ -1,0 +1,122 @@
+{
+  "instruction": "Please book two tickets for me and a friend to an event in Bayamon, Puerto Rico; keep it under $30 per person and just pick whatever seems best.",
+  "gold_value": "evt_bayamon_fc_01",
+  "session_id": "samantha_bello_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "samantha_bello_reservation_03",
+  "rule_ref": {
+    "rule_id": "samantha_bello_reservation_03",
+    "rule_text": "When choosing among events to attend, Samantha prefers local culture-rich options such as festivals, film, or soccer over generic entertainment picks.",
+    "canonical_answer": "If I’m picking an event, I prefer something rooted in local culture, art, or Puerto Rican sports."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_bayamon_fc_01",
+        "type": "event",
+        "attributes": {
+          "name": "Bayamon FC Home Match",
+          "location": "Bayamon, Puerto Rico",
+          "date_time": "2026-08-15T19:00:00",
+          "price": 28,
+          "event_tags": [
+            "soccer",
+            "local_sports",
+            "puerto_rican_league"
+          ]
+        }
+      },
+      {
+        "id": "evt_pr_film_night_01",
+        "type": "event",
+        "attributes": {
+          "name": "Puerto Rican Film Night at Plaza del Sol",
+          "location": "Bayamon, Puerto Rico",
+          "date_time": "2026-08-15T19:30:00",
+          "price": 34,
+          "event_tags": [
+            "film",
+            "puerto_rican_cinema",
+            "screening"
+          ]
+        }
+      },
+      {
+        "id": "evt_fiestas_pueblo_01",
+        "type": "event",
+        "attributes": {
+          "name": "Fiestas del Pueblo Evening Stage",
+          "location": "Bayamon, Puerto Rico",
+          "date_time": "2026-08-15T18:00:00",
+          "price": 36,
+          "event_tags": [
+            "festival",
+            "local_culture",
+            "community_event"
+          ]
+        }
+      },
+      {
+        "id": "evt_island_pop_01",
+        "type": "event",
+        "attributes": {
+          "name": "Island Pop Arena Live",
+          "location": "Bayamon, Puerto Rico",
+          "date_time": "2026-08-15T20:00:00",
+          "price": 26,
+          "event_tags": [
+            "pop_concert",
+            "arena_show",
+            "chart_hits"
+          ]
+        }
+      },
+      {
+        "id": "evt_laughs_tour_01",
+        "type": "event",
+        "attributes": {
+          "name": "Friday Laughs Stand-Up Tour",
+          "location": "Bayamon, Puerto Rico",
+          "date_time": "2026-08-15T21:00:00",
+          "price": 19,
+          "event_tags": [
+            "stand_up_comedy",
+            "touring_show",
+            "nightlife"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_bayamon_fc_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

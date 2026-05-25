@@ -1,0 +1,109 @@
+{
+  "session_id": "gabriel_campbell_s45",
+  "session_type": "learning",
+  "day_offset": 45,
+  "domain": "workspace",
+  "reason_for_call": "Build a writing template",
+  "task_params": {
+    "source_location": "Blog Drafts",
+    "source_doc_type": "note",
+    "template_doc_type": "template",
+    "template_title": "Late-Night Essay Template",
+    "template_location": "Blog Drafts/Templates",
+    "structure_points": [
+      "working title placeholder",
+      "opening image or scene",
+      "core tension or question",
+      "health or care context",
+      "art or culture example",
+      "analysis and interpretation",
+      "personal reflection",
+      "closing takeaway and next question"
+    ],
+    "tone_keywords": [
+      "reflective",
+      "analytical",
+      "concrete",
+      "essay-like"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Blog Drafts",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "template",
+        "title": "Late-Night Essay Template",
+        "location": "Blog Drafts/Templates",
+        "content_brief": "<authored from structure_points and tone_keywords>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_blog_01",
+        "type": "document",
+        "attributes": {
+          "title": "Art Therapy and Waiting Rooms",
+          "doc_type": "note",
+          "location": "Blog Drafts",
+          "content_brief": "Draft essay connecting patient wait times, visual environment, and care experience."
+        }
+      },
+      {
+        "id": "doc_blog_02",
+        "type": "document",
+        "attributes": {
+          "title": "Museum Light, Clinical Light",
+          "doc_type": "note",
+          "location": "Blog Drafts",
+          "content_brief": "Reflection comparing gallery lighting with hospital spaces and attention."
+        }
+      },
+      {
+        "id": "doc_blog_03",
+        "type": "document",
+        "attributes": {
+          "title": "Why Metrics Need Metaphors",
+          "doc_type": "note",
+          "location": "Blog Drafts",
+          "content_brief": "Essay draft on blending operational data with humane storytelling."
+        }
+      },
+      {
+        "id": "doc_misc_04",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly Throughput Notes",
+          "doc_type": "memo",
+          "location": "Operations",
+          "content_brief": "Internal notes on clinic flow and staffing changes."
+        }
+      }
+    ]
+  }
+}

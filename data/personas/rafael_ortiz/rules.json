@@ -1,0 +1,416 @@
+[
+  {
+    "rule_text": "For Mexican cooking ingredients, he favors traditional fresh components over shortcut or generic substitutes.",
+    "canonical_answer": "For my Mexican dishes, I prefer ordering the real fresh ingredients instead of shortcut substitutes.",
+    "counterfactual_default": "Pick the most convenient or generic product option that roughly fits the recipe.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "routinely crafts pozole with fresh hominy, pork shoulder, and a blend of guajillo and ancho chilies"
+      },
+      {
+        "type": "direct",
+        "content": "every Día de los Muertos they bake pan de muerto infused with orange zest and anise"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "rafael_ortiz_commerce_02",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a kitchen gadget order disappoints him, he prefers an exchange over a refund or store credit.",
+    "canonical_answer": "If a kitchen gadget misses the mark, I usually want an exchange so I can try a better version.",
+    "counterfactual_default": "Request a refund as the standard resolution.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "splurging on new kitchen gadgets"
+      },
+      {
+        "type": "inferred",
+        "content": "Because he actively enjoys experimenting in the kitchen and repeatedly buys gadgets, replacing a bad gadget with a better one fits his use pattern better than simply cashing out."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "rafael_ortiz_commerce_03",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing a place to eat out, he prefers locally rooted Mexican or Tex-Mex restaurants over generic chains.",
+    "canonical_answer": "I usually pick local Mexican or Tex-Mex spots instead of chain restaurants.",
+    "counterfactual_default": "Choose a broadly popular or familiar chain restaurant.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "The cultural landscape of the Rio Grande Valley, with its blend of Texan and Mexican influences, is reflected in his love for regional music like norteño and cumbia"
+      },
+      {
+        "type": "direct",
+        "content": "He is an avid cook, experimenting with traditional Mexican dishes such as pozole, chiles en nogada, and adjusting them with Tex-Mex twists."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "rafael_ortiz_reservation_01",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For live entertainment, he tends to choose folk, regional Mexican, or singer-songwriter performances over generic event options.",
+    "canonical_answer": "For shows, I usually go for folk or regional Mexican performances rather than generic entertainment.",
+    "counterfactual_default": "Pick whichever event is most popular or broadly rated without regard to genre.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "immersing themselves in folk repertoire ranging from Texas singer-songwriters such as Townes Van Zandt to traditional Mexican corridos"
+      },
+      {
+        "type": "direct",
+        "content": "they also attend monthly live performances at a local music venue, where they often applaud the crooning of Lila Downs"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "rafael_ortiz_reservation_02",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When starting a trip plan, he prefers stops that combine scenic outdoor exploration with cultural immersion.",
+    "canonical_answer": "When I plan a trip, I want stops that mix nature and culture rather than just generic attractions.",
+    "counterfactual_default": "Choose stops mainly by broad popularity or convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Rafael Ortiz prefers road-trip adventures that blend outdoor exploration with cultural immersion"
+      },
+      {
+        "type": "direct",
+        "content": "having already spent a week photographing the hummingbirds of the Santa Ana National Wildlife Refuge and a long weekend in Oaxaca, Mexico sampling local cuisine"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "rafael_ortiz_travel_01",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For trip transportation, he prefers ground travel and road-trip options over flights when both are viable.",
+    "canonical_answer": "I prefer road-trip or other ground travel options over flying whenever that works.",
+    "counterfactual_default": "Check flights first and book air travel for longer trips.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Rafael Ortiz prefers road-trip adventures"
+      },
+      {
+        "type": "direct",
+        "content": "they methodically map each route using an app that marks scenic rest stops"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "rafael_ortiz_travel_02",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For lodging, he generally chooses modest accommodations rather than luxury stays.",
+    "canonical_answer": "I usually go with modest accommodations instead of luxury hotels.",
+    "counterfactual_default": "Choose the nicest or most upscale hotel available within budget.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "balancing modest accommodations with occasional splurges on guided wildlife tours"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "rafael_ortiz_travel_03",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a trip stop falls through, he prefers replacement stops that preserve the original nature-and-culture theme instead of swapping to any generic highly rated alternative.",
+    "canonical_answer": "If part of my trip breaks, I want replacement stops that keep the same outdoor-and-cultural feel.",
+    "counterfactual_default": "Replace the disrupted stop with any convenient or top-rated alternative.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers road-trip adventures that blend outdoor exploration with cultural immersion"
+      },
+      {
+        "type": "direct",
+        "content": "planning a future itinerary to the Pacific Northwest’s Olympic National Park and a culinary tour of Chiang Mai, Thailand"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "rafael_ortiz_travel_04",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When communicating about outreach, teaching, or professional coordination, he prefers drafting messages for review rather than sending them immediately.",
+    "canonical_answer": "For outreach or professional messages, I like to draft them first before they go out.",
+    "counterfactual_default": "Send the composed message directly once the content is available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He excels in electronic medical record (EMR) documentation, healthcare informatics, and quality improvement initiatives"
+      },
+      {
+        "type": "direct",
+        "content": "His interpersonal strengths make him an effective health educator, delivering community workshops on chronic disease management and preventive care."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "rafael_ortiz_communication_01",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "He prefers to label work messages by concrete projects such as quality improvement, staffing, or community outreach rather than leaving them unlabeled.",
+    "canonical_answer": "I like my work messages labeled by project, like quality improvement, staffing, or community outreach.",
+    "counterfactual_default": "Leave messages in the inbox without applying specific labels.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "channel their curiosity into quality-improvement projects"
+      },
+      {
+        "type": "direct",
+        "content": "managing shift schedules, inventory control, and coordinating interdisciplinary team meetings"
+      },
+      {
+        "type": "direct",
+        "content": "volunteers at community health fairs, providing blood pressure screenings and health education in Spanish"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "rafael_ortiz_communication_03",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invite overlaps with an unresolved work schedule, he prefers responding tentatively rather than accepting or declining immediately.",
+    "canonical_answer": "If my shift situation is still unclear, I usually respond tentative first.",
+    "counterfactual_default": "Accept or decline the invitation right away.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "managing shift schedules"
+      },
+      {
+        "type": "direct",
+        "content": "juggling bedside care, community health outreach, weekend soccer, guitar practice, and culinary experiments"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "rafael_ortiz_scheduling_02",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring teaching or outreach materials, he prefers creating reusable templates instead of one-off documents.",
+    "canonical_answer": "For teaching and outreach materials, I like reusable templates instead of starting from scratch every time.",
+    "counterfactual_default": "Create a one-off note or memo for each new session.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "His interpersonal strengths make him an effective health educator, delivering community workshops on chronic disease management and preventive care."
+      },
+      {
+        "type": "direct",
+        "content": "he hopes to become a clinical educator, teaching new nurses and nursing students"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "rafael_ortiz_workspace_02",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "He prefers work files classified by project rather than by generic type or date buckets.",
+    "canonical_answer": "I organize my files by project first, not just by type or date.",
+    "counterfactual_default": "Classify files by type or date because that is the easiest generic scheme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "quality-improvement projects"
+      },
+      {
+        "type": "direct",
+        "content": "coordinating interdisciplinary team meetings"
+      },
+      {
+        "type": "direct",
+        "content": "community workshops on chronic disease management and preventive care"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "rafael_ortiz_workspace_04",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When moving files, he prefers destination folders that match the active project or responsibility area, such as quality improvement, coursework, or outreach.",
+    "canonical_answer": "When I move files, I want them placed into the folder for the actual project they belong to.",
+    "counterfactual_default": "Move files into a broad catch-all folder or leave them in a general location.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "leveraging his current coursework"
+      },
+      {
+        "type": "direct",
+        "content": "quality-improvement projects"
+      },
+      {
+        "type": "direct",
+        "content": "volunteers at community health fairs"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "move_files",
+      "param": "folder_id"
+    },
+    "rule_id": "rafael_ortiz_workspace_05",
+    "persona_id": "rafael_ortiz",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

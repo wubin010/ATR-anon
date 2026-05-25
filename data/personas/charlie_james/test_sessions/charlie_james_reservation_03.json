@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book me a haircut appointment in Portland for 2026-08-14 at 4:00pm — just pick one for me.",
+  "gold_value": "svc_hawthorne_corner_01",
+  "session_id": "charlie_james_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "charlie_james_reservation_03",
+  "rule_ref": {
+    "rule_id": "charlie_james_reservation_03",
+    "rule_text": "When booking a local service appointment, he prefers an independent neighborhood provider over a polished chain option.",
+    "canonical_answer": "If I’m booking a local service, I’d rather go with somebody rooted in the neighborhood."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_hawthorne_corner_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Hawthorne Corner Barber",
+          "service_type": "haircut",
+          "location": "Hawthorne, Portland",
+          "rating": 4.4,
+          "distance_km": 3.7,
+          "ownership_type": "independent",
+          "locations_count": 1
+        }
+      },
+      {
+        "id": "svc_trimlab_downtown_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "TrimLab Portland",
+          "service_type": "haircut",
+          "location": "Downtown Portland",
+          "rating": 4.9,
+          "distance_km": 0.3,
+          "ownership_type": "regional_chain",
+          "locations_count": 22
+        }
+      },
+      {
+        "id": "svc_groomclub_pearl_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Northwest Grooming Club",
+          "service_type": "haircut",
+          "location": "Pearl District, Portland",
+          "rating": 4.8,
+          "distance_km": 0.6,
+          "ownership_type": "national_chain",
+          "locations_count": 57
+        }
+      },
+      {
+        "id": "svc_shearhouse_lloyd_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "ShearHouse Studio",
+          "service_type": "haircut",
+          "location": "Lloyd District, Portland",
+          "rating": 4.7,
+          "distance_km": 0.9,
+          "ownership_type": "regional_chain",
+          "locations_count": 14
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_hawthorne_corner_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

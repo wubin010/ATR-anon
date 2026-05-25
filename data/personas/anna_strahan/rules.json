@@ -1,0 +1,449 @@
+[
+  {
+    "rule_text": "When she is preparing outward-facing messages about clinic initiatives or community health programs, Anna prefers them to be drafted for review rather than sent immediately.",
+    "canonical_answer": "I like outreach and clinic-related messages drafted first so I can review the wording before anything goes out.",
+    "counterfactual_default": "Send the composed message directly once the content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "She also writes grant proposals for community health projects"
+      },
+      {
+        "type": "direct",
+        "content": "ensuring compliance with HIPAA, CMS quality reporting, and state health statutes"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "anna_strahan_communication_01",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a calendar invitation overlaps with unresolved work or family demands, Anna prefers to respond tentatively rather than accept or decline outright.",
+    "canonical_answer": "If a commitment is still uncertain, I usually mark it tentative until I know my schedule will hold.",
+    "counterfactual_default": "Accept or decline the invitation immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Balancing professional advancement with family life"
+      },
+      {
+        "type": "direct",
+        "content": "staff scheduling"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "anna_strahan_scheduling_01",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For recurring personal commitments like book club or similar standing routines, Anna prefers weekly reminders rather than one-off alerts.",
+    "canonical_answer": "For regular commitments, I prefer a weekly reminder instead of a single one-time ping.",
+    "counterfactual_default": "Set a one-time reminder tied only to the next occurrence.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly book‑club meetings"
+      },
+      {
+        "type": "direct",
+        "content": "practices mindfulness meditation to maintain emotional resilience"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "anna_strahan_scheduling_02",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When sorting work files, Anna prefers them classified by project rather than by type or date.",
+    "canonical_answer": "I organize work files by project first, not just by file type or chronology.",
+    "counterfactual_default": "Sort the files by type or date because those are the easiest generic schemes.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "leading a multi‑specialty clinic’s budgeting, compliance, and staff development"
+      },
+      {
+        "type": "direct",
+        "content": "art‑therapy outreach program"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "anna_strahan_workspace_05",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For art, gallery, jazz, and book-club emails, Anna prefers labeling them into interest-based categories rather than leaving them mixed into the general inbox.",
+    "canonical_answer": "I like arts and book-club messages labeled by interest so I can revisit them easily later.",
+    "counterfactual_default": "Leave those messages unlabeled in the main inbox.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Visiting local art galleries"
+      },
+      {
+        "type": "direct",
+        "content": "Small‑group book club"
+      },
+      {
+        "type": "direct",
+        "content": "Attending intimate jazz and zydeco concerts"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "anna_strahan_communication_03",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she receives promotional or newsletter-style messages about cultural events she may browse later, Anna prefers marking them low priority rather than treating them as normal inbox work.",
+    "canonical_answer": "I usually mark promotional arts and event emails as low priority so they don’t compete with work messages.",
+    "counterfactual_default": "Leave those messages at normal priority.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "frequents small galleries in New Orleans and Baton Rouge"
+      },
+      {
+        "type": "direct",
+        "content": "attends intimate New Orleans jazz sets"
+      },
+      {
+        "type": "direct",
+        "content": "medical services manager"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "anna_strahan_communication_04",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When dining out, Anna prefers reservations at local Cajun or Creole restaurants over generic chain options.",
+    "canonical_answer": "If I’m booking a restaurant, I prefer a local Cajun or Creole place over a chain.",
+    "counterfactual_default": "Pick a broadly convenient or highly rated restaurant without a strong regional preference.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "experiments with classic Cajun and Creole dishes like shrimp étouffée, gumbo, and black‑eye pea jambalaya"
+      },
+      {
+        "type": "direct",
+        "content": "cherishing regional cuisine"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "anna_strahan_reservation_01",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing concert or performance tickets, Anna prefers intimate jazz or zydeco events over larger, more generic mainstream shows.",
+    "canonical_answer": "For live music, I’d rather book an intimate jazz or zydeco event than a big generic show.",
+    "counterfactual_default": "Choose the most prominent or broadly popular event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "attends intimate New Orleans jazz sets featuring Wynton Marsalis and zydeco staples like Clifton Chenier"
+      },
+      {
+        "type": "direct",
+        "content": "She also enjoys listening to live jazz and zydeco in small venues"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "anna_strahan_reservation_02",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For local appointments tied to fitness or wellbeing, Anna prefers providers aligned with low-impact yoga or mindfulness over high-intensity options.",
+    "canonical_answer": "When I book a wellness service, I prefer something aligned with yoga or mindfulness rather than a high-intensity setup.",
+    "counterfactual_default": "Choose any convenient or highly rated provider regardless of style.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "stays fit through a blend of trail running and low‑impact yoga"
+      },
+      {
+        "type": "direct",
+        "content": "practices mindfulness meditation to maintain emotional resilience"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "anna_strahan_reservation_03",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a getaway, Anna prefers itineraries built around hiking and nature-focused stops rather than purely urban sightseeing.",
+    "canonical_answer": "If I’m planning a trip, I want the stops to lean toward hiking and nature instead of just city sightseeing.",
+    "counterfactual_default": "Build the itinerary around the most popular city attractions.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often retreating to the Kisatchie National Forest for hiking"
+      },
+      {
+        "type": "direct",
+        "content": "Regular hikes along the Northshore trail and occasional weekend trips to the Kisatchie National Forest"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "anna_strahan_travel_01",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a trip needs replanning after a disruption, Anna prefers replacement stops that preserve the original balance of outdoor exploration and local culture rather than generic substitutes.",
+    "canonical_answer": "If a stop falls through, I want the replacement to keep the same mix of nature and local culture.",
+    "counterfactual_default": "Swap in any convenient or top-rated alternative stop.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers meticulously planned weekend getaways that balance relaxation with exploration"
+      },
+      {
+        "type": "direct",
+        "content": "always ensuring they leave space for unexpected local art exhibitions"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "anna_strahan_travel_02",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she does fly, Anna prefers a window seat rather than an aisle or middle seat.",
+    "canonical_answer": "If I’m on a flight, I prefer a window seat.",
+    "counterfactual_default": "Pick any available seat or favor the aisle for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "oil and watercolor studies of Louisiana bayou light"
+      },
+      {
+        "type": "direct",
+        "content": "dreams of a spring tour through the Provençal lavender fields of southeast France"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "anna_strahan_travel_04",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing lodging for a trip, Anna prefers hotels positioned for both exploration and local character, such as near trails, historic areas, or arts districts, over purely generic convenience stays.",
+    "canonical_answer": "I prefer hotels that put me close to trails, historic neighborhoods, or arts areas rather than a generic convenience stop.",
+    "counterfactual_default": "Pick the cheapest or most standard hotel option with no thematic location preference.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "has sampled the culinary scene of New Orleans and the historic charm of Savannah"
+      },
+      {
+        "type": "direct",
+        "content": "always ensuring they leave space for unexpected local art exhibitions"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "anna_strahan_travel_05",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering plants or garden supplies, Anna prefers native Louisiana plants and useful herbs over purely ornamental exotics.",
+    "canonical_answer": "For garden orders, I prefer native Louisiana plants and culinary herbs over ornamental exotics.",
+    "counterfactual_default": "Choose attractive or popular garden items without a native-or-useful preference.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "cultivates native magnolias, lavender, and edible herbs in her backyard"
+      },
+      {
+        "type": "direct",
+        "content": "Gardening native Louisiana plants"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "anna_strahan_commerce_01",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If an ordered item for painting, cooking, or gardening arrives wrong, Anna prefers an exchange rather than a refund.",
+    "canonical_answer": "When a supply order is wrong, I usually want an exchange so I still end up with the right item.",
+    "counterfactual_default": "Request a refund and stop there.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Oil painting and watercolor"
+      },
+      {
+        "type": "direct",
+        "content": "Cooking Cajun and Creole dishes"
+      },
+      {
+        "type": "direct",
+        "content": "Gardening native Louisiana plants"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "anna_strahan_commerce_03",
+    "persona_id": "anna_strahan",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

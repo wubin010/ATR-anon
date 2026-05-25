@@ -1,0 +1,97 @@
+{
+  "session_id": "maximo_esteban_irizarry_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "reservation",
+  "reason_for_call": "Book a grooming appointment.",
+  "task_params": {
+    "service_type": "haircut",
+    "location": "Ponce",
+    "date_time": "2025-03-21T11:00:00-04:00",
+    "provider_id": "svc_caballeros_01"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "haircut",
+        "location": "Ponce",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "svc_caballeros_01",
+        "date_time": "2025-03-21T11:00:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_caballeros_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Caballeros Barber Studio",
+          "service_type": "haircut",
+          "location": "Ponce",
+          "rating": 4.8,
+          "distance_km": 2.1
+        }
+      },
+      {
+        "id": "svc_tijera_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Tijera Fina Salon",
+          "service_type": "haircut",
+          "location": "Ponce",
+          "rating": 4.5,
+          "distance_km": 3.4
+        }
+      },
+      {
+        "id": "svc_boriken_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Barberia Boriken",
+          "service_type": "haircut",
+          "location": "Ponce",
+          "rating": 4.2,
+          "distance_km": 1.7
+        }
+      },
+      {
+        "id": "svc_uñas_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Uñas del Sur",
+          "service_type": "manicure",
+          "location": "Ponce",
+          "rating": 4.6,
+          "distance_km": 2.9
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "instruction": "Please get my gentle yoga at Decatur Wellness Studio onto my schedule for 2026-09-03 from 07:00 to 08:00.",
+  "gold_value": null,
+  "session_id": "cassandra_tovar_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "cassandra_tovar_scheduling_01",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_scheduling_01",
+    "rule_text": "For personal commitments like jogs, yoga, or self-study, she prefers a private reminder rather than creating a formal calendar event.",
+    "canonical_answer": "For my personal routines, I’d rather set myself a reminder than clutter the calendar with a full event."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_decatur_yoga_01",
+        "type": "event",
+        "attributes": {
+          "title": "Gentle yoga",
+          "start_time": "2026-09-03T07:00:00",
+          "end_time": "2026-09-03T08:00:00",
+          "participants": [],
+          "location": "Decatur Wellness Studio",
+          "calendar": "personal",
+          "status": "planned",
+          "source": "wellness_app"
+        }
+      },
+      {
+        "id": "evt_decatur_yoga_02",
+        "type": "event",
+        "attributes": {
+          "title": "Gentle yoga",
+          "start_time": "2026-09-10T07:00:00",
+          "end_time": "2026-09-10T08:00:00",
+          "participants": [],
+          "location": "Decatur Wellness Studio",
+          "calendar": "personal",
+          "status": "planned",
+          "source": "wellness_app"
+        }
+      },
+      {
+        "id": "evt_glenlake_run_01",
+        "type": "event",
+        "attributes": {
+          "title": "Morning jog",
+          "start_time": "2026-09-03T06:15:00",
+          "end_time": "2026-09-03T06:55:00",
+          "participants": [],
+          "location": "Glenlake Park",
+          "calendar": "personal",
+          "status": "planned",
+          "source": "fitness_app"
+        }
+      },
+      {
+        "id": "evt_team_sync_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Product team sync",
+          "start_time": "2026-09-03T08:30:00",
+          "end_time": "2026-09-03T09:00:00",
+          "participants": [
+            "amira@orchidlabs.com",
+            "jules@orchidlabs.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

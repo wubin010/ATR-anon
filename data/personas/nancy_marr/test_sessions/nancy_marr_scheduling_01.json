@@ -1,0 +1,79 @@
+{
+  "instruction": "My Oakwell Vision Center follow-up is already on my calendar. Just keep tabs on it for me.",
+  "gold_value": null,
+  "session_id": "nancy_marr_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "nancy_marr_scheduling_01",
+  "rule_ref": {
+    "rule_id": "nancy_marr_scheduling_01",
+    "rule_text": "Because she sometimes forgets appointments, Nancy prefers reminders to be set for scheduled activities rather than relying on memory alone.",
+    "canonical_answer": "I like a reminder attached to appointments because I do sometimes forget them."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_oakwell_followup_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Oakwell Vision Center follow-up",
+          "start_time": "2026-09-18T10:30:00",
+          "end_time": "2026-09-18T11:00:00",
+          "participants": [],
+          "location": "Oakwell Vision Center",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_oakwell_frame_pickup_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Oakwell Vision Center frame pickup",
+          "start_time": "2026-09-25T15:00:00",
+          "end_time": "2026-09-25T15:20:00",
+          "participants": [],
+          "location": "Oakwell Vision Center",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_riverside_physical_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverside Wellness annual physical",
+          "start_time": "2026-09-11T08:00:00",
+          "end_time": "2026-09-11T09:00:00",
+          "participants": [],
+          "location": "Riverside Wellness Clinic",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

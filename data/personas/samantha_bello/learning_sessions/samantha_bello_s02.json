@@ -1,0 +1,135 @@
+{
+  "session_id": "samantha_bello_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Organize some work files",
+  "task_params": {
+    "location": "SAP Reporting Project",
+    "scheme": "by_type",
+    "destination_folder_name": "SAP Reporting Organized"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "SAP Reporting Project"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_sap_01",
+          "file_sap_02",
+          "file_sap_03",
+          "file_sap_04"
+        ],
+        "scheme": "by_type"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_sap_01",
+          "file_sap_02",
+          "file_sap_03",
+          "file_sap_04"
+        ],
+        "folder_id": "fld_sap_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_sap_01",
+        "type": "file",
+        "attributes": {
+          "name": "SAP_AR_export_Q2.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Finance/SAP Reporting Project/Loose Exports",
+          "owner": "Samantha Bello",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_sap_02",
+        "type": "file",
+        "attributes": {
+          "name": "SAP_AP_export_Q2.csv",
+          "file_type": "csv",
+          "location": "Shared Drive/Finance/SAP Reporting Project/Loose Exports",
+          "owner": "Samantha Bello",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_sap_03",
+        "type": "file",
+        "attributes": {
+          "name": "SAP_reporting_workshop_notes.txt",
+          "file_type": "txt",
+          "location": "Shared Drive/Finance/SAP Reporting Project/Loose Exports",
+          "owner": "Samantha Bello",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_sap_04",
+        "type": "file",
+        "attributes": {
+          "name": "reconciliation_open_items.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Finance/SAP Reporting Project/Loose Exports",
+          "owner": "Samantha Bello",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_sap_01",
+        "type": "folder",
+        "attributes": {
+          "name": "SAP Reporting Organized",
+          "purpose": "Clean destination for sorted SAP reporting exports and notes"
+        }
+      },
+      {
+        "id": "fld_fin_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Finance Archive",
+          "purpose": "Long-term archive for completed finance work"
+        }
+      }
+    ]
+  }
+}

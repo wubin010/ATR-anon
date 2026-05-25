@@ -1,0 +1,116 @@
+{
+  "session_id": "roosevelt_brown_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "reservation",
+  "reason_for_call": "Book an outing.",
+  "task_params": {
+    "location": "Boston",
+    "event_tags": [
+      "jazz"
+    ],
+    "event_id": "evt_blue_note_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 3
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Boston",
+        "event_tags": [
+          "jazz"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_blue_note_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 3
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_blue_note_01",
+        "type": "event",
+        "attributes": {
+          "name": "Blue Note Rooftop Quartet",
+          "location": "Boston",
+          "date_time": "2025-03-28T19:30:00-04:00",
+          "price": 32.0,
+          "event_tags": [
+            "jazz",
+            "live music",
+            "rooftop"
+          ]
+        }
+      },
+      {
+        "id": "evt_harbor_swing_02",
+        "type": "event",
+        "attributes": {
+          "name": "Harbor Swing Collective",
+          "location": "Boston",
+          "date_time": "2025-03-29T20:00:00-04:00",
+          "price": 28.0,
+          "event_tags": [
+            "jazz",
+            "swing",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_southend_poetry_03",
+        "type": "event",
+        "attributes": {
+          "name": "South End Poetry Mic",
+          "location": "Boston",
+          "date_time": "2025-03-28T19:00:00-04:00",
+          "price": 15.0,
+          "event_tags": [
+            "poetry",
+            "spoken word"
+          ]
+        }
+      },
+      {
+        "id": "evt_brockton_film_04",
+        "type": "event",
+        "attributes": {
+          "name": "Indie Shorts Screening",
+          "location": "Brockton",
+          "date_time": "2025-03-28T18:30:00-04:00",
+          "price": 12.0,
+          "event_tags": [
+            "film",
+            "festival"
+          ]
+        }
+      }
+    ]
+  }
+}

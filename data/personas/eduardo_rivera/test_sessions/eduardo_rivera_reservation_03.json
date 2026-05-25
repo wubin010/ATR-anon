@@ -1,0 +1,111 @@
+{
+  "instruction": "I'm in Seattle and want tickets for an arts night out for two people; keep it under $40 each, pick something and book it.",
+  "gold_value": "evt_raices_gallery_01",
+  "session_id": "eduardo_rivera_reservation_03_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "eduardo_rivera_reservation_03",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_reservation_03",
+    "rule_text": "When selecting arts events, he prefers intimate gallery openings or cultural-identity-centered shows over large mainstream entertainment events.",
+    "canonical_answer": "For arts outings, I go for intimate gallery openings and cultural shows rather than big mainstream events."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_raices_gallery_01",
+        "type": "event",
+        "attributes": {
+          "name": "Raíces / Roots: Community Gallery Opening",
+          "location": "Beacon Hill, Seattle",
+          "date_time": "2026-09-18T19:00:00",
+          "price": 31,
+          "event_tags": [
+            "gallery_opening",
+            "cultural_identity",
+            "mexican_art",
+            "intimate_event"
+          ]
+        }
+      },
+      {
+        "id": "evt_sam_digital_01",
+        "type": "event",
+        "attributes": {
+          "name": "Seattle Art Museum Grand Opening Gala: Digital Futures",
+          "location": "Downtown Seattle",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 34,
+          "event_tags": [
+            "gallery_opening",
+            "new_media",
+            "museum_gala",
+            "large_venue"
+          ]
+        }
+      },
+      {
+        "id": "evt_vangogh_immersive_01",
+        "type": "event",
+        "attributes": {
+          "name": "Van Gogh Immersive Experience After Dark",
+          "location": "SoDo, Seattle",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 36,
+          "event_tags": [
+            "immersive_exhibition",
+            "blockbuster_exhibition",
+            "digital_projection",
+            "touring_installation"
+          ]
+        }
+      },
+      {
+        "id": "evt_waterfront_festival_01",
+        "type": "event",
+        "attributes": {
+          "name": "Waterfront Arts Festival Headliner Night",
+          "location": "Seattle Waterfront",
+          "date_time": "2026-09-18T18:30:00",
+          "price": 24,
+          "event_tags": [
+            "arts_festival",
+            "live_music",
+            "headliner",
+            "outdoor_event"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_raices_gallery_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

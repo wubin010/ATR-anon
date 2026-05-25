@@ -1,0 +1,107 @@
+{
+  "session_id": "theodora_tong_s38",
+  "session_type": "learning",
+  "day_offset": 38,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Outreach",
+    "doc_type": "template",
+    "title": "Library and Community Space Art Workshop Pitch Template",
+    "source_document_id": "doc_pitch_01",
+    "content_brief_points": [
+      "short intro about therapeutic art workshop concept",
+      "space for audience and age group",
+      "workshop goals and benefits",
+      "materials list and setup needs",
+      "timing, session length, and group size",
+      "facilitator background section",
+      "pricing or honorarium placeholder",
+      "contact and next steps section"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Outreach",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "template",
+        "title": "Library and Community Space Art Workshop Pitch Template",
+        "location": "Outreach",
+        "content_brief": "<authored from content_brief_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_pitch_01",
+        "type": "document",
+        "attributes": {
+          "title": "Senior Center Watercolor Workshop Pitch Template",
+          "doc_type": "template",
+          "location": "Outreach",
+          "content_brief": "Reusable pitch template for offering a calming watercolor workshop to a community partner."
+        }
+      },
+      {
+        "id": "doc_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Art Class Supply Budget Notes",
+          "doc_type": "note",
+          "location": "Outreach",
+          "content_brief": "Rough notes on brushes, paper, and shared materials."
+        }
+      },
+      {
+        "id": "doc_tpl_03",
+        "type": "document",
+        "attributes": {
+          "title": "Community Mural Proposal Outline",
+          "doc_type": "template",
+          "location": "Projects",
+          "content_brief": "Basic outline for proposing a collaborative mural activity."
+        }
+      },
+      {
+        "id": "file_outreach_01",
+        "type": "file",
+        "attributes": {
+          "name": "flyer-draft.png",
+          "file_type": "image",
+          "location": "Outreach",
+          "owner": "Theodora Tong",
+          "labels": [
+            "draft"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

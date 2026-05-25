@@ -1,0 +1,129 @@
+{
+  "session_id": "eduardo_rivera_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "travel",
+  "reason_for_call": "Shortlist trip destinations",
+  "task_params": {
+    "destination_constraints": [
+      "art district",
+      "local culture",
+      "murals"
+    ],
+    "region": "Latin America",
+    "tags": [
+      "art district",
+      "local culture",
+      "murals"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "art district",
+          "local culture",
+          "murals"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_mexicocity_01",
+          "dest_oaxaca_02",
+          "dest_valparaiso_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_mexicocity_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Mexico City",
+          "region": "Latin America",
+          "tags": [
+            "art district",
+            "local culture",
+            "murals",
+            "markets",
+            "design"
+          ]
+        }
+      },
+      {
+        "id": "dest_oaxaca_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Oaxaca",
+          "region": "Latin America",
+          "tags": [
+            "local culture",
+            "folk art",
+            "murals",
+            "craft workshops",
+            "historic center"
+          ]
+        }
+      },
+      {
+        "id": "dest_valparaiso_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Valparaiso",
+          "region": "Latin America",
+          "tags": [
+            "art district",
+            "street art",
+            "local culture",
+            "hillside neighborhoods",
+            "photography"
+          ]
+        }
+      },
+      {
+        "id": "dest_lisbon_04",
+        "type": "destination",
+        "attributes": {
+          "name": "Lisbon",
+          "region": "Europe",
+          "tags": [
+            "art district",
+            "local culture",
+            "tiles",
+            "music",
+            "historic neighborhoods"
+          ]
+        }
+      }
+    ]
+  }
+}

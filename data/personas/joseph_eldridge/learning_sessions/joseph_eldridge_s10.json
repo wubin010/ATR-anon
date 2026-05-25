@@ -1,0 +1,96 @@
+{
+  "session_id": "joseph_eldridge_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "communication",
+  "reason_for_call": "Draft a message",
+  "task_params": {
+    "recipient": "maria.chen@ieee.org",
+    "subject": "Interest in helping with a local mentorship program",
+    "language": "en",
+    "body_points": [
+      "Introduce myself as Joseph Eldridge from Durham",
+      "Say I am interested in helping build a local mentorship program",
+      "Mention my background in electrical engineering and mentoring junior engineers",
+      "Offer to help shape structure, topics, and volunteer support",
+      "Ask whether the chapter is exploring this and if a short call would help",
+      "Thank her for her time"
+    ]
+  },
+  "expected_tools": [
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "recipient": "maria.chen@ieee.org",
+        "subject": "Interest in helping with a local mentorship program",
+        "body": "<authored from body_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_ieee_01",
+        "type": "message",
+        "attributes": {
+          "sender": "triangle-section@ieee.org",
+          "subject": "IEEE Triangle Section April volunteer updates",
+          "body": "Upcoming chapter activities include outreach planning, speaker coordination, and volunteer opportunities across the Triangle.",
+          "thread_id": "thr_ieee_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-04-18T09:12:00"
+        }
+      },
+      {
+        "id": "msg_conf_02",
+        "type": "message",
+        "attributes": {
+          "sender": "events@communitytheater.org",
+          "subject": "Lighting cue review for Thursday rehearsal",
+          "body": "Please review the revised cue sheet before rehearsal.",
+          "thread_id": "thr_theater_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-04-18T11:05:00"
+        }
+      },
+      {
+        "id": "msg_news_03",
+        "type": "message",
+        "attributes": {
+          "sender": "newsletter@hamradio.example",
+          "subject": "Monthly radio club bulletin",
+          "body": "Club news, swap meet reminders, and field day planning notes.",
+          "thread_id": "thr_radio_03",
+          "folder": "archive",
+          "labels": [
+            "hobby"
+          ],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-04-10T07:30:00"
+        }
+      }
+    ]
+  }
+}

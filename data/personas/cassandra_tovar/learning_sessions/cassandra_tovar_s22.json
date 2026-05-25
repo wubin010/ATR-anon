@@ -1,0 +1,148 @@
+{
+  "session_id": "cassandra_tovar_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "workspace",
+  "reason_for_call": "Sort some files",
+  "task_params": {
+    "location": "Downloads",
+    "manual_file_ids": [
+      "fil_manuals_01",
+      "fil_manuals_02"
+    ],
+    "chart_file_ids": [
+      "fil_charts_01"
+    ],
+    "delete_file_ids": [
+      "fil_shots_01"
+    ],
+    "manuals_folder_name": "Client Manuals",
+    "charts_folder_name": "Signal Charts"
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "move_files",
+    "delete_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Downloads"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_manuals_01",
+          "fil_manuals_02"
+        ],
+        "folder_id": "fld_manuals_01"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_charts_01"
+        ],
+        "folder_id": "fld_charts_01"
+      }
+    },
+    {
+      "tool": "delete_files",
+      "arguments": {
+        "file_ids": [
+          "fil_shots_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_manuals_01",
+        "type": "file",
+        "attributes": {
+          "name": "Projector_User_Manual_TX3150.pdf",
+          "file_type": "pdf",
+          "location": "Downloads",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_manuals_02",
+        "type": "file",
+        "attributes": {
+          "name": "Mixer_Quick_Start_Guide_M32.pdf",
+          "file_type": "pdf",
+          "location": "Downloads",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_charts_01",
+        "type": "file",
+        "attributes": {
+          "name": "sanctuary_signal_chart_revB.xlsx",
+          "file_type": "xlsx",
+          "location": "Downloads",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_shots_01",
+        "type": "file",
+        "attributes": {
+          "name": "Screenshot_2025-03-22_142118.png",
+          "file_type": "image",
+          "location": "Downloads",
+          "owner": "Cassandra Tovar",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_manuals_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Client Manuals",
+          "purpose": "Store product manuals and setup guides for field jobs"
+        }
+      },
+      {
+        "id": "fld_charts_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Signal Charts",
+          "purpose": "Keep wiring diagrams and signal flow spreadsheets"
+        }
+      }
+    ]
+  }
+}

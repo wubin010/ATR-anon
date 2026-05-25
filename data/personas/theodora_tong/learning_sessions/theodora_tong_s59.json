@@ -1,0 +1,100 @@
+{
+  "session_id": "theodora_tong_s59",
+  "session_type": "learning",
+  "day_offset": 59,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Community Art Space",
+    "doc_type": "report",
+    "title": "Schenectady Community Art Space Long-Range Plan",
+    "vision_points": [
+      "quiet creative space for youth, seniors, and mental health support",
+      "free or low-cost workshops and open studio hours",
+      "include art therapy-informed programming and peer support",
+      "build local partnerships with schools, libraries, and community groups"
+    ],
+    "program_points": [
+      "weekly watercolor and drawing workshops",
+      "drop-in quiet studio sessions",
+      "intergenerational art circles",
+      "seasonal community exhibitions"
+    ],
+    "funding_points": [
+      "small local grants",
+      "community donations",
+      "sliding-scale class fees for some programs",
+      "print sales and fundraiser events"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Community Art Space",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "Schenectady Community Art Space Long-Range Plan",
+        "location": "Community Art Space",
+        "content_brief": "<authored from vision_points, program_points, funding_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Arts Initiative Planning Template",
+          "doc_type": "template",
+          "location": "Community Art Space",
+          "content_brief": "Template with sections for vision, programs, operations, budget, partnerships, and timeline."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Nonprofit Program Roadmap Template",
+          "doc_type": "template",
+          "location": "Community Art Space",
+          "content_brief": "Template for long-range planning with milestones, staffing ideas, and funding outline."
+        }
+      },
+      {
+        "id": "doc_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Art Workshop Brainstorm Notes",
+          "doc_type": "note",
+          "location": "Community Art Space",
+          "content_brief": "Loose notes about workshop themes, calming environments, and local outreach."
+        }
+      }
+    ]
+  }
+}

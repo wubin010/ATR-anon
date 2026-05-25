@@ -1,0 +1,91 @@
+{
+  "instruction": "I still haven't answered the Riverside Business Association mixer at Harbor House. Check what else I've got around that time and send back a fitting reply so they’re not waiting on me.",
+  "gold_value": "tentative",
+  "session_id": "roosevelt_brown_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "roosevelt_brown_scheduling_03",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_scheduling_03",
+    "rule_text": "When an optional invite conflicts with unsettled plans or a competing creative opportunity, he prefers responding tentatively rather than accepting outright.",
+    "canonical_answer": "If an invite is optional and my plans are still fluid, I usually answer tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_rba_autumn_mixer_20260912",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverside Business Association Autumn Mixer",
+          "start_time": "2026-09-12T18:30:00-04:00",
+          "end_time": "2026-09-12T20:30:00-04:00",
+          "participants": [
+            "events@riversideba.org",
+            "roosevelt.brown@example.com"
+          ],
+          "location": "Harbor House",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "Riverside Business Association",
+          "attendee_count": 180,
+          "rsvp_deadline": "2026-09-10T17:00:00-04:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_gallery_crawl_east_wharf_20260912",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "East Wharf gallery crawl",
+          "start_time": "2026-09-12T18:00:00-04:00",
+          "end_time": "2026-09-12T21:00:00-04:00",
+          "participants": [],
+          "location": "East Wharf Arts District",
+          "calendar": "personal",
+          "status": "tentative",
+          "source": "manual_hold"
+        }
+      },
+      {
+        "id": "evt_morning_run_20260912",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning run along the river",
+          "start_time": "2026-09-12T08:00:00-04:00",
+          "end_time": "2026-09-12T09:00:00-04:00",
+          "participants": [],
+          "location": "Riverside Trail",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

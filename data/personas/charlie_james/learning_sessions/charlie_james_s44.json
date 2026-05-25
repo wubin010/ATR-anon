@@ -1,0 +1,105 @@
+{
+  "session_id": "charlie_james_s44",
+  "session_type": "learning",
+  "day_offset": 44,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "phone mount",
+    "budget": 40,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "phone mount",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_steelgrip_01",
+          "prod_roadclamp_02",
+          "prod_irontrail_03",
+          "prod_rigmax_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_steelgrip_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_steelgrip_01",
+        "type": "product",
+        "attributes": {
+          "name": "SteelGrip Heavy-Duty Dashboard Phone Mount",
+          "price": 34.99,
+          "category": "phone mount",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_roadclamp_02",
+        "type": "product",
+        "attributes": {
+          "name": "RoadClamp Suction Cup Phone Mount",
+          "price": 22.5,
+          "category": "phone mount",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_irontrail_03",
+        "type": "product",
+        "attributes": {
+          "name": "IronTrail Vent Clip Phone Mount",
+          "price": 18.99,
+          "category": "phone mount",
+          "rating": 4.1
+        }
+      },
+      {
+        "id": "prod_rigmax_04",
+        "type": "product",
+        "attributes": {
+          "name": "RigMax Rugged Magnetic Phone Mount",
+          "price": 39.5,
+          "category": "phone mount",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

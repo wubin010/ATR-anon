@@ -1,0 +1,112 @@
+{
+  "session_id": "rafael_ortiz_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "travel",
+  "reason_for_call": "Find a flight option",
+  "task_params": {
+    "origin": "McAllen",
+    "destination": "Chiang Mai",
+    "passenger_count": 2,
+    "departure_date": "2026-02-12",
+    "return_date": "2026-02-20",
+    "seat_preference": "aisle"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "McAllen",
+        "destination": "Chiang Mai",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_cnx_01",
+        "seat_preference": "aisle"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_cnx_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "McAllen",
+          "destination": "Chiang Mai",
+          "departure_date": "2026-02-12",
+          "return_date": "2026-02-20",
+          "airline": "Korean Air",
+          "price": 1184.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_cnx_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "McAllen",
+          "destination": "Chiang Mai",
+          "departure_date": "2026-02-12",
+          "return_date": "2026-02-20",
+          "airline": "United",
+          "price": 1328.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_cnx_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "McAllen",
+          "destination": "Chiang Mai",
+          "departure_date": "2026-02-13",
+          "return_date": "2026-02-21",
+          "airline": "Delta",
+          "price": 1046.0,
+          "available_seats": 2
+        }
+      },
+      {
+        "id": "flt_cnx_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "McAllen",
+          "destination": "Chiang Mai",
+          "departure_date": "2026-02-12",
+          "return_date": "2026-02-20",
+          "airline": "American",
+          "price": 1219.0,
+          "available_seats": 6
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "session_id": "vanessa_davis_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "workspace",
+  "reason_for_call": "Update a work tracker.",
+  "task_params": {
+    "tracker_title": "Career Development Tracker",
+    "update_action": "create_entry",
+    "certification_goal": "driver-trainer certification",
+    "training_step_points": [
+      "Complete driver-trainer program application",
+      "Gather current CDL, hazmat, and tanker credential copies",
+      "Schedule required trainer safety instruction modules",
+      "Log supervised coaching hours needed for certification"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_career_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from certification_goal and training_step_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_career_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Career Development Tracker"
+        }
+      },
+      {
+        "id": "trk_safety_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "DOT Safety Compliance Log"
+        }
+      },
+      {
+        "id": "trk_sales_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Driver Sales Pipeline Tracker"
+        }
+      }
+    ]
+  }
+}

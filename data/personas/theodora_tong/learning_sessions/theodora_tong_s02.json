@@ -1,0 +1,130 @@
+{
+  "session_id": "theodora_tong_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files",
+  "task_params": {
+    "location": "Mohawk River",
+    "file_type": "image",
+    "file_ids": [
+      "fil_photo_01",
+      "fil_photo_02",
+      "fil_sketch_03"
+    ],
+    "scheme": "by_project",
+    "folder_id": "fld_walk_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "list_file_folders",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Mohawk River",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_photo_01",
+          "fil_photo_02",
+          "fil_sketch_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_photo_01",
+          "fil_photo_02",
+          "fil_sketch_03"
+        ],
+        "folder_id": "fld_walk_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_photo_01",
+        "type": "file",
+        "attributes": {
+          "name": "mohawk-river-trail-reeds.jpg",
+          "file_type": "image",
+          "location": "/phone_uploads/Mohawk River",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_photo_02",
+        "type": "file",
+        "attributes": {
+          "name": "mohawk-river-bridge-light.jpg",
+          "file_type": "image",
+          "location": "/downloads/Mohawk River",
+          "owner": "Theodora Tong",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_sketch_03",
+        "type": "file",
+        "attributes": {
+          "name": "mohawk-river-bank-sketch.png",
+          "file_type": "image",
+          "location": "/desktop/Mohawk River sketches",
+          "owner": "Theodora Tong",
+          "labels": [
+            "sketch"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_walk_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Weekend Walks",
+          "purpose": "organized photo and sketch sets from local walks"
+        }
+      },
+      {
+        "id": "fld_archive_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Archive",
+          "purpose": "long-term storage for older files"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "session_id": "nancy_marr_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "reservation",
+  "reason_for_call": "Book some tickets.",
+  "task_params": {
+    "location": "Minneapolis",
+    "event_tags": [
+      "art",
+      "gallery"
+    ],
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Minneapolis",
+        "event_tags": [
+          "art",
+          "gallery"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_soho_04",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_northrup_01",
+        "type": "event",
+        "attributes": {
+          "name": "Open Studio Night at North Loop Gallery",
+          "location": "Minneapolis",
+          "date_time": "2025-05-16T19:00:00-05:00",
+          "price": 18.0,
+          "event_tags": [
+            "art",
+            "gallery",
+            "open studio",
+            "evening"
+          ]
+        }
+      },
+      {
+        "id": "evt_mia_02",
+        "type": "event",
+        "attributes": {
+          "name": "Sketches and Silence: After-Hours Museum Walk",
+          "location": "Minneapolis",
+          "date_time": "2025-05-16T18:30:00-05:00",
+          "price": 22.0,
+          "event_tags": [
+            "art",
+            "museum",
+            "gallery",
+            "quiet",
+            "evening"
+          ]
+        }
+      },
+      {
+        "id": "evt_flux_03",
+        "type": "event",
+        "attributes": {
+          "name": "Warehouse Projection Fest",
+          "location": "Minneapolis",
+          "date_time": "2025-05-16T20:00:00-05:00",
+          "price": 35.0,
+          "event_tags": [
+            "art",
+            "installation",
+            "festival",
+            "live music"
+          ]
+        }
+      },
+      {
+        "id": "evt_soho_04",
+        "type": "event",
+        "attributes": {
+          "name": "Artist Conversation at Soho Arts Annex",
+          "location": "Minneapolis",
+          "date_time": "2025-05-16T19:30:00-05:00",
+          "price": 16.0,
+          "event_tags": [
+            "art",
+            "gallery",
+            "artist talk",
+            "evening"
+          ]
+        }
+      }
+    ]
+  }
+}

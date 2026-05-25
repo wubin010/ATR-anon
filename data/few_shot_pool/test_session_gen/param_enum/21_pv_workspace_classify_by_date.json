@@ -1,0 +1,95 @@
+{
+  "session_id": "fs_workspace_pv_classify_by_date_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "few_shot",
+  "rule_id": "fs_workspace_pv_classify_by_date",
+  "instruction": "I'm traveling for a week — sort out the reports that have piled up in my /Downloads folder.",
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_report_q1_01",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 financial summary.pdf",
+          "file_type": "pdf",
+          "location": "/Downloads",
+          "modified_date": "2026-02-15",
+          "project": "finance"
+        }
+      },
+      {
+        "id": "fil_report_marketing_01",
+        "type": "file",
+        "attributes": {
+          "name": "Marketing brief March.pdf",
+          "file_type": "pdf",
+          "location": "/Downloads",
+          "modified_date": "2026-03-08",
+          "project": "marketing"
+        }
+      },
+      {
+        "id": "fil_report_ops_01",
+        "type": "file",
+        "attributes": {
+          "name": "Ops weekly April.pdf",
+          "file_type": "pdf",
+          "location": "/Downloads",
+          "modified_date": "2026-04-02",
+          "project": "ops"
+        }
+      },
+      {
+        "id": "fil_report_sales_01",
+        "type": "file",
+        "attributes": {
+          "name": "Sales pipeline April.pdf",
+          "file_type": "pdf",
+          "location": "/Downloads",
+          "modified_date": "2026-04-10",
+          "project": "sales"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "file_ids": [
+              "fil_report_q1_01",
+              "fil_report_marketing_01",
+              "fil_report_ops_01",
+              "fil_report_sales_01"
+            ],
+            "scheme": "by_date"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_workspace_pv_classify_by_date",
+    "rule_text": "Default to classifying archived files by date (by_date), not by project or file type.",
+    "canonical_answer": "Just sort files by date — don't get clever with project or file-type buckets."
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "instruction": "Please put together a short brief for line leads to use during 5S walkthroughs, save it in /Operations/Training, and title it \"5S Walkthrough Observation Guide\".",
+  "gold_value": "template",
+  "session_id": "elizabeth_pesacreta_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_workspace_04",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_workspace_04",
+    "rule_text": "When she needs reusable materials for training or process work, she prefers creating a template rather than a one-off document.",
+    "canonical_answer": "Whenever I'm building something I'll reuse, I always make it as a template."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_5s_talking_points_01",
+        "type": "document",
+        "attributes": {
+          "title": "5S Walkthrough Talking Points",
+          "doc_type": "note",
+          "location": "/Operations/Training",
+          "content_brief": "Speaker notes for a supervisor leading a shop-floor 5S walkthrough."
+        }
+      },
+      {
+        "id": "doc_new_hire_safety_huddle_01",
+        "type": "document",
+        "attributes": {
+          "title": "New-Hire Safety Huddle Memo",
+          "doc_type": "memo",
+          "location": "/Operations/Training",
+          "content_brief": "One-page reminder for line leads before an orientation shift."
+        }
+      },
+      {
+        "id": "doc_a3_problem_solving_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "A3 Problem-Solving Worksheet",
+          "doc_type": "template",
+          "location": "/Operations/Training",
+          "content_brief": "Blank format used during continuous-improvement investigations."
+        }
+      },
+      {
+        "id": "doc_packaging_kaizen_recap_01",
+        "type": "document",
+        "attributes": {
+          "title": "Packaging Cell Kaizen Recap",
+          "doc_type": "report",
+          "location": "/Operations/Training",
+          "content_brief": "Summary of findings and follow-ups from a recent improvement event."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

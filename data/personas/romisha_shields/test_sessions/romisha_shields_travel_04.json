@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book the lowest-priced flight from Raleigh to St. Louis for just me from the available options, and use the traveler profile and payment method already on file.",
+  "gold_value": "aisle",
+  "session_id": "romisha_shields_travel_04_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "romisha_shields_travel_04",
+  "rule_ref": {
+    "rule_id": "romisha_shields_travel_04",
+    "rule_text": "If she does fly, she prefers an aisle seat rather than a window or middle seat.",
+    "canonical_answer": "When I have to fly, I want an aisle seat."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_raleigh_stl_riverjet_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Raleigh",
+          "destination": "St. Louis",
+          "departure_date": "2026-08-22",
+          "airline": "RiverJet",
+          "price": 184,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_raleigh_stl_midland_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Raleigh",
+          "destination": "St. Louis",
+          "departure_date": "2026-08-22",
+          "airline": "Midland Air",
+          "price": 213,
+          "available_seats": 7
+        }
+      },
+      {
+        "id": "flt_raleigh_stl_bluecrest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Raleigh",
+          "destination": "St. Louis",
+          "departure_date": "2026-08-22",
+          "airline": "Bluecrest",
+          "price": 246,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_raleigh_kansascity_sunroute_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Raleigh",
+          "destination": "Kansas City",
+          "departure_date": "2026-08-22",
+          "airline": "SunRoute",
+          "price": 171,
+          "available_seats": 5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "aisle"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

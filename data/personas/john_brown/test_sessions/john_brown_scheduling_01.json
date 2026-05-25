@@ -1,0 +1,82 @@
+{
+  "instruction": "I already have tickets for Red Stick Jazz Night at the LSU Rural Life Museum on 2026-09-18 from 19:30 to 21:30 in the Estuary Room. Make sure I don't forget about it.",
+  "gold_value": null,
+  "session_id": "john_brown_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "john_brown_scheduling_01",
+  "rule_ref": {
+    "rule_id": "john_brown_scheduling_01",
+    "rule_text": "When scheduling his own activities around sports, volunteer work, or concerts, he prefers putting them on the calendar as real events rather than using a private reminder alone.",
+    "canonical_answer": "For things I plan to attend or run, I want an actual calendar event, not just a reminder."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_red_stick_jazz_01",
+        "type": "event",
+        "attributes": {
+          "title": "Red Stick Jazz Night",
+          "start_time": "2026-09-18T19:30:00",
+          "end_time": "2026-09-18T21:30:00",
+          "participants": [],
+          "location": "LSU Rural Life Museum - Estuary Room",
+          "calendar": "personal",
+          "status": "confirmed",
+          "source": "ticket_portal"
+        }
+      },
+      {
+        "id": "evt_youth_referee_shift_02",
+        "type": "event",
+        "attributes": {
+          "title": "Youth soccer referee volunteer shift",
+          "start_time": "2026-09-20T08:30:00",
+          "end_time": "2026-09-20T11:30:00",
+          "participants": [],
+          "location": "Liberty Park Fields",
+          "calendar": "personal",
+          "status": "confirmed",
+          "source": "volunteer_signup"
+        }
+      },
+      {
+        "id": "evt_downtown_hiphop_03",
+        "type": "event",
+        "attributes": {
+          "title": "Downtown hip-hop showcase",
+          "start_time": "2026-09-25T20:00:00",
+          "end_time": "2026-09-25T23:00:00",
+          "participants": [],
+          "location": "Third Street Warehouse",
+          "calendar": "personal",
+          "status": "confirmed",
+          "source": "ticket_portal"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

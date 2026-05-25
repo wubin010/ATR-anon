@@ -1,0 +1,112 @@
+{
+  "session_id": "cassandra_tovar_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "scheduling",
+  "reason_for_call": "Handle an invite on my calendar",
+  "task_params": {
+    "calendar": "invites",
+    "title": "CTS Certification Info Session",
+    "start_time": "2025-03-18T18:30:00-04:00",
+    "end_time": "2025-03-18T19:30:00-04:00",
+    "response": "accept"
+  },
+  "expected_tools": [
+    "list_events",
+    "respond_to_event_invite"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "invites"
+      }
+    },
+    {
+      "tool": "respond_to_event_invite",
+      "arguments": {
+        "event_id": "evt_cts_01",
+        "response": "accept"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_cts_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "CTS Certification Info Session",
+          "start_time": "2025-03-18T18:30:00-04:00",
+          "end_time": "2025-03-18T19:30:00-04:00",
+          "participants": [
+            "events@avixaatlanta.org",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Decatur Library Auditorium",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_pta_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "South Decatur PTA AV Volunteer Orientation",
+          "start_time": "2025-03-19T17:30:00-04:00",
+          "end_time": "2025-03-19T18:15:00-04:00",
+          "participants": [
+            "pta@sdems.org",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "South Decatur Elementary Media Center",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_vendor_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Q2 Supplier Demo: Networked Audio Updates",
+          "start_time": "2025-03-20T11:00:00-04:00",
+          "end_time": "2025-03-20T12:00:00-04:00",
+          "participants": [
+            "rep@signalpathpro.com",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Online",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_run_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Evening Jog",
+          "start_time": "2025-03-18T17:45:00-04:00",
+          "end_time": "2025-03-18T18:20:00-04:00",
+          "participants": [
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Legacy Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

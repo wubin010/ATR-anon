@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Lena Ortiz at Civic Futures about her newsletter note. Tell her I'd be glad to contribute, that I'm thinking of a 700-word piece on how community arts programs can support mental health, and ask who the main readership is and when they need a first version.",
+  "gold_value": null,
+  "session_id": "gabriel_campbell_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "gabriel_campbell_communication_01",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_communication_01",
+    "rule_text": "When he is preparing outreach, thought-leadership, or nuanced professional correspondence, he prefers to draft the message first rather than sending it immediately.",
+    "canonical_answer": "If a message carries strategy, advocacy, or polished public-facing ideas, I draft it before it goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_newsletter_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Ortiz <lena.ortiz@civicfutures.org>",
+          "subject": "Invitation to contribute to Civic Futures newsletter",
+          "body": "Hi Gabriel — I'm editing the next Civic Futures newsletter and wondered whether you'd be open to contributing a short article. We'd love something thoughtful on the intersection of art, health, and city life for our readers in the public-sector and nonprofit space. If you're interested, let me know what angle you might take and any questions you have about audience or timing.",
+          "thread_id": "thr_lena_newsletter_18",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-08T09:14"
+        }
+      },
+      {
+        "id": "msg_marcus_roomchange_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marcus Lee <marcus.lee@northsidecenter.org>",
+          "subject": "Workshop room change",
+          "body": "Just a heads-up that Thursday's facilitation session has been moved from Studio 2 to Room 114 because of the lighting setup.",
+          "thread_id": "thr_marcus_room_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-08T08:02"
+        }
+      },
+      {
+        "id": "msg_adobe_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "billing@adobe.com",
+          "subject": "Your monthly invoice is ready",
+          "body": "Your latest invoice is available in the account portal.",
+          "thread_id": "thr_adobe_invoice_55",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-08T07:26"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "session_id": "jennifer_philmon_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination": "Dearborn",
+    "location": "Dearborn",
+    "stop_tags": [
+      "museum",
+      "industrial"
+    ],
+    "traveler_count": 1,
+    "guest_count": 1,
+    "room_count": 1
+  },
+  "expected_tools": [
+    "search_destinations",
+    "search_trip_stops",
+    "plan_trip",
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "museum",
+          "industrial"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Dearborn",
+        "stop_tags": [
+          "museum",
+          "industrial"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Dearborn",
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_henryford_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Dearborn",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hot_redroof_02"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_dearborn_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Dearborn",
+          "region": "Michigan",
+          "tags": [
+            "museum",
+            "industrial",
+            "history"
+          ]
+        }
+      },
+      {
+        "id": "dst_toledo_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Toledo",
+          "region": "Ohio",
+          "tags": [
+            "museum",
+            "art",
+            "riverfront"
+          ]
+        }
+      },
+      {
+        "id": "stp_henryford_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "The Henry Ford Museum of American Innovation",
+          "location": "Dearborn",
+          "tags": [
+            "museum",
+            "industrial",
+            "history"
+          ]
+        }
+      },
+      {
+        "id": "stp_fairlane_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Fair Lane Estate",
+          "location": "Dearborn",
+          "tags": [
+            "museum",
+            "history",
+            "estate"
+          ]
+        }
+      },
+      {
+        "id": "hot_hampton_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Hampton Inn by Hilton Detroit Dearborn",
+          "location": "Dearborn",
+          "check_in_date": "2025-09-19",
+          "check_out_date": "2025-09-21",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 142.0
+        }
+      },
+      {
+        "id": "hot_redroof_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Red Roof Inn Detroit - Dearborn",
+          "location": "Dearborn",
+          "check_in_date": "2025-09-19",
+          "check_out_date": "2025-09-21",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 96.0
+        }
+      }
+    ]
+  }
+}

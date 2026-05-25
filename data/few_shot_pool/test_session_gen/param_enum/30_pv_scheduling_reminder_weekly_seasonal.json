@@ -1,0 +1,76 @@
+{
+  "session_id": "fs_scheduling_pv_reminder_weekly_seasonal_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "persona_id": "few_shot",
+  "rule_id": "fs_scheduling_pv_reminder_weekly_seasonal",
+  "instruction": "I want to do spring tilling and re-fertilizing in the garden this weekend. I've been forgetful lately — set up a reminder.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_spring_gardening_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Spring garden tilling and fertilizing",
+          "start_time": "2026-05-10T10:00",
+          "end_time": "2026-05-10T12:00",
+          "calendar": "personal"
+        }
+      },
+      {
+        "id": "evt_weekly_team_meeting_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Weekly team meeting",
+          "start_time": "2026-05-04T10:00",
+          "end_time": "2026-05-04T11:00",
+          "calendar": "work"
+        }
+      },
+      {
+        "id": "evt_quarterly_review_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quarterly business review (Q2)",
+          "start_time": "2026-06-20T09:00",
+          "end_time": "2026-06-20T12:00",
+          "calendar": "work"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "target_id": "evt_spring_gardening_01",
+            "remind_at": "2026-05-10T08:00",
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_scheduling_pv_reminder_weekly_seasonal",
+    "rule_text": "For seasonal household tasks (spring tilling, fall leaf cleanup, HVAC servicing, tire swaps), reminder cadence must be weekly — not once and not before_event — the user knows they procrastinate and need a weekly nag until the task is actually done.",
+    "canonical_answer": "Seasonal chores — don't give me a one-time reminder, set them weekly so they keep nagging until I actually do them."
+  }
+}

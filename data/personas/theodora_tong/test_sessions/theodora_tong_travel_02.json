@@ -1,0 +1,132 @@
+{
+  "instruction": "I'll be in Porto and need a place to stay. Please choose one option in Porto with 1 room for 1 guest and book it.",
+  "gold_value": "hotel_porto_ribeira_backpackers_01",
+  "session_id": "theodora_tong_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "theodora_tong_travel_02",
+  "rule_ref": {
+    "rule_id": "theodora_tong_travel_02",
+    "rule_text": "When booking lodging, she prefers budget hostels over more conventional hotel stays.",
+    "canonical_answer": "I usually choose a budget hostel if it helps me stretch the trip affordably."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "hotel_porto_ribeira_backpackers_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Ribeira Backpackers Hostel",
+          "location": "Porto, Portugal",
+          "available_rooms": 5,
+          "max_guests_per_room": 1,
+          "price_per_night": 64,
+          "rating": 4.2,
+          "review_count": 286,
+          "property_type": "hostel",
+          "room_style": "private single room",
+          "neighborhood_profile": "riverside old town"
+        }
+      },
+      {
+        "id": "hotel_porto_aliados_city_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Aliados City Hotel",
+          "location": "Porto, Portugal",
+          "available_rooms": 7,
+          "max_guests_per_room": 1,
+          "price_per_night": 69,
+          "rating": 4.8,
+          "review_count": 1840,
+          "property_type": "hotel",
+          "distance_to_metro_min": 3,
+          "neighborhood_profile": "city center",
+          "breakfast_included": true
+        }
+      },
+      {
+        "id": "hotel_porto_sao_bento_central_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "São Bento Central Hotel",
+          "location": "Porto, Portugal",
+          "available_rooms": 6,
+          "max_guests_per_room": 1,
+          "price_per_night": 72,
+          "rating": 4.7,
+          "review_count": 1295,
+          "property_type": "hotel",
+          "distance_to_station_min": 4,
+          "neighborhood_profile": "historic center"
+        }
+      },
+      {
+        "id": "hotel_porto_riverside_view_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Riverside View Hotel Porto",
+          "location": "Porto, Portugal",
+          "available_rooms": 4,
+          "max_guests_per_room": 1,
+          "price_per_night": 118,
+          "rating": 4.9,
+          "review_count": 2410,
+          "property_type": "hotel",
+          "river_view": true,
+          "neighborhood_profile": "waterfront"
+        }
+      },
+      {
+        "id": "hotel_porto_boavista_express_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Boavista Express Hotel",
+          "location": "Porto, Portugal",
+          "available_rooms": 9,
+          "max_guests_per_room": 1,
+          "price_per_night": 81,
+          "rating": 4.6,
+          "review_count": 978,
+          "property_type": "hotel",
+          "distance_to_airport_metro_min": 2,
+          "neighborhood_profile": "business district"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "hotel_porto_ribeira_backpackers_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

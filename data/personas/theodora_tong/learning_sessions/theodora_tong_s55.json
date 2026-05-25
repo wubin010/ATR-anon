@@ -1,0 +1,194 @@
+{
+  "session_id": "theodora_tong_s55",
+  "session_type": "learning",
+  "day_offset": 55,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Scottish Highlands",
+      "solitude",
+      "walking",
+      "budget"
+    ],
+    "destination_ids": [
+      "dst_cairngorms_01",
+      "dst_torridon_02"
+    ],
+    "destination": "Scottish Highlands",
+    "stop_tags": [
+      "walking",
+      "solitude"
+    ],
+    "selected_stop_ids": [
+      "stp_avigemore_01",
+      "stp_glenfeshie_02",
+      "stp_torridon_03"
+    ],
+    "duration_days": 5,
+    "traveler_count": 1
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Scottish Highlands",
+          "solitude",
+          "walking",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_cairngorms_01",
+          "dst_torridon_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Scottish Highlands",
+        "stop_tags": [
+          "walking",
+          "solitude"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Scottish Highlands",
+        "duration_days": 5,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_avigemore_01",
+          "stp_glenfeshie_02",
+          "stp_torridon_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_cairngorms_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Cairngorms National Park",
+          "region": "Scottish Highlands",
+          "tags": [
+            "walking",
+            "solitude",
+            "budget",
+            "hostels",
+            "autumn"
+          ]
+        }
+      },
+      {
+        "id": "dst_torridon_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Torridon",
+          "region": "Scottish Highlands",
+          "tags": [
+            "walking",
+            "solitude",
+            "budget",
+            "scenic",
+            "autumn"
+          ]
+        }
+      },
+      {
+        "id": "dst_fortwilliam_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Fort William",
+          "region": "Scottish Highlands",
+          "tags": [
+            "walking",
+            "gateway",
+            "budget",
+            "bus-links",
+            "autumn"
+          ]
+        }
+      },
+      {
+        "id": "stp_avigemore_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Aviemore trail base",
+          "location": "Cairngorms National Park, Scottish Highlands",
+          "tags": [
+            "walking",
+            "solitude",
+            "budget",
+            "village"
+          ]
+        }
+      },
+      {
+        "id": "stp_glenfeshie_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Glen Feshie",
+          "location": "Cairngorms National Park, Scottish Highlands",
+          "tags": [
+            "walking",
+            "solitude",
+            "nature",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "stp_torridon_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Torridon village trails",
+          "location": "Torridon, Scottish Highlands",
+          "tags": [
+            "walking",
+            "solitude",
+            "scenic",
+            "budget"
+          ]
+        }
+      }
+    ]
+  }
+}

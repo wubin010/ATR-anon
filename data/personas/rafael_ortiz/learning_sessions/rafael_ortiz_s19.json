@@ -1,0 +1,97 @@
+{
+  "session_id": "rafael_ortiz_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "reservation",
+  "reason_for_call": "Book a service appointment.",
+  "task_params": {
+    "service_type": "haircut",
+    "location": "McAllen",
+    "date_time": "2025-03-22T11:00:00-05:00",
+    "sort_by": "rating"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "haircut",
+        "location": "McAllen",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "svp_fadecraft_01",
+        "date_time": "2025-03-22T11:00:00-05:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svp_fadecraft_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "FadeCraft Studio",
+          "service_type": "haircut",
+          "location": "McAllen",
+          "rating": 4.8,
+          "distance_km": 4.2
+        }
+      },
+      {
+        "id": "svp_palmbarber_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Palm Barber Lounge",
+          "service_type": "haircut",
+          "location": "McAllen",
+          "rating": 4.6,
+          "distance_km": 2.7
+        }
+      },
+      {
+        "id": "svp_rgvclips_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "RGV Clips & Co.",
+          "service_type": "haircut",
+          "location": "McAllen",
+          "rating": 4.4,
+          "distance_km": 3.9
+        }
+      },
+      {
+        "id": "svp_beardbloom_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Beard & Bloom Grooming",
+          "service_type": "barber",
+          "location": "McAllen",
+          "rating": 4.7,
+          "distance_km": 5.1
+        }
+      }
+    ]
+  }
+}

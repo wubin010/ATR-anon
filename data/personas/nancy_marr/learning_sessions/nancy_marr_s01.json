@@ -1,0 +1,103 @@
+{
+  "session_id": "nancy_marr_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Fermentation Lab",
+    "source_doc_type": "note",
+    "draft_report_id": "doc_ferm_report_01",
+    "draft_report_points": [
+      "summarize three test batches side by side",
+      "note pH drop and gas activity differences",
+      "flag batch B as slow-starting but stable",
+      "mention temperature swings as possible variable",
+      "end with a short next-steps section"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Fermentation Lab",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Fermentation Lab",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_ferm_report_01",
+        "content_delta": "<authored from draft_report_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_ferm_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Fermentation Lab bench notes - batch A",
+          "doc_type": "note",
+          "location": "Fermentation Lab",
+          "content_brief": "Handwritten transcription covering inoculation timing, pH checks, aroma notes, and visible bubbling for batch A."
+        }
+      },
+      {
+        "id": "doc_ferm_note_02",
+        "type": "document",
+        "attributes": {
+          "title": "Fermentation Lab observations - batch B and C",
+          "doc_type": "note",
+          "location": "Fermentation Lab",
+          "content_brief": "Loose observations on lag phase, jar pressure, color shift, and end-of-day tasting comments for batches B and C."
+        }
+      },
+      {
+        "id": "doc_ferm_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly fermentation test draft",
+          "doc_type": "report",
+          "location": "Fermentation Lab",
+          "content_brief": "Partial draft report with title page and a stub methods section, but no consolidated findings yet."
+        }
+      },
+      {
+        "id": "doc_ferm_sheet_01",
+        "type": "document",
+        "attributes": {
+          "title": "Fermentation Lab pH readings table",
+          "doc_type": "spreadsheet",
+          "location": "Fermentation Lab",
+          "content_brief": "Spreadsheet of pH readings and timestamps for the week's fermentation runs."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "session_id": "iris_parker_s04",
+  "session_type": "learning",
+  "day_offset": 4,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "paint set",
+    "budget": 35,
+    "sort_by": "rating",
+    "quantity": 1,
+    "product_ids": [
+      "prod_paint_01",
+      "prod_paint_02",
+      "prod_paint_03"
+    ]
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "paint set",
+        "budget": 35,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_paint_01",
+          "prod_paint_02",
+          "prod_paint_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_paint_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_paint_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pocket Gouache Paint Set - 12 Colors",
+          "price": 24.99,
+          "category": "paint set",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_paint_02",
+        "type": "product",
+        "attributes": {
+          "name": "Travel Watercolor Paint Set - 18 Half Pans",
+          "price": 31.5,
+          "category": "paint set",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_paint_03",
+        "type": "product",
+        "attributes": {
+          "name": "Mini Acrylic Paint Set - 24 Tubes",
+          "price": 19.99,
+          "category": "paint set",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_brush_01",
+        "type": "product",
+        "attributes": {
+          "name": "Compact Detail Brush Roll - 6 Pieces",
+          "price": 14.99,
+          "category": "brush set",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

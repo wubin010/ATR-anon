@@ -1,0 +1,88 @@
+{
+  "session_id": "gabriel_campbell_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "note",
+    "location": "Blog Ideas",
+    "title": "Art, Patient Dignity, and Clinical Space Design",
+    "note_points": [
+      "connections between visual art and patient dignity",
+      "how waiting rooms and corridors shape emotional experience",
+      "examples of humane clinical space design choices",
+      "art placement as wayfinding, comfort, and identity cue",
+      "questions for a future blog essay outline"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Blog Ideas",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Art, Patient Dignity, and Clinical Space Design",
+        "location": "Blog Ideas",
+        "content_brief": "<authored from note_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_blog_01",
+        "type": "document",
+        "attributes": {
+          "title": "Notes on Museum Lighting and Attention",
+          "doc_type": "note",
+          "location": "Blog Ideas",
+          "content_brief": "Rough notes about lighting, perception, and gallery pacing."
+        }
+      },
+      {
+        "id": "doc_blog_02",
+        "type": "document",
+        "attributes": {
+          "title": "Art Therapy Metrics Draft",
+          "doc_type": "memo",
+          "location": "Blog Ideas",
+          "content_brief": "Working memo connecting patient experience metrics to art programs."
+        }
+      },
+      {
+        "id": "doc_blog_03",
+        "type": "document",
+        "attributes": {
+          "title": "Visual Culture Reading List",
+          "doc_type": "note",
+          "location": "Blog Ideas",
+          "content_brief": "Reading list on visual culture, embodiment, and public institutions."
+        }
+      }
+    ]
+  }
+}

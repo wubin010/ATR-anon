@@ -1,0 +1,95 @@
+{
+  "instruction": "Please write something up for the shop crew that covers how we receive a customer vehicle, log any loose personal items, and route the keys and paperwork before teardown. Save it in /Shop/Operations and title it \"Vehicle Intake and Pre-Teardown Steps\".",
+  "gold_value": "template",
+  "session_id": "charlie_james_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "charlie_james_workspace_04",
+  "rule_ref": {
+    "rule_id": "charlie_james_workspace_04",
+    "rule_text": "When starting a repeatable shop process document, he prefers a template rather than a freeform memo or report.",
+    "canonical_answer": "If it’s something I’ll reuse in the shop, I want it built as a template."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_front_counter_intake_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Front Counter Vehicle Intake Memo",
+          "doc_type": "memo",
+          "location": "/Shop/Operations",
+          "content_brief": "One-page guidance for service writers on collecting keys, mileage, and customer concerns at drop-off."
+        }
+      },
+      {
+        "id": "doc_customer_belongings_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Tagging Customer Belongings",
+          "doc_type": "note",
+          "location": "/Shop/Operations",
+          "content_brief": "Quick notes on labeling loose items found in incoming vehicles and placing them in the secure bin."
+        }
+      },
+      {
+        "id": "doc_teardown_handoff_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Teardown Handoff Issues Summary",
+          "doc_type": "report",
+          "location": "/Shop/Operations",
+          "content_brief": "Summary of recent paperwork and key-routing misses between intake and teardown over the last month."
+        }
+      },
+      {
+        "id": "doc_parts_hold_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Parts Hold Area Labeling Memo",
+          "doc_type": "memo",
+          "location": "/Shop/Operations",
+          "content_brief": "Short reminder on marking bins for customer-approved, backordered, and damaged parts."
+        }
+      },
+      {
+        "id": "doc_arrival_photo_capture_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Arrival Photo Capture Sheet",
+          "doc_type": "template",
+          "location": "/Shop/Templates",
+          "content_brief": "Reusable layout for recording required vehicle photo angles, condition notes, and signature fields at drop-off."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

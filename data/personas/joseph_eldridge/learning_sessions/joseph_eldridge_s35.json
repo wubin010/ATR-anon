@@ -1,0 +1,149 @@
+{
+  "session_id": "joseph_eldridge_s35",
+  "session_type": "learning",
+  "day_offset": 35,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Triangle Daily Deals",
+    "label_ids": [
+      "lbl_promotions_01",
+      "lbl_readlater_01"
+    ],
+    "archive_folder_id": "fld_newsletters_01",
+    "priority": "low"
+  },
+  "expected_tools": [
+    "search_messages",
+    "label_messages",
+    "set_message_priority",
+    "archive_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Triangle Daily Deals"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_triangle_01",
+          "msg_triangle_02"
+        ],
+        "label_ids": [
+          "lbl_promotions_01",
+          "lbl_readlater_01"
+        ]
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_triangle_01",
+          "msg_triangle_02"
+        ],
+        "priority": "low"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_triangle_01",
+          "msg_triangle_02"
+        ],
+        "folder_id": "fld_newsletters_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_triangle_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Triangle Daily Deals",
+          "subject": "Weekend markdowns from Durham shops",
+          "body": "Today's local offers include garden tools, theater tickets, and home goods. Browse the full roundup inside.",
+          "thread_id": "thr_triangle_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-04T19:18:00"
+        }
+      },
+      {
+        "id": "msg_triangle_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Triangle Daily Deals",
+          "subject": "Member specials on hardware and hobby supplies",
+          "body": "Limited-time coupons are available tonight for workshop items, batteries, and storage bins.",
+          "thread_id": "thr_triangle_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-04T20:07:00"
+        }
+      },
+      {
+        "id": "msg_client_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Raleigh Power Systems",
+          "subject": "Question about inverter compliance notes",
+          "body": "Could you clarify the UL test sequence you mentioned in the draft review?",
+          "thread_id": "thr_client_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-04T17:42:00"
+        }
+      },
+      {
+        "id": "fld_newsletters_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Newsletters",
+          "purpose": "Archived reading for newsletters and promotions"
+        }
+      },
+      {
+        "id": "lbl_promotions_01",
+        "type": "label",
+        "attributes": {
+          "name": "Promotions",
+          "topic": "Marketing and sales messages"
+        }
+      },
+      {
+        "id": "lbl_readlater_01",
+        "type": "label",
+        "attributes": {
+          "name": "Read Later",
+          "topic": "Nonurgent items to review later"
+        }
+      }
+    ]
+  }
+}

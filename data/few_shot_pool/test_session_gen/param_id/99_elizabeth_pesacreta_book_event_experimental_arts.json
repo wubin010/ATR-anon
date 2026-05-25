@@ -1,0 +1,112 @@
+{
+  "instruction": "I'm in Seattle and want tickets for a night out for two people; keep it under $40 each, pick something and book it.",
+  "gold_value": "evt_blackbox_lab_01",
+  "session_id": "elizabeth_pesacreta_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_reservation_02",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_reservation_02",
+    "rule_text": "When booking arts-related outings, she prefers experimental productions and contemporary-art events over mainstream entertainment choices.",
+    "canonical_answer": "I have a rule: for nights out, I always pick experimental or contemporary arts events over mainstream entertainment."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_blackbox_lab_01",
+        "type": "event",
+        "attributes": {
+          "name": "Black Box Lab: New Media Performance Night",
+          "event_type": "performance",
+          "location": "Seattle",
+          "date_time": "2026-06-12T19:30:00",
+          "price": 38,
+          "event_tags": [
+            "experimental_theater",
+            "contemporary_art",
+            "live_performance"
+          ]
+        }
+      },
+      {
+        "id": "evt_paramount_revival_01",
+        "type": "event",
+        "attributes": {
+          "name": "Paramount Summer Musical Revival",
+          "event_type": "musical",
+          "location": "Seattle",
+          "date_time": "2026-06-12T20:00:00",
+          "price": 32,
+          "event_tags": [
+            "musical",
+            "touring_production",
+            "theater"
+          ]
+        }
+      },
+      {
+        "id": "evt_benaroya_pops_01",
+        "type": "event",
+        "attributes": {
+          "name": "Benaroya Pops: Movie Themes Live",
+          "event_type": "concert",
+          "location": "Seattle",
+          "date_time": "2026-06-12T19:00:00",
+          "price": 35,
+          "event_tags": [
+            "orchestra",
+            "film_music",
+            "concert"
+          ]
+        }
+      },
+      {
+        "id": "evt_museum_impressionists_01",
+        "type": "event",
+        "attributes": {
+          "name": "City Museum: Impressionist Highlights",
+          "event_type": "exhibition",
+          "location": "Seattle",
+          "date_time": "2026-06-12T18:30:00",
+          "price": 24,
+          "event_tags": [
+            "museum",
+            "painting",
+            "historical_art"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_blackbox_lab_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

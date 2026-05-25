@@ -1,0 +1,89 @@
+{
+  "instruction": "Please take care of the return for the table runner from my recent order—it just wasn't right for the dining room.",
+  "gold_value": "exchange",
+  "session_id": "nancy_marr_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "nancy_marr_commerce_03",
+  "rule_ref": {
+    "rule_id": "nancy_marr_commerce_03",
+    "rule_text": "If something she bought does not work out, Nancy prefers an exchange over a refund so the item can still be put to use.",
+    "canonical_answer": "If a purchase misses the mark, I usually prefer exchanging it rather than just asking for a refund."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_juniper_table_runner_01",
+        "type": "product",
+        "attributes": {
+          "name": "Juniper Linen Table Runner",
+          "price": 28.0,
+          "category": "home_decor",
+          "rating": 4.4,
+          "brand": "Juniper Home",
+          "order_id": "ord_5512_table",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-18"
+        }
+      },
+      {
+        "id": "prod_harbor_glass_carafe_01",
+        "type": "product",
+        "attributes": {
+          "name": "Harbor Glass Carafe",
+          "price": 24.0,
+          "category": "kitchen_dining",
+          "rating": 4.8,
+          "brand": "Harbor House",
+          "order_id": "ord_5487_carafe",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-16"
+        }
+      },
+      {
+        "id": "prod_willow_ceramic_planter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Willow Ceramic Planter",
+          "price": 34.0,
+          "category": "home_decor",
+          "rating": 4.9,
+          "brand": "Willow Lane",
+          "order_id": "ord_5461_planter",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-14"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

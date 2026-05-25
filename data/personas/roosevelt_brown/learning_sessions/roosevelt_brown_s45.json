@@ -1,0 +1,122 @@
+{
+  "session_id": "roosevelt_brown_s45",
+  "session_type": "learning",
+  "day_offset": 45,
+  "domain": "workspace",
+  "reason_for_call": "Organize some design files.",
+  "task_params": {
+    "location": "Healing Spaces/Concept Mockups/Older Explorations",
+    "file_type": "image",
+    "name": "Archived Concepts"
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "archive_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Healing Spaces/Concept Mockups/Older Explorations",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "archive_files",
+      "arguments": {
+        "file_ids": [
+          "fil_mockup_01",
+          "fil_mockup_02",
+          "fil_mockup_03"
+        ],
+        "folder_id": "fld_archive_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_mockup_01",
+        "type": "file",
+        "attributes": {
+          "name": "healing-spaces-waiting-room-collage-v1.png",
+          "file_type": "image",
+          "location": "Healing Spaces/Concept Mockups/Older Explorations",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "healing-spaces",
+            "mockup",
+            "older"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_mockup_02",
+        "type": "file",
+        "attributes": {
+          "name": "healing-spaces-light-study-v2.jpg",
+          "file_type": "image",
+          "location": "Healing Spaces/Concept Mockups/Older Explorations",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "healing-spaces",
+            "mockup",
+            "older"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_mockup_03",
+        "type": "file",
+        "attributes": {
+          "name": "healing-spaces-wayfinding-draft-a.png",
+          "file_type": "image",
+          "location": "Healing Spaces/Concept Mockups/Older Explorations",
+          "owner": "Roosevelt Brown",
+          "labels": [
+            "healing-spaces",
+            "mockup",
+            "older"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived Concepts",
+          "purpose": "Long-term storage for older design directions and retired drafts"
+        }
+      },
+      {
+        "id": "fld_active_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Current Concepts",
+          "purpose": "Working folder for active mockups and strongest design directions"
+        }
+      }
+    ]
+  }
+}

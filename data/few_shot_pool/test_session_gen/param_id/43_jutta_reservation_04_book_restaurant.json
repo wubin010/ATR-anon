@@ -1,0 +1,95 @@
+{
+  "domain": "reservation",
+  "instruction": "Book dinner for me: Friday May 15th, 7:30pm, around downtown Seattle, two people.",
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_cedar_table_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar Table",
+          "cuisine": "Pacific Northwest",
+          "location": "Pioneer Square, Seattle",
+          "rating": 4.3,
+          "price_range": "$$",
+          "seating_style": "quiet dining room"
+        }
+      },
+      {
+        "id": "rst_neon_tiger_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Neon Tiger Kitchen",
+          "cuisine": "Korean-Mexican fusion",
+          "location": "Belltown, Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "chef counter and shared tables"
+        }
+      },
+      {
+        "id": "rst_marea_luna_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Marea Luna",
+          "cuisine": "Japanese-Peruvian Nikkei",
+          "location": "Pike Place, Seattle",
+          "rating": 4.8,
+          "price_range": "$$$$",
+          "seating_style": "rooftop patio and bar seating"
+        }
+      },
+      {
+        "id": "rst_fieldnote_social_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Fieldnote Social",
+          "cuisine": "contemporary global small plates",
+          "location": "South Lake Union, Seattle",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "open dining room with communal tables"
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_reservation_04_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_reservation_04",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_reservation_04",
+    "rule_text": "For restaurant choices, default to local, unpretentious, regionally distinctive Pacific Northwest cuisine rather than chasing novelty or buzzy concepts.",
+    "canonical_answer": "When you pick a restaurant, lean toward local, down-to-earth Pacific Northwest places — don't go after the novelty hot-spots."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_cedar_table_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

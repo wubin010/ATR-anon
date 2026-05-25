@@ -1,0 +1,167 @@
+{
+  "session_id": "joseph_eldridge_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Blue Ridge",
+      "mountain",
+      "quiet"
+    ],
+    "destination_ids": [
+      "dst_blue_ridge_01"
+    ],
+    "destination": "Blue Ridge",
+    "duration_days": 3,
+    "traveler_count": 2,
+    "selected_stop_ids": [
+      "stp_blue_ridge_01",
+      "stp_blue_ridge_02",
+      "stp_blue_ridge_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Blue Ridge",
+          "mountain",
+          "quiet"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_blue_ridge_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Blue Ridge",
+        "stop_tags": [
+          "mountain",
+          "quiet"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Blue Ridge",
+        "duration_days": 3,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_blue_ridge_01",
+          "stp_blue_ridge_02",
+          "stp_blue_ridge_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_blue_ridge_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Blue Ridge Highlands Retreat",
+          "region": "Blue Ridge Mountains",
+          "tags": [
+            "mountain",
+            "quiet",
+            "scenic hiking",
+            "restorative"
+          ]
+        }
+      },
+      {
+        "id": "dst_smoky_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Smoky Valley Escape",
+          "region": "Great Smoky Mountains",
+          "tags": [
+            "mountain",
+            "waterfalls",
+            "popular trails",
+            "cabins"
+          ]
+        }
+      },
+      {
+        "id": "stp_blue_ridge_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Craggy Gardens Trail",
+          "location": "Blue Ridge Parkway",
+          "tags": [
+            "scenic hiking",
+            "mountain",
+            "wildflowers",
+            "moderate"
+          ]
+        }
+      },
+      {
+        "id": "stp_blue_ridge_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lake Junaluska Lakeside Walk",
+          "location": "Blue Ridge",
+          "tags": [
+            "quiet",
+            "restorative",
+            "easy walk",
+            "lake"
+          ]
+        }
+      },
+      {
+        "id": "stp_blue_ridge_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Pisgah Forest Scenic Overlook",
+          "location": "Blue Ridge Mountains",
+          "tags": [
+            "mountain",
+            "quiet",
+            "viewpoint",
+            "short stop"
+          ]
+        }
+      }
+    ]
+  }
+}

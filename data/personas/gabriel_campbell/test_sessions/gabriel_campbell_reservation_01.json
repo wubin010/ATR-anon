@@ -1,0 +1,115 @@
+{
+  "instruction": "I'm in Boston and want two tickets for a night out; keep it under $45 each, pick something and book it.",
+  "gold_value": "evt_ica_afterhours_01",
+  "session_id": "gabriel_campbell_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "gabriel_campbell_reservation_01",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_reservation_01",
+    "rule_text": "When booking event tickets, he prefers contemporary art, museum, literary, or music events over generic entertainment options.",
+    "canonical_answer": "I always choose cultural events that connect to art, ideas, or acoustic music before more generic entertainment."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_ica_afterhours_01",
+        "type": "event",
+        "attributes": {
+          "name": "ICA Boston After Hours: New Voices Installation Night",
+          "location": "Boston",
+          "date_time": "2026-09-18T19:00:00",
+          "price": 42,
+          "event_tags": [
+            "museum",
+            "contemporary_art",
+            "artist_talk"
+          ],
+          "distance_km": 4.2,
+          "attendance_estimate": 220
+        }
+      },
+      {
+        "id": "evt_harbor_laughs_01",
+        "type": "event",
+        "attributes": {
+          "name": "Harbor Laughs Stand-Up Showcase",
+          "location": "Boston",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 24,
+          "event_tags": [
+            "comedy",
+            "stand_up",
+            "nightlife"
+          ],
+          "distance_km": 0.7,
+          "attendance_estimate": 1500
+        }
+      },
+      {
+        "id": "evt_arcade_brawl_01",
+        "type": "event",
+        "attributes": {
+          "name": "Back Bay Mega Arcade Tournament",
+          "location": "Boston",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 18,
+          "event_tags": [
+            "arcade",
+            "competition",
+            "games"
+          ],
+          "distance_km": 1.1,
+          "attendance_estimate": 1800
+        }
+      },
+      {
+        "id": "evt_magic_spectacular_01",
+        "type": "event",
+        "attributes": {
+          "name": "Grand Illusion Spectacular",
+          "location": "Boston",
+          "date_time": "2026-09-18T19:45:00",
+          "price": 29,
+          "event_tags": [
+            "magic_show",
+            "family_entertainment",
+            "stage_show"
+          ],
+          "distance_km": 0.5,
+          "attendance_estimate": 1300
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_ica_afterhours_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

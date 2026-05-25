@@ -1,0 +1,112 @@
+{
+  "session_id": "esther_hoitsma_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Compare travel options.",
+  "task_params": {
+    "origin": "Boise",
+    "destination": "Salt Lake City",
+    "passenger_count": 1,
+    "departure_date": "2025-05-16",
+    "return_date": "2025-05-18",
+    "seat_preference": "aisle",
+    "flight_offer_id": "flt_boi_slc_02"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "Boise",
+        "destination": "Salt Lake City",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_boi_slc_02",
+        "seat_preference": "aisle"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_boi_slc_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Salt Lake City",
+          "departure_date": "2025-05-16",
+          "return_date": "2025-05-18",
+          "airline": "Delta",
+          "price": 289.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_boi_slc_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Salt Lake City",
+          "departure_date": "2025-05-16",
+          "return_date": "2025-05-18",
+          "airline": "Southwest",
+          "price": 219.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_boi_slc_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Salt Lake City",
+          "departure_date": "2025-05-17",
+          "return_date": "2025-05-18",
+          "airline": "United",
+          "price": 241.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "trn_boi_slc_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boise",
+          "destination": "Salt Lake City",
+          "mode": "bus",
+          "departure_date": "2025-05-16",
+          "price": 96.0,
+          "available_seats": 12
+        }
+      }
+    ]
+  }
+}

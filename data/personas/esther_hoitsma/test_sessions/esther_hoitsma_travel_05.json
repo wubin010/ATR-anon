@@ -1,0 +1,111 @@
+{
+  "instruction": "Book the cheapest available flight from Portland to San Diego for one traveler using the usual traveler details and payment method on file.",
+  "gold_value": "window",
+  "session_id": "esther_hoitsma_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "esther_hoitsma_travel_05",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_travel_05",
+    "rule_text": "When she does fly, Esther prefers a window seat for the landscape views.",
+    "canonical_answer": "If I’m on a plane, I want a window seat because I love seeing the landscape."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_pdx_sandiego_redwood_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Redwood Air",
+          "price": 148.0,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "flt_pdx_sandiego_baylink_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "BayLink",
+          "price": 161.0,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "flt_pdx_sandiego_cascade_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Cascade Air",
+          "price": 184.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_pdx_phoenix_redwood_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "Phoenix",
+          "departure_date": "2026-08-14",
+          "airline": "Redwood Air",
+          "price": 126.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_sea_sandiego_horizon_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "San Diego",
+          "departure_date": "2026-08-14",
+          "airline": "Horizon West",
+          "price": 139.0,
+          "available_seats": 7
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

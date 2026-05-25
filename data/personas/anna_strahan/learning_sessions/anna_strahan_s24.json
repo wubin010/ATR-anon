@@ -1,0 +1,99 @@
+{
+  "session_id": "anna_strahan_s24",
+  "session_type": "learning",
+  "day_offset": 24,
+  "domain": "communication",
+  "reason_for_call": "Draft an email",
+  "task_params": {
+    "recipient": "bookclub@riverhousecircle.org",
+    "subject": "Next month’s reading picks",
+    "language": "en",
+    "reading_pick_points": [
+      "Open with a warm note about the rainy evening",
+      "Say I’m sending a few ideas for next month",
+      "Suggest Donna Tartt",
+      "Suggest Ocean Vuong",
+      "Suggest bell hooks",
+      "Invite everyone to share their preference",
+      "Keep the tone gentle and low-pressure"
+    ]
+  },
+  "expected_tools": [
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "recipient": "bookclub@riverhousecircle.org",
+        "subject": "Next month’s reading picks",
+        "body": "<authored from reading_pick_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_bookclub_01",
+        "type": "message",
+        "attributes": {
+          "sender": "marisol@riverhousecircle.org",
+          "subject": "Re: July discussion notes",
+          "body": "Thanks again, everyone. I’m glad we had such a thoughtful conversation last night. We can start tossing around ideas for next month whenever folks are ready.",
+          "thread_id": "thr_bookclub_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-26T20:14:00"
+        }
+      },
+      {
+        "id": "msg_clinic_01",
+        "type": "message",
+        "attributes": {
+          "sender": "ops@northshoreclinic.org",
+          "subject": "Updated staffing spreadsheet",
+          "body": "Attached is the latest version for Friday review.",
+          "thread_id": "thr_clinic_01",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-06-26T18:02:00"
+        }
+      },
+      {
+        "id": "msg_gallery_01",
+        "type": "message",
+        "attributes": {
+          "sender": "hello@marignyartspace.com",
+          "subject": "Weekend opening reception",
+          "body": "We’d love to see you at the new group show this Saturday evening.",
+          "thread_id": "thr_gallery_01",
+          "folder": "archive",
+          "labels": [
+            "arts"
+          ],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-06-24T11:30:00"
+        }
+      }
+    ]
+  }
+}

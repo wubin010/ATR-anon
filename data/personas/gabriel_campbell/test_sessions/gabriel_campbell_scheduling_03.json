@@ -1,0 +1,83 @@
+{
+  "instruction": "I'm already signed up for yoga at Sage Yoga Studio on 2026-06-03 at 6pm. Set up a reminder for it so I don't forget.",
+  "gold_value": "weekly",
+  "session_id": "gabriel_campbell_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "gabriel_campbell_scheduling_03",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_scheduling_03",
+    "rule_text": "When he does want reminders for recurring self-care or fitness habits, he prefers them to repeat weekly.",
+    "canonical_answer": "I always set recurring personal-practice reminders on a weekly rhythm."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_sage_yoga_20260603",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Yoga at Sage Yoga Studio",
+          "start_time": "2026-06-03T18:00:00",
+          "end_time": "2026-06-03T19:00:00",
+          "participants": [],
+          "location": "Sage Yoga Studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_blue_hills_hike_20260606",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Blue Hills trail hike",
+          "start_time": "2026-06-06T09:00:00",
+          "end_time": "2026-06-06T12:00:00",
+          "participants": [],
+          "location": "Blue Hills Reservation",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_quincy_shoreline_ride_20260607",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quincy Shoreline Cycling Club ride",
+          "start_time": "2026-06-07T08:00:00",
+          "end_time": "2026-06-07T10:00:00",
+          "participants": [],
+          "location": "Quincy Shoreline",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

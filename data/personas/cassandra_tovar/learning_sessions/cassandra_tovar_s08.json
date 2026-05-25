@@ -1,0 +1,117 @@
+{
+  "session_id": "cassandra_tovar_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "commerce",
+  "reason_for_call": "Compare some audio gear",
+  "task_params": {
+    "category": "sports earbuds",
+    "budget": 60,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_aerobeat_01",
+      "prod_pulsefit_02",
+      "prod_sweatcore_03"
+    ],
+    "items": [
+      "AeroBeat Sprint S"
+    ],
+    "list_name": "Jogging Gear"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "sports earbuds",
+        "budget": 60,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_aerobeat_01",
+          "prod_pulsefit_02",
+          "prod_sweatcore_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "AeroBeat Sprint S"
+        ],
+        "list_name": "Jogging Gear"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_aerobeat_01",
+        "type": "product",
+        "attributes": {
+          "name": "AeroBeat Sprint S",
+          "price": 49.99,
+          "category": "sports earbuds",
+          "rating": 4.6,
+          "water_resistance": "IPX5 sweat resistant"
+        }
+      },
+      {
+        "id": "prod_pulsefit_02",
+        "type": "product",
+        "attributes": {
+          "name": "PulseFit RunPods",
+          "price": 39.5,
+          "category": "sports earbuds",
+          "rating": 4.3,
+          "water_resistance": "IPX4 sweat resistant"
+        }
+      },
+      {
+        "id": "prod_sweatcore_03",
+        "type": "product",
+        "attributes": {
+          "name": "SweatCore Move Pro",
+          "price": 59.0,
+          "category": "sports earbuds",
+          "rating": 4.5,
+          "water_resistance": "IPX6 sweat resistant"
+        }
+      },
+      {
+        "id": "prod_studiotone_04",
+        "type": "product",
+        "attributes": {
+          "name": "StudioTone Mini Buds",
+          "price": 54.0,
+          "category": "wireless earbuds",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "instruction": "Please order one broth item under $8. Just pick one for me.",
+  "gold_value": "prod_classic_veg_broth_01",
+  "session_id": "jennifer_philmon_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "jennifer_philmon_commerce_02",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_commerce_02",
+    "rule_text": "When ordering food-related items, she favors ingredients suited to hearty one-pot meals over specialty single-use items.",
+    "canonical_answer": "If I'm ordering ingredients, I prefer basics that fit hearty one-pot cooking."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_classic_veg_broth_01",
+        "type": "product",
+        "attributes": {
+          "name": "Classic Vegetable Broth",
+          "price": 4.99,
+          "category": "broth",
+          "rating": 4.3,
+          "broth_style": "all-purpose",
+          "package_size_oz": 32,
+          "intended_use": "soups, stews, braises"
+        }
+      },
+      {
+        "id": "prod_shoyu_ramen_broth_01",
+        "type": "product",
+        "attributes": {
+          "name": "Shoyu Ramen Broth Concentrate",
+          "price": 4.49,
+          "category": "broth",
+          "rating": 4.9,
+          "broth_style": "ramen concentrate",
+          "package_size_oz": 16,
+          "intended_use": "ramen",
+          "review_count": 1840
+        }
+      },
+      {
+        "id": "prod_pho_beef_broth_01",
+        "type": "product",
+        "attributes": {
+          "name": "Pho Beef Broth Concentrate",
+          "price": 6.79,
+          "category": "broth",
+          "rating": 4.8,
+          "broth_style": "pho concentrate",
+          "package_size_oz": 16,
+          "intended_use": "pho",
+          "review_count": 1430
+        }
+      },
+      {
+        "id": "prod_thai_curry_broth_01",
+        "type": "product",
+        "attributes": {
+          "name": "Thai Coconut Curry Broth Base",
+          "price": 5.29,
+          "category": "broth",
+          "rating": 4.8,
+          "broth_style": "curry broth base",
+          "package_size_oz": 17,
+          "intended_use": "thai curry soup",
+          "review_count": 1260
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_classic_veg_broth_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

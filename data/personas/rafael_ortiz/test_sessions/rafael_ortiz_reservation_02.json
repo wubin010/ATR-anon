@@ -1,0 +1,115 @@
+{
+  "instruction": "I'm in San Antonio and want two tickets for a live show under $50 each; just pick one and book it.",
+  "gold_value": "evt_corridos_alma_01",
+  "session_id": "rafael_ortiz_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "rafael_ortiz_reservation_02",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_reservation_02",
+    "rule_text": "For live entertainment, he tends to choose folk, regional Mexican, or singer-songwriter performances over generic event options.",
+    "canonical_answer": "For shows, I usually go for folk or regional Mexican performances rather than generic entertainment."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_corridos_alma_01",
+        "type": "event",
+        "attributes": {
+          "name": "Noches de Corridos with Alma del Sur",
+          "location": "San Antonio",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 44,
+          "rating": 4.4,
+          "reviews_count": 68,
+          "event_tags": [
+            "regional_mexican",
+            "corridos",
+            "live_music"
+          ]
+        }
+      },
+      {
+        "id": "evt_riverwalk_pop_01",
+        "type": "event",
+        "attributes": {
+          "name": "River Walk Summer Pop Spectacular",
+          "location": "San Antonio",
+          "date_time": "2026-09-18T20:30:00",
+          "price": 36,
+          "rating": 4.9,
+          "reviews_count": 1540,
+          "event_tags": [
+            "pop",
+            "live_music",
+            "concert"
+          ]
+        }
+      },
+      {
+        "id": "evt_mission_comedy_01",
+        "type": "event",
+        "attributes": {
+          "name": "Mission City Comedy All-Stars",
+          "location": "San Antonio",
+          "date_time": "2026-09-18T21:00:00",
+          "price": 29,
+          "rating": 4.8,
+          "reviews_count": 990,
+          "event_tags": [
+            "stand_up",
+            "comedy",
+            "live_entertainment"
+          ]
+        }
+      },
+      {
+        "id": "evt_throwback_dance_01",
+        "type": "event",
+        "attributes": {
+          "name": "Throwback Dance Party Live",
+          "location": "San Antonio",
+          "date_time": "2026-09-18T22:00:00",
+          "price": 38,
+          "rating": 4.7,
+          "reviews_count": 770,
+          "event_tags": [
+            "dance_party",
+            "dj_set",
+            "live_entertainment"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_corridos_alma_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

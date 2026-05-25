@@ -1,0 +1,99 @@
+{
+  "instruction": "I still haven't answered the Open Robotics Demo Night invite at Green Foundry, and I don't want them waiting on my RSVP. Check whether it overlaps with anything else on my calendar, then reply to it for me.",
+  "gold_value": "tentative",
+  "session_id": "joseph_eldridge_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "joseph_eldridge_scheduling_01",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_scheduling_01",
+    "rule_text": "When an invitation overlaps with an unresolved commitment, Joseph prefers replying tentatively rather than accepting or declining too quickly.",
+    "canonical_answer": "If I am not sure I can make something because of overlapping commitments, I respond as tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_open_robotics_demo_20260821",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Open Robotics Demo Night",
+          "start_time": "2026-08-21T19:00:00",
+          "end_time": "2026-08-21T21:00:00",
+          "participants": [
+            "events@greenfoundry.org",
+            "joseph.eldridge@example.com"
+          ],
+          "location": "Green Foundry",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "Green Foundry Makers Lab",
+          "attendee_count": 120,
+          "rsvp_deadline": "2026-08-18T17:00:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_rover_build_leo_20260821",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Rover Build Session with Leo",
+          "start_time": "2026-08-21T18:30:00",
+          "end_time": "2026-08-21T20:30:00",
+          "participants": [
+            "joseph.eldridge@example.com",
+            "leo.martin@example.com"
+          ],
+          "location": "Northside Workshop",
+          "calendar": "personal",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_doc_screening_20260824",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood Documentary Screening",
+          "start_time": "2026-08-24T19:30:00",
+          "end_time": "2026-08-24T21:30:00",
+          "participants": [
+            "arts@harborhall.org",
+            "joseph.eldridge@example.com"
+          ],
+          "location": "Harbor Hall",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "Harbor Hall Arts Collective",
+          "attendee_count": 85,
+          "source": "official_email"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

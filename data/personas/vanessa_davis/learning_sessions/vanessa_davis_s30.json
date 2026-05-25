@@ -1,0 +1,120 @@
+{
+  "session_id": "vanessa_davis_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket",
+  "task_params": {
+    "location": "New Orleans",
+    "event_tags": [
+      "jazz",
+      "live music"
+    ],
+    "name": "Preservation Hall Evening Concert",
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "New Orleans",
+        "event_tags": [
+          "jazz",
+          "live music"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_preservation_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_preservation_01",
+        "type": "event",
+        "attributes": {
+          "name": "Preservation Hall Evening Concert",
+          "location": "New Orleans",
+          "date_time": "2025-06-18T20:00:00",
+          "price": 45.0,
+          "event_tags": [
+            "jazz",
+            "live music",
+            "historic venue"
+          ]
+        }
+      },
+      {
+        "id": "evt_snugharbor_02",
+        "type": "event",
+        "attributes": {
+          "name": "Snug Harbor Jazz Quartet Night",
+          "location": "New Orleans",
+          "date_time": "2025-06-19T21:00:00",
+          "price": 38.0,
+          "event_tags": [
+            "jazz",
+            "live music",
+            "nightlife"
+          ]
+        }
+      },
+      {
+        "id": "evt_backstreet_03",
+        "type": "event",
+        "attributes": {
+          "name": "Backstreet Cultural Museum Guided Tour",
+          "location": "New Orleans",
+          "date_time": "2025-06-18T14:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "cultural",
+            "museum",
+            "history"
+          ]
+        }
+      },
+      {
+        "id": "evt_frenchmen_04",
+        "type": "event",
+        "attributes": {
+          "name": "Frenchmen Street Brass Crawl",
+          "location": "New Orleans",
+          "date_time": "2025-06-20T19:30:00",
+          "price": 30.0,
+          "event_tags": [
+            "live music",
+            "cultural",
+            "walking tour"
+          ]
+        }
+      }
+    ]
+  }
+}

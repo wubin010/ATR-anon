@@ -1,0 +1,107 @@
+{
+  "session_id": "charlie_james_s39",
+  "session_type": "learning",
+  "day_offset": 39,
+  "domain": "travel",
+  "reason_for_call": "Book ground transportation.",
+  "task_params": {
+    "origin": "Hartsfield-Jackson Atlanta International Airport",
+    "destination": "Midtown Atlanta",
+    "passenger_count": 1,
+    "departure_date": "2025-06-14",
+    "mode": "car",
+    "sort_by": "price_asc"
+  },
+  "expected_tools": [
+    "search_ground_transport",
+    "book_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Hartsfield-Jackson Atlanta International Airport",
+        "destination": "Midtown Atlanta",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "trn_atlcar_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "trn_atlcar_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Hartsfield-Jackson Atlanta International Airport",
+          "destination": "Midtown Atlanta",
+          "mode": "car",
+          "departure_date": "2025-06-14",
+          "price": 48.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "trn_atlbus_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Hartsfield-Jackson Atlanta International Airport",
+          "destination": "Midtown Atlanta",
+          "mode": "bus",
+          "departure_date": "2025-06-14",
+          "price": 22.0,
+          "available_seats": 18
+        }
+      },
+      {
+        "id": "trn_atlcar_03",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Hartsfield-Jackson Atlanta International Airport",
+          "destination": "Midtown Atlanta",
+          "mode": "car",
+          "departure_date": "2025-06-15",
+          "price": 45.0,
+          "available_seats": 2
+        }
+      },
+      {
+        "id": "trn_atltrain_04",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Hartsfield-Jackson Atlanta International Airport",
+          "destination": "Downtown Atlanta",
+          "mode": "train",
+          "departure_date": "2025-06-14",
+          "price": 19.0,
+          "available_seats": 40
+        }
+      }
+    ]
+  }
+}

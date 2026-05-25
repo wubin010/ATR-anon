@@ -1,0 +1,86 @@
+{
+  "session_id": "nancy_marr_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "workspace",
+  "reason_for_call": "Add something to my tracker.",
+  "task_params": {
+    "tracker_title": "Product Ideas Backlog",
+    "idea_name": "Commuter pocket fermentation snack kit",
+    "idea_points": [
+      "shelf-stable fermented grain-and-seed bites",
+      "compostable pocket-size packaging for walks and transit",
+      "focus on locally sourced Minnesota oats and sunflower seeds",
+      "savory flavor profile with miso and caraway",
+      "test texture stability across temperature swings"
+    ],
+    "next_action_points": [
+      "sketch ingredient matrix",
+      "check packaging vendors for compostable sachets",
+      "compare water activity targets for shelf stability"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_backlog_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from idea_name, idea_points, and next_action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_backlog_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Product Ideas Backlog"
+        }
+      },
+      {
+        "id": "trk_trials_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Fermentation Trial Log"
+        }
+      },
+      {
+        "id": "trk_blog_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Garden-to-Table Blog Pipeline"
+        }
+      },
+      {
+        "id": "trk_supplies_04",
+        "type": "tracker",
+        "attributes": {
+          "title": "Lab Supplies Reorder Checklist"
+        }
+      }
+    ]
+  }
+}

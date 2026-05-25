@@ -1,0 +1,142 @@
+{
+  "instruction": "I'm taking a personal long weekend in Barcelona with one friend. Please book 1 room for 2 adults, keep it under $240 per night, and just pick one of the available options for us.",
+  "gold_value": "htl_barcelona_verdi_courtyard_01",
+  "session_id": "roosevelt_brown_travel_03_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "roosevelt_brown_travel_03",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_travel_03",
+    "rule_text": "When booking lodging for personal trips, he prefers quirky stays in creative districts over generic business-style hotel options.",
+    "canonical_answer": "For personal travel, I prefer staying somewhere quirky and close to the creative scene."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_barcelona_verdi_courtyard_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Verdi Courtyard Rooms",
+          "location": "Gràcia, Barcelona",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 232,
+          "rating": 4.4,
+          "review_count": 287,
+          "property_style": "converted townhouse",
+          "neighborhood_profile": "independent galleries, print studios, small music venues",
+          "room_style": "individually decorated rooms",
+          "distance_to_metro_min": 11
+        }
+      },
+      {
+        "id": "htl_barcelona_plaza_central_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Plaza Central Hotel",
+          "location": "Plaça Catalunya, Barcelona",
+          "available_rooms": 8,
+          "max_guests_per_room": 2,
+          "price_per_night": 198,
+          "rating": 4.9,
+          "review_count": 3410,
+          "property_style": "full-service hotel",
+          "neighborhood_profile": "downtown shopping and transit hub",
+          "distance_to_metro_min": 2,
+          "business_amenities": [
+            "meeting rooms",
+            "24-hour desk"
+          ]
+        }
+      },
+      {
+        "id": "htl_barcelona_sants_connect_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Sants Connect Hotel",
+          "location": "Sants, Barcelona",
+          "available_rooms": 10,
+          "max_guests_per_room": 2,
+          "price_per_night": 176,
+          "rating": 4.8,
+          "review_count": 2104,
+          "property_style": "business hotel",
+          "neighborhood_profile": "station district",
+          "distance_to_metro_min": 1,
+          "business_amenities": [
+            "express check-in",
+            "conference floor"
+          ]
+        }
+      },
+      {
+        "id": "htl_barcelona_poblenou_hub_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Poblenou Hub Suites",
+          "location": "Poblenou, Barcelona",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 214,
+          "rating": 4.7,
+          "review_count": 918,
+          "property_style": "serviced aparthotel",
+          "neighborhood_profile": "converted warehouses, design studios, startup offices",
+          "room_style": "uniform studio layouts",
+          "distance_to_metro_min": 4
+        }
+      },
+      {
+        "id": "htl_barcelona_port_lantern_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Port Lantern House",
+          "location": "Barceloneta, Barcelona",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 208,
+          "rating": 4.6,
+          "review_count": 642,
+          "property_style": "themed guesthouse",
+          "neighborhood_profile": "beachfront restaurant strip and tourist promenade",
+          "room_style": "nautical-themed rooms",
+          "distance_to_metro_min": 7
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_barcelona_verdi_courtyard_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

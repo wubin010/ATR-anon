@@ -1,0 +1,130 @@
+{
+  "session_id": "maximo_esteban_irizarry_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "workspace",
+  "reason_for_call": "Organize some files.",
+  "task_params": {
+    "location": "Consulting Intake",
+    "file_type": "pdf",
+    "owner": "Maximo",
+    "scheme": "by_owner",
+    "file_ids": [
+      "fil_consult_01",
+      "fil_consult_02",
+      "fil_consult_03"
+    ],
+    "folder_id": "fld_clients_01"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Consulting Intake",
+        "file_type": "pdf"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "fil_consult_01",
+          "fil_consult_02",
+          "fil_consult_03"
+        ],
+        "scheme": "by_owner"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "fil_consult_01",
+          "fil_consult_02",
+          "fil_consult_03"
+        ],
+        "folder_id": "fld_clients_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_consult_01",
+        "type": "file",
+        "attributes": {
+          "name": "Rivera Bakery consultation notes.pdf",
+          "file_type": "pdf",
+          "location": "Consulting Intake",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_consult_02",
+        "type": "file",
+        "attributes": {
+          "name": "Torres Hardware website audit.pdf",
+          "file_type": "pdf",
+          "location": "Consulting Intake",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_consult_03",
+        "type": "file",
+        "attributes": {
+          "name": "Centro Cultural follow-up summary.pdf",
+          "file_type": "pdf",
+          "location": "Consulting Intake",
+          "owner": "Maximo",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_misc_04",
+        "type": "file",
+        "attributes": {
+          "name": "camera_warranty_scan.pdf",
+          "file_type": "pdf",
+          "location": "Personal Admin",
+          "owner": "Maximo",
+          "labels": [
+            "personal"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_clients_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Client Groups",
+          "purpose": "Sorted consultation files by client"
+        }
+      }
+    ]
+  }
+}

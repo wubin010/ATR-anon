@@ -1,0 +1,93 @@
+{
+  "instruction": "I still haven't replied to the Riverfront Creative Exchange invite at Harbor Loft on 2026-09-18 from 7–10pm. Check whether it overlaps with anything else already on my calendar, then send the RSVP that fits.",
+  "gold_value": "tentative",
+  "session_id": "eduardo_rivera_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "eduardo_rivera_scheduling_01",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_scheduling_01",
+    "rule_text": "When a social invitation feels larger or more socially intense than his usual style, he prefers replying tentatively rather than accepting outright.",
+    "canonical_answer": "If an invite feels more social than my usual pace, I prefer to answer maybe first instead of committing right away."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_riverfront_exchange_mixer_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverfront Creative Exchange Opening-Night Mixer",
+          "start_time": "2026-09-18T19:00:00-04:00",
+          "end_time": "2026-09-18T22:00:00-04:00",
+          "participants": [
+            "eduardo.rivera@example.com",
+            "events@riverfrontcollective.org",
+            "rsvp@harborloft.com"
+          ],
+          "location": "Harbor Loft",
+          "calendar": "invites",
+          "status": "needs_action",
+          "attendee_count": 160,
+          "format": "standing reception",
+          "source": "official_email",
+          "rsvp_deadline": "2026-09-15T17:00:00-04:00"
+        }
+      },
+      {
+        "id": "evt_studio_sketch_block_20260918",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Studio sketch block",
+          "start_time": "2026-09-18T16:30:00-04:00",
+          "end_time": "2026-09-18T18:00:00-04:00",
+          "participants": [],
+          "location": "Home studio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_strategy_game_night_20260920",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Two-player strategy game night",
+          "start_time": "2026-09-20T19:30:00-04:00",
+          "end_time": "2026-09-20T21:30:00-04:00",
+          "participants": [
+            "mateo.luna@example.com"
+          ],
+          "location": "North End Cafe",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

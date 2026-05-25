@@ -1,0 +1,120 @@
+{
+  "session_id": "jennifer_philmon_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "communication",
+  "reason_for_call": "Triage my email",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Dana Mercer",
+    "priority": "high",
+    "label_name": "Needs Today"
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "list_labels",
+    "label_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Dana Mercer"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_dana_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_dana_01"
+        ],
+        "label_ids": [
+          "lbl_today_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_dana_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Dana Mercer",
+          "subject": "Boiler room walkdown notes needed today",
+          "body": "Can you send me the updated walkdown notes before end of shift? I need them for the supervisor packet.",
+          "thread_id": "thr_dana_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-01-17T11:18:00"
+        }
+      },
+      {
+        "id": "msg_eli_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Eli Santos",
+          "subject": "Question on condensate pump checklist",
+          "body": "I was going through the trainee checklist and had one question about the condensate pump inspection line item.",
+          "thread_id": "thr_eli_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-01-17T10:02:00"
+        }
+      },
+      {
+        "id": "msg_vendor_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Midwest Industrial Supply",
+          "subject": "Invoice posted for gasket order",
+          "body": "Your invoice is now available in the billing portal.",
+          "thread_id": "thr_vendor_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-01-17T08:41:00"
+        }
+      },
+      {
+        "id": "lbl_today_01",
+        "type": "label",
+        "attributes": {
+          "name": "Needs Today",
+          "topic": "same-day follow-up"
+        }
+      }
+    ]
+  }
+}

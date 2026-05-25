@@ -1,0 +1,367 @@
+[
+  {
+    "rule_text": "When planning personal travel, she prefers a road-trip style itinerary built around ground transportation rather than flying.",
+    "canonical_answer": "For my trips, I prefer to go by road or rail instead of booking flights.",
+    "counterfactual_default": "A typical assistant would check flight options first for intercity travel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Jennifer Philmon prefers meticulously planned road trips"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "jennifer_philmon_travel_01",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing places to include on a leisure trip, she favors historic steam-engine and industrial-heritage stops over generic tourist attractions.",
+    "canonical_answer": "When I travel for fun, I like stops tied to steam engines and industrial history more than standard tourist spots.",
+    "counterfactual_default": "A typical assistant would pick broadly popular or highly rated attractions without emphasizing industrial heritage.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "combine visits to historic steam‑engine museums such as the Henry Ford Museum in Michigan and Steamtown in Pennsylvania"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "jennifer_philmon_travel_02",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a trip stop falls through, she prefers replacement stops that keep the same industrial-history theme rather than any convenient substitute.",
+    "canonical_answer": "If a planned stop breaks, I want another industrial or steam-history stop in its place.",
+    "counterfactual_default": "A typical assistant would swap in any nearby popular alternative to keep the itinerary full.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "competitive curiosity to explore industrial heritage"
+      },
+      {
+        "type": "direct",
+        "content": "historic steam‑engine museums"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "jennifer_philmon_travel_03",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging on trips, she prefers family-run bed-and-breakfast style stays over standard chain hotels.",
+    "canonical_answer": "For travel lodging, I prefer family-run B&Bs instead of generic chain hotels.",
+    "counterfactual_default": "A typical assistant would choose a mainstream hotel based mostly on convenience or brand familiarity.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "stays at family‑run B&Bs in scenic Missouri towns"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "jennifer_philmon_travel_04",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing restaurants while traveling, she leans toward hearty, practical places that fit a modest budget rather than upscale dining.",
+    "canonical_answer": "When I eat out on trips, I prefer hearty budget-friendly places over fancy restaurants.",
+    "counterfactual_default": "A typical assistant would prioritize top-rated or trendier restaurants in the area.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "staying within a modest travel budget"
+      },
+      {
+        "type": "direct",
+        "content": "one‑pot dishes such as a simmered beef bourguignon ... a hearty cabbage and smoked‑sausage stew"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "jennifer_philmon_reservation_01",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For local tickets, she prefers hockey or baseball events tied to her St. Louis teams over unrelated entertainment.",
+    "canonical_answer": "If I'm getting event tickets, I'd rather go to Cardinals or Blues-related events than other kinds of entertainment.",
+    "counterfactual_default": "A typical assistant would choose whichever event is most popular or most immediately convenient.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Jennifer Philmon follows the St. Louis Cardinals and St. Louis Blues"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "jennifer_philmon_reservation_02",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking service appointments connected to hobbies or upkeep, she prefers practical craftsmanship-oriented providers over trendy boutique services.",
+    "canonical_answer": "For appointments, I prefer practical skilled providers over trendy boutique services.",
+    "counterfactual_default": "A typical assistant would often pick the most fashionable or highly marketed provider.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "appreciation for craftsmanship"
+      },
+      {
+        "type": "direct",
+        "content": "respect for practical trades"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "jennifer_philmon_reservation_04",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing ingredients for cooking, she prefers building a shopping list first instead of placing grocery-style orders immediately.",
+    "canonical_answer": "For cooking supplies, I like to build a list first rather than ordering on the spot.",
+    "counterfactual_default": "A typical assistant would jump straight to ordering items once it knows what is needed.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "meticulously budgeting"
+      },
+      {
+        "type": "direct",
+        "content": "experimental one‑pot cooking"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "build_shopping_list",
+      "param": null
+    },
+    "rule_id": "jennifer_philmon_commerce_01",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering food-related items, she favors ingredients suited to hearty one-pot meals over specialty single-use items.",
+    "canonical_answer": "If I'm ordering ingredients, I prefer basics that fit hearty one-pot cooking.",
+    "counterfactual_default": "A typical assistant would choose trendier or more specialized items if they seem interesting.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Jennifer Philmon’s culinary experiments revolve around one‑pot dishes"
+      },
+      {
+        "type": "direct",
+        "content": "showcasing her love for efficient, hearty meals"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "jennifer_philmon_commerce_02",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For software or services that support learning or technical work, she prefers a professional mid-tier plan over bare-bones access.",
+    "canonical_answer": "For tools that help my work or learning, I prefer a pro-level plan over the most basic tier.",
+    "counterfactual_default": "A typical assistant would keep her on the cheapest basic plan unless told otherwise.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "pursuing National Board of Boiler Operators certification and a future bachelor’s in Mechanical Engineering"
+      },
+      {
+        "type": "direct",
+        "content": "drive data‑driven efficiency projects"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "jennifer_philmon_commerce_04",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When writing messages that matter, she prefers to draft them for review instead of sending immediately.",
+    "canonical_answer": "For important messages, I want a draft first instead of sending it right away.",
+    "counterfactual_default": "A typical assistant would send the composed message directly once it has the content.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "keeps a handwritten journal where she experiments with calligraphy and records reflections"
+      },
+      {
+        "type": "direct",
+        "content": "routinely prepares detailed shift logs and safety documentation"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "jennifer_philmon_communication_01",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a message concerns plant operations, certification, or anything urgent and technical, she wants it marked high priority.",
+    "canonical_answer": "If a message is about operations, safety, or certification deadlines, I want it marked high priority.",
+    "counterfactual_default": "A typical assistant would leave the message at normal priority unless urgency was explicitly stated.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "lead precise shutdowns"
+      },
+      {
+        "type": "direct",
+        "content": "routinely prepares detailed shift logs and safety documentation"
+      },
+      {
+        "type": "direct",
+        "content": "pursuing National Board of Boiler Operators certification"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "jennifer_philmon_communication_02",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a calendar invite conflicts with unresolved work or training obligations, she prefers to respond tentatively rather than accepting or declining outright.",
+    "canonical_answer": "If an invite overlaps with work or training uncertainty, I usually answer tentative first.",
+    "counterfactual_default": "A typical assistant would pick accept or decline immediately based on surface availability.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "lead precise shutdowns"
+      },
+      {
+        "type": "direct",
+        "content": "pursuing National Board of Boiler Operators certification"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "jennifer_philmon_scheduling_01",
+    "persona_id": "jennifer_philmon",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

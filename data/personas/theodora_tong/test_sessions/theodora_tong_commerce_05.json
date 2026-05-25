@@ -1,0 +1,89 @@
+{
+  "instruction": "Please handle the return for the item from my recent order that wasn't what I meant to buy.",
+  "gold_value": "exchange",
+  "session_id": "theodora_tong_commerce_05_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "theodora_tong_commerce_05",
+  "rule_ref": {
+    "rule_id": "theodora_tong_commerce_05",
+    "rule_text": "When an art or craft purchase arrives wrong, she prefers an exchange so she can still use the item for her practice.",
+    "canonical_answer": "If an art supply is wrong, I’d rather exchange it than just get my money back."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_watercolor_pad_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cold-Press Watercolor Paper Pad",
+          "price": 18.99,
+          "category": "painting supplies",
+          "rating": 4.5,
+          "brand": "North Harbor Studio",
+          "order_id": "ord_58321_art",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-11"
+        }
+      },
+      {
+        "id": "prod_storage_bin_set_01",
+        "type": "product",
+        "attributes": {
+          "name": "Stackable Storage Bin Set",
+          "price": 22.0,
+          "category": "home organization",
+          "rating": 4.9,
+          "brand": "Marlow Home",
+          "order_id": "ord_58277_home",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-10"
+        }
+      },
+      {
+        "id": "prod_phone_charger_01",
+        "type": "product",
+        "attributes": {
+          "name": "USB-C Wall Charger",
+          "price": 16.5,
+          "category": "electronics accessories",
+          "rating": 4.8,
+          "brand": "BrightLine",
+          "order_id": "ord_58195_elec",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-08"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

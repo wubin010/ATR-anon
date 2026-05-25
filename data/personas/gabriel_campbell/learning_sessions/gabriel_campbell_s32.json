@@ -1,0 +1,103 @@
+{
+  "session_id": "gabriel_campbell_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Patient Experience",
+    "doc_type": "memo",
+    "title": "Art-Therapy Pilot Memo",
+    "memo_points": [
+      "link pilot to patient experience goals like anxiety reduction and engagement",
+      "keep tone practical and evidence-aware, not aspirational",
+      "note small-scale pilot scope with measurable outcomes",
+      "mention staff workflow impact and implementation guardrails",
+      "include budget-conscious framing and partnership option"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Patient Experience",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "Art-Therapy Pilot Memo",
+        "location": "Patient Experience",
+        "content_brief": "<authored from memo_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_pxreport_01",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Patient Experience Baseline",
+          "doc_type": "report",
+          "location": "Patient Experience",
+          "content_brief": "Baseline scores for wait communication, anxiety, satisfaction, and discharge clarity across ambulatory units."
+        }
+      },
+      {
+        "id": "doc_pxmemo_02",
+        "type": "document",
+        "attributes": {
+          "title": "Volunteer Arts Rounds Summary",
+          "doc_type": "memo",
+          "location": "Patient Experience",
+          "content_brief": "Short summary of informal bedside arts activities, patient comments, and staff observations from a small volunteer initiative."
+        }
+      },
+      {
+        "id": "doc_opsreport_03",
+        "type": "document",
+        "attributes": {
+          "title": "Clinic Throughput Improvement Review",
+          "doc_type": "report",
+          "location": "Operations",
+          "content_brief": "Lean review of cycle times, rooming delays, and staffing adjustments in outpatient clinics."
+        }
+      },
+      {
+        "id": "file_brief_01",
+        "type": "file",
+        "attributes": {
+          "name": "patient_experience_measures.xlsx",
+          "file_type": "xlsx",
+          "location": "Patient Experience",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "metrics",
+            "patient experience"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

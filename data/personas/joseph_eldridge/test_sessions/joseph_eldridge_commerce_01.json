@@ -1,0 +1,111 @@
+{
+  "instruction": "Please order one plant for a sunny flower bed by the front walk. I want it to look nice, keep it under $30, and make sure it won't get taller than about 18 inches when grown. Just pick one and order it.",
+  "gold_value": "prod_blue_wild_indigo_01",
+  "session_id": "joseph_eldridge_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "joseph_eldridge_commerce_01",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_commerce_01",
+    "rule_text": "For gardening purchases, Joseph prefers native or pollinator-supporting plants over generic ornamental landscaping items.",
+    "canonical_answer": "For the garden, I prefer native plants that support pollinators rather than generic ornamentals."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_blue_wild_indigo_01",
+        "type": "product",
+        "attributes": {
+          "name": "Blue Wild Indigo Starter Plant",
+          "price": 28,
+          "category": "garden plants",
+          "rating": 4.3,
+          "plant_class": "native perennial",
+          "pollinator_support": "native bees",
+          "mature_height_in": 16,
+          "sun_exposure": "full sun",
+          "flower_color": "indigo blue",
+          "review_count": 71
+        }
+      },
+      {
+        "id": "prod_showy_milkweed_01",
+        "type": "product",
+        "attributes": {
+          "name": "Showy Milkweed Meadow Plant",
+          "price": 24,
+          "category": "garden plants",
+          "rating": 4.6,
+          "plant_class": "native perennial",
+          "pollinator_support": "butterflies and bees",
+          "mature_height_in": 34,
+          "sun_exposure": "full sun",
+          "flower_color": "pink",
+          "review_count": 154
+        }
+      },
+      {
+        "id": "prod_sunburst_petunia_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sunburst Petunia Patio Plant",
+          "price": 18,
+          "category": "garden plants",
+          "rating": 4.9,
+          "plant_class": "ornamental annual",
+          "mature_height_in": 12,
+          "sun_exposure": "full sun",
+          "flower_color": "orange-pink",
+          "review_count": 1284,
+          "units_sold_last_30_days": 640
+        }
+      },
+      {
+        "id": "prod_dwarf_zinnia_01",
+        "type": "product",
+        "attributes": {
+          "name": "Dwarf Zinnia Color Mix Plant",
+          "price": 20,
+          "category": "garden plants",
+          "rating": 4.8,
+          "plant_class": "ornamental annual",
+          "mature_height_in": 16,
+          "sun_exposure": "full sun",
+          "flower_color": "mixed bright colors",
+          "review_count": 902,
+          "units_sold_last_30_days": 515
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_blue_wild_indigo_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

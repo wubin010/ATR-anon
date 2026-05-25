@@ -1,0 +1,99 @@
+{
+  "instruction": "Reply to Lena Brooks at New Light Church about the youth room lighting walkthrough. Let her know 4:00 PM works for me, ask her to send the current dimmer model numbers and a few photos of the breaker panel first, and mention I'll bring the updated fixture count sheet.",
+  "gold_value": null,
+  "session_id": "cassandra_tovar_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "cassandra_tovar_communication_01",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_communication_01",
+    "rule_text": "For outreach to clients, schools, or church teams, she prefers a reviewable draft before anything is sent.",
+    "canonical_answer": "I like messages to clients, school partners, or church teams drafted first so I can review the tone and details before they go out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_youth_lighting_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Brooks <lena.brooks@newlightchurch.org>",
+          "subject": "Youth room lighting walkthrough",
+          "body": "Hi Cassandra, our facilities team at New Light Church wants to walk through the youth room lighting before we approve the fixture replacement. Are you able to stop by this week? If there are any panel or dimmer details you want ahead of time, let me know and I can gather them for you. Thanks, Lena",
+          "thread_id": "thr_newlight_youth_08",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-11T09:14:00"
+        }
+      },
+      {
+        "id": "msg_harbor_dental_timer_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Nina Patel <npatel@harborfamilydental.com>",
+          "subject": "Parking lot lighting timer question",
+          "body": "Hello Cassandra, we're trying to figure out whether the timer on the south lot lights needs to be replaced or just reprogrammed. When you have a chance, can you let us know what information you need from us before we schedule anything?",
+          "thread_id": "thr_harbor_dental_15",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-11T08:02:00"
+        }
+      },
+      {
+        "id": "msg_rafael_van_brakes_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Rafael Ortiz <rafael@tovarelectric.local>",
+          "subject": "Service van brake check",
+          "body": "The brake shop can take van 2 tomorrow afternoon if we want to get that squeal checked before the next supply run.",
+          "thread_id": "thr_van_maintenance_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-11T07:41:00"
+        }
+      },
+      {
+        "id": "msg_supply_statement_01",
+        "type": "message",
+        "attributes": {
+          "sender": "accounts@northsideelectricsupply.com",
+          "subject": "August account statement available",
+          "body": "Your August account statement is ready to view in the customer portal.",
+          "thread_id": "thr_supply_statement_22",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-08-11T06:55:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

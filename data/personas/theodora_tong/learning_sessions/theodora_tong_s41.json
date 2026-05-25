@@ -1,0 +1,87 @@
+{
+  "session_id": "theodora_tong_s41",
+  "session_type": "learning",
+  "day_offset": 41,
+  "domain": "workspace",
+  "reason_for_call": "Update a spreadsheet",
+  "task_params": {
+    "location": "Finances",
+    "doc_type": "spreadsheet",
+    "title": "Spring Budget 2025",
+    "document_id": "doc_budget_01",
+    "content_delta_points": [
+      "add premium brush purchase for $68.40",
+      "add workshop table covers for $14.99",
+      "add workshop watercolor paper for $23.50",
+      "add workshop tea lights for $9.25",
+      "mark all four as April purchases"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Finances",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_budget_01",
+        "content_delta": "<authored from content_delta_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_budget_01",
+        "type": "document",
+        "attributes": {
+          "title": "Spring Budget 2025",
+          "doc_type": "spreadsheet",
+          "location": "Finances",
+          "content_brief": "Monthly budget spreadsheet tracking art supplies, groceries, transport, and workshop costs for spring 2025."
+        }
+      },
+      {
+        "id": "doc_budget_02",
+        "type": "document",
+        "attributes": {
+          "title": "Fall Budget 2024",
+          "doc_type": "spreadsheet",
+          "location": "Finances",
+          "content_brief": "Older seasonal budget spreadsheet with school and art supply spending."
+        }
+      },
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Workshop Supply Brainstorm",
+          "doc_type": "note",
+          "location": "Workshops",
+          "content_brief": "Loose notes on possible supplies for the next senior art workshop."
+        }
+      }
+    ]
+  }
+}

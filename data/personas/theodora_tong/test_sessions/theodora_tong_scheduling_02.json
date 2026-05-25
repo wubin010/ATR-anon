@@ -1,0 +1,80 @@
+{
+  "instruction": "Set a reminder for the gentle yoga class at Maple Grove Community Center on 2026-05-13 in the morning.",
+  "gold_value": "weekly",
+  "session_id": "theodora_tong_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "theodora_tong_scheduling_02",
+  "rule_ref": {
+    "rule_id": "theodora_tong_scheduling_02",
+    "rule_text": "For recurring self-care or upkeep activities like yoga or plant care, she prefers a weekly reminder cadence rather than a one-time prompt.",
+    "canonical_answer": "For habits I’m trying to keep up with, a weekly reminder works best for me."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_gentle_yoga_maple_20260513",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Gentle Yoga Class",
+          "start_time": "2026-05-13T09:00:00",
+          "end_time": "2026-05-13T10:00:00",
+          "location": "Maple Grove Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_board_volunteers_maple_20260513",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Neighborhood Volunteers Board Meeting",
+          "start_time": "2026-05-13T11:30:00",
+          "end_time": "2026-05-13T12:30:00",
+          "location": "Maple Grove Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dental_cleaning_20260513",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dental Cleaning",
+          "start_time": "2026-05-13T14:30:00",
+          "end_time": "2026-05-13T15:30:00",
+          "location": "Riverside Dental Care",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

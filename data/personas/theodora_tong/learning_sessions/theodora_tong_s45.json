@@ -1,0 +1,109 @@
+{
+  "session_id": "theodora_tong_s45",
+  "session_type": "learning",
+  "day_offset": 45,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "storage bins",
+    "budget": 18,
+    "sort_by": "price_asc",
+    "product_ids": [
+      "prod_bin_01",
+      "prod_bin_02",
+      "prod_bin_04"
+    ],
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "storage bins",
+        "budget": 18,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_bin_01",
+          "prod_bin_02",
+          "prod_bin_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_bin_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_bin_01",
+        "type": "product",
+        "attributes": {
+          "name": "Clear Latching Storage Bins 6-Pack",
+          "price": 12.99,
+          "category": "storage bins",
+          "rating": 4.2
+        }
+      },
+      {
+        "id": "prod_bin_02",
+        "type": "product",
+        "attributes": {
+          "name": "Slim Document Storage Bins 4-Pack",
+          "price": 15.49,
+          "category": "storage bins",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_bin_03",
+        "type": "product",
+        "attributes": {
+          "name": "Stackable Craft Storage Bins Set",
+          "price": 21.99,
+          "category": "storage bins",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_bin_04",
+        "type": "product",
+        "attributes": {
+          "name": "Flat Underbed Storage Bins 2-Pack",
+          "price": 17.89,
+          "category": "storage bins",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

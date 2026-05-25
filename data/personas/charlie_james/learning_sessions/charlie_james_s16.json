@@ -1,0 +1,129 @@
+{
+  "session_id": "charlie_james_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a meeting.",
+  "task_params": {
+    "calendar": "work",
+    "title": "One-on-one coaching with Malik",
+    "start_time": "2025-03-17T16:30:00-04:00",
+    "end_time": "2025-03-17T17:15:00-04:00",
+    "participants": [
+      "malik.thomas@portlandautoshop.com"
+    ],
+    "location": "Shop office"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-17T16:30:00-04:00",
+        "end_time": "2025-03-17T17:15:00-04:00",
+        "participants": [
+          "malik.thomas@portlandautoshop.com"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "One-on-one coaching with Malik",
+        "start_time": "2025-03-17T16:30:00-04:00",
+        "end_time": "2025-03-17T17:15:00-04:00",
+        "participants": [
+          "malik.thomas@portlandautoshop.com"
+        ],
+        "location": "Shop office"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Morning repair intake",
+          "start_time": "2025-03-17T08:00:00-04:00",
+          "end_time": "2025-03-17T09:00:00-04:00",
+          "participants": [
+            "service.team@portlandautoshop.com"
+          ],
+          "location": "Front desk",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Brake diagnostics on Fleet Van 12",
+          "start_time": "2025-03-17T13:00:00-04:00",
+          "end_time": "2025-03-17T14:30:00-04:00",
+          "participants": [
+            "charlie.james@portlandautoshop.com"
+          ],
+          "location": "Bay 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "One-on-one coaching with Malik",
+          "start_time": "2025-03-17T16:30:00-04:00",
+          "end_time": "2025-03-17T17:15:00-04:00",
+          "participants": [
+            "charlie.james@portlandautoshop.com"
+          ],
+          "location": "Supplier counter",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Customer handoff for '68 Mustang",
+          "start_time": "2025-03-17T17:30:00-04:00",
+          "end_time": "2025-03-17T18:00:00-04:00",
+          "participants": [
+            "charlie.james@portlandautoshop.com",
+            "customer.rose@example.com"
+          ],
+          "location": "Lot entrance",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

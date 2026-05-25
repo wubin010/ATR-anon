@@ -1,0 +1,101 @@
+{
+  "session_id": "iris_parker_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "communication",
+  "reason_for_call": "Draft a thank-you message",
+  "task_params": {
+    "sender": "Maya Chen",
+    "folder": "inbox",
+    "thread_id": "thr_workshop_07",
+    "language": "en",
+    "reply_points": [
+      "thank everyone for helping with setup and facilitation",
+      "mention the turnout was stronger than expected",
+      "say the energy in the room made the session feel special",
+      "appreciate people who stayed late for cleanup",
+      "express excitement about building on this momentum"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Chen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_workshop_07",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_workshop_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Creative workshop turnout was incredible",
+          "body": "Huge thanks again for all the help today. We had a much bigger crowd than expected, and people were still talking about the exercises afterward. If you want, we should send a quick thank-you to everyone who pitched in.",
+          "thread_id": "thr_workshop_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-06T17:42:00"
+        }
+      },
+      {
+        "id": "msg_workshop_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Alex Romero",
+          "subject": "Photos from today's internal session",
+          "body": "Sharing a few photos from the workshop space before everyone arrived.",
+          "thread_id": "thr_photos_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-06T16:15:00"
+        }
+      },
+      {
+        "id": "msg_workshop_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Volunteer list for next month",
+          "body": "Starting a draft list of volunteers for next month's employee programming.",
+          "thread_id": "thr_planning_11",
+          "folder": "archive",
+          "labels": [],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-01-22T10:05:00"
+        }
+      }
+    ]
+  }
+}

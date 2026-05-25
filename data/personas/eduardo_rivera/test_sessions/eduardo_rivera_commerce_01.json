@@ -1,0 +1,105 @@
+{
+  "instruction": "Please order one 3-pound bag of oranges, keep it under $7, and just pick one for me.",
+  "gold_value": "prod_local_valencia_01",
+  "session_id": "eduardo_rivera_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "eduardo_rivera_commerce_01",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_commerce_01",
+    "rule_text": "When ordering cooking ingredients, he favors fresh heirloom chilies, local citrus, and similarly characterful produce over generic substitutes.",
+    "canonical_answer": "For cooking, I prefer heirloom chilies, local citrus, and other flavorful ingredients over generic produce."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_local_valencia_01",
+        "type": "product",
+        "attributes": {
+          "name": "Local Valencia Oranges 3-lb Bag",
+          "price": 6.79,
+          "category": "oranges",
+          "rating": 4.3,
+          "origin_region": "Central Valley",
+          "variety": "Valencia",
+          "sourcing": "local",
+          "bag_size_lb": 3,
+          "review_count": 61
+        }
+      },
+      {
+        "id": "prod_local_blood_01",
+        "type": "product",
+        "attributes": {
+          "name": "Local Blood Oranges 2-lb Bag",
+          "price": 6.49,
+          "category": "oranges",
+          "rating": 4.8,
+          "origin_region": "Central Valley",
+          "variety": "Blood Orange",
+          "sourcing": "local",
+          "bag_size_lb": 2,
+          "review_count": 184
+        }
+      },
+      {
+        "id": "prod_navel_value_01",
+        "type": "product",
+        "attributes": {
+          "name": "Navel Oranges Value Bag 3-lb",
+          "price": 3.49,
+          "category": "oranges",
+          "rating": 4.9,
+          "variety": "Navel",
+          "sourcing": "conventional",
+          "bag_size_lb": 3,
+          "review_count": 2140
+        }
+      },
+      {
+        "id": "prod_seedless_family_01",
+        "type": "product",
+        "attributes": {
+          "name": "Seedless Orange Family Bag 3-lb",
+          "price": 4.19,
+          "category": "oranges",
+          "rating": 4.8,
+          "variety": "Seedless Orange",
+          "sourcing": "conventional",
+          "bag_size_lb": 3,
+          "review_count": 1675
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_local_valencia_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

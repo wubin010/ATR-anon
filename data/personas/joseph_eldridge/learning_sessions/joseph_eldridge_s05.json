@@ -1,0 +1,101 @@
+{
+  "session_id": "joseph_eldridge_s05",
+  "session_type": "learning",
+  "day_offset": 5,
+  "domain": "communication",
+  "reason_for_call": "Triage messages and draft an update.",
+  "task_params": {
+    "sender": "Mara Klein",
+    "folder": "inbox",
+    "target_subject": "Lighting notes from last night's run",
+    "crew_update_points": [
+      "thank everyone for the quick adjustments",
+      "front wash looked much cleaner after intermission",
+      "stage left special is still a little hot on the bench scene",
+      "blue cue during scene change should come up half a beat later",
+      "ask crew to bring ideas for smoothing the blackout timing"
+    ],
+    "language": "en"
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Mara Klein",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_light_201",
+        "language": "en",
+        "body": "<authored from crew_update_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_runnotes_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Mara Klein",
+          "subject": "Lighting notes from last night's run",
+          "body": "Hi Joseph, thanks again for staying late. My notes from the run: the front wash finally settled in after intermission, but the stage left bench special still felt too bright. Also, the blue scene-change cue seemed a touch early. Could you send the crew a friendly summary when you have a minute?",
+          "thread_id": "thr_light_201",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-05T20:14:00"
+        }
+      },
+      {
+        "id": "msg_prop_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Mara Klein",
+          "subject": "Prop table spacing question",
+          "body": "Separate note from me: can you glance at the prop table layout before Thursday?",
+          "thread_id": "thr_props_088",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-05T11:02:00"
+        }
+      },
+      {
+        "id": "msg_costume_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Evelyn Cho",
+          "subject": "Costume rack wheels fixed",
+          "body": "Just letting everyone know the rack is rolling smoothly again.",
+          "thread_id": "thr_costume_077",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-05T16:40:00"
+        }
+      }
+    ]
+  }
+}

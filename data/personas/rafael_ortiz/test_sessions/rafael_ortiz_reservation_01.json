@@ -1,0 +1,99 @@
+{
+  "instruction": "Please make a dinner reservation in Austin for 4 people on 2026-09-18 at 7:30pm — just pick a place and book it.",
+  "gold_value": "rst_borderhouse_01",
+  "session_id": "rafael_ortiz_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "rafael_ortiz_reservation_01",
+  "rule_ref": {
+    "rule_id": "rafael_ortiz_reservation_01",
+    "rule_text": "When choosing a place to eat out, he prefers locally rooted Mexican or Tex-Mex restaurants over generic chains.",
+    "canonical_answer": "I usually pick local Mexican or Tex-Mex spots instead of chain restaurants."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_borderhouse_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Border House Tex-Mex Kitchen",
+          "cuisine": "Tex-Mex",
+          "location": "Austin",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "brand_type": "local independent"
+        }
+      },
+      {
+        "id": "rst_ontheborder_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "On The Border Mexican Grill & Cantina",
+          "cuisine": "Tex-Mex",
+          "location": "Austin",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "brand_type": "national chain"
+        }
+      },
+      {
+        "id": "rst_chilis_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Chili's Grill & Bar",
+          "cuisine": "American / Tex-Mex",
+          "location": "Austin",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "brand_type": "national chain"
+        }
+      },
+      {
+        "id": "rst_cheesecake_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "The Cheesecake Factory",
+          "cuisine": "American",
+          "location": "Austin",
+          "rating": 4.9,
+          "price_range": "$$$",
+          "seating_style": "full-service dining",
+          "brand_type": "national chain"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_borderhouse_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

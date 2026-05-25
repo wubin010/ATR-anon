@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Priya Nandakumar about the East Harbor pantry volunteer schedule. Tell her I can cover the Saturday setup shift, ask whether the folding tables are already reserved, and mention that I can bring two extra name badges if that helps.",
+  "gold_value": null,
+  "session_id": "maximo_esteban_irizarry_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "maximo_esteban_irizarry_communication_01",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_communication_01",
+    "rule_text": "When he wants to contact someone about work, community projects, or plans, he prefers the message to be drafted for review instead of being sent immediately.",
+    "canonical_answer": "I like messages drafted first so I can review the tone before anything gets sent."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_priya_pantry_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Priya Nandakumar <priya@eastharborpantry.org>",
+          "subject": "East Harbor pantry volunteer schedule",
+          "body": "Hi Maximo, I'm wrapping up the East Harbor pantry volunteer schedule and wanted to check whether you can take the Saturday setup shift. We're also still confirming the folding table reservation and figuring out how many extra name badges to prepare. Thanks, Priya",
+          "thread_id": "thr_priya_pantry_19",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-08T09:14"
+        }
+      },
+      {
+        "id": "msg_daniel_signage_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Daniel Cho <dcho@meridianworks.co>",
+          "subject": "Warehouse signage walkthrough notes",
+          "body": "Can you send over your comments on the revised warehouse wayfinding signs before I share them with facilities?",
+          "thread_id": "thr_daniel_signage_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-08T08:02"
+        }
+      },
+      {
+        "id": "msg_elena_cleanup_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Ruiz <elena@riverfriends.org>",
+          "subject": "Riverfront cleanup supply count",
+          "body": "We're updating the supply list for the riverfront cleanup and still need final counts for gloves, bags, and check-in volunteers.",
+          "thread_id": "thr_elena_cleanup_11",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-07T17:41"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

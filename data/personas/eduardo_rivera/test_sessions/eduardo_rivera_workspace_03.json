@@ -1,0 +1,85 @@
+{
+  "instruction": "Please write something up for the junior calibration techs and save it in /Quality/Training with the title \"Incoming Gauge Verification Guide.\" It should cover how to record the serial number, what to do if the reference block is missing, and who to notify when a unit fails the first check.",
+  "gold_value": "template",
+  "session_id": "eduardo_rivera_workspace_03_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "eduardo_rivera_workspace_03",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_workspace_03",
+    "rule_text": "When setting up reusable documentation for repeated procedures or mentoring, he prefers creating a template rather than a one-off note.",
+    "canonical_answer": "For repeatable procedures or teaching materials, I prefer a template over a one-off note."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_calibration_log_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Calibration Log Entry Notes",
+          "doc_type": "note",
+          "location": "/Quality/Training",
+          "content_brief": "One-page write-up for bench techs on recording serial numbers and inspection initials during incoming gauge checks."
+        }
+      },
+      {
+        "id": "doc_reference_block_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Missing Reference Block Escalation",
+          "doc_type": "memo",
+          "location": "/Quality/Training",
+          "content_brief": "Who to contact and what to document when a reference block cannot be located during setup."
+        }
+      },
+      {
+        "id": "doc_new_tech_verification_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "New Technician Verification Walkthrough",
+          "doc_type": "note",
+          "location": "/Quality/Training",
+          "content_brief": "Orientation notes for junior technicians covering first-pass bench verification and fail tagging."
+        }
+      },
+      {
+        "id": "doc_equipment_check_worksheet_01",
+        "type": "document",
+        "attributes": {
+          "title": "Equipment Verification Worksheet",
+          "doc_type": "template",
+          "location": "/Quality/Templates",
+          "content_brief": "Reusable format for recurring verification steps, required fields, exception handling, and sign-off."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

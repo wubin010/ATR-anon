@@ -1,0 +1,190 @@
+{
+  "session_id": "john_brown_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Gulf Coast",
+      "budget",
+      "food",
+      "live music"
+    ],
+    "destination_ids": [
+      "dest_mobile_01",
+      "dest_biloxi_02"
+    ],
+    "destination": "Mobile",
+    "stop_tags": [
+      "food",
+      "live music"
+    ],
+    "selected_stop_ids": [
+      "stop_mobile_01",
+      "stop_mobile_02",
+      "stop_mobile_03"
+    ],
+    "duration_days": 2,
+    "traveler_count": 1
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Gulf Coast",
+          "budget",
+          "food",
+          "live music"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_mobile_01",
+          "dest_biloxi_02"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Mobile",
+        "stop_tags": [
+          "food",
+          "live music"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Mobile",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stop_mobile_01",
+          "stop_mobile_02",
+          "stop_mobile_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_mobile_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Mobile",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "budget",
+            "food",
+            "live music",
+            "weekend",
+            "historic"
+          ]
+        }
+      },
+      {
+        "id": "dest_biloxi_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Biloxi",
+          "region": "Mississippi Gulf Coast",
+          "tags": [
+            "budget",
+            "food",
+            "live music",
+            "beach",
+            "casinos"
+          ]
+        }
+      },
+      {
+        "id": "dest_gulfshores_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Gulf Shores",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "beach",
+            "food",
+            "live music",
+            "family",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "stop_mobile_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Wintzell's Oyster House",
+          "location": "Mobile",
+          "tags": [
+            "food",
+            "seafood",
+            "local"
+          ]
+        }
+      },
+      {
+        "id": "stop_mobile_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Soul Kitchen Music Hall",
+          "location": "Mobile",
+          "tags": [
+            "live music",
+            "nightlife",
+            "downtown"
+          ]
+        }
+      },
+      {
+        "id": "stop_mobile_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "The Merry Widow",
+          "location": "Mobile",
+          "tags": [
+            "live music",
+            "food",
+            "bar",
+            "local"
+          ]
+        }
+      }
+    ]
+  }
+}

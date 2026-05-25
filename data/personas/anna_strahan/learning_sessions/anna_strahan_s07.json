@@ -1,0 +1,116 @@
+{
+  "session_id": "anna_strahan_s07",
+  "session_type": "learning",
+  "day_offset": 7,
+  "domain": "scheduling",
+  "reason_for_call": "Add a calendar reminder.",
+  "task_params": {
+    "calendar": "work",
+    "title": "Leadership Call",
+    "start_time": "2025-02-21T16:00:00-06:00",
+    "end_time": "2025-02-21T17:00:00-06:00",
+    "remind_at": "2025-02-21T13:30:00-06:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_leadership_01",
+        "remind_at": "2025-02-21T13:30:00-06:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_leadership_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Leadership Call",
+          "start_time": "2025-02-21T16:00:00-06:00",
+          "end_time": "2025-02-21T17:00:00-06:00",
+          "participants": [
+            "Clinic Director",
+            "Operations Lead",
+            "Finance Manager"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget Review",
+          "start_time": "2025-02-21T11:00:00-06:00",
+          "end_time": "2025-02-21T12:00:00-06:00",
+          "participants": [
+            "Anna Strahan",
+            "Finance Manager"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_arttherapy_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Art Therapy Outreach Planning",
+          "start_time": "2025-02-20T15:30:00-06:00",
+          "end_time": "2025-02-20T16:15:00-06:00",
+          "participants": [
+            "Anna Strahan",
+            "Program Coordinator"
+          ],
+          "location": "Office 204",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_bookclub_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Book Club",
+          "start_time": "2025-02-20T19:00:00-06:00",
+          "end_time": "2025-02-20T20:30:00-06:00",
+          "participants": [
+            "Anna Strahan",
+            "Local Book Club"
+          ],
+          "location": "River Road Cafe",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

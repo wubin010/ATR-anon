@@ -1,0 +1,109 @@
+{
+  "session_id": "cassandra_tovar_s23",
+  "session_type": "learning",
+  "day_offset": 23,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a reminder.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Worship Team Rehearsal",
+    "start_time": "2025-03-23T07:30:00-04:00",
+    "end_time": "2025-03-23T09:15:00-04:00",
+    "remind_at": "2025-03-23T06:40:00-04:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_rehearsal_01",
+        "remind_at": "2025-03-23T06:40:00-04:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_rehearsal_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Worship Team Rehearsal",
+          "start_time": "2025-03-23T07:30:00-04:00",
+          "end_time": "2025-03-23T09:15:00-04:00",
+          "participants": [
+            "worship@newhope.org",
+            "media@newhope.org"
+          ],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_jog_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Jog at Mason Mill Park",
+          "start_time": "2025-03-22T08:00:00-04:00",
+          "end_time": "2025-03-22T08:50:00-04:00",
+          "participants": [],
+          "location": "Mason Mill Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_sitevisit_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "School Auditorium Site Visit",
+          "start_time": "2025-03-24T10:00:00-04:00",
+          "end_time": "2025-03-24T12:00:00-04:00",
+          "participants": [
+            "crewlead@avsouth.com",
+            "facilities@oakridgehs.edu"
+          ],
+          "location": "Oak Ridge High School",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_openmic_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Downtown Jazz Open Mic",
+          "start_time": "2025-03-27T19:30:00-04:00",
+          "end_time": "2025-03-27T22:00:00-04:00",
+          "participants": [],
+          "location": "Blue Room Jazz Club",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

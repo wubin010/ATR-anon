@@ -1,0 +1,89 @@
+{
+  "instruction": "I'm still paying for RailRoute Plus premium, but I barely touch it between trips and might want it again when I start mapping out another rail trip. Please handle that for me.",
+  "gold_value": null,
+  "session_id": "michael_argo_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "michael_argo_commerce_03",
+  "rule_ref": {
+    "rule_id": "michael_argo_commerce_03",
+    "rule_text": "For unused nonessential subscriptions, he prefers canceling them outright instead of letting them linger.",
+    "canonical_answer": "If I’m not really using a subscription, I’d rather cancel it outright."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_railroute_plus_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "RailRoute Plus",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 7.99,
+          "last_used_days_ago": 128,
+          "saved_route_count": 14
+        }
+      },
+      {
+        "id": "sub_scenicsleeper_finder_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "ScenicSleeper Finder",
+          "plan": "basic",
+          "status": "paused",
+          "pause_until": "2026-11-01",
+          "price_per_period": 4.99,
+          "last_used_days_ago": 61
+        }
+      },
+      {
+        "id": "sub_signalbox_music_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "SignalBox Music",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 9.99,
+          "last_used_days_ago": 1
+        }
+      },
+      {
+        "id": "sub_citypaper_digital_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "CityPaper Digital",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 3.99,
+          "last_used_days_ago": 4
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "cancel_subscription",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

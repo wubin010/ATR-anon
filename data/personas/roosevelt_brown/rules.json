@@ -1,0 +1,610 @@
+[
+  {
+    "rule_text": "When buying ingredients for his weekly dinner parties, he prefers products that support experimental seafood dishes with global twists rather than standard pantry staples.",
+    "canonical_answer": "For dinner-party shopping, I go for bold seafood ingredients and global flavors rather than the plain basics.",
+    "counterfactual_default": "A typical assistant would pick conventional, broadly useful grocery items first.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "think miso-butter lobster ramen, harissa-glazed scallop tacos, and tarragon-infused chowder"
+      },
+      {
+        "type": "direct",
+        "content": "weekly dinner parties for friends and colleagues"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "roosevelt_brown_commerce_01",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a purchased item for his creative or technical work is wrong or defective, he prefers exchanging it rather than taking a refund.",
+    "canonical_answer": "If something I ordered for a project is off, I usually want an exchange so I can keep moving on the work.",
+    "counterfactual_default": "A typical assistant would choose a refund as the simplest resolution.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "tinkers with DIY health-tech prototypes in his garage"
+      },
+      {
+        "type": "direct",
+        "content": "abstract painting"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "roosevelt_brown_commerce_02",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For software or recurring services that support analytics, content creation, or collaboration, he tends to move up to the pro tier rather than stay on basic.",
+    "canonical_answer": "For tools I rely on for analytics or creative work, I prefer the pro plan over basic.",
+    "counterfactual_default": "A typical assistant would leave the subscription on the basic tier unless forced to upgrade.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He is adept at using data analytics and health-informatic tools"
+      },
+      {
+        "type": "direct",
+        "content": "He co-hosts a community health podcast"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "roosevelt_brown_commerce_03",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a meal out for socializing, he prefers restaurants known for seafood or inventive fusion cooking over more standard options.",
+    "canonical_answer": "If I’m going out to eat with people, I’d rather book a seafood or creative fusion place than a generic restaurant.",
+    "counterfactual_default": "A typical assistant would optimize for convenience, ratings, or generic crowd-pleasing menus.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "experimental seafood dishes"
+      },
+      {
+        "type": "direct",
+        "content": "blends New England seafood with global flavors"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "roosevelt_brown_reservation_01",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing leisure events, he gravitates toward live-jazz, improv, and visual-art events rather than more conventional entertainment picks.",
+    "canonical_answer": "For nights out, I usually choose jazz, improv, or art events over more ordinary entertainment options.",
+    "counterfactual_default": "A typical assistant would favor the most mainstream or top-rated local event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "regularly soaks in live-jazz sets by Herbie Hancock at the Jazz Showcase"
+      },
+      {
+        "type": "direct",
+        "content": "dives into improv comedy workshops at The Improv Asylum"
+      },
+      {
+        "type": "direct",
+        "content": "explores Boston’s art galleries and live-jazz venues"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "roosevelt_brown_reservation_02",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a wellness-related appointment, he prefers yoga or mindfulness-oriented providers over high-intensity fitness services.",
+    "canonical_answer": "For wellness appointments, I lean toward yoga or mindfulness-focused providers instead of intense fitness options.",
+    "counterfactual_default": "A typical assistant would treat all fitness or wellness providers as interchangeable and pick by convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "treats yoga as a moving meditation"
+      },
+      {
+        "type": "direct",
+        "content": "To manage his stress, he practices yoga, mindfulness meditation, and journaling."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "roosevelt_brown_reservation_04",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For fresh trip planning, he prefers itineraries built around art, design, and culturally distinctive stops rather than generic tourist highlights.",
+    "canonical_answer": "When I plan a trip, I want the stops to center on art, design, and local creative culture.",
+    "counterfactual_default": "A typical assistant would prioritize standard top attractions or the highest-rated stops overall.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "the quirky art scene of Portland, Maine"
+      },
+      {
+        "type": "direct",
+        "content": "occasional trips to New York's MoMA for a burst of inspiration"
+      },
+      {
+        "type": "direct",
+        "content": "dreams of a future health-design residency in Barcelona's vibrant creative districts"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "roosevelt_brown_travel_01",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For spontaneous weekend trips in the Northeast, he prefers booking ground transport rather than flights.",
+    "canonical_answer": "For quick regional getaways, I’d rather take ground transport than fly.",
+    "counterfactual_default": "A typical assistant would check flights first for intercity travel.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "favors spontaneous weekend escapes to Cape Cod's lobster shacks, the quirky art scene of Portland, Maine, and occasional trips to New York's MoMA"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "roosevelt_brown_travel_02",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging for personal trips, he prefers quirky stays in creative districts over generic business-style hotel options.",
+    "canonical_answer": "For personal travel, I prefer staying somewhere quirky and close to the creative scene.",
+    "counterfactual_default": "A typical assistant would choose a standard convenient hotel near transit or downtown.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "planning trips last-minute via Airbnb"
+      },
+      {
+        "type": "direct",
+        "content": "dreams of a future health-design residency in Barcelona's vibrant creative districts"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "roosevelt_brown_travel_03",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he does fly, he prefers a window seat rather than an aisle or middle seat.",
+    "canonical_answer": "If I’m on a flight, I like a window seat for the view and the headspace.",
+    "counterfactual_default": "A typical assistant would default to an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "abstract painting"
+      },
+      {
+        "type": "direct",
+        "content": "using color and form to explore the emotional landscape of healing"
+      },
+      {
+        "type": "inferred",
+        "content": "His visual, reflective art practice makes the scenic and inward-facing window-seat experience a better fit than convenience-oriented seating."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "roosevelt_brown_travel_04",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a trip stop falls through, he prefers replacement stops that preserve the same art, design, or cultural theme instead of swapping in whatever is most convenient.",
+    "canonical_answer": "If a stop on my trip breaks, I want the replacement to keep the same creative or cultural vibe.",
+    "counterfactual_default": "A typical assistant would replace the disrupted stop with the simplest available alternative.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "the quirky art scene of Portland, Maine"
+      },
+      {
+        "type": "direct",
+        "content": "occasional trips to New York's MoMA for a burst of inspiration"
+      },
+      {
+        "type": "direct",
+        "content": "vibrant creative districts"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "roosevelt_brown_travel_05",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For community-facing, podcast, or partnership outreach, he prefers having the message drafted first rather than sent immediately.",
+    "canonical_answer": "For outreach tied to the podcast or community partnerships, I like to review a draft before anything goes out.",
+    "counterfactual_default": "A typical assistant would send the composed message directly once it has the content.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He co-hosts a community health podcast"
+      },
+      {
+        "type": "direct",
+        "content": "building community partnerships"
+      },
+      {
+        "type": "direct",
+        "content": "comfortable leading large group meetings, delivering public-health presentations"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "roosevelt_brown_communication_01",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Messages tied to clinic operations or staff coordination should be marked high priority rather than left at normal priority.",
+    "canonical_answer": "If a message affects clinic operations or staffing, I want it marked high priority.",
+    "counterfactual_default": "A typical assistant would leave most incoming messages at normal priority unless they appear urgent in wording.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "coordinating staff schedules"
+      },
+      {
+        "type": "direct",
+        "content": "oversee multi-disciplinary clinic operations"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "roosevelt_brown_communication_02",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "He prefers labeling podcast and community-health correspondence into a dedicated collaboration category rather than leaving those threads mixed into general mail.",
+    "canonical_answer": "I like podcast and community-health threads labeled clearly so they don’t get buried in general email.",
+    "counterfactual_default": "A typical assistant would leave the messages unlabeled or rely only on inbox order.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly community health podcast"
+      },
+      {
+        "type": "direct",
+        "content": "Community outreach and partnership building"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "roosevelt_brown_communication_03",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For personal wellness habits like yoga, meditation, or journaling, he prefers a private reminder rather than creating a formal calendar event.",
+    "canonical_answer": "For my personal wellness routines, I’d rather set a reminder than block off a formal event.",
+    "counterfactual_default": "A typical assistant would create a calendar event for a recurring self-care activity.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "To manage his stress, he practices yoga, mindfulness meditation, and journaling."
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": null
+    },
+    "rule_id": "roosevelt_brown_scheduling_01",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For his recurring personal rituals and community commitments, he prefers weekly reminders rather than one-off prompts.",
+    "canonical_answer": "For the things I do as regular rituals, weekly reminders work best for me.",
+    "counterfactual_default": "A typical assistant would set a one-time reminder unless explicitly asked to repeat it.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly dinner parties for friends and colleagues"
+      },
+      {
+        "type": "direct",
+        "content": "weekly fellowship"
+      },
+      {
+        "type": "direct",
+        "content": "weekly community health podcast"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "roosevelt_brown_scheduling_02",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an optional invite conflicts with unsettled plans or a competing creative opportunity, he prefers responding tentatively rather than accepting outright.",
+    "canonical_answer": "If an invite is optional and my plans are still fluid, I usually answer tentative first.",
+    "counterfactual_default": "A typical assistant would accept the invite if there is no hard conflict yet.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often missing scheduled runs when a new art exhibit opens"
+      },
+      {
+        "type": "direct",
+        "content": "planning trips last-minute"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "roosevelt_brown_scheduling_03",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For work files, he prefers organizing them by project rather than by type or date.",
+    "canonical_answer": "I keep work files organized by project first, not just by file type or date.",
+    "counterfactual_default": "A typical assistant would choose a broad scheme like by type or by date.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "spearhead patient-experience redesigns"
+      },
+      {
+        "type": "direct",
+        "content": "Cross-functional team leadership"
+      },
+      {
+        "type": "direct",
+        "content": "a habit of misplacing spreadsheets"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "roosevelt_brown_workspace_01",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When maintaining an existing operations tracker, he prefers recording the next action rather than merely updating status.",
+    "canonical_answer": "In a live tracker, I like to capture the next action so work keeps moving.",
+    "counterfactual_default": "A typical assistant would just update the status field and stop there.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "streamline workflows"
+      },
+      {
+        "type": "direct",
+        "content": "Process improvement (Lean, Six Sigma)"
+      },
+      {
+        "type": "direct",
+        "content": "Project management"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "update_tracker",
+      "param": "update_action"
+    },
+    "rule_id": "roosevelt_brown_workspace_04",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When he needs to create a reusable structure for recurring meetings, outreach, or planning workflows, he prefers starting from a template rather than a one-off document.",
+    "canonical_answer": "For anything I’ll repeat, I prefer making a template instead of a one-time document.",
+    "counterfactual_default": "A typical assistant would create a regular note or memo for the immediate task.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "weekly community health podcast"
+      },
+      {
+        "type": "direct",
+        "content": "weekly dinner parties for friends and colleagues"
+      },
+      {
+        "type": "direct",
+        "content": "lead multicultural staff meetings"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "create_document",
+      "param": "doc_type"
+    },
+    "rule_id": "roosevelt_brown_workspace_06",
+    "persona_id": "roosevelt_brown",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

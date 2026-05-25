@@ -1,0 +1,91 @@
+{
+  "session_id": "maximo_esteban_irizarry_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "location": "Community Coding",
+    "doc_type": "template",
+    "title": "Community Coding Workshop Reusable Template",
+    "template_points": [
+      "opening checklist for room, wifi, and projector",
+      "welcome script and short class overview",
+      "beginner coding lesson outline with timing blocks",
+      "hands-on exercise section with setup steps",
+      "accessibility reminders for low-bandwidth learners",
+      "mentor notes section for common student questions",
+      "wrap-up checklist and next-session notes"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Community Coding",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "template",
+        "title": "Community Coding Workshop Reusable Template",
+        "location": "Community Coding",
+        "content_brief": "<authored from template_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_ws_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Coding Intro Session Template",
+          "doc_type": "template",
+          "location": "Community Coding",
+          "content_brief": "Template for a one-off beginner coding class with agenda, setup checklist, and exercise placeholders."
+        }
+      },
+      {
+        "id": "doc_ws_02",
+        "type": "document",
+        "attributes": {
+          "title": "Community Coding Mentor Notes",
+          "doc_type": "note",
+          "location": "Community Coding",
+          "content_brief": "Notes about pacing, common setup issues, and reminders for volunteers."
+        }
+      },
+      {
+        "id": "doc_ws_03",
+        "type": "document",
+        "attributes": {
+          "title": "Community Coding Attendance Sheet",
+          "doc_type": "spreadsheet",
+          "location": "Community Coding",
+          "content_brief": "Participant names, contact columns, and session attendance tracking."
+        }
+      }
+    ]
+  }
+}

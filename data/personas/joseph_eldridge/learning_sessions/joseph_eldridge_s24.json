@@ -1,0 +1,111 @@
+{
+  "session_id": "joseph_eldridge_s24",
+  "session_type": "learning",
+  "day_offset": 24,
+  "domain": "commerce",
+  "reason_for_call": "Build a shopping list",
+  "task_params": {
+    "category": "grocery",
+    "budget": 65,
+    "list_name": "Sunday supper groceries",
+    "dish_keywords": [
+      "fried chicken",
+      "cornbread",
+      "collard greens",
+      "succotash",
+      "sweet tea"
+    ]
+  },
+  "expected_tools": [
+    "search_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "grocery",
+        "budget": 65,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "<authored from dish_keywords>"
+        ],
+        "list_name": "Sunday supper groceries"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_market_01",
+        "type": "product",
+        "attributes": {
+          "name": "Buttermilk Fried Chicken Dinner Pack",
+          "price": 18.99,
+          "category": "grocery",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_mill_02",
+        "type": "product",
+        "attributes": {
+          "name": "Stone-Ground Cornbread Mix",
+          "price": 4.49,
+          "category": "grocery",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_patch_03",
+        "type": "product",
+        "attributes": {
+          "name": "Seasoned Collard Greens Bundle",
+          "price": 6.29,
+          "category": "grocery",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_field_04",
+        "type": "product",
+        "attributes": {
+          "name": "Summer Succotash Vegetable Kit",
+          "price": 7.59,
+          "category": "grocery",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_porch_05",
+        "type": "product",
+        "attributes": {
+          "name": "Sweet Tea Pitcher Pack",
+          "price": 5.99,
+          "category": "grocery",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

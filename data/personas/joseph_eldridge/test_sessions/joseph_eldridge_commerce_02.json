@@ -1,0 +1,89 @@
+{
+  "instruction": "Please take care of the return for the soldering station from my recent order. It arrived with a faulty temperature control.",
+  "gold_value": "exchange",
+  "session_id": "joseph_eldridge_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "joseph_eldridge_commerce_02",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_commerce_02",
+    "rule_text": "When technical gear, tools, or hobby equipment arrives defective, Joseph prefers an exchange rather than a refund so he can keep the project moving.",
+    "canonical_answer": "If a tool or technical item is defective, I usually want an exchange instead of a refund."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_soldering_station_01",
+        "type": "product",
+        "attributes": {
+          "name": "Variable-Temperature Soldering Station",
+          "price": 64.99,
+          "category": "electronics_tools",
+          "rating": 4.5,
+          "brand": "BenchCraft",
+          "order_id": "ord_7318_workbench",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-14"
+        }
+      },
+      {
+        "id": "prod_rotary_tool_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cordless Rotary Tool Kit",
+          "price": 89.99,
+          "category": "workshop_tools",
+          "rating": 4.9,
+          "brand": "ForgeLine",
+          "order_id": "ord_7264_shop",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-08"
+        }
+      },
+      {
+        "id": "prod_desk_lamp_01",
+        "type": "product",
+        "attributes": {
+          "name": "LED Architect Desk Lamp",
+          "price": 42.0,
+          "category": "home_office",
+          "rating": 4.8,
+          "brand": "LumaForge",
+          "order_id": "ord_7291_office",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-11"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

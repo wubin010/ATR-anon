@@ -1,0 +1,108 @@
+{
+  "session_id": "iris_parker_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "origin": "Boston",
+    "destination": "Portland",
+    "passenger_count": 2,
+    "departure_date": "2025-05-17",
+    "transport_mode": "train",
+    "sort_by": "price_asc",
+    "transport_offer_id": "transport_downeaster_01"
+  },
+  "expected_tools": [
+    "search_ground_transport",
+    "book_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Boston",
+        "destination": "Portland",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "transport_downeaster_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "transport_downeaster_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Portland",
+          "mode": "train",
+          "departure_date": "2025-05-17",
+          "price": 58.0,
+          "available_seats": 14
+        }
+      },
+      {
+        "id": "transport_concord_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Portland",
+          "mode": "bus",
+          "departure_date": "2025-05-17",
+          "price": 44.0,
+          "available_seats": 19
+        }
+      },
+      {
+        "id": "transport_downeaster_03",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Portland",
+          "mode": "train",
+          "departure_date": "2025-05-18",
+          "price": 61.0,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "transport_peterpan_04",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston",
+          "destination": "Portsmouth",
+          "mode": "bus",
+          "departure_date": "2025-05-17",
+          "price": 32.0,
+          "available_seats": 22
+        }
+      }
+    ]
+  }
+}

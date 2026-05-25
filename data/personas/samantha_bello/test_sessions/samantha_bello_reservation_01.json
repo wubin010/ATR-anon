@@ -1,0 +1,107 @@
+{
+  "instruction": "Please book dinner in Wynwood, Miami for 3 people on 2026-09-12 at 7:30pm — just pick a place and reserve it.",
+  "gold_value": "rst_sazon_atlas_01",
+  "session_id": "samantha_bello_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "samantha_bello_reservation_01",
+  "rule_ref": {
+    "rule_id": "samantha_bello_reservation_01",
+    "rule_text": "When booking a restaurant, Samantha prefers places that blend Puerto Rican flavors with global influences rather than purely standard fare.",
+    "canonical_answer": "For dining out, I usually choose places that mix Puerto Rican cooking with interesting global twists."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_sazon_atlas_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Sazon Atlas Kitchen",
+          "cuisine": "Puerto Rican fusion",
+          "location": "Wynwood, Miami",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_casa_borinquen_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa Borinquen",
+          "cuisine": "Puerto Rican",
+          "location": "Wynwood, Miami",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_orchid_market_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Orchid Market Table",
+          "cuisine": "Asian fusion",
+          "location": "Wynwood, Miami",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "small plates"
+        }
+      },
+      {
+        "id": "rst_palm_line_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Palm Line Grill",
+          "cuisine": "American",
+          "location": "Wynwood, Miami",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "bistro"
+        }
+      },
+      {
+        "id": "rst_verde_mesa_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Verde Mesa",
+          "cuisine": "Mediterranean fusion",
+          "location": "Wynwood, Miami",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "shared plates"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_sazon_atlas_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

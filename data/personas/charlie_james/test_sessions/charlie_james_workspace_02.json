@@ -1,0 +1,125 @@
+{
+  "instruction": "The Falcon bike-build files are loose in the shop workspace. Move the active Falcon files into the appropriate Falcon folder so they're not sitting there anymore.",
+  "gold_value": "fld_falcon_project_folder_01",
+  "session_id": "charlie_james_workspace_02_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "charlie_james_workspace_02",
+  "rule_ref": {
+    "rule_id": "charlie_james_workspace_02",
+    "rule_text": "He prefers moving working files into specific project folders instead of letting them sit loose in a general workspace.",
+    "canonical_answer": "I want active files moved into the right project folder so the shop mess doesn’t spread to my digital stuff."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_falcon_cut_sheet_01",
+        "type": "file",
+        "attributes": {
+          "name": "Falcon frame cut sheet.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shop Workspace",
+          "owner": "Charlie",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_falcon_weld_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "Falcon weld notes.docx",
+          "file_type": "docx",
+          "location": "/Shop Workspace",
+          "owner": "Charlie",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_falcon_parts_sketch_01",
+        "type": "file",
+        "attributes": {
+          "name": "Falcon parts sketch.txt",
+          "file_type": "txt",
+          "location": "/Shop Workspace",
+          "owner": "Charlie",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_kestrel_quote_01",
+        "type": "file",
+        "attributes": {
+          "name": "Kestrel quote draft.pdf",
+          "file_type": "pdf",
+          "location": "/Shop Workspace",
+          "owner": "Charlie",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_falcon_project_folder_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Falcon Project Folder",
+          "purpose": "dedicated project folder for Falcon bicycle build files"
+        }
+      },
+      {
+        "id": "fld_falcon_workbench_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Falcon Workbench",
+          "purpose": "temporary folder for Falcon files that are still active this week"
+        }
+      },
+      {
+        "id": "fld_open_jobs_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Open Jobs",
+          "purpose": "general folder for all live shop work across projects"
+        }
+      },
+      {
+        "id": "fld_design_inbox_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Design Inbox",
+          "purpose": "drop zone for uncategorized notes, sketches, and drafts"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "move_files",
+          "arguments": {
+            "folder_id": "fld_falcon_project_folder_01"
+          },
+          "compare_args": [
+            "folder_id"
+          ]
+        }
+      ]
+    }
+  }
+}

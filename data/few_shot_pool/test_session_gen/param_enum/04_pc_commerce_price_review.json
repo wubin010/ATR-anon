@@ -1,0 +1,79 @@
+{
+  "session_id": "fs_commerce_pc_price_review_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "few_shot",
+  "rule_id": "fs_commerce_pc_price_review",
+  "instruction": "I'm traveling the next couple of days — take a look at my account billing and flag anything I should pay attention to.",
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "sub_streamflix_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "StreamFlix Pro",
+          "plan": "premium",
+          "status": "active",
+          "price_per_period": 17.99,
+          "price_changed": true,
+          "previous_price_per_period": 15.99
+        }
+      },
+      {
+        "id": "sub_fitplus_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "FitPlus Premium",
+          "plan": "pro",
+          "status": "active",
+          "price_per_period": 12.99
+        }
+      },
+      {
+        "id": "sub_newsplus_01",
+        "type": "subscription",
+        "attributes": {
+          "name": "NewsPlus Digest",
+          "plan": "basic",
+          "status": "active",
+          "price_per_period": 4.99
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "review_recurring_charges",
+          "arguments": {
+            "focus": "price_change"
+          },
+          "compare_args": [
+            "focus"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_commerce_pc_price_review",
+    "rule_text": "When reviewing recurring charges, must use focus=price_change (only care about price movement) and never focus=all (don't surface unrelated billing details).",
+    "canonical_answer": "When you go through my recurring charges, just look at price changes — I only care which ones got more expensive, skip the rest."
+  }
+}

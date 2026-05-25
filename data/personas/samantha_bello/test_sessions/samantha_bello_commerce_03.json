@@ -1,0 +1,90 @@
+{
+  "instruction": "Please take care of the return for the pastry mat from my recent order—the wrong version showed up.",
+  "gold_value": "exchange",
+  "session_id": "samantha_bello_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "samantha_bello_commerce_03",
+  "rule_ref": {
+    "rule_id": "samantha_bello_commerce_03",
+    "rule_text": "When an ordered item is wrong but still useful in the right version, Samantha prefers an exchange rather than a refund.",
+    "canonical_answer": "If the item is useful but not the right version, I’d rather exchange it than just get a refund."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_pastry_mat_01",
+        "type": "product",
+        "attributes": {
+          "name": "Silicone Pastry Mat - Quarter Sheet",
+          "price": 18.5,
+          "category": "baking_supplies",
+          "rating": 4.6,
+          "brand": "Oven Grove",
+          "variant": "quarter-sheet",
+          "order_id": "ord_9321_bake",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-16"
+        }
+      },
+      {
+        "id": "prod_palette_knife_01",
+        "type": "product",
+        "attributes": {
+          "name": "Offset Palette Knife Set",
+          "price": 14.0,
+          "category": "art_tools",
+          "rating": 4.8,
+          "brand": "StudioNorth",
+          "order_id": "ord_9288_art",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-13"
+        }
+      },
+      {
+        "id": "prod_tart_weights_01",
+        "type": "product",
+        "attributes": {
+          "name": "Ceramic Tart Weights",
+          "price": 16.0,
+          "category": "baking_supplies",
+          "rating": 4.9,
+          "brand": "Golden Crust",
+          "order_id": "ord_9254_bake",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-10"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

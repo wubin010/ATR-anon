@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm in Minneapolis and want two tickets for a night out; keep it under $70 each and just pick something for me.",
+  "gold_value": "evt_cedar_room_songwriters_01",
+  "session_id": "nancy_marr_reservation_04_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "nancy_marr_reservation_04",
+  "rule_ref": {
+    "rule_id": "nancy_marr_reservation_04",
+    "rule_text": "When selecting events to attend, Nancy prefers intimate local arts or acoustic events over mass-market spectacles.",
+    "canonical_answer": "I’m much more likely to choose a small local art or acoustic event than a huge flashy production."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_cedar_room_songwriters_01",
+        "type": "event",
+        "attributes": {
+          "name": "Cedar Room Songwriters Circle",
+          "location": "Minneapolis",
+          "date_time": "2026-09-18T19:30:00",
+          "price": 39,
+          "event_tags": [
+            "acoustic",
+            "local_music",
+            "cafe_show"
+          ]
+        }
+      },
+      {
+        "id": "evt_target_center_pop_01",
+        "type": "event",
+        "attributes": {
+          "name": "Target Center Pop Galaxy Tour",
+          "location": "Minneapolis",
+          "date_time": "2026-09-18T20:00:00",
+          "price": 69,
+          "event_tags": [
+            "arena_concert",
+            "touring_headliner",
+            "pyrotechnics"
+          ]
+        }
+      },
+      {
+        "id": "evt_immersive_masters_01",
+        "type": "event",
+        "attributes": {
+          "name": "Immersive Masters: Monet in Motion",
+          "location": "Minneapolis",
+          "date_time": "2026-09-18T18:30:00",
+          "price": 58,
+          "event_tags": [
+            "digital_exhibition",
+            "blockbuster_art",
+            "national_tour"
+          ]
+        }
+      },
+      {
+        "id": "evt_open_streets_art_01",
+        "type": "event",
+        "attributes": {
+          "name": "Open Streets Art Bash",
+          "location": "Minneapolis",
+          "date_time": "2026-09-18T19:00:00",
+          "price": 34,
+          "event_tags": [
+            "city_festival",
+            "street_performers",
+            "sponsored_event"
+          ]
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_cedar_room_songwriters_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

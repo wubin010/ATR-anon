@@ -1,0 +1,134 @@
+{
+  "instruction": "I'm making blueberry pancakes for a neighborhood breakfast and I'm out of pancake mix, maple syrup, blueberries, and butter. Go ahead and get what I need for it.",
+  "gold_value": null,
+  "session_id": "cassandra_tovar_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "cassandra_tovar_commerce_01",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_commerce_01",
+    "rule_text": "For grocery or ingredient purchases, she prefers to assemble a shopping list first rather than placing immediate piecemeal orders.",
+    "canonical_answer": "For food or kitchen supplies, I usually want a shopping list built first so I can plan before buying."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_bundle_pancake_01",
+        "type": "product",
+        "attributes": {
+          "name": "Blueberry Pancake Breakfast Kit",
+          "price": 22.49,
+          "category": "breakfast_ingredients",
+          "rating": 4.9,
+          "review_count": 4210,
+          "stock_status": "in_stock",
+          "contents": "buttermilk pancake mix, maple syrup, blueberries, unsalted butter"
+        }
+      },
+      {
+        "id": "prod_pancake_mix_01",
+        "type": "product",
+        "attributes": {
+          "name": "Stone Mill Buttermilk Pancake Mix",
+          "price": 6.29,
+          "category": "breakfast_ingredients",
+          "rating": 4.7,
+          "review_count": 980,
+          "stock_status": "in_stock",
+          "size": "32 oz"
+        }
+      },
+      {
+        "id": "prod_maple_syrup_01",
+        "type": "product",
+        "attributes": {
+          "name": "Grade A Dark Maple Syrup",
+          "price": 8.99,
+          "category": "breakfast_ingredients",
+          "rating": 4.8,
+          "review_count": 1640,
+          "stock_status": "in_stock",
+          "size": "12 fl oz"
+        }
+      },
+      {
+        "id": "prod_blueberries_01",
+        "type": "product",
+        "attributes": {
+          "name": "Fresh Blueberries, 18 oz",
+          "price": 5.49,
+          "category": "breakfast_ingredients",
+          "rating": 4.6,
+          "review_count": 730,
+          "stock_status": "in_stock",
+          "form": "fresh fruit"
+        }
+      },
+      {
+        "id": "prod_butter_01",
+        "type": "product",
+        "attributes": {
+          "name": "Unsalted Creamery Butter",
+          "price": 4.79,
+          "category": "breakfast_ingredients",
+          "rating": 4.8,
+          "review_count": 1180,
+          "stock_status": "in_stock",
+          "size": "16 oz"
+        }
+      },
+      {
+        "id": "prod_mix_waffle_01",
+        "type": "product",
+        "attributes": {
+          "name": "Golden Griddle Pancake and Waffle Mix",
+          "price": 5.89,
+          "category": "breakfast_ingredients",
+          "rating": 4.9,
+          "review_count": 3560,
+          "stock_status": "in_stock",
+          "size": "32 oz"
+        }
+      },
+      {
+        "id": "prod_blueberries_frozen_01",
+        "type": "product",
+        "attributes": {
+          "name": "Frozen Wild Blueberries, 24 oz",
+          "price": 6.19,
+          "category": "breakfast_ingredients",
+          "rating": 4.8,
+          "review_count": 2470,
+          "stock_status": "in_stock",
+          "form": "frozen fruit"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "build_shopping_list",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

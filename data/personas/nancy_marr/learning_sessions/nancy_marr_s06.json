@@ -1,0 +1,104 @@
+{
+  "session_id": "nancy_marr_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "communication",
+  "reason_for_call": "Reply to a message",
+  "task_params": {
+    "sender": "Maya Lopez",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank her for organizing the workshop",
+      "say I would be happy to help next month",
+      "mention I can assist with seed-starting and planting demos",
+      "offer to arrive early for setup if useful",
+      "ask what supplies or prep would be most helpful"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Lopez",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_garden_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_garden_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Lopez",
+          "subject": "Youth planting workshop next month",
+          "body": "Hi Nancy, I'm starting to organize next month's youth planting workshop at the community garden. Since you've been so great with the kids during past garden days, I wanted to see if you might be interested in helping out again. No pressure at all — just let me know if you'd like to be involved.",
+          "thread_id": "thr_garden_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-06T09:18:00"
+        }
+      },
+      {
+        "id": "msg_lab_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Priya Shah",
+          "subject": "Revised sampling spreadsheet",
+          "body": "Attached is the revised spreadsheet for the greenhouse sampling schedule.",
+          "thread_id": "thr_lab_02",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-05-06T08:02:00"
+        }
+      },
+      {
+        "id": "msg_art_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Walker Art Center",
+          "subject": "Member preview this Friday",
+          "body": "You're invited to a member preview for our new exhibition this Friday evening.",
+          "thread_id": "thr_art_03",
+          "folder": "archive",
+          "labels": [
+            "arts"
+          ],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-05-02T14:40:00"
+        }
+      }
+    ]
+  }
+}

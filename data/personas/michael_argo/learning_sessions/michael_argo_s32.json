@@ -1,0 +1,89 @@
+{
+  "session_id": "michael_argo_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "workspace",
+  "reason_for_call": "Start a travel note.",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "Trips",
+    "template_location": "Templates",
+    "title": "Ride Notes - Chicago Sketch Ideas",
+    "content_brief_points": [
+      "sketch prompts from the train ride",
+      "gallery ideas to check later",
+      "small street details worth photographing",
+      "space for quick captions and follow-up notes"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Templates",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Ride Notes - Chicago Sketch Ideas",
+        "location": "Trips",
+        "content_brief": "<authored from content_brief_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_triptemplate_01",
+        "type": "document",
+        "attributes": {
+          "title": "Travel Note Template",
+          "doc_type": "template",
+          "location": "Templates",
+          "content_brief": "Simple layout for trip notes with prompts, ideas, and photo observations."
+        }
+      },
+      {
+        "id": "doc_gallerymemo_02",
+        "type": "document",
+        "attributes": {
+          "title": "Museum Day Rough Notes",
+          "doc_type": "note",
+          "location": "Trips",
+          "content_brief": "Loose observations from a city art stop."
+        }
+      },
+      {
+        "id": "doc_packing_03",
+        "type": "document",
+        "attributes": {
+          "title": "Weekend Packing List",
+          "doc_type": "template",
+          "location": "Templates",
+          "content_brief": "Checklist template for short travel prep."
+        }
+      }
+    ]
+  }
+}

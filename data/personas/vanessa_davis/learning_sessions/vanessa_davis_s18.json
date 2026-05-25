@@ -1,0 +1,101 @@
+{
+  "session_id": "vanessa_davis_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "communication",
+  "reason_for_call": "Draft a family message",
+  "task_params": {
+    "sender": "Monica Davis",
+    "folder": "inbox",
+    "language": "en",
+    "message_points": [
+      "We’re planning a quiet little getaway",
+      "Everything is fine, just keeping it low-key",
+      "We’ll share the details once plans are settled",
+      "Love y’all"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Monica Davis",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_family_03",
+        "language": "en",
+        "body": "<authored from message_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_family_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Monica Davis",
+          "subject": "Family catch-up for next month",
+          "body": "Hey everybody, just checking in to see how folks are doing and whether we want to plan a family dinner soon.",
+          "thread_id": "thr_family_03",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-18T09:14:00"
+        }
+      },
+      {
+        "id": "msg_family_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Andre Davis",
+          "subject": "Photos from Sunday",
+          "body": "Uploading the pictures from Sunday now. Let me know which ones you want me to print.",
+          "thread_id": "thr_family_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-17T19:42:00"
+        }
+      },
+      {
+        "id": "msg_work_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Route Dispatch",
+          "subject": "Fuel receipt reminder",
+          "body": "Please upload the missing fuel receipt for Thursday before end of day.",
+          "thread_id": "thr_work_12",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-02-18T07:30:00"
+        }
+      }
+    ]
+  }
+}

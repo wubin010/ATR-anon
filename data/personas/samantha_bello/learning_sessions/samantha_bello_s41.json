@@ -1,0 +1,119 @@
+{
+  "session_id": "samantha_bello_s41",
+  "session_type": "learning",
+  "day_offset": 41,
+  "domain": "communication",
+  "reason_for_call": "Triage my inbox",
+  "task_params": {
+    "promo_sender": "DailySteals",
+    "family_sender": "Maya Bello",
+    "travel_sender": "Vieques Guesthouse",
+    "priority": "high"
+  },
+  "expected_tools": [
+    "search_messages",
+    "archive_messages",
+    "set_message_priority"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "DailySteals"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_deals_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Maya Bello"
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Vieques Guesthouse"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_maya_01",
+          "msg_vieques_01"
+        ],
+        "priority": "high"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_deals_01",
+        "type": "message",
+        "attributes": {
+          "sender": "DailySteals",
+          "subject": "Flash sale: kitchen gadgets up to 70% off",
+          "body": "Last chance to grab today's promo bundles and free shipping offers.",
+          "thread_id": "thr_deals_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-12T08:14:00"
+        }
+      },
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Bello",
+          "subject": "Family plan for Sunday at Tia Elena's",
+          "body": "Can you confirm if you're bringing dessert and what time you'll arrive?",
+          "thread_id": "thr_maya_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-12T09:02:00"
+        }
+      },
+      {
+        "id": "msg_vieques_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Vieques Guesthouse",
+          "subject": "Your ferry timing and check-in details",
+          "body": "Sharing the updated arrival notes and room access instructions for your stay.",
+          "thread_id": "thr_vieques_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-12T10:27:00"
+        }
+      }
+    ]
+  }
+}

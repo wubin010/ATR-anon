@@ -1,0 +1,112 @@
+{
+  "session_id": "theodora_tong_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Compare some products",
+  "task_params": {
+    "category": "sketchbook",
+    "budget": 12,
+    "product_ids": [
+      "prod_arteza_01",
+      "prod_canson_02",
+      "prod_strathmore_03"
+    ],
+    "list_name": "art supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "sketchbook",
+        "budget": 12,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_arteza_01",
+          "prod_canson_02",
+          "prod_strathmore_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_arteza_01",
+          "prod_canson_02",
+          "prod_strathmore_03"
+        ],
+        "list_name": "art supplies"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_arteza_01",
+        "type": "product",
+        "attributes": {
+          "name": "Arteza Spiral Sketchbook 9x12",
+          "price": 8.99,
+          "category": "sketchbook",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_canson_02",
+        "type": "product",
+        "attributes": {
+          "name": "Canson XL Sketchbook 7x10",
+          "price": 11.49,
+          "category": "sketchbook",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_strathmore_03",
+        "type": "product",
+        "attributes": {
+          "name": "Strathmore 400 Series Sketchbook 5.5x8.5",
+          "price": 9.79,
+          "category": "sketchbook",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_moleskine_04",
+        "type": "product",
+        "attributes": {
+          "name": "Moleskine Art Sketch Album A4",
+          "price": 24.95,
+          "category": "sketchbook",
+          "rating": 4.8
+        }
+      }
+    ]
+  }
+}

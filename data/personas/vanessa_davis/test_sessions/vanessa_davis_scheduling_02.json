@@ -1,0 +1,80 @@
+{
+  "instruction": "I've got a vehicle inspection at Fleet Yard Bay 3 on 2026-07-14 — set a reminder for it.",
+  "gold_value": "before_event",
+  "session_id": "vanessa_davis_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "vanessa_davis_scheduling_02",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_scheduling_02",
+    "rule_text": "For appointments or activities that need preparation, she prefers reminders tied to the event timing rather than generic standalone reminders.",
+    "canonical_answer": "For anything I need to prep for, I want the reminder set relative to the event itself."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_pretrip_vehicle_inspection_20260714",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Pre-trip vehicle inspection",
+          "start_time": "2026-07-14T07:30:00",
+          "end_time": "2026-07-14T08:15:00",
+          "location": "Fleet Yard Bay 3",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_driver_safety_briefing_20260714",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Driver safety briefing",
+          "start_time": "2026-07-14T09:00:00",
+          "end_time": "2026-07-14T10:00:00",
+          "location": "Fleet Yard Conference Room",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_registration_renewal_20260716",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Annual vehicle registration renewal appointment",
+          "start_time": "2026-07-16T11:00:00",
+          "end_time": "2026-07-16T11:30:00",
+          "location": "County Vehicle Office",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "before_event"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

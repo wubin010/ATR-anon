@@ -1,0 +1,106 @@
+{
+  "session_id": "iris_parker_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "Employer Branding",
+    "title": "Art Programming Employer Branding Ideas",
+    "content_brief": "Brainstorm ideas for blending art programming into employer branding strategy",
+    "idea_points": [
+      "employee art showcases tied to recruiting campaigns",
+      "artist-led workshops for team culture storytelling",
+      "gallery-style office events for candidate visits",
+      "partnerships with local arts organizations",
+      "ways to measure engagement and brand lift"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Employer Branding",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Art Programming Employer Branding Ideas",
+        "location": "Employer Branding",
+        "content_brief": "Brainstorm ideas for blending art programming into employer branding strategy"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_brandtpl_01",
+        "content_delta": "<authored from idea_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_brandtpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Employer Branding Campaign Template",
+          "doc_type": "template",
+          "location": "Employer Branding",
+          "content_brief": "Reusable template for campaign themes, audience, channels, and success metrics"
+        }
+      },
+      {
+        "id": "doc_brandnote_02",
+        "type": "document",
+        "attributes": {
+          "title": "Candidate Experience Notes",
+          "doc_type": "note",
+          "location": "Employer Branding",
+          "content_brief": "Working notes on candidate touchpoints and recruiting narrative ideas"
+        }
+      },
+      {
+        "id": "doc_culturetpl_03",
+        "type": "document",
+        "attributes": {
+          "title": "Culture Programming Template",
+          "doc_type": "template",
+          "location": "People Team",
+          "content_brief": "Template for internal events, participation goals, and follow-up actions"
+        }
+      },
+      {
+        "id": "fold_brand_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Employer Branding",
+          "purpose": "Working materials for recruiting narrative and brand projects"
+        }
+      }
+    ]
+  }
+}

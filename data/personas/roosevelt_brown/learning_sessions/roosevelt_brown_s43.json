@@ -1,0 +1,101 @@
+{
+  "session_id": "roosevelt_brown_s43",
+  "session_type": "learning",
+  "day_offset": 43,
+  "domain": "communication",
+  "reason_for_call": "Draft a message.",
+  "task_params": {
+    "sender": "Maya Chen",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "suggest recording an episode after I get back",
+      "use the trip as inspiration for the episode theme",
+      "focus on art, travel, and community health connections",
+      "ask if next week works for recording"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Chen",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_maya_17",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Chen",
+          "subject": "Episode ideas for later this month",
+          "body": "Hey Roosevelt — once you're back, we should sketch out the next episode. I think your museum trip could spark something fun for the show. Let me know when you want to record.",
+          "thread_id": "thr_maya_17",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-12T09:14:00"
+        }
+      },
+      {
+        "id": "msg_ops_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Clinic Operations",
+          "subject": "Revised staffing template",
+          "body": "Please review the updated staffing sheet before Friday.",
+          "thread_id": "thr_ops_08",
+          "folder": "inbox",
+          "labels": [
+            "work"
+          ],
+          "priority": "high",
+          "archived": false,
+          "timestamp": "2025-02-12T08:02:00"
+        }
+      },
+      {
+        "id": "msg_jordan_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Jordan Ellis",
+          "subject": "Dinner this weekend?",
+          "body": "Want to host on Saturday, or should I take point this time?",
+          "thread_id": "thr_jordan_11",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-11T18:47:00"
+        }
+      }
+    ]
+  }
+}

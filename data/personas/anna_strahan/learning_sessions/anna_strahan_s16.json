@@ -1,0 +1,101 @@
+{
+  "session_id": "anna_strahan_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Community Outreach",
+    "doc_type": "note",
+    "document_title": "Art Therapy Outreach Planning",
+    "brainstorm_points": [
+      "pilot monthly watercolor workshop for caregivers",
+      "partner with parish library for offsite sessions",
+      "ask social worker team for referral criteria",
+      "track attendance and patient mood feedback",
+      "look into small local grant opportunities"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Community Outreach",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_outreach_01",
+        "content_delta": "<authored from brainstorm_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_outreach_01",
+        "type": "document",
+        "attributes": {
+          "title": "Art Therapy Outreach Planning",
+          "doc_type": "note",
+          "location": "Community Outreach",
+          "content_brief": "Working planning note for the clinic's art therapy outreach, including goals, partner ideas, and next steps."
+        }
+      },
+      {
+        "id": "doc_outreach_02",
+        "type": "document",
+        "attributes": {
+          "title": "Community Health Fair Follow-up",
+          "doc_type": "memo",
+          "location": "Community Outreach",
+          "content_brief": "Post-event follow-up memo with volunteer assignments and vendor notes."
+        }
+      },
+      {
+        "id": "doc_ops_03",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly Staffing Review",
+          "doc_type": "report",
+          "location": "Clinic Operations",
+          "content_brief": "Operations report on staffing levels, overtime usage, and hiring priorities."
+        }
+      },
+      {
+        "id": "file_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "brainstorm-photo-whiteboard.jpg",
+          "file_type": "image",
+          "location": "Downloads",
+          "owner": "Anna Strahan",
+          "labels": [
+            "brainstorm",
+            "outreach"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,532 @@
+[
+  {
+    "rule_text": "For messages that represent her professionally, Esther prefers a draft-first workflow instead of sending immediately.",
+    "canonical_answer": "I always want professional messages drafted first so I can review the wording before anything goes out.",
+    "counterfactual_default": "Send the message directly once the content is ready.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "organized, data‑driven approach to EHR documentation"
+      },
+      {
+        "type": "direct",
+        "content": "Bilingual Spanish–English Communication"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "esther_hoitsma_communication_01",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When an invitation overlaps with work coverage or an unresolved commitment, Esther prefers to respond tentatively rather than accepting or declining right away.",
+    "canonical_answer": "When my schedule is still in flux, I usually mark invites as tentative until I know I can fully commit.",
+    "counterfactual_default": "Accept or decline the invitation immediately.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "manage client schedules"
+      },
+      {
+        "type": "direct",
+        "content": "plays forward for the Caldwell United co‑ed recreational soccer league"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "esther_hoitsma_scheduling_01",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For group plans like potlucks, volunteer events, or teammate meetups, Esther prefers creating a shared calendar event rather than a private reminder.",
+    "canonical_answer": "If other people are involved, I want it on the calendar as a real shared event, not just a personal reminder.",
+    "counterfactual_default": "Set a private reminder instead of creating a calendar event.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they host monthly potluck nights at the senior center"
+      },
+      {
+        "type": "direct",
+        "content": "volunteering at the senior center’s cultural events"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "create_event",
+      "param": null
+    },
+    "rule_id": "esther_hoitsma_scheduling_02",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For scheduled commitments tied to exams, appointments, or outings, Esther prefers reminders that fire before the event instead of a generic repeating schedule.",
+    "canonical_answer": "For things I need to show up for, I prefer a reminder right before the event rather than a generic recurring ping.",
+    "counterfactual_default": "Use a one-time or repeating reminder without tying it specifically to the event time.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Time Management and Goal‑Oriented Planning"
+      },
+      {
+        "type": "direct",
+        "content": "pursuing CNA certification within the year"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "rule_id": "esther_hoitsma_scheduling_03",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing work-related files, Esther prefers classifying them by date rather than by project or owner.",
+    "canonical_answer": "For my work files, I usually organize them by date so the timeline stays clear.",
+    "counterfactual_default": "Classify the files by project or file type.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "accurate and timely record-keeping"
+      },
+      {
+        "type": "direct",
+        "content": "organized precision"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "esther_hoitsma_workspace_03",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For dining plans, Esther prefers restaurants with strong Mexican or fusion flavors suitable for sharing over generic American options.",
+    "canonical_answer": "When I’m choosing a place to eat, I usually go for Mexican or fusion spots that work well for shared meals.",
+    "counterfactual_default": "Pick a generic nearby restaurant without a cuisine-based preference.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "loves preparing traditional mole poblano and hand‑made tamales"
+      },
+      {
+        "type": "direct",
+        "content": "showcasing their fusion dishes"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "esther_hoitsma_reservation_02",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When planning a getaway, Esther prefers stops that combine outdoor adventure with cultural immersion instead of a purely generic sightseeing list.",
+    "canonical_answer": "For trips, I like an itinerary that mixes hiking or outdoor adventure with something culturally meaningful.",
+    "counterfactual_default": "Choose stops based mainly on generic popularity or convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers carefully planned weekend getaways that blend adventure and cultural immersion"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "esther_hoitsma_travel_01",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a trip stop falls through, Esther prefers replacement stops that preserve the original adventure-or-culture theme rather than swapping in any convenient alternative.",
+    "canonical_answer": "When part of a trip breaks, I want the replacement to match the original vibe, not just be the easiest substitute.",
+    "counterfactual_default": "Replace the disrupted stop with any available high-rated alternative.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers carefully planned weekend getaways that blend adventure and cultural immersion"
+      },
+      {
+        "type": "direct",
+        "content": "carefully planned"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "esther_hoitsma_travel_02",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For regional group travel, Esther prefers shared ground transport over air travel when it helps the group stay together and save money.",
+    "canonical_answer": "On shorter regional trips with other people, I prefer shared ground travel so we can keep costs down and travel together.",
+    "counterfactual_default": "Check flights first or choose the fastest air option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often traveling with soccer teammates to share costs"
+      },
+      {
+        "type": "direct",
+        "content": "carefully planned weekend getaways"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": "transport_offer_id"
+    },
+    "rule_id": "esther_hoitsma_travel_03",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking lodging for group trips, Esther prefers hotel offers that support roommate-style cost sharing rather than private single-occupancy options.",
+    "canonical_answer": "If I’m traveling with a group, I prefer lodging that lets us split the room and the cost.",
+    "counterfactual_default": "Choose a standard private room for comfort or convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often traveling with soccer teammates to share costs"
+      },
+      {
+        "type": "direct",
+        "content": "budget trips using a travel‑fund app"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "esther_hoitsma_travel_04",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she does fly, Esther prefers a window seat for the landscape views.",
+    "canonical_answer": "If I’m on a plane, I want a window seat because I love seeing the landscape.",
+    "counterfactual_default": "Choose an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "watercolor paintings of Idaho’s canyon country"
+      },
+      {
+        "type": "direct",
+        "content": "drawing inspiration from Ansel Adams’ landscape photography"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "esther_hoitsma_travel_05",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering ingredients or kitchen supplies, Esther prefers products that reflect locally sourced Pacific Northwest or traditional Mexican cooking over generic substitutes.",
+    "canonical_answer": "For cooking purchases, I go for ingredients that feel either traditionally Mexican or distinctly local to the Northwest.",
+    "counterfactual_default": "Choose a generic mainstream product that merely fits the category.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "locally sourced fir tree mushrooms"
+      },
+      {
+        "type": "direct",
+        "content": "traditional mole poblano and hand‑made tamales"
+      },
+      {
+        "type": "direct",
+        "content": "Pacific Northwest twists like smoked salmon mole and huckleberry‑infused salsa verde"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "esther_hoitsma_commerce_01",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When something she bought is wrong but still useful to her plans, Esther prefers an exchange rather than a refund.",
+    "canonical_answer": "If an item is the wrong version but I still need it, I’d rather exchange it than just get my money back.",
+    "counterfactual_default": "Request a refund and end the transaction.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "experimenting with fusion recipes"
+      },
+      {
+        "type": "direct",
+        "content": "participates in community art workshops"
+      },
+      {
+        "type": "inferred",
+        "content": "Because Esther actively uses specialty cooking ingredients and art materials, a mistaken purchase often still needs replacement more than reimbursement."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "esther_hoitsma_commerce_02",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When she needs to trim recurring costs without giving a service up entirely, Esther prefers switching to the basic plan.",
+    "canonical_answer": "If I’m trying to save money but still keep a service, I move it down to the basic plan.",
+    "counterfactual_default": "Keep the current plan or cancel the subscription outright.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "a savings streak"
+      },
+      {
+        "type": "direct",
+        "content": "budget trips using a travel‑fund app"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "change_subscription_plan",
+      "param": "new_plan"
+    },
+    "rule_id": "esther_hoitsma_commerce_03",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "Messages tied to patient care, scheduling, or family coordination should be marked high priority for Esther.",
+    "canonical_answer": "Anything related to care coordination or family communication should be marked high priority for me.",
+    "counterfactual_default": "Leave the messages at normal priority.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "coordinate with multidisciplinary teams efficiently"
+      },
+      {
+        "type": "direct",
+        "content": "providing nuanced care to Spanish‑speaking clients"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "esther_hoitsma_communication_02",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing messages about nursing school, certifications, or career advancement, Esther prefers labeling them under a dedicated training or career bucket instead of leaving them unlabeled.",
+    "canonical_answer": "I like messages about classes, certifications, and career steps grouped under a clear training label.",
+    "counterfactual_default": "Leave the messages unlabeled or file them under a generic inbox category.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "pursuing CNA certification within the year"
+      },
+      {
+        "type": "direct",
+        "content": "aiming for an Associate’s in Nursing and eventually a supervisory RN role"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "esther_hoitsma_communication_03",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When booking a service appointment, Esther prefers a bilingual or culturally sensitive provider when one is available.",
+    "canonical_answer": "If I’m booking a service, I prefer someone bilingual or culturally aware whenever I can get that.",
+    "counterfactual_default": "Choose any available provider without regard to language or cultural fit.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Fluent in Spanish and English, Esther often acts as a cultural bridge"
+      },
+      {
+        "type": "direct",
+        "content": "culturally sensitive elder‑care services"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "esther_hoitsma_reservation_03",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When restaurant plans shift, Esther prefers adjusting the reservation by party size rather than changing the whole time slot first.",
+    "canonical_answer": "If dinner plans change, I usually want to fix the headcount before I move the reservation time.",
+    "counterfactual_default": "Modify the reservation time instead of the party size.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "often traveling with soccer teammates to share costs"
+      },
+      {
+        "type": "direct",
+        "content": "host monthly potluck nights at the senior center"
+      },
+      {
+        "type": "inferred",
+        "content": "Because Esther regularly organizes social meals with teammates and community groups, attendance swings are a more characteristic change than the chosen dining time."
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "modify_restaurant_reservation",
+      "param": "field"
+    },
+    "rule_id": "esther_hoitsma_reservation_04",
+    "persona_id": "esther_hoitsma",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

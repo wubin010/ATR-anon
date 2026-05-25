@@ -1,0 +1,72 @@
+{
+  "session_id": "fs_reservation_pv_track_critical_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "persona_id": "few_shot",
+  "rule_id": "fs_reservation_pv_track_critical",
+  "instruction": "That Ella Fitzgerald tribute concert ticket I booked last week — turn on tracking for the booking, I don't want to miss anything important.",
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "bk_music_tribute_01",
+        "type": "event",
+        "attributes": {
+          "name": "Ella Fitzgerald Tribute Night — booked row G",
+          "event_type": "concert",
+          "location": "Seattle Symphony Hall",
+          "date_time": "2026-06-14T19:30",
+          "price": 85,
+          "status": "booked"
+        }
+      },
+      {
+        "id": "bk_theater_shakespeare_01",
+        "type": "event",
+        "attributes": {
+          "name": "A Midsummer Night's Dream — row K",
+          "event_type": "theater",
+          "location": "Seattle Rep",
+          "date_time": "2026-07-02T19:00",
+          "price": 65,
+          "status": "booked"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "track_reservation_updates",
+          "arguments": {
+            "booking_id": "bk_music_tribute_01",
+            "update_scope": "critical"
+          },
+          "compare_args": [
+            "update_scope"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_reservation_pv_track_critical",
+    "rule_text": "When enabling update tracking on a booked event, default to update_scope=critical (only key changes like cancellations, big reschedules, ticket-type changes) — never update_scope=all (avoids being spammed by program notes, seat maps, and side-promotions).",
+    "canonical_answer": "When you turn on tracking for the booking, only the big stuff — don't push every little update at me."
+  }
+}

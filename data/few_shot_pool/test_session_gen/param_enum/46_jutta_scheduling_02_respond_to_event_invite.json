@@ -1,0 +1,104 @@
+{
+  "domain": "scheduling",
+  "instruction": "I just got an invite: City Heritage Fair's Featured Local Voices panel at River Pavilion, May 18, 3–5pm. Check whether it conflicts with what I already have, and respond to the invite for me.",
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_featured_local_voices_20250518",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "City Heritage Fair Featured Local Voices Panel",
+          "start_time": "2025-05-18T15:00:00-04:00",
+          "end_time": "2025-05-18T17:00:00-04:00",
+          "participants": [
+            "programs@cityheritage.org",
+            "speakers@riverpavilion.org",
+            "jutta.ashton@example.com"
+          ],
+          "location": "River Pavilion",
+          "calendar": "default",
+          "status": "confirmed",
+          "organizer": "City Heritage Council Programs Office",
+          "attendee_count": 180,
+          "rsvp_deadline": "2025-05-15T17:00:00-04:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_folk_song_circle_20250518",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunday Folk-Song Circle",
+          "start_time": "2025-05-18T14:30:00-04:00",
+          "end_time": "2025-05-18T16:30:00-04:00",
+          "participants": [
+            "jutta.ashton@example.com",
+            "marta.owens@example.com",
+            "lena.holt@example.com",
+            "cedarhouse.musicroom@example.com"
+          ],
+          "location": "Cedar House Music Room",
+          "calendar": "default",
+          "status": "confirmed",
+          "recurrence": "weekly",
+          "participant_count": 7
+        }
+      },
+      {
+        "id": "evt_book_club_20250518_evening",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "May Book Club",
+          "start_time": "2025-05-18T19:00:00-04:00",
+          "end_time": "2025-05-18T20:30:00-04:00",
+          "participants": [
+            "jutta.ashton@example.com",
+            "maplelibrary.club@example.com",
+            "sara.kent@example.com",
+            "nina.reed@example.com"
+          ],
+          "location": "Maple Library",
+          "calendar": "default",
+          "status": "confirmed",
+          "attendee_count": 12
+        }
+      }
+    ]
+  },
+  "session_id": "jutta_ashton_scheduling_02_test",
+  "session_type": "test",
+  "persona_id": "jutta_ashton",
+  "rule_id": "jutta_ashton_scheduling_02",
+  "rule_ref": {
+    "rule_id": "jutta_ashton_scheduling_02",
+    "rule_text": "When responding to a new group-event invitation that conflicts with existing commitments, default to a tentative response rather than accepting or declining outright.",
+    "canonical_answer": "If a new event clashes with what I've already got, mark it tentative — don't accept or decline on my behalf."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "instruction": "I'm planning a 2-day San Diego getaway for two adults. From the candidate stops below, choose exactly one stop to use as the trip's main anchor and build the draft around that single stop in San Diego.",
+  "gold_value": [
+    "stop_sd_torrey_pines_01"
+  ],
+  "session_id": "eduardo_rivera_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "eduardo_rivera_travel_02",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_travel_02",
+    "rule_text": "For getaway itineraries, he leans toward sunrise hikes, cliffs, and scenic nature viewpoints rather than nightlife-centered stops.",
+    "canonical_answer": "On trips, I prefer scenic hikes and viewpoints over nightlife stops."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_sd_torrey_pines_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Torrey Pines Coastal Trail",
+          "stop_type": "nature_reserve",
+          "location": "La Jolla, San Diego",
+          "tags": [
+            "coastal_hike",
+            "cliffs",
+            "nature",
+            "viewpoint",
+            "sunrise",
+            "daytime"
+          ],
+          "rating": 4.6,
+          "review_count": 918,
+          "visit_duration_hours": 2.5
+        }
+      },
+      {
+        "id": "stop_sd_mount_soledad_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mount Soledad Memorial",
+          "stop_type": "hilltop_viewpoint",
+          "location": "La Jolla, San Diego",
+          "tags": [
+            "viewpoint",
+            "panoramic",
+            "scenic_drive",
+            "city_view",
+            "popular",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 3387,
+          "visit_duration_hours": 1
+        }
+      },
+      {
+        "id": "stop_sd_la_jolla_cove_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "La Jolla Cove Walk",
+          "stop_type": "coastal_viewpoint",
+          "location": "La Jolla, San Diego",
+          "tags": [
+            "ocean_view",
+            "nature",
+            "shoreline",
+            "seals",
+            "popular",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 5124,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_sd_gaslamp_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Gaslamp Quarter",
+          "stop_type": "entertainment_district",
+          "location": "Downtown San Diego",
+          "tags": [
+            "nightlife",
+            "bars",
+            "live_music",
+            "restaurants",
+            "late_night",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 8420,
+          "visit_duration_hours": 3
+        }
+      },
+      {
+        "id": "stop_sd_little_italy_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Little Italy",
+          "stop_type": "dining_district",
+          "location": "Downtown San Diego",
+          "tags": [
+            "nightlife",
+            "cocktail_bars",
+            "restaurants",
+            "street_festival",
+            "popular",
+            "evening"
+          ],
+          "rating": 4.8,
+          "review_count": 6735,
+          "visit_duration_hours": 3
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_sd_torrey_pines_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

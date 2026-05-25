@@ -1,0 +1,121 @@
+{
+  "instruction": "I just noticed I'm almost out of some household basics—paper towels, dish soap, and 13-gallon trash bags. Go ahead and handle that for me.",
+  "gold_value": null,
+  "session_id": "gabriel_campbell_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "gabriel_campbell_commerce_01",
+  "rule_ref": {
+    "rule_id": "gabriel_campbell_commerce_01",
+    "rule_text": "When stocking up on food or household staples, he prefers building a running list rather than placing an impulse order immediately.",
+    "canonical_answer": "I always collect staples into a list first instead of impulse-ordering them one by one."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_home_refill_bundle_01",
+        "type": "product",
+        "attributes": {
+          "name": "Household Refill Pack: Paper Towels, Dish Soap & 13-Gallon Trash Bags",
+          "price": 31.49,
+          "category": "household",
+          "rating": 4.9,
+          "review_count": 4680,
+          "stock_status": "in_stock",
+          "contents": "6 double rolls paper towels, 24 oz dish soap, 40-count 13-gallon trash bags"
+        }
+      },
+      {
+        "id": "prod_paper_towels_01",
+        "type": "product",
+        "attributes": {
+          "name": "Ultra Absorb Paper Towels, 6 Double Rolls",
+          "price": 11.29,
+          "category": "household",
+          "rating": 4.7,
+          "review_count": 1180,
+          "stock_status": "in_stock",
+          "size": "6 double rolls"
+        }
+      },
+      {
+        "id": "prod_dish_soap_01",
+        "type": "product",
+        "attributes": {
+          "name": "Lemon Dish Soap, 24 oz",
+          "price": 4.49,
+          "category": "household",
+          "rating": 4.8,
+          "review_count": 940,
+          "stock_status": "in_stock",
+          "scent": "lemon"
+        }
+      },
+      {
+        "id": "prod_trash_bags_01",
+        "type": "product",
+        "attributes": {
+          "name": "13-Gallon Kitchen Trash Bags, 40 Count",
+          "price": 8.99,
+          "category": "household",
+          "rating": 4.8,
+          "review_count": 1260,
+          "stock_status": "in_stock",
+          "size": "40 count"
+        }
+      },
+      {
+        "id": "prod_dish_soap_concentrate_01",
+        "type": "product",
+        "attributes": {
+          "name": "Dish Soap Refill Concentrate, 3-Pack",
+          "price": 14.99,
+          "category": "household",
+          "rating": 4.9,
+          "review_count": 3320,
+          "stock_status": "in_stock",
+          "pack_size": "3 pack"
+        }
+      },
+      {
+        "id": "prod_trash_bags_scented_01",
+        "type": "product",
+        "attributes": {
+          "name": "Lavender 13-Gallon Kitchen Trash Bags, 80 Count",
+          "price": 12.49,
+          "category": "household",
+          "rating": 4.9,
+          "review_count": 2870,
+          "stock_status": "in_stock",
+          "size": "80 count"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "build_shopping_list",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

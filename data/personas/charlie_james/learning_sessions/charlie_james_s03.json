@@ -1,0 +1,106 @@
+{
+  "session_id": "charlie_james_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "Sketchbook",
+    "budget": 20,
+    "sort_by": "rating",
+    "name": "Field Notes Heavy Paper Sketchbook",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "Sketchbook",
+        "budget": 20,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_sketch_01",
+          "prod_sketch_02",
+          "prod_sketch_03",
+          "prod_sketch_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_sketch_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sketch_01",
+        "type": "product",
+        "attributes": {
+          "name": "Field Notes Heavy Paper Sketchbook",
+          "price": 14.99,
+          "category": "Sketchbook",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_sketch_02",
+        "type": "product",
+        "attributes": {
+          "name": "Canson Wirebound Artist Sketchbook",
+          "price": 12.49,
+          "category": "Sketchbook",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_sketch_03",
+        "type": "product",
+        "attributes": {
+          "name": "Strathmore Mixed Media Sketchbook",
+          "price": 18.95,
+          "category": "Sketchbook",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_sketch_04",
+        "type": "product",
+        "attributes": {
+          "name": "UCreate Hardbound Sketchbook",
+          "price": 9.99,
+          "category": "Sketchbook",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

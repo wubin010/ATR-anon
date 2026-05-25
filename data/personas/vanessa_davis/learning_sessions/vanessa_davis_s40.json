@@ -1,0 +1,88 @@
+{
+  "session_id": "vanessa_davis_s40",
+  "session_type": "learning",
+  "day_offset": 40,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Chicken and Cornbread Comfort Tweaks",
+    "location": "Personal/Recipes",
+    "tweak_points": [
+      "Add smoked paprika to the flour for the chicken",
+      "Use a little hot sauce in the buttermilk soak",
+      "Season collard greens with turkey instead of ham hock",
+      "Brush cornbread top with melted butter after baking",
+      "Leave space for future side-dish notes"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Personal/Recipes",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Chicken and Cornbread Comfort Tweaks",
+        "location": "Personal/Recipes",
+        "content_brief": "<authored from tweak_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_recipe_01",
+        "type": "document",
+        "attributes": {
+          "title": "Seafood Boil Notes",
+          "doc_type": "note",
+          "location": "Personal/Recipes",
+          "content_brief": "Casual cooking note with seasoning reminders and timing tips."
+        }
+      },
+      {
+        "id": "doc_recipe_02",
+        "type": "document",
+        "attributes": {
+          "title": "Sunday Dinner Ideas",
+          "doc_type": "note",
+          "location": "Personal/Recipes",
+          "content_brief": "Short note collecting main dish and side ideas for family meals."
+        }
+      },
+      {
+        "id": "doc_home_03",
+        "type": "document",
+        "attributes": {
+          "title": "Garage Supply List",
+          "doc_type": "note",
+          "location": "Personal/Home",
+          "content_brief": "Checklist for small repair supplies and storage items."
+        }
+      }
+    ]
+  }
+}

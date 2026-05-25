@@ -1,0 +1,93 @@
+{
+  "instruction": "Please set a reminder for my 7pm fellowship gathering at Oak Street Chapel on 2026-09-14 — I don't want it to slip my mind.",
+  "gold_value": "weekly",
+  "session_id": "roosevelt_brown_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "roosevelt_brown_scheduling_02",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_scheduling_02",
+    "rule_text": "For his recurring personal rituals and community commitments, he prefers weekly reminders rather than one-off prompts.",
+    "canonical_answer": "For the things I do as regular rituals, weekly reminders work best for me."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_oak_fellowship_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Evening Fellowship Circle",
+          "start_time": "2026-09-14T19:00:00",
+          "end_time": "2026-09-14T20:30:00",
+          "participants": [
+            "roosevelt.brown@example.com",
+            "pastor.james@oakstreetchapel.org",
+            "smallgroup@oakstreetchapel.org"
+          ],
+          "location": "Oak Street Chapel",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dental_cleaning_20260915",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dental Cleaning",
+          "start_time": "2026-09-15T10:00:00",
+          "end_time": "2026-09-15T11:00:00",
+          "participants": [
+            "roosevelt.brown@example.com",
+            "frontdesk@riversidedental.com"
+          ],
+          "location": "Riverside Dental",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_housing_board_meeting_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Southside Housing Board Meeting",
+          "start_time": "2026-09-14T17:00:00",
+          "end_time": "2026-09-14T18:00:00",
+          "participants": [
+            "roosevelt.brown@example.com",
+            "secretary@southsidehousing.org"
+          ],
+          "location": "Civic Center Room 204",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "set_reminder",
+          "arguments": {
+            "cadence": "weekly"
+          },
+          "compare_args": [
+            "cadence"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "session_id": "vanessa_davis_s44",
+  "session_type": "learning",
+  "day_offset": 44,
+  "domain": "workspace",
+  "reason_for_call": "Update a tracker.",
+  "task_params": {
+    "tracker_title": "Mentorship Outreach Tracker",
+    "update_action": "create_entry",
+    "entry_points": [
+      "Season focus: outreach ideas and follow-ups to keep consistent",
+      "Host one road-readiness Q&A for newer drivers",
+      "Share one practical safety checklist with mentees",
+      "Do one check-in call after each mentee's first solo week",
+      "Send monthly encouragement text to mentees who seem discouraged",
+      "Keep notes on who asked about CDL endorsements",
+      "Flag anyone who wants help with dispatcher communication",
+      "Review follow-up progress before adding new outreach names"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_mentorship_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from entry_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_mentorship_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Mentorship Outreach Tracker"
+        }
+      },
+      {
+        "id": "trk_safety_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Driver Safety Improvement Log"
+        }
+      },
+      {
+        "id": "trk_sales_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Client Follow-Up Checklist"
+        }
+      }
+    ]
+  }
+}

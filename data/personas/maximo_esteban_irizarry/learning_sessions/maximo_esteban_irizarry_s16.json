@@ -1,0 +1,92 @@
+{
+  "session_id": "maximo_esteban_irizarry_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "scheduling",
+  "reason_for_call": "Set a reminder.",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Teach youth coding group",
+    "start_time": "2025-03-22T10:00:00-04:00",
+    "end_time": "2025-03-22T12:00:00-04:00",
+    "remind_at": "2025-03-21T19:00:00-04:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_youthcoding_01",
+        "remind_at": "2025-03-21T19:00:00-04:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_youthcoding_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Teach youth coding group",
+          "start_time": "2025-03-22T10:00:00-04:00",
+          "end_time": "2025-03-22T12:00:00-04:00",
+          "participants": [],
+          "location": "Centro Comunitario de Orocovis",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_dentist_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dental cleaning",
+          "start_time": "2025-03-21T15:00:00-04:00",
+          "end_time": "2025-03-21T16:00:00-04:00",
+          "participants": [],
+          "location": "Clinica Dental Orocovis",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_clientcall_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Consultancy check-in",
+          "start_time": "2025-03-22T14:00:00-04:00",
+          "end_time": "2025-03-22T14:30:00-04:00",
+          "participants": [
+            "Lucia Ramos"
+          ],
+          "location": "",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "session_id": "gabriel_campbell_s46",
+  "session_type": "learning",
+  "day_offset": 46,
+  "domain": "scheduling",
+  "reason_for_call": "Review my calendar.",
+  "task_params": {
+    "title": "Personal Hold",
+    "start_time": "2025-03-22T09:00:00-04:00",
+    "end_time": "2025-03-22T11:00:00-04:00",
+    "location": "Home",
+    "recovery_event_id": "evt_hold_04",
+    "new_value": "Recovery Block"
+  },
+  "expected_tools": [
+    "list_events",
+    "modify_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "modify_event",
+      "arguments": {
+        "event_id": "evt_hold_04",
+        "field": "title",
+        "new_value": "Recovery Block"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Operations Leadership Sync",
+          "start_time": "2025-03-17T09:00:00-04:00",
+          "end_time": "2025-03-17T10:00:00-04:00",
+          "participants": [
+            "vp.operations@harborhealth.org",
+            "gabriel.campbell@harborhealth.org"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Patient Experience Metrics Review",
+          "start_time": "2025-03-18T13:00:00-04:00",
+          "end_time": "2025-03-18T14:00:00-04:00",
+          "participants": [
+            "analytics.team@harborhealth.org",
+            "gabriel.campbell@harborhealth.org"
+          ],
+          "location": "Main Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Art Therapy Pilot Debrief",
+          "start_time": "2025-03-20T11:00:00-04:00",
+          "end_time": "2025-03-20T12:00:00-04:00",
+          "participants": [
+            "program.leads@harborhealth.org",
+            "gabriel.campbell@harborhealth.org"
+          ],
+          "location": "Main Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_hold_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Personal Hold",
+          "start_time": "2025-03-22T09:00:00-04:00",
+          "end_time": "2025-03-22T11:00:00-04:00",
+          "participants": [],
+          "location": "Home",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

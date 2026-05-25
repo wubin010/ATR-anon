@@ -1,0 +1,145 @@
+{
+  "instruction": "I'm planning a first-time 2-day solo stop in Montgomery, Alabama. From the candidate places below, choose one stop to anchor the visit and build the itinerary around it.",
+  "gold_value": [
+    "stop_montgomery_freedom_rides_01"
+  ],
+  "session_id": "romisha_shields_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "romisha_shields_travel_01",
+  "rule_ref": {
+    "rule_id": "romisha_shields_travel_01",
+    "rule_text": "When planning a trip, she prefers historical and civil-rights-related stops over generic sightseeing picks.",
+    "canonical_answer": "When I travel, I want the stops to teach me something about history, especially civil-rights history."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_montgomery_freedom_rides_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Freedom Rides Museum",
+          "location": "Montgomery, Alabama",
+          "tags": [
+            "history",
+            "civil_rights",
+            "museum",
+            "downtown",
+            "education"
+          ],
+          "rating": 4.6,
+          "review_count": 438,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_montgomery_state_capitol_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Alabama State Capitol",
+          "location": "Montgomery, Alabama",
+          "tags": [
+            "history",
+            "landmark",
+            "government",
+            "viewpoint",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 1920,
+          "visit_duration_hours": 1.0
+        }
+      },
+      {
+        "id": "stop_montgomery_old_alabama_town_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Old Alabama Town",
+          "location": "Montgomery, Alabama",
+          "tags": [
+            "history",
+            "preserved_buildings",
+            "living_history",
+            "walking",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 1284,
+          "visit_duration_hours": 2.0
+        }
+      },
+      {
+        "id": "stop_montgomery_riverfront_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Montgomery Riverfront Park",
+          "location": "Montgomery, Alabama",
+          "tags": [
+            "riverfront",
+            "park",
+            "scenic",
+            "popular",
+            "family_friendly"
+          ],
+          "rating": 4.9,
+          "review_count": 4217,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_montgomery_whitewater_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Montgomery Whitewater",
+          "location": "Montgomery, Alabama",
+          "tags": [
+            "outdoors",
+            "adventure",
+            "entertainment",
+            "new",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 3562,
+          "visit_duration_hours": 3.0
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_montgomery_freedom_rides_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

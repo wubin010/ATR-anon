@@ -1,0 +1,113 @@
+{
+  "session_id": "joseph_eldridge_s44",
+  "session_type": "learning",
+  "day_offset": 44,
+  "domain": "travel",
+  "reason_for_call": "Search flight options",
+  "task_params": {
+    "origin": "RDU",
+    "destination": "Denver",
+    "passenger_count": 2,
+    "departure_date": "2025-09-18",
+    "return_date": "2025-09-24",
+    "seat_preference": "aisle",
+    "flight_offer_id": "flt_den_02"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "RDU",
+        "destination": "Denver",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_den_02",
+        "seat_preference": "aisle"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_den_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "RDU",
+          "destination": "Denver",
+          "departure_date": "2025-09-18",
+          "return_date": "2025-09-24",
+          "airline": "United",
+          "price": 612.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_den_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "RDU",
+          "destination": "Denver",
+          "departure_date": "2025-09-18",
+          "return_date": "2025-09-24",
+          "airline": "Delta",
+          "price": 648.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_den_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "RDU",
+          "destination": "Denver",
+          "departure_date": "2025-09-19",
+          "return_date": "2025-09-25",
+          "airline": "Southwest",
+          "price": 534.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_cos_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "RDU",
+          "destination": "Colorado Springs",
+          "departure_date": "2025-09-18",
+          "return_date": "2025-09-24",
+          "airline": "American",
+          "price": 589.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  }
+}

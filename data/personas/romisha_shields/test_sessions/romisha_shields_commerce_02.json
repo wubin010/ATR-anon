@@ -1,0 +1,107 @@
+{
+  "instruction": "Please order one packet of tomato seeds for a small patio planter by the back steps. Keep it under $6, and make sure the plant won't get too tall for a container.",
+  "gold_value": "prod_silvery_fir_tree_01",
+  "session_id": "romisha_shields_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "romisha_shields_commerce_02",
+  "rule_ref": {
+    "rule_id": "romisha_shields_commerce_02",
+    "rule_text": "For cooking or garden purchases, she prefers heirloom and fresh-herb options over plainer generic alternatives.",
+    "canonical_answer": "When I buy ingredients or garden items, I go for heirloom produce and fresh herbs when I can."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_silvery_fir_tree_01",
+        "type": "product",
+        "attributes": {
+          "name": "Silvery Fir Tree Heirloom Tomato Seeds",
+          "price": 5.49,
+          "category": "tomato_seeds",
+          "rating": 4.4,
+          "seed_type": "heirloom",
+          "growth_habit": "determinate",
+          "mature_height_in": 30,
+          "container_friendly": true,
+          "review_count": 87
+        }
+      },
+      {
+        "id": "prod_cherokee_purple_01",
+        "type": "product",
+        "attributes": {
+          "name": "Cherokee Purple Heirloom Tomato Seeds",
+          "price": 5.79,
+          "category": "tomato_seeds",
+          "rating": 4.7,
+          "seed_type": "heirloom",
+          "growth_habit": "indeterminate",
+          "mature_height_in": 72,
+          "container_friendly": false,
+          "review_count": 640
+        }
+      },
+      {
+        "id": "prod_patio_hybrid_01",
+        "type": "product",
+        "attributes": {
+          "name": "Patio Hybrid Tomato Seeds",
+          "price": 3.29,
+          "category": "tomato_seeds",
+          "rating": 4.9,
+          "seed_type": "hybrid",
+          "growth_habit": "determinate",
+          "mature_height_in": 24,
+          "container_friendly": true,
+          "review_count": 1540
+        }
+      },
+      {
+        "id": "prod_roma_vf_bush_01",
+        "type": "product",
+        "attributes": {
+          "name": "Roma VF Bush Tomato Seeds",
+          "price": 2.99,
+          "category": "tomato_seeds",
+          "rating": 4.8,
+          "seed_type": "standard",
+          "growth_habit": "determinate",
+          "mature_height_in": 28,
+          "container_friendly": true,
+          "review_count": 980
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_silvery_fir_tree_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

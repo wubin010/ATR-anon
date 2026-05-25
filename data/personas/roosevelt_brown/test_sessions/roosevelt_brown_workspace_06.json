@@ -1,0 +1,85 @@
+{
+  "instruction": "Please write up something short for the River Street clinic outreach team and save it in /Community/Operations. It should help with the Friday partner calls by covering attendance, updates from each clinic, upcoming neighborhood events, and who owns each follow-up item. Title it \"River Street Partner Call Notes\".",
+  "gold_value": "template",
+  "session_id": "roosevelt_brown_workspace_06_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "roosevelt_brown_workspace_06",
+  "rule_ref": {
+    "rule_id": "roosevelt_brown_workspace_06",
+    "rule_text": "When he needs to create a reusable structure for recurring meetings, outreach, or planning workflows, he prefers starting from a template rather than a one-off document.",
+    "canonical_answer": "For anything I’ll repeat, I prefer making a template instead of a one-time document."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_river_street_partner_followup_01",
+        "type": "document",
+        "attributes": {
+          "title": "River Street Partner Call Follow-Up",
+          "doc_type": "memo",
+          "location": "/Community/Operations",
+          "content_brief": "Summary sent after a recent Friday clinic partner call, including outreach updates and owner assignments."
+        }
+      },
+      {
+        "id": "doc_river_street_tabling_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "River Street Tabling Debrief",
+          "doc_type": "note",
+          "location": "/Community/Operations",
+          "content_brief": "Quick notes on turnout, resident questions, and flyer counts from a neighborhood outreach table."
+        }
+      },
+      {
+        "id": "doc_staff_huddle_reminders_01",
+        "type": "document",
+        "attributes": {
+          "title": "Staff Huddle Reminders",
+          "doc_type": "memo",
+          "location": "/Community/Operations",
+          "content_brief": "One-page talking points for a regular team huddle covering attendance, announcements, and follow-ups."
+        }
+      },
+      {
+        "id": "doc_weekly_outreach_agenda_tpl_01",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly Outreach Meeting Agenda",
+          "doc_type": "template",
+          "location": "/Community/Templates",
+          "content_brief": "Blank structure used for recurring outreach meetings with attendance, updates, event planning, and action items."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "template"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

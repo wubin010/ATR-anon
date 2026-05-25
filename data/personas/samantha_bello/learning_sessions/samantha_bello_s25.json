@@ -1,0 +1,85 @@
+{
+  "session_id": "samantha_bello_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "workspace",
+  "reason_for_call": "Add something to a tracker",
+  "task_params": {
+    "title": "Career Growth Tracker",
+    "update_action": "create_entry",
+    "entry_payload": "Goal: organize next steps toward a CFO path. Target role: CFO at a regional tourism or hospitality group. Next actions: research skill gaps, map required experience, outline a credential plan, and set one networking step.",
+    "career_goal_keywords": [
+      "CFO path",
+      "regional tourism or hospitality group",
+      "skill-gap review",
+      "credential plan",
+      "networking step"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_career_01",
+        "update_action": "create_entry",
+        "entry_payload": "Goal: organize next steps toward a CFO path. Target role: CFO at a regional tourism or hospitality group. Next actions: research skill gaps, map required experience, outline a credential plan, and set one networking step."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_career_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Career Growth Tracker"
+        }
+      },
+      {
+        "id": "trk_team_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Finance Team Follow-up Log"
+        }
+      },
+      {
+        "id": "trk_learning_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "Professional Development Checklist"
+        }
+      },
+      {
+        "id": "doc_goals_01",
+        "type": "document",
+        "attributes": {
+          "title": "2025 Career Notes",
+          "doc_type": "note",
+          "location": "Career",
+          "content_brief": "Loose notes on leadership growth, certifications, and possible future roles."
+        }
+      }
+    ]
+  }
+}

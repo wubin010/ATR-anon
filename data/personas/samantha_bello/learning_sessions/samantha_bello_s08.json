@@ -1,0 +1,106 @@
+{
+  "session_id": "samantha_bello_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "watercolor travel set",
+    "budget": 40,
+    "sort_by": "rating",
+    "product_id": "prod_sakura_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "watercolor travel set",
+        "budget": 40,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_sakura_01",
+          "prod_arttool_02",
+          "prod_winsor_03",
+          "prod_koi_04"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_sakura_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_sakura_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sakura Pocket Field Watercolor Travel Set",
+          "price": 27.99,
+          "category": "watercolor travel set",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_arttool_02",
+        "type": "product",
+        "attributes": {
+          "name": "ArtTool Mini Watercolor Travel Set with Water Brush",
+          "price": 21.5,
+          "category": "watercolor travel set",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_winsor_03",
+        "type": "product",
+        "attributes": {
+          "name": "Winsor & Newton Cotman Sketchers Pocket Box",
+          "price": 39.0,
+          "category": "watercolor travel set",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_koi_04",
+        "type": "product",
+        "attributes": {
+          "name": "Koi Compact Watercolor Travel Set",
+          "price": 33.25,
+          "category": "watercolor travel set",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "session_id": "joseph_eldridge_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "scheduling",
+  "reason_for_call": "Handle an event invite",
+  "task_params": {
+    "calendar": "invites",
+    "invite_title": "Durham Neighborhood Civic Association Town Hall",
+    "invite_start_time": "2025-04-17T19:00:00-04:00",
+    "invite_end_time": "2025-04-17T20:30:00-04:00",
+    "response": "accept"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "respond_to_event_invite"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "invites"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-17T19:00:00-04:00",
+        "end_time": "2025-04-17T20:30:00-04:00"
+      }
+    },
+    {
+      "tool": "respond_to_event_invite",
+      "arguments": {
+        "event_id": "evt_invite_01",
+        "response": "accept"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Durham Neighborhood Civic Association Town Hall",
+          "start_time": "2025-04-17T19:00:00-04:00",
+          "end_time": "2025-04-17T20:30:00-04:00",
+          "participants": [
+            "board@durhamcivic.org",
+            "joseph.eldridge@example.com"
+          ],
+          "location": "Durham Community Center",
+          "calendar": "invites",
+          "status": "pending"
+        }
+      },
+      {
+        "id": "evt_theater_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Theater Lighting Duty",
+          "start_time": "2025-04-17T18:00:00-04:00",
+          "end_time": "2025-04-17T18:45:00-04:00",
+          "participants": [
+            "stage.manager@durhamtheater.org",
+            "joseph.eldridge@example.com"
+          ],
+          "location": "Durham Community Theater",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Power Electronics Design Review",
+          "start_time": "2025-04-17T15:00:00-04:00",
+          "end_time": "2025-04-17T16:00:00-04:00",
+          "participants": [
+            "team@consultinglab.com",
+            "joseph.eldridge@example.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_personal_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Walking Club",
+          "start_time": "2025-04-18T09:00:00-04:00",
+          "end_time": "2025-04-18T10:00:00-04:00",
+          "participants": [
+            "walkingclub@durhamseniors.org",
+            "joseph.eldridge@example.com"
+          ],
+          "location": "Oval Park",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

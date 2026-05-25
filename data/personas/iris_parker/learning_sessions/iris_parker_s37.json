@@ -1,0 +1,141 @@
+{
+  "session_id": "iris_parker_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "workspace",
+  "reason_for_call": "Wrap up a work folder",
+  "task_params": {
+    "location": "Workshops/Q3 Creative Workshop",
+    "doc_type": "spreadsheet",
+    "document_id": "doc_budget_01",
+    "final_notes_points": [
+      "venue invoice matched submitted estimate",
+      "facilitator fee confirmed and paid",
+      "catering came in under budget",
+      "all receipts saved in the same project folder"
+    ],
+    "file_ids": [
+      "fil_invoice_01",
+      "fil_receipts_01",
+      "fil_slides_01"
+    ],
+    "folder_id": "fld_archive_01"
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document",
+    "list_file_folders",
+    "archive_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Workshops/Q3 Creative Workshop",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_budget_01",
+        "content_delta": "<authored from final_notes_points>"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "archive_files",
+      "arguments": {
+        "file_ids": [
+          "fil_invoice_01",
+          "fil_receipts_01",
+          "fil_slides_01"
+        ],
+        "folder_id": "fld_archive_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_budget_01",
+        "type": "document",
+        "attributes": {
+          "title": "Creative Workshop Budget Final",
+          "doc_type": "spreadsheet",
+          "location": "Workshops/Q3 Creative Workshop",
+          "content_brief": "Final budget workbook for the internal creative workshop with cost totals and pending notes section."
+        }
+      },
+      {
+        "id": "fil_invoice_01",
+        "type": "file",
+        "attributes": {
+          "name": "venue_invoice_final.pdf",
+          "file_type": "pdf",
+          "location": "Workshops/Q3 Creative Workshop",
+          "owner": "Iris Parker",
+          "labels": [
+            "workshop",
+            "finance"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_receipts_01",
+        "type": "file",
+        "attributes": {
+          "name": "catering_receipts.zip",
+          "file_type": "txt",
+          "location": "Workshops/Q3 Creative Workshop",
+          "owner": "Iris Parker",
+          "labels": [
+            "workshop",
+            "receipts"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_slides_01",
+        "type": "file",
+        "attributes": {
+          "name": "facilitator_slides.pdf",
+          "file_type": "pdf",
+          "location": "Workshops/Q3 Creative Workshop",
+          "owner": "Iris Parker",
+          "labels": [
+            "workshop",
+            "materials"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived Workshops",
+          "purpose": "Completed workshop materials and supporting files"
+        }
+      }
+    ]
+  }
+}

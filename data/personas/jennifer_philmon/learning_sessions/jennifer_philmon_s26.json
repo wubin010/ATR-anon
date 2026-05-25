@@ -1,0 +1,164 @@
+{
+  "session_id": "jennifer_philmon_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "travel",
+  "reason_for_call": "Search for a flight option.",
+  "task_params": {
+    "destination_constraints": [
+      "steam",
+      "museum",
+      "Pennsylvania"
+    ],
+    "destination_ids": [
+      "dst_steamtown_01"
+    ],
+    "origin": "St. Louis",
+    "destination": "Scranton",
+    "passenger_count": 1,
+    "seat_preference": "window"
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "steam",
+          "museum",
+          "Pennsylvania"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_steamtown_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "St. Louis",
+        "destination": "Scranton",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_scranton_02",
+        "seat_preference": "window"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_steamtown_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Steamtown National Historic Site",
+          "region": "Scranton, Pennsylvania",
+          "tags": [
+            "steam",
+            "museum",
+            "rail history"
+          ]
+        }
+      },
+      {
+        "id": "dst_henryford_02",
+        "type": "destination",
+        "attributes": {
+          "name": "The Henry Ford",
+          "region": "Dearborn, Michigan",
+          "tags": [
+            "industrial history",
+            "museum",
+            "steam engines"
+          ]
+        }
+      },
+      {
+        "id": "dst_baltimore_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Baltimore and Ohio Railroad Museum",
+          "region": "Baltimore, Maryland",
+          "tags": [
+            "railroad",
+            "museum",
+            "historic locomotives"
+          ]
+        }
+      },
+      {
+        "id": "flt_scranton_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "St. Louis",
+          "destination": "Scranton",
+          "departure_date": "2025-10-10",
+          "return_date": "2025-10-13",
+          "airline": "United",
+          "price": 412.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_scranton_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "St. Louis",
+          "destination": "Scranton",
+          "departure_date": "2025-10-17",
+          "return_date": "2025-10-20",
+          "airline": "American",
+          "price": 389.0,
+          "available_seats": 2
+        }
+      },
+      {
+        "id": "flt_dearborn_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "St. Louis",
+          "destination": "Detroit",
+          "departure_date": "2025-10-11",
+          "return_date": "2025-10-14",
+          "airline": "Delta",
+          "price": 241.0,
+          "available_seats": 6
+        }
+      }
+    ]
+  }
+}

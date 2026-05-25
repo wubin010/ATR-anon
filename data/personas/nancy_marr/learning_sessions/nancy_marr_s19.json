@@ -1,0 +1,104 @@
+{
+  "session_id": "nancy_marr_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "gardening gloves",
+    "budget": 30,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "gardening gloves",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_gloves_01",
+          "prod_gloves_02",
+          "prod_gloves_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_gloves_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_gloves_01",
+        "type": "product",
+        "attributes": {
+          "name": "MudGuard Heavy-Duty Gardening Gloves",
+          "price": 24.99,
+          "category": "gardening gloves",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_gloves_02",
+        "type": "product",
+        "attributes": {
+          "name": "TerraGrip Waterproof Gardening Gloves",
+          "price": 19.5,
+          "category": "gardening gloves",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_gloves_03",
+        "type": "product",
+        "attributes": {
+          "name": "Root & Rake Reinforced Gardening Gloves",
+          "price": 29.0,
+          "category": "gardening gloves",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_gloves_04",
+        "type": "product",
+        "attributes": {
+          "name": "GreenPatch Everyday Gardening Gloves",
+          "price": 12.99,
+          "category": "gardening gloves",
+          "rating": 4.1
+        }
+      }
+    ]
+  }
+}

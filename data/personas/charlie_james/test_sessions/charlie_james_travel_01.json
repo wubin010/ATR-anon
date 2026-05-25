@@ -1,0 +1,107 @@
+{
+  "instruction": "I'm heading from Boston, MA to Montreal, QC on 2026-09-12 for a couple of days, just me, and I only need the outbound leg. Check the available options and book the trip.",
+  "gold_value": null,
+  "session_id": "charlie_james_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "charlie_james_travel_01",
+  "rule_ref": {
+    "rule_id": "charlie_james_travel_01",
+    "rule_text": "For regional getaways, he prefers to travel over the ground rather than book a flight.",
+    "canonical_answer": "For weekend and regional trips, I’d rather go by road or rail than fly."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_bos_yul_20260912_porter_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Montreal, QC",
+          "departure_date": "2026-09-12",
+          "airline": "Porter Airlines",
+          "price": 99,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "flt_bos_yul_20260912_aircanada_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Montreal, QC",
+          "departure_date": "2026-09-12",
+          "airline": "Air Canada",
+          "price": 114,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "flt_bos_yul_20260912_delta_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Montreal, QC",
+          "departure_date": "2026-09-12",
+          "airline": "Delta Air Lines",
+          "price": 128,
+          "available_seats": 10
+        }
+      },
+      {
+        "id": "trp_bos_montreal_20260912_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Montreal, QC",
+          "mode": "bus",
+          "departure_date": "2026-09-12",
+          "price": 151,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "trp_bos_montreal_20260912_train_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Boston, MA",
+          "destination": "Montreal, QC",
+          "mode": "train",
+          "departure_date": "2026-09-12",
+          "price": 176,
+          "available_seats": 3
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

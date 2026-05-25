@@ -1,0 +1,106 @@
+{
+  "session_id": "samantha_bello_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "scheduling",
+  "reason_for_call": "Set up a reminder",
+  "task_params": {
+    "calendar": "personal",
+    "title": "Community Center Yoga",
+    "start_time": "2025-03-20T18:30:00-04:00",
+    "end_time": "2025-03-20T19:30:00-04:00",
+    "remind_at": "2025-03-20T17:45:00-04:00",
+    "cadence": "once"
+  },
+  "expected_tools": [
+    "list_events",
+    "set_reminder"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "personal"
+      }
+    },
+    {
+      "tool": "set_reminder",
+      "arguments": {
+        "target_id": "evt_yoga_01",
+        "remind_at": "2025-03-20T17:45:00-04:00",
+        "cadence": "once"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_yoga_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Community Center Yoga",
+          "start_time": "2025-03-20T18:30:00-04:00",
+          "end_time": "2025-03-20T19:30:00-04:00",
+          "participants": [],
+          "location": "Rincon Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_finance_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Quarterly Finance Call",
+          "start_time": "2025-03-20T16:30:00-04:00",
+          "end_time": "2025-03-20T18:00:00-04:00",
+          "participants": [
+            "cfo@coastalgroup.com",
+            "opslead@coastalgroup.com"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_surf_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Sunrise Surf Meetup",
+          "start_time": "2025-03-21T06:15:00-04:00",
+          "end_time": "2025-03-21T07:30:00-04:00",
+          "participants": [],
+          "location": "Domes Beach",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_budget_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Budget Review Prep",
+          "start_time": "2025-03-20T19:45:00-04:00",
+          "end_time": "2025-03-20T20:30:00-04:00",
+          "participants": [],
+          "location": "Home Office",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

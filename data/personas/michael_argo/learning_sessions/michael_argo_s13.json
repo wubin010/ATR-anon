@@ -1,0 +1,120 @@
+{
+  "session_id": "michael_argo_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Louisville",
+    "event_tags": [
+      "art",
+      "indie"
+    ],
+    "event_id": "evt_walnut_02",
+    "ticket_type": "general_admission",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Louisville",
+        "event_tags": [
+          "art",
+          "indie"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_walnut_02",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_station_01",
+        "type": "event",
+        "attributes": {
+          "name": "Station House Noise Set",
+          "location": "Louisville",
+          "date_time": "2025-02-15T21:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "music",
+            "experimental",
+            "indie"
+          ]
+        }
+      },
+      {
+        "id": "evt_walnut_02",
+        "type": "event",
+        "attributes": {
+          "name": "Walnut Street Small Works Show",
+          "location": "Louisville",
+          "date_time": "2025-02-16T14:00:00",
+          "price": 12.0,
+          "event_tags": [
+            "art",
+            "gallery",
+            "indie"
+          ]
+        }
+      },
+      {
+        "id": "evt_river_03",
+        "type": "event",
+        "attributes": {
+          "name": "River Room Jazz Night",
+          "location": "Jeffersonville",
+          "date_time": "2025-02-15T20:00:00",
+          "price": 22.0,
+          "event_tags": [
+            "music",
+            "jazz",
+            "live"
+          ]
+        }
+      },
+      {
+        "id": "evt_screen_04",
+        "type": "event",
+        "attributes": {
+          "name": "Late Frames Film Club",
+          "location": "Louisville",
+          "date_time": "2025-02-16T19:30:00",
+          "price": 10.0,
+          "event_tags": [
+            "film",
+            "indie",
+            "local"
+          ]
+        }
+      }
+    ]
+  }
+}

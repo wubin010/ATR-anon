@@ -1,0 +1,40 @@
+{
+  "session_id": "fs_workspace_chain_create_then_update_meta_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "few_shot",
+  "rule_id": "fs_workspace_chain_create_then_update_meta",
+  "instruction": "Create a Q3 project plan document with the title 'Q3 Project Plan' under /projects/q3, and fill in the metadata according to my usual conventions.",
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": []
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "update_document",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_workspace_chain_create_then_update_meta",
+    "rule_text": "After creating any document, must immediately call update_document to fill in structured metadata header fields (owner, project, status). Empty placeholder documents are not allowed.",
+    "canonical_answer": "Once you create a doc, immediately fill in the owner, project, and status metadata header — I don't want bare empty docs, they become unfindable later."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "instruction": "I just got an invite to the Harbor District founders breakfast at Pier Loft on 2026-09-17 from 8:30 to 10:00. Look at what I already have that morning and send back the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "cecilia_lisette_garciaperez_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "cecilia_lisette_garciaperez_scheduling_01",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_scheduling_01",
+    "rule_text": "When a calendar invite conflicts with unresolved work or personal bandwidth, she prefers responding tentatively rather than accepting or declining too quickly.",
+    "canonical_answer": "If I am not fully sure about an invitation, I respond as tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_harbor_founders_breakfast_20260917",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Harbor District Founders Breakfast",
+          "start_time": "2026-09-17T08:30:00-07:00",
+          "end_time": "2026-09-17T10:00:00-07:00",
+          "participants": [
+            "events@harbordistrictalliance.org",
+            "cecilia.garciaperez@example.com"
+          ],
+          "location": "Pier Loft",
+          "calendar": "invites",
+          "status": "pending",
+          "organizer": "Harbor District Business Alliance",
+          "rsvp_deadline": "2026-09-15T17:00:00-07:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_q3_board_packet_revisions_20260917",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Q3 board packet revisions with Mia",
+          "start_time": "2026-09-17T08:00:00-07:00",
+          "end_time": "2026-09-17T10:30:00-07:00",
+          "participants": [
+            "cecilia.garciaperez@example.com",
+            "mia.santos@example.com"
+          ],
+          "location": "Studio Office / Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_client_lunch_verity_20260917",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Client lunch with Verity Labs",
+          "start_time": "2026-09-17T12:00:00-07:00",
+          "end_time": "2026-09-17T13:00:00-07:00",
+          "participants": [
+            "cecilia.garciaperez@example.com",
+            "nora.chen@veritylabs.com"
+          ],
+          "location": "Marina Grill",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

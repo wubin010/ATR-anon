@@ -1,0 +1,112 @@
+{
+  "instruction": "I still haven't replied to the Harbor Arts Center panel invite. See whether it clashes with anything else I have going on then, and send back the appropriate RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "cassandra_tovar_scheduling_03_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "cassandra_tovar_scheduling_03",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_scheduling_03",
+    "rule_text": "When an invite conflicts with work, church, or volunteer responsibilities that are not yet settled, she prefers responding tentatively rather than accepting or declining outright.",
+    "canonical_answer": "If an invitation overlaps with commitments I’m still sorting out, I usually respond as tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_harbor_arts_panel_invite_20261004",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Harbor Arts Center Community Panel",
+          "start_time": "2026-10-04T16:00:00",
+          "end_time": "2026-10-04T18:00:00",
+          "participants": [
+            "programs@harborarts.org",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Harbor Arts Center",
+          "calendar": "invites",
+          "status": "confirmed",
+          "organizer": "Harbor Arts Center Programs Office",
+          "rsvp_deadline": "2026-10-02T17:00:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_worship_audio_20261004",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Worship team audio booth coverage",
+          "start_time": "2026-10-04T15:30:00",
+          "end_time": "2026-10-04T17:30:00",
+          "participants": [
+            "musiclead@newhopechurch.org",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "New Hope Church",
+          "calendar": "primary",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_crew_handoff_20261004",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Crew handoff run-through",
+          "start_time": "2026-10-04T17:00:00",
+          "end_time": "2026-10-04T18:30:00",
+          "participants": [
+            "pm@ridgewaybuild.com",
+            "crew.leads@ridgewaybuild.com",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Ridgeway Build Office",
+          "calendar": "work",
+          "status": "tentative"
+        }
+      },
+      {
+        "id": "evt_dinner_mateo_20261004",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Dinner with Mateo",
+          "start_time": "2026-10-04T19:30:00",
+          "end_time": "2026-10-04T20:30:00",
+          "participants": [
+            "mateo.reyes@example.com",
+            "cassandra.tovar@example.com"
+          ],
+          "location": "Juniper Kitchen",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

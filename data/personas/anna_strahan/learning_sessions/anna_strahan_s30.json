@@ -1,0 +1,142 @@
+{
+  "session_id": "anna_strahan_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and keep action items.",
+  "task_params": {
+    "folder": "inbox",
+    "routine_sender": "Bayou Office Supply",
+    "action_sender": "MedEquip South",
+    "priority": "high",
+    "label_ids": [
+      "lbl_action_01"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "archive_messages",
+    "set_message_priority",
+    "label_messages"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Bayou Office Supply"
+      }
+    },
+    {
+      "tool": "archive_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_bayou_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "MedEquip South"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_medequip_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_medequip_01"
+        ],
+        "label_ids": [
+          "lbl_action_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_bayou_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Bayou Office Supply",
+          "subject": "Monthly toner shipment confirmation",
+          "body": "Your recurring toner order has shipped and will arrive tomorrow. No action needed.",
+          "thread_id": "thr_bayou_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-30T08:12:00"
+        }
+      },
+      {
+        "id": "msg_medequip_01",
+        "type": "message",
+        "attributes": {
+          "sender": "MedEquip South",
+          "subject": "Backorder notice for exam table paper",
+          "body": "One item in your latest supply order is backordered. Please confirm whether you'd like a partial shipment or to wait for the full order.",
+          "thread_id": "thr_medequip_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-30T09:04:00"
+        }
+      },
+      {
+        "id": "msg_suncoast_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Suncoast Waste Services",
+          "subject": "Invoice available for March pickup service",
+          "body": "Your latest service invoice is now available in the vendor portal.",
+          "thread_id": "thr_suncoast_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-30T07:41:00"
+        }
+      },
+      {
+        "id": "lbl_action_01",
+        "type": "label",
+        "attributes": {
+          "name": "Action",
+          "topic": "Needs follow-up"
+        }
+      },
+      {
+        "id": "fld_vendors_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Vendor Archive",
+          "purpose": "Archived routine vendor notices and confirmations"
+        }
+      }
+    ]
+  }
+}

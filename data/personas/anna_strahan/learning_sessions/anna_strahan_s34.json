@@ -1,0 +1,149 @@
+{
+  "session_id": "anna_strahan_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "workspace",
+  "reason_for_call": "Organize some work files",
+  "task_params": {
+    "location": "Shared Drive/Finance",
+    "file_type": "xlsx",
+    "scheme": "by_project",
+    "budget_file_ids": [
+      "file_budget_q3_01",
+      "file_budget_capex_02"
+    ],
+    "grant_file_ids": [
+      "file_grant_rural_03",
+      "file_grant_art_04"
+    ],
+    "budget_folder_id": "fld_budget_01",
+    "grant_folder_id": "fld_grants_02"
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "move_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Shared Drive/Finance",
+        "file_type": "xlsx"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_budget_q3_01",
+          "file_budget_capex_02",
+          "file_grant_rural_03",
+          "file_grant_art_04"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_budget_q3_01",
+          "file_budget_capex_02"
+        ],
+        "folder_id": "fld_budget_01"
+      }
+    },
+    {
+      "tool": "move_files",
+      "arguments": {
+        "file_ids": [
+          "file_grant_rural_03",
+          "file_grant_art_04"
+        ],
+        "folder_id": "fld_grants_02"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_budget_q3_01",
+        "type": "file",
+        "attributes": {
+          "name": "Clinic Budget Q3 Forecast.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Finance",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_budget_capex_02",
+        "type": "file",
+        "attributes": {
+          "name": "Capital Budget Equipment Plan.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Finance",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_grant_rural_03",
+        "type": "file",
+        "attributes": {
+          "name": "Rural Health Grant Budget Draft.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Finance",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_grant_art_04",
+        "type": "file",
+        "attributes": {
+          "name": "Art Therapy Grant Expense Worksheet.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Finance",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_budget_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Budget Spreadsheets",
+          "purpose": "Current budgeting and forecast workbooks"
+        }
+      },
+      {
+        "id": "fld_grants_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Grant Materials",
+          "purpose": "Grant-related financial files and support materials"
+        }
+      }
+    ]
+  }
+}

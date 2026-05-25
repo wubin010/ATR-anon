@@ -1,0 +1,129 @@
+{
+  "session_id": "rafael_ortiz_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Pacific Northwest",
+      "hiking",
+      "wildlife",
+      "food"
+    ],
+    "destination_ids": [
+      "dst_olympic_01",
+      "dst_sanjuans_02",
+      "dst_hoodriver_03"
+    ],
+    "region": "Pacific Northwest"
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Pacific Northwest",
+          "hiking",
+          "wildlife",
+          "food"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_olympic_01",
+          "dst_sanjuans_02",
+          "dst_hoodriver_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_olympic_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Olympic National Park",
+          "region": "Pacific Northwest",
+          "tags": [
+            "hiking",
+            "wildlife",
+            "food",
+            "coast",
+            "rainforest"
+          ]
+        }
+      },
+      {
+        "id": "dst_sanjuans_02",
+        "type": "destination",
+        "attributes": {
+          "name": "San Juan Islands",
+          "region": "Pacific Northwest",
+          "tags": [
+            "wildlife",
+            "hiking",
+            "food",
+            "whale watching",
+            "islands"
+          ]
+        }
+      },
+      {
+        "id": "dst_hoodriver_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Hood River",
+          "region": "Pacific Northwest",
+          "tags": [
+            "hiking",
+            "food",
+            "scenic drives",
+            "orchards"
+          ]
+        }
+      },
+      {
+        "id": "dst_leavenworth_04",
+        "type": "destination",
+        "attributes": {
+          "name": "Leavenworth",
+          "region": "Pacific Northwest",
+          "tags": [
+            "hiking",
+            "food",
+            "mountains",
+            "festivals"
+          ]
+        }
+      }
+    ]
+  }
+}

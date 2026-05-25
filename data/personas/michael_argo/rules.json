@@ -1,0 +1,520 @@
+[
+  {
+    "rule_text": "When planning leisure travel, he consistently prefers ground transportation bookings over flights.",
+    "canonical_answer": "For trips, I prefer to travel by train or other ground transport instead of flying.",
+    "counterfactual_default": "Book a flight when it is the fastest or most obvious long-distance option.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers low‑budget, train‑focused road trips"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "rule_id": "michael_argo_travel_01",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "If a flight does need to be booked, he prefers a window seat for the view and photography inspiration.",
+    "canonical_answer": "When I have to fly, I want a window seat.",
+    "counterfactual_default": "Pick any available seat or favor an aisle seat for convenience.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they always over‑packing a sketchbook and a vintage Polaroid camera"
+      },
+      {
+        "type": "direct",
+        "content": "He is also adept at photography, focusing on composition"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "book_flight",
+      "param": "seat_preference"
+    },
+    "rule_id": "michael_argo_travel_02",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For hotel bookings, he favors budget-friendly offers over pricier stays.",
+    "canonical_answer": "When I book a place to stay, I go for the budget option.",
+    "counterfactual_default": "Choose a more comfortable or centrally upgraded hotel offer if it looks nicer.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers low‑budget, train‑focused road trips"
+      },
+      {
+        "type": "direct",
+        "content": "Occupation: not_in_workforce"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_hotel",
+      "param": "hotel_offer_id"
+    },
+    "rule_id": "michael_argo_travel_03",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When building a trip, he prefers stops centered on art districts, historic streets, temples, galleries, or sketch-worthy urban areas rather than generic tourist attractions.",
+    "canonical_answer": "I like my trips to include art-filled or historic places where I can sketch and explore, not just generic tourist stops.",
+    "counterfactual_default": "Pick the most famous or highest-rated tourist stops regardless of artistic or historic character.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers low‑budget, train‑focused road trips that blend sketch‑filled stops at Midwestern cities like Chicago and Nashville"
+      },
+      {
+        "type": "direct",
+        "content": "weekend getaways to the historic streets of New Orleans"
+      },
+      {
+        "type": "direct",
+        "content": "dream of a solo pilgrimage to Kyoto’s temples and Berlin’s avant‑garde galleries"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "plan_trip",
+      "param": "selected_stop_ids"
+    },
+    "rule_id": "michael_argo_travel_04",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When a booked trip stop falls through, he prefers replacement stops that preserve the original art, culture, or nature theme instead of swapping in any convenient alternative.",
+    "canonical_answer": "If part of my trip changes, I want the replacement to match the same creative or outdoorsy vibe I planned for.",
+    "counterfactual_default": "Replace the disrupted stop with any available or top-rated alternative.",
+    "evidence": [
+      {
+        "type": "inferred",
+        "content": "His travel is built around specific themes—\"sketch‑filled stops,\" \"historic streets,\" \"Kyoto’s temples,\" and \"Berlin’s avant‑garde galleries\"—while his hobbies also include hiking in Hoosier National Forest, so preserving the trip's original creative or nature focus is more important to him than taking a random substitute."
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "replan_trip",
+      "param": "selected_alternative_stop_ids"
+    },
+    "rule_id": "michael_argo_travel_05",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For restaurant reservations, he prefers local indie or riverfront places over chain-style options.",
+    "canonical_answer": "I usually want a local indie spot, especially somewhere with riverfront character, instead of a chain restaurant.",
+    "counterfactual_default": "Choose a familiar chain or the most broadly popular restaurant.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "they regularly savor shrimp po' boys from the local riverfront café"
+      },
+      {
+        "type": "direct",
+        "content": "they weave these influences into mixed‑media pieces that echo the indie‑spirit of their hometown"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_restaurant",
+      "param": "restaurant_id"
+    },
+    "rule_id": "michael_argo_reservation_01",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When choosing event tickets, he prefers small local arts or indie events rather than large-scale spectator events.",
+    "canonical_answer": "I’d rather go to a smaller local arts or indie event than a big spectator event.",
+    "counterfactual_default": "Book tickets for the largest or most prominent event available.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "favoring the strategic flow of the sport over large‑scale spectator events"
+      },
+      {
+        "type": "direct",
+        "content": "preferring underground indie rock and experimental electronic music"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_event_ticket",
+      "param": "event_id"
+    },
+    "rule_id": "michael_argo_reservation_02",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For local service appointments, he prefers independent neighborhood providers over big chains.",
+    "canonical_answer": "When I book a local service, I prefer an independent local provider instead of a chain.",
+    "counterfactual_default": "Choose the most convenient or nationally familiar provider.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "the indie‑spirit of their hometown"
+      },
+      {
+        "type": "direct",
+        "content": "family’s roots trace back to German and Irish ancestors who settled in the region in the early 20th century, giving him a cultural heritage of modesty, self‑reliance, and a strong work ethic"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "rule_id": "michael_argo_reservation_03",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For important outreach such as applications, collaborations, or portfolio messages, he prefers drafting first rather than sending immediately.",
+    "canonical_answer": "For anything important, I want a draft first so I can review it before it goes out.",
+    "counterfactual_default": "Send the message directly once the content is prepared.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Participation in his high school debate club sharpened his research, argumentation, and critical writing skills."
+      },
+      {
+        "type": "direct",
+        "content": "deliver meticulously organized yet daring interactive art projects"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "draft_message",
+      "param": null
+    },
+    "rule_id": "michael_argo_communication_01",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When invites conflict with unfinished personal projects or uncertain energy for social plans, he prefers replying tentatively rather than accepting outright.",
+    "canonical_answer": "If I’m not sure I can commit because of my own projects or energy, I answer maybe first.",
+    "counterfactual_default": "Accept the invite if it seems appealing and work out the details later.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "curious introvert"
+      },
+      {
+        "type": "direct",
+        "content": "Strong organization skills allow him to manage multiple personal projects simultaneously"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "respond_to_event_invite",
+      "param": "response"
+    },
+    "rule_id": "michael_argo_scheduling_01",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When organizing files, he prefers classifying them by project rather than by file type or date.",
+    "canonical_answer": "I organize my files by project first.",
+    "counterfactual_default": "Sort files by type, date, or some generic automatic scheme.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "manage multiple personal projects simultaneously"
+      },
+      {
+        "type": "direct",
+        "content": "deliver meticulously organized yet daring interactive art projects"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "classify_files",
+      "param": "scheme"
+    },
+    "rule_id": "michael_argo_workspace_03",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For clearly bad photo takes, duplicate scans, or useless creative clutter, he prefers deleting them outright rather than keeping them around.",
+    "canonical_answer": "If a shot or scan is obviously bad or duplicate, I’d rather delete it than let it clutter everything up.",
+    "counterfactual_default": "Keep the files just in case, or archive them instead of deleting them.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "Street photography"
+      },
+      {
+        "type": "direct",
+        "content": "over‑packed sketchbooks"
+      },
+      {
+        "type": "direct",
+        "content": "leaving a trail of mismatched spices that betray their impatient, creative streak"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "delete_files",
+      "param": null
+    },
+    "rule_id": "michael_argo_workspace_05",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When ordering coffee, he favors craft beans from local or farmer’s-market-style options over mainstream commodity brands.",
+    "canonical_answer": "For coffee, I prefer craft beans from local-style sources instead of generic mainstream brands.",
+    "counterfactual_default": "Choose a standard popular coffee product without regard to local craft sourcing.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "brew craft coffee using beans from the nearby farmer’s market"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "place_order",
+      "param": "product_id"
+    },
+    "rule_id": "michael_argo_commerce_01",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When returning art gear, electronics parts, or other project supplies that did not work out, he prefers an exchange rather than a refund.",
+    "canonical_answer": "If something I need for a project is wrong, I usually want an exchange so I still end up with a usable item.",
+    "counterfactual_default": "Take a refund and decide later whether to reorder something else.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "DIY electronics and Arduino projects"
+      },
+      {
+        "type": "direct",
+        "content": "aspiring multimedia designer"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "return_order",
+      "param": "resolution_type"
+    },
+    "rule_id": "michael_argo_commerce_02",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "For unused nonessential subscriptions, he prefers canceling them outright instead of letting them linger.",
+    "canonical_answer": "If I’m not really using a subscription, I’d rather cancel it outright.",
+    "counterfactual_default": "Keep the subscription active for convenience or postpone doing anything about it.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "prefers low‑budget, train‑focused road trips"
+      },
+      {
+        "type": "direct",
+        "content": "Occupation: not_in_workforce"
+      }
+    ],
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "cancel_subscription",
+      "param": null
+    },
+    "rule_id": "michael_argo_commerce_03",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When prioritizing messages, he prefers marking internship, portfolio, or collaboration messages as high priority.",
+    "canonical_answer": "I treat internship, portfolio, and collaboration messages as high priority.",
+    "counterfactual_default": "Leave those messages at a normal priority unless they appear urgent.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "He hopes to secure a summer internship at a local design studio or an indie‑game company"
+      },
+      {
+        "type": "direct",
+        "content": "building a professional‑grade portfolio"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_message_priority",
+      "param": "priority"
+    },
+    "rule_id": "michael_argo_communication_03",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When labeling messages, he prefers project- or opportunity-specific labels over generic catch-all labeling.",
+    "canonical_answer": "I like messages labeled by the specific project or opportunity they belong to.",
+    "counterfactual_default": "Use broad generic labels or skip detailed labeling entirely.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "manage multiple personal projects simultaneously"
+      },
+      {
+        "type": "direct",
+        "content": "local design studio or an indie‑game company"
+      }
+    ],
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "label_messages",
+      "param": "label_ids"
+    },
+    "rule_id": "michael_argo_communication_04",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  },
+  {
+    "rule_text": "When modifying an existing restaurant reservation, he prefers changing the party size rather than changing the contact details first.",
+    "canonical_answer": "If a restaurant reservation needs an update, it’s usually the party size I want changed first.",
+    "counterfactual_default": "Treat contact info or the time as the most likely field to edit.",
+    "evidence": [
+      {
+        "type": "direct",
+        "content": "he occasionally hosts weekly tabletop sessions of Settlers of Catan with a small group of friends"
+      },
+      {
+        "type": "direct",
+        "content": "quiet fervor"
+      }
+    ],
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "modify_restaurant_reservation",
+      "param": "field"
+    },
+    "rule_id": "michael_argo_reservation_04",
+    "persona_id": "michael_argo",
+    "_qc": {
+      "counter_default": "yes",
+      "counter_default_reason": "passes",
+      "binding_sound": "yes",
+      "binding_sound_reason": "passes",
+      "tag": "keep"
+    }
+  }
+]

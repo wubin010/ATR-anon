@@ -1,0 +1,91 @@
+{
+  "session_id": "romisha_shields_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "Shields Family Reunion Potluck Tracker",
+    "location": "Family Reunion",
+    "content_brief": "Spreadsheet for food ideas, supply needs, volunteer signups, and who is bringing what.",
+    "reference_doc_type": "template"
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Family Reunion",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Shields Family Reunion Potluck Tracker",
+        "location": "Family Reunion",
+        "content_brief": "Spreadsheet for food ideas, supply needs, volunteer signups, and who is bringing what."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Potluck Planning Template",
+          "doc_type": "template",
+          "location": "Family Reunion",
+          "content_brief": "Template with tabs for menu ideas, supplies, volunteers, and assigned dishes."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Event Supplies Template",
+          "doc_type": "template",
+          "location": "Church Events",
+          "content_brief": "Template for supply checklists and quantity tracking."
+        }
+      },
+      {
+        "id": "doc_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Reunion Brainstorm Notes",
+          "doc_type": "note",
+          "location": "Family Reunion",
+          "content_brief": "Loose notes about menu suggestions and family roles."
+        }
+      },
+      {
+        "id": "fld_family_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Family Reunion",
+          "purpose": "Planning materials and event documents"
+        }
+      }
+    ]
+  }
+}

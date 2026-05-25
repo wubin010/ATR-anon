@@ -1,0 +1,90 @@
+{
+  "instruction": "I still haven't replied to the Harbor Loft rooftop dinner invite — check what else is on my calendar that day and send the reply for me.",
+  "gold_value": "tentative",
+  "session_id": "michael_argo_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "michael_argo_scheduling_01",
+  "rule_ref": {
+    "rule_id": "michael_argo_scheduling_01",
+    "rule_text": "When invites conflict with unfinished personal projects or uncertain energy for social plans, he prefers replying tentatively rather than accepting outright.",
+    "canonical_answer": "If I’m not sure I can commit because of my own projects or energy, I answer maybe first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_harbor_loft_rooftop_dinner_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Harbor Loft Rooftop Dinner & Jazz Mixer",
+          "start_time": "2026-07-18T19:00:00",
+          "end_time": "2026-07-18T21:30:00",
+          "participants": [
+            "events@harborloft.com",
+            "michael.argo@example.com"
+          ],
+          "location": "Harbor Loft",
+          "calendar": "invites",
+          "status": "pending",
+          "organizer": "Harbor Loft Events",
+          "attendee_count": 42,
+          "rsvp_deadline": "2026-07-16T18:00:00",
+          "source": "official_email"
+        }
+      },
+      {
+        "id": "evt_home_studio_shelving_phase2_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Home studio shelving build — phase 2",
+          "start_time": "2026-07-18T13:30:00",
+          "end_time": "2026-07-18T17:30:00",
+          "participants": [],
+          "location": "Apartment workshop",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_photo_zine_layout_catchup_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Photo zine layout catch-up",
+          "start_time": "2026-07-18T17:45:00",
+          "end_time": "2026-07-18T18:45:00",
+          "participants": [],
+          "location": "Home office",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "instruction": "The Railyard Annex stop on trip T-6118 in Santa Fe fell through. Please swap in a single replacement for that part of the afternoon near downtown, something that fits in about 1-2 hours and doesn't add much extra driving.",
+  "gold_value": [
+    "stop_canyon_road_collective_01"
+  ],
+  "session_id": "michael_argo_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "michael_argo_travel_05",
+  "rule_ref": {
+    "rule_id": "michael_argo_travel_05",
+    "rule_text": "When a booked trip stop falls through, he prefers replacement stops that preserve the original art, culture, or nature theme instead of swapping in any convenient alternative.",
+    "canonical_answer": "If part of my trip changes, I want the replacement to match the same creative or outdoorsy vibe I planned for."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_santafe_railyard_annex_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Railyard Annex",
+          "location": "Santa Fe, New Mexico",
+          "tags": [
+            "art",
+            "gallery",
+            "contemporary",
+            "indoor",
+            "afternoon"
+          ],
+          "trip_id": "T-6118",
+          "rating": 4.7,
+          "detour_minutes_from_current_route": 0,
+          "visit_duration_hours": 1.5,
+          "status": "closed_for_private_event"
+        }
+      },
+      {
+        "id": "stop_canyon_road_collective_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Canyon Road Collective",
+          "location": "Canyon Road, Santa Fe, New Mexico",
+          "tags": [
+            "art",
+            "gallery",
+            "local_artists",
+            "walkable",
+            "afternoon"
+          ],
+          "rating": 4.5,
+          "detour_minutes_from_current_route": 9,
+          "visit_duration_hours": 1.25,
+          "status": "open"
+        }
+      },
+      {
+        "id": "stop_museum_hill_modern_wing_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Museum Hill Modern Wing",
+          "location": "Museum Hill, Santa Fe, New Mexico",
+          "tags": [
+            "art",
+            "museum",
+            "sculpture",
+            "popular",
+            "afternoon"
+          ],
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 32,
+          "visit_duration_hours": 2.0,
+          "status": "open"
+        }
+      },
+      {
+        "id": "stop_railyard_food_hall_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Railyard Food Hall",
+          "location": "Railyard District, Santa Fe, New Mexico",
+          "tags": [
+            "food",
+            "market",
+            "indoor",
+            "popular",
+            "afternoon"
+          ],
+          "rating": 4.9,
+          "detour_minutes_from_current_route": 3,
+          "visit_duration_hours": 1.0,
+          "status": "open"
+        }
+      },
+      {
+        "id": "stop_santafe_plaza_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Santa Fe Plaza",
+          "location": "Downtown Santa Fe, New Mexico",
+          "tags": [
+            "shopping",
+            "market",
+            "people_watching",
+            "downtown",
+            "afternoon"
+          ],
+          "rating": 4.8,
+          "detour_minutes_from_current_route": 2,
+          "visit_duration_hours": 1.5,
+          "status": "open"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_canyon_road_collective_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "session_id": "vanessa_davis_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "Future Leisure Trip Budget Comparison",
+    "location": "Travel Planning",
+    "trip_options_keywords": [
+      "Denali aurora trip",
+      "New Orleans jazz trip",
+      "Sedona stargazing trip"
+    ],
+    "comparison_points": [
+      "side-by-side cost columns for each trip option",
+      "categories: transportation, lodging, food, activities, buffer",
+      "include estimated total for each trip",
+      "add a target budget line of $3500",
+      "show the gap between estimate and target"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Travel Planning",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Future Leisure Trip Budget Comparison",
+        "location": "Travel Planning",
+        "content_brief": "<authored from trip_options_keywords and comparison_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_travel_01",
+        "type": "document",
+        "attributes": {
+          "title": "Road Trip Packing Checklist",
+          "doc_type": "note",
+          "location": "Travel Planning",
+          "content_brief": "Checklist for desert driving, snacks, overnight gear, and camera items."
+        }
+      },
+      {
+        "id": "doc_travel_02",
+        "type": "document",
+        "attributes": {
+          "title": "National Park Mileage Estimates",
+          "doc_type": "spreadsheet",
+          "location": "Travel Planning",
+          "content_brief": "Rough driving distances, fuel stops, and lodging notes for Southwest routes."
+        }
+      },
+      {
+        "id": "doc_travel_03",
+        "type": "document",
+        "attributes": {
+          "title": "Retirement Savings Check-In",
+          "doc_type": "report",
+          "location": "Travel Planning",
+          "content_brief": "Quarterly review of savings goals and discretionary spending."
+        }
+      },
+      {
+        "id": "doc_work_01",
+        "type": "document",
+        "attributes": {
+          "title": "Fleet Safety Meeting Notes",
+          "doc_type": "memo",
+          "location": "Work Admin",
+          "content_brief": "Driver reminders, inspection issues, and maintenance scheduling."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "session_id": "samantha_bello_s45",
+  "session_type": "learning",
+  "day_offset": 45,
+  "domain": "workspace",
+  "reason_for_call": "Update a planning note.",
+  "task_params": {
+    "location": "Career Notes",
+    "doc_type": "note",
+    "reflection_points": [
+      "led the SAP cleanup workstream more calmly than expected",
+      "spent too much time perfecting report formatting",
+      "bilingual team check-ins reduced misunderstandings",
+      "ESG reporting work felt energizing and worth developing",
+      "needs firmer boundaries so early-morning reset time stays protected"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Career Notes",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_career_01",
+        "content_delta": "<authored from reflection_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_career_01",
+        "type": "document",
+        "attributes": {
+          "title": "Personal Career Planning Note",
+          "doc_type": "note",
+          "location": "Career Notes",
+          "content_brief": "Ongoing personal note about career goals, strengths, gaps, and next steps."
+        }
+      },
+      {
+        "id": "doc_budget_02",
+        "type": "document",
+        "attributes": {
+          "title": "FY Budget Variance Review",
+          "doc_type": "report",
+          "location": "Finance Reports",
+          "content_brief": "Monthly variance analysis for department budgets."
+        }
+      },
+      {
+        "id": "doc_esg_03",
+        "type": "document",
+        "attributes": {
+          "title": "ESG Skills Research",
+          "doc_type": "memo",
+          "location": "Professional Development",
+          "content_brief": "Notes on training options and frameworks for ESG reporting."
+        }
+      },
+      {
+        "id": "doc_meeting_04",
+        "type": "document",
+        "attributes": {
+          "title": "Leadership Offsite Ideas",
+          "doc_type": "note",
+          "location": "Team Notes",
+          "content_brief": "Brainstorm list for future leadership retreat topics."
+        }
+      }
+    ]
+  }
+}

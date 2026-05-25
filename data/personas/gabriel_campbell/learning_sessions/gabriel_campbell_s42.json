@@ -1,0 +1,119 @@
+{
+  "session_id": "gabriel_campbell_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "communication",
+  "reason_for_call": "Reply to a couple messages",
+  "task_params": {
+    "sender": [
+      "Lauren Kim",
+      "Marcus Lee"
+    ],
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank them for offering introductions",
+      "say it was great talking at the community event",
+      "keep it brief and warm",
+      "say Gabriel appreciates the willingness to connect him"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Lauren Kim",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "thread_id": "thr_lauren_01",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Marcus Lee",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "send_message",
+      "arguments": {
+        "thread_id": "thr_marcus_01",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lauren_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lauren Kim",
+          "subject": "Great meeting you tonight",
+          "body": "Gabriel, it was great talking with you at the community event. I’d be happy to introduce you to Nina at the arts foundation if that would be useful.",
+          "thread_id": "thr_lauren_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-22T20:41:00"
+        }
+      },
+      {
+        "id": "msg_marcus_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marcus Lee",
+          "subject": "Following up",
+          "body": "Nice meeting you this evening. If you want, I can connect you with a program lead I know at the neighborhood wellness collaborative.",
+          "thread_id": "thr_marcus_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-22T21:08:00"
+        }
+      },
+      {
+        "id": "msg_other_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Quincy Shoreline Cycling Club",
+          "subject": "Weekend route update",
+          "body": "We shifted the meetup start by fifteen minutes because of the tide advisory.",
+          "thread_id": "thr_cycle_01",
+          "folder": "inbox",
+          "labels": [
+            "sports"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-22T18:10:00"
+        }
+      }
+    ]
+  }
+}

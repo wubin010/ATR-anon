@@ -1,0 +1,104 @@
+{
+  "session_id": "john_brown_s29",
+  "session_type": "learning",
+  "day_offset": 29,
+  "domain": "communication",
+  "reason_for_call": "Draft a reply message",
+  "task_params": {
+    "sender": "Maya Carter",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "thank her for keeping the group on track",
+      "apologize for being behind on my piece",
+      "say my draft process map will be ready tonight",
+      "offer to upload it to the shared folder as soon as it's done",
+      "ask if anything else is blocking the group"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Maya Carter",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_project_08",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_maya_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Maya Carter",
+          "subject": "Re: Project check-in",
+          "body": "Hey team, just nudging everyone again since a couple project pieces are still overdue. We need the remaining parts uploaded so I can combine everything before class. John, can you let us know where your section stands?",
+          "thread_id": "thr_project_08",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-27T18:42:00"
+        }
+      },
+      {
+        "id": "msg_prof_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Professor Lin",
+          "subject": "Lab notes reminder",
+          "body": "Please remember to bring your annotated lab notes to tomorrow's discussion section.",
+          "thread_id": "thr_class_14",
+          "folder": "inbox",
+          "labels": [
+            "class"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-27T11:10:00"
+        }
+      },
+      {
+        "id": "msg_career_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Campus Career Center",
+          "subject": "Resume workshop seats still open",
+          "body": "There are still seats available for Thursday's resume workshop if you'd like to attend.",
+          "thread_id": "thr_career_05",
+          "folder": "inbox",
+          "labels": [
+            "career"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-26T09:05:00"
+        }
+      }
+    ]
+  }
+}

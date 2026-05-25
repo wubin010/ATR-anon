@@ -1,0 +1,99 @@
+{
+  "instruction": "Please book dinner in San Juan for four people on 2026-08-14 at 7:30pm—just choose a place and make the reservation.",
+  "gold_value": "rst_casa_sanjusto_01",
+  "session_id": "maximo_esteban_irizarry_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "maximo_esteban_irizarry_reservation_01",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_reservation_01",
+    "rule_text": "When dining out or meeting socially, he prefers reservations at culturally rooted local places over generic mainstream options.",
+    "canonical_answer": "For meals out, I prefer local places with cultural character over generic spots."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_casa_sanjusto_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Casa San Justo",
+          "cuisine": "Puerto Rican",
+          "location": "Old San Juan, San Juan",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "historic courtyard dining room with live plena trio",
+          "review_count": 148
+        }
+      },
+      {
+        "id": "rst_harbor360_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harbor 360 Rooftop Kitchen",
+          "cuisine": "International fusion",
+          "location": "Condado, San Juan",
+          "rating": 4.9,
+          "price_range": "$$$",
+          "seating_style": "rooftop lounge",
+          "review_count": 2140
+        }
+      },
+      {
+        "id": "rst_marina_prime_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Marina Prime Chophouse",
+          "cuisine": "Steakhouse",
+          "location": "Isla Verde, San Juan",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "hotel dining room",
+          "review_count": 1180
+        }
+      },
+      {
+        "id": "rst_isla_centro_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Isla Centro Kitchen",
+          "cuisine": "Caribbean fusion",
+          "location": "Miramar, San Juan",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "hotel lobby dining room",
+          "review_count": 642
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_casa_sanjusto_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

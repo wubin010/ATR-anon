@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Lena Ortiz at Northbank Controls about her inverter prototype protection note. Tell her I'm glad to look over the revised gate-drive schematic, ask her to send the latest thermal measurements and oscilloscope captures first, and mention that we should verify the fault-protection thresholds before the next bench run.",
+  "gold_value": null,
+  "session_id": "joseph_eldridge_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "joseph_eldridge_communication_01",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_communication_01",
+    "rule_text": "For substantive outreach, technical coordination, or mentorship emails, Joseph prefers a draft he can review before anything is sent.",
+    "canonical_answer": "I prefer to review a draft first for important messages, especially anything technical, professional, or mentoring-related."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_inverter_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Ortiz <lena.ortiz@northbankcontrols.com>",
+          "subject": "Inverter prototype protection review",
+          "body": "Hi Joseph, we're preparing the next bench run on the inverter prototype here at Northbank Controls. Could you take a look at the revised gate-drive schematic and let us know whether the fault-protection thresholds still make sense? I can also send over the latest thermal measurements and oscilloscope captures if that would help before we set up the review.",
+          "thread_id": "thr_lena_inverter_18",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-11T09:14"
+        }
+      },
+      {
+        "id": "msg_priya_notes_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Priya Nair <priya.nair@eecollege.edu>",
+          "subject": "Question about your control-loop stability lecture notes",
+          "body": "Hello Joseph, one of the junior engineers in our continuing-education cohort had a follow-up question about the control-loop stability example from your notes. If you have time later, could you point us to the section that covers compensator selection in more detail?",
+          "thread_id": "thr_priya_notes_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-04-11T08:03"
+        }
+      },
+      {
+        "id": "msg_vendor_statement_01",
+        "type": "message",
+        "attributes": {
+          "sender": "billing@voltmetric.com",
+          "subject": "Your monthly account statement is ready",
+          "body": "The April account statement for VoltMetric services is now available in the customer portal.",
+          "thread_id": "thr_vendor_statement_31",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-04-11T07:22"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "instruction": "Can you make a dinner reservation in Minneapolis for three people on 2026-09-18 at 7:00pm? Just pick a place and book it.",
+  "gold_value": "rst_hearthfield_01",
+  "session_id": "nancy_marr_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "nancy_marr_reservation_02",
+  "rule_ref": {
+    "rule_id": "nancy_marr_reservation_02",
+    "rule_text": "For dining out, Nancy tends to favor restaurants with seasonal, locally sourced menus over generic options.",
+    "canonical_answer": "I usually choose places that feel seasonal and locally rooted, especially if they highlight good ingredients."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_bellavista_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bella Vista Trattoria",
+          "cuisine": "Italian",
+          "location": "Downtown Minneapolis",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "brasserie",
+          "menu_style": "fixed menu year-round",
+          "ingredient_sourcing": "national distributors"
+        }
+      },
+      {
+        "id": "rst_rivermarket_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "River Market Kitchen",
+          "cuisine": "American",
+          "location": "North Loop, Minneapolis",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "casual dining",
+          "menu_style": "seasonal specials alongside a fixed core menu",
+          "ingredient_sourcing": "mixed national suppliers"
+        }
+      },
+      {
+        "id": "rst_milldistrict_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Mill District Grill",
+          "cuisine": "New American",
+          "location": "Downtown Minneapolis",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "dining room",
+          "menu_style": "fixed menu year-round",
+          "ingredient_sourcing": "Minnesota farms when available"
+        }
+      },
+      {
+        "id": "rst_hearthfield_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Hearthfield Supper Club",
+          "cuisine": "New American",
+          "location": "Northeast Minneapolis",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "dining room",
+          "menu_style": "rotating seasonal menu",
+          "ingredient_sourcing": "locally sourced Minnesota produce and meats"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_hearthfield_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

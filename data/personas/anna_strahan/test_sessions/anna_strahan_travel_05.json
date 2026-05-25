@@ -1,0 +1,141 @@
+{
+  "instruction": "Book a hotel in Asheville for 2 adults and 1 room, and keep it at $220 per night or less. It's a short getaway, so just pick one and take care of it.",
+  "gold_value": "htl_asheville_foundry_row_01",
+  "session_id": "anna_strahan_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "anna_strahan_travel_05",
+  "rule_ref": {
+    "rule_id": "anna_strahan_travel_05",
+    "rule_text": "When choosing lodging for a trip, Anna prefers hotels positioned for both exploration and local character, such as near trails, historic areas, or arts districts, over purely generic convenience stays.",
+    "canonical_answer": "I prefer hotels that put me close to trails, historic neighborhoods, or arts areas rather than a generic convenience stop."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "htl_asheville_foundry_row_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Foundry Row Hotel",
+          "location": "River Arts District, Asheville",
+          "check_in_date": "2026-10-09",
+          "check_out_date": "2026-10-12",
+          "available_rooms": 6,
+          "max_guests_per_room": 2,
+          "price_per_night": 218,
+          "rating": 4.4,
+          "review_count": 287,
+          "neighborhood_profile": "arts district",
+          "walk_time_to_gallery_block_min": 3,
+          "walk_time_to_river_greenway_min": 11
+        }
+      },
+      {
+        "id": "htl_asheville_montford_house_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Montford House Inn",
+          "location": "Montford Historic District, Asheville",
+          "check_in_date": "2026-10-09",
+          "check_out_date": "2026-10-12",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 244,
+          "rating": 4.8,
+          "review_count": 641,
+          "neighborhood_profile": "historic district",
+          "walk_time_to_preserved_homes_min": 4,
+          "walk_time_to_downtown_min": 12
+        }
+      },
+      {
+        "id": "htl_asheville_trailhead_lodge_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Trailhead Lodge Asheville",
+          "location": "East Asheville",
+          "check_in_date": "2026-10-09",
+          "check_out_date": "2026-10-12",
+          "available_rooms": 5,
+          "max_guests_per_room": 2,
+          "price_per_night": 229,
+          "rating": 4.7,
+          "review_count": 418,
+          "neighborhood_profile": "trail access",
+          "walk_time_to_trail_access_min": 5,
+          "distance_to_blue_ridge_parkway_km": 3.2
+        }
+      },
+      {
+        "id": "htl_asheville_tunnel_road_inn_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Tunnel Road Inn",
+          "location": "Tunnel Road, Asheville",
+          "check_in_date": "2026-10-09",
+          "check_out_date": "2026-10-12",
+          "available_rooms": 11,
+          "max_guests_per_room": 2,
+          "price_per_night": 149,
+          "rating": 4.6,
+          "review_count": 1834,
+          "neighborhood_profile": "highway corridor",
+          "distance_to_interstate_km": 0.2,
+          "free_parking": true
+        }
+      },
+      {
+        "id": "htl_asheville_civic_center_suites_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Civic Center Suites",
+          "location": "Downtown Asheville",
+          "check_in_date": "2026-10-09",
+          "check_out_date": "2026-10-12",
+          "available_rooms": 9,
+          "max_guests_per_room": 2,
+          "price_per_night": 169,
+          "rating": 4.9,
+          "review_count": 2511,
+          "neighborhood_profile": "business district",
+          "distance_to_transit_km": 0.1,
+          "breakfast_included": true
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_hotel",
+          "arguments": {
+            "hotel_offer_id": "htl_asheville_foundry_row_01"
+          },
+          "compare_args": [
+            "hotel_offer_id"
+          ]
+        }
+      ]
+    }
+  }
+}

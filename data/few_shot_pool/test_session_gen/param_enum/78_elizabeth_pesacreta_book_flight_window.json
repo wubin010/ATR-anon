@@ -1,0 +1,96 @@
+{
+  "instruction": "Please book the lowest-priced flight from Seattle to San Francisco for just me from the available options. I’m only bringing a carry-on, so go ahead and make the booking once you find the best match.",
+  "gold_value": "window",
+  "session_id": "elizabeth_pesacreta_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "persona_id": "elizabeth_pesacreta",
+  "rule_id": "elizabeth_pesacreta_travel_05",
+  "rule_ref": {
+    "rule_id": "elizabeth_pesacreta_travel_05",
+    "rule_text": "When flying, she prefers a window seat.",
+    "canonical_answer": "I always pick the window seat when I fly."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_sea_sfo_cascade_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "San Francisco",
+          "departure_date": "2026-09-18",
+          "airline": "Cascade Air",
+          "price": 128
+        }
+      },
+      {
+        "id": "flt_sea_sfo_northpac_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "San Francisco",
+          "departure_date": "2026-09-18",
+          "airline": "North Pacific",
+          "price": 163
+        }
+      },
+      {
+        "id": "flt_sea_lax_cascade_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Seattle",
+          "destination": "Los Angeles",
+          "departure_date": "2026-09-18",
+          "airline": "Cascade Air",
+          "price": 99
+        }
+      },
+      {
+        "id": "flt_pdx_sfo_baylink_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Portland",
+          "destination": "San Francisco",
+          "departure_date": "2026-09-18",
+          "airline": "BayLink",
+          "price": 115
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_flight",
+          "arguments": {
+            "seat_preference": "window"
+          },
+          "compare_args": [
+            "seat_preference"
+          ]
+        }
+      ]
+    }
+  }
+}

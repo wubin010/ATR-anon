@@ -1,0 +1,100 @@
+{
+  "session_id": "joseph_eldridge_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and finish a message",
+  "task_params": {
+    "folder": "drafts",
+    "subject": "Church volunteer schedule for May",
+    "thread_id": "thr_church_05",
+    "language": "en",
+    "reply_points": [
+      "apologize for the delay in sending the schedule",
+      "confirm setup team arrival at 8:15 AM",
+      "ask greeters to arrive by 8:45 AM",
+      "mention nursery coverage is still needed for second service",
+      "thank everyone for helping this month"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "drafts"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_church_05",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_sched_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Joseph Eldridge",
+          "subject": "Church volunteer schedule for May",
+          "body": "Hi everyone,\n\nI meant to send this sooner. For May, the setup team should arrive at 8:15 AM, and greeters should be in place by 8:45 AM. I still need to confirm nursery coverage for the second service.\n\nThanks,\nJoseph",
+          "thread_id": "thr_church_05",
+          "folder": "drafts",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-15T09:12:00"
+        }
+      },
+      {
+        "id": "msg_sched_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Joseph Eldridge",
+          "subject": "Re: Community theater lighting notes",
+          "body": "I can bring the updated cue sheet on Thursday.",
+          "thread_id": "thr_theater_11",
+          "folder": "drafts",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-14T16:40:00"
+        }
+      },
+      {
+        "id": "msg_sent_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Joseph Eldridge",
+          "subject": "Volunteer snack sign-up",
+          "body": "Thanks to everyone who signed up for refreshments.",
+          "thread_id": "thr_snacks_02",
+          "folder": "sent",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-10T11:05:00"
+        }
+      }
+    ]
+  }
+}

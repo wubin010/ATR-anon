@@ -1,0 +1,96 @@
+{
+  "session_id": "cassandra_tovar_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "workspace",
+  "reason_for_call": "Update a tracker",
+  "task_params": {
+    "title": "CTS Study Tracker",
+    "update_action": "create_entry",
+    "exam_date": "2025-02-24",
+    "note_points": [
+      "Practice exam score: 78%",
+      "Ran out of time on signal flow questions",
+      "Did better on safety and installation basics",
+      "Missed several items on control system workflows"
+    ],
+    "weak_spot_points": [
+      "signal flow troubleshooting",
+      "gain structure",
+      "control system terminology",
+      "networked AV basics"
+    ],
+    "next_action_points": [
+      "redo signal flow section",
+      "review Dante addressing notes",
+      "make flashcards for control terms",
+      "take another timed practice set"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_cts_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from exam_date, note_points, weak_spot_points, next_action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_cts_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "CTS Study Tracker"
+        }
+      },
+      {
+        "id": "trk_jobs_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Install Punch List"
+        }
+      },
+      {
+        "id": "trk_budget_03",
+        "type": "tracker",
+        "attributes": {
+          "title": "March Budget Check-In"
+        }
+      },
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Dante Review Notes",
+          "doc_type": "note",
+          "location": "Study/AVIXA",
+          "content_brief": "Subnetting, clocking, and device addressing notes for AV network review."
+        }
+      }
+    ]
+  }
+}

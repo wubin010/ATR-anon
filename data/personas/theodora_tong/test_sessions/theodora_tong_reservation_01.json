@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner for two in downtown Seattle on 2026-08-14 at 7:00pm — just pick a place and reserve it.",
+  "gold_value": "rst_cedar_thyme_01",
+  "session_id": "theodora_tong_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "theodora_tong_reservation_01",
+  "rule_ref": {
+    "rule_id": "theodora_tong_reservation_01",
+    "rule_text": "When choosing a place to eat out, she prefers quiet, herb-forward or thoughtfully prepared spots over loud trendy venues.",
+    "canonical_answer": "If I’m eating out, I prefer somewhere calm with simple, thoughtful food rather than a loud trendy place."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_cedar_thyme_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar & Thyme Kitchen",
+          "cuisine": "seasonal herb-forward",
+          "location": "Downtown Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "quiet dining room"
+        }
+      },
+      {
+        "id": "rst_basil_social_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Basil Social Club",
+          "cuisine": "seasonal herb-forward",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "price_range": "$$$",
+          "seating_style": "buzzy open room"
+        }
+      },
+      {
+        "id": "rst_maple_corner_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Maple Corner Diner",
+          "cuisine": "diner",
+          "location": "Downtown Seattle",
+          "rating": 4.8,
+          "price_range": "$",
+          "seating_style": "quiet booths"
+        }
+      },
+      {
+        "id": "rst_neon_harbor_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Neon Harbor Taproom",
+          "cuisine": "gastropub",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "loud communal tables"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_cedar_thyme_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "session_id": "theodora_tong_s50",
+  "session_type": "learning",
+  "day_offset": 50,
+  "domain": "reservation",
+  "reason_for_call": "Book some event tickets.",
+  "task_params": {
+    "location": "Schenectady",
+    "event_tags": [
+      "game night",
+      "board games"
+    ],
+    "ticket_count": 3,
+    "ticket_type": "general_admission"
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Schenectady",
+        "event_tags": [
+          "game night",
+          "board games"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_gamegrid_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 3
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_gamegrid_01",
+        "type": "event",
+        "attributes": {
+          "name": "Game Grid Friday Night Social",
+          "location": "Schenectady",
+          "date_time": "2025-03-21T19:00:00",
+          "price": 12.0,
+          "event_tags": [
+            "game night",
+            "board games",
+            "social"
+          ]
+        }
+      },
+      {
+        "id": "evt_riverroll_02",
+        "type": "event",
+        "attributes": {
+          "name": "Mohawk River Tabletop Mixer",
+          "location": "Schenectady",
+          "date_time": "2025-03-22T18:30:00",
+          "price": 15.0,
+          "event_tags": [
+            "board games",
+            "tabletop",
+            "casual"
+          ]
+        }
+      },
+      {
+        "id": "evt_unioncards_03",
+        "type": "event",
+        "attributes": {
+          "name": "Union Street Card Night",
+          "location": "Schenectady",
+          "date_time": "2025-03-20T19:30:00",
+          "price": 10.0,
+          "event_tags": [
+            "card games",
+            "game night",
+            "friends"
+          ]
+        }
+      },
+      {
+        "id": "evt_albanyarcade_04",
+        "type": "event",
+        "attributes": {
+          "name": "Albany Arcade Challenge Night",
+          "location": "Albany",
+          "date_time": "2025-03-21T20:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "arcade",
+            "game night",
+            "social"
+          ]
+        }
+      }
+    ]
+  }
+}

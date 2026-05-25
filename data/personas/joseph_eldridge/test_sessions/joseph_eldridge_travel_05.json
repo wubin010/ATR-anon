@@ -1,0 +1,160 @@
+{
+  "instruction": "One stop on trip BR-7712 in Roanoke fell through: the visit at the old depot can't happen now. Please swap in a single replacement nearby that can fit in about 60-90 minutes and won't add much detour from the current route.",
+  "gold_value": [
+    "stop_roanoke_platform_exhibit_01"
+  ],
+  "session_id": "joseph_eldridge_travel_05_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "joseph_eldridge_travel_05",
+  "rule_ref": {
+    "rule_id": "joseph_eldridge_travel_05",
+    "rule_text": "When a planned stop must be replaced, Joseph prefers an alternative that preserves the original trip theme, such as nature, rail history, or engineering interest.",
+    "canonical_answer": "If a stop has to change, I want the replacement to match the original theme of the trip."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_roanoke_platform_exhibit_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Norfolk & Western Platform Exhibit",
+          "stop_type": "historic_rail_site",
+          "location": "Roanoke, Virginia",
+          "tags": [
+            "rail_history",
+            "station_platform",
+            "engineering",
+            "locomotives",
+            "daytime"
+          ],
+          "rating": 4.4,
+          "review_count": 241,
+          "detour_minutes_from_route": 11,
+          "visit_duration_hours": 1.25,
+          "trip_id": "TRIP-BR-7712"
+        }
+      },
+      {
+        "id": "stop_roanoke_depot_transit_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Roanoke Depot Transit Museum",
+          "stop_type": "transport_museum",
+          "location": "Roanoke, Virginia",
+          "tags": [
+            "rail_history",
+            "depot",
+            "engineering",
+            "museum",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 4812,
+          "detour_minutes_from_route": 7,
+          "visit_duration_hours": 2.5,
+          "trip_id": "TRIP-BR-7712"
+        }
+      },
+      {
+        "id": "stop_blueridge_signal_tower_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Blue Ridge Signal Tower Walk",
+          "stop_type": "historic_site",
+          "location": "Roanoke, Virginia",
+          "tags": [
+            "rail_history",
+            "signal_tower",
+            "engineering",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 1350,
+          "detour_minutes_from_route": 23,
+          "visit_duration_hours": 1.0,
+          "trip_id": "TRIP-BR-7712"
+        }
+      },
+      {
+        "id": "stop_mill_mountain_star_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mill Mountain Star Overlook",
+          "stop_type": "scenic_overlook",
+          "location": "Roanoke, Virginia",
+          "tags": [
+            "scenic",
+            "overlook",
+            "daytime",
+            "popular",
+            "city_views"
+          ],
+          "rating": 4.9,
+          "review_count": 9102,
+          "detour_minutes_from_route": 5,
+          "visit_duration_hours": 1.0,
+          "trip_id": "TRIP-BR-7712"
+        }
+      },
+      {
+        "id": "stop_taubman_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Taubman Museum of Art",
+          "stop_type": "art_museum",
+          "location": "Roanoke, Virginia",
+          "tags": [
+            "art",
+            "downtown",
+            "indoor",
+            "daytime",
+            "popular"
+          ],
+          "rating": 4.8,
+          "review_count": 1674,
+          "detour_minutes_from_route": 4,
+          "visit_duration_hours": 1.5,
+          "trip_id": "TRIP-BR-7712"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "replan_trip",
+          "arguments": {
+            "selected_alternative_stop_ids": [
+              "stop_roanoke_platform_exhibit_01"
+            ]
+          },
+          "compare_args": [
+            "selected_alternative_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

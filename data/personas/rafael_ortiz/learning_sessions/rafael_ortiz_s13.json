@@ -1,0 +1,99 @@
+{
+  "session_id": "rafael_ortiz_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "BSN Application Tracker",
+    "location": "Career Development",
+    "content_brief": "Spreadsheet to track BSN application items with columns for school, application task, deadline, status, documents needed, and follow-up notes",
+    "reference_doc_type": "template",
+    "template_doc_id": "doc_bsn_template_01"
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Career Development",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "BSN Application Tracker",
+        "location": "Career Development",
+        "content_brief": "Spreadsheet to track BSN application items with columns for school, application task, deadline, status, documents needed, and follow-up notes"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_bsn_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Graduate Program Application Tracker Template",
+          "doc_type": "template",
+          "location": "Career Development",
+          "content_brief": "Template with columns for program, requirement, due date, status, notes, and follow-up"
+        }
+      },
+      {
+        "id": "doc_cert_log_02",
+        "type": "document",
+        "attributes": {
+          "title": "Certification Renewal Checklist",
+          "doc_type": "spreadsheet",
+          "location": "Career Development",
+          "content_brief": "Spreadsheet tracking BLS, ACLS, CE hours, deadlines, and completion status"
+        }
+      },
+      {
+        "id": "doc_shift_notes_03",
+        "type": "document",
+        "attributes": {
+          "title": "Unit QI Meeting Notes",
+          "doc_type": "note",
+          "location": "Work Notes",
+          "content_brief": "Notes from medication safety huddle and follow-up tasks"
+        }
+      },
+      {
+        "id": "file_resume_04",
+        "type": "file",
+        "attributes": {
+          "name": "Rafael_Resume_2025.docx",
+          "file_type": "docx",
+          "location": "Career Development",
+          "owner": "Rafael Ortiz",
+          "labels": [
+            "resume",
+            "career"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

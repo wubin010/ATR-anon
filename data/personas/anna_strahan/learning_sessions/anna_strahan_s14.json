@@ -1,0 +1,130 @@
+{
+  "session_id": "anna_strahan_s14",
+  "session_type": "learning",
+  "day_offset": 14,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Gulf Coast",
+      "drivable",
+      "gallery"
+    ],
+    "traveler_count": 2,
+    "duration_days": 3,
+    "destination_ids": [
+      "dst_ocean_springs_01",
+      "dst_fairhope_02",
+      "dst_gulf_shores_03"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Gulf Coast",
+          "drivable",
+          "gallery"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_ocean_springs_01",
+          "dst_fairhope_02",
+          "dst_gulf_shores_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_ocean_springs_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Ocean Springs",
+          "region": "Mississippi Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "drivable",
+            "gallery",
+            "arts district",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_fairhope_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Fairhope",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "drivable",
+            "gallery",
+            "downtown",
+            "long weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_gulf_shores_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Gulf Shores",
+          "region": "Alabama Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "drivable",
+            "gallery",
+            "beach",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_grand_isle_04",
+        "type": "destination",
+        "attributes": {
+          "name": "Grand Isle",
+          "region": "Louisiana Gulf Coast",
+          "tags": [
+            "Gulf Coast",
+            "drivable",
+            "fishing",
+            "beach",
+            "weekend"
+          ]
+        }
+      }
+    ]
+  }
+}

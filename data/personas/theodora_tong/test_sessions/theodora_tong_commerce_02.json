@@ -1,0 +1,110 @@
+{
+  "instruction": "Please order one full-size college-ruled notebook for lecture notes for my statistics class. Just pick one for me.",
+  "gold_value": "prod_campus_saver_notebook_01",
+  "session_id": "theodora_tong_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "theodora_tong_commerce_02",
+  "rule_ref": {
+    "rule_id": "theodora_tong_commerce_02",
+    "rule_text": "For routine purchases, she prefers student-discounted or budget-conscious options over pricier equivalents.",
+    "canonical_answer": "For everyday purchases, I go for the student-friendly budget option whenever I can."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_campus_saver_notebook_01",
+        "type": "product",
+        "attributes": {
+          "name": "Campus Saver Student Notebook",
+          "price": 3.49,
+          "category": "notebooks",
+          "rating": 4.3,
+          "page_count": 100,
+          "paper_size": "8.5 x 11",
+          "ruling": "college ruled",
+          "discount_type": "student discount",
+          "cover_type": "softcover",
+          "review_count": 74
+        }
+      },
+      {
+        "id": "prod_studymate_pocket_notebook_01",
+        "type": "product",
+        "attributes": {
+          "name": "StudyMate Student Pocket Notebook",
+          "price": 2.79,
+          "category": "notebooks",
+          "rating": 4.4,
+          "page_count": 60,
+          "paper_size": "5 x 8",
+          "ruling": "college ruled",
+          "discount_type": "student discount",
+          "cover_type": "softcover",
+          "review_count": 122
+        }
+      },
+      {
+        "id": "prod_fivestar_class_notes_01",
+        "type": "product",
+        "attributes": {
+          "name": "Five Star Class Notes Notebook",
+          "price": 6.99,
+          "category": "notebooks",
+          "rating": 4.8,
+          "page_count": 100,
+          "paper_size": "8.5 x 11",
+          "ruling": "college ruled",
+          "cover_type": "durable poly",
+          "review_count": 3150,
+          "units_sold_last_30_days": 1800
+        }
+      },
+      {
+        "id": "prod_moleskine_lecture_pro_01",
+        "type": "product",
+        "attributes": {
+          "name": "Moleskine Pro Lecture Notebook",
+          "price": 14.99,
+          "category": "notebooks",
+          "rating": 4.9,
+          "page_count": 120,
+          "paper_size": "8.25 x 11.75",
+          "ruling": "college ruled",
+          "cover_type": "hardcover",
+          "review_count": 980
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_campus_saver_notebook_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

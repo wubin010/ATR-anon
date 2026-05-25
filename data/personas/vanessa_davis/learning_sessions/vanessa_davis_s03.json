@@ -1,0 +1,110 @@
+{
+  "session_id": "vanessa_davis_s03",
+  "session_type": "learning",
+  "day_offset": 3,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item.",
+  "task_params": {
+    "category": "phone mount",
+    "budget": 80,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_mount_01",
+      "prod_mount_02",
+      "prod_mount_03"
+    ],
+    "product_id": "prod_mount_02",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "phone mount",
+        "budget": 80,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_mount_01",
+          "prod_mount_02",
+          "prod_mount_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_mount_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_mount_01",
+        "type": "product",
+        "attributes": {
+          "name": "RoadForge ClampGrip Dash Phone Mount",
+          "price": 39.99,
+          "category": "phone mount",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_mount_02",
+        "type": "product",
+        "attributes": {
+          "name": "DesertHaul Heavy-Duty Cab Phone Mount",
+          "price": 59.5,
+          "category": "phone mount",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_mount_03",
+        "type": "product",
+        "attributes": {
+          "name": "IronTrail Vibration-Lock Phone Mount",
+          "price": 74.0,
+          "category": "phone mount",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_mount_04",
+        "type": "product",
+        "attributes": {
+          "name": "MesaFlex Vent Phone Mount",
+          "price": 24.99,
+          "category": "phone mount",
+          "rating": 4.0
+        }
+      }
+    ]
+  }
+}

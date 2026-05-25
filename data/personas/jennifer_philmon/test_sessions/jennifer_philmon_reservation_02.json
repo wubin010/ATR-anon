@@ -1,0 +1,115 @@
+{
+  "instruction": "I'm in St. Louis and want two tickets for something local; keep it under $45 each and just pick one for me.",
+  "gold_value": "evt_cardinals_busch_01",
+  "session_id": "jennifer_philmon_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "jennifer_philmon_reservation_02",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_reservation_02",
+    "rule_text": "For local tickets, she prefers hockey or baseball events tied to her St. Louis teams over unrelated entertainment.",
+    "canonical_answer": "If I'm getting event tickets, I'd rather go to Cardinals or Blues-related events than other kinds of entertainment."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_cardinals_busch_01",
+        "type": "event",
+        "attributes": {
+          "name": "St. Louis Cardinals vs. Milwaukee Brewers",
+          "location": "Busch Stadium, St. Louis",
+          "date_time": "2026-06-19T19:15:00",
+          "price": 44,
+          "event_tags": [
+            "baseball",
+            "st_louis_cardinals",
+            "home_game"
+          ],
+          "rating": 4.4,
+          "distance_km": 6.8
+        }
+      },
+      {
+        "id": "evt_allstars_showcase_01",
+        "type": "event",
+        "attributes": {
+          "name": "Midwest Baseball All-Stars Showcase",
+          "location": "Downtown St. Louis",
+          "date_time": "2026-06-19T18:30:00",
+          "price": 26,
+          "event_tags": [
+            "baseball",
+            "exhibition",
+            "all_star"
+          ],
+          "rating": 4.9,
+          "distance_km": 0.9
+        }
+      },
+      {
+        "id": "evt_riverfront_pop_01",
+        "type": "event",
+        "attributes": {
+          "name": "Riverfront Summer Pop Concert",
+          "location": "Downtown St. Louis",
+          "date_time": "2026-06-19T20:00:00",
+          "price": 34,
+          "event_tags": [
+            "concert",
+            "live_music",
+            "pop"
+          ],
+          "rating": 4.9,
+          "distance_km": 0.7
+        }
+      },
+      {
+        "id": "evt_glacier_rivals_01",
+        "type": "event",
+        "attributes": {
+          "name": "Glacier Rivals Hockey Classic",
+          "location": "St. Charles, Greater St. Louis",
+          "date_time": "2026-06-20T19:00:00",
+          "price": 31,
+          "event_tags": [
+            "hockey",
+            "exhibition",
+            "regional_teams"
+          ],
+          "rating": 4.8,
+          "distance_km": 2.1
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_event_ticket",
+          "arguments": {
+            "event_id": "evt_cardinals_busch_01"
+          },
+          "compare_args": [
+            "event_id"
+          ]
+        }
+      ]
+    }
+  }
+}

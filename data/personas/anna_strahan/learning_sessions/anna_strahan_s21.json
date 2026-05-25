@@ -1,0 +1,134 @@
+{
+  "session_id": "anna_strahan_s21",
+  "session_type": "learning",
+  "day_offset": 21,
+  "domain": "workspace",
+  "reason_for_call": "Archive some old reports.",
+  "task_params": {
+    "location": "Quality Improvement",
+    "file_type": "docx",
+    "folder_id": "fld_archive_01",
+    "file_ids": [
+      "fil_falls_01",
+      "fil_medrec_01",
+      "fil_discharge_01"
+    ]
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "archive_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Quality Improvement",
+        "file_type": "docx"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "archive_files",
+      "arguments": {
+        "file_ids": [
+          "fil_falls_01",
+          "fil_medrec_01",
+          "fil_discharge_01"
+        ],
+        "folder_id": "fld_archive_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_falls_01",
+        "type": "file",
+        "attributes": {
+          "name": "Falls Reduction Draft Report v3.docx",
+          "file_type": "docx",
+          "location": "Shared Drive/Quality Improvement/Completed Projects/Falls Reduction",
+          "owner": "Anna Strahan",
+          "labels": [
+            "draft",
+            "completed project",
+            "quality improvement"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_medrec_01",
+        "type": "file",
+        "attributes": {
+          "name": "Medication Reconciliation Draft Summary.docx",
+          "file_type": "docx",
+          "location": "Shared Drive/Quality Improvement/Completed Projects/Medication Reconciliation",
+          "owner": "Anna Strahan",
+          "labels": [
+            "draft",
+            "completed project",
+            "quality improvement"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_discharge_01",
+        "type": "file",
+        "attributes": {
+          "name": "Discharge Follow-up Draft Report.docx",
+          "file_type": "docx",
+          "location": "Shared Drive/Quality Improvement/Completed Projects/Discharge Follow-up",
+          "owner": "Anna Strahan",
+          "labels": [
+            "draft",
+            "completed project",
+            "quality improvement"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_staff_01",
+        "type": "file",
+        "attributes": {
+          "name": "Staff Training Attendance Q2.xlsx",
+          "file_type": "xlsx",
+          "location": "Shared Drive/Quality Improvement/Completed Projects/Staff Training",
+          "owner": "Clinic Ops",
+          "labels": [
+            "completed project",
+            "quality improvement"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived QI Draft Reports",
+          "purpose": "Archive folder for older draft reports from completed quality-improvement projects"
+        }
+      }
+    ]
+  }
+}

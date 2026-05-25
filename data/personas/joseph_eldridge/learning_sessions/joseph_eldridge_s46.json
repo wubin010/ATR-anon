@@ -1,0 +1,105 @@
+{
+  "session_id": "joseph_eldridge_s46",
+  "session_type": "learning",
+  "day_offset": 46,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online",
+  "task_params": {
+    "category": "LED task lamp",
+    "budget": 90,
+    "sort_by": "rating",
+    "product_id": "prod_benq_01",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "LED task lamp",
+        "budget": 90,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_benq_01",
+          "prod_tao_02",
+          "prod_lepro_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_benq_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_benq_01",
+        "type": "product",
+        "attributes": {
+          "name": "BenQ e-Reading LED Task Lamp",
+          "price": 89.99,
+          "category": "LED task lamp",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_tao_02",
+        "type": "product",
+        "attributes": {
+          "name": "TaoTronics LED Desk Task Lamp",
+          "price": 49.99,
+          "category": "LED task lamp",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_lepro_03",
+        "type": "product",
+        "attributes": {
+          "name": "Lepro LED Task Lamp with Clamp",
+          "price": 34.99,
+          "category": "LED task lamp",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_luxo_04",
+        "type": "product",
+        "attributes": {
+          "name": "Luxo Professional LED Work Lamp",
+          "price": 129.0,
+          "category": "LED task lamp",
+          "rating": 4.7
+        }
+      }
+    ]
+  }
+}

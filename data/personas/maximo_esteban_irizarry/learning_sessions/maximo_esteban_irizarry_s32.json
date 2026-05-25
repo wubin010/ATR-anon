@@ -1,0 +1,106 @@
+{
+  "session_id": "maximo_esteban_irizarry_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "communication",
+  "reason_for_call": "Reply to a message",
+  "task_params": {
+    "sender": "Leo Morales",
+    "folder": "inbox",
+    "message_subject": "Am I ready to present tomorrow?",
+    "language": "en",
+    "reply_points": [
+      "tell him he is more prepared than he thinks",
+      "say his project is clear and useful",
+      "remind him he does not need to be perfect",
+      "suggest practicing the opening once more",
+      "encourage him to focus on explaining the problem and solution",
+      "offer support if he wants a quick run-through"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Leo Morales",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_leo_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_leo_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Leo Morales",
+          "subject": "Am I ready to present tomorrow?",
+          "body": "Hi Maximo, I'm getting nervous about presenting my project to the coding circle tomorrow. I keep thinking I'm going to freeze or forget something important. Do you think I'm actually ready, or should I ask to go later?",
+          "thread_id": "thr_leo_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-12T18:42:00"
+        }
+      },
+      {
+        "id": "msg_marta_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marta Rivera",
+          "subject": "Workshop projector update",
+          "body": "The community center replaced the old projector, so the slides should display better this week.",
+          "thread_id": "thr_marta_01",
+          "folder": "inbox",
+          "labels": [
+            "logistics"
+          ],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-12T15:10:00"
+        }
+      },
+      {
+        "id": "msg_diego_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Diego Santiago",
+          "subject": "Git branch question",
+          "body": "Could you take a look at my merge conflict when you have a moment?",
+          "thread_id": "thr_diego_01",
+          "folder": "sent",
+          "labels": [
+            "mentoring"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-11T09:05:00"
+        }
+      }
+    ]
+  }
+}

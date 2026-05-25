@@ -1,0 +1,163 @@
+{
+  "session_id": "theodora_tong_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Adirondack",
+      "lake"
+    ],
+    "destination": "Lake George",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "stop_tags": [
+      "nature",
+      "easy"
+    ],
+    "selected_stop_ids": [
+      "stp_lakegeorge_01",
+      "stp_lakegeorge_02"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Adirondack",
+          "lake"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Lake George",
+        "stop_tags": [
+          "nature",
+          "easy"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Lake George",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_lakegeorge_01",
+          "stp_lakegeorge_02"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_lakegeorge_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Lake George",
+          "region": "Adirondack",
+          "tags": [
+            "lake",
+            "nature",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_saranaclake_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Saranac Lake",
+          "region": "Adirondack",
+          "tags": [
+            "lake",
+            "mountain",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "dst_tupperlake_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Tupper Lake",
+          "region": "Adirondack",
+          "tags": [
+            "lake",
+            "stargazing",
+            "nature"
+          ]
+        }
+      },
+      {
+        "id": "stp_lakegeorge_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Lake George Waterfront Trail",
+          "location": "Lake George",
+          "tags": [
+            "nature",
+            "easy",
+            "walk"
+          ]
+        }
+      },
+      {
+        "id": "stp_lakegeorge_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Shepard Park",
+          "location": "Lake George",
+          "tags": [
+            "nature",
+            "easy",
+            "lake"
+          ]
+        }
+      },
+      {
+        "id": "stp_lakegeorge_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Prospect Mountain Summit",
+          "location": "Lake George",
+          "tags": [
+            "scenic",
+            "mountain",
+            "viewpoint"
+          ]
+        }
+      }
+    ]
+  }
+}

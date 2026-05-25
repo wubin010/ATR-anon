@@ -1,0 +1,155 @@
+{
+  "instruction": "I'm putting together a fun 3-day Las Vegas trip for myself. From the candidate stops below, pick one place around Las Vegas to anchor the itinerary and build the plan around it; I'd like something that fits in about half a day and doesn't require a huge drive from town.",
+  "gold_value": [
+    "stop_vegas_valley_fire_nightsky_01"
+  ],
+  "session_id": "vanessa_davis_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "vanessa_davis_travel_01",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_travel_01",
+    "rule_text": "When planning a leisure trip, she prefers itineraries built around scenic desert and stargazing stops rather than generic city attractions.",
+    "canonical_answer": "When I plan a fun trip, I want the stops to lean toward desert scenery and stargazing instead of standard tourist-city picks."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_vegas_valley_fire_nightsky_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Valley of Fire Night Sky Point",
+          "location": "Las Vegas area, Nevada",
+          "tags": [
+            "desert",
+            "stargazing",
+            "night_sky",
+            "red_rock",
+            "scenic_drive",
+            "sunset"
+          ],
+          "rating": 4.6,
+          "review_count": 614,
+          "drive_time_from_town_min": 55,
+          "visit_duration_hours": 4.0
+        }
+      },
+      {
+        "id": "stop_vegas_mojave_dunes_darksky_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mojave Dunes Dark Sky Pullout",
+          "location": "Las Vegas outskirts, Nevada",
+          "tags": [
+            "desert",
+            "stargazing",
+            "dark_sky",
+            "dunes",
+            "night_photography",
+            "milky_way"
+          ],
+          "rating": 4.9,
+          "review_count": 1842,
+          "drive_time_from_town_min": 145,
+          "visit_duration_hours": 6.0
+        }
+      },
+      {
+        "id": "stop_vegas_red_rock_loop_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Red Rock Scenic Loop",
+          "location": "Las Vegas area, Nevada",
+          "tags": [
+            "desert",
+            "red_rock",
+            "scenic_drive",
+            "hiking",
+            "sunset",
+            "popular"
+          ],
+          "rating": 4.9,
+          "review_count": 4821,
+          "drive_time_from_town_min": 30,
+          "visit_duration_hours": 3.0
+        }
+      },
+      {
+        "id": "stop_vegas_bellagio_fountains_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Bellagio Fountain Promenade",
+          "location": "Las Vegas Strip, Nevada",
+          "tags": [
+            "city",
+            "landmark",
+            "nightlife",
+            "shopping",
+            "popular",
+            "walkable"
+          ],
+          "rating": 4.9,
+          "review_count": 22110,
+          "drive_time_from_town_min": 10,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_vegas_fremont_street_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Fremont Street Experience",
+          "location": "Downtown Las Vegas, Nevada",
+          "tags": [
+            "city",
+            "nightlife",
+            "live_music",
+            "landmark",
+            "popular",
+            "walkable"
+          ],
+          "rating": 4.8,
+          "review_count": 16340,
+          "drive_time_from_town_min": 8,
+          "visit_duration_hours": 2.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_vegas_valley_fire_nightsky_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

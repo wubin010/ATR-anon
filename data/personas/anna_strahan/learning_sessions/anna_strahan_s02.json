@@ -1,0 +1,103 @@
+{
+  "session_id": "anna_strahan_s02",
+  "session_type": "learning",
+  "day_offset": 2,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "reference_doc_type": "template",
+    "doc_type": "note",
+    "location": "Outreach Planning",
+    "title": "Q3 Art-Therapy Outreach Ideas",
+    "idea_points": [
+      "partner with local libraries for drop-in collage sessions",
+      "pilot a waiting-room watercolor postcard activity",
+      "invite a licensed counselor to co-facilitate one workshop",
+      "track attendance and brief patient feedback after each event"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Outreach Planning",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Q3 Art-Therapy Outreach Ideas",
+        "location": "Outreach Planning",
+        "content_brief": "<authored from idea_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "Community Wellness Workshop Template",
+          "doc_type": "template",
+          "location": "Outreach Planning",
+          "content_brief": "Reusable outline for goals, audience, partners, logistics, and evaluation notes."
+        }
+      },
+      {
+        "id": "doc_template_02",
+        "type": "document",
+        "attributes": {
+          "title": "Volunteer Event Notes Template",
+          "doc_type": "template",
+          "location": "Outreach Planning",
+          "content_brief": "Simple working-note structure with sections for ideas, staffing, supplies, and follow-up."
+        }
+      },
+      {
+        "id": "doc_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Spring Outreach Debrief",
+          "doc_type": "note",
+          "location": "Outreach Planning",
+          "content_brief": "Lessons learned from earlier community wellness sessions."
+        }
+      },
+      {
+        "id": "file_notes_01",
+        "type": "file",
+        "attributes": {
+          "name": "art_therapy_flyer_draft.pdf",
+          "file_type": "pdf",
+          "location": "Outreach Planning",
+          "owner": "Anna Strahan",
+          "labels": [
+            "outreach",
+            "art-therapy"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

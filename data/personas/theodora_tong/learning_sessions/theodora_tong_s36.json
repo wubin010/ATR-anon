@@ -1,0 +1,115 @@
+{
+  "session_id": "theodora_tong_s36",
+  "session_type": "learning",
+  "day_offset": 36,
+  "domain": "commerce",
+  "reason_for_call": "Order some supplies online",
+  "task_params": {
+    "category": "rigid mailers",
+    "budget": 25,
+    "sort_by": "rating",
+    "quantity": 2,
+    "list_name": "print shop shipping supplies"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "rigid mailers",
+        "budget": 25,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_mailers_01",
+          "prod_mailers_02",
+          "prod_mailers_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "prod_mailers_03"
+        ],
+        "list_name": "print shop shipping supplies"
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_mailers_03",
+        "quantity": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_mailers_01",
+        "type": "product",
+        "attributes": {
+          "name": "StayFlat Rigid Mailers 25-Pack",
+          "price": 18.99,
+          "category": "rigid mailers",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_mailers_02",
+        "type": "product",
+        "attributes": {
+          "name": "Kraft Rigid Mailers 30-Pack",
+          "price": 22.5,
+          "category": "rigid mailers",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_mailers_03",
+        "type": "product",
+        "attributes": {
+          "name": "Heavy-Duty Photo Mailers 20-Pack",
+          "price": 24.99,
+          "category": "rigid mailers",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_sleeves_01",
+        "type": "product",
+        "attributes": {
+          "name": "Clear Protective Print Sleeves 50-Pack",
+          "price": 11.49,
+          "category": "protective sleeves",
+          "rating": 4.6
+        }
+      }
+    ]
+  }
+}

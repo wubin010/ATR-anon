@@ -1,0 +1,166 @@
+{
+  "session_id": "charlie_james_s20",
+  "session_type": "learning",
+  "day_offset": 20,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination": "Asheville",
+    "duration_days": 2,
+    "traveler_count": 1,
+    "destination_constraints": [
+      "Asheville",
+      "arts",
+      "scenic"
+    ],
+    "stop_tags": [
+      "arts",
+      "museum",
+      "scenic"
+    ],
+    "selected_stop_ids": [
+      "stp_river_01",
+      "stp_foundry_01",
+      "stp_biltmore_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Asheville",
+          "arts",
+          "scenic"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_asheville_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Asheville",
+        "stop_tags": [
+          "arts",
+          "museum",
+          "scenic"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Asheville",
+        "duration_days": 2,
+        "traveler_count": 1,
+        "selected_stop_ids": [
+          "stp_river_01",
+          "stp_foundry_01",
+          "stp_biltmore_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_asheville_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Asheville",
+          "region": "North Carolina",
+          "tags": [
+            "arts",
+            "scenic",
+            "mountains",
+            "weekend drive"
+          ]
+        }
+      },
+      {
+        "id": "stp_river_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "River Arts District",
+          "location": "Asheville",
+          "tags": [
+            "arts",
+            "gallery",
+            "walkable"
+          ]
+        }
+      },
+      {
+        "id": "stp_foundry_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Asheville Museum of Science",
+          "location": "Asheville",
+          "tags": [
+            "museum",
+            "indoor",
+            "family"
+          ]
+        }
+      },
+      {
+        "id": "stp_biltmore_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Blue Ridge Parkway Overlook",
+          "location": "Asheville",
+          "tags": [
+            "scenic",
+            "drive",
+            "outdoors"
+          ]
+        }
+      },
+      {
+        "id": "stp_downtown_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Downtown Asheville",
+          "location": "Asheville",
+          "tags": [
+            "food",
+            "shopping",
+            "arts"
+          ]
+        }
+      }
+    ]
+  }
+}

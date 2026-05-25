@@ -1,0 +1,99 @@
+{
+  "instruction": "Reply to Serena Vale at Meridian Art Lab about the waterfront projection collaboration. Tell her I'm interested, ask what times work for a planning call, and say I'll send over two recent installation examples plus a rough equipment list.",
+  "gold_value": null,
+  "session_id": "michael_argo_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "michael_argo_communication_01",
+  "rule_ref": {
+    "rule_id": "michael_argo_communication_01",
+    "rule_text": "For important outreach such as applications, collaborations, or portfolio messages, he prefers drafting first rather than sending immediately.",
+    "canonical_answer": "For anything important, I want a draft first so I can review it before it goes out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_serena_meridian_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Serena Vale <serena@meridianartlab.org>",
+          "subject": "Waterfront projection collaboration",
+          "body": "Hi Michael — we're putting together a weekend waterfront projection program at Meridian Art Lab and would love to explore a collaboration with you. If you're interested, let me know and we can set up a planning call. We'd also like to see a couple of recent installation examples and a preliminary equipment list when you have a chance.",
+          "thread_id": "thr_serena_meridian_18",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-11T10:24:00"
+        }
+      },
+      {
+        "id": "msg_arcprint_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "ArcPrint Co. Billing <billing@arcprintco.com>",
+          "subject": "July fabrication invoice",
+          "body": "Your July fabrication invoice is ready. Please log in to the billing portal to review the balance and payment terms.",
+          "thread_id": "thr_arcprint_billing_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-08-11T08:03:00"
+        }
+      },
+      {
+        "id": "msg_joel_workshop_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Joel Mercer <joel@schoolhousearts.net>",
+          "subject": "Saturday workshop check-in",
+          "body": "Just checking whether you still want the extra extension cords and floor tape brought over before the community workshop this weekend.",
+          "thread_id": "thr_joel_workshop_12",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-11T09:11:00"
+        }
+      },
+      {
+        "id": "msg_seaport_news_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Seaport Museum Events <events@seaportmuseum.org>",
+          "subject": "Member preview schedule",
+          "body": "The updated member preview schedule for this month's gallery installations is attached for your reference.",
+          "thread_id": "thr_seaport_news_04",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-08-11T07:42:00"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "session_id": "iris_parker_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "scheduling",
+  "reason_for_call": "Schedule a planning meeting",
+  "task_params": {
+    "title": "Q3 Cross-Functional Planning Session",
+    "start_time": "2025-04-23T11:00:00-04:00",
+    "end_time": "2025-04-23T12:00:00-04:00",
+    "participants": [
+      "maya.chen@northstar.co",
+      "jon.reed@northstar.co",
+      "leo.martin@northstar.co"
+    ],
+    "location": "Zoom"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "participants": [
+          "maya.chen@northstar.co",
+          "jon.reed@northstar.co",
+          "leo.martin@northstar.co"
+        ]
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-23T11:00:00-04:00",
+        "end_time": "2025-04-23T12:00:00-04:00",
+        "participants": [
+          "maya.chen@northstar.co",
+          "jon.reed@northstar.co",
+          "leo.martin@northstar.co"
+        ]
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Q3 Cross-Functional Planning Session",
+        "start_time": "2025-04-23T11:00:00-04:00",
+        "end_time": "2025-04-23T12:00:00-04:00",
+        "participants": [
+          "maya.chen@northstar.co",
+          "jon.reed@northstar.co",
+          "leo.martin@northstar.co"
+        ],
+        "location": "Zoom"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_201",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Recruiting Pipeline Review",
+          "start_time": "2025-04-21T09:30:00-04:00",
+          "end_time": "2025-04-21T10:30:00-04:00",
+          "participants": [
+            "maya.chen@northstar.co",
+            "iris.parker@northstar.co"
+          ],
+          "location": "Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_202",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Finance Sync",
+          "start_time": "2025-04-22T13:00:00-04:00",
+          "end_time": "2025-04-22T14:00:00-04:00",
+          "participants": [
+            "jon.reed@northstar.co",
+            "iris.parker@northstar.co"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_203",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Q3 Cross-Functional Planning Session",
+          "start_time": "2025-04-23T11:00:00-04:00",
+          "end_time": "2025-04-23T12:00:00-04:00",
+          "participants": [
+            "leo.martin@northstar.co",
+            "maya.chen@northstar.co"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_204",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Benefits Vendor Check-in",
+          "start_time": "2025-04-24T15:00:00-04:00",
+          "end_time": "2025-04-24T16:00:00-04:00",
+          "participants": [
+            "iris.parker@northstar.co",
+            "maya.chen@northstar.co",
+            "jon.reed@northstar.co"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

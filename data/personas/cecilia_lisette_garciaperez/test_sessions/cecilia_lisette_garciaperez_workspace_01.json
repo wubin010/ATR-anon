@@ -1,0 +1,129 @@
+{
+  "instruction": "Please tidy up the files in /Publishing/Incoming — it's a mix of PDFs, spreadsheets, and docs, and I just need them organized.",
+  "gold_value": "by_project",
+  "session_id": "cecilia_lisette_garciaperez_workspace_01_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "cecilia_lisette_garciaperez_workspace_01",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_workspace_01",
+    "rule_text": "When organizing files, she prefers classifying them by project rather than by generic type or date.",
+    "canonical_answer": "I organize working files by project first, not just by format or date."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_pub_incoming_01",
+        "type": "file",
+        "attributes": {
+          "name": "contract_notes.docx",
+          "file_type": "docx",
+          "location": "/Publishing/Incoming",
+          "owner": "Cecilia Lisette Garcia Perez",
+          "labels": [],
+          "archived": false,
+          "project": "Andes Folktales",
+          "modified_date": "2026-02-11"
+        }
+      },
+      {
+        "id": "fil_pub_incoming_02",
+        "type": "file",
+        "attributes": {
+          "name": "translator_queries.docx",
+          "file_type": "docx",
+          "location": "/Publishing/Incoming",
+          "owner": "Cecilia Lisette Garcia Perez",
+          "labels": [],
+          "archived": false,
+          "project": "Baltic Short Stories",
+          "modified_date": "2026-02-18"
+        }
+      },
+      {
+        "id": "fil_pub_incoming_03",
+        "type": "file",
+        "attributes": {
+          "name": "rights_grid.xlsx",
+          "file_type": "xlsx",
+          "location": "/Publishing/Incoming",
+          "owner": "Cecilia Lisette Garcia Perez",
+          "labels": [],
+          "archived": false,
+          "project": "Cairo Children's Reader",
+          "modified_date": "2026-03-03"
+        }
+      },
+      {
+        "id": "fil_pub_incoming_04",
+        "type": "file",
+        "attributes": {
+          "name": "print_costs.xlsx",
+          "file_type": "xlsx",
+          "location": "/Publishing/Incoming",
+          "owner": "Cecilia Lisette Garcia Perez",
+          "labels": [],
+          "archived": false,
+          "project": "Seoul City Essays",
+          "modified_date": "2026-03-22"
+        }
+      },
+      {
+        "id": "fil_pub_incoming_05",
+        "type": "file",
+        "attributes": {
+          "name": "jacket_markup.pdf",
+          "file_type": "pdf",
+          "location": "/Publishing/Incoming",
+          "owner": "Cecilia Lisette Garcia Perez",
+          "labels": [],
+          "archived": false,
+          "project": "Mosaic Poetry Anthology",
+          "modified_date": "2026-04-07"
+        }
+      },
+      {
+        "id": "fil_pub_incoming_06",
+        "type": "file",
+        "attributes": {
+          "name": "launch_assets.pdf",
+          "file_type": "pdf",
+          "location": "/Publishing/Incoming",
+          "owner": "Cecilia Lisette Garcia Perez",
+          "labels": [],
+          "archived": false,
+          "project": "Lisbon Classroom Reader",
+          "modified_date": "2026-04-19"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

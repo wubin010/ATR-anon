@@ -1,0 +1,105 @@
+{
+  "session_id": "esther_hoitsma_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "communication",
+  "reason_for_call": "Draft a family reminder",
+  "task_params": {
+    "sender": "Tía Lupita",
+    "folder": "inbox",
+    "message_id": "msg_tialupita_01",
+    "thread_id": "thr_fammeal_01",
+    "subject": "Re: Sunday family meal",
+    "language": "en",
+    "reply_points": [
+      "friendly reminder in English and Spanish",
+      "meal is at Grandma Rosa's house",
+      "start time is 3:00 PM",
+      "please bring the dish you signed up for",
+      "text the group if running late",
+      "looking forward to seeing everyone"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Tía Lupita",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_fammeal_01",
+        "subject": "Re: Sunday family meal",
+        "body": "<authored from reply_points>",
+        "language": "en"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_tialupita_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Tía Lupita",
+          "subject": "Re: Sunday family meal",
+          "body": "Hi family, just checking that everyone saw the plan for our meal this Sunday. We should send one clear reminder in the thread so nobody misses the time or place.",
+          "thread_id": "thr_fammeal_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T09:18:00"
+        }
+      },
+      {
+        "id": "msg_coworker_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Marina",
+          "subject": "Shift swap question",
+          "body": "Can you cover the first hour for me on Thursday?",
+          "thread_id": "thr_shift_08",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-14T08:05:00"
+        }
+      },
+      {
+        "id": "msg_soccer_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Coach Devin",
+          "subject": "Practice moved",
+          "body": "Practice is starting 30 minutes later tonight.",
+          "thread_id": "thr_soccer_12",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-14T07:42:00"
+        }
+      }
+    ]
+  }
+}

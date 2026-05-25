@@ -1,0 +1,110 @@
+{
+  "session_id": "michael_argo_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "commerce",
+  "reason_for_call": "Order an art supply.",
+  "task_params": {
+    "category": "watercolor travel kit",
+    "budget": 30,
+    "sort_by": "price_asc",
+    "product_ids": [
+      "prod_travelkit_01",
+      "prod_travelkit_02",
+      "prod_travelkit_03"
+    ],
+    "product_id": "prod_travelkit_02",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "watercolor travel kit",
+        "budget": 30,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_travelkit_01",
+          "prod_travelkit_02",
+          "prod_travelkit_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_travelkit_02",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_travelkit_01",
+        "type": "product",
+        "attributes": {
+          "name": "Trail Pocket Watercolor Travel Kit",
+          "price": 18.99,
+          "category": "watercolor travel kit",
+          "rating": 4.1
+        }
+      },
+      {
+        "id": "prod_travelkit_02",
+        "type": "product",
+        "attributes": {
+          "name": "Summit Sketch Watercolor Travel Kit",
+          "price": 24.5,
+          "category": "watercolor travel kit",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_travelkit_03",
+        "type": "product",
+        "attributes": {
+          "name": "Creekside Mini Watercolor Travel Kit",
+          "price": 27.0,
+          "category": "watercolor travel kit",
+          "rating": 4.3
+        }
+      },
+      {
+        "id": "prod_brushset_04",
+        "type": "product",
+        "attributes": {
+          "name": "Field Brush Roll Set",
+          "price": 16.75,
+          "category": "travel brush set",
+          "rating": 4.4
+        }
+      }
+    ]
+  }
+}

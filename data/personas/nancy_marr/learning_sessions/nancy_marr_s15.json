@@ -1,0 +1,101 @@
+{
+  "session_id": "nancy_marr_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "communication",
+  "reason_for_call": "Draft a message",
+  "task_params": {
+    "sender": "Tom Marr",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "say the lakeside weekend feels quiet and restorative",
+      "note it is only about a two-hour drive",
+      "mention the cabin rate is $189 per night",
+      "say they can bring food and keep meals simple",
+      "offer one hike, one long coffee morning, and downtime",
+      "keep the tone calm, practical, and not pushy"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Tom Marr",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_tom_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_tom_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Tom Marr",
+          "subject": "That lakeside cabin for next month?",
+          "body": "I found a small lakeside cabin that looks peaceful. It's about a two-hour drive from home, and the rate I saw was $189 a night. If we kept meals simple and brought some food, it might stay pretty reasonable. What do you think?",
+          "thread_id": "thr_tom_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-15T09:12:00"
+        }
+      },
+      {
+        "id": "msg_lucy_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lucy Chen",
+          "subject": "Pottery glaze pickup",
+          "body": "Your glaze samples are ready whenever you want to stop by the studio this week.",
+          "thread_id": "thr_lucy_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-03-15T08:05:00"
+        }
+      },
+      {
+        "id": "msg_tom_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Tom Marr",
+          "subject": "RE: Garden center stop",
+          "body": "Sure, I can pick up potting mix on the way back.",
+          "thread_id": "thr_tom_02",
+          "folder": "archive",
+          "labels": [],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-03-10T18:41:00"
+        }
+      }
+    ]
+  }
+}

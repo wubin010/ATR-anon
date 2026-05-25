@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner in Seattle for two people on 2026-10-10 at 7:00pm — just pick a place and reserve it.",
+  "gold_value": "rst_comal_cedar_01",
+  "session_id": "esther_hoitsma_reservation_02_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "esther_hoitsma_reservation_02",
+  "rule_ref": {
+    "rule_id": "esther_hoitsma_reservation_02",
+    "rule_text": "For dining plans, Esther prefers restaurants with strong Mexican or fusion flavors suitable for sharing over generic American options.",
+    "canonical_answer": "When I’m choosing a place to eat, I usually go for Mexican or fusion spots that work well for shared meals."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_comal_cedar_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Comal & Cedar",
+          "cuisine": "Mexican fusion",
+          "location": "Wallingford, Seattle",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "family-style shared plates"
+        }
+      },
+      {
+        "id": "rst_union_grill_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Union Street Grill",
+          "cuisine": "American",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "classic dining room"
+        }
+      },
+      {
+        "id": "rst_harbor_tavern_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Harborline Tavern",
+          "cuisine": "American",
+          "location": "Belltown, Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "casual booths"
+        }
+      },
+      {
+        "id": "rst_mesa_counter_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Mesa Verde Express",
+          "cuisine": "Mexican",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "counter-service, single-serve plates"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_comal_cedar_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

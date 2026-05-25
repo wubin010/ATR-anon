@@ -1,0 +1,122 @@
+{
+  "session_id": "eduardo_rivera_s45",
+  "session_type": "learning",
+  "day_offset": 45,
+  "domain": "workspace",
+  "reason_for_call": "Organize some notes",
+  "task_params": {
+    "source_location": "reading_notes/scifi",
+    "file_type": "txt",
+    "file_ids": [
+      "file_scifi_01",
+      "file_scifi_02",
+      "file_scifi_03"
+    ],
+    "scheme": "by_project",
+    "doc_type": "note",
+    "title": "Prosthetic concept sparks from sci-fi reading",
+    "location": "design_notes/prosthetic_concepts",
+    "concept_points": [
+      "adaptive grip textures that change with task context",
+      "modular fingertip attachments for precision versus strength",
+      "low-profile sensory feedback cues instead of constant alerts",
+      "cultural surface patterns integrated without reducing function"
+    ]
+  },
+  "expected_tools": [
+    "list_files",
+    "classify_files",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "reading_notes/scifi",
+        "file_type": "txt"
+      }
+    },
+    {
+      "tool": "classify_files",
+      "arguments": {
+        "file_ids": [
+          "file_scifi_01",
+          "file_scifi_02",
+          "file_scifi_03"
+        ],
+        "scheme": "by_project"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Prosthetic concept sparks from sci-fi reading",
+        "location": "design_notes/prosthetic_concepts",
+        "content_brief": "<authored from concept_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_scifi_01",
+        "type": "file",
+        "attributes": {
+          "name": "children_of_time_margin_notes.txt",
+          "file_type": "txt",
+          "location": "reading_notes/scifi",
+          "owner": "Eduardo Rivera",
+          "labels": [
+            "reading",
+            "notes"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_scifi_02",
+        "type": "file",
+        "attributes": {
+          "name": "three_body_problem_sketch_notes.txt",
+          "file_type": "txt",
+          "location": "reading_notes/scifi",
+          "owner": "Eduardo Rivera",
+          "labels": [
+            "reading",
+            "ideas"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_scifi_03",
+        "type": "file",
+        "attributes": {
+          "name": "left_hand_of_darkness_design_thoughts.txt",
+          "file_type": "txt",
+          "location": "reading_notes/scifi",
+          "owner": "Eduardo Rivera",
+          "labels": [
+            "reading",
+            "draft"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

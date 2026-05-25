@@ -1,0 +1,106 @@
+{
+  "session_id": "iris_parker_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "reservation",
+  "reason_for_call": "Book an outdoor activity.",
+  "task_params": {
+    "location": "Lowell",
+    "event_tags": [
+      "outdoors",
+      "kayaking"
+    ],
+    "date_time": "2025-05-24T10:00:00",
+    "ticket_type": "general_admission",
+    "ticket_count": 2,
+    "event_id": "evt_merrimack_01"
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Lowell",
+        "event_tags": [
+          "outdoors",
+          "kayaking"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_merrimack_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_merrimack_01",
+        "type": "event",
+        "attributes": {
+          "name": "Merrimack River Guided Kayak Tour",
+          "location": "Lowell",
+          "date_time": "2025-05-24T10:00:00",
+          "price": 48.0,
+          "event_tags": [
+            "outdoors",
+            "kayaking",
+            "river"
+          ]
+        }
+      },
+      {
+        "id": "evt_boardwalk_02",
+        "type": "event",
+        "attributes": {
+          "name": "Riverwalk Birding Meetup",
+          "location": "Lowell",
+          "date_time": "2025-05-24T09:00:00",
+          "price": 15.0,
+          "event_tags": [
+            "outdoors",
+            "walking",
+            "nature"
+          ]
+        }
+      },
+      {
+        "id": "evt_harbor_03",
+        "type": "event",
+        "attributes": {
+          "name": "Sunset Harbor Paddle Intro",
+          "location": "Boston",
+          "date_time": "2025-05-24T18:00:00",
+          "price": 55.0,
+          "event_tags": [
+            "outdoors",
+            "kayaking",
+            "water"
+          ]
+        }
+      }
+    ]
+  }
+}

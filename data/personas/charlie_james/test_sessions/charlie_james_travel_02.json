@@ -1,0 +1,153 @@
+{
+  "instruction": "I'm putting together a 2-day solo Detroit trip. From the candidate stops below, pick one place for the first daytime stop to build the itinerary around; keep it close to downtown and something that works in about 90 minutes to 2 hours.",
+  "gold_value": [
+    "stop_detroit_eastern_market_01"
+  ],
+  "session_id": "charlie_james_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "charlie_james_travel_02",
+  "rule_ref": {
+    "rule_id": "charlie_james_travel_02",
+    "rule_text": "When planning a trip, he likes the itinerary to include automobile, craft, or neighborhood culture stops instead of only generic tourist highlights.",
+    "canonical_answer": "When I travel, I want stops that connect to cars, local art, or neighborhood culture."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "stop_detroit_eastern_market_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Eastern Market",
+          "location": "Detroit, Michigan",
+          "tags": [
+            "neighborhood",
+            "market",
+            "murals",
+            "local_makers",
+            "street_art",
+            "food_halls",
+            "daytime"
+          ],
+          "rating": 4.6,
+          "review_count": 1840,
+          "distance_to_downtown_km": 1.7,
+          "visit_duration_hours": 1.75
+        }
+      },
+      {
+        "id": "stop_detroit_heidelberg_project_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Heidelberg Project",
+          "location": "Detroit, Michigan",
+          "tags": [
+            "neighborhood",
+            "local_art",
+            "outdoor_installation",
+            "community",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 3120,
+          "distance_to_downtown_km": 8.1,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_detroit_piquette_museum_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Ford Piquette Avenue Plant Museum",
+          "location": "Detroit, Michigan",
+          "tags": [
+            "automobile",
+            "factory_history",
+            "vintage_cars",
+            "museum",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 4260,
+          "distance_to_downtown_km": 4.9,
+          "visit_duration_hours": 3.0
+        }
+      },
+      {
+        "id": "stop_detroit_riverwalk_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Detroit Riverwalk",
+          "location": "Detroit, Michigan",
+          "tags": [
+            "waterfront",
+            "skyline",
+            "popular",
+            "landmark",
+            "daytime"
+          ],
+          "rating": 4.9,
+          "review_count": 11840,
+          "distance_to_downtown_km": 0.4,
+          "visit_duration_hours": 1.5
+        }
+      },
+      {
+        "id": "stop_detroit_campus_martius_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Campus Martius Park",
+          "location": "Detroit, Michigan",
+          "tags": [
+            "downtown",
+            "plaza",
+            "events",
+            "popular",
+            "landmark",
+            "daytime"
+          ],
+          "rating": 4.8,
+          "review_count": 9670,
+          "distance_to_downtown_km": 0.1,
+          "visit_duration_hours": 1.5
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "plan_trip",
+          "arguments": {
+            "selected_stop_ids": [
+              "stop_detroit_eastern_market_01"
+            ]
+          },
+          "compare_args": [
+            "selected_stop_ids"
+          ]
+        }
+      ]
+    }
+  }
+}

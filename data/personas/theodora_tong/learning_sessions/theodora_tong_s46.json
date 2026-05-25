@@ -1,0 +1,111 @@
+{
+  "session_id": "theodora_tong_s46",
+  "session_type": "learning",
+  "day_offset": 46,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Senior Art Sessions",
+    "source_doc_type": "spreadsheet",
+    "doc_type": "report",
+    "title": "Calming Activities Summary",
+    "content_brief": "Report summarizing which activities seemed most calming during recent senior art sessions.",
+    "summary_points": [
+      "identify activities participants seemed most relaxed during",
+      "note recurring calming patterns across recent sessions",
+      "highlight simple evidence from observation notes and tracking sheets",
+      "end with a short recommendation for future sessions"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Senior Art Sessions",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "Calming Activities Summary",
+        "location": "Senior Art Sessions",
+        "content_brief": "Report summarizing which activities seemed most calming during recent senior art sessions."
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_sessions_01",
+        "content_delta": "<authored from summary_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_sessions_01",
+        "type": "document",
+        "attributes": {
+          "title": "Senior Art Sessions Mood Tracker",
+          "doc_type": "spreadsheet",
+          "location": "Senior Art Sessions",
+          "content_brief": "Recent session tracker with activity names and notes about participant calmness."
+        }
+      },
+      {
+        "id": "doc_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Senior Art Sessions Observation Notes",
+          "doc_type": "spreadsheet",
+          "location": "Senior Art Sessions",
+          "content_brief": "Compiled observation rows from recent art sessions including reactions to watercolor, collage, and quiet sketching."
+        }
+      },
+      {
+        "id": "doc_old_03",
+        "type": "document",
+        "attributes": {
+          "title": "Volunteer Welcome Memo",
+          "doc_type": "memo",
+          "location": "Community Center Admin",
+          "content_brief": "Orientation memo for new volunteers."
+        }
+      },
+      {
+        "id": "file_ref_01",
+        "type": "file",
+        "attributes": {
+          "name": "session_photos_march.zip",
+          "file_type": "txt",
+          "location": "Senior Art Sessions",
+          "owner": "Theodora Tong",
+          "labels": [
+            "archive"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

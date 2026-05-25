@@ -1,0 +1,106 @@
+{
+  "session_id": "charlie_james_s31",
+  "session_type": "learning",
+  "day_offset": 31,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "source_location": "Shop Planning",
+    "source_doc_type": "note",
+    "doc_type": "memo",
+    "title": "First Month Apprenticeship Training Memo",
+    "location": "Shop Planning",
+    "first_month_points": [
+      "shop safety habits and daily cleanup routine",
+      "basic tool identification and proper use",
+      "how to inspect brakes, belts, hoses, and fluids",
+      "reading repair orders and writing clear job notes",
+      "intro to diagnostic steps before replacing parts",
+      "customer respect, punctuality, and teamwork expectations"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Shop Planning",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "First Month Apprenticeship Training Memo",
+        "location": "Shop Planning",
+        "content_brief": "<authored from first_month_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_shopnotes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Youth Garage Program Notes",
+          "doc_type": "note",
+          "location": "Shop Planning",
+          "content_brief": "Rough notes on mentoring younger helpers, safety reminders, and hands-on learning ideas."
+        }
+      },
+      {
+        "id": "doc_shopnotes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Training Outline Scratchpad",
+          "doc_type": "note",
+          "location": "Shop Planning",
+          "content_brief": "Bullet ideas for first-week shop orientation, tool handling, inspections, and documentation habits."
+        }
+      },
+      {
+        "id": "doc_ops_03",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly Parts Spend",
+          "doc_type": "report",
+          "location": "Operations",
+          "content_brief": "Summary of recent parts purchasing and vendor costs."
+        }
+      },
+      {
+        "id": "file_photo_04",
+        "type": "file",
+        "attributes": {
+          "name": "mustang_before.jpg",
+          "file_type": "image",
+          "location": "Restoration Photos",
+          "owner": "Charlie James",
+          "labels": [
+            "mustang",
+            "before"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "session_id": "samantha_bello_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "communication",
+  "reason_for_call": "Draft a reminder email",
+  "task_params": {
+    "sender": "Samantha Bello",
+    "folder": "sent",
+    "thread_id": "thr_budget_07",
+    "language": "en",
+    "reminder_points": [
+      "friendly reminder about the budgeting workshop",
+      "encourage people to bring their questions",
+      "say nerves are normal and they do not need to arrive fully prepared",
+      "mention the session is a space to learn together",
+      "keep the tone warm and reassuring"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Samantha Bello",
+        "folder": "sent"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_budget_07",
+        "language": "en",
+        "body": "<authored from reminder_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_invite_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Samantha Bello",
+          "subject": "Budgeting Workshop Invite",
+          "body": "Hi everyone, you're invited to our community budgeting workshop next Thursday evening. We'll cover simple tools for tracking expenses and planning ahead.",
+          "thread_id": "thr_budget_07",
+          "folder": "sent",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-28T14:12:00"
+        }
+      },
+      {
+        "id": "msg_vendor_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Samantha Bello",
+          "subject": "Updated invoice review",
+          "body": "Please see the revised numbers before tomorrow's finance check-in.",
+          "thread_id": "thr_finance_13",
+          "folder": "sent",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-01T09:05:00"
+        }
+      },
+      {
+        "id": "msg_reply_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Alicia Rivera",
+          "subject": "Re: Budgeting Workshop Invite",
+          "body": "Thanks for organizing this. I may be a little nervous because budgeting is new to me.",
+          "thread_id": "thr_budget_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-03-02T08:47:00"
+        }
+      }
+    ]
+  }
+}

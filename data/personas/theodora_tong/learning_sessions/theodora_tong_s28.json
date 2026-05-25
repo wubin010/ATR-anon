@@ -1,0 +1,128 @@
+{
+  "session_id": "theodora_tong_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "origin": "Schenectady",
+    "destination": "Lake Placid",
+    "passenger_count": 1,
+    "guest_count": 1,
+    "room_count": 1,
+    "departure_date": "2025-09-12",
+    "check_in_date": "2025-09-12",
+    "check_out_date": "2025-09-14"
+  },
+  "expected_tools": [
+    "search_ground_transport",
+    "book_ground_transport",
+    "search_hotels",
+    "book_hotel"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Schenectady",
+        "destination": "Lake Placid",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_ground_transport",
+      "arguments": {
+        "transport_offer_id": "transport_lake_02"
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "arguments": {
+        "location": "Lake Placid",
+        "guest_count": 1,
+        "room_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_hotel",
+      "arguments": {
+        "hotel_offer_id": "hotel_lake_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "transport_lake_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Schenectady",
+          "destination": "Lake Placid",
+          "mode": "train",
+          "departure_date": "2025-09-12",
+          "price": 68.0,
+          "available_seats": 12
+        }
+      },
+      {
+        "id": "transport_lake_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Schenectady",
+          "destination": "Lake Placid",
+          "mode": "bus",
+          "departure_date": "2025-09-12",
+          "price": 52.0,
+          "available_seats": 18
+        }
+      },
+      {
+        "id": "hotel_lake_01",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Pine Shore Lodge",
+          "location": "Lake Placid",
+          "check_in_date": "2025-09-12",
+          "check_out_date": "2025-09-14",
+          "available_rooms": 4,
+          "max_guests_per_room": 2,
+          "price_per_night": 129.0
+        }
+      },
+      {
+        "id": "hotel_lake_02",
+        "type": "hotel_offer",
+        "attributes": {
+          "name": "Mirror Lake Inn Annex",
+          "location": "Lake Placid",
+          "check_in_date": "2025-09-12",
+          "check_out_date": "2025-09-14",
+          "available_rooms": 3,
+          "max_guests_per_room": 2,
+          "price_per_night": 154.0
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "instruction": "Please put together something on color theory and visual attention in painting, save it in /Writing/Research, and title it \"Color, Attention, and Mood in Painting\".",
+  "gold_value": "report",
+  "session_id": "theodora_tong_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "theodora_tong_workspace_04",
+  "rule_ref": {
+    "rule_id": "theodora_tong_workspace_04",
+    "rule_text": "When organizing research on art theory or psychology, she prefers a report format rather than an informal note.",
+    "canonical_answer": "For deeper research writeups, I prefer a report so the thinking is organized."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_color_theory_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Color Theory Reading Notes",
+          "doc_type": "note",
+          "location": "/Writing/Research",
+          "content_brief": "Passages, page references, and short summaries from books on color, contrast, and composition."
+        }
+      },
+      {
+        "id": "doc_visual_attention_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Visual Attention Source Notes",
+          "doc_type": "note",
+          "location": "/Writing/Research",
+          "content_brief": "Collected takeaways from psychology articles on attention, salience, and perception."
+        }
+      },
+      {
+        "id": "doc_aesthetics_circle_memo_01",
+        "type": "document",
+        "attributes": {
+          "title": "Aesthetics Reading Circle Memo",
+          "doc_type": "memo",
+          "location": "/Writing/Research",
+          "content_brief": "Brief recap of discussion topics from a small reading group on aesthetics and perception."
+        }
+      },
+      {
+        "id": "doc_symbolism_response_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Symbolism and Viewer Response",
+          "doc_type": "report",
+          "location": "/Writing/Research",
+          "content_brief": "Comparative synthesis of sources on symbolism, archetypes, and audience interpretation."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {
+            "doc_type": "report"
+          },
+          "compare_args": [
+            "doc_type"
+          ]
+        }
+      ]
+    }
+  }
+}

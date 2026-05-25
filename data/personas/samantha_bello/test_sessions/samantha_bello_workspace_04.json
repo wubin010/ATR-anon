@@ -1,0 +1,225 @@
+{
+  "instruction": "Please tidy up the Seabright festival image batch in /media/photos/seabright_festival. I still want the usable set handy for the essay, but the boardwalk lantern run and the bandstand portrait run each have a couple of blurry repeat frames mixed in with the keepers, so make that folder easier to review.",
+  "gold_value": null,
+  "session_id": "samantha_bello_workspace_04_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "samantha_bello_workspace_04",
+  "rule_ref": {
+    "rule_id": "samantha_bello_workspace_04",
+    "rule_text": "When she is cleaning up photo or art files, Samantha prefers deleting obvious blurry duplicates outright rather than archiving them.",
+    "canonical_answer": "For bad duplicate shots or unusable art-file clutter, I delete them instead of saving them somewhere."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_seabright_boardwalk_lanterns_017_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright boardwalk lanterns 017.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "boardwalk",
+            "lanterns"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T19:42:11",
+          "focus_score": 0.92,
+          "variant_group": "boardwalk_lanterns_017"
+        }
+      },
+      {
+        "id": "fil_seabright_boardwalk_lanterns_017_alt1_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright boardwalk lanterns 017 alt 1.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "boardwalk",
+            "lanterns"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T19:42:12",
+          "focus_score": 0.31,
+          "variant_group": "boardwalk_lanterns_017"
+        }
+      },
+      {
+        "id": "fil_seabright_boardwalk_lanterns_017_alt2_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright boardwalk lanterns 017 alt 2.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "boardwalk",
+            "lanterns"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T19:42:13",
+          "focus_score": 0.27,
+          "variant_group": "boardwalk_lanterns_017"
+        }
+      },
+      {
+        "id": "fil_seabright_bandstand_portrait_044_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright bandstand portrait 044.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "bandstand",
+            "portrait"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T20:08:44",
+          "focus_score": 0.89,
+          "variant_group": "bandstand_portrait_044"
+        }
+      },
+      {
+        "id": "fil_seabright_bandstand_portrait_044_alt1_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright bandstand portrait 044 alt 1.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "bandstand",
+            "portrait"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T20:08:45",
+          "focus_score": 0.34,
+          "variant_group": "bandstand_portrait_044"
+        }
+      },
+      {
+        "id": "fil_seabright_bandstand_portrait_044_alt2_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright bandstand portrait 044 alt 2.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "bandstand",
+            "portrait"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T20:08:46",
+          "focus_score": 0.29,
+          "variant_group": "bandstand_portrait_044"
+        }
+      },
+      {
+        "id": "fil_seabright_confetti_crowd_061_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright confetti crowd 061.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "crowd",
+            "confetti"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T20:21:03",
+          "focus_score": 0.9,
+          "variant_group": "confetti_crowd_061"
+        }
+      },
+      {
+        "id": "fil_seabright_ferris_wheel_072_01",
+        "type": "file",
+        "attributes": {
+          "name": "Seabright ferris wheel 072.jpg",
+          "file_type": "image",
+          "location": "/media/photos/seabright_festival",
+          "owner": "Samantha Bello",
+          "labels": [
+            "festival",
+            "seabright",
+            "ferris_wheel",
+            "night"
+          ],
+          "archived": false,
+          "captured_at": "2026-08-14T20:37:18",
+          "focus_score": 0.94,
+          "variant_group": "ferris_wheel_072"
+        }
+      },
+      {
+        "id": "fld_festival_outtakes_hold_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Festival Outtakes Hold",
+          "purpose": "Temporary holding folder for alternate or near-duplicate festival frames kept off the main selects."
+        }
+      },
+      {
+        "id": "fld_long_term_photo_archive_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Long-Term Photo Archive",
+          "purpose": "Storage for older or unused coastal and festival image sets."
+        }
+      },
+      {
+        "id": "fld_archived_essay_materials_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived Essay Materials",
+          "purpose": "Archive folder for completed photo-essay support files and extra visuals."
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "delete_files",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

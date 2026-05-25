@@ -1,0 +1,116 @@
+{
+  "session_id": "nancy_marr_s42",
+  "session_type": "learning",
+  "day_offset": 42,
+  "domain": "workspace",
+  "reason_for_call": "Clean up some files.",
+  "task_params": {
+    "location": "blog/photos/kimchi",
+    "file_type": "image",
+    "file_ids": [
+      "file_kimchi_dup_02",
+      "file_kimchi_dup_03"
+    ]
+  },
+  "expected_tools": [
+    "list_files",
+    "delete_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "blog/photos/kimchi",
+        "file_type": "image"
+      }
+    },
+    {
+      "tool": "delete_files",
+      "arguments": {
+        "file_ids": [
+          "file_kimchi_dup_02",
+          "file_kimchi_dup_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "file_kimchi_master_01",
+        "type": "file",
+        "attributes": {
+          "name": "kimchi-jar-overhead.jpg",
+          "file_type": "image",
+          "location": "blog/photos/kimchi",
+          "owner": "Nancy Marr",
+          "labels": [
+            "blog",
+            "kimchi",
+            "final"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_kimchi_dup_02",
+        "type": "file",
+        "attributes": {
+          "name": "kimchi-jar-overhead (1).jpg",
+          "file_type": "image",
+          "location": "blog/photos/kimchi",
+          "owner": "Nancy Marr",
+          "labels": [
+            "blog",
+            "kimchi"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_kimchi_dup_03",
+        "type": "file",
+        "attributes": {
+          "name": "kimchi-jar-overhead-copy.jpg",
+          "file_type": "image",
+          "location": "blog/photos/kimchi",
+          "owner": "Nancy Marr",
+          "labels": [
+            "blog",
+            "kimchi"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "file_kimchi_side_04",
+        "type": "file",
+        "attributes": {
+          "name": "kimchi-side-light.jpg",
+          "file_type": "image",
+          "location": "blog/photos/kimchi",
+          "owner": "Nancy Marr",
+          "labels": [
+            "blog",
+            "kimchi",
+            "alt-shot"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

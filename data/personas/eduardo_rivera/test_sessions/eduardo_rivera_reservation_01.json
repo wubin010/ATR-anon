@@ -1,0 +1,95 @@
+{
+  "instruction": "Book dinner in downtown Seattle for 2 on 2026-08-22 at 7:30pm — pick a place and handle the reservation.",
+  "gold_value": "rst_juniper_table_01",
+  "session_id": "eduardo_rivera_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "eduardo_rivera_reservation_01",
+  "rule_ref": {
+    "rule_id": "eduardo_rivera_reservation_01",
+    "rule_text": "When choosing a place for a meal out, he favors relaxed restaurants over formal fine-dining spots.",
+    "canonical_answer": "For meals out, I prefer relaxed places over formal fine-dining rooms."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_juniper_table_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Juniper Table",
+          "cuisine": "Mediterranean",
+          "location": "Downtown Seattle",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_marble_room_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Marble Room",
+          "cuisine": "French",
+          "location": "Downtown Seattle",
+          "rating": 4.9,
+          "price_range": "$$$$",
+          "seating_style": "formal dining"
+        }
+      },
+      {
+        "id": "rst_atelier_noir_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Atelier Noir",
+          "cuisine": "Contemporary American",
+          "location": "Downtown Seattle",
+          "rating": 4.8,
+          "price_range": "$$$$",
+          "seating_style": "formal dining"
+        }
+      },
+      {
+        "id": "rst_crown_oak_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Crown Oak Steakhouse",
+          "cuisine": "Steakhouse",
+          "location": "Downtown Seattle",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "formal dining"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_juniper_table_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

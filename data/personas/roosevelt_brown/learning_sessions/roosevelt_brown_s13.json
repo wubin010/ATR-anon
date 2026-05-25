@@ -1,0 +1,175 @@
+{
+  "session_id": "roosevelt_brown_s13",
+  "session_type": "learning",
+  "day_offset": 13,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "Portland",
+      "Maine"
+    ],
+    "destination": "Portland",
+    "duration_days": 2,
+    "traveler_count": 2,
+    "stop_tags": [
+      "seafood",
+      "bookstore",
+      "art"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Portland",
+          "Maine"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_portland_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Portland",
+        "stop_tags": [
+          "seafood",
+          "bookstore",
+          "art"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Portland",
+        "duration_days": 2,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_eventide_01",
+          "stop_longfellow_02",
+          "stop_pma_03"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_portland_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Portland, Maine",
+          "region": "Maine",
+          "tags": [
+            "seafood",
+            "bookstores",
+            "art",
+            "walkable",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_portsmouth_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Portsmouth, New Hampshire",
+          "region": "New Hampshire",
+          "tags": [
+            "harbor",
+            "restaurants",
+            "historic",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dest_newport_03",
+        "type": "destination",
+        "attributes": {
+          "name": "Newport, Rhode Island",
+          "region": "Rhode Island",
+          "tags": [
+            "mansions",
+            "coastal",
+            "art",
+            "seafood"
+          ]
+        }
+      },
+      {
+        "id": "stop_eventide_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Eventide Oyster Co.",
+          "location": "Portland, Maine",
+          "tags": [
+            "seafood",
+            "restaurant",
+            "oysters"
+          ]
+        }
+      },
+      {
+        "id": "stop_longfellow_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Longfellow Books",
+          "location": "Portland, Maine",
+          "tags": [
+            "bookstore",
+            "indie",
+            "books"
+          ]
+        }
+      },
+      {
+        "id": "stop_pma_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Portland Museum of Art",
+          "location": "Portland, Maine",
+          "tags": [
+            "art",
+            "museum",
+            "gallery"
+          ]
+        }
+      }
+    ]
+  }
+}

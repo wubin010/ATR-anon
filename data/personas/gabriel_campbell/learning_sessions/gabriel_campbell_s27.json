@@ -1,0 +1,118 @@
+{
+  "session_id": "gabriel_campbell_s27",
+  "session_type": "learning",
+  "day_offset": 27,
+  "domain": "commerce",
+  "reason_for_call": "Compare some products",
+  "task_params": {
+    "category": "cold-brew maker",
+    "budget": 90,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_oxo_01",
+      "prod_takeya_02",
+      "prod_kitchenaid_03"
+    ],
+    "items": [
+      "OXO Compact Cold Brew Coffee Maker",
+      "Takeya Deluxe Cold Brew Coffee Maker",
+      "KitchenAid Cold Brew Coffee Maker"
+    ],
+    "list_name": "Home coffee options"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "cold-brew maker",
+        "budget": 90,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_oxo_01",
+          "prod_takeya_02",
+          "prod_kitchenaid_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "OXO Compact Cold Brew Coffee Maker",
+          "Takeya Deluxe Cold Brew Coffee Maker",
+          "KitchenAid Cold Brew Coffee Maker"
+        ],
+        "list_name": "Home coffee options"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_oxo_01",
+        "type": "product",
+        "attributes": {
+          "name": "OXO Compact Cold Brew Coffee Maker",
+          "price": 49.99,
+          "category": "cold-brew maker",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_takeya_02",
+        "type": "product",
+        "attributes": {
+          "name": "Takeya Deluxe Cold Brew Coffee Maker",
+          "price": 24.99,
+          "category": "cold-brew maker",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_kitchenaid_03",
+        "type": "product",
+        "attributes": {
+          "name": "KitchenAid Cold Brew Coffee Maker",
+          "price": 79.99,
+          "category": "cold-brew maker",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_primula_04",
+        "type": "product",
+        "attributes": {
+          "name": "Primula Burke Cold Brew Coffee Maker",
+          "price": 29.99,
+          "category": "cold-brew maker",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

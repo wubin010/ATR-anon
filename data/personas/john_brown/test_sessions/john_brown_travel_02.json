@@ -1,0 +1,107 @@
+{
+  "instruction": "Book the one-way travel for my personal trip from Houston, TX to New Orleans, LA on 2026-09-19 for one traveler. I only need the transportation handled.",
+  "gold_value": null,
+  "session_id": "john_brown_travel_02_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "john_brown_travel_02",
+  "rule_ref": {
+    "rule_id": "john_brown_travel_02",
+    "rule_text": "For Gulf Coast and other regional leisure travel, he prefers ground transportation over flights.",
+    "canonical_answer": "For shorter regional trips, I’d rather go by road or rail than fly."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_hou_msy_20260919_southwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Houston, TX",
+          "destination": "New Orleans, LA",
+          "departure_date": "2026-09-19",
+          "airline": "Southwest Airlines",
+          "price": 79,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_hou_msy_20260919_united_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Houston, TX",
+          "destination": "New Orleans, LA",
+          "departure_date": "2026-09-19",
+          "airline": "United Airlines",
+          "price": 91,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_hou_msy_20260919_delta_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Houston, TX",
+          "destination": "New Orleans, LA",
+          "departure_date": "2026-09-19",
+          "airline": "Delta Air Lines",
+          "price": 104,
+          "available_seats": 5
+        }
+      },
+      {
+        "id": "trp_hou_nola_20260919_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Houston, TX",
+          "destination": "New Orleans, LA",
+          "mode": "bus",
+          "departure_date": "2026-09-19",
+          "price": 129,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "trp_hou_nola_20260919_train_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Houston, TX",
+          "destination": "New Orleans, LA",
+          "mode": "train",
+          "departure_date": "2026-09-19",
+          "price": 146,
+          "available_seats": 2
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

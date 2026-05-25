@@ -1,0 +1,95 @@
+{
+  "instruction": "I still haven't answered the Riverfront Industry Roundtable invite at Harbor Hall on 2026-09-14 from 4–6pm. Check whether it clashes with anything I already have and send the RSVP for me.",
+  "gold_value": "tentative",
+  "session_id": "jennifer_philmon_scheduling_01_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "jennifer_philmon_scheduling_01",
+  "rule_ref": {
+    "rule_id": "jennifer_philmon_scheduling_01",
+    "rule_text": "When a calendar invite conflicts with unresolved work or training obligations, she prefers to respond tentatively rather than accepting or declining outright.",
+    "canonical_answer": "If an invite overlaps with work or training uncertainty, I usually answer tentative first."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_invite_riverfront_industry_roundtable_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Riverfront Industry Roundtable",
+          "start_time": "2026-09-14T16:00:00",
+          "end_time": "2026-09-14T18:00:00",
+          "participants": [
+            "events@riverfrontindustry.org",
+            "jennifer.philmon@example.com"
+          ],
+          "location": "Harbor Hall",
+          "calendar": "invites",
+          "status": "pending",
+          "organizer": "Riverfront Industry Association",
+          "rsvp_deadline": "2026-09-11T17:00:00"
+        }
+      },
+      {
+        "id": "evt_boiler_shutdown_contingency_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Boiler 3 shutdown contingency slot (awaiting final outage window)",
+          "start_time": "2026-09-14T15:30:00",
+          "end_time": "2026-09-14T17:30:00",
+          "participants": [
+            "jennifer.philmon@example.com",
+            "m.ortiz@northplant.com",
+            "ops-team@northplant.com"
+          ],
+          "location": "Plant Admin Building, Room 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_boiler_operators_prep_20260914",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "National Board Boiler Operators prep session (make-up TBD)",
+          "start_time": "2026-09-14T17:00:00",
+          "end_time": "2026-09-14T18:30:00",
+          "participants": [
+            "jennifer.philmon@example.com",
+            "training@stateboilerboard.org"
+          ],
+          "location": "South Campus Training Bay",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "respond_to_event_invite",
+          "arguments": {
+            "response": "tentative"
+          },
+          "compare_args": [
+            "response"
+          ]
+        }
+      ]
+    }
+  }
+}

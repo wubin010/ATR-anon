@@ -1,0 +1,102 @@
+{
+  "session_id": "john_brown_s37",
+  "session_type": "learning",
+  "day_offset": 37,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "source_location": "Safety",
+    "source_doc_type": "note",
+    "doc_type": "template",
+    "title": "Safety Brief Note Template",
+    "location": "Safety/Briefings",
+    "template_points": [
+      "header with date, shift, area, facilitator",
+      "topic and main hazard discussed",
+      "required PPE and controls",
+      "incidents or near misses mentioned",
+      "worker questions or concerns",
+      "action items with owner and due date",
+      "attendance line or headcount field"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Safety",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "template",
+        "title": "Safety Brief Note Template",
+        "location": "Safety/Briefings",
+        "content_brief": "<authored from template_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_safety_01",
+        "type": "document",
+        "attributes": {
+          "title": "Forklift Aisle Safety Brief Notes",
+          "doc_type": "note",
+          "location": "Safety/Daily Briefs",
+          "content_brief": "Daily brief notes covering forklift traffic, blind corners, vest compliance, and operator reminders."
+        }
+      },
+      {
+        "id": "doc_safety_02",
+        "type": "document",
+        "attributes": {
+          "title": "PPE Walkthrough Huddle Notes",
+          "doc_type": "note",
+          "location": "Safety/Team Huddles",
+          "content_brief": "Short notes from a PPE walkthrough covering gloves, eye protection, and housekeeping issues."
+        }
+      },
+      {
+        "id": "doc_safety_03",
+        "type": "document",
+        "attributes": {
+          "title": "Monthly Incident Review Summary",
+          "doc_type": "report",
+          "location": "Safety/Reports",
+          "content_brief": "Summary of recent incidents, corrective actions, and open follow-up items."
+        }
+      },
+      {
+        "id": "doc_safety_04",
+        "type": "document",
+        "attributes": {
+          "title": "Line Startup Checklist Template",
+          "doc_type": "template",
+          "location": "Safety/Templates",
+          "content_brief": "Reusable checklist template for startup verification and communication."
+        }
+      }
+    ]
+  }
+}

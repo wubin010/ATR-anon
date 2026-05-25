@@ -1,0 +1,88 @@
+{
+  "session_id": "roosevelt_brown_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "note",
+    "title": "Dinner Prep Sheet",
+    "location": "Personal/Hosting",
+    "prep_points": [
+      "menu section with appetizer, main, side, dessert, drinks",
+      "guest task section with names and assigned items",
+      "cooking timeline from early prep to serving",
+      "serving reminders for plates, utensils, and ice",
+      "cleanup section for leftovers and dishes"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Personal/Hosting",
+        "doc_type": "note"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "note",
+        "title": "Dinner Prep Sheet",
+        "location": "Personal/Hosting",
+        "content_brief": "<authored from prep_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_hosting_01",
+        "type": "document",
+        "attributes": {
+          "title": "Seafood Dinner Ideas",
+          "doc_type": "note",
+          "location": "Personal/Hosting",
+          "content_brief": "Brainstormed dishes and flavor combinations for a small dinner."
+        }
+      },
+      {
+        "id": "doc_hosting_02",
+        "type": "document",
+        "attributes": {
+          "title": "Guest List Scratchpad",
+          "doc_type": "note",
+          "location": "Personal/Hosting",
+          "content_brief": "Rough guest names and a few potluck ideas."
+        }
+      },
+      {
+        "id": "doc_work_01",
+        "type": "document",
+        "attributes": {
+          "title": "Clinic Workflow Memo",
+          "doc_type": "memo",
+          "location": "Work/Operations",
+          "content_brief": "Staffing and patient flow notes for the week."
+        }
+      }
+    ]
+  }
+}

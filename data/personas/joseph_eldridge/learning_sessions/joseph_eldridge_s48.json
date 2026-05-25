@@ -1,0 +1,98 @@
+{
+  "session_id": "joseph_eldridge_s48",
+  "session_type": "learning",
+  "day_offset": 48,
+  "domain": "reservation",
+  "reason_for_call": "Book an appointment.",
+  "task_params": {
+    "service_type": "annual physical",
+    "location": "Durham",
+    "sort_by": "distance",
+    "provider_id": "sp_riverbend_01",
+    "date_time": "2025-03-24T09:30:00-04:00"
+  },
+  "expected_tools": [
+    "search_service_providers",
+    "book_service_appointment"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_service_providers",
+      "arguments": {
+        "service_type": "annual physical",
+        "location": "Durham",
+        "sort_by": "distance"
+      }
+    },
+    {
+      "tool": "book_service_appointment",
+      "arguments": {
+        "provider_id": "sp_riverbend_01",
+        "date_time": "2025-03-24T09:30:00-04:00"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "sp_riverbend_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Riverbend Family Medicine",
+          "service_type": "annual physical",
+          "location": "Durham",
+          "rating": 4.7,
+          "distance_km": 3.2
+        }
+      },
+      {
+        "id": "sp_hopewell_02",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Hopewell Internal Medicine",
+          "service_type": "annual physical",
+          "location": "Durham",
+          "rating": 4.8,
+          "distance_km": 5.6
+        }
+      },
+      {
+        "id": "sp_southpoint_03",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Southpoint Primary Care",
+          "service_type": "annual physical",
+          "location": "Durham",
+          "rating": 4.5,
+          "distance_km": 4.1
+        }
+      },
+      {
+        "id": "sp_maplewood_04",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Maplewood Wellness Clinic",
+          "service_type": "wellness exam",
+          "location": "Durham",
+          "rating": 4.6,
+          "distance_km": 2.9
+        }
+      }
+    ]
+  }
+}

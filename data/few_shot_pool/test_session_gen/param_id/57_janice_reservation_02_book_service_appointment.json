@@ -1,0 +1,91 @@
+{
+  "domain": "reservation",
+  "instruction": "May 13, 2026 (Wednesday) at 5:30pm — book me a manicure in Seattle, just pick one.",
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_nail_lakeview_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Lakeview Nail Atelier",
+          "service_type": "nail care",
+          "location": "Wallingford, Seattle",
+          "rating": 4.8,
+          "distance_km": 5.4
+        }
+      },
+      {
+        "id": "svc_nail_pine_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Pine Street Nail Bar",
+          "service_type": "nail care",
+          "location": "Downtown Seattle",
+          "rating": 4.7,
+          "distance_km": 0.2
+        }
+      },
+      {
+        "id": "svc_nail_harbor_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Harbor Nail Studio",
+          "service_type": "nail care",
+          "location": "Belltown, Seattle",
+          "rating": 4.7,
+          "distance_km": 0.6
+        }
+      },
+      {
+        "id": "svc_nail_caphill_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Capitol Nail Room",
+          "service_type": "nail care",
+          "location": "Capitol Hill, Seattle",
+          "rating": 4.6,
+          "distance_km": 1.1
+        }
+      }
+    ]
+  },
+  "session_id": "janice_savarese_reservation_02_test",
+  "session_type": "test",
+  "persona_id": "janice_savarese",
+  "rule_id": "janice_savarese_reservation_02",
+  "rule_ref": {
+    "rule_id": "janice_savarese_reservation_02",
+    "rule_text": "When choosing a service appointment, prioritize providers with higher ratings rather than the closest one.",
+    "canonical_answer": "When you book a service for me, go with the better-reviewed provider — don't just pick the closest."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_nail_lakeview_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

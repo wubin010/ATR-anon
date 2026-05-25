@@ -1,0 +1,98 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "location": "Editorial Ops",
+    "doc_type": "report",
+    "title": "Recurring Editorial Bottlenecks Summary",
+    "report_points": [
+      "late approvals from department leads delay final publishing dates",
+      "version confusion across shared drafts creates duplicate edits",
+      "translation review arrives too close to layout deadlines",
+      "fact-check questions sit unresolved without a single owner",
+      "freelancer onboarding gaps slow assignment starts",
+      "manual status updates make the editorial calendar unreliable"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Editorial Ops"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "report",
+        "title": "Recurring Editorial Bottlenecks Summary",
+        "location": "Editorial Ops",
+        "content_brief": "<authored from report_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_editorial_01",
+        "type": "document",
+        "attributes": {
+          "title": "Q2 Editorial Workflow Friction Notes",
+          "doc_type": "note",
+          "location": "Editorial Ops",
+          "content_brief": "Internal notes on recurring slowdowns in approvals, copy flow, and handoffs."
+        }
+      },
+      {
+        "id": "doc_editorial_02",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly Production Delays Memo",
+          "doc_type": "memo",
+          "location": "Editorial Ops",
+          "content_brief": "Memo summarizing missed checkpoints tied to late stakeholder review and asset delivery."
+        }
+      },
+      {
+        "id": "doc_editorial_03",
+        "type": "document",
+        "attributes": {
+          "title": "Translation Review Timing Report",
+          "doc_type": "report",
+          "location": "Editorial Ops",
+          "content_brief": "Report on bilingual review timing, escalations, and effects on layout scheduling."
+        }
+      },
+      {
+        "id": "doc_editorial_04",
+        "type": "document",
+        "attributes": {
+          "title": "Freelance Copy Desk Onboarding Checklist Draft",
+          "doc_type": "template",
+          "location": "Editorial Ops",
+          "content_brief": "Draft checklist for bringing freelance editors into the production workflow."
+        }
+      }
+    ]
+  }
+}

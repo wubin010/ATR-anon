@@ -1,0 +1,107 @@
+{
+  "instruction": "Please book my one-way trip for the West Coast Retail Expo on 2026-09-18: one traveler from Los Angeles, CA to Las Vegas, NV. I only need the outbound leg handled.",
+  "gold_value": null,
+  "session_id": "cassandra_tovar_travel_01_test",
+  "session_type": "test",
+  "domain": "travel",
+  "rule_id": "cassandra_tovar_travel_01",
+  "rule_ref": {
+    "rule_id": "cassandra_tovar_travel_01",
+    "rule_text": "When planning conference or expo travel within practical driving range, she prefers ground transportation over flying.",
+    "canonical_answer": "For regional work or conference trips, I usually prefer to drive or take ground transport instead of booking a flight."
+  },
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_lax_las_southwest_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Los Angeles, CA",
+          "destination": "Las Vegas, NV",
+          "departure_date": "2026-09-18",
+          "airline": "Southwest Airlines",
+          "price": 84,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_lax_las_delta_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Los Angeles, CA",
+          "destination": "Las Vegas, NV",
+          "departure_date": "2026-09-18",
+          "airline": "Delta Air Lines",
+          "price": 96,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_lax_las_american_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Los Angeles, CA",
+          "destination": "Las Vegas, NV",
+          "departure_date": "2026-09-18",
+          "airline": "American Airlines",
+          "price": 112,
+          "available_seats": 8
+        }
+      },
+      {
+        "id": "trp_lax_las_bus_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Los Angeles, CA",
+          "destination": "Las Vegas, NV",
+          "mode": "bus",
+          "departure_date": "2026-09-18",
+          "price": 143,
+          "available_seats": 11
+        }
+      },
+      {
+        "id": "trp_lax_las_car_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Los Angeles, CA",
+          "destination": "Las Vegas, NV",
+          "mode": "car_transfer",
+          "departure_date": "2026-09-18",
+          "price": 289,
+          "available_seats": 3
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_ground_transport",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

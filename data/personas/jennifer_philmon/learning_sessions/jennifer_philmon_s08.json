@@ -1,0 +1,149 @@
+{
+  "session_id": "jennifer_philmon_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "commerce",
+  "reason_for_call": "Build a grocery list",
+  "task_params": {
+    "category": "grocery",
+    "budget": 45,
+    "product_ids": [
+      "prod_oats_01",
+      "prod_eggs_02",
+      "prod_potatoes_03",
+      "prod_cabbage_04",
+      "prod_sausage_05",
+      "prod_beans_06"
+    ],
+    "items": [
+      "Old-fashioned oats",
+      "Large eggs",
+      "Russet potatoes",
+      "Green cabbage",
+      "Smoked sausage",
+      "Black beans"
+    ],
+    "list_name": "Weeknight meals"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "grocery",
+        "budget": 45,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_oats_01",
+          "prod_eggs_02",
+          "prod_potatoes_03",
+          "prod_cabbage_04",
+          "prod_sausage_05",
+          "prod_beans_06"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Old-fashioned oats",
+          "Large eggs",
+          "Russet potatoes",
+          "Green cabbage",
+          "Smoked sausage",
+          "Black beans"
+        ],
+        "list_name": "Weeknight meals"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_oats_01",
+        "type": "product",
+        "attributes": {
+          "name": "Old-fashioned oats",
+          "price": 3.49,
+          "category": "grocery",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_eggs_02",
+        "type": "product",
+        "attributes": {
+          "name": "Large eggs",
+          "price": 4.29,
+          "category": "grocery",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_potatoes_03",
+        "type": "product",
+        "attributes": {
+          "name": "Russet potatoes",
+          "price": 5.99,
+          "category": "grocery",
+          "rating": 4.5
+        }
+      },
+      {
+        "id": "prod_cabbage_04",
+        "type": "product",
+        "attributes": {
+          "name": "Green cabbage",
+          "price": 2.19,
+          "category": "grocery",
+          "rating": 4.4
+        }
+      },
+      {
+        "id": "prod_sausage_05",
+        "type": "product",
+        "attributes": {
+          "name": "Smoked sausage",
+          "price": 6.79,
+          "category": "grocery",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_beans_06",
+        "type": "product",
+        "attributes": {
+          "name": "Black beans",
+          "price": 1.39,
+          "category": "grocery",
+          "rating": 4.3
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "session_id": "rafael_ortiz_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "communication",
+  "reason_for_call": "Triage my messages and reply to one thread.",
+  "task_params": {
+    "folder": "inbox",
+    "sender": "Elena Ramirez",
+    "priority": "high",
+    "label_ids": [
+      "lbl_reply_01"
+    ],
+    "reply_points": [
+      "Apologize for the late reply",
+      "Thank her for checking in",
+      "Confirm I can bring drinks",
+      "Ask what time to arrive"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "label_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "inbox",
+        "sender": "Elena Ramirez"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_elena_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_elena_01"
+        ],
+        "label_ids": [
+          "lbl_reply_01"
+        ]
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_elena_01",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_elena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Ramirez",
+          "subject": "Saturday dinner at our place?",
+          "body": "Hey Rafael, just checking whether you and Marisol can make it Saturday. If you come, could you bring drinks? Let me know what time works for you.",
+          "thread_id": "thr_elena_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-20T19:18:00"
+        }
+      },
+      {
+        "id": "msg_miguel_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Miguel Santos",
+          "subject": "Sunday soccer update",
+          "body": "Field changed to the north side this week. Same kickoff time.",
+          "thread_id": "thr_miguel_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-20T18:02:00"
+        }
+      },
+      {
+        "id": "msg_store_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Kitchen Pro Deals",
+          "subject": "Your order has shipped",
+          "body": "Good news — your order is on the way.",
+          "thread_id": "thr_store_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-02-20T16:44:00"
+        }
+      },
+      {
+        "id": "lbl_reply_01",
+        "type": "label",
+        "attributes": {
+          "name": "Needs Reply",
+          "topic": "follow-up"
+        }
+      }
+    ]
+  }
+}

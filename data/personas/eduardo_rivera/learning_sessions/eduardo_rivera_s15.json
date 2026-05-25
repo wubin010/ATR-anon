@@ -1,0 +1,181 @@
+{
+  "session_id": "eduardo_rivera_s15",
+  "session_type": "learning",
+  "day_offset": 15,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "coast",
+      "art",
+      "food"
+    ],
+    "destination": "Carmel",
+    "stop_tags": [
+      "scenic",
+      "art",
+      "food"
+    ],
+    "duration_days": 2,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "coast",
+          "art",
+          "food"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_carmel_01",
+          "dst_slo_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Carmel",
+        "stop_tags": [
+          "scenic",
+          "art",
+          "food"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Carmel",
+        "duration_days": 2,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_pointlobos_01",
+          "stp_carmelart_01",
+          "stp_missionranch_01"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_carmel_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Carmel",
+          "region": "Central Coast",
+          "tags": [
+            "coast",
+            "art",
+            "food",
+            "walkable",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_slo_01",
+        "type": "destination",
+        "attributes": {
+          "name": "San Luis Obispo",
+          "region": "Central Coast",
+          "tags": [
+            "coast",
+            "food",
+            "art",
+            "downtown",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_guerneville_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Guerneville",
+          "region": "Russian River",
+          "tags": [
+            "redwoods",
+            "river",
+            "food",
+            "relaxing",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "stp_pointlobos_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Point Lobos State Natural Reserve",
+          "location": "Carmel",
+          "tags": [
+            "scenic",
+            "coast",
+            "hike",
+            "nature"
+          ]
+        }
+      },
+      {
+        "id": "stp_carmelart_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Carmel Art Association",
+          "location": "Carmel",
+          "tags": [
+            "art",
+            "gallery",
+            "culture"
+          ]
+        }
+      },
+      {
+        "id": "stp_missionranch_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Mission Ranch Restaurant",
+          "location": "Carmel",
+          "tags": [
+            "food",
+            "dinner",
+            "scenic"
+          ]
+        }
+      }
+    ]
+  }
+}

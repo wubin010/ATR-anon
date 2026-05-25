@@ -1,0 +1,90 @@
+{
+  "session_id": "theodora_tong_s26",
+  "session_type": "learning",
+  "day_offset": 26,
+  "domain": "scheduling",
+  "reason_for_call": "Create a calendar block.",
+  "task_params": {
+    "title": "Photograph finished pieces",
+    "start_time": "2025-04-23T16:30:00-04:00",
+    "end_time": "2025-04-23T18:00:00-04:00",
+    "location": "Back patio"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-23T16:30:00-04:00",
+        "end_time": "2025-04-23T18:00:00-04:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Photograph finished pieces",
+        "start_time": "2025-04-23T16:30:00-04:00",
+        "end_time": "2025-04-23T18:00:00-04:00",
+        "location": "Back patio"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_class_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Gentle Yoga Class",
+          "start_time": "2025-04-23T18:30:00-04:00",
+          "end_time": "2025-04-23T19:30:00-04:00",
+          "participants": [],
+          "location": "Community Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_volunteer_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Senior Art-Craft Session",
+          "start_time": "2025-04-24T10:00:00-04:00",
+          "end_time": "2025-04-24T12:00:00-04:00",
+          "participants": [],
+          "location": "Community Center Room B",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_study_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Photograph finished pieces",
+          "start_time": "2025-04-23T16:30:00-04:00",
+          "end_time": "2025-04-23T18:00:00-04:00",
+          "participants": [],
+          "location": "Back patio",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "session_id": "charlie_james_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "commerce",
+  "reason_for_call": "Order a small item online.",
+  "task_params": {
+    "category": "scale model kit",
+    "budget": 45,
+    "sort_by": "rating",
+    "quantity": 1
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "place_order"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "scale model kit",
+        "budget": 45,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_mustang_01",
+          "prod_charger_02",
+          "prod_camaro_03"
+        ]
+      }
+    },
+    {
+      "tool": "place_order",
+      "arguments": {
+        "product_id": "prod_mustang_01",
+        "quantity": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_mustang_01",
+        "type": "product",
+        "attributes": {
+          "name": "1967 Ford Mustang GT Scale Model Kit",
+          "price": 32.99,
+          "category": "scale model kit",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_charger_02",
+        "type": "product",
+        "attributes": {
+          "name": "1969 Dodge Charger R/T Scale Model Kit",
+          "price": 39.5,
+          "category": "scale model kit",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_camaro_03",
+        "type": "product",
+        "attributes": {
+          "name": "1968 Chevrolet Camaro Z/28 Scale Model Kit",
+          "price": 41.25,
+          "category": "scale model kit",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_corvette_04",
+        "type": "product",
+        "attributes": {
+          "name": "1963 Chevrolet Corvette Sting Ray Scale Model Kit",
+          "price": 49.99,
+          "category": "scale model kit",
+          "rating": 4.9
+        }
+      }
+    ]
+  }
+}

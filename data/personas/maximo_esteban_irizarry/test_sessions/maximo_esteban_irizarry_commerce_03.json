@@ -1,0 +1,89 @@
+{
+  "instruction": "Please take care of the return for the chef's knife from my recent order—it just didn't work out for me.",
+  "gold_value": "exchange",
+  "session_id": "maximo_esteban_irizarry_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "maximo_esteban_irizarry_commerce_03",
+  "rule_ref": {
+    "rule_id": "maximo_esteban_irizarry_commerce_03",
+    "rule_text": "When returning a purchased item that did not work out, he prefers an exchange over a refund so he can still get the right version.",
+    "canonical_answer": "If something misses the mark, I usually want an exchange rather than just a refund."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_rivera_chef_knife_01",
+        "type": "product",
+        "attributes": {
+          "name": "Rivera Chef Knife",
+          "price": 46.99,
+          "category": "kitchen_tools",
+          "rating": 4.5,
+          "brand": "Rivera",
+          "order_id": "ord_6012_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-11"
+        }
+      },
+      {
+        "id": "prod_sol_copper_caldero_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sol Copper Caldero Pot",
+          "price": 68.0,
+          "category": "cookware",
+          "rating": 4.8,
+          "brand": "Sol",
+          "order_id": "ord_5984_cookware",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-08"
+        }
+      },
+      {
+        "id": "prod_palma_plantain_press_01",
+        "type": "product",
+        "attributes": {
+          "name": "Palma Plantain Press",
+          "price": 19.5,
+          "category": "kitchen_tools",
+          "rating": 4.7,
+          "brand": "Palma",
+          "order_id": "ord_5961_kitchen",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-05"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

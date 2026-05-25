@@ -1,0 +1,104 @@
+{
+  "instruction": "I’m signed up for the Riverbend financial-literacy drop-in at Riverbend Library Room A on 2026-09-12 from 10:00 to 12:00 through the volunteer portal, and it’s part of the volunteer work I usually do on Saturdays. Make sure I don’t forget it.",
+  "gold_value": null,
+  "session_id": "samantha_bello_scheduling_02_test",
+  "session_type": "test",
+  "domain": "scheduling",
+  "rule_id": "samantha_bello_scheduling_02",
+  "rule_ref": {
+    "rule_id": "samantha_bello_scheduling_02",
+    "rule_text": "For recurring self-care or volunteer commitments, Samantha prefers putting a real calendar block on the schedule rather than only setting a private reminder.",
+    "canonical_answer": "For yoga, volunteering, and other regular commitments, I prefer a real calendar event so the time is actually blocked."
+  },
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "act_riverbend_finlit_01",
+        "type": "event",
+        "attributes": {
+          "title": "Riverbend financial-literacy drop-in",
+          "start_time": "2026-09-12T10:00:00",
+          "end_time": "2026-09-12T12:00:00",
+          "participants": [
+            "ana.perez@riverbendfdn.org",
+            "marcus.long@riverbendfdn.org"
+          ],
+          "location": "Riverbend Library Room A",
+          "calendar": "personal",
+          "status": "confirmed",
+          "source": "volunteer_portal"
+        }
+      },
+      {
+        "id": "act_oakgrove_sorting_02",
+        "type": "event",
+        "attributes": {
+          "title": "Oak Grove pantry sorting shift",
+          "start_time": "2026-09-13T09:00:00",
+          "end_time": "2026-09-13T11:00:00",
+          "participants": [
+            "volunteerdesk@oakgrovepantry.org"
+          ],
+          "location": "Oak Grove Pantry Warehouse",
+          "calendar": "personal",
+          "status": "confirmed",
+          "source": "volunteer_portal"
+        }
+      },
+      {
+        "id": "act_lakeside_vinyasa_03",
+        "type": "event",
+        "attributes": {
+          "title": "Lakeside Center vinyasa class",
+          "start_time": "2026-09-15T18:30:00",
+          "end_time": "2026-09-15T19:30:00",
+          "participants": [
+            "frontdesk@lakesidecenter.org"
+          ],
+          "location": "Lakeside Wellness Center Studio 2",
+          "calendar": "personal",
+          "status": "confirmed",
+          "source": "studio_app"
+        }
+      },
+      {
+        "id": "evt_team_sync_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Team sync",
+          "start_time": "2026-09-12T13:00:00",
+          "end_time": "2026-09-12T13:30:00",
+          "participants": [
+            "ops@company.com"
+          ],
+          "location": "Zoom",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_event",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

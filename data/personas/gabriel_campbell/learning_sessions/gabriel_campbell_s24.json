@@ -1,0 +1,130 @@
+{
+  "session_id": "gabriel_campbell_s24",
+  "session_type": "learning",
+  "day_offset": 24,
+  "domain": "workspace",
+  "reason_for_call": "Clean up some work files",
+  "task_params": {
+    "location": "Shared Drive/Operations/Operational Reviews/Q1 FY23 Drafts",
+    "file_type": "pdf",
+    "labels": [
+      "draft",
+      "operations-review"
+    ],
+    "name_keywords": [
+      "Q1 FY23",
+      "Operations Review"
+    ],
+    "folder_name": "Archived Operational Review Drafts"
+  },
+  "expected_tools": [
+    "list_files",
+    "list_file_folders",
+    "archive_files"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_files",
+      "arguments": {
+        "location": "Shared Drive/Operations/Operational Reviews/Q1 FY23 Drafts",
+        "file_type": "pdf"
+      }
+    },
+    {
+      "tool": "list_file_folders",
+      "arguments": {}
+    },
+    {
+      "tool": "archive_files",
+      "arguments": {
+        "file_ids": [
+          "fil_or_q1deck_v1_01",
+          "fil_or_q1deck_v2_02",
+          "fil_or_q1deck_notes_03"
+        ],
+        "folder_id": "fld_arch_ops_01"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_or_q1deck_v1_01",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 FY23 Operations Review Draft v1.pdf",
+          "file_type": "pdf",
+          "location": "Shared Drive/Operations/Operational Reviews/Q1 FY23 Drafts",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "draft",
+            "operations-review",
+            "q1-fy23"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_or_q1deck_v2_02",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 FY23 Operations Review Draft v2.pdf",
+          "file_type": "pdf",
+          "location": "Shared Drive/Operations/Operational Reviews/Q1 FY23 Drafts",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "draft",
+            "operations-review",
+            "q1-fy23"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fil_or_q1deck_notes_03",
+        "type": "file",
+        "attributes": {
+          "name": "Q1 FY23 Operations Review Draft Speaker Notes.pdf",
+          "file_type": "pdf",
+          "location": "Shared Drive/Operations/Operational Reviews/Q1 FY23 Drafts",
+          "owner": "Gabriel Campbell",
+          "labels": [
+            "draft",
+            "operations-review",
+            "speaker-notes"
+          ],
+          "archived": false
+        }
+      },
+      {
+        "id": "fld_arch_ops_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Archived Operational Review Drafts",
+          "purpose": "Storage for outdated operational review slide drafts and working exports"
+        }
+      },
+      {
+        "id": "fld_active_ops_02",
+        "type": "folder",
+        "attributes": {
+          "name": "Active Review Materials",
+          "purpose": "Current operational review files still in use"
+        }
+      }
+    ]
+  }
+}

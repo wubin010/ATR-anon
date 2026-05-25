@@ -1,0 +1,180 @@
+{
+  "session_id": "iris_parker_s09",
+  "session_type": "learning",
+  "day_offset": 9,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip.",
+  "task_params": {
+    "destination_constraints": [
+      "coastal",
+      "New England",
+      "food",
+      "gallery",
+      "walkable"
+    ],
+    "destination_ids": [
+      "dst_portsmouth_01"
+    ],
+    "destination": "Portsmouth",
+    "stop_tags": [
+      "food",
+      "gallery",
+      "walking"
+    ],
+    "selected_stop_ids": [
+      "stp_moffatt_01",
+      "stp_ceres_02",
+      "stp_prescott_03"
+    ],
+    "duration_days": 3,
+    "traveler_count": 2
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "coastal",
+          "New England",
+          "food",
+          "gallery",
+          "walkable"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_portsmouth_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Portsmouth",
+        "stop_tags": [
+          "food",
+          "gallery",
+          "walking"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Portsmouth",
+        "duration_days": 3,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stp_moffatt_01",
+          "stp_ceres_02",
+          "stp_prescott_03"
+        ],
+        "include_daily_breakdown": true,
+        "include_budget_summary": true,
+        "include_stopovers": false
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_portsmouth_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Portsmouth",
+          "region": "Coastal New England",
+          "tags": [
+            "coastal",
+            "New England",
+            "food",
+            "gallery",
+            "walkable",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "dst_newport_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Newport",
+          "region": "Coastal New England",
+          "tags": [
+            "coastal",
+            "New England",
+            "seafood",
+            "mansions",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "stp_moffatt_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Moffatt-Ladd House area",
+          "location": "Portsmouth",
+          "tags": [
+            "walking",
+            "historic",
+            "food"
+          ]
+        }
+      },
+      {
+        "id": "stp_ceres_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Ceres Gallery district",
+          "location": "Portsmouth",
+          "tags": [
+            "gallery",
+            "art",
+            "walking"
+          ]
+        }
+      },
+      {
+        "id": "stp_prescott_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Prescott Park waterfront",
+          "location": "Portsmouth",
+          "tags": [
+            "walking",
+            "coastal",
+            "food"
+          ]
+        }
+      }
+    ]
+  }
+}

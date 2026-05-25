@@ -1,0 +1,124 @@
+{
+  "session_id": "rafael_ortiz_s28",
+  "session_type": "learning",
+  "day_offset": 28,
+  "domain": "communication",
+  "reason_for_call": "Triage archived messages.",
+  "task_params": {
+    "folder": "archive",
+    "sender": "Elena Park",
+    "label_ids": [
+      "lbl_patiented_01"
+    ],
+    "priority": "high"
+  },
+  "expected_tools": [
+    "list_labels",
+    "search_messages",
+    "label_messages",
+    "set_message_priority"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_labels",
+      "arguments": {}
+    },
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "folder": "archive",
+        "sender": "Elena Park"
+      }
+    },
+    {
+      "tool": "label_messages",
+      "arguments": {
+        "message_ids": [
+          "msg_elena_01",
+          "msg_elena_02"
+        ],
+        "label_ids": [
+          "lbl_patiented_01"
+        ]
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_elena_01",
+          "msg_elena_02"
+        ],
+        "priority": "high"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_elena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Park",
+          "subject": "Teaching-sheet ideas after discharge calls",
+          "body": "A few patients asked for simpler handouts on insulin storage and foot checks. Saving notes here in case we want to turn them into patient teaching materials later.",
+          "thread_id": "thr_elena_01",
+          "folder": "archive",
+          "labels": [],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-02-24T18:12:00"
+        }
+      },
+      {
+        "id": "msg_elena_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Park",
+          "subject": "Follow-up: visual medication schedule concept",
+          "body": "Still thinking a bilingual visual med schedule could help our older patients. We should keep this thread for future education brainstorming.",
+          "thread_id": "thr_elena_02",
+          "folder": "archive",
+          "labels": [],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-02-26T07:40:00"
+        }
+      },
+      {
+        "id": "msg_miguel_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Miguel Santos",
+          "subject": "Shift swap next Friday",
+          "body": "Can you cover the first four hours of my shift next Friday?",
+          "thread_id": "thr_miguel_01",
+          "folder": "archive",
+          "labels": [],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-02-25T15:05:00"
+        }
+      },
+      {
+        "id": "lbl_patiented_01",
+        "type": "label",
+        "attributes": {
+          "name": "Patient Education Ideas",
+          "topic": "Potential patient handouts, teaching aids, and outreach content"
+        }
+      }
+    ]
+  }
+}

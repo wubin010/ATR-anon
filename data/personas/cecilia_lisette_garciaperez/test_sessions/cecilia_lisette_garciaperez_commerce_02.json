@@ -1,0 +1,89 @@
+{
+  "instruction": "Please take care of the return for the hardcover book from my recent order.",
+  "gold_value": "exchange",
+  "session_id": "cecilia_lisette_garciaperez_commerce_02_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "cecilia_lisette_garciaperez_commerce_02",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_commerce_02",
+    "rule_text": "When returning an order, she prefers an exchange over a refund if the item supports one of her core hobbies or cultural interests.",
+    "canonical_answer": "If something I bought for one of my core interests is wrong, I usually want a replacement instead of giving up on it."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_frida_kahlo_catalog_01",
+        "type": "product",
+        "attributes": {
+          "name": "Frida Kahlo Exhibition Catalog Hardcover Book",
+          "price": 42.0,
+          "category": "books",
+          "rating": 4.8,
+          "brand": "Museo Press",
+          "order_id": "ord_5128_books",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-09"
+        }
+      },
+      {
+        "id": "prod_stoneware_bowl_01",
+        "type": "product",
+        "attributes": {
+          "name": "Stoneware Serving Bowl",
+          "price": 36.0,
+          "category": "kitchen",
+          "rating": 4.9,
+          "brand": "North Table",
+          "order_id": "ord_5071_home",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-07"
+        }
+      },
+      {
+        "id": "prod_linen_runner_01",
+        "type": "product",
+        "attributes": {
+          "name": "Linen Table Runner",
+          "price": 28.0,
+          "category": "home_decor",
+          "rating": 4.7,
+          "brand": "Harbor House",
+          "order_id": "ord_5034_decor",
+          "order_status": "delivered",
+          "delivered_date": "2026-04-05"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "return_order",
+          "arguments": {
+            "resolution_type": "exchange"
+          },
+          "compare_args": [
+            "resolution_type"
+          ]
+        }
+      ]
+    }
+  }
+}

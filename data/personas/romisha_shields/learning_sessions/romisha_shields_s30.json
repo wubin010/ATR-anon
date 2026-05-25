@@ -1,0 +1,138 @@
+{
+  "session_id": "romisha_shields_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "travel",
+  "reason_for_call": "Check travel options",
+  "task_params": {
+    "origin": "Anniston",
+    "destination": "Montgomery",
+    "passenger_count": 2,
+    "departure_date": "2025-10-18",
+    "destination_constraints": [
+      "Montgomery",
+      "civil rights"
+    ],
+    "destination_ids": [
+      "dest_montgomery_01"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_ground_transport"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Montgomery",
+          "civil rights"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dest_montgomery_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_ground_transport",
+      "arguments": {
+        "origin": "Anniston",
+        "destination": "Montgomery",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dest_montgomery_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Montgomery Civil Rights Landmarks",
+          "region": "Montgomery, Alabama",
+          "tags": [
+            "civil rights",
+            "history",
+            "accessible"
+          ]
+        }
+      },
+      {
+        "id": "dest_birmingham_02",
+        "type": "destination",
+        "attributes": {
+          "name": "Birmingham Historic District",
+          "region": "Birmingham, Alabama",
+          "tags": [
+            "history",
+            "museums",
+            "civil rights"
+          ]
+        }
+      },
+      {
+        "id": "trn_mgm_01",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Anniston",
+          "destination": "Montgomery",
+          "mode": "train",
+          "departure_date": "2025-10-18",
+          "price": 64.0,
+          "available_seats": 12
+        }
+      },
+      {
+        "id": "bus_mgm_02",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Anniston",
+          "destination": "Montgomery",
+          "mode": "bus",
+          "departure_date": "2025-10-18",
+          "price": 42.0,
+          "available_seats": 18
+        }
+      },
+      {
+        "id": "car_mgm_03",
+        "type": "transport_offer",
+        "attributes": {
+          "origin": "Anniston",
+          "destination": "Montgomery",
+          "mode": "car_transfer",
+          "departure_date": "2025-10-18",
+          "price": 138.0,
+          "available_seats": 3
+        }
+      }
+    ]
+  }
+}

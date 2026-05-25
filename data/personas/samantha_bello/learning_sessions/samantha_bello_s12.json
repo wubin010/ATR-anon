@@ -1,0 +1,103 @@
+{
+  "session_id": "samantha_bello_s12",
+  "session_type": "learning",
+  "day_offset": 12,
+  "domain": "communication",
+  "reason_for_call": "Draft a follow-up message",
+  "task_params": {
+    "sender": "Daniel Perez",
+    "folder": "inbox",
+    "language": "en",
+    "reply_points": [
+      "Polite follow-up on the outstanding figures",
+      "Mention the board packet is being finalized",
+      "Ask him to send the numbers today if possible",
+      "Offer help if he is waiting on anything"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Daniel Perez",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_board_07",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_board_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Daniel Perez",
+          "subject": "Re: Board packet figures",
+          "body": "I am still cleaning up the final figures for the board packet. I should have them over soon.",
+          "thread_id": "thr_board_07",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-02-12T09:18:00-04:00"
+        }
+      },
+      {
+        "id": "msg_ops_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Marisol Vega",
+          "subject": "Updated vendor payment schedule",
+          "body": "Attached is the revised payment timing for the March vendors.",
+          "thread_id": "thr_ops_14",
+          "folder": "inbox",
+          "labels": [
+            "finance"
+          ],
+          "priority": "medium",
+          "archived": false,
+          "timestamp": "2025-02-12T08:02:00-04:00"
+        }
+      },
+      {
+        "id": "msg_hr_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Elena Cruz",
+          "subject": "Draft review complete",
+          "body": "I reviewed the policy draft and left a few comments in the document.",
+          "thread_id": "thr_hr_03",
+          "folder": "archive",
+          "labels": [
+            "hr"
+          ],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-02-10T15:41:00-04:00"
+        }
+      }
+    ]
+  }
+}

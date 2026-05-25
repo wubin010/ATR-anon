@@ -1,0 +1,88 @@
+{
+  "session_id": "romisha_shields_s32",
+  "session_type": "learning",
+  "day_offset": 32,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "location": "Cookbook Drafts",
+    "doc_type": "report",
+    "document_id": "doc_cookbook_01",
+    "section_title": "Church Potluck Favorites",
+    "story_points": [
+      "open with a warm note about church suppers bringing people together",
+      "include Sister Elaine's baked macaroni and the way it vanished first",
+      "mention Deacon Thomas carrying in pans wrapped in old towels",
+      "add my candied yams with brown sugar and nutmeg",
+      "note that recipes came with stories, teasing, and Sunday laughter",
+      "close by saying these dishes taught younger folks how to serve"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Cookbook Drafts",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_cookbook_01",
+        "content_delta": "<authored from section_title, story_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_cookbook_01",
+        "type": "document",
+        "attributes": {
+          "title": "Romisha Family & Community Cookbook Draft",
+          "doc_type": "report",
+          "location": "Cookbook Drafts",
+          "content_brief": "Working draft of a community cookbook with recipe sections and family stories."
+        }
+      },
+      {
+        "id": "doc_recipe_notes_02",
+        "type": "document",
+        "attributes": {
+          "title": "Sunday Dinner Recipe Notes",
+          "doc_type": "note",
+          "location": "Cookbook Drafts",
+          "content_brief": "Loose notes on collards, cornbread, and pie variations."
+        }
+      },
+      {
+        "id": "doc_fundraiser_outline_03",
+        "type": "document",
+        "attributes": {
+          "title": "Senior Center Fundraiser Cookbook Outline",
+          "doc_type": "memo",
+          "location": "Community Projects",
+          "content_brief": "Outline for a possible fundraiser booklet and outreach ideas."
+        }
+      }
+    ]
+  }
+}

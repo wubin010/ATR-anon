@@ -1,0 +1,103 @@
+{
+  "session_id": "nancy_marr_s16",
+  "session_type": "learning",
+  "day_offset": 16,
+  "domain": "reservation",
+  "reason_for_call": "Help with a reservation",
+  "task_params": {
+    "location": "Duluth",
+    "cuisine": "American",
+    "sort_by": "rating",
+    "date_time": "2025-08-22T19:00:00-05:00",
+    "party_size": 2
+  },
+  "expected_tools": [
+    "search_restaurants",
+    "book_restaurant"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_restaurants",
+      "arguments": {
+        "location": "Duluth",
+        "cuisine": "American",
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "book_restaurant",
+      "arguments": {
+        "restaurant_id": "rst_new_scenic_03",
+        "date_time": "2025-08-22T19:00:00-05:00",
+        "party_size": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_lakeavenue_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Lake Avenue Restaurant & Bar",
+          "cuisine": "American",
+          "location": "Duluth",
+          "rating": 4.7,
+          "price_range": "$$$",
+          "seating_style": "casual dining"
+        }
+      },
+      {
+        "id": "rst_va_bene_02",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Va Bene Caffe",
+          "cuisine": "Italian",
+          "location": "Duluth",
+          "rating": 4.6,
+          "price_range": "$$",
+          "seating_style": "relaxed bistro"
+        }
+      },
+      {
+        "id": "rst_new_scenic_03",
+        "type": "restaurant",
+        "attributes": {
+          "name": "New Scenic Cafe",
+          "cuisine": "American",
+          "location": "Duluth",
+          "rating": 4.8,
+          "price_range": "$$$",
+          "seating_style": "cozy dining room"
+        }
+      },
+      {
+        "id": "rst_fitgers_04",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Fitger's Brewhouse",
+          "cuisine": "American",
+          "location": "Duluth",
+          "rating": 4.5,
+          "price_range": "$$",
+          "seating_style": "pub"
+        }
+      }
+    ]
+  }
+}

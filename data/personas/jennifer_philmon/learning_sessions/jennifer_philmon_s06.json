@@ -1,0 +1,82 @@
+{
+  "session_id": "jennifer_philmon_s06",
+  "session_type": "learning",
+  "day_offset": 6,
+  "domain": "workspace",
+  "reason_for_call": "Set up a study tracker.",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "Boiler Operator Certification Study Tracker",
+    "location": "Training",
+    "content_brief": "Spreadsheet tracker for certification study sessions after shifts with columns for date, topic, time spent, key takeaways, weak spots, and next review."
+  },
+  "expected_tools": [
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Boiler Operator Certification Study Tracker",
+        "location": "Training",
+        "content_brief": "Spreadsheet tracker for certification study sessions after shifts with columns for date, topic, time spent, key takeaways, weak spots, and next review."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_training_01",
+        "type": "document",
+        "attributes": {
+          "title": "Shutdown Drill Notes",
+          "doc_type": "note",
+          "location": "Training",
+          "content_brief": "Notes from last month's boiler shutdown practice run."
+        }
+      },
+      {
+        "id": "doc_training_02",
+        "type": "document",
+        "attributes": {
+          "title": "Operator Exam Formula Sheet",
+          "doc_type": "template",
+          "location": "Training",
+          "content_brief": "Reference template for pressure, temperature, and efficiency formulas."
+        }
+      },
+      {
+        "id": "doc_ops_03",
+        "type": "document",
+        "attributes": {
+          "title": "Weekly Maintenance Log Summary",
+          "doc_type": "spreadsheet",
+          "location": "Operations",
+          "content_brief": "Existing spreadsheet used for weekly equipment maintenance summaries."
+        }
+      },
+      {
+        "id": "fld_training_01",
+        "type": "folder",
+        "attributes": {
+          "name": "Training",
+          "purpose": "Study materials, certification prep, and operator development files."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "instruction": "Please tidy the work files sitting in /Shared/ToSort — it's a jumble of older and newer PDFs, spreadsheets, and docs, and I just need them organized so they're easier to look through.",
+  "gold_value": "by_project",
+  "session_id": "anna_strahan_workspace_05_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "rule_id": "anna_strahan_workspace_05",
+  "rule_ref": {
+    "rule_id": "anna_strahan_workspace_05",
+    "rule_text": "When sorting work files, Anna prefers them classified by project rather than by type or date.",
+    "canonical_answer": "I organize work files by project first, not just by file type or chronology."
+  },
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "fil_tosort_budget_01",
+        "type": "file",
+        "attributes": {
+          "name": "budget_snapshot.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Budget Review",
+          "modified_date": "2026-03-14",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_budget_02",
+        "type": "file",
+        "attributes": {
+          "name": "vendor_quote.pdf",
+          "file_type": "pdf",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Budget Review",
+          "modified_date": "2026-03-19",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_tosort_compliance_01",
+        "type": "file",
+        "attributes": {
+          "name": "checklist_notes.docx",
+          "file_type": "docx",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Compliance Update",
+          "modified_date": "2026-04-03",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_compliance_02",
+        "type": "file",
+        "attributes": {
+          "name": "policy_matrix.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Compliance Update",
+          "modified_date": "2026-04-09",
+          "priority": "high"
+        }
+      },
+      {
+        "id": "fil_tosort_staff_01",
+        "type": "file",
+        "attributes": {
+          "name": "agenda_outline.docx",
+          "file_type": "docx",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Staff Development Series",
+          "modified_date": "2026-05-07",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_staff_02",
+        "type": "file",
+        "attributes": {
+          "name": "attendance_log.pdf",
+          "file_type": "pdf",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Staff Development Series",
+          "modified_date": "2026-05-12",
+          "priority": "low"
+        }
+      },
+      {
+        "id": "fil_tosort_art_01",
+        "type": "file",
+        "attributes": {
+          "name": "supply_request.xlsx",
+          "file_type": "xlsx",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Art Therapy Outreach",
+          "modified_date": "2026-06-02",
+          "priority": "medium"
+        }
+      },
+      {
+        "id": "fil_tosort_art_02",
+        "type": "file",
+        "attributes": {
+          "name": "volunteer_packet.docx",
+          "file_type": "docx",
+          "location": "/Shared/ToSort",
+          "owner": "Anna Strahan",
+          "labels": [],
+          "archived": false,
+          "project": "Art Therapy Outreach",
+          "modified_date": "2026-06-08",
+          "priority": "medium"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "classify_files",
+          "arguments": {
+            "scheme": "by_project"
+          },
+          "compare_args": [
+            "scheme"
+          ]
+        }
+      ]
+    }
+  }
+}

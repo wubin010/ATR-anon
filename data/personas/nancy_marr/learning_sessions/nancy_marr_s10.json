@@ -1,0 +1,82 @@
+{
+  "session_id": "nancy_marr_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document.",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "Sourdough and Kimchi Experiment Log",
+    "location": "Fermentation",
+    "content_brief": "Create a simple spreadsheet with separate sections for sourdough and kimchi trials, including columns for date started, batch name, ingredients, temperature, observations, and outcome."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Fermentation",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "Sourdough and Kimchi Experiment Log",
+        "location": "Fermentation",
+        "content_brief": "Create a simple spreadsheet with separate sections for sourdough and kimchi trials, including columns for date started, batch name, ingredients, temperature, observations, and outcome."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_ferment_01",
+        "type": "document",
+        "attributes": {
+          "title": "Kombucha Flavor Trials",
+          "doc_type": "spreadsheet",
+          "location": "Fermentation",
+          "content_brief": "Ongoing kombucha batches with tea base, sugar level, flavoring, and tasting notes."
+        }
+      },
+      {
+        "id": "doc_ferment_02",
+        "type": "document",
+        "attributes": {
+          "title": "Starter Feeding Notes",
+          "doc_type": "note",
+          "location": "Fermentation",
+          "content_brief": "Handwritten observations transcribed about rye starter behavior and hydration tweaks."
+        }
+      },
+      {
+        "id": "doc_kitchen_03",
+        "type": "document",
+        "attributes": {
+          "title": "Garden Produce Inventory",
+          "doc_type": "spreadsheet",
+          "location": "Kitchen Records",
+          "content_brief": "Weekly harvest counts for tomatoes, herbs, and peppers."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "session_id": "maximo_esteban_irizarry_s25",
+  "session_type": "learning",
+  "day_offset": 25,
+  "domain": "workspace",
+  "reason_for_call": "Update a project tracker",
+  "task_params": {
+    "tracker_title": "Consultancy Pipeline Tracker",
+    "bakery_next_action_points": [
+      "Confirm homepage copy edits with owner",
+      "Prepare mobile nav fixes list",
+      "Set a date for final image upload"
+    ],
+    "youth_workshop_next_action_points": [
+      "Draft outline for intro web session",
+      "Confirm room and projector availability",
+      "List laptops and signup gaps"
+    ],
+    "archive_concept_next_action_points": [
+      "Summarize scope for story, music, and photo archive",
+      "Note possible metadata fields",
+      "Sketch simple homepage sections"
+    ]
+  },
+  "expected_tools": [
+    "list_trackers",
+    "update_tracker"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_trackers",
+      "arguments": {}
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_consult_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from bakery_next_action_points>"
+      }
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_consult_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from youth_workshop_next_action_points>"
+      }
+    },
+    {
+      "tool": "update_tracker",
+      "arguments": {
+        "tracker_id": "trk_consult_01",
+        "update_action": "create_entry",
+        "entry_payload": "<authored from archive_concept_next_action_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_consult_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Consultancy Pipeline Tracker"
+        }
+      },
+      {
+        "id": "trk_mentoring_02",
+        "type": "tracker",
+        "attributes": {
+          "title": "Community Mentoring Follow-ups"
+        }
+      },
+      {
+        "id": "doc_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Bakery site audit notes",
+          "doc_type": "note",
+          "location": "consulting/bakery-site",
+          "content_brief": "Accessibility fixes, copy gaps, and image checklist from last review."
+        }
+      },
+      {
+        "id": "doc_workshop_02",
+        "type": "document",
+        "attributes": {
+          "title": "Youth workshop planning memo",
+          "doc_type": "memo",
+          "location": "community/youth-workshop",
+          "content_brief": "Ideas for beginner web topics, equipment, and attendance."
+        }
+      }
+    ]
+  }
+}

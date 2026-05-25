@@ -1,0 +1,142 @@
+{
+  "session_id": "cecilia_lisette_garciaperez_s30",
+  "session_type": "learning",
+  "day_offset": 30,
+  "domain": "commerce",
+  "reason_for_call": "Build a shopping list.",
+  "task_params": {
+    "category": "dried chiles",
+    "budget": 30,
+    "sort_by": "rating",
+    "product_ids": [
+      "prod_ancho_01",
+      "prod_mulato_02",
+      "prod_pasilla_03"
+    ],
+    "items": [
+      "Ancho Chiles 8 oz",
+      "Mulato Chiles 8 oz",
+      "Pasilla Chiles 8 oz",
+      "sesame seeds",
+      "pumpkin seeds",
+      "Mexican chocolate",
+      "raisins",
+      "almonds",
+      "corn tortillas",
+      "chicken broth",
+      "cinnamon stick",
+      "whole cloves",
+      "black peppercorns",
+      "garlic",
+      "white onion"
+    ],
+    "list_name": "Family Dinner Mole"
+  },
+  "expected_tools": [
+    "search_products",
+    "compare_products",
+    "build_shopping_list"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_products",
+      "arguments": {
+        "category": "dried chiles",
+        "budget": 30,
+        "sort_by": "rating"
+      }
+    },
+    {
+      "tool": "compare_products",
+      "arguments": {
+        "product_ids": [
+          "prod_ancho_01",
+          "prod_mulato_02",
+          "prod_pasilla_03"
+        ]
+      }
+    },
+    {
+      "tool": "build_shopping_list",
+      "arguments": {
+        "items": [
+          "Ancho Chiles 8 oz",
+          "Mulato Chiles 8 oz",
+          "Pasilla Chiles 8 oz",
+          "sesame seeds",
+          "pumpkin seeds",
+          "Mexican chocolate",
+          "raisins",
+          "almonds",
+          "corn tortillas",
+          "chicken broth",
+          "cinnamon stick",
+          "whole cloves",
+          "black peppercorns",
+          "garlic",
+          "white onion"
+        ],
+        "list_name": "Family Dinner Mole"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_ancho_01",
+        "type": "product",
+        "attributes": {
+          "name": "Ancho Chiles 8 oz",
+          "price": 6.49,
+          "category": "dried chiles",
+          "rating": 4.8
+        }
+      },
+      {
+        "id": "prod_mulato_02",
+        "type": "product",
+        "attributes": {
+          "name": "Mulato Chiles 8 oz",
+          "price": 7.29,
+          "category": "dried chiles",
+          "rating": 4.7
+        }
+      },
+      {
+        "id": "prod_pasilla_03",
+        "type": "product",
+        "attributes": {
+          "name": "Pasilla Chiles 8 oz",
+          "price": 5.99,
+          "category": "dried chiles",
+          "rating": 4.6
+        }
+      },
+      {
+        "id": "prod_guajillo_04",
+        "type": "product",
+        "attributes": {
+          "name": "Guajillo Chiles 8 oz",
+          "price": 5.49,
+          "category": "dried chiles",
+          "rating": 4.5
+        }
+      }
+    ]
+  }
+}

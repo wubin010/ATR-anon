@@ -1,0 +1,113 @@
+{
+  "session_id": "roosevelt_brown_s17",
+  "session_type": "learning",
+  "day_offset": 17,
+  "domain": "scheduling",
+  "reason_for_call": "Block time on my calendar.",
+  "task_params": {
+    "title": "Meal Prep + Decompress",
+    "start_time": "2025-04-27T18:30:00-04:00",
+    "end_time": "2025-04-27T21:30:00-04:00",
+    "participants": [],
+    "location": "Home"
+  },
+  "expected_tools": [
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-04-27T18:30:00-04:00",
+        "end_time": "2025-04-27T21:30:00-04:00",
+        "participants": []
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Meal Prep + Decompress",
+        "start_time": "2025-04-27T18:30:00-04:00",
+        "end_time": "2025-04-27T21:30:00-04:00",
+        "participants": [],
+        "location": "Home"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_choir_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Church Choir Rehearsal",
+          "start_time": "2025-04-27T14:00:00-04:00",
+          "end_time": "2025-04-27T15:30:00-04:00",
+          "participants": [
+            "choir@newhopebaptist.org"
+          ],
+          "location": "New Hope Baptist Church",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_family_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Call with Mom and Grandma",
+          "start_time": "2025-04-27T16:00:00-04:00",
+          "end_time": "2025-04-27T16:45:00-04:00",
+          "participants": [
+            "mom_brown@example.com",
+            "grandma_brown@example.com"
+          ],
+          "location": "Phone",
+          "calendar": "primary",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_walk_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Meal Prep + Decompress",
+          "start_time": "2025-04-27T18:30:00-04:00",
+          "end_time": "2025-04-27T21:30:00-04:00",
+          "participants": [],
+          "location": "Brockton",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_huddle_04",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Clinic Ops Prep Huddle",
+          "start_time": "2025-04-27T21:45:00-04:00",
+          "end_time": "2025-04-27T22:15:00-04:00",
+          "participants": [
+            "ops-team@harborclinic.org"
+          ],
+          "location": "Zoom",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

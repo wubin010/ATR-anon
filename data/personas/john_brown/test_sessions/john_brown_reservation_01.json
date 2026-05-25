@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner for two in downtown Chicago on 2026-08-14 at 7:30pm — just pick a place and reserve it.",
+  "gold_value": "rst_bayou_mosaic_01",
+  "session_id": "john_brown_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "john_brown_reservation_01",
+  "rule_ref": {
+    "rule_id": "john_brown_reservation_01",
+    "rule_text": "When choosing a restaurant, he prefers places known for Creole, Cajun, or fusion food over generic American spots.",
+    "canonical_answer": "When I go out to eat, I lean toward Creole, Cajun, or creative fusion places."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_bayou_mosaic_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Bayou Mosaic Kitchen",
+          "cuisine": "Cajun fusion",
+          "location": "Downtown Chicago",
+          "rating": 4.4,
+          "price_range": "$$",
+          "seating_style": "bistro"
+        }
+      },
+      {
+        "id": "rst_union_grill_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Union Grill House",
+          "cuisine": "American",
+          "location": "Downtown Chicago",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "rooftop patio"
+        }
+      },
+      {
+        "id": "rst_lakefront_tavern_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Lakefront Tavern",
+          "cuisine": "American",
+          "location": "Downtown Chicago",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "bar and dining room"
+        }
+      },
+      {
+        "id": "rst_market_chophouse_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Market Street Chophouse",
+          "cuisine": "American",
+          "location": "Downtown Chicago",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "steakhouse"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_bayou_mosaic_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

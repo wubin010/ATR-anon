@@ -1,0 +1,111 @@
+{
+  "instruction": "Please order one bag of whole-bean coffee for home, medium roast, and keep it under $16. Just pick one for me.",
+  "gold_value": "prod_riverbend_market_blend_01",
+  "session_id": "michael_argo_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "michael_argo_commerce_01",
+  "rule_ref": {
+    "rule_id": "michael_argo_commerce_01",
+    "rule_text": "When ordering coffee, he favors craft beans from local or farmer’s-market-style options over mainstream commodity brands.",
+    "canonical_answer": "For coffee, I prefer craft beans from local-style sources instead of generic mainstream brands."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_riverbend_market_blend_01",
+        "type": "product",
+        "attributes": {
+          "name": "Riverbend Market Blend Whole Bean Coffee",
+          "price": 15.49,
+          "category": "coffee",
+          "rating": 4.3,
+          "roast_level": "medium",
+          "grind": "whole_bean",
+          "source_style": "farmers_market_roaster",
+          "roaster_region": "Seattle",
+          "review_count": 58,
+          "units_sold_last_30_days": 42
+        }
+      },
+      {
+        "id": "prod_harbor_small_batch_01",
+        "type": "product",
+        "attributes": {
+          "name": "Harbor Small Batch Whole Bean Coffee",
+          "price": 14.99,
+          "category": "coffee",
+          "rating": 4.6,
+          "roast_level": "dark",
+          "grind": "whole_bean",
+          "source_style": "local_craft_roaster",
+          "roaster_region": "Seattle",
+          "review_count": 134,
+          "units_sold_last_30_days": 76
+        }
+      },
+      {
+        "id": "prod_sunrise_house_blend_01",
+        "type": "product",
+        "attributes": {
+          "name": "Sunrise Classic House Blend Whole Bean Coffee",
+          "price": 10.99,
+          "category": "coffee",
+          "rating": 4.9,
+          "roast_level": "medium",
+          "grind": "whole_bean",
+          "source_style": "national_grocery_brand",
+          "roaster_region": "national",
+          "review_count": 6840,
+          "units_sold_last_30_days": 3210
+        }
+      },
+      {
+        "id": "prod_peak_morning_roast_01",
+        "type": "product",
+        "attributes": {
+          "name": "Peak Morning Breakfast Roast Whole Bean Coffee",
+          "price": 8.99,
+          "category": "coffee",
+          "rating": 4.8,
+          "roast_level": "medium",
+          "grind": "whole_bean",
+          "source_style": "mass_market_brand",
+          "roaster_region": "national",
+          "review_count": 11240,
+          "units_sold_last_30_days": 5480
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_riverbend_market_blend_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

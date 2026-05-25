@@ -1,0 +1,54 @@
+[
+  {
+    "rule_id_origin": "elizabeth_pesacreta_scheduling_02",
+    "rule_text": "For personal reminders tied to something already on her schedule, she prefers a before-event reminder rather than creating a new standalone calendar item.",
+    "counterfactual_default": "Someone without this rule would often create a new calendar event or use a generic one-time reminder detached from the original item.",
+    "check_type": "param_enum",
+    "action_step": {
+      "tool": "set_reminder",
+      "param": "cadence"
+    },
+    "verdict": "no",
+    "label": "partial_binding_crossdomain",
+    "explanation": "rule 描述的差异是『用 reminder 还是新建 calendar event』(跨工具),知道 rule 的 agent 后会调 set_reminder(而不是 add_event)——但 binding 落在 set_reminder.cadence 这个 param 上,cadence enum 内的差异(once vs before_event)不是 rule 真正想表达的对比。binding 没直接映射 rule 的 reminder-vs-event 选择——应该绑 set_reminder, tool_identity 才对。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_travel_04",
+    "rule_text": "For long-distance travel with a tight budget, she prefers ground transport options over flights when the experience is still worthwhile.",
+    "counterfactual_default": "Someone without this rule would usually check and book flights first for longer trips.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_ground_transport",
+      "param": null
+    },
+    "verdict": "yes",
+    "label": "crosstool_wedge_binds_gold_side",
+    "explanation": "rule 描述『prefer ground over flight』,知道 rule 的 agent 后会调 book_ground_transport——binding 就是 book_ground_transport, tool_identity,**直接**映射 agent 想做的事。不要因为 rule 谈了两个工具(ground 和 flight)就判 partial——只有 gold 那一边(ground)是 rule 的 action,flight 是 cf 描述的 passive 行为。"
+  },
+  {
+    "rule_id_origin": "elizabeth_pesacreta_reservation_06",
+    "rule_text": "When local service appointments are available, she prefers evening or otherwise flexible times rather than rigid early slots.",
+    "counterfactual_default": "Someone without this rule would often pick the first available appointment to get it done.",
+    "check_type": "param_id",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": "provider_id"
+    },
+    "verdict": "yes",
+    "label": "attribute_carries_dimension",
+    "explanation": "rule 在『时间段』维度上有偏好,知道 rule 的 agent 后会调 book_service_appointment 并且想选『evening 的 provider』。binding 是 provider_id (param_id)——provider_id 表面不带时间,但 ServiceProvider.attributes 是 open dict,runtime 会在每个候选 provider 的 attributes 里塞 'available_hours' 维度,agent 通过 attributes 选 evening provider 的 id。binding 通过 attribute 维度**直接**映射 agent 想做的『选 evening provider』动作。"
+  },
+  {
+    "rule_id_origin": "elvira_wildman_reservation_02",
+    "rule_text": "When arranging a service appointment, she prefers drafting daytime appointments rather than defaulting to evenings.",
+    "counterfactual_default": "Someone without this rule would often choose evening slots to stay compatible with a typical workday.",
+    "check_type": "tool_identity",
+    "action_step": {
+      "tool": "book_service_appointment",
+      "param": null
+    },
+    "verdict": "no",
+    "label": "tool_identity_lacks_param_for_dimension",
+    "explanation": "rule 在『时间段』维度上有偏好(daytime vs evening),知道 rule 的 agent 后会想选『daytime 时段的 provider』——但 binding 是 tool_identity, param=null,book_service_appointment 这个 tool_identity 本身不携带时间维度。agent 调 book_service_appointment 后还得选 provider_id 或 date_time 才能体现偏好——binding 没直接映射 rule 描述的具体动作。应该改成 param_id provider_id 让 ServiceProvider.attributes 承载时间维度。"
+  }
+]

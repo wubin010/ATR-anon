@@ -1,0 +1,101 @@
+{
+  "session_id": "nancy_marr_s22",
+  "session_type": "learning",
+  "day_offset": 22,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "title": "HACCP Audit Study Outline",
+    "location": "Certifications",
+    "doc_type": "report",
+    "audit_topics_points": [
+      "environmental monitoring verification",
+      "allergen changeover documentation",
+      "corrective action evidence for CCP deviations",
+      "supplier approval review frequency",
+      "internal audit sampling records"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "update_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Certifications",
+        "doc_type": "report"
+      }
+    },
+    {
+      "tool": "update_document",
+      "arguments": {
+        "document_id": "doc_haccp_01",
+        "content_delta": "<authored from audit_topics_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_haccp_01",
+        "type": "document",
+        "attributes": {
+          "title": "HACCP Audit Study Outline",
+          "doc_type": "report",
+          "location": "Certifications",
+          "content_brief": "Working study document for audit prep with sections on prerequisites, CCP review, verification, records, and mock audit notes."
+        }
+      },
+      {
+        "id": "doc_cfs_02",
+        "type": "document",
+        "attributes": {
+          "title": "Certified Food Scientist Reading Notes",
+          "doc_type": "note",
+          "location": "Certifications",
+          "content_brief": "Exam prep notes on food chemistry, regulations, and product development."
+        }
+      },
+      {
+        "id": "doc_lab_03",
+        "type": "document",
+        "attributes": {
+          "title": "Quarterly Lab Improvement Summary",
+          "doc_type": "report",
+          "location": "Quality",
+          "content_brief": "Summary of lab workflow fixes, instrument maintenance, and training gaps."
+        }
+      },
+      {
+        "id": "file_scraps_01",
+        "type": "file",
+        "attributes": {
+          "name": "audit_topics_scraps.jpg",
+          "file_type": "image",
+          "location": "Desktop",
+          "owner": "Nancy Marr",
+          "labels": [
+            "notes",
+            "audit"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

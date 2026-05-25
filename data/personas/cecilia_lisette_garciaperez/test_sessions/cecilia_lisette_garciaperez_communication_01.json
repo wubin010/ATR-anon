@@ -1,0 +1,84 @@
+{
+  "instruction": "Reply to Marisol Vega from Barrio Stories about Don Ernesto. Tell her to leave the family nickname out of the short intro, keep the Spanish quote paired with its English translation, and say I'll send over two title ideas on 2026-08-05 in the morning.",
+  "gold_value": null,
+  "session_id": "cecilia_lisette_garciaperez_communication_01_test",
+  "session_type": "test",
+  "domain": "communication",
+  "rule_id": "cecilia_lisette_garciaperez_communication_01",
+  "rule_ref": {
+    "rule_id": "cecilia_lisette_garciaperez_communication_01",
+    "rule_text": "For messages tied to editorial, mentoring, or culturally sensitive topics, she prefers a draft to review rather than having them sent immediately.",
+    "canonical_answer": "I always want editorial or culturally sensitive messages drafted first so I can revise them before they go out."
+  },
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_marisol_donernesto_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Marisol Vega <marisol@barriostories.org>",
+          "subject": "Don Ernesto wording questions for Barrio Stories",
+          "body": "Hi Cecilia — before we lock the Don Ernesto piece, could you weigh in on a couple of lines? The short intro still uses the family nickname, and section three shows his Spanish quote without the English translation beside it. If you want different wording or placement, let me know. Also, if you have any better title ideas, send them my way.",
+          "thread_id": "thr_marisol_donernesto_17",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-04T09:11"
+        }
+      },
+      {
+        "id": "msg_ruben_panel_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Ruben Ortiz <ruben@civicarts.org>",
+          "subject": "Friday panel seating chart",
+          "body": "Can you confirm whether the moderator table should seat four or five people before I send the final room diagram to the venue?",
+          "thread_id": "thr_ruben_panel_08",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2026-08-04T08:24"
+        }
+      },
+      {
+        "id": "msg_kira_invoice_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Kira Holt <billing@northshoreprint.com>",
+          "subject": "July invoice available",
+          "body": "Your July printing invoice is ready to view in the customer portal.",
+          "thread_id": "thr_kira_invoice_31",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2026-08-04T07:42"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "draft_message",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}

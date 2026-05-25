@@ -1,0 +1,86 @@
+{
+  "session_id": "fs_workspace_pv_update_client_doc_test",
+  "session_type": "test",
+  "domain": "workspace",
+  "persona_id": "few_shot",
+  "rule_id": "fs_workspace_pv_update_client_doc",
+  "instruction": "I'm reviewing Q2 progress with the Nimbus client at 2pm — update the relevant project document to its latest state before the meeting.",
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_nimbus_team_meeting_notes_01",
+        "type": "document",
+        "attributes": {
+          "title": "Nimbus Q2 internal team meeting notes",
+          "project": "Nimbus",
+          "doc_type": "meeting_notes",
+          "modified_date": "2026-04-20"
+        }
+      },
+      {
+        "id": "doc_nimbus_q2_status_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Nimbus Q2 project status report (sent to client)",
+          "project": "Nimbus",
+          "doc_type": "status_report",
+          "modified_date": "2026-04-15",
+          "last_shared_with_client": "2026-04-15"
+        }
+      },
+      {
+        "id": "doc_nimbus_retro_01",
+        "type": "document",
+        "attributes": {
+          "title": "Nimbus Q1 retrospective (internal)",
+          "project": "Nimbus",
+          "doc_type": "retrospective",
+          "modified_date": "2026-01-30"
+        }
+      },
+      {
+        "id": "doc_other_proj_status_01",
+        "type": "document",
+        "attributes": {
+          "title": "Acme project Q2 status report",
+          "project": "Acme",
+          "doc_type": "status_report",
+          "modified_date": "2026-04-18"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "update_document",
+          "arguments": {
+            "document_id": "doc_nimbus_team_meeting_notes_01"
+          },
+          "compare_args": [
+            "document_id"
+          ]
+        }
+      ]
+    }
+  },
+  "rule_ref": {
+    "rule_id": "fs_workspace_pv_update_client_doc",
+    "rule_text": "When prepping briefly before a meeting, only update internal collaboration documents (meeting notes, retrospectives, etc.); do not touch client-facing status reports — those external deliverables are frozen at sprint close, and last-minute edits would create version inconsistencies.",
+    "canonical_answer": "When you tidy up before a meeting, only touch the internal meeting-notes type docs — leave the client status reports alone, those are already shipped."
+  }
+}

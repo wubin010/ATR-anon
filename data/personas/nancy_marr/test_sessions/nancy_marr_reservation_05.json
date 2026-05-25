@@ -1,0 +1,107 @@
+{
+  "instruction": "Please book me a tai chi class in St. Paul for 2026-08-14 at 6:00pm — just choose a provider and handle it.",
+  "gold_value": "svc_taichi_west7th_01",
+  "session_id": "nancy_marr_reservation_05_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "nancy_marr_reservation_05",
+  "rule_ref": {
+    "rule_id": "nancy_marr_reservation_05",
+    "rule_text": "When booking a personal class or wellness appointment, Nancy prefers low-key local studios or craft-oriented providers over generic commercial services.",
+    "canonical_answer": "I usually book with local, community-feeling providers instead of big generic service chains."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "svc_taichi_west7th_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "West Seventh Tai Chi Studio",
+          "service_type": "tai chi class",
+          "location": "St. Paul",
+          "rating": 4.4,
+          "distance_km": 4.6,
+          "ownership_type": "independent local studio",
+          "provider_style": "community studio",
+          "class_size": "small group",
+          "price_per_class": 35
+        }
+      },
+      {
+        "id": "svc_taichi_metrofit_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "MetroFit Mind-Body Center",
+          "service_type": "tai chi class",
+          "location": "Downtown St. Paul",
+          "rating": 4.9,
+          "distance_km": 0.4,
+          "ownership_type": "national chain",
+          "provider_style": "commercial wellness center",
+          "class_size": "large group",
+          "price_per_class": 22
+        }
+      },
+      {
+        "id": "svc_taichi_flowclub_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "FlowClub Wellness",
+          "service_type": "tai chi class",
+          "location": "Lowertown, St. Paul",
+          "rating": 4.8,
+          "distance_km": 0.9,
+          "ownership_type": "regional chain",
+          "provider_style": "franchise studio",
+          "class_size": "standard group",
+          "price_per_class": 24
+        }
+      },
+      {
+        "id": "svc_taichi_riverfront_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Riverfront Movement Center",
+          "service_type": "tai chi class",
+          "location": "St. Paul",
+          "rating": 4.7,
+          "distance_km": 1.2,
+          "ownership_type": "independent local business",
+          "provider_style": "multipurpose fitness club",
+          "class_size": "large group",
+          "price_per_class": 20
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_service_appointment",
+          "arguments": {
+            "provider_id": "svc_taichi_west7th_01"
+          },
+          "compare_args": [
+            "provider_id"
+          ]
+        }
+      ]
+    }
+  }
+}

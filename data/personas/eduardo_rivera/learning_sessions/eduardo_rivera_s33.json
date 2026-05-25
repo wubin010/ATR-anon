@@ -1,0 +1,82 @@
+{
+  "session_id": "eduardo_rivera_s33",
+  "session_type": "learning",
+  "day_offset": 33,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "doc_type": "spreadsheet",
+    "title": "California Escape Cost Comparison",
+    "location": "Travel Plans",
+    "content_brief": "Spreadsheet comparing estimated travel costs for Napa Valley, Big Sur, and Santa Cruz with columns for destination, lodging, gas, food, activities, and total."
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Travel Plans",
+        "doc_type": "spreadsheet"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "spreadsheet",
+        "title": "California Escape Cost Comparison",
+        "location": "Travel Plans",
+        "content_brief": "Spreadsheet comparing estimated travel costs for Napa Valley, Big Sur, and Santa Cruz with columns for destination, lodging, gas, food, activities, and total."
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_trip_01",
+        "type": "document",
+        "attributes": {
+          "title": "Spring Weekend Budget",
+          "doc_type": "spreadsheet",
+          "location": "Travel Plans",
+          "content_brief": "A prior trip budget sheet with transportation, stay, food, and activity costs."
+        }
+      },
+      {
+        "id": "doc_trip_02",
+        "type": "document",
+        "attributes": {
+          "title": "Coastal Drive Notes",
+          "doc_type": "note",
+          "location": "Travel Plans",
+          "content_brief": "Notes about scenic stops, mileage, and packing ideas for a short coast trip."
+        }
+      },
+      {
+        "id": "doc_trip_03",
+        "type": "document",
+        "attributes": {
+          "title": "Travel Cost Comparison Template",
+          "doc_type": "template",
+          "location": "Travel Templates",
+          "content_brief": "Template for comparing destinations by lodging, transportation, meals, and activities."
+        }
+      }
+    ]
+  }
+}

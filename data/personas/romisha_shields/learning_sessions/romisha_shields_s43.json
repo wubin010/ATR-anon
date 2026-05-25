@@ -1,0 +1,105 @@
+{
+  "session_id": "romisha_shields_s43",
+  "session_type": "learning",
+  "day_offset": 43,
+  "domain": "workspace",
+  "reason_for_call": "Pull together a working document",
+  "task_params": {
+    "template_doc_type": "template",
+    "doc_type": "memo",
+    "location": "Projects",
+    "template_location": "Projects",
+    "title": "Community Goals One-Page Memo",
+    "memo_points": [
+      "storytelling circle goal: weekly church gathering for seniors and younger neighbors",
+      "cookbook goal: collect family recipes for a fundraiser cookbook",
+      "community board goal: prepare to seek a seat and represent older residents",
+      "tie all three plans to preserving local stories and helping youth",
+      "keep it to one page with simple sections and next steps"
+    ]
+  },
+  "expected_tools": [
+    "search_documents",
+    "create_document"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_documents",
+      "arguments": {
+        "location": "Projects",
+        "doc_type": "template"
+      }
+    },
+    {
+      "tool": "create_document",
+      "arguments": {
+        "doc_type": "memo",
+        "title": "Community Goals One-Page Memo",
+        "location": "Projects",
+        "content_brief": "<authored from memo_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "doc_template_01",
+        "type": "document",
+        "attributes": {
+          "title": "One-Page Planning Memo Template",
+          "doc_type": "template",
+          "location": "Projects",
+          "content_brief": "Simple one-page memo layout with headings for goals, actions, and next steps."
+        }
+      },
+      {
+        "id": "doc_note_01",
+        "type": "document",
+        "attributes": {
+          "title": "Storytelling Circle Notes",
+          "doc_type": "note",
+          "location": "Projects",
+          "content_brief": "Brainstorm notes about church storytelling circle and youth participation."
+        }
+      },
+      {
+        "id": "doc_report_01",
+        "type": "document",
+        "attributes": {
+          "title": "Cookbook Fundraiser Ideas",
+          "doc_type": "report",
+          "location": "Projects",
+          "content_brief": "Ideas for compiling recipes and raising money through a community cookbook."
+        }
+      },
+      {
+        "id": "file_scan_01",
+        "type": "file",
+        "attributes": {
+          "name": "board_interest_flyer.pdf",
+          "file_type": "pdf",
+          "location": "Projects",
+          "owner": "Romisha Shields",
+          "labels": [
+            "community",
+            "board"
+          ],
+          "archived": false
+        }
+      }
+    ]
+  }
+}

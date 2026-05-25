@@ -1,0 +1,112 @@
+{
+  "session_id": "maximo_esteban_irizarry_s08",
+  "session_type": "learning",
+  "day_offset": 8,
+  "domain": "communication",
+  "reason_for_call": "Triage my email and draft a reply",
+  "task_params": {
+    "sender": "Lena Morales",
+    "folder": "inbox",
+    "message_priority": "high",
+    "reply_language": "en",
+    "reply_points": [
+      "thank her for volunteering",
+      "say you're following up about the room confirmation",
+      "ask whether the youth coding room is available",
+      "mention setup depends on knowing by tomorrow morning",
+      "if unavailable, ask her to let you know quickly",
+      "keep the tone polite and calm"
+    ]
+  },
+  "expected_tools": [
+    "search_messages",
+    "set_message_priority",
+    "draft_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_messages",
+      "arguments": {
+        "sender": "Lena Morales",
+        "folder": "inbox"
+      }
+    },
+    {
+      "tool": "set_message_priority",
+      "arguments": {
+        "message_ids": [
+          "msg_lena_01"
+        ],
+        "priority": "high"
+      }
+    },
+    {
+      "tool": "draft_message",
+      "arguments": {
+        "thread_id": "thr_workshop_01",
+        "language": "en",
+        "body": "<authored from reply_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_lena_01",
+        "type": "message",
+        "attributes": {
+          "sender": "Lena Morales",
+          "subject": "Re: Saturday youth coding workshop",
+          "body": "Hi Maximo, I can try to help with the room booking at the community center. I need to double-check with the front desk and will get back to you soon.",
+          "thread_id": "thr_workshop_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-08T15:42:00"
+        }
+      },
+      {
+        "id": "msg_mateo_02",
+        "type": "message",
+        "attributes": {
+          "sender": "Mateo Rivera",
+          "subject": "Poster draft for the meetup",
+          "body": "Sharing the latest flyer draft. Let me know if the text size should be bigger.",
+          "thread_id": "thr_poster_02",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-05-08T13:10:00"
+        }
+      },
+      {
+        "id": "msg_silvia_03",
+        "type": "message",
+        "attributes": {
+          "sender": "Silvia Cruz",
+          "subject": "Photos from the trail walk",
+          "body": "I finally uploaded the mountain photos. The light was beautiful.",
+          "thread_id": "thr_photos_03",
+          "folder": "archive",
+          "labels": [],
+          "priority": "low",
+          "archived": true,
+          "timestamp": "2025-05-07T18:25:00"
+        }
+      }
+    ]
+  }
+}

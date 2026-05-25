@@ -1,0 +1,95 @@
+{
+  "instruction": "Please book dinner in Seattle for four people on 2026-09-18 at 7:30pm; keep it around a $$ price range, just choose a place and make the reservation.",
+  "gold_value": "rst_pier_lantern_01",
+  "session_id": "vanessa_davis_reservation_01_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "vanessa_davis_reservation_01",
+  "rule_ref": {
+    "rule_id": "vanessa_davis_reservation_01",
+    "rule_text": "When choosing a restaurant for a treat or gathering, she favors Southern comfort food or seafood-boil places over trendier generic options.",
+    "canonical_answer": "If I’m eating out for fun, I’d rather pick Southern comfort food or a seafood boil spot than a trendy random place."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "rst_pier_lantern_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Pier Lantern Boil House",
+          "cuisine": "Seafood boil",
+          "location": "Seattle",
+          "rating": 4.3,
+          "price_range": "$$",
+          "seating_style": "communal tables"
+        }
+      },
+      {
+        "id": "rst_juniper_ash_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Juniper & Ash",
+          "cuisine": "New American",
+          "location": "Seattle",
+          "rating": 4.9,
+          "price_range": "$$",
+          "seating_style": "modern small plates"
+        }
+      },
+      {
+        "id": "rst_northline_oyster_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Northline Oyster Room",
+          "cuisine": "Seafood",
+          "location": "Seattle",
+          "rating": 4.8,
+          "price_range": "$$",
+          "seating_style": "raw bar"
+        }
+      },
+      {
+        "id": "rst_cedar_room_01",
+        "type": "restaurant",
+        "attributes": {
+          "name": "Cedar Room Social",
+          "cuisine": "Contemporary American",
+          "location": "Seattle",
+          "rating": 4.7,
+          "price_range": "$$",
+          "seating_style": "rooftop dining"
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "book_restaurant",
+          "arguments": {
+            "restaurant_id": "rst_pier_lantern_01"
+          },
+          "compare_args": [
+            "restaurant_id"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "session_id": "eduardo_rivera_s43",
+  "session_type": "learning",
+  "day_offset": 43,
+  "domain": "reservation",
+  "reason_for_call": "Book event tickets.",
+  "task_params": {
+    "location": "San Francisco",
+    "event_tags": [
+      "baseball",
+      "Giants"
+    ],
+    "date_time": "2025-08-16T13:05:00-07:00",
+    "ticket_type": "general_admission",
+    "ticket_count": 2
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "San Francisco",
+        "event_tags": [
+          "baseball",
+          "Giants"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_giants_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 2
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_giants_01",
+        "type": "event",
+        "attributes": {
+          "name": "San Francisco Giants vs. Atlanta Braves",
+          "location": "San Francisco",
+          "date_time": "2025-08-16T13:05:00-07:00",
+          "price": 42.0,
+          "event_tags": [
+            "baseball",
+            "sports",
+            "Giants",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "evt_giants_02",
+        "type": "event",
+        "attributes": {
+          "name": "San Francisco Giants vs. Atlanta Braves",
+          "location": "San Francisco",
+          "date_time": "2025-08-17T16:10:00-07:00",
+          "price": 39.0,
+          "event_tags": [
+            "baseball",
+            "sports",
+            "Giants",
+            "weekend"
+          ]
+        }
+      },
+      {
+        "id": "evt_giants_03",
+        "type": "event",
+        "attributes": {
+          "name": "San Francisco Giants vs. Colorado Rockies",
+          "location": "San Francisco",
+          "date_time": "2025-08-12T18:45:00-07:00",
+          "price": 28.0,
+          "event_tags": [
+            "baseball",
+            "sports",
+            "Giants",
+            "night"
+          ]
+        }
+      },
+      {
+        "id": "evt_concert_01",
+        "type": "event",
+        "attributes": {
+          "name": "Bay Lights Summer Concert",
+          "location": "San Francisco",
+          "date_time": "2025-08-16T19:30:00-07:00",
+          "price": 55.0,
+          "event_tags": [
+            "music",
+            "concert",
+            "outdoor"
+          ]
+        }
+      }
+    ]
+  }
+}

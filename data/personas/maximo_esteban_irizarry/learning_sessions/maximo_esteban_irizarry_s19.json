@@ -1,0 +1,99 @@
+{
+  "session_id": "maximo_esteban_irizarry_s19",
+  "session_type": "learning",
+  "day_offset": 19,
+  "domain": "communication",
+  "reason_for_call": "Send a travel update",
+  "task_params": {
+    "recipient": "ana.irizarry@example.com",
+    "subject": "Quick update on the trip options",
+    "thread_id": "thr_trip_ana_01",
+    "language": "en",
+    "body_points": [
+      "three options look strongest so far",
+      "the first has the best price",
+      "the second has the easiest travel timing",
+      "the third seems nicest overall",
+      "ask which one she wants to pursue"
+    ]
+  },
+  "expected_tools": [
+    "send_message"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "send_message",
+      "arguments": {
+        "recipient": "ana.irizarry@example.com",
+        "subject": "Quick update on the trip options",
+        "thread_id": "thr_trip_ana_01",
+        "language": "en",
+        "body": "<authored from body_points>"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_messages",
+      "set_message_priority",
+      "archive_messages",
+      "list_labels",
+      "list_message_folders",
+      "draft_message",
+      "send_message",
+      "label_messages",
+      "send_draft"
+    ],
+    "references": [
+      {
+        "id": "msg_trip_01",
+        "type": "message",
+        "attributes": {
+          "sender": "ana.irizarry@example.com",
+          "subject": "Re: Summer getaway ideas",
+          "body": "After dinner, can you send me a short note with the best travel options you found? Just the most promising ones is fine.",
+          "thread_id": "thr_trip_ana_01",
+          "folder": "inbox",
+          "labels": [],
+          "priority": "normal",
+          "archived": false,
+          "timestamp": "2025-06-19T18:42:00"
+        }
+      },
+      {
+        "id": "msg_trip_02",
+        "type": "message",
+        "attributes": {
+          "sender": "newsletter@farewatch.example.com",
+          "subject": "This week's fare roundup",
+          "body": "A mix of discounts and route ideas for several destinations.",
+          "thread_id": "thr_farewatch_01",
+          "folder": "inbox",
+          "labels": [
+            "travel"
+          ],
+          "priority": "low",
+          "archived": false,
+          "timestamp": "2025-06-19T09:10:00"
+        }
+      },
+      {
+        "id": "msg_trip_03",
+        "type": "message",
+        "attributes": {
+          "sender": "ana.irizarry@example.com",
+          "subject": "Photos from last weekend",
+          "body": "The light in those mountain shots came out beautiful.",
+          "thread_id": "thr_photos_ana_01",
+          "folder": "archive",
+          "labels": [
+            "family"
+          ],
+          "priority": "normal",
+          "archived": true,
+          "timestamp": "2025-06-15T20:05:00"
+        }
+      }
+    ]
+  }
+}

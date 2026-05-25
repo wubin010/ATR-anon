@@ -1,0 +1,113 @@
+{
+  "session_id": "charlie_james_s34",
+  "session_type": "learning",
+  "day_offset": 34,
+  "domain": "travel",
+  "reason_for_call": "Book a trip flight",
+  "task_params": {
+    "origin": "Louisville",
+    "destination": "Detroit",
+    "passenger_count": 1,
+    "departure_date": "2025-09-12",
+    "return_date": "2025-09-15",
+    "seat_preference": "aisle",
+    "sort_by": "price_asc"
+  },
+  "expected_tools": [
+    "search_flights",
+    "book_flight"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "Louisville",
+        "destination": "Detroit",
+        "passenger_count": 1,
+        "sort_by": "price_asc"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "arguments": {
+        "flight_offer_id": "flt_southwest_02",
+        "seat_preference": "aisle"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_delta_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Detroit",
+          "departure_date": "2025-09-12",
+          "return_date": "2025-09-15",
+          "airline": "Delta",
+          "price": 289.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_southwest_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Detroit",
+          "departure_date": "2025-09-12",
+          "return_date": "2025-09-15",
+          "airline": "Southwest",
+          "price": 244.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_american_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Detroit",
+          "departure_date": "2025-09-11",
+          "return_date": "2025-09-15",
+          "airline": "American",
+          "price": 231.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_united_04",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "Louisville",
+          "destination": "Detroit",
+          "departure_date": "2025-09-12",
+          "return_date": "2025-09-16",
+          "airline": "United",
+          "price": 258.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  }
+}

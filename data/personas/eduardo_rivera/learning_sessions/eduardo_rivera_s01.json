@@ -1,0 +1,117 @@
+{
+  "session_id": "eduardo_rivera_s01",
+  "session_type": "learning",
+  "day_offset": 1,
+  "domain": "scheduling",
+  "reason_for_call": "Review my calendar.",
+  "task_params": {
+    "calendar": "work",
+    "title": "Gym Session",
+    "start_time": "2025-03-11T19:00:00-07:00",
+    "end_time": "2025-03-11T19:45:00-07:00",
+    "location": "Pittsburg Fit Center"
+  },
+  "expected_tools": [
+    "list_events",
+    "check_conflicts",
+    "create_event"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "list_events",
+      "arguments": {
+        "calendar": "work"
+      }
+    },
+    {
+      "tool": "check_conflicts",
+      "arguments": {
+        "start_time": "2025-03-11T19:00:00-07:00",
+        "end_time": "2025-03-11T19:45:00-07:00"
+      }
+    },
+    {
+      "tool": "create_event",
+      "arguments": {
+        "title": "Gym Session",
+        "start_time": "2025-03-11T19:00:00-07:00",
+        "end_time": "2025-03-11T19:45:00-07:00",
+        "location": "Pittsburg Fit Center"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "list_events",
+      "check_conflicts",
+      "create_event",
+      "reschedule_event",
+      "modify_event",
+      "respond_to_event_invite",
+      "cancel_event",
+      "set_reminder",
+      "track_event_updates",
+      "find_alternative_slots"
+    ],
+    "references": [
+      {
+        "id": "evt_work_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Case Design Review",
+          "start_time": "2025-03-11T17:30:00-07:00",
+          "end_time": "2025-03-11T18:15:00-07:00",
+          "participants": [
+            "lab-team@eastbaydental.com"
+          ],
+          "location": "Lab Conference Room B",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_02",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "CAD/CAM File Handoff",
+          "start_time": "2025-03-11T18:15:00-07:00",
+          "end_time": "2025-03-11T18:45:00-07:00",
+          "participants": [
+            "maria.chen@eastbaydental.com"
+          ],
+          "location": "Digital Lab Station 4",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_work_03",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Late Patient Shade Check",
+          "start_time": "2025-03-11T20:15:00-07:00",
+          "end_time": "2025-03-11T21:00:00-07:00",
+          "participants": [
+            "frontdesk@eastbaydental.com"
+          ],
+          "location": "Consult Room 2",
+          "calendar": "work",
+          "status": "confirmed"
+        }
+      },
+      {
+        "id": "evt_personal_01",
+        "type": "calendar_event",
+        "attributes": {
+          "title": "Gym Session",
+          "start_time": "2025-03-11T19:00:00-07:00",
+          "end_time": "2025-03-11T19:45:00-07:00",
+          "participants": [],
+          "location": "Pittsburg Fit Center",
+          "calendar": "personal",
+          "status": "confirmed"
+        }
+      }
+    ]
+  }
+}

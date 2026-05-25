@@ -1,0 +1,103 @@
+{
+  "session_id": "anna_strahan_s18",
+  "session_type": "learning",
+  "day_offset": 18,
+  "domain": "travel",
+  "reason_for_call": "Price out a trip",
+  "task_params": {
+    "origin": "New Orleans",
+    "destination": "Marseille",
+    "passenger_count": 2,
+    "departure_date": "2026-05-14",
+    "return_date": "2026-05-23"
+  },
+  "expected_tools": [
+    "search_flights"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_flights",
+      "arguments": {
+        "origin": "New Orleans",
+        "destination": "Marseille",
+        "passenger_count": 2,
+        "sort_by": "price_asc"
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "flt_nola_mrs_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Marseille",
+          "departure_date": "2026-05-14",
+          "return_date": "2026-05-23",
+          "airline": "Delta",
+          "price": 1489.0,
+          "available_seats": 4
+        }
+      },
+      {
+        "id": "flt_nola_mrs_02",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Marseille",
+          "departure_date": "2026-05-15",
+          "return_date": "2026-05-23",
+          "airline": "United",
+          "price": 1325.0,
+          "available_seats": 3
+        }
+      },
+      {
+        "id": "flt_nola_mrs_03",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Marseille",
+          "departure_date": "2026-05-14",
+          "return_date": "2026-05-24",
+          "airline": "Air France",
+          "price": 1562.0,
+          "available_seats": 6
+        }
+      },
+      {
+        "id": "flt_nola_nce_01",
+        "type": "flight_offer",
+        "attributes": {
+          "origin": "New Orleans",
+          "destination": "Nice",
+          "departure_date": "2026-05-14",
+          "return_date": "2026-05-23",
+          "airline": "American",
+          "price": 1510.0,
+          "available_seats": 5
+        }
+      }
+    ]
+  }
+}

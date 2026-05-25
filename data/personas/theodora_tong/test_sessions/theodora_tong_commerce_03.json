@@ -1,0 +1,105 @@
+{
+  "instruction": "Please order one brush set for acrylic painting, keep it under $28, and make sure it includes at least 6 brushes. Just pick one for me.",
+  "gold_value": "prod_northlight_series6_01",
+  "session_id": "theodora_tong_commerce_03_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "rule_id": "theodora_tong_commerce_03",
+  "rule_ref": {
+    "rule_id": "theodora_tong_commerce_03",
+    "rule_text": "When the purchase is for core painting tools, she prefers premium brushes over cheaper art-supply alternatives.",
+    "canonical_answer": "If I’m buying brushes, I’m willing to splurge on the premium ones."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_northlight_series6_01",
+        "type": "product",
+        "attributes": {
+          "name": "Northlight Series 6 Acrylic Brush Set",
+          "price": 27.5,
+          "category": "paint_brushes",
+          "rating": 4.5,
+          "brush_grade": "premium",
+          "pack_size": 6,
+          "bristle_material": "synthetic sable blend",
+          "intended_use": "acrylic painting"
+        }
+      },
+      {
+        "id": "prod_willow_reserve_detail_01",
+        "type": "product",
+        "attributes": {
+          "name": "Willow Reserve Detail Brush Set",
+          "price": 25.0,
+          "category": "paint_brushes",
+          "rating": 4.6,
+          "brush_grade": "premium",
+          "pack_size": 4,
+          "bristle_material": "synthetic sable blend",
+          "intended_use": "acrylic painting"
+        }
+      },
+      {
+        "id": "prod_colorcraft_student_10pc_01",
+        "type": "product",
+        "attributes": {
+          "name": "ColorCraft Student Acrylic Brush Set",
+          "price": 13.99,
+          "category": "paint_brushes",
+          "rating": 4.9,
+          "brush_grade": "student",
+          "pack_size": 10,
+          "bristle_material": "synthetic",
+          "intended_use": "acrylic painting",
+          "review_count": 2130
+        }
+      },
+      {
+        "id": "prod_artbasics_value_12pc_01",
+        "type": "product",
+        "attributes": {
+          "name": "ArtBasics Value Paint Brush Pack",
+          "price": 8.99,
+          "category": "paint_brushes",
+          "rating": 4.8,
+          "brush_grade": "basic",
+          "pack_size": 12,
+          "bristle_material": "nylon",
+          "intended_use": "acrylic painting",
+          "review_count": 3510
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_northlight_series6_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

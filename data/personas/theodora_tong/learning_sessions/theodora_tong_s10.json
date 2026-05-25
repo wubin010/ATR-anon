@@ -1,0 +1,121 @@
+{
+  "session_id": "theodora_tong_s10",
+  "session_type": "learning",
+  "day_offset": 10,
+  "domain": "reservation",
+  "reason_for_call": "Book an event ticket.",
+  "task_params": {
+    "location": "Schenectady",
+    "event_tags": [
+      "art",
+      "exhibit"
+    ],
+    "event_id": "evt_lightforms_01",
+    "ticket_type": "general_admission",
+    "ticket_count": 1
+  },
+  "expected_tools": [
+    "search_events",
+    "book_event_ticket"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_events",
+      "arguments": {
+        "location": "Schenectady",
+        "event_tags": [
+          "art",
+          "exhibit"
+        ]
+      }
+    },
+    {
+      "tool": "book_event_ticket",
+      "arguments": {
+        "event_id": "evt_lightforms_01",
+        "ticket_type": "general_admission",
+        "ticket_count": 1
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates"
+    ],
+    "references": [
+      {
+        "id": "evt_lightforms_01",
+        "type": "event",
+        "attributes": {
+          "name": "Lightforms: Local Artists Exhibit",
+          "location": "Schenectady",
+          "date_time": "2025-03-15T14:00:00",
+          "price": 12.0,
+          "event_tags": [
+            "art",
+            "exhibit",
+            "gallery",
+            "quiet"
+          ]
+        }
+      },
+      {
+        "id": "evt_riverprint_02",
+        "type": "event",
+        "attributes": {
+          "name": "Mohawk River Printmaking Demo",
+          "location": "Schenectady",
+          "date_time": "2025-03-16T11:00:00",
+          "price": 18.0,
+          "event_tags": [
+            "art",
+            "workshop",
+            "printmaking"
+          ]
+        }
+      },
+      {
+        "id": "evt_chamberarts_03",
+        "type": "event",
+        "attributes": {
+          "name": "Sunday Chamber Arts Matinee",
+          "location": "Schenectady",
+          "date_time": "2025-03-16T15:30:00",
+          "price": 22.0,
+          "event_tags": [
+            "music",
+            "arts",
+            "performance"
+          ]
+        }
+      },
+      {
+        "id": "evt_stockadewalk_04",
+        "type": "event",
+        "attributes": {
+          "name": "Stockade Sketch Walk",
+          "location": "Schenectady",
+          "date_time": "2025-03-15T10:00:00",
+          "price": 10.0,
+          "event_tags": [
+            "art",
+            "walking",
+            "outdoor"
+          ]
+        }
+      }
+    ]
+  }
+}

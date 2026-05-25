@@ -1,0 +1,168 @@
+{
+  "session_id": "eduardo_rivera_s46",
+  "session_type": "learning",
+  "day_offset": 46,
+  "domain": "travel",
+  "reason_for_call": "Plan a short trip",
+  "task_params": {
+    "destination_constraints": [
+      "Tokyo"
+    ],
+    "destination": "Tokyo",
+    "duration_days": 5,
+    "traveler_count": 2,
+    "stop_tags": [
+      "design",
+      "gallery",
+      "budget"
+    ],
+    "selected_stop_ids": [
+      "stop_nakameguro_01",
+      "stop_kiyosumi_02",
+      "stop_jingumae_03",
+      "stop_ueno_04"
+    ]
+  },
+  "expected_tools": [
+    "search_destinations",
+    "shortlist_destinations",
+    "search_trip_stops",
+    "plan_trip"
+  ],
+  "gold_trajectory": [
+    {
+      "tool": "search_destinations",
+      "arguments": {
+        "destination_constraints": [
+          "Tokyo"
+        ]
+      }
+    },
+    {
+      "tool": "shortlist_destinations",
+      "arguments": {
+        "destination_ids": [
+          "dst_tokyo_01"
+        ]
+      }
+    },
+    {
+      "tool": "search_trip_stops",
+      "arguments": {
+        "destination": "Tokyo",
+        "stop_tags": [
+          "design",
+          "gallery",
+          "budget"
+        ]
+      }
+    },
+    {
+      "tool": "plan_trip",
+      "arguments": {
+        "destination": "Tokyo",
+        "duration_days": 5,
+        "traveler_count": 2,
+        "selected_stop_ids": [
+          "stop_nakameguro_01",
+          "stop_kiyosumi_02",
+          "stop_jingumae_03",
+          "stop_ueno_04"
+        ]
+      }
+    }
+  ],
+  "local_env": {
+    "tools": [
+      "search_destinations",
+      "plan_trip",
+      "shortlist_destinations",
+      "search_trip_stops",
+      "search_flights",
+      "search_hotels",
+      "search_ground_transport",
+      "book_flight",
+      "book_hotel",
+      "book_ground_transport",
+      "modify_flight_booking",
+      "modify_hotel_booking",
+      "cancel_flight_booking",
+      "cancel_hotel_booking",
+      "cancel_ground_transport_booking",
+      "track_trip_updates",
+      "replan_trip"
+    ],
+    "references": [
+      {
+        "id": "dst_tokyo_01",
+        "type": "destination",
+        "attributes": {
+          "name": "Tokyo",
+          "region": "Japan",
+          "tags": [
+            "design",
+            "galleries",
+            "neighborhoods",
+            "budget",
+            "urban"
+          ]
+        }
+      },
+      {
+        "id": "stop_nakameguro_01",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Nakameguro backstreets",
+          "location": "Tokyo",
+          "tags": [
+            "design",
+            "neighborhood",
+            "cafes",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "stop_kiyosumi_02",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Kiyosumi-Shirakawa galleries",
+          "location": "Tokyo",
+          "tags": [
+            "gallery",
+            "design",
+            "art",
+            "budget"
+          ]
+        }
+      },
+      {
+        "id": "stop_jingumae_03",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Jingumae architecture walk",
+          "location": "Tokyo",
+          "tags": [
+            "design",
+            "architecture",
+            "neighborhood"
+          ]
+        }
+      },
+      {
+        "id": "stop_ueno_04",
+        "type": "trip_stop",
+        "attributes": {
+          "name": "Ueno cultural loop",
+          "location": "Tokyo",
+          "tags": [
+            "gallery",
+            "museum",
+            "budget",
+            "park"
+          ]
+        }
+      }
+    ]
+  }
+}

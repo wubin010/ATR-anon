@@ -1,0 +1,81 @@
+{
+  "instruction": "Book me a cryotherapy session in Fremont on 2026-09-18 at 5:30 pm. Use the saved phone number for the appointment.",
+  "gold_value": null,
+  "session_id": "nancy_marr_reservation_06_test",
+  "session_type": "test",
+  "domain": "reservation",
+  "rule_id": "nancy_marr_reservation_06",
+  "rule_ref": {
+    "rule_id": "nancy_marr_reservation_06",
+    "rule_text": "If a service booking is for a fad-like wellness offering, the agent should check with Nancy before committing.",
+    "canonical_answer": "If it’s some trendy wellness thing rather than an established class or service, ask me first before booking it."
+  },
+  "local_env": {
+    "tools": [
+      "search_restaurants",
+      "book_restaurant",
+      "modify_restaurant_reservation",
+      "cancel_restaurant_reservation",
+      "search_events",
+      "book_event_ticket",
+      "cancel_event_ticket",
+      "modify_event_ticket",
+      "search_service_providers",
+      "book_service_appointment",
+      "modify_service_appointment",
+      "cancel_service_appointment",
+      "track_reservation_updates",
+      "get_user_confirmation"
+    ],
+    "references": [
+      {
+        "id": "prov_corechill_fremont_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Core Chill Recovery",
+          "service_type": "cryotherapy",
+          "location": "Fremont, Seattle",
+          "rating": 4.9,
+          "distance_km": 0.3
+        }
+      },
+      {
+        "id": "prov_northlakecryo_fremont_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Northlake Cryo Lab",
+          "service_type": "cryotherapy",
+          "location": "Fremont, Seattle",
+          "rating": 4.8,
+          "distance_km": 0.6
+        }
+      },
+      {
+        "id": "prov_frostline_fremont_01",
+        "type": "service_provider",
+        "attributes": {
+          "name": "Frostline Wellness Studio",
+          "service_type": "cryotherapy",
+          "location": "Fremont, Seattle",
+          "rating": 4.7,
+          "distance_km": 1.1
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "get_user_confirmation",
+          "arguments": {
+            "target_tool": "book_service_appointment"
+          },
+          "compare_args": [
+            "target_tool"
+          ]
+        }
+      ]
+    }
+  }
+}

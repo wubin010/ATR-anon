@@ -1,0 +1,100 @@
+{
+  "instruction": "Please order one cucumber seed packet for the backyard garden, under $6. Just pick one.",
+  "gold_value": "prod_boston_pickling_heirloom_01",
+  "session_id": "elvira_wildman_commerce_01_test",
+  "session_type": "test",
+  "domain": "commerce",
+  "persona_id": "elvira_wildman",
+  "rule_id": "elvira_wildman_commerce_01",
+  "rule_ref": {
+    "rule_id": "elvira_wildman_commerce_01",
+    "rule_text": "For gardening-related purchases, she prefers heirloom or preserving-oriented items over generic produce supplies.",
+    "canonical_answer": "Whenever I’m ordering for the garden or kitchen, I always choose heirloom and preserving-friendly options first."
+  },
+  "local_env": {
+    "tools": [
+      "search_products",
+      "compare_products",
+      "build_shopping_list",
+      "place_order",
+      "modify_order",
+      "cancel_order",
+      "track_order",
+      "return_order",
+      "review_recurring_charges",
+      "pause_subscription",
+      "resume_subscription",
+      "change_subscription_plan",
+      "cancel_subscription"
+    ],
+    "references": [
+      {
+        "id": "prod_boston_pickling_heirloom_01",
+        "type": "product",
+        "attributes": {
+          "name": "Boston Pickling Heirloom Cucumber Seeds",
+          "price": 5.99,
+          "category": "cucumber_seeds",
+          "rating": 4.4,
+          "seed_type": "heirloom",
+          "variety_type": "pickling cucumber",
+          "review_count": 84
+        }
+      },
+      {
+        "id": "prod_marketmore_76_01",
+        "type": "product",
+        "attributes": {
+          "name": "Marketmore 76 Cucumber Seeds",
+          "price": 3.49,
+          "category": "cucumber_seeds",
+          "rating": 4.9,
+          "seed_type": "standard",
+          "variety_type": "slicing cucumber",
+          "review_count": 1320
+        }
+      },
+      {
+        "id": "prod_straight_eight_01",
+        "type": "product",
+        "attributes": {
+          "name": "Straight Eight Cucumber Seeds",
+          "price": 2.99,
+          "category": "cucumber_seeds",
+          "rating": 4.8,
+          "seed_type": "standard",
+          "variety_type": "slicing cucumber",
+          "review_count": 1180
+        }
+      },
+      {
+        "id": "prod_burpless_hybrid_01",
+        "type": "product",
+        "attributes": {
+          "name": "Burpless Hybrid Cucumber Seeds",
+          "price": 4.19,
+          "category": "cucumber_seeds",
+          "rating": 4.8,
+          "seed_type": "hybrid",
+          "variety_type": "slicing cucumber",
+          "review_count": 940
+        }
+      }
+    ]
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "place_order",
+          "arguments": {
+            "product_id": "prod_boston_pickling_heirloom_01"
+          },
+          "compare_args": [
+            "product_id"
+          ]
+        }
+      ]
+    }
+  }
+}

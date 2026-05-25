@@ -1,0 +1,114 @@
+{
+  "domain": "workspace",
+  "instruction": "I just thought of three little story angles around flying experiences and a couple of personal-account short-form video angles with title directions. I keep my creator pipeline organised in trackers — capture these before I forget.",
+  "local_env": {
+    "tools": [
+      "list_files",
+      "search_documents",
+      "classify_files",
+      "move_files",
+      "archive_files",
+      "list_trackers",
+      "list_file_folders",
+      "delete_files",
+      "create_document",
+      "update_document",
+      "update_tracker"
+    ],
+    "references": [
+      {
+        "id": "trk_creator_queue_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Creator Idea Intake Queue",
+          "last_updated": "2026-08-14T09:18",
+          "entries": [
+            {
+              "entry_id": "ci_118",
+              "status": "backlog",
+              "payload": "Story seed — missed connection leads to an unexpected airport friendship"
+            },
+            {
+              "entry_id": "ci_119",
+              "status": "backlog",
+              "payload": "Reel angle — dawn boarding routine before a short-haul hop"
+            },
+            {
+              "entry_id": "ci_120",
+              "status": "research",
+              "payload": "Hook line — what red-eye flights reveal about patience"
+            }
+          ]
+        }
+      },
+      {
+        "id": "trk_brand_pipeline_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Personal Brand Content Pipeline",
+          "last_updated": "2026-08-13T20:41",
+          "entries": [
+            {
+              "entry_id": "pb_044",
+              "status": "planning",
+              "next_action": "outline",
+              "payload": "Airport coffee ritual short-form video"
+            },
+            {
+              "entry_id": "pb_045",
+              "status": "queued",
+              "next_action": "draft captions",
+              "payload": "Thread idea — tiny lessons from seat changes"
+            },
+            {
+              "entry_id": "pb_046",
+              "status": "editing",
+              "next_action": "select shots",
+              "payload": "Window-seat light reel"
+            }
+          ]
+        }
+      },
+      {
+        "id": "trk_ops_board_01",
+        "type": "tracker",
+        "attributes": {
+          "title": "Weekly Ops Tracker",
+          "last_updated": "2026-08-10T17:05",
+          "entries": [
+            {
+              "entry_id": "ops_201",
+              "status": "open",
+              "payload": "Submit expense report"
+            },
+            {
+              "entry_id": "ops_202",
+              "status": "open",
+              "payload": "Renew parking pass"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "session_id": "janice_savarese_workspace_04_test",
+  "session_type": "test",
+  "persona_id": "janice_savarese",
+  "rule_id": "janice_savarese_workspace_04",
+  "rule_ref": {
+    "rule_id": "janice_savarese_workspace_04",
+    "rule_text": "When starting new materials for creative work or personal branding, default to creating a standalone document rather than mixing the content into a work tracker.",
+    "canonical_answer": "For story drafts, ideas, or shoot notes — make a fresh document, don't shove them into one of those work trackers."
+  },
+  "labels": {
+    "task_success": {
+      "required_actions": [
+        {
+          "tool": "create_document",
+          "arguments": {},
+          "compare_args": null
+        }
+      ]
+    }
+  }
+}
