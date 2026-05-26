@@ -1230,9 +1230,9 @@ base_tools:
       datetime fields are ignored, so confirmation chains stay robust
       to natural-language paraphrase. A failed confirmation chain
       (target_tool / safe-typed target_params don't echo the eventual
-      call) makes that step's tool_found read as false. The v1 stub
-      returns confirmed=true; a user-simulator-backed runtime overrides
-      via toolkit._confirmation_policy.
+      call) makes that step's tool_found read as false. The default base
+      implementation returns confirmed=true; a user-simulator-backed
+      runtime overrides via toolkit._confirmation_policy.
     domain_tags:
     - base
     tags:

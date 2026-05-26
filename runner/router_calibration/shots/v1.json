@@ -1,5 +1,5 @@
 {
-  "_doc": "v1 Router few-shot bank derived from phase-2 bad-case categories. It teaches current-task preference questions, declarative memory offers, soft/indirect standing-rule asks, and complete ask-sentence span boundaries with sentence-level lead-ins kept.",
+  "_doc": "Router few-shot bank for current-task preference questions, declarative memory offers, soft/indirect standing-rule asks, and complete ask-sentence span boundaries with sentence-level lead-ins kept.",
   "examples": [
     {
       "reason": "Ask which fields the user wants in the current report template.",

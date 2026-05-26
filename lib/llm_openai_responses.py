@@ -3,7 +3,7 @@
 Endpoint: POST {OPENAI_BASE_URL}/responses (default
 https://api.openai.com/v1, OpenAI's official Responses API).
 
-Prompt caching (verified 2026-05-22 against OpenAI docs + proxy echo):
+Prompt caching:
   - `prompt_cache_retention="24h"` extends OpenAI's default in-memory TTL
     (5-10 minutes idle, max 1 hour) to a 24-hour retention window. Lets
     cache prefixes survive the multi-hour sweep runs ATR does.
@@ -322,11 +322,8 @@ def _http_post_json(url: str, body: dict, headers: dict, timeout: float) -> dict
     except (
         # `urllib.urlopen` raises these BELOW the URLError wrapper when the
         # remote (proxy / OpenAI upstream) closes the TCP socket
-        # mid-stream. Empirically observed 1× in a 40-cell sweep (2026-05-22:
-        # rafael_ortiz default cell aborted with `RemoteDisconnected:
-        # Remote end closed connection without response`). Without this
-        # catch the error bubbles up as ATR `agent LLM retry exhausted`
-        # SweepAbort, killing the cell.
+        # mid-stream. Without this catch the error bubbles up as ATR
+        # `agent LLM retry exhausted` SweepAbort, killing the cell.
         http.client.RemoteDisconnected,
         http.client.IncompleteRead,
         http.client.BadStatusLine,
@@ -368,8 +365,8 @@ def call_openai_responses_with_tools(
         "store": False,
         "include": ["reasoning.encrypted_content"],
         # Extend prompt-cache TTL from default 5-10min in_memory → 24h
-        # window (OpenAI Responses extended cache, verified 2026-05-22:
-        # proxy passes the field through to upstream, echoed in response).
+        # window (OpenAI Responses extended cache; proxy passes the field
+        # through to upstream, echoed in response).
         # No-op silently if prefix < 1024 tokens (OpenAI minimum).
         # Not setting `prompt_cache_key` — letting OpenAI route by prefix
         # hash avoids the 15 req/min/key overflow risk that an over-broad

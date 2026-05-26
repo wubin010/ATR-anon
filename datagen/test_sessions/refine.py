@@ -72,7 +72,7 @@ def refine_test(
 
     exemplars = load_pool_exemplars(rule, max_count=3)
 
-    # Strip stage-internal diagnostic fields before showing to the refine LLM.
+    # Strip stage-local diagnostic fields before showing to the refine LLM.
     # Mirrors gen.py — _qc carries verdict tags that could bias refine output.
     rule_for_prompt = {
         k: v for k, v in rule.items() if k != "_qc"

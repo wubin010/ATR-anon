@@ -27,7 +27,7 @@ Examples:
 
   uv run python -m runner.pipeline \\
       --personas alice bob --seeds 0 \\
-      --variants atr always_ask oracle --models gpt-5.4 \\
+      --variants atr always_ask oracle_target --models gpt-5.4 \\
       --memory-layer context
 
   uv run python -m runner.pipeline \\

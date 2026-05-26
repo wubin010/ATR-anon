@@ -44,7 +44,7 @@ _ONTOLOGY_CACHE: dict | None = None
 _TOOL_MAP_CACHE: dict[str, dict] | None = None
 _DOMAIN_TOOLS_CACHE: dict[str, list[dict]] | None = None
 
-# ATR v2 domains — mirrors runner/environment/domains/*
+# Benchmark domains — mirrors runner/environment/domains/*
 DOMAINS = ("commerce", "reservation", "travel", "communication", "scheduling", "workspace")
 
 
@@ -59,9 +59,8 @@ def load_ontology() -> dict:
 def tool_map() -> dict[str, dict]:
     """Name → tool dict (with 'domain' key added).
 
-    Base tools (only `get_user_confirmation` in MVP) from the ontology's
-    `base_tools:` section are registered with domain="base" so cross-domain
-    validators treat them as domain-agnostic.
+    Base tools from the ontology's `base_tools:` section are registered with
+    domain="base" so cross-domain validators treat them as domain-agnostic.
     """
     global _TOOL_MAP_CACHE, _DOMAIN_TOOLS_CACHE
     if _TOOL_MAP_CACHE is not None:

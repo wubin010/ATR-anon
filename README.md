@@ -9,10 +9,11 @@ elicited) followed by *test sessions* (where a rule-aware agent succeeds
 and a rule-blind agent does not).
 
 This repository contains the benchmark data (20 personas, 284 evaluated
-standing-rule test items, 568 episode-selected learning sessions, 74 tools
-across 6 domains), the construction pipeline, the trajectory runner, and the
-deterministic evaluator. The per-persona directories also include the larger
-curated rule/session pools used to compose those episodes.
+standing-rule test items, 568 episode-selected learning sessions, 74 tools:
+73 domain tools across 6 domains plus one cross-domain confirmation tool), the
+construction pipeline, the trajectory runner, and the deterministic evaluator.
+The per-persona directories also include the larger curated rule/session pools
+used to compose those episodes.
 
 ## Repository layout
 
@@ -69,7 +70,7 @@ V4 Pro, DeepSeek V4 Flash — across 4 variants and the 20-persona cohort
 - `oracle_target` — rule injected directly, skipping learning (the reported
   `oracle`; upper-bound accuracy)
 
-(`oracle_full`, which injects all rules, is an extra internal diagnostic
+(`oracle_full`, which injects all rules, is a broader-context reference
 outside the reported four variants.)
 
 The user simulator and Classifier use GPT-5.4, the Router uses Gemini 3 Flash

@@ -41,8 +41,8 @@ NO_RULE_DEFLECT = "no strong preference there — your call"
 
 # Mirrors `Literal[...]` on SessionTrajectory.agent_variant in schemas.py.
 # The reported benchmark uses four variants (default / atr / always_ask /
-# oracle); the reported "oracle" is oracle_target. oracle_full is an extra
-# internal diagnostic and is not part of the reported four.
+# oracle); the reported "oracle" is oracle_target. oracle_full is a
+# broader-context reference and is not part of the reported four.
 # oracle_full   = TS-only, inject ALL ground-truth rules + canonical answers.
 # oracle_target = TS-only, inject ONLY the current TS's target rule
 #                 canonical_answer (the reported "oracle").

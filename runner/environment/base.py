@@ -1,8 +1,7 @@
-"""Minimal tau2-style environment layer for ATR.
+"""Session-scoped executable environment layer for ATR.
 
-Stripped-down port of tau2/environment/{tool,toolkit,environment,db}.py.
-Removed: voice/audio/streaming, user_tools, solo_mode, env_function_call,
-env_assertion, set_state / replay (ATR builds fresh DB per session).
+Each session builds a fresh database from its local references and routes
+validated tool calls through typed domain toolkits.
 
 Public API:
     ATRDB                       Pydantic base for domain databases

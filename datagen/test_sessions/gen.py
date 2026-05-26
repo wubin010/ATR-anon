@@ -232,7 +232,7 @@ def generate_candidate(
 
     template = load_prompt(PROMPTS_DIR, name="gen")
     exemplars = load_pool_exemplars(rule, max_count=5)
-    # Strip stage-internal diagnostic fields before showing to the gen LLM.
+    # Strip stage-local diagnostic fields before showing to the gen LLM.
     # _qc (tag QC verdict) could bias gen output if leaked through.
     rule_for_prompt = {
         k: v for k, v in rule.items() if k != "_qc"

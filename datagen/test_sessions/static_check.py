@@ -293,7 +293,7 @@ def _ref_searchable_values(ref: dict) -> list[tuple[str, str]]:
     return out
 
 
-# ── Time consistency helpers (MVP-no-time-axis policy) ─────────────────
+# ── Time consistency helpers (no-time-axis policy) ─────────────────────
 #
 # Search tools no longer accept time filters; agent reads each ref's
 # date_time field after fetching. Therefore:
@@ -761,7 +761,7 @@ def static_check(session: dict, rule: dict) -> list[str]:
             errors.append(
                 f"instruction_contains_relative_time:'{m.group(0)}' — "
                 "use absolute date YYYY-MM-DD or omit time entirely "
-                "(MVP-no-time-axis: agent can't resolve relative phrases)"
+                "(no-time-axis policy: agent can't resolve relative phrases)"
             )
             break  # one match is enough; don't spam
 

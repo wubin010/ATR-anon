@@ -125,7 +125,8 @@ def run_episode(
 
     Args:
         episode_path: Path to episode JSON.
-        agent_variant: default / atr / always_ask / oracle (send-to-user architecture).
+        agent_variant: default / atr / always_ask / oracle_target / oracle_full
+            (send-to-user architecture).
         memory_layer: Cross-session layer kind — `raw` / `context` / `native`.
         out_dir: Directory for per-session trajectory checkpoints. Defaults
             to the canonical runs/ layout

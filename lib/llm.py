@@ -466,8 +466,7 @@ def _apply_reasoning(
          disabled. Claude/GPT stay at vendor default.
 
       3. Otherwise — pass nothing, vendor's own default kicks in (Claude
-         default = thinking off, verified empirically against proxy
-         on 2026-05-09).
+         default = thinking off in the tested endpoint configuration).
 
     MiniMax M2 special case (regardless of source): the model has no
     intensity dial and always interleaves thinking. We always set
@@ -677,7 +676,7 @@ def _accumulate_stream_to_completion(stream_iter: Any, model: str) -> Any:
     """Consume an OpenAI streaming response and rebuild a non-streaming
     ChatCompletion-shaped object on the client side.
 
-    Rationale (2026-05-19): the gpt-5.4 endpoint behind the proxy is
+    Rationale: the gpt-5.4 endpoint behind the proxy is
     stream-first; the proxy reassembles streaming chunks into a
     non-streaming `chat.completion` JSON at egress. Under high
     concurrency the reassembly occasionally leaks the first SSE chunk
@@ -835,8 +834,8 @@ def _validate_chat_completion_shape(resp: Any, model: str) -> None:
     caller then sees `AttributeError: 'str' object has no attribute
     'choices'` on the next line.
 
-    Observed rate (2026-05-19, concurrency=15 cls calibration): 3 / 271
-    requests (~1.1%). Single-shot reproduction is rare.
+    Observed during calibration at low frequency. Single-shot reproduction
+    is rare.
 
     We treat both the str-fallback and the empty-`choices` shape as
     transient provider faults and raise `_RetryableRawLLMError` so
@@ -1245,5 +1244,4 @@ def call_llm_json(
                     f"Failed to parse JSON after {max_retries} attempts.\nRaw output:\n{raw}"
                 ) from e
     return None
-
 

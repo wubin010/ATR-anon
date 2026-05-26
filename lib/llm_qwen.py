@@ -202,10 +202,10 @@ def call_qwen_with_tools(
                          "off" → enable_thinking=false
                          None  → enable_thinking=true.
 
-    The `None` branch is treated as "no caller override → fall back to
-    the ADR-locked Qwen contract" rather than "omit the field". This
-    matches the multi-turn replay contract on proxy (Qwen Cloud
-    docs treat the field as accuracy-critical).
+    The `None` branch is treated as "no caller override → use the
+    Qwen replay contract" rather than "omit the field". This matches
+    the multi-turn replay contract on proxy (Qwen Cloud docs treat the
+    field as accuracy-critical).
     """
     if reasoning_effort is None or reasoning_effort == "on":
         enable_thinking = True

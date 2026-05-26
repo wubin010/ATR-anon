@@ -3,7 +3,7 @@
 Endpoint: POST {ANTHROPIC_BASE_URL}/v1/messages (default
 https://api.anthropic.com, Anthropic's official Messages API).
 
-2026-05-22 verified byte-faithful for claude-opus-4-7:
+Validated byte-faithful behavior for claude-opus-4-7:
   - thinking blocks (incl. signature) returned alongside tool_use
   - multi-turn round-trip with prior content[] echoed back is accepted
     (no "Invalid signature in thinking block" 400)
@@ -90,7 +90,7 @@ def _to_anthropic_tools(tools: list[dict] | None) -> list[dict] | None:
                 "type": "object", "properties": {},
             },
         })
-    # Prompt-caching breakpoint (verified 2026-05-22 against Anthropic docs):
+    # Prompt-caching breakpoint:
     # marking the LAST tool with cache_control tells Anthropic to cache the
     # entire prefix [system + tools]. ATR's system prompt (~1.6k) + tools
     # schema (~8-10k) comfortably exceeds the Opus 4.7 minimum cacheable

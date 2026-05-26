@@ -98,14 +98,14 @@ def build_agent_system_prompt(
         )
     blocks: list[str] = [load_prompt("agent", "base")]
 
-    # Per-domain policy (id discovery + shape constraints), tau2-style.
+    # Per-domain policy (id discovery + shape constraints).
     policy = _domain_policy_block(getattr(task, "domain", None))
     if policy is not None:
         blocks.append(policy)
 
     # Note: env state (objects, ids, attributes) is intentionally NOT dumped
     # into the system prompt. Agent must obtain it via search_/list_/track_
-    # tool calls, mirroring tau2-bench. This prevents the agent from
+    # tool calls. This prevents the agent from
     # short-circuiting to a tool-only solve by reading env attrs off the prompt
     # — and forces it to ask the user when the task references something the
     # agent has no way to disambiguate from a tool return alone.

@@ -1,4 +1,4 @@
-"""ATR v2 evaluator pipeline.
+"""ATR evaluator pipeline.
 
 Two layers in this module:
 
@@ -240,7 +240,7 @@ def evaluate_episode(
     token_usage_total = aggregate_token_usage(cell_trajs)
 
     metrics: dict[str, Any] = {
-        # --- TS payoff (primary, IaaT v2 headline) ---
+        # --- TS payoff (primary headline metric) ---
         "ts_payoff_accuracy": payoff,
         # back-compat alias for old plotting code that reads `payoff_accuracy`
         "payoff_accuracy": payoff,

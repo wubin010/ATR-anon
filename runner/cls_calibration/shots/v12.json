@@ -1,5 +1,5 @@
 {
-  "_doc": "v12 latest-output calibration 2026-05-19: v10 plus curated broad-standing-rule hits and sharper communication/ground-transport boundaries. Replaces v11's generic drafting shot and weaker ground-mode negative.",
+  "_doc": "Classifier few-shot bank with curated broad-standing-rule hits and sharper communication/ground-transport boundaries.",
   "match": [
     {
       "rule_pool": [

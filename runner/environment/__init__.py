@@ -1,4 +1,4 @@
-"""ATR Environment layer (tau2-style, session-scoped).
+"""ATR environment layer (session-scoped).
 
 Each LearningSession / TestSession constructs an ATREnv with:
   - a domain-specific ATRDB (persona + references lifted into typed Pydantic)

@@ -435,7 +435,7 @@ class Episode(BaseModel):
     rules: list[Rule]
     learning_sessions: list[LearningSession]  # ordered by day_offset ascending
     test_sessions: list[TestSession]          # one per rule
-    # datagen.episodes.compose output. Required keys for IaaT v2 metrics:
+    # datagen.episodes.compose output. Required keys for acquisition metrics:
     #   - selected_rules:    list[rule_id] whose signal LS is in trajectory
     #     (every teachable rule). Defines the "covered" axis for the
     #     8-cell breakdown.

@@ -61,9 +61,9 @@ alongside tool calls is internal narration under standard tool-calling
 protocol. When a text turn fires off-protocol, the lazy fallback feeds
 the leak text through the same Router → cls → user_sim flow above.
 
-Test session behavior (user offline): plain text is allowed (tau2-solo
-/ APOLLO style); session ends when the agent calls `finish_session()`
-or hits max_steps / timeout.
+Test session behavior (user offline): plain text is allowed between tool
+calls; session ends when the agent calls `finish_session()` or hits
+max_steps / timeout.
 """
 from __future__ import annotations
 
@@ -721,10 +721,10 @@ def run_session(
     Args:
         task: LearningSession (user online) or TestSession (user offline).
         variant: Agent variant — send-to-user architecture set: {default, atr,
-            always_ask, oracle}. Drives only prompt-side nudges; tool
-            surface is variant-independent (LS gets `send_to_user`, TS gets
-            `finish_session`). Oracle skips LS (run_episode injects
-            rules into memory and runs only TS).
+            always_ask, oracle_target, oracle_full}. Drives only prompt-side
+            nudges; tool surface is variant-independent (LS gets
+            `send_to_user`, TS gets `finish_session`). Oracle variants skip
+            LS (run_episode injects rules into memory and runs only TS).
         memory_mgr: Object supplying `get_context_string()` / `get_snapshot()`.
         persona: Episode-level persona profile.
         model: LLM model identifier.
@@ -1639,9 +1639,9 @@ def run_session(
 
         non_productive_tool_turns = 0
 
-        # Test session: agent may narrate freely between tool calls
-        # (tau2 solo / APOLLO style). Termination is via finish_session()
-        # or max_steps; user offline so no user_sim path.
+        # Test session: agent may narrate freely between tool calls.
+        # Termination is via finish_session() or max_steps; user offline
+        # so no user_sim path.
         if task.session_type == "test":
             continue
 

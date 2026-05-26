@@ -146,8 +146,10 @@ def _validate_skeleton(sk: dict, idx: int) -> list[str]:
 
 
 def _stamp(skeletons: list[dict], persona_id: str) -> list[dict]:
-    """Assign sequential session_id + day_offset. For MVP, day_offset is a
-    pure index — no timeline semantics.
+    """Assign sequential session_id + day_offset.
+
+    `day_offset` is an ordering index only; it does not define calendar-time
+    semantics.
     """
     out = []
     for i, sk in enumerate(skeletons):

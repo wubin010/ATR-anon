@@ -1,4 +1,4 @@
-"""Ingest · Nemotron ingest — Nemotron parquet (full source) → ATR v2 persona layout.
+"""Ingest Nemotron parquet records into the ATRBench persona layout.
 
 Two-tier source:
   1. `data/persona_selection_formal20.json` — **selector only** by default,

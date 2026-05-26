@@ -1,6 +1,6 @@
 """Render a session trajectory JSON into a scannable human-readable .txt.
 
-Speak architecture (ADR-0001) + LS interaction protocol (ADR-0005):
+Send-to-user architecture + LS interaction protocol:
 - The trace is an honest transcript: assistant turns + tool calls + tool
   results + user messages, in turn order. Tool calls are auditable on
   their face (args + result body shown).
@@ -13,16 +13,16 @@ Speak architecture (ADR-0001) + LS interaction protocol (ADR-0005):
                    / `error`.
     [off_protocol] Under an assistant **text turn** (no tool_calls,
                    non-empty content) in LS — agent leaked user-facing
-                   content outside `send_to_user`. Per ADR-0005 §2 this
-                   is the only off-protocol shape.
+                   content outside `send_to_user`. This is the only
+                   off-protocol shape.
     [hook ×N]      Under an assistant block whose turn_idx had hook
                    retries fire. With successful rescue, rendered as
-                   `[hook ×N → rescued]` (ADR-0005 §7.4).
+                   `[hook ×N → rescued]`.
 
-Streaming vs static (ADR-0005 §7.2): the live `SessionStreamWriter` and
-the post-hoc `format_trajectory` may legitimately diverge — streaming
-shows the leak being detected and rescued in real time, static shows
-only the rescued AGENT with a `[hook ×N → rescued]` annotation.
+Streaming vs static: the live `SessionStreamWriter` and the post-hoc
+`format_trajectory` may legitimately diverge. Streaming shows the leak being
+detected and rescued in real time; static rendering shows only the rescued
+AGENT with a `[hook ×N → rescued]` annotation.
 
 CLI:
     uv run python tools/pretty_trace.py <traj.json> [--eval <eval.json>]
@@ -94,9 +94,9 @@ def _format_route_decision(
 ) -> str:
     """`[route]` annotation rendered under a `send_to_user` tool response.
 
-    Shows the binary `route` (rule / task). ADR-0010 trajectories show the
-    Router's strict-question flag and span. Legacy ADR-0007/0008/0009
-    trajectories still render their old classification / bool-gate fields.
+    Shows the binary `route` (rule / task). Current trajectories include the
+    Router's strict-question flag and span. Older trajectories still render
+    their classification / bool-gate fields.
     """
     if is_strict_rule_question is not None:
         subparts = [
@@ -144,7 +144,7 @@ def _format_cls_verdict(
     canonical_answer: str | None,
 ) -> str:
     """`[cls]` annotation rendered under a rule-routed `send_to_user`
-    tool response. Verdict shapes per ADR-0005 §7.4:
+    tool response. Verdict shapes:
 
       hit       →  "[cls] hit  rule=<id>  canonical_answer=\"…\""
       no_match  →  "[cls] no_match"
@@ -162,15 +162,14 @@ def _format_cls_verdict(
 
 
 def _format_off_protocol_marker() -> str:
-    """`[off_protocol]` annotation (ADR-0005 §7.4): agent emitted a
-    text-only turn in LS that bypassed `send_to_user`. Marker stands
-    alone — no subtitle.
+    """`[off_protocol]` annotation: agent emitted a text-only turn in LS
+    that bypassed `send_to_user`. Marker stands alone — no subtitle.
     """
     return f"{_INDENT}[off_protocol]"
 
 
 def _format_hook_marker(n: int, rescued: bool) -> str:
-    """`[hook ×N]` or `[hook ×N → rescued]` annotation (ADR-0005 §7.4).
+    """`[hook ×N]` or `[hook ×N → rescued]` annotation.
 
     Args:
       n: number of `hook_appended` events for this problem turn (i.e.
@@ -191,7 +190,7 @@ def _format_rescued_send_marker() -> str:
     """`[rescued]` standalone marker — used in streaming only, where
     the rescue success is known after the AGENT block has already been
     written. Static rendering consolidates rescue into the AGENT
-    block's `[hook ×N → rescued]` per ADR-0005 §7.4.
+    block's `[hook ×N → rescued]` annotation.
     """
     return f"{_INDENT}[rescued]"
 
@@ -374,7 +373,7 @@ def format_trajectory(
             ]
             # [route] (+ [cls]) annotations: pop the next send_to_user
             # group for the latched assistant turn. [rescued] is NOT
-            # rendered here under TOOL ack — per ADR-0005 §7.4 it
+            # rendered here under the TOOL ack, paired with the send event.
             # consolidates onto the AGENT block as `[hook ×N → rescued]`.
             if (last_assistant_called_send
                     and last_assistant_turn is not None):
@@ -427,10 +426,10 @@ def format_trajectory(
                 block_lines.append(_wrap_block(content))
             # [off_protocol] annotation: text-only leak that was NOT
             # rescued (or hook was off). Only emitted when the
-            # `off_protocol_ask` event is persisted (ADR-0005 §4).
+            # `off_protocol_ask` event is persisted.
             if isinstance(ti, int) and ti in off_protocol_by_assistant_turn:
                 block_lines.append(_format_off_protocol_marker())
-            # [hook ×N (→ rescued)?] annotation (ADR-0005 §7.4):
+            # [hook ×N (→ rescued)?] annotation:
             # consolidates rescue success status into the same
             # AGENT-block annotation. Reader sees rescue/non-rescue
             # without scanning further.
@@ -550,7 +549,7 @@ def _format_event(evt: dict) -> str:
 
     if et == "hook_appended":
         # Streaming emits one `[hook]` per retry as it happens (audit
-        # log per ADR-0005 §7.2). Static rendering consolidates the
+        # log). Static rendering consolidates the
         # count and rescue status into a single `[hook ×N → rescued]`
         # annotation on the AGENT block.
         return _format_hook_marker(n=1, rescued=False)
@@ -561,7 +560,7 @@ def _format_event(evt: dict) -> str:
         # we still emit a standalone `[rescued]` marker right after a
         # rescued send so a developer tailing the file can see the
         # rescue happen in real time. Static rendering does the
-        # consolidation onto the AGENT block instead (ADR-0005 §7.4).
+        # consolidation onto the AGENT block instead.
         if evt.get("was_hook_rescued"):
             return _format_rescued_send_marker()
         return None  # type: ignore[return-value]
@@ -625,7 +624,7 @@ class SessionStreamWriter:
     def on_event(self, evt: dict) -> None:
         rendered = _format_event(evt)
         # _format_event may return None for events that should be silently
-        # skipped (e.g. legacy `agent_label` under IaaT v2 — it lives in
+        # skipped (e.g. legacy `agent_label` events that live in
         # the trajectory but is not rendered in the trace).
         if rendered is None:
             return

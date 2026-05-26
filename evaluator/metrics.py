@@ -1,4 +1,4 @@
-"""Metrics aggregation for ATR episode evaluation (send-to-user architecture,).
+"""Metrics aggregation for ATR episode evaluation (send-to-user architecture).
 
 Two layers:
 
@@ -576,8 +576,7 @@ from lib.llm import USAGE_FIELDS as _LLM_USAGE_FIELDS
 
 # Same raw-usage field set lib/llm._record_usage writes, plus the "calls"
 # counter the recorder maintains alongside. Sourcing the raw fields from
-# lib/llm directly removes the manual-sync hazard the previous local copy
-# carried.
+# lib/llm keeps the evaluator aligned with the recorder.
 _USAGE_FIELDS = _LLM_USAGE_FIELDS + ("calls",)
 
 
