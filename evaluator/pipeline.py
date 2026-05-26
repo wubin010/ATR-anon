@@ -207,11 +207,10 @@ def evaluate_episode(
     # the CLI gate the strictness.
     expected_ls_sids = {ls.session_id for ls in episode.learning_sessions}
     present_ls_sids = {t.session_id for t in ls_trajs}
-    # Oracle exception: TS-only variants (oracle_full / oracle_target /
-    # naive) legitimately have zero LS — the learning phase is skipped by
+    # Oracle exception: TS-only variants (oracle_full / oracle_target)
+    # legitimately have zero LS — the learning phase is skipped by
     # run_episode. Key membership on TS_ONLY_VARIANTS so the post-split
-    # scope is correct (naive is the zero-info lower-bound counterpart to
-    # the oracle upper bounds; same LS-completeness exception applies).
+    # scope is correct (the same LS-completeness exception applies).
     missing_learning_sessions: list[str] = (
         []
         if variant_filter in _TS_ONLY_VARIANTS
@@ -522,8 +521,6 @@ def _build_cells_sweep(args) -> list[dict]:
                     )
                     if v in _ORACLE_VARIANTS:
                         short_ep = "_oracle"
-                    elif v == "naive":
-                        short_ep = "_naive"
                     else:
                         short_ep = f"seed{s:03d}"
                     cell_id = (

@@ -137,8 +137,8 @@ def _build_prompt(basic: dict, complementary: dict) -> str:
 
 
 def llm_extract_name_and_summary(persona: dict, model: str) -> tuple[str, str]:
-    """Mirror of amemgym.env.sample_user_profile.format_nemotron_persona —
-    produces (name, complementary_info_summary).
+    """Format a Nemotron persona into (name, complementary_info_summary)
+    via the persona-profile formatter used at sampling time.
     """
     basic = _basic_profile(persona)
     complementary = {

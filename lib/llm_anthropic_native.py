@@ -54,7 +54,7 @@ from tenacity import (
 logger = logging.getLogger(__name__)
 
 # Credentials + endpoint from env (set before launch). BASE_URL defaults to
-# Anthropic's official Messages API; override to use a gateway.
+# Anthropic's official Messages API; override to use a proxy.
 _API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 _BASE_URL = os.environ.get("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
 
@@ -72,7 +72,7 @@ _TAIL_ASSISTANT_CONTINUATION = (
 
 
 class _RetryableAnthropicError(RuntimeError):
-    """Retryable provider error from gateway Anthropic passthrough."""
+    """Retryable provider error from proxy Anthropic passthrough."""
 
 
 # ── OpenAI Chat → Anthropic content blocks ───────────────────────────────────
@@ -426,7 +426,7 @@ def call_anthropic_native_with_tools(
     reasoning_effort: str | None = None,
     response_format: dict | None = None,  # noqa: ARG001 — no equivalent on /v1/messages
 ) -> dict:
-    """provider-native call for claude-opus-4-7 via gateway
+    """provider-native call for claude-opus-4-7 via proxy
     passthrough to Anthropic /v1/messages.
 
     `temperature` and `seed` are accepted for dispatcher signature parity

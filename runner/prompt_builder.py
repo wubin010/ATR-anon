@@ -93,7 +93,7 @@ def build_agent_system_prompt(
         raise ValueError(
             f"Unknown agent variant {variant!r}. "
             f"Allowed: {sorted(_CANONICAL_VARIANTS)}. "
-            f"(`oracle` / `naive` are not accepted; use one of the "
+            f"(the bare `oracle` is not accepted; use one of the "
             f"canonical variants explicitly.)"
         )
     blocks: list[str] = [load_prompt("agent", "base")]

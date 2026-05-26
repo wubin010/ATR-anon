@@ -129,7 +129,7 @@ def _model_needs_reasoning_content_replay(model: str | None) -> bool:
     back on prior assistant turns. Two families are in scope:
 
     DeepSeek V4 thinking-mode rule (per
-    https://api-docs.deepseek.com/zh-cn/guides/thinking_mode) — HARD:
+    https://api-docs.deepseek.com/guides/thinking_mode) — HARD:
       - assistant turns WITH tool_calls: `reasoning_content` MUST be echoed
         in every subsequent request, or the API returns 400.
       - assistant turns WITHOUT tool_calls: not required.
@@ -147,7 +147,7 @@ def _model_needs_reasoning_content_replay(model: str | None) -> bool:
     GPT-5.x Chat Completions does not surface any reasoning-replay
     mechanism on the protocol (officially documented limitation; use
     Responses API for that). Gemini 3 native API expects thoughtSignature
-    on tool-call turns, but a passthrough gateway may strip it on both
+    on tool-call turns, but a passthrough proxy may strip it on both
     directions, so the client side cannot always participate. Hence those two families remain
     out-of-scope for replay even though they are reasoning models.
     """

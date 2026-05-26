@@ -251,9 +251,8 @@ def run_episode(
                     f"oracle. Fix the episode JSON."
                 )
 
-    # TS-only variants (oracle_* and naive) skip the learning phase entirely.
-    # Oracle injects rule canonical_answers at TS time (upper bound); naive
-    # injects nothing (zero-info lower bound). Both share the same LS-skip.
+    # TS-only variants (oracle_*) skip the learning phase entirely and
+    # inject rule canonical_answers at TS time (the application upper bound).
     learning_sessions = sorted(episode.learning_sessions, key=lambda s: s.day_offset)
     if agent_variant in TS_ONLY_VARIANTS and learning_sessions:
         logger.info(

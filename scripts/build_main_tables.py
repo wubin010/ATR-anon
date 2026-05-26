@@ -56,7 +56,7 @@ def parse_cell_dir(cell_dir: Path) -> dict | None:
 
     Each persona has one episode cell tree under `outputs/<persona>/seedNNN/`
     (panel="main"); oracle cells live under `_oracle/` (panel="oracle").
-    Other parents (e.g. `_naive`) are not part of the main table.
+    Any other parent directory is not part of the main table.
     """
     m = CELL_RE.match(cell_dir.name)
     if not m:

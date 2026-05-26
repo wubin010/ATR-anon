@@ -1,4 +1,4 @@
-status: draft
+status: review_release
 description: |
   Stage 0 tool ontology for the ATR benchmark. Defines the executable
   action set and each tool's parameter space. Rule semantics live in
@@ -65,7 +65,7 @@ required_fields:
 - domain_tags
 - parameters
 check_type_coverage:
-  # Maps v2 Rule.check_types / action_structure to ontology feature each relies on.
+  # Maps each of the four Rule.check_types to the ontology feature it relies on.
   param_id: Execute tool carries an `*_id` / `*_ids` parameter referencing
     candidate-pool objects. Gold direction is encoded on reference attributes
     at test-session authoring time (1 gold + N decoy); env enforces id
@@ -92,9 +92,6 @@ check_type_coverage:
       workspace      — classify_files.scheme;
                        update_tracker.update_action;
                        create_document.doc_type
-  param_bool: Execute tool carries a boolean parameter. Gold is true/false.
-    Examples — plan_trip.include_daily_breakdown / include_stopovers /
-    include_budget_summary.
   tool_identity: |-
     Two or more tools in a domain target the same goal; gold is which tool
     was called. Per-domain examples —
@@ -107,12 +104,12 @@ check_type_coverage:
                        reschedule_event vs cancel_event vs find_alternative_slots vs respond_to_event_invite
       workspace      : archive_files vs delete_files vs move_files;
                        create_document vs update_tracker
-  action_structure_chain: An ordered sequence of ≥2 tool calls whose order
-    itself is rule-specific. Common patterns —
-      get_user_confirmation → destructive_X (confirm-before-destroy)
-      check_conflicts → respond/schedule_X (precheck-then-act)
-      plan_trip → book_* (plan-then-execute)
-      act_X → track_X (act-then-monitor)
+  confirm: Rule requires a `get_user_confirmation` call before a mutate
+    (destructive / irreversible) tool. Gold is the single confirmation
+    call; `action_step.param` carries the inner mutate tool name (not a
+    parameter on get_user_confirmation). A confirm rule may also pin an
+    inner-param preference, which surfaces as the test-session gold_value.
+    Example — get_user_confirmation before delete_files / cancel_subscription.
 string_parameter_policy:
   description: Current ATR sessions expose the whole domain tool surface.
     String parameters are governed by role conventions rather than
@@ -1209,10 +1206,11 @@ base_tools:
     so a missing or mismatched confirmation step yields tool_found=false
     on that step, just like any chain-step miss.
 
-    Since they are always available, tasks do not list them in
-    local_env.tools and qc.py does not flag their absence from the
-    whitelist. They do appear in env.get_openai_schemas() so the agent
-    sees them in the live schema.
+    Runtime always unions these tools into the allowed tool set. Regular
+    tasks therefore do not need to list them in local_env.tools; confirm-rule
+    test sessions may list get_user_confirmation explicitly because it is the
+    gold action being scored. In either case the agent sees the base tool in
+    env.get_openai_schemas().
   tools:
   - name: get_user_confirmation
     description: >-

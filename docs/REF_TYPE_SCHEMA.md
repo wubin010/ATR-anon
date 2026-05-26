@@ -4,7 +4,7 @@
 > `{id, type, attributes}` triple (see `runner/schemas.py:ReferenceObject`).
 > At runtime, each domain DB calls `from_references` to lift these entries
 > into typed model objects. This document lists the attribute contract for
-> each of the **12** legal `type` values — fill these fields per the
+> each legal `type` value — fill these fields per the
 > tables when authoring a session_task, so the runtime can correctly load
 > the references into the DB for tools to query.
 >

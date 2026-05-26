@@ -36,7 +36,7 @@ from tenacity import (
 logger = logging.getLogger(__name__)
 
 # Credentials + endpoint from env (set before launch). BASE_URL defaults to
-# Alibaba DashScope's OpenAI-compatible API; override to use a gateway.
+# Alibaba DashScope's OpenAI-compatible API; override to use a proxy.
 _API_KEY = os.environ.get("DASHSCOPE_API_KEY", "")
 _BASE_URL = os.environ.get("DASHSCOPE_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1")
 
@@ -204,7 +204,7 @@ def call_qwen_with_tools(
 
     The `None` branch is treated as "no caller override → fall back to
     the ADR-locked Qwen contract" rather than "omit the field". This
-    matches the multi-turn replay contract on gateway (Qwen Cloud
+    matches the multi-turn replay contract on proxy (Qwen Cloud
     docs treat the field as accuracy-critical).
     """
     if reasoning_effort is None or reasoning_effort == "on":

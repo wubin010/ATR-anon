@@ -73,7 +73,7 @@ class _RetryableRawLLMError(RuntimeError):
 # Each provider's API key + base URL come from environment variables, read
 # at import time (set them before launch). BASE_URL defaults to the vendor's
 # official endpoint; point <PROVIDER>_BASE_URL at an OpenAI-compatible
-# gateway to route every model through one instead.
+# proxy to route every model through one instead.
 #
 #   OPENAI_API_KEY    / OPENAI_BASE_URL     (gpt-5.4)
 #   GEMINI_API_KEY    / GEMINI_BASE_URL     (gemini-3.x; GEMINI_CHAT_BASE_URL
@@ -97,7 +97,6 @@ _MODEL_PROVIDER: dict[str, str] = {
     "gpt-5.4": "openai",
     "gemini-3-flash-preview": "gemini",
     "gemini-3.1-pro-preview": "gemini",
-    "gemini-3.1-flash-lite-preview": "gemini",
     "claude-opus-4-7": "anthropic",
     "deepseek-v4-pro": "deepseek",
     "deepseek-v4-flash": "deepseek",
@@ -137,7 +136,6 @@ DEEPSEEK_V4      = "deepseek-v4-pro"
 DEEPSEEK_V4F     = "deepseek-v4-flash"
 GEMINI           = "gemini-3-flash-preview"
 GEMINI_PRO       = "gemini-3.1-pro-preview"
-GEMINI_FLASH_LITE = "gemini-3.1-flash-lite-preview"
 QWEN             = "qwen3.6-plus"
 CLAUDE_OPUS_4_7  = "claude-opus-4-7"
 MINIMAX          = "MiniMax-M2.7"
@@ -374,13 +372,13 @@ def _normalise_deepseek_effort(effort: str) -> str:
 
 
 def _is_claude_family(model: str) -> bool:
-    """Anthropic Claude models (routed via gateway). Detection by name
-    prefix because gateway exposes them as `anthropic/claude-...`."""
+    """Anthropic Claude models (routed via proxy). Detection by name
+    prefix because proxy exposes them as `anthropic/claude-...`."""
     return model.startswith("anthropic/claude") or model.startswith("claude")
 
 
 def _is_gemini_family(model: str) -> bool:
-    """Google Gemini models routed through gateway."""
+    """Google Gemini models routed through proxy."""
     return "gemini" in model
 
 
@@ -388,15 +386,14 @@ def _is_gemini_3_family(model: str) -> bool:
     """Google Gemini 3.x models — all of them accept the same
     `thinking_level` dial (minimal/low/medium/high), per
     https://ai.google.dev/gemini-api/docs/gemini-3. Covers
-    `gemini-3-flash-preview`, `gemini-3.1-pro-preview`,
-    `gemini-3.1-flash-lite-preview` and their `google/`-prefixed aliases.
-    Older 2.x / `*-image-preview` / vision-only variants are excluded;
-    they have different reasoning surfaces."""
+    `gemini-3-flash-preview` and `gemini-3.1-pro-preview` and their
+    `google/`-prefixed aliases. Older 2.x / `*-image-preview` /
+    vision-only variants are excluded; they have different reasoning
+    surfaces."""
     canon = model.removeprefix("google/")
     return canon in {
         "gemini-3-flash-preview",
         "gemini-3.1-pro-preview",
-        "gemini-3.1-flash-lite-preview",
     }
 
 
@@ -406,15 +403,15 @@ def _is_qwen_family(model: str) -> bool:
 
 def _is_minimax_family(model: str) -> bool:
     """MiniMax M2 series — interleaved-thinking models with no on/off dial.
-    Detection covers gateway's canonical `MiniMax-M2.x` casing and the
-    openrouter-style `minimax/minimax-m2.x` aliases. See
+    Detection covers the canonical `MiniMax-M2.x` casing and the
+    provider-prefixed `minimax/minimax-m2.x` aliases. See
     https://platform.minimax.io/docs/guides/text-m2-function-call.
     """
     return model.startswith("MiniMax-M") or model.startswith("minimax/")
 
 
 def _set_gemini_thinking_level(kwargs: dict, level: str) -> None:
-    """Set Gemini's gateway-validated OpenAI-compatible thinking level."""
+    """Set Gemini's proxy-validated OpenAI-compatible thinking level."""
     eb = kwargs.setdefault("extra_body", {})
     google = eb.setdefault("extra_body", {}).setdefault("google", {})
     google.setdefault("thinking_config", {})["thinking_level"] = level
@@ -469,7 +466,7 @@ def _apply_reasoning(
          disabled. Claude/GPT stay at vendor default.
 
       3. Otherwise — pass nothing, vendor's own default kicks in (Claude
-         default = thinking off, verified empirically against gateway
+         default = thinking off, verified empirically against proxy
          on 2026-05-09).
 
     MiniMax M2 special case (regardless of source): the model has no
@@ -633,11 +630,11 @@ def _to_attr_tree(value: Any) -> Any:
 
 
 def _create_qwen_chat_completion_raw(kwargs: dict[str, Any]) -> Any:
-    """Call gateway with raw JSON so Qwen thinking flags stay top-level.
+    """Call proxy with raw JSON so Qwen thinking flags stay top-level.
 
     The OpenAI SDK's `extra_body` parameter nests these fields in a way that
-    gateway/Qwen treats as thinking enabled. Raw JSON matches the curl shape
-    verified against the gateway.
+    proxy/Qwen treats as thinking enabled. Raw JSON matches the curl shape
+    verified against the proxy.
     """
     body = dict(kwargs)
     extra = body.pop("extra_body", None)
@@ -680,14 +677,14 @@ def _accumulate_stream_to_completion(stream_iter: Any, model: str) -> Any:
     """Consume an OpenAI streaming response and rebuild a non-streaming
     ChatCompletion-shaped object on the client side.
 
-    Rationale (2026-05-19): gateway's gpt-5.4 codex backend is
-    stream-first; its gateway reassembles streaming chunks into a
+    Rationale (2026-05-19): the gpt-5.4 endpoint behind the proxy is
+    stream-first; the proxy reassembles streaming chunks into a
     non-streaming `chat.completion` JSON at egress. Under high
     concurrency the reassembly occasionally leaks the first SSE chunk
     verbatim (`Content-Type: text/event-stream`, `choices:[]`,
     `object:"chat.completion.chunk"`), which the OpenAI SDK can't
     deserialize. Keeping the streaming protocol end-to-end and doing
-    reassembly client-side bypasses the gateway reassembly race.
+    reassembly client-side bypasses the proxy reassembly race.
 
     Accumulates: content, reasoning_content (vendor extension), tool_calls
     (by index, with concatenated function.arguments), finish_reason, and
@@ -788,11 +785,11 @@ def _create_chat_completion(client: OpenAI, kwargs: dict[str, Any]) -> Any:
     chunks client-side into a non-streaming ChatCompletion-shape object.
 
     See `_accumulate_stream_to_completion` for why streaming is forced
-    here (gateway reassembly race / SSE-leak bypass).
+    here (proxy reassembly race / SSE-leak bypass).
 
     Qwen family stays on the raw-JSON urllib path
     (`_create_qwen_chat_completion_raw`) since that one already parses
-    the gateway response directly without depending on gateway
+    the proxy response directly without depending on proxy
     reassembly.
     """
     if _is_qwen_family(str(kwargs.get("model", ""))):
@@ -828,9 +825,9 @@ def _create_chat_completion(client: OpenAI, kwargs: dict[str, Any]) -> Any:
 
 
 def _validate_chat_completion_shape(resp: Any, model: str) -> None:
-    """Guard against the gateway SSE-leak failure mode.
+    """Guard against the proxy SSE-leak failure mode.
 
-    Under high concurrency, gateway occasionally returns the gpt-5.4
+    Under high concurrency, proxy occasionally returns the gpt-5.4
     response as an SSE chunk (`data: {..."object":"chat.completion.chunk",
     "choices":[],...}`) instead of the standard `chat.completion` JSON.
     The OpenAI SDK can't deserialize that into a ChatCompletion object

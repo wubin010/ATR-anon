@@ -10,7 +10,7 @@ Multi-turn replay contract:
   entire `response_message`, including `reasoning_details[]`, be
   preserved on every assistant turn of the conversation history.
 - `reasoning_details[]` is an array of {format, id, index, text, type}
-  per element; the gateway path empirically delivers all 5 subfields
+  per element; the proxy path empirically delivers all 5 subfields
   byte-faithfully. We persist this array as `native_assistant_payload`
   and replay it on assistant echoes.
 - `reasoning_split=true` directs the model to emit a clean
@@ -38,7 +38,7 @@ from tenacity import (
 logger = logging.getLogger(__name__)
 
 # Credentials + endpoint from env (set before launch). BASE_URL defaults to
-# MiniMax's official OpenAI-compatible API; override to use a gateway.
+# MiniMax's official OpenAI-compatible API; override to use a proxy.
 _API_KEY = os.environ.get("MINIMAX_API_KEY", "")
 _BASE_URL = os.environ.get("MINIMAX_BASE_URL", "https://api.minimax.io/v1")
 

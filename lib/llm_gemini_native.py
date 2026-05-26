@@ -3,7 +3,7 @@
 Endpoint: POST {GEMINI_BASE_URL}/models/{model}:generateContent (default
 https://generativelanguage.googleapis.com/v1beta, the path Google's
 official docs use — `ai.google.dev/gemini-api/docs/...`). Auth is sent as
-a Bearer token; point GEMINI_BASE_URL at an OpenAI-style gateway that
+a Bearer token; point GEMINI_BASE_URL at an OpenAI-style proxy that
 accepts Bearer, or adapt the header for Google's native x-goog-api-key.
 
 Protocol surface preserved:
@@ -41,7 +41,7 @@ from tenacity import (
 logger = logging.getLogger(__name__)
 
 # Credentials + endpoint from env (set before launch). BASE_URL defaults to
-# Google's official Gemini API; override to point at a compatible gateway.
+# Google's official Gemini API; override to point at a compatible proxy.
 _API_KEY = os.environ.get("GEMINI_API_KEY", "")
 _BASE_URL = os.environ.get("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta")
 
@@ -247,9 +247,9 @@ def _convert_usage(usage_meta: dict | None) -> dict | None:
 
 
 def _normalize_arg_key(key: str) -> str:
-    """Normalize Gemini/gateway's occasional quoted parameter keys.
+    """Normalize Gemini/proxy's occasional quoted parameter keys.
 
-    In live Gemini 3.1 runs gateway has returned functionCall args like
+    In live Gemini 3.1 runs proxy has returned functionCall args like
     {"\"thread_id\"": "..."} instead of {"thread_id": "..."}.
     The native payload still keeps the provider bytes for replay, but the
     ATR-facing tool call must use executable schema keys.
@@ -310,7 +310,7 @@ def _from_gemini(resp: dict) -> dict:
         if fc:
             name = fc.get("name") or "fn"
             given_id = fc.get("id")
-            # gateway strips functionCall.id; synthesize a stable id so
+            # proxy strips functionCall.id; synthesize a stable id so
             # ATR's tool_call_id pairing works downstream. The native
             # part retains its original id (None), so byte-faithful echo
             # is unaffected.

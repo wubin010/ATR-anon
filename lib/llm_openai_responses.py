@@ -3,7 +3,7 @@
 Endpoint: POST {OPENAI_BASE_URL}/responses (default
 https://api.openai.com/v1, OpenAI's official Responses API).
 
-Prompt caching (verified 2026-05-22 against OpenAI docs + gateway echo):
+Prompt caching (verified 2026-05-22 against OpenAI docs + proxy echo):
   - `prompt_cache_retention="24h"` extends OpenAI's default in-memory TTL
     (5-10 minutes idle, max 1 hour) to a 24-hour retention window. Lets
     cache prefixes survive the multi-hour sweep runs ATR does.
@@ -18,7 +18,7 @@ The adapter honors the official OpenAI Responses multi-turn protocol —
 every `function_call` is paired with `function_call_output`. We request
 `include=["reasoning.encrypted_content"]` + `store=false` on every call;
 responses with or without reasoning items are handled transparently (a
-gateway may strip them).
+proxy may strip them).
 
 Multi-turn replay:
 - Persist the full returned `output[]` list as `native_assistant_payload`
@@ -50,7 +50,7 @@ from tenacity import (
 logger = logging.getLogger(__name__)
 
 # Credentials + endpoint from env (set before launch). BASE_URL defaults to
-# OpenAI's official Responses API; override to use a gateway.
+# OpenAI's official Responses API; override to use a proxy.
 _API_KEY = os.environ.get("OPENAI_API_KEY", "")
 _BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
 
@@ -321,7 +321,7 @@ def _http_post_json(url: str, body: dict, headers: dict, timeout: float) -> dict
         ) from exc
     except (
         # `urllib.urlopen` raises these BELOW the URLError wrapper when the
-        # remote (gateway / OpenAI upstream) closes the TCP socket
+        # remote (proxy / OpenAI upstream) closes the TCP socket
         # mid-stream. Empirically observed 1× in a 40-cell sweep (2026-05-22:
         # rafael_ortiz default cell aborted with `RemoteDisconnected:
         # Remote end closed connection without response`). Without this
@@ -369,7 +369,7 @@ def call_openai_responses_with_tools(
         "include": ["reasoning.encrypted_content"],
         # Extend prompt-cache TTL from default 5-10min in_memory → 24h
         # window (OpenAI Responses extended cache, verified 2026-05-22:
-        # gateway passes the field through to upstream, echoed in response).
+        # proxy passes the field through to upstream, echoed in response).
         # No-op silently if prefix < 1024 tokens (OpenAI minimum).
         # Not setting `prompt_cache_key` — letting OpenAI route by prefix
         # hash avoids the 15 req/min/key overflow risk that an over-broad

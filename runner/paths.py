@@ -198,14 +198,10 @@ def runs_dir(
     Non-TS-only: `outputs/<persona>/<short_ep>/<cell_segment>/`.
     Oracle:      `outputs/<persona>/_oracle/<cell_segment>/`
                  (independent of the learning trajectory).
-    Naive:       `outputs/<persona>/_naive/<cell_segment>/`
-                 (zero-info baseline; pairs with _oracle/).
     """
     seg = cell_segment(variant, model, memory_layer, seed, hook_enabled, smoke)
     if variant in _ORACLE_VARIANTS:
         return _RUNS_ROOT / persona_id / "_oracle" / seg
-    if variant == "naive":
-        return _RUNS_ROOT / persona_id / "_naive" / seg
     short = short_episode_id(episode_id, persona_id)
     return _RUNS_ROOT / persona_id / short / seg
 

@@ -458,7 +458,7 @@ class SessionTrajectory(BaseModel):
     session_type: Literal["learning", "test"]
     agent_variant: Literal[
         "default", "atr", "always_ask",
-        "oracle_full", "oracle_target", "naive",
+        "oracle_full", "oracle_target",
     ]
     messages: list[Message] = Field(default_factory=list)
     termination_reason: Literal[

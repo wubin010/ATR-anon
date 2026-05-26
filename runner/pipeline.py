@@ -647,8 +647,6 @@ def _build_cells_sweep(args) -> list[dict]:
                     )
                     if v in _ORACLE_VARIANTS:
                         short_ep = "_oracle"
-                    elif v == "naive":
-                        short_ep = "_naive"
                     else:
                         short_ep = f"seed{s:03d}"
                     cell_id = (

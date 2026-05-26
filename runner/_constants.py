@@ -47,10 +47,8 @@ NO_RULE_DEFLECT = "no strong preference there — your call"
 # oracle_target = TS-only, inject ONLY the current TS's target rule
 #                 canonical_answer (the reported "oracle").
 #
-# `naive` (zero-info baseline) is excluded from runtime VARIANTS so any
-# stale CLI / manifest referencing `naive` fails loudly. The bare
-# `oracle` name is not accepted either; only the two split variants are
-# accepted.
+# The bare `oracle` name is not accepted; only the two split variants
+# above are, so any stale CLI / manifest referencing `oracle` fails loudly.
 VARIANTS = (
     "default", "atr", "always_ask",
     "oracle_full", "oracle_target",
