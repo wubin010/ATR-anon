@@ -345,7 +345,7 @@ def _print_summary(results: list[StageResult]) -> None:
 def main():
     p = argparse.ArgumentParser(description="datagen unified pipeline runner")
     p.add_argument("--selection", type=Path, default=DEFAULT_SELECTION,
-                   help=f"persona selection JSON (default {DEFAULT_SELECTION})")
+                   help="persona selection JSON (default: data/persona_selection_formal20.json)")
     p.add_argument("--layer", type=int, default=None,
                    choices=[5, 10, 20, 40, 100],
                    help="selection layer subset (default: all entries in selection)")

@@ -8,9 +8,11 @@ one episode: a sequence of *learning sessions* (where the rule can be
 elicited) followed by *test sessions* (where a rule-aware agent succeeds
 and a rule-blind agent does not).
 
-This repository contains the benchmark data (20 personas, 284 standing
-rules, 568 learning sessions, 74 tools across 6 domains), the construction
-pipeline, the trajectory runner, and the deterministic evaluator.
+This repository contains the benchmark data (20 personas, 284 evaluated
+standing-rule test items, 568 episode-selected learning sessions, 74 tools
+across 6 domains), the construction pipeline, the trajectory runner, and the
+deterministic evaluator. The per-persona directories also include the larger
+curated rule/session pools used to compose those episodes.
 
 ## Repository layout
 
@@ -122,10 +124,17 @@ transparency and reproducibility of the *method*. The released dataset under
 self-contained (it embeds the persona, rules, and selected sessions), so the
 runner and evaluator do **not** need to re-run datagen.
 
+The standalone `rules.json` and `learning_sessions/` directories are the
+curated pools before episode sampling (340 candidate rules and 880 learning
+sessions). The released benchmark episodes under `episodes/` embed the
+evaluated subset used by the runner and evaluator (284 test items and 568
+learning sessions).
+
 The raw persona source files (`raw.json`) and intermediate QC artifacts are
-intentionally excluded (see `.gitignore`), so datagen cannot be re-run from
-scratch in this snapshot — but every stage's code and prompts are present for
-review.
+intentionally excluded from the standalone pool directories (see `.gitignore`),
+so datagen cannot be re-run from scratch in this snapshot — but every stage's
+code and prompts are present for review. Each released episode embeds the
+persona fields it needs at runtime.
 
 ## Data
 

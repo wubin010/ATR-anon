@@ -453,8 +453,12 @@ def main():
     parser = argparse.ArgumentParser(
         description="Ingest: ingest from Nemotron parquet (selection.json = uuid selector only)"
     )
-    parser.add_argument("--selection", type=Path, default=DEFAULT_SELECTION,
-                        help=f"persona selection JSON (uuid selector); default {DEFAULT_SELECTION}")
+    parser.add_argument(
+        "--selection",
+        type=Path,
+        default=DEFAULT_SELECTION,
+        help="persona selection JSON (uuid selector; default: data/persona_selection_formal20.json)",
+    )
     parser.add_argument("--layer", type=int, default=None,
                         choices=[5, 10, 20, 40, 100],
                         help="filter to layered subset (L5⊂L10⊂L20⊂L40⊂L100)")
